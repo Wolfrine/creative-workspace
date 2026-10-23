@@ -1,8 +1,8 @@
 {
-  "capturedAt": "2026-10-23T17:45:59.905Z",
+  "capturedAt": "2026-10-23T17:51:00.204Z",
   "plan": "Spark",
   "dataset": "Invented synthetic writing through actual Auth/Firestore emulators and browser app; no live manuscript or production Auth bypass",
-  "sourceDigest": "e71afa54fa3d18c56956b3c7d52df4f536b77c2ae72f4525295985b3fd531cc0",
+  "sourceDigest": "10ff280339c6de3f8ff9de636a21ff7ba351d96b1ab9c6ee4a5af7e2bfcd64b2",
   "sources": [
     {
       "path": ".firebaserc",
@@ -11,8 +11,8 @@
     },
     {
       "path": ".github/workflows/firebase-deploy.yml",
-      "bytes": 2614,
-      "sha256": "28ab967de168fb760a68e807d56de58b347304432e21468fcf8571cd0edc42d3"
+      "bytes": 2867,
+      "sha256": "bf1091b63c263ac243ad966aac6300ec920f59b6f34f92a55e06b0fe8ef49fa5"
     },
     {
       "path": ".github/workflows/phase1-ci.yml",
@@ -48,6 +48,11 @@
       "path": "functions/package.json",
       "bytes": 310,
       "sha256": "734f94ddafea5d9d361a463b95e47fe9d970f7f57cb809674fd33e1de170e1f4"
+    },
+    {
+      "path": "functions/scripts/deploy-spark-rules.mjs",
+      "bytes": 2376,
+      "sha256": "5186da9cd93ea0ce9e2202229b93804b7c7cd2d0d59a44cf35a8d16a108749ce"
     },
     {
       "path": "functions/scripts/inspect-firebase.mjs",
@@ -101,8 +106,8 @@
     },
     {
       "path": "scripts/record-spark-candidate.mjs",
-      "bytes": 3407,
-      "sha256": "a5c1f468044c1123fd43ffe1c2b44689ab996567f497efc48eb9114ac834025f"
+      "bytes": 3451,
+      "sha256": "d39c2303af274348acaf227c63028703b58ade94dc80d29f700509eb863565dd"
     },
     {
       "path": "scripts/verify-deployment-candidate.mjs",

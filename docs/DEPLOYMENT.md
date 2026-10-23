@@ -15,10 +15,14 @@ The retained Spark manifest binds the reviewed source and actual renders.
 `prepare-spark-release.mjs` verifies the project, exact Web App and site, native
 database, Google provider and private author UID. It preserves existing domains,
 links the verified Web App when needed, and refuses to overwrite another author.
-It supplies public client configuration to the build. The only deployment is:
+It supplies public client configuration to the build. After the actual emulator
+checks, Firebase's supported Admin SDK releases `firestore.rules`, then verifies
+the current release and exact source digest by readback. Hosting uses the working
+standard CLI path:
 
 ```sh
-npx firebase deploy --project noveliaa --only firestore:rules,hosting --non-interactive
+node functions/scripts/deploy-spark-rules.mjs
+npx firebase deploy --project noveliaa --only hosting --non-interactive
 ```
 
 `verify-hosted.mjs` compares every published file's SHA-256 to that run's build,
@@ -38,12 +42,13 @@ additional deployment roles. That was the wrong Phase 1 architecture for the
 owner's Spark requirement. Those dependencies and the Auth CLI provisioning step
 have been removed. Do not repeat those role/billing requests.
 
-The latest verified owner setup gap is normal Google provider enablement in
-[Noveliaa Authentication](https://console.firebase.google.com/project/noveliaa/authentication/providers).
-Select Get started if shown, enable Google, choose support email and save. The
-release can then resolve the existing configured author account and publish.
-It makes no IAM, billing, API-enablement or bucket changes. If this state changes,
-record actual Actions evidence rather than assuming the earlier gap persists.
+Google provider enablement is now confirmed by both the owner and Actions
+metadata. The first Spark release passed all tests and configured the author,
+but the CLI's optional Rules `projects:test` simulator call returned 403. The
+supported [Admin SDK Rules release](https://firebase.google.com/docs/rules/manage-deploy)
+uses the existing account's creation/update permissions after local emulator
+testing, and verifies deployed source readback. No additional role is requested.
+The release makes no IAM, billing, API-enablement or bucket changes.
 
 The read-only metadata workflow projects only the Spark target and relevant
 permissions. No credentials, OAuth tokens or manuscript content enter its logs.

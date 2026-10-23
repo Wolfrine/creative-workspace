@@ -10,7 +10,7 @@ const evidence = 'docs/evidence/phase1/spark';
 const sourcePaths = [...await list('src'), ...await list('public'), ...await list('tests/helpers'), ...await list('tests/spark-browser'), ...await list('tests/browser'),
   'package.json', 'package-lock.json', 'firebase.json', 'firestore.rules', '.firebaserc', 'vite.config.ts', 'tsconfig.json', 'vitest.config.ts', 'index.html',
   'firebase.spark-test.json', 'playwright.spark.config.ts', 'playwright.config.ts', 'deployment/firebase-binding.json',
-  'functions/package.json', 'functions/package-lock.json', 'functions/scripts/prepare-spark-release.mjs', 'functions/scripts/inspect-firebase.mjs',
+  'functions/package.json', 'functions/package-lock.json', 'functions/scripts/prepare-spark-release.mjs', 'functions/scripts/deploy-spark-rules.mjs', 'functions/scripts/inspect-firebase.mjs',
   '.github/workflows/firebase-deploy.yml', '.github/workflows/phase1-ci.yml',
   'scripts/record-spark-candidate.mjs', 'scripts/verify-deployment-candidate.mjs', 'scripts/verify-hosted.mjs'];
 const inventory = async paths => Promise.all(paths.sort().map(async path => { const bytes = await readFile(path); return { path, bytes: bytes.length, sha256: hash(bytes) }; }));

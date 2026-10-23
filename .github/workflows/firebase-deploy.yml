@@ -14,6 +14,7 @@ on:
       - .firebaserc
       - deployment/**
       - functions/scripts/prepare-spark-release.mjs
+      - functions/scripts/deploy-spark-rules.mjs
       - scripts/verify-*.mjs
       - .github/workflows/firebase-deploy.yml
 permissions:
@@ -61,8 +62,12 @@ jobs:
         run: node functions/scripts/prepare-spark-release.mjs
       - name: Build with verified public Firebase SDK configuration
         run: npm run build
-      - name: Deploy owner-only Firestore rules and matching Hosting site
-        run: npx firebase deploy --project noveliaa --only firestore:rules,hosting --non-interactive
+      - name: Release owner-only Rules using the supported Admin SDK
+        env:
+          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
+        run: node functions/scripts/deploy-spark-rules.mjs
+      - name: Publish the matching Hosting site
+        run: npx firebase deploy --project noveliaa --only hosting --non-interactive
       - name: Verify every hosted build file and Firebase app identity
         run: node scripts/verify-hosted.mjs
       - if: always()
@@ -73,5 +78,6 @@ jobs:
           path: |
             .local/spark-browser*
             .local/hosted-verification.json
+            .local/rules-release.json
             test-results/
           if-no-files-found: ignore
