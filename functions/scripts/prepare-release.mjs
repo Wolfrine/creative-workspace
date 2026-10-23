@@ -39,15 +39,22 @@ console.log('Verified Firebase Web App: ' + app.appId);
 // The supported Firebase Auth CLI chooses the default/first app. A fresh
 // project must have exactly this one Web App before initial provider setup.
 if (process.argv.includes('--app-only')) {
-  if ((apps.apps ?? []).length > 1) throw new Error('Initial Auth CLI provisioning needs an unambiguous single Web App.');
+  const provider = await request(`https://identitytoolkit.googleapis.com/admin/v2/projects/${project}/defaultSupportedIdpConfigs/google.com?fields=enabled`).catch(error => {
+    if (!error.message.startsWith('404 ')) throw error;
+    return null;
+  });
+  const configureAuth = !provider?.enabled;
+  if (configureAuth && (apps.apps ?? []).length > 1) throw new Error('Initial Auth CLI provisioning needs an unambiguous single Web App.');
+  if (process.env.GITHUB_OUTPUT) await appendFile(process.env.GITHUB_OUTPUT, `configure_auth=${configureAuth}\n`);
   console.log('Noveliaa Web App registration verified; no author data was created.');
+  console.log('Initial Google sign-in provisioning required: ' + configureAuth);
   process.exit(0);
 }
 const blockers = [];
 const inspect = async (label, url) => { try { return await request(url); } catch (error) { blockers.push(label + ': ' + error.message); return null; } };
 const [auth, google, database] = await Promise.all([
   inspect('Initialize Firebase Authentication', `https://identitytoolkit.googleapis.com/admin/v2/projects/${project}/config`),
-  inspect('Enable Google sign-in', `https://identitytoolkit.googleapis.com/admin/v2/projects/${project}/defaultSupportedIdpConfigs/google.com`),
+  inspect('Enable Google sign-in', `https://identitytoolkit.googleapis.com/admin/v2/projects/${project}/defaultSupportedIdpConfigs/google.com?fields=enabled`),
   inspect('Create the native Firestore database', `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)`),
 ]);
 if (google && !google.enabled) blockers.push('Enable Google sign-in for the verified Firebase app.');

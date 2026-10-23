@@ -5,8 +5,11 @@ Rules, read-only metadata and deployment workflows, and a daily backup
 implementation. GitHub Actions verified project `noveliaa`, number
 `278082781314`, display name `Noveliaa`, and its existing default Hosting site
 `noveliaa`, URL **https://noveliaa.web.app**. `.firebaserc` and `hosting.site`
-are now bound to that verified project/site. The app is not live: release
-preflight fails before mutation on missing `serviceusage.services.get`.
+are now bound to that verified project/site. The owner-added Service Usage Viewer
+role is verified and the standard Hosting dry run passes. The Noveliaa Web App
+has been registered. The app is not live: initial Google sign-in provisioning
+is blocked on `serviceusage.services.enable`; Storage and Functions setup/access
+remain prerequisites.
 See [live metadata, permission evidence and setup steps](DEPLOYMENT.md).
 
 The supplied Rules are a complete deny-by-default policy for a dedicated

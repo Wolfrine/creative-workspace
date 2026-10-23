@@ -12,12 +12,28 @@ app. Local previews are development/test surfaces. **No app has been published.*
 | Hosting API's default URL | **https://noveliaa.web.app** |
 | Existing Actions identity | `firebase-adminsdk-fbsvc@noveliaa.iam.gserviceaccount.com` |
 | Credential route | Existing `FIREBASE_SERVICE_ACCOUNT`, consumed only by Google's authentication Action |
-| Web app registration | No Web Apps returned |
+| Web app registration | Registered by the authorized release: `1:278082781314:web:9a4b7acef07fa8e4dfb49b`, display name `Noveliaa` |
 | Authentication | `CONFIGURATION_NOT_FOUND`; Google provider configuration absent |
 | Firestore | Fresh check: native `(default)` database exists in `asia-south1`, created `2026-10-23T16:47:33.855769Z`; readable through the existing Actions key |
 | Storage | Bucket list returned no items |
 | Billing | Permission denied; plan and billing linkage unknown |
 | Public Hosting check | HTTP 404; not a usable review link yet |
+
+**Current result after the owner added Service Usage Viewer:** the permission is
+verified and the [standard Hosting CLI dry run passes](https://github.com/Wolfrine/creative-workspace/actions/runs/39989576581/attempts/2)
+(job `120545866065`, CLI 15.34.1). This was a dry run, not publication.
+The [resumed release](https://github.com/Wolfrine/creative-workspace/actions/runs/39991129209)
+registered the Web App above. The [supported Google sign-in CLI attempt](https://github.com/Wolfrine/creative-workspace/actions/runs/39991936827)
+then failed at Firebase's provisioning API because the deployment identity lacks
+`serviceusage.services.enable`. The prior attempt hit a transient npm registry
+`ECONNRESET`; the retried run completed dependency/test steps and reached Firebase.
+
+The checked-in `deployment/firebase.auth.json` enables only Google sign-in and
+uses the verified Noveliaa domains. The release skips initial Auth provisioning
+when Google sign-in is already enabled, preserving existing provider settings.
+The SDK config now names `noveliaa.firebasestorage.app`, but that is not evidence
+the bucket exists: the real Storage list is empty, and release validation now
+checks the actual bucket's metadata before configuring the author.
 
 The [comprehensive read-only audit](https://github.com/Wolfrine/creative-workspace/actions/runs/39979368724)
 succeeded. The [release attempt](https://github.com/Wolfrine/creative-workspace/actions/runs/39979048780)
@@ -81,12 +97,10 @@ Identically named secrets are not evidence of identical Google IAM grants.
 The temporary Noveliaa credential was removed by the job's cleanup step; no key
 or access token was printed or copied into the repository.
 
-The immediate standard-CLI failure needs `serviceusage.services.get` on `noveliaa`.
-An owner can supply that inspection permission with
-[Service Usage Viewer](https://docs.cloud.google.com/iam/docs/roles-permissions/serviceusage).
-This addresses the observed Hosting CLI check only; it does not provision Auth,
-Firestore, Storage, Functions access or billing. Those remain separately reported
-below, rather than being presented as missing credentials.
+The owner supplied `serviceusage.services.get` with
+[Service Usage Viewer](https://docs.cloud.google.com/iam/docs/roles-permissions/serviceusage),
+and the standard CLI check now passes. Auth initialization, application Storage,
+Functions access and billing remain separate prerequisites below.
 
 ## Permission audit
 
@@ -99,12 +113,12 @@ firebase.clients.create
 firebasehosting.sites.update
 firebaserules.releases.update
 firebaserules.rulesets.create
+serviceusage.services.get
 ```
 
 Requested permissions absent from the response:
 
 ```text
-serviceusage.services.get
 serviceusage.services.enable
 cloudfunctions.functions.list
 cloudfunctions.functions.create
@@ -150,13 +164,24 @@ when APIs are disabled; the prepared release script does not enable them.
    `asia-south1` is also the proposed Functions region; the bucket location
    remains unknown. Do not infer it from the database or Functions setting.
 5. In [project IAM](https://console.cloud.google.com/iam-admin/iam?project=noveliaa),
-   provision approved deployment roles for the Actions identity above, covering
-   the missing CLI permissions. Firebase documents **Cloud Functions Admin** and
-   **Service Account User** for Functions deployment in its [IAM guide](https://firebase.google.com/docs/projects/iam/permissions#functions).
-   Service inspection can be provided by [Service Usage Viewer](https://docs.cloud.google.com/iam/docs/roles-permissions/serviceusage).
-   Rules/index release access is also missing. The owner must separately review
-   the runtime identity's Firestore/Storage permissions and build service agents;
-   do not solve this by granting project Owner/Editor or by sharing credentials.
+   review the remaining known deployment access for the existing Actions account:
+
+   | Purpose | Predefined role and scope |
+   |---|---|
+   | Initial API setup required by the Auth provisioning API | **Service Usage Admin** (`roles/serviceusage.serviceUsageAdmin`), project; bootstrap access can be removed by the owner after required APIs are configured, retaining Viewer |
+   | Deploy the five trusted writing callables | **Cloud Functions Admin** (`roles/cloudfunctions.admin`), project |
+   | Create the initial private Firestore/Storage Rules releases | **Firebase Rules Admin** (`roles/firebaserules.admin`), project |
+   | Deploy using the selected runtime/build identities | **Service Account User** (`roles/iam.serviceAccountUser`), scoped to those service accounts; do not infer the identities before provisioning |
+
+   See the official [Functions deployment guide](https://firebase.google.com/docs/projects/iam/permissions#functions),
+   [Rules role](https://docs.cloud.google.com/iam/docs/roles-permissions/firebaserules),
+   and [Service Usage role](https://docs.cloud.google.com/iam/docs/roles-permissions/serviceusage).
+   This covers observed missing deployment capabilities, not a guarantee that
+   runtime/build identities are already provisioned. Independently verify the
+   runtime's Firestore/Storage access and the build service agents. Index-write
+   permissions in the CLI's generic permission probe are not a request to deploy
+   indexes or grant unrelated index administration. No project Owner/Editor role
+   or credential sharing is needed for this proposal.
 6. Rerun metadata preflight, then **Deploy Noveliaa to Firebase** from the approved
    branch. Workflow dispatch is available once the workflow is on the default
    branch; the current development branch also has a narrowly scoped push trigger

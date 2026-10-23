@@ -94,7 +94,12 @@ The next owner review is a real writing/recovery session on the deployed Firebas
 app. The full GitHub CI run [39979059134](https://github.com/Wolfrine/creative-workspace/actions/runs/39979059134)
 passed on `36ecfeb`; the release run [39979048780](https://github.com/Wolfrine/creative-workspace/actions/runs/39979048780)
 authenticated to the verified `noveliaa` project/site but stopped before mutations
-because the deployment identity lacks `serviceusage.services.get`. A broader
+because the deployment identity then lacked `serviceusage.services.get`. The
+owner has since granted Service Usage Viewer: the same standard Hosting dry run
+[now passes](https://github.com/Wolfrine/creative-workspace/actions/runs/39989576581/attempts/2).
+The release registered Web App `1:278082781314:web:9a4b7acef07fa8e4dfb49b`.
+The supported Auth CLI's initial provisioning is now blocked by
+`serviceusage.services.enable`; no Hosting release has been published. A broader
 read-only audit also confirmed absent Functions deployment/Rules-release
 permissions and incomplete Firebase services. See the [exact report and owner
 setup steps](DEPLOYMENT.md). Billing status cannot be read by the identity.
