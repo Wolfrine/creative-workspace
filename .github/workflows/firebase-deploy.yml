@@ -31,6 +31,10 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+      - name: Refresh project state after owner configuration changes
+        env:
+          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
+        run: node functions/scripts/inspect-firebase.mjs
       - name: Verify exact Firebase app, site, author and cloud prerequisites
         env:
           VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
