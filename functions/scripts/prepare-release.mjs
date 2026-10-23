@@ -18,8 +18,11 @@ const request = async (url, options = {}) => {
 const project = binding.projectId;
 const site = await request(`https://firebasehosting.googleapis.com/v1beta1/projects/${project}/sites/${binding.hostingSite}`);
 if (site.defaultUrl !== binding.url) throw new Error('Hosting URL mismatch. Nothing was deployed.');
-const granted = await request(`https://cloudresourcemanager.googleapis.com/v1/projects/${project}:testIamPermissions`, { method: 'POST', body: JSON.stringify({ permissions: ['serviceusage.services.get', 'serviceusage.services.enable', 'firebase.clients.create', 'firebasehosting.versions.create', 'firebasehosting.sites.update'] }) });
-const missing = ['serviceusage.services.get', 'firebasehosting.versions.create', 'firebasehosting.sites.update'].filter(permission => !granted.permissions?.includes(permission));
+// Hosting versions/releases use sites.update; Firebase IAM has no separate
+// firebasehosting.versions.create permission.
+const granted = await request(`https://cloudresourcemanager.googleapis.com/v1/projects/${project}:testIamPermissions`, { method: 'POST', body: JSON.stringify({ permissions: ['serviceusage.services.get', 'serviceusage.services.enable', 'firebase.clients.create', 'firebasehosting.sites.update'] }) });
+console.log('Verified deployment permissions: ' + JSON.stringify(granted.permissions ?? []));
+const missing = ['serviceusage.services.get', 'firebasehosting.sites.update'].filter(permission => !granted.permissions?.includes(permission));
 if (missing.length) throw new Error('GitHub Actions deployment permissions missing: ' + missing.join(', ') + '. Project owner must grant the deployment identity the required permissions; this workflow does not expand its own IAM access.');
 
 const apps = await request(`https://firebase.googleapis.com/v1beta1/projects/${project}/webApps`);
