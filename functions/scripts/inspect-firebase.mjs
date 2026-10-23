@@ -26,7 +26,7 @@ const requestedPermissions = [
   'firebaserules.releases.create', 'firebaserules.rulesets.create',
   'firebaserules.releases.update',
 ];
-const [apps, billing, auth, google, iam, users, hosting, firebase, permissions, database, buckets] = await Promise.all([
+const [apps, billing, auth, google, iam, users, hosting, firebase, permissions, database, buckets, hostingService] = await Promise.all([
   get(`https://firebase.googleapis.com/v1beta1/projects/${project}/webApps`),
   get(`https://cloudbilling.googleapis.com/v1/projects/${project}/billingInfo`),
   get(`https://identitytoolkit.googleapis.com/admin/v2/projects/${project}/config`),
@@ -38,13 +38,14 @@ const [apps, billing, auth, google, iam, users, hosting, firebase, permissions, 
   get(`https://cloudresourcemanager.googleapis.com/v1/projects/${project}:testIamPermissions`, { method: 'POST', body: JSON.stringify({ permissions: requestedPermissions }) }),
   get(`https://firestore.googleapis.com/v1/projects/${project}/databases`),
   get(`https://storage.googleapis.com/storage/v1/b?project=${project}&fields=items(name,location)`),
+  get(`https://serviceusage.googleapis.com/v1/projects/${project}/services/firebasehosting.googleapis.com`),
 ]);
 const publicConfigs = await Promise.all((apps.apps ?? []).map(app => get(`https://firebase.googleapis.com/v1beta1/${app.name}/config`)));
-const metadata = { project, firebase, hosting, apps: apps.apps ?? apps, publicConfigs, billing: { billingEnabled: billing.billingEnabled, status: billing.status, error: billing.error },
+const metadata = { checkedAt: new Date().toISOString(), project, firebase, hosting, apps: apps.apps ?? apps, publicConfigs, billing: { billingEnabled: billing.billingEnabled, status: billing.status, error: billing.error },
   auth: auth.error ? auth : { authorizedDomains: auth.authorizedDomains, signIn: { allowDuplicateEmails: auth.signIn?.allowDuplicateEmails, emailEnabled: auth.signIn?.email?.enabled } },
   google: google.error ? google : { enabled: google.enabled, clientIdConfigured: !!google.clientId },
   humanOwners: iam.bindings?.filter(binding => binding.role === 'roles/owner').flatMap(binding => binding.members).filter(member => member.startsWith('user:')) ?? iam,
   users: users.users ?? users, moreUsers: !!users.nextPageToken,
   deploymentPermissions: permissions.error ? permissions : { granted: permissions.permissions ?? [], missing: requestedPermissions.filter(permission => !permissions.permissions?.includes(permission)) },
-  database, buckets };
+  database, buckets, hostingService };
 console.log(JSON.stringify(metadata, null, 2));
