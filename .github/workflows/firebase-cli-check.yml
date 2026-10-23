@@ -1,0 +1,45 @@
+name: Verify standard Firebase CLI deployment path
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/noveliaa-phase-1]
+    paths: [.github/workflows/firebase-cli-check.yml]
+permissions:
+  contents: read
+jobs:
+  hosting-dry-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GOOGLE_APPLICATION_CREDENTIALS: /tmp/noveliaa-cli-${{ github.run_id }}.json
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Configure existing credential using PTI's working pattern
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+        run: |
+          set -euo pipefail
+          test -n "$FIREBASE_SERVICE_ACCOUNT_JSON"
+          umask 077
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT_JSON" > "$GOOGLE_APPLICATION_CREDENTIALS"
+          node --input-type=module <<'NODE'
+          import {readFileSync} from 'node:fs';
+          import assert from 'node:assert/strict';
+          const credential = JSON.parse(readFileSync(process.env.GOOGLE_APPLICATION_CREDENTIALS));
+          assert.equal(credential.project_id, 'noveliaa');
+          console.log('Credential matches verified project: ' + credential.project_id);
+          // Never print the credential object, private key or token.
+          NODE
+      - name: Confirm CLI matches the successful PTI release
+        run: npx firebase --version
+      - name: Run the standard Hosting deployment command without publication
+        run: npx firebase deploy --project noveliaa --only hosting --dry-run --non-interactive
+      - name: Remove temporary credential
+        if: always()
+        run: rm -f "$GOOGLE_APPLICATION_CREDENTIALS"
