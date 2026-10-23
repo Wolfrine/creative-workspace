@@ -14,7 +14,7 @@ app. Local previews are development/test surfaces. **No app has been published.*
 | Credential route | Existing `FIREBASE_SERVICE_ACCOUNT`, consumed only by Google's authentication Action |
 | Web app registration | No Web Apps returned |
 | Authentication | `CONFIGURATION_NOT_FOUND`; Google provider configuration absent |
-| Firestore | API disabled/not previously used; database state/location cannot be verified |
+| Firestore | Fresh check: native `(default)` database exists in `asia-south1`, created `2026-10-23T16:47:33.855769Z`; readable through the existing Actions key |
 | Storage | Bucket list returned no items |
 | Billing | Permission denied; plan and billing linkage unknown |
 | Public Hosting check | HTTP 404; not a usable review link yet |
@@ -26,6 +26,20 @@ passed client/backend/evidence checks and authenticated, then stopped on
 The [full CI run](https://github.com/Wolfrine/creative-workspace/actions/runs/39979059134)
 also passed its build, emulator and browser checks. These tests use synthetic
 material; they do not establish authenticated production behavior.
+
+The owner's screenshot shows the same Admin SDK account used by Actions. After
+the owner created Firestore, [fresh read-only run 39990565880](https://github.com/Wolfrine/creative-workspace/actions/runs/39990565880)
+(job `120540930363`, checked `2026-10-23T16:53:57.573Z`) successfully read the new
+database using the existing key. In that same run, the Hosting service inspection
+still returned HTTP 403, `Permission denied to get service [firebasehosting.googleapis.com]`,
+and `testIamPermissions` still omitted `serviceusage.services.get`.
+Thus the earlier Firestore-unavailable observation is superseded by a real,
+readable database, while the independent Hosting access failure remains.
+
+The existing private key authenticates successfully. Creating Firestore later
+does not require regenerating that key. IAM roles govern what the authenticated
+service account can do; the screenshot's key-generation panel does not display
+those project roles. See [Google's service-account model](https://docs.cloud.google.com/iam/docs/service-account-overview).
 
 An earlier release attempt used the invalid permission name
 `firebasehosting.versions.create`. It was corrected to `firebasehosting.sites.update`
@@ -129,11 +143,12 @@ when APIs are disabled; the prepared release script does not enable them.
    and enable Google sign-in. Authorize `noveliaa.web.app` and
    `noveliaa.firebaseapp.com` as applicable. Keep author access enforced by the
    server UID allowlist; enabling a provider does not grant workspace access.
-4. Create/verify the native `(default)` [Firestore database](https://console.firebase.google.com/project/noveliaa/firestore)
-   and the default [Storage bucket](https://console.firebase.google.com/project/noveliaa/storage)
-   with private/production Rules. Choose locations before creating resources.
-   `asia-south1` (Mumbai) is the proposed Functions region; database and bucket
-   locations have not been approved or discovered. Do not infer them from this default.
+4. The native `(default)` [Firestore database](https://console.firebase.google.com/project/noveliaa/firestore)
+   is now verified in `asia-south1` (Mumbai). Verify its private/production Rules.
+   Initialize/verify the default [Storage bucket](https://console.firebase.google.com/project/noveliaa/storage)
+   with private/production Rules and choose its location before creation.
+   `asia-south1` is also the proposed Functions region; the bucket location
+   remains unknown. Do not infer it from the database or Functions setting.
 5. In [project IAM](https://console.cloud.google.com/iam-admin/iam?project=noveliaa),
    provision approved deployment roles for the Actions identity above, covering
    the missing CLI permissions. Firebase documents **Cloud Functions Admin** and
