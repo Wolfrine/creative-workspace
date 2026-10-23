@@ -1,77 +1,86 @@
-# Phase 1 architecture
+# Phase 1 architecture — Spark
 
-The editable manuscript belongs to the author. Immutable evidence is separate
-from that editing surface. This implementation follows the [intent](../INTENT.md),
-[research corrections](research/noveliaa-review-2026-10-23.md) and
-[evaluations](../evals/README.md).
+The author owns the editable manuscript. Immutable originals and revisions stay
+separate from that surface. Living Atlas supplies optional links and context;
+Quiet Folio supplies focused writing. External AI, reader editions and feedback
+remain deferred. The owner requires the Firebase project to stay on **Spark**.
 
-## Writing and persistence
+## Writing and device persistence
 
-React and Tiptap render versioned rich-text JSON. Titles, organization and links
-are optional. A link stores a document ID inside its universe, so renaming a page
-does not break navigation. Backlinks, Atlas and search are derived views of the
-device's available writing; search explicitly describes that coverage.
+React and Tiptap render versioned rich-text JSON. Titles and collections are
+optional. Links store stable document IDs within one universe; backlinks, Atlas
+and search derive from available device writing. Nothing invents a story schema.
 
-`WritingEngine` keeps immediate typing in memory. After a 300 ms pause it creates
-an immutable revision and, in one strict-durability IndexedDB transaction, writes
-the document head, local save receipt and outbox operation. Only transaction
-completion earns “Saved on this device.” An error leaves current text exportable
-without requiring a successful checkpoint. Navigation/sign-out flush pending
-typing; dirty close attempts trigger the browser's unsaved-work warning.
+`WritingEngine` keeps typing immediate. After a 300 ms pause, one strict-durability
+IndexedDB transaction writes the immutable revision, current head, local receipt
+and outbox operation. Only completion earns the device-save label. Failure leaves
+open text exportable. Navigation and sign-out flush pending edits; dirty close
+attempts trigger the browser warning. Tabs preserve divergent versions instead
+of resolving meaning automatically. Fresh devices open the latest available page;
+returning devices remember their last-opened page.
 
-An authenticated adapter stages exact bytes first. The callable checks identity,
-schema and digests, verifies immutable blob readback, then uses an expected-head
-Firestore transaction. A stale base retains its revision as a conflict branch
-without promoting it. Operation IDs make retries idempotent. Only this server
-acknowledgement earns “Synced.” Catalog/identity registration contains no invented
-manuscript or head. It supports linked archive replay, including mutual links.
+## Spark cloud persistence and trust boundary
 
-Refreshes guard local heads inside the database write transaction and retain
-records created while a read was waiting. Conflict markers persist across
-restart. Tabs notify each other, but never resolve writing meaning automatically.
-Choosing a previous version creates a new revision with preserved body, origin,
-source references and ancestry. Restored archive branches receive an explicit
-expected-head restoration only if the author has not subsequently edited them.
+The production client uses **Authentication + Firestore + Hosting**. No Functions
+or Storage deployment, API enablement, scheduled job or billing upgrade is needed.
+Google sign-in verifies the configured human author's UID through Firestore Rules.
+Account device stores remain separate, including pending work after sign-out.
 
-## Evidence and portability
+`src/cloud/spark.ts` implements the existing cloud adapter. Catalog entries are
+individual records; updates cannot erase concurrent catalog additions or move an
+identity between universes. Document-ID registrations contain no invented text.
+Originals and canonical revision JSON become digest-addressed Firestore blobs.
+Each blob is optionally gzip-compressed, divided into at most 192 KiB chunks,
+and stored with an immutable manifest. Rules compute each chunk's SHA-256.
+The client reconstructs bytes, bounds decompression, checks the complete digest
+and validates revision/provenance structure before merging into IndexedDB.
 
-An imported file is stored byte for byte with SHA-256 and unverified provenance.
-Its editable UTF-8 derivative normalizes CRLF to LF; it does not rewrite wording.
-Markdown import is literal text in this phase. Explicit imported-chat labels can
-produce a speaker map with UTF-16 source positions; labels do not verify identity
-or authorship. AI/mixed/unknown material cannot become approved canon through
-this app: no approval or canon operation exists in Phase 1.
+An expected-head Firestore transaction atomically creates the immutable revision
+and idempotent operation receipt. It advances the head only if the expected
+predecessor still matches. Losing revisions remain in history. A changed replay
+under an existing operation ID fails. A stale optimistic transaction rejected by
+Rules is retried only after a server read proves that its observed head changed.
+Only an acknowledged transaction earns “Synced”; queued SDK writes do not.
 
-The JSON archive contains editor schema, universes, collections, current heads,
-all revisions, originals and receipts. Validation checks structure, metadata,
-digests, graph, links and provenance before an atomic restore into an empty
-notebook. A competing tab cannot make that empty check stale. Unsupported schemas
-are refused without stripping data. Text, Markdown and HTML are readable
-derivatives; rich structure and full history use the archive.
+Rules deny other users, anonymous access, evidence updates/deletes, standalone
+head rollback, later-phase paths and client allowlist edits. They enforce chunk
+hashes, identity boundaries and atomic head/revision/operation linkage. **Full
+rich-text semantics, cross-chunk digest and provenance validation run in the
+client.** Phase 1 trusts its single human author. These Rules are not an external
+AI writeback contract; machine writers need a separately reviewed later-phase
+boundary. Project administrators still possess administrative powers.
 
-Initial limits are 16 MiB per UTF-8 import, 64 MiB per portable JSON archive,
-200,000 editor nodes and depth 30 per document. Oversized archives are refused
-before download rather than offering an unrestorable file. History is never
-pruned to fit these limits. Growing beyond them needs a larger portable format
-before a complete-history move; individual current text/HTML remains exportable.
+## Exact evidence and portability
 
-## Privacy and operational boundaries
+Imported UTF-8 files retain their exact bytes and SHA-256 with unverified origin.
+The editable derivative normalizes CRLF to LF without rewriting wording; Markdown
+import remains literal text. Conversation speaker labels are source offsets,
+not verified attribution. No Phase 1 approval/canon operation exists.
 
-Production requires Google sign-in, the configured author UID, and matching
-server/Rules allowlists. Unconfigured access fails closed. Account device stores
-are separate; a signed-in account change does not reassign pending writing.
-Direct Firestore writes, source edits/deletes and later-phase paths are denied.
-Admin callables independently enforce permissions. No manuscript or token is
-logged. No public download URL is created.
+Restore creates a new revision and retains intervening versions. A full JSON
+archive contains editor schema, organization, links, originals, heads, every
+revision and receipts, including pending work. Validation checks digests,
+ancestry, links and provenance before an atomic import into an empty notebook.
+Plain text, Markdown and HTML are readable derivatives.
 
-The production service worker precaches a complete version of public code,
-styles and fonts before activation. It caches no API/private writing, and an open
-writer keeps a coherent app version. Public Firebase configuration is separately
-cached for offline reopening. Actual authenticated offline cold start still needs
-verification on the approved installation.
+Limits: 16 MiB per text import, 32 MiB uncompressed per cloud blob, 64 MiB per
+portable JSON archive, 200,000 editor nodes and depth 30. Exceeding a cloud limit
+leaves the complete device record exportable and reports failure. History is
+never silently pruned. Larger complete-history moves require a larger portable
+format. Firestore's free quota also bounds this design; quota failure retains the
+outbox and device checkpoint. Cloud loading currently reads the complete library
+and history, so large-library pagination remains future work.
 
-Cloud disaster backup is a distinct implementation with a separately provisioned
-identity/bucket and verified restore tooling. Device-only writing cannot appear
-in a cloud backup. Production IAM, retention, scheduling and RPO remain unverified;
-see [Firebase boundaries](FIREBASE.md). There is no deployment workflow, external
-AI client, reader edition or feedback/behavior ingestion in this phase.
+## Recovery and operating limits
+
+The service worker precaches public code, styles and fonts as a coherent app
+version. It never caches private API responses. Public SDK configuration and a
+previously verified account's access flag permit offline reopening on that device;
+these are not cloud grants and do not bypass Rules when online.
+
+Device checkpoints, immutable cloud revisions and downloadable complete archives
+provide Phase 1 recovery. Scheduled independent backups, PITR, protected backup
+buckets and a verified 24-hour disaster RPO are **not shipped** on Spark. Existing
+Functions/Storage backup and callable sources are retained reference work only;
+`firebase.json` excludes them. See [Firebase operations](FIREBASE.md) and
+[current evidence](PHASE1_RESULTS.md).

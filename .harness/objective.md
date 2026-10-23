@@ -23,6 +23,12 @@
 
 ## Remaining release decisions
 
-Verify the existing Firebase project/site/bucket and author UID; approve any new IAM, billing or backup-retention configuration. Complete physical-device and author writing/recovery acceptance. External connector permissions, reader publication and consent belong to later phases.
+Keep the existing Firebase project on **Spark**. Use its existing GitHub Actions
+secret for Hosting and Firestore Rules; do not request Functions, Storage, Blaze
+or API-enablement access for Phase 1. Verify matching Web App/site, Google
+provider and author UID. Independent scheduled backups are deferred; device
+recovery, immutable cloud history and downloadable archives are current recovery.
+Complete hosted, physical-device and author writing/recovery acceptance. External
+connector permissions, reader publication and consent belong to later phases.
 
 **Detailed intent:** [INTENT.md](../INTENT.md). **Current evidence:** [Phase 1 results](../docs/PHASE1_RESULTS.md).

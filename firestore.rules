@@ -3,13 +3,97 @@ service cloud.firestore {
   match /databases/{database}/documents {
     function owner(uid) {
       return request.auth != null && request.auth.uid == uid
-        && exists(/databases/$(database)/documents/noveliaaConfig/access)
         && get(/databases/$(database)/documents/noveliaaConfig/access).data.ownerUid == uid;
     }
-    match /noveliaaWorkspaces/{uid}/{collection}/{record} {
-      allow read: if owner(uid) && collection in ['meta', 'documentIdentities', 'documents', 'revisions', 'originals', 'operations'];
-      // All cloud writes pass through authenticated, validating callables.
-      allow write: if false;
+    function validId(value) { return value is string && value.matches('^[A-Za-z0-9_-]{1,150}$'); }
+    function digest(value) { return value is string && value.matches('^[a-f0-9]{64}$'); }
+    function universe(uid, value) { return validId(value) && exists(/databases/$(database)/documents/noveliaaWorkspaces/$(uid)/universes/$(value)); }
+    function headBefore(uid, documentId) {
+      return exists(/databases/$(database)/documents/noveliaaWorkspaces/$(uid)/documents/$(documentId))
+        ? get(/databases/$(database)/documents/noveliaaWorkspaces/$(uid)/documents/$(documentId)).data.headRevisionId : null;
+    }
+    function validHead(uid, documentId, previous) {
+      let data = request.resource.data;
+      let revision = getAfter(/databases/$(database)/documents/noveliaaWorkspaces/$(uid)/revisions/$(data.headRevisionId)).data;
+      let operation = getAfter(/databases/$(database)/documents/noveliaaWorkspaces/$(uid)/operations/$(data.operationId)).data;
+      let identity = get(/databases/$(database)/documents/noveliaaWorkspaces/$(uid)/documentIdentities/$(documentId)).data;
+      return data.keys().hasOnly(['id', 'universeId', 'headRevisionId', 'operationId'])
+        && data.id == documentId && data.universeId == identity.universeId
+        && revision.documentId == documentId && revision.universeId == data.universeId
+        && revision.operationId == data.operationId && revision.expectedHeadId == previous && revision.won == true
+        && operation.revisionId == data.headRevisionId && operation.expectedHeadId == previous
+        && operation.result == {'status': 'synced', 'headRevisionId': data.headRevisionId};
+    }
+    match /noveliaaConfig/access {
+      allow get: if request.auth != null && request.auth.uid == resource.data.ownerUid;
+    }
+    match /noveliaaWorkspaces/{uid} {
+      match /{kind}/{record} {
+        allow read: if owner(uid) && kind in ['universes', 'collections', 'documentIdentities', 'documents', 'revisions', 'originals', 'operations', 'chunks', 'blobs'];
+        allow delete: if false;
+      }
+      match /universes/{key} {
+        allow create: if owner(uid) && validId(key) && request.resource.data.keys().hasOnly(['id', 'name', 'createdAt'])
+          && request.resource.data.id == key && request.resource.data.name is string && request.resource.data.name.size() <= 10000 && request.resource.data.createdAt is string;
+        allow update: if owner(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name']) && request.resource.data.name is string && request.resource.data.name.size() <= 10000;
+      }
+      match /collections/{key} {
+        allow create: if owner(uid) && validId(key) && request.resource.data.keys().hasOnly(['id', 'universeId', 'name', 'order'])
+          && request.resource.data.id == key && universe(uid, request.resource.data.universeId) && request.resource.data.name is string && request.resource.data.name.size() <= 10000 && request.resource.data.order is number;
+        allow update: if owner(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'order']) && request.resource.data.name is string && request.resource.data.order is number;
+      }
+      match /documentIdentities/{key} {
+        allow create: if owner(uid) && validId(key) && request.resource.data.keys().hasOnly(['id', 'universeId']) && request.resource.data.id == key && universe(uid, request.resource.data.universeId);
+      }
+      match /chunks/{key} {
+        allow create: if owner(uid) && digest(key) && request.resource.data.keys().hasOnly(['sha256', 'bytes'])
+          && request.resource.data.sha256 == key && request.resource.data.bytes is bytes && request.resource.data.bytes.size() > 0 && request.resource.data.bytes.size() <= 196608
+          && hashing.sha256(request.resource.data.bytes).toHexString().lower() == key;
+      }
+      match /blobs/{key} {
+        allow create: if owner(uid) && digest(key) && request.resource.data.keys().hasOnly(['sha256', 'size', 'encodedSize', 'encoding', 'chunks'])
+          && request.resource.data.sha256 == key && request.resource.data.size is int && request.resource.data.size >= 0 && request.resource.data.size <= 33554432
+          && request.resource.data.encodedSize is int && request.resource.data.encodedSize >= 0 && request.resource.data.encodedSize <= 33554432
+          && request.resource.data.encoding in ['raw', 'gzip'] && request.resource.data.chunks is list
+          && request.resource.data.chunks.size() == math.ceil(request.resource.data.encodedSize / 196608.0);
+      }
+      match /originals/{key} {
+        allow create: if owner(uid) && validId(key) && request.resource.data.keys().hasOnly(['id', 'universeId', 'name', 'sha256', 'origin', 'verification', 'sourceReference', 'createdAt', 'speakerSegments', 'blobHash'])
+          && request.resource.data.id == key && universe(uid, request.resource.data.universeId)
+          && request.resource.data.name is string && request.resource.data.sourceReference is string && request.resource.data.createdAt is string
+          && request.resource.data.origin in ['author', 'recovered_original', 'remembered_reconstruction', 'imported_chat', 'ai', 'mixed', 'unknown']
+          && request.resource.data.verification in ['verified', 'unverified', 'mixed']
+          && (!(request.resource.data.origin in ['ai', 'imported_chat', 'mixed', 'unknown']) || request.resource.data.verification != 'verified')
+          && request.resource.data.sha256 == request.resource.data.blobHash && digest(request.resource.data.blobHash)
+          && exists(/databases/$(database)/documents/noveliaaWorkspaces/$(uid)/blobs/$(request.resource.data.blobHash));
+      }
+      match /revisions/{key} {
+        allow create: if owner(uid) && validId(key) && request.resource.data.keys().hasOnly(['id', 'documentId', 'universeId', 'blobHash', 'contentHash', 'operationId', 'expectedHeadId', 'won'])
+          && request.resource.data.id == key && validId(request.resource.data.documentId) && validId(request.resource.data.operationId)
+          && digest(request.resource.data.blobHash) && digest(request.resource.data.contentHash)
+          && get(/databases/$(database)/documents/noveliaaWorkspaces/$(uid)/documentIdentities/$(request.resource.data.documentId)).data.universeId == request.resource.data.universeId
+          && exists(/databases/$(database)/documents/noveliaaWorkspaces/$(uid)/blobs/$(request.resource.data.blobHash))
+          && getAfter(/databases/$(database)/documents/noveliaaWorkspaces/$(uid)/operations/$(request.resource.data.operationId)).data.revisionId == key;
+      }
+      match /operations/{key} {
+        function validOperation() {
+          let data = request.resource.data;
+          let revision = getAfter(/databases/$(database)/documents/noveliaaWorkspaces/$(uid)/revisions/$(data.revisionId)).data;
+          let previous = headBefore(uid, data.documentId);
+          return data.keys().hasOnly(['id', 'revisionId', 'documentId', 'fingerprint', 'expectedHeadId', 'result'])
+            && data.id == key && validId(data.revisionId) && validId(data.documentId) && digest(data.fingerprint)
+            && revision.operationId == key && revision.documentId == data.documentId && revision.expectedHeadId == data.expectedHeadId
+            && (data.expectedHeadId == previous
+              ? revision.won == true && data.result == {'status': 'synced', 'headRevisionId': data.revisionId}
+                && getAfter(/databases/$(database)/documents/noveliaaWorkspaces/$(uid)/documents/$(data.documentId)).data.headRevisionId == data.revisionId
+              : revision.won == false && data.result == {'status': 'conflict', 'headRevisionId': previous});
+        }
+        allow create: if owner(uid) && validId(key) && validOperation();
+      }
+      match /documents/{key} {
+        allow create: if owner(uid) && validHead(uid, key, null);
+        allow update: if owner(uid) && request.resource.data.universeId == resource.data.universeId && validHead(uid, key, resource.data.headRevisionId);
+      }
     }
     match /{document=**} { allow read, write: if false; }
   }

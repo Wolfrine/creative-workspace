@@ -1,153 +1,82 @@
-# Firebase Phase 1: Actions release prepared, cloud setup blocked
+# Firebase Phase 1 — keep Spark
 
-The repository contains a private Firebase adapter, owner-only callable services,
-Rules, read-only metadata and deployment workflows, and a daily backup
-implementation. GitHub Actions verified project `noveliaa`, number
-`278082781314`, display name `Noveliaa`, and its existing default Hosting site
-`noveliaa`, URL **https://noveliaa.web.app**. `.firebaserc` and `hosting.site`
-are now bound to that verified project/site. The owner-added Service Usage Viewer
-role is verified and the standard Hosting dry run passes. The Noveliaa Web App
-has been registered. The app is not live: initial Google sign-in provisioning
-is blocked on `serviceusage.services.enable`; Storage and Functions setup/access
-remain prerequisites.
-See [live metadata, permission evidence and setup steps](DEPLOYMENT.md).
+The production target is project **noveliaa**, number **278082781314**, Web App
+**1:278082781314:web:9a4b7acef07fa8e4dfb49b**, Hosting site **noveliaa** and
+**https://noveliaa.web.app**. Firestore `(default)` is native mode in
+**asia-south1**. These identities were verified through GitHub Actions.
 
-The supplied Rules are a complete deny-by-default policy for a dedicated
-Noveliaa project. If preflight identifies a shared project, inspect its deployed
-Rules first and prepare a separately reviewed integration. Do not replace
-unrelated product access policies by deploying these files unchanged.
+The owner requires **Spark**. Phase 1 uses Google Authentication, Firestore and
+Hosting. Functions, Storage, scheduled backups and paid recovery products are
+excluded. The existing `FIREBASE_SERVICE_ACCOUNT` stays in repository secrets;
+the release uses `google-github-actions/auth@v2`. Never copy its key into source,
+read it into a chat, print it, or request a replacement merely to fix setup.
 
-## Author access and configuration
+## One-time author setup
 
-1. The **Firebase metadata preflight (read only)** workflow has run successfully.
-   Repeat it after project setup changes. It consumes the existing
-   `FIREBASE_SERVICE_ACCOUNT` through Google's authentication action and prints
-   only public project/app/site settings, projected owner configuration and
-   permission-test results. Do not open or print
-   that secret. The workflow does not deploy, enable APIs, change IAM or billing.
-2. Verify the chosen project, database location, primary bucket, Google sign-in
-   provider, authorized domains and Functions region (`asia-south1` is the
-   initial code default, not a claim about the existing project).
-3. Supply public client settings using `VITE_FIREBASE_CONFIG` (JSON, see
-   `.env.example`) or Firebase Hosting's `/__/firebase/init.json`. Production
-   without complete configuration shows the application's setup gate. Verified
-   public web configuration is cached locally so an offline restart does not
-   need Hosting discovery; this cache contains no credentials or manuscript.
-4. The Actions release script resolves the author account from the administrator's
-   deployment binding and sets `NOVELIAA_OWNER_UID` plus Firestore
-   `noveliaaConfig/access` to the same UID. It refuses to overwrite a different
-   existing allowlist. The current candidate email comes from the connected
-   GitHub owner's profile; verify it is the intended Google sign-in account
-   before completing setup. Runtime authorization checks UID, never a
-   client-submitted email. Unset or mismatched settings fail closed; direct
-   clients cannot read/write the config document.
-5. Set `NOVELIAA_STORAGE_BUCKET` when the Admin app's default bucket is absent.
-   Verify Storage CORS permits the exact approved app origin for authenticated
-   SDK byte reads. Do not create public buckets or long-lived download URLs.
+Enable Google under [Noveliaa Authentication → Sign-in method](https://console.firebase.google.com/project/noveliaa/authentication/providers).
+If Authentication is new, select Get started first, enable Google, choose the
+support email and save. This works on Spark. No Functions/Storage roles or Blaze
+approval are requested. Initial Auth provisioning through the deployment CLI was
+removed because it attempted API enablement unnecessarily.
 
-The cloud API is limited to `loadWorkspace`, `saveCatalog`,
-`registerDocumentIdentities`, `preserveOriginal` and `commitWriting`. No
-external-AI, canon, publication, reader or feedback
-endpoints exist. Client Rules deny all direct Firestore writes. Server Admin SDK
-operations independently validate the authenticated author because they bypass
-those Rules. All application records live beneath
-`noveliaaWorkspaces/{uid}`; no PTI `/users` namespace is reused.
+The Actions release verifies the exact Web App/site binding and Google provider,
+preserves authorized domains while ensuring the two Noveliaa domains are present,
+resolves the configured author email to an Auth UID and creates
+`noveliaaConfig/access` only when absent. It refuses to replace another owner UID.
+The existing binding identifies `schttewary@gmail.com`; only that resolved UID
+gets workspace access. Provider enablement alone grants no writing access.
 
-## Preserved writing and synchronization
+The browser verifies access through Rules before opening the workspace. A wrong
+account sees an access explanation. On previously verified devices, offline
+access reopens only that account's private device copy. Server authorization
+still applies when connectivity returns. Signing out preserves the account's
+device database and flushes pending typing first.
 
-The client uploads bytes to a digest-addressed, create-only staging object.
-`commitWriting` reads that exact generation, calculates SHA-256 itself, compares
-the full canonical revision JSON, then creates and verifies an immutable final
-blob. A Firestore transaction records the revision and operation only after
-verification. It promotes the document head only if the supplied expected head
-still matches. A losing revision remains reachable through history.
+## Persistence and boundaries
 
-The idempotency fingerprint covers the canonical operation ID, expected head and
-complete revision. Identical retries return the first result; changing any of
-that content under the same operation ID fails. A source original's metadata
-and bytes are immutable. Client Storage writes cannot overwrite or delete
-staging/final objects. Incomplete/unreferenced uploads are not writing heads;
-there is no automatic garbage collection in Phase 1.
+All writing resides under `noveliaaWorkspaces/{uid}`. Owner-only Rules permit the
+specific Phase 1 collections. Chunk and original/revision/operation records are
+immutable. Expected-head transactions preserve conflicts and prevent standalone
+head repointing. Full source validation runs in the adapter before ingestion;
+see the explicit [trust boundary](ARCHITECTURE.md).
 
-Catalog synchronization cannot remove an existing universe or collection or
-move it between universes. Concurrent catalog additions must be reconciled by
-the client; the server rejects an update that would orphan an existing entry.
-Link targets must be committed or explicitly registered in the same universe.
-Registration preserves only the immutable document-ID/universe-ID mapping; it
-creates no writing, revision, placeholder text or head. This supports portable
-archives whose first revisions link to one another. The workspace loader still
-returns only documents with committed writing heads. Identity registrations are
-included in disaster backups.
+No Storage URLs or external machine writers exist in the runtime. A generated
+SDK config may contain a storageBucket string; that does not create or use a
+bucket. The public web API key is normal client configuration, not an Admin key.
 
-## Backups and isolated restore
+Firestore's current free allowance is 1 GiB stored data, 50,000 document reads
+and 20,000 writes per day. Loading currently reads all heads/history; each new
+revision writes chunks, a manifest, metadata, a receipt and possibly a head.
+Compression and digest deduplication reduce repeated bytes. Exhausted quota
+interrupts sync without acknowledging or discarding pending local revisions.
+Cloud backups, PITR and managed restores require billing and are deferred under
+the owner's Spark decision. [Official quota and backup policy](https://firebase.google.com/docs/firestore/pricing).
 
-`dailyWritingBackup` is scheduled at 02:00 Asia/Kolkata. It reads catalog,
-documents, revisions, originals and operations within one read-only Firestore
-transaction, then downloads immutable blob generations, verifies every digest,
-creates a self-contained JSON archive, writes it create-only and verifies its
-readback. The initial safety limit is **64 MiB of unencoded blob bytes**;
-exceeding it fails visibly rather than producing an incomplete backup.
+## Development verification
 
-The function refuses to write backups unless all of the following exist:
+Node 22.12+ (CI uses 24), Python 3.11+ and Java 21:
 
-- `NOVELIAA_BACKUP_SERVICE_ACCOUNT`, a separately provisioned runtime identity.
-- `NOVELIAA_BACKUP_BUCKET`, a bucket distinct from application storage.
-- Backup bucket retention of at least 30 days, checked at runtime.
-
-An administrator must independently verify least-privilege IAM: ordinary commit
-functions must have no access to delete backup objects or reduce backup-bucket
-retention. The backup identity needs source read access and destination
-create/read access, without delete/retention-policy administration. Configure
-the approved retention/lifecycle policy outside application code. A bucket lock
-is irreversible and requires explicit approval; this repository does not enable
-one or assert that IAM/retention protection already exists. The backup function
-contains no deletion path. It does not promise exact deletion at 30 days.
-
-Offline-only checkpoints are absent from cloud disaster backups. Downloadable
-workspace exports remain necessary. A 24-hour RPO and 60-minute restore are
-evaluation budgets, not validated production guarantees.
-
-Verify a downloaded backup without credentials or writes:
-
-```powershell
-node functions/scripts/restore-backup.mjs C:\path\backup.json
-```
-
-For an isolated restore, start loopback Firestore/Storage emulators for
-`demo-noveliaa`, set both emulator host variables, then append
-`--restore-emulator`. The tool rejects non-loopback targets and nonempty target
-collections, uploads source bytes first, remaps emulator generations, and
-creates immutable records before heads. It does not restore access config or
-reader grants. Production restore is intentionally unavailable in this tool.
-
-## Verification commands and limits
-
-Use Node 22.12+ (CI uses Node 24) and Java 21:
-
-```powershell
+```sh
+npm ci
 npm --prefix functions ci
-npm --prefix functions test
+npx playwright install chromium
+npm test
+npm run build
+npm run test:evidence
 npm run test:rules
-$env:NOVELIAA_OWNER_UID = 'emulator-author'
-$env:NOVELIAA_STORAGE_BUCKET = 'demo-noveliaa.appspot.com'
 npm run test:cloud
+npm run test:browser
 ```
 
-`firebase.test.json` uses loopback-only isolated ports: Firestore 18080, Storage
-19199, Authentication 19099 and Functions 15001. The development adapter uses
-the same Auth/Functions/Storage ports when `VITE_FIREBASE_EMULATORS=true`.
+`firebase.spark-test.json` starts only loopback Auth **19099** and Firestore
+**18080** for `demo-noveliaa`. `test:rules` uses the real Rules engine and Spark
+adapter. `test:cloud` uses real Auth-emulator tokens in the actual browser app:
+cloud receipt, second-device restore, offline checkpoint/reconnect, exact source
+download, unverified conversation provenance, revision restore and archive export.
+Its helper is outside the app import graph, rejects production/non-loopback
+targets and is never a production login bypass. No tests seed live manuscripts.
 
-`functions/test/service.test.mjs` exercises trusted-service behavior with a
-transactional in-memory repository and synthetic writing. `tests/rules.test.mjs`
-exercises actual Firestore/Storage emulator denial and owner controls plus the
-real Admin SDK transaction/blob path and an isolated backup restore. Emulator
-tests do not establish production project mapping, deployed function identity,
-IAM, CORS, storage retention or successful cloud backup scheduling. Keep those
-release checks visibly blocked until performed against the approved project.
-
-`test:cloud` runs the real HTTP callable boundary against Authentication,
-Functions, Firestore and Storage emulators, including authorization denials and
-valid owner controls. The development run used Node 24.19.0; the configured
-production Functions runtime is Node 22, which has not been deployed or tested
-in production. Scheduled backup invocation remains untested; the backup archive
-and isolated restore implementation is tested separately.
+Legacy `firebase.test.json`, Storage Rules, callable/backup sources and their
+earlier test results remain reference evidence. They are not deployed, required
+for Spark CI, or proof of the current adapter. Independent scheduled backup and
+physical-device/owner acceptance remain open.

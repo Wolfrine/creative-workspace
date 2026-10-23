@@ -1,0 +1,193 @@
+{
+  "format": "noveliaa-writing-archive",
+  "schemaVersion": 1,
+  "exportedAt": "2026-10-23T17:43:07.905Z",
+  "snapshot": {
+    "schemaVersion": 1,
+    "accountId": "device-preview-test-64364233ac88cbb4898bd16b30b3af5d99ea9bbf-1792777386598",
+    "documents": [
+      {
+        "id": "104756cb-3a2a-4841-aa1d-dc3bc6771f55",
+        "universeId": "dcf5b12a-40f3-42b7-8183-406485d0e661",
+        "title": "mixed-source",
+        "body": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "User:"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "The river rose."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Assistant:"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "An unapproved tower."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "हिंदी é 🙂"
+                }
+              ]
+            }
+          ]
+        },
+        "plainText": "User:\nThe river rose.\nAssistant:\nAn unapproved tower.\nहिंदी é 🙂",
+        "collectionId": null,
+        "trashed": false,
+        "order": 0,
+        "origin": "imported_chat",
+        "sourceOriginalIds": [
+          "cf0a952a-d233-4a50-a735-aebc02a5af31"
+        ],
+        "createdAt": "2026-10-23T17:43:07.700Z",
+        "updatedAt": "2026-10-23T17:43:07.700Z",
+        "headRevisionId": "814684c4-af1c-4415-a25d-a9b03f86fee0"
+      }
+    ],
+    "revisions": [
+      {
+        "id": "814684c4-af1c-4415-a25d-a9b03f86fee0",
+        "documentId": "104756cb-3a2a-4841-aa1d-dc3bc6771f55",
+        "universeId": "dcf5b12a-40f3-42b7-8183-406485d0e661",
+        "snapshot": {
+          "id": "104756cb-3a2a-4841-aa1d-dc3bc6771f55",
+          "universeId": "dcf5b12a-40f3-42b7-8183-406485d0e661",
+          "title": "mixed-source",
+          "body": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "User:"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The river rose."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Assistant:"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "An unapproved tower."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "हिंदी é 🙂"
+                  }
+                ]
+              }
+            ]
+          },
+          "plainText": "User:\nThe river rose.\nAssistant:\nAn unapproved tower.\nहिंदी é 🙂",
+          "collectionId": null,
+          "trashed": false,
+          "order": 0,
+          "origin": "imported_chat",
+          "sourceOriginalIds": [
+            "cf0a952a-d233-4a50-a735-aebc02a5af31"
+          ],
+          "createdAt": "2026-10-23T17:43:07.700Z",
+          "updatedAt": "2026-10-23T17:43:07.700Z"
+        },
+        "contentHash": "8e99a2b22b4aaf7d799f8b94d8c987c3ebd2aaf7c3e8943a41a54a9a49c6eae4",
+        "parentIds": [],
+        "createdAt": "2026-10-23T17:43:07.801Z"
+      }
+    ],
+    "originals": [
+      {
+        "id": "cf0a952a-d233-4a50-a735-aebc02a5af31",
+        "universeId": "dcf5b12a-40f3-42b7-8183-406485d0e661",
+        "name": "mixed-source.txt",
+        "bytesBase64": "VXNlcjoNClRoZSByaXZlciByb3NlLg0KQXNzaXN0YW50Og0KQW4gdW5hcHByb3ZlZCB0b3dlci4NCuCkueCkv+CkguCkpuClgCBlzIEg8J+Zgg==",
+        "sha256": "a2dfb229b30db8d489fb23dc4114ba15518b2aefb364fb8d833e99194ced7fa0",
+        "origin": "imported_chat",
+        "verification": "unverified",
+        "sourceReference": "Explicit file import: mixed-source.txt",
+        "createdAt": "2026-10-23T17:43:07.699Z",
+        "speakerSegments": [
+          {
+            "role": "user",
+            "start": 0,
+            "end": 24
+          },
+          {
+            "role": "assistant",
+            "start": 24,
+            "end": 69
+          }
+        ]
+      }
+    ],
+    "universes": [
+      {
+        "id": "dcf5b12a-40f3-42b7-8183-406485d0e661",
+        "name": "My writing",
+        "createdAt": "2026-10-23T17:43:07.436Z"
+      }
+    ],
+    "collections": [],
+    "receipts": [
+      {
+        "revisionId": "814684c4-af1c-4415-a25d-a9b03f86fee0",
+        "level": "local",
+        "at": "2026-10-23T17:43:07.811Z"
+      }
+    ]
+  },
+  "sha256": "51d396e5260289b5c1a40fa971a94ee01c5cebbf3700ce6b6661df89de19563d"
+}

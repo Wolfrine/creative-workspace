@@ -1,111 +1,78 @@
-# Noveliaa Phase 1 results
+# Noveliaa Phase 1 results — Spark candidate
 
-**Implemented and visually checked; deployment attempted through GitHub Actions,
-blocked by Firebase setup/access. Not live or release accepted.** The owner
-approved Phase 1 and deployment on 23 October 2026. Living Atlas supplies optional context and
-explicit links; Quiet Folio supplies focused writing. Story Workbench's broader
-review workflows, external AI, reader editions and feedback remain deferred.
+Phase 1 implements capture, quiet rich-text writing, optional universes and
+collections, stable links/backlinks, Living Atlas, local search, focus/type
+controls, durable offline checkpoints, revision recovery, original provenance
+and portable exports. External AI, reader editions and feedback remain deferred.
 
-The implementation provides untitled capture, rich-text writing, optional
-collections/universes, stable links/backlinks, local search, focus/type controls,
-durable checkpoints/outbox, branch-preserving cloud commits, revision comparison
-and recovery, provenance, exact-original downloads and portable exports. See
-[architecture and limits](ARCHITECTURE.md) and [development commands](../README.md).
+**The owner requires Spark.** The current cloud adapter uses Authentication,
+Firestore and Hosting. It replaces the earlier Functions/Storage design. No
+billing upgrade, new key, Functions deployment or Storage bucket is requested.
+The owner reviews the actual Firebase site, **https://noveliaa.web.app**, after
+the Actions release passes. See [current deployment status](DEPLOYMENT.md).
 
-All automated material is **invented synthetic writing** executed through actual
-app/browser/emulator code. No author manuscript was imported or transformed.
-Firebase production identity and site mapping were subsequently verified by
-Actions metadata checks; deployed behavior remains unverified.
+## Current executed evidence
 
-## Candidate and retained evidence
+All writing in tests and captures is **invented synthetic material** executed
+through real application, browser and emulator code. No live manuscript was
+imported, rewritten or seeded. The [Spark manifest](evidence/phase1/spark/manifest.json)
+binds the current source, test logs and actual browser captures. The old visual
+candidate digest does not cover this adapter. The release verifies its own
+configured production build against every hosted file.
 
-Source candidate: `5d0035a034a94c8525316cd5cb47d047208b3d861539d4acadb243a2bb734bf6`.
-[Final manifest](evidence/phase1/round-6/manifest.json) identifies 32 runtime/config
-source files, the fixture script, Chromium version, 18 unframed renders and their
-SHA-256 values. [Candidate index](evidence/phase1/candidate.json) binds the 24
-production build files, tests/scripts and retained evidence. Run
-`node scripts/verify-candidate.mjs` validates the original unbound candidate.
-The deployment follow-up adds only `hosting.site = noveliaa` to its runtime/config
-inventory. After building, `node scripts/verify-deployment-candidate.mjs` verifies
-that exact configuration delta, all other 31 source files, 18 renders and all
-24 production build files against the original evidence. The [retained result](evidence/phase1/deployment/candidate-verification.json)
-passed. Hash verification checks identity, not experience or literary quality.
-
-| Verification | Actual result | Evidence |
+| Check | Actual result | Evidence |
 |---|---|---|
-| Client/config/engine tests | 31 passed, including 13 engine-to-trusted-service integrations; fake-indexeddb transaction tests are labeled | [Client log](evidence/phase1/client-tests.log) |
-| Trusted service/backup unit tests | 15 passed | [Backend log](evidence/phase1/backend-unit.log) |
-| Real Firebase emulators | 12 passed: 9 Rules/Admin-path checks and 3 authenticated HTTP callable checks | [Emulator log](evidence/phase1/backend-emulators.log) |
-| Browser flows | 14 passed in Chromium 156.0.8078.4; 320/390/768/1440px and short 390×480 writing | [Browser log](evidence/phase1/browser-tests.log), [machine report](evidence/phase1/browser-results.json) |
-| Forced browser-process crashes | 20/20 randomized post-acknowledgement interruptions recovered every earlier checkpoint; offline at crash, developer shell reopened online | [Crash report](evidence/phase1/crash-recovery.json) |
-| Evidence checker | 26 mutation tests passed; actual browser archive projection validated against a separate input oracle | [Checker log](evidence/phase1/checker-tests.log), [projection result](evidence/phase1/structural/report.json) |
-| Typecheck/production build | Passed; Vite reports an 847 kB main chunk (263 kB gzip) | [Build log](evidence/phase1/build.log) |
-| Synthetic disaster restore | 3 revisions, 1 original, 1 retained conflict; verified restore 4.670 s, 6,610-byte archive | [Emulator log](evidence/phase1/backend-emulators.log) |
+| Client/config/engine | 31 passed; emulator tests are skipped here and run separately | [Log](evidence/phase1/spark/client.log) |
+| Actual Firestore Rules + Spark adapter | 11 passed: owner isolation, immutable originals/chunks/history, hash verification, idempotency, racing roots, head protection, catalog additions, multi-chunk reconstruction, corrupt-source rejection and restore ancestry | [Log](evidence/phase1/spark/rules.log), [test source](../src/cloud/spark.emulator.test.ts) |
+| Authenticated browser + Auth/Firestore emulators | 3 passed: second-device writing, durable offline/reconnect and exact text export; byte-exact original/provenance/revision recovery/archive; rejected real Auth account | [Log](evidence/phase1/spark/authenticated-browser.log), [machine report](evidence/phase1/spark/browser-results.json) |
+| Writing/browser regressions | 14 passed at 320/390/768/1440px, including 390×480 writing and production shell offline cache | [Log](evidence/phase1/spark/regression-browser.log) |
+| Evidence checker | 26 mutation tests passed; new real-browser before/after archive checked against independent source-text oracle | [Log](evidence/phase1/spark/checker.log), [projection](evidence/phase1/spark/structural/report.json) |
+| Typecheck + production build | Passed; main bundle approximately 1,280 kB / 393 kB gzip; size warning remains | [Log](evidence/phase1/spark/build.log) |
 
-The final production-shell test cold reloads offline with cached code/styles/fonts
-and verifies that development notebook access is absent from the production
-build. It exercises the unconfigured access gate, **not an authenticated author's
-offline cold start**. The archive browser test imports declared conversation
-material through the UI, downloads the exact original, checks assistant turns
-remain unverified, edits the derivative and validates saved-text oracles.
+The authenticated browser test signs into the real emulator, waits for “Synced,”
+opens a separate browser context, checks the same words, edits offline, closes
+the tab after a device acknowledgement, reopens online, then verifies the exact
+export on a second context. This is **not** an authenticated offline cold start.
+The production-shell test cold reloads cached code offline at the unconfigured
+gate. It confirms the development notebook path is absent from production.
 
-Important failures found and repaired: stale cloud refresh overwriting a new
-checkpoint; tab conflicts disappearing after restart; late original imports
-missing from sync; archive replay ordering and mutual links; archive restoration
-racing another tab or subsequent author edits; refresh losing fresh original
-references; unsupported formatting/metadata entering the editor. Separate
-persistent test stores now exercise both offline reconnect orders, retaining both
-branches and a visible conflict. These are logical devices, not physical phones.
+Browser checks found and fixed a fresh-device blank view despite loaded pages,
+an unhelpful raw permission message, and a stale optimistic-head Rules rejection
+that needed a proven-race retry. Original files, intervening revisions and losing
+branches remain recoverable; imported assistant statements stay unverified.
 
-## Writing performance and visual review
+## Visual verification
 
-On Windows/AMD Ryzen 5 2600, 12 logical CPUs, 32 GiB RAM, unthrottled loopback,
-the 400-document/two-universe/100,000-word development fixture includes 20,000-word
-scenes. Ten warm-library navigations were editable within 3 s. The
-beforeinput-to-second-animation-frame proxy p95 improved from **114.6 ms to
-56.6 ms** after memoizing shelf rendering and bounded snippets; device checkpoint
-p95 was **371.4 ms**. [Raw final profile](evidence/phase1/performance.json) and
-[retained baseline](evidence/phase1/performance-baseline-single-paragraph.json)
-describe the workload. This is not field INP, a production cold-load benchmark,
-a five-minute sync run, or the proposed 4-core/8-GiB/physical-phone A24 profile.
+Actual authenticated desktop **1440×1000** and mobile **390×844** writing were
+rendered and visually inspected. Denied-account gates were inspected at desktop
+and **320×640**. Hierarchy, prose width, controls and status labels remain readable
+with no horizontal overflow or clipping. Authenticated desktop/mobile axe scans
+reported zero violations. [Desktop](evidence/phase1/spark/desktop-writing.png),
+[mobile](evidence/phase1/spark/mobile-writing.png),
+[mobile access explanation](evidence/phase1/spark/mobile-denied.png).
 
-Six substantive design/refinement rounds retained real renders and independent
-critique. The final critic scored **8.2/10** overall, every critical dimension
-at least 8; the lead independently scored **8.3/10**, every dimension at least 8.
-History is contained and readable at 320px; short writing retains its lower active
-line with an actually painted, pointer-accessible formatting popup. Desktop/mobile
-axe scans have zero reported violations. See the [design record](design/PHASE1_REVIEW.md).
-These establish a reviewed candidate, not owner acceptance or screen-reader/IME
-acceptance. A scanner did not determine aesthetic scores.
+The six original visual rounds, final critic 8.2 / lead 8.3, process-crash recovery
+20/20, and writing-performance profile remain historical evidence under
+`evidence/phase1`. The unchanged editor still has that design history; those
+scores and timings were not remeasured for Spark. Earlier callable, Storage and
+backup test results describe an unshipped architecture, not the current backend.
 
-## Acceptance gaps and decisions
+## Remaining acceptance
 
-**G1 remains open.** Executed subsets cover A01–A11/A22–A24, with owner-only
-security/account-isolation controls also tested. Complete original procedures are
-not blanket passes. Remaining checks include authenticated production/offline
-cold bootstrap and sign-out/account switching with pending writing, real auth
-expiry, denied persistence, the full golden search/index matrix, Firefox/Safari,
-400% browser zoom, manual screen-reader work, physical Android/iPhone keyboard,
-Hindi IME/rotation/background behavior, and H01–H04/H07 author sessions. The
-production backup schedule, ≤24-hour RPO, IAM/retention and production restore
-have not been established. G2–G4 are deferred and have no fabricated records.
+G1 remains open for the author's real writing/recovery session and physical
+Android/iPhone keyboard, Hindi IME, rotation and background behavior. Production
+Google sign-in/sync, authenticated offline cold start, auth expiry, pending-work
+account switching, Safari/Firefox, manual screen-reader and 400% zoom checks are
+not inferred from Chromium emulator results. G2–G4 remain deferred.
 
-The next owner review is a real writing/recovery session on the deployed Firebase
-app. The full GitHub CI run [39979059134](https://github.com/Wolfrine/creative-workspace/actions/runs/39979059134)
-passed on `36ecfeb`; the release run [39979048780](https://github.com/Wolfrine/creative-workspace/actions/runs/39979048780)
-authenticated to the verified `noveliaa` project/site but stopped before mutations
-because the deployment identity then lacked `serviceusage.services.get`. The
-owner has since granted Service Usage Viewer: the same standard Hosting dry run
-[now passes](https://github.com/Wolfrine/creative-workspace/actions/runs/39989576581/attempts/2).
-The release registered Web App `1:278082781314:web:9a4b7acef07fa8e4dfb49b`.
-The supported Auth CLI's initial provisioning is now blocked by
-`serviceusage.services.enable`; no Hosting release has been published. A broader
-read-only audit also confirmed absent Functions deployment/Rules-release
-permissions and incomplete Firebase services. See the [exact report and owner
-setup steps](DEPLOYMENT.md). Billing status cannot be read by the identity.
-The project/site mapping is resolved; production author UID, bucket, region,
-IAM and billing remain prerequisites. Separate backup identity/retention remain
-unprovisioned. No secret was opened, production bypass added, or irreversible
-bucket lock performed. The initial archive/import size limits
-are explicit; a larger archive format is required before moving a notebook whose
-full history exceeds 64 MiB.
+Spark has finite storage/read/write quotas. Failure retains local writing and its
+outbox; it never earns a false cloud receipt. Cloud load currently reads the full
+library/history. Per-import, blob and archive limits are explicit in
+[architecture](ARCHITECTURE.md). Large libraries need pagination and a larger
+archive format before complete-history portability beyond the current limit.
+
+Device checkpoints, immutable cloud history and downloadable archives are current
+recovery. Scheduled independent backups, protected retention, PITR and a verified
+24-hour disaster RPO are not shipped. No bucket lock, billing/IAM change or
+production login bypass was performed. Initial console Google-provider setup
+and the actual hosted Actions result are tracked in [deployment](DEPLOYMENT.md).

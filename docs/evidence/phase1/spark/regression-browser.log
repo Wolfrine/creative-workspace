@@ -1,0 +1,33 @@
+
+> noveliaa@0.1.0 test:browser
+> playwright test
+
+[WebServer] (node:140988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:62808) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:139100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:137228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 14 tests using 1 worker
+
+(node:135512) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\browser\production.spec.ts:3:1 › production shell cold reloads offline and development notebook access is absent (4.1s)
+  ok  2 tests\browser\writing.spec.ts:16:1 › A01/A08 immediate capture, Unicode, caret and undo (3.6s)
+  ok  3 tests\browser\writing.spec.ts:30:1 › A08 formatted archive restores into an isolated browser and HTML retains formatting (3.3s)
+  ok  4 tests\browser\writing.spec.ts:49:1 › A03 failed storage leaves open text exportable and never says saved (2.0s)
+  ok  5 tests\browser\writing.spec.ts:58:1 › A22/A23 short mobile writing, keyboard navigation and 200 percent text remain usable (3.0s)
+  ok  6 tests\browser\writing.spec.ts:82:1 › A02 offline editing survives a new tab and preserves acknowledged revisions (2.9s)
+  ok  7 tests\browser\writing.spec.ts:90:1 › A06 revision restoration retains the intervening version (2.7s)
+  ok  8 tests\browser\writing.spec.ts:102:1 › A07/A09 archive from browser preserves sources and independent saved-text oracle (2.9s)
+  ok  9 tests\browser\writing.spec.ts:136:1 › A11 search stays in the selected universe (1.5s)
+  ok 10 tests\browser\writing.spec.ts:151:1 › A06 stable links, backlinks and non-drag organization survive title changes (3.2s)
+  ok 11 tests\browser\writing.spec.ts:167:44 › A22/A23 writing layout and accessibility at 320px (2.8s)
+  ok 12 tests\browser\writing.spec.ts:167:44 › A22/A23 writing layout and accessibility at 390px (2.8s)
+  ok 13 tests\browser\writing.spec.ts:167:44 › A22/A23 writing layout and accessibility at 768px (2.9s)
+  ok 14 tests\browser\writing.spec.ts:167:44 › A22/A23 writing layout and accessibility at 1440px (3.2s)
+
+  14 passed (45.0s)

@@ -4,7 +4,8 @@
   "projectDisplayName": "Noveliaa",
   "hostingSite": "noveliaa",
   "url": "https://noveliaa.web.app",
-  "functionsRegion": "asia-south1",
+  "appId": "1:278082781314:web:9a4b7acef07fa8e4dfb49b",
+  "planConstraint": "Spark",
   "authorEmail": "schttewary@gmail.com",
   "metadataRun": "https://github.com/Wolfrine/creative-workspace/actions/runs/39977395179"
 }

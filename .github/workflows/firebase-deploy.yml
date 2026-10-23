@@ -4,9 +4,18 @@ on:
   push:
     branches: [main, codex/noveliaa-phase-1]
     paths:
-      - .github/workflows/firebase-deploy.yml
+      - src/**
+      - public/**
+      - index.html
+      - package*.json
+      - vite.config.ts
+      - firebase.json
+      - firestore.rules
+      - .firebaserc
       - deployment/**
-      - functions/scripts/prepare-release.mjs
+      - functions/scripts/prepare-spark-release.mjs
+      - scripts/verify-*.mjs
+      - .github/workflows/firebase-deploy.yml
 permissions:
   contents: read
 concurrency:
@@ -16,50 +25,53 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    env:
-      npm_config_fetch_retries: '3'
-      npm_config_fetch_retry_mintimeout: '2000'
-      npm_config_fetch_retry_maxtimeout: '10000'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - run: npm ci --no-audit --no-fund
+      # Admin SDK is used for emulator tests and owner setup in Actions.
+      # The directory is not a Functions deployment source in firebase.json.
       - run: npm --prefix functions ci --no-audit --no-fund
       - run: npm test
-      - run: npm --prefix functions test
       - run: npm run test:evidence
+      - run: npm run test:rules
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:cloud
+      - run: npm run test:browser
+      - name: Verify retained Spark source and visual evidence
+        run: node scripts/verify-deployment-candidate.mjs
       - id: auth
         uses: google-github-actions/auth@v2
         with:
           credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
-      - name: Refresh project state after owner configuration changes
+      - name: Verify exact Firebase app, site and private author on Spark
         env:
           VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
-        run: node functions/scripts/inspect-firebase.mjs
-      - name: Register or verify the exact Noveliaa Web App
-        id: webapp
-        env:
-          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
-        run: node functions/scripts/prepare-release.mjs --app-only
-      - name: Configure Google sign-in with Firebase's supported CLI
-        if: steps.webapp.outputs.configure_auth == 'true'
-        run: npx firebase deploy --config deployment/firebase.auth.json --project noveliaa --only auth --non-interactive
-      - name: Verify exact Firebase app, site, author and cloud prerequisites
-        env:
-          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
-        run: node functions/scripts/prepare-release.mjs
-      - run: npm run build
-      - name: Deploy private storage and Firestore rules
-        run: npx firebase deploy --project noveliaa --only firestore:rules,storage --non-interactive
-      - name: Deploy writing callables (backup scheduling requires separate provisioning)
-        run: npx firebase deploy --project noveliaa --only functions:noveliaa-phase1:loadWorkspace,functions:noveliaa-phase1:saveCatalog,functions:noveliaa-phase1:registerDocumentIdentities,functions:noveliaa-phase1:preserveOriginal,functions:noveliaa-phase1:commitWriting --non-interactive
-      - name: Publish the verified Noveliaa Hosting site
-        run: npx firebase deploy --project noveliaa --only hosting --non-interactive
-      - name: Verify live app and reserved Firebase configuration
-        run: |
-          curl --fail --silent --show-error https://noveliaa.web.app/ | grep -q 'Noveliaa'
-          curl --fail --silent --show-error https://noveliaa.web.app/__/firebase/init.json
-          echo 'Live URL: https://noveliaa.web.app' >> "$GITHUB_STEP_SUMMARY"
+        run: node functions/scripts/prepare-spark-release.mjs
+      - name: Build with verified public Firebase SDK configuration
+        run: npm run build
+      - name: Deploy owner-only Firestore rules and matching Hosting site
+        run: npx firebase deploy --project noveliaa --only firestore:rules,hosting --non-interactive
+      - name: Verify every hosted build file and Firebase app identity
+        run: node scripts/verify-hosted.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        continue-on-error: true
+        with:
+          name: spark-release-evidence
+          path: |
+            .local/spark-browser*
+            .local/hosted-verification.json
+            test-results/
+          if-no-files-found: ignore

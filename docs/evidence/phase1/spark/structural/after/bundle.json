@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "dataset_kind": "synthetic",
+  "execution_kind": "real browser runtime with invented fixtures",
+  "app_revision": "spark-phase1",
+  "author_id": "device-preview-test-64364233ac88cbb4898bd16b30b3af5d99ea9bbf-1792777386598",
+  "behavior_disabled": true,
+  "originals": [
+    {
+      "id": "cf0a952a-d233-4a50-a735-aebc02a5af31",
+      "universe_id": "dcf5b12a-40f3-42b7-8183-406485d0e661",
+      "path": "original-cf0a952a-d233-4a50-a735-aebc02a5af31.bin",
+      "sha256": "a2dfb229b30db8d489fb23dc4114ba15518b2aefb364fb8d833e99194ced7fa0",
+      "origin": "imported_chat",
+      "verification": "unverified",
+      "source_reference": "Explicit file import: mixed-source.txt"
+    }
+  ],
+  "revisions": [
+    {
+      "id": "814684c4-af1c-4415-a25d-a9b03f86fee0",
+      "universe_id": "dcf5b12a-40f3-42b7-8183-406485d0e661",
+      "document_id": "104756cb-3a2a-4841-aa1d-dc3bc6771f55",
+      "parent_ids": [],
+      "source_original_ids": [
+        "cf0a952a-d233-4a50-a735-aebc02a5af31"
+      ],
+      "origin": "imported_chat",
+      "path": "revision-814684c4-af1c-4415-a25d-a9b03f86fee0.txt",
+      "sha256": "8fd6aa03bf25fc0993c3e1204167ae9a0fe7879139b8ecb46eccc428647167ff"
+    },
+    {
+      "id": "de0ee62c-ddc9-4820-9ca3-8a2244f0f5f9",
+      "universe_id": "dcf5b12a-40f3-42b7-8183-406485d0e661",
+      "document_id": "104756cb-3a2a-4841-aa1d-dc3bc6771f55",
+      "parent_ids": [
+        "814684c4-af1c-4415-a25d-a9b03f86fee0"
+      ],
+      "source_original_ids": [
+        "cf0a952a-d233-4a50-a735-aebc02a5af31"
+      ],
+      "origin": "imported_chat",
+      "path": "revision-de0ee62c-ddc9-4820-9ca3-8a2244f0f5f9.txt",
+      "sha256": "d4754c00ad801fe325ffb8a3a79ea66397c0b9d91b068716b797f2c185c1bde6"
+    }
+  ],
+  "proposals": [],
+  "decisions": [],
+  "assets": [],
+  "editions": [],
+  "feedback": [],
+  "consents": [],
+  "behavior": [],
+  "save_receipts": [
+    {
+      "id": "814684c4-af1c-4415-a25d-a9b03f86fee0:local",
+      "revision_id": "814684c4-af1c-4415-a25d-a9b03f86fee0",
+      "level": "local"
+    },
+    {
+      "id": "de0ee62c-ddc9-4820-9ca3-8a2244f0f5f9:local",
+      "revision_id": "de0ee62c-ddc9-4820-9ca3-8a2244f0f5f9",
+      "level": "local"
+    }
+  ]
+}

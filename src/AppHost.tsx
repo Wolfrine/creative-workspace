@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import App from './App';
-import { createCloudAdapter, initializeFirebaseSession, signInWithGoogle, signOutFirebase } from './cloud/firebase';
+import { createCloudAdapter, initializeFirebaseSession, signInWithGoogle, signOutFirebase, verifyAuthorAccess } from './cloud/firebase';
 import type { Session } from './domain/model';
 import { useWorkspace } from './state/useWorkspace';
 import './styles.css';
@@ -24,16 +24,25 @@ export default function AppHost() {
       setSession({ uid: 'device-preview-' + notebook, displayName: 'Device preview', localOnly: true, signOut: async () => { location.assign(location.pathname); } });
       setLoading(false); return;
     }
+    let disposed = false;
     let stop: (() => void) | undefined;
     void initializeFirebaseSession().then(client => {
+      if (disposed) return;
       if (!client) { setLoading(false); return; }
       setConfigured(true);
       stop = onAuthStateChanged(client.auth, user => {
-        setSession(user ? { uid: user.uid, displayName: user.displayName || 'Author', localOnly: false, signOut: signOutFirebase } : null);
-        setLoading(false);
+        setSession(null);
+        if (!user) { setError(''); setLoading(false); return; }
+        setLoading(true);
+        void verifyAuthorAccess(user.uid).then(() => {
+          if (disposed || client.auth.currentUser?.uid !== user.uid) return;
+          setError('');
+          setSession({ uid: user.uid, displayName: user.displayName || 'Author', localOnly: false, signOut: signOutFirebase });
+          setLoading(false);
+        }).catch(problem => { if (disposed || client.auth.currentUser?.uid !== user.uid) return; setSession(null); setError(problem instanceof Error ? problem.message : String(problem)); setLoading(false); });
       }, problem => { setError(problem.message); setLoading(false); });
     }).catch(problem => { setError(problem instanceof Error ? problem.message : String(problem)); setLoading(false); });
-    return () => stop?.();
+    return () => { disposed = true; stop?.(); };
   }, []);
   if (session) return <WritingWorkspace key={session.uid} session={session} />;
   return <main className="connection-gate">

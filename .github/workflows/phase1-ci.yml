@@ -26,16 +26,12 @@ jobs:
       - run: npm ci
       - run: npm --prefix functions ci
       - run: npm test
-      - run: npm --prefix functions test
       - run: npm run build
       - run: npm run test:evidence
       - run: npm run test:rules
-      - name: Authenticated callable integration (local emulators only)
-        env:
-          NOVELIAA_OWNER_UID: emulator-author
-          NOVELIAA_STORAGE_BUCKET: demo-noveliaa.appspot.com
-        run: npx firebase emulators:exec --only auth,functions,firestore,storage --project demo-noveliaa --config firebase.test.json "node --test functions/test/callable-emulator.mjs"
       - run: npx playwright install --with-deps chromium
+      - name: Authenticated Spark writing, privacy, offline sync and recovery
+        run: npm run test:cloud
       - run: npm run test:browser
       - uses: actions/upload-artifact@v4
         if: always()
@@ -46,4 +42,5 @@ jobs:
             playwright-report/
             test-results/
             docs/evidence/phase1/browser-results.json
+            .local/spark-browser*
           if-no-files-found: ignore

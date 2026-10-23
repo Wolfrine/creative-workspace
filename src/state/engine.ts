@@ -58,7 +58,7 @@ export class WritingEngine {
       }
       const preferences = await this.db.getPreference<{ universeId: string; documentId: string | null }>('navigation');
       const activeUniverseId = disk.universes.some(x => x.id === preferences?.universeId) ? preferences!.universeId : disk.universes[0].id;
-      const activeDocumentId = disk.documents.some(x => x.id === preferences?.documentId && x.universeId === activeUniverseId && !x.trashed) ? preferences!.documentId : null;
+      const activeDocumentId = disk.documents.some(x => x.id === preferences?.documentId && x.universeId === activeUniverseId && !x.trashed) ? preferences!.documentId : disk.documents.filter(x => x.universeId === activeUniverseId && !x.trashed).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0]?.id ?? null;
       this.publish({ ...disk, ready: true, activeUniverseId, activeDocumentId });
       if (typeof BroadcastChannel !== 'undefined') {
         this.channel = new BroadcastChannel('noveliaa:' + this.accountId);

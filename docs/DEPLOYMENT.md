@@ -1,211 +1,64 @@
-# Noveliaa Firebase release — 23 October 2026
+# Noveliaa deployment — GitHub Actions, Spark
 
-The owner authorized deployment through GitHub Actions and reviews the hosted
-app. Local previews are development/test surfaces. **No app has been published.**
+Owner review uses **https://noveliaa.web.app**, the existing Firebase site for
+project `noveliaa` (278082781314), Web App
+`1:278082781314:web:9a4b7acef07fa8e4dfb49b`. Localhost is development evidence
+only. Deployment is already authorized; the owner requires Spark.
 
-## Verified destination and actual runs
+## Release path
 
-| Item | Observed value |
-|---|---|
-| Firebase project | `noveliaa`, number `278082781314`, display name `Noveliaa` |
-| Existing Hosting site | `projects/noveliaa/sites/noveliaa`, default site |
-| Hosting API's default URL | **https://noveliaa.web.app** |
-| Existing Actions identity | `firebase-adminsdk-fbsvc@noveliaa.iam.gserviceaccount.com` |
-| Credential route | Existing `FIREBASE_SERVICE_ACCOUNT`, consumed only by Google's authentication Action |
-| Web app registration | Registered by the authorized release: `1:278082781314:web:9a4b7acef07fa8e4dfb49b`, display name `Noveliaa` |
-| Authentication | `CONFIGURATION_NOT_FOUND`; Google provider configuration absent |
-| Firestore | Fresh check: native `(default)` database exists in `asia-south1`, created `2026-10-23T16:47:33.855769Z`; readable through the existing Actions key |
-| Storage | Bucket list returned no items |
-| Billing | Permission denied; plan and billing linkage unknown |
-| Public Hosting check | HTTP 404; not a usable review link yet |
+[Deploy Noveliaa to Firebase](../.github/workflows/firebase-deploy.yml) uses the
+existing `FIREBASE_SERVICE_ACCOUNT` secret. Before cloud changes it runs unit,
+Rules/emulator, authenticated browser, local-writing browser and evidence checks.
+The retained Spark manifest binds the reviewed source and actual renders.
 
-**Current result after the owner added Service Usage Viewer:** the permission is
-verified and the [standard Hosting CLI dry run passes](https://github.com/Wolfrine/creative-workspace/actions/runs/39989576581/attempts/2)
-(job `120545866065`, CLI 15.34.1). This was a dry run, not publication.
-The [resumed release](https://github.com/Wolfrine/creative-workspace/actions/runs/39991129209)
-registered the Web App above. The [supported Google sign-in CLI attempt](https://github.com/Wolfrine/creative-workspace/actions/runs/39991936827)
-then failed at Firebase's provisioning API because the deployment identity lacks
-`serviceusage.services.enable`. The prior attempt hit a transient npm registry
-`ECONNRESET`; the retried run completed dependency/test steps and reached Firebase.
+`prepare-spark-release.mjs` verifies the project, exact Web App and site, native
+database, Google provider and private author UID. It preserves existing domains,
+links the verified Web App when needed, and refuses to overwrite another author.
+It supplies public client configuration to the build. The only deployment is:
 
-The checked-in `deployment/firebase.auth.json` enables only Google sign-in and
-uses the verified Noveliaa domains. The release skips initial Auth provisioning
-when Google sign-in is already enabled, preserving existing provider settings.
-The SDK config now names `noveliaa.firebasestorage.app`, but that is not evidence
-the bucket exists: the real Storage list is empty, and release validation now
-checks the actual bucket's metadata before configuring the author.
-
-The [comprehensive read-only audit](https://github.com/Wolfrine/creative-workspace/actions/runs/39979368724)
-succeeded. The [release attempt](https://github.com/Wolfrine/creative-workspace/actions/runs/39979048780)
-passed client/backend/evidence checks and authenticated, then stopped on
-`serviceusage.services.get` before creating an app, author, allowlist or release.
-The [full CI run](https://github.com/Wolfrine/creative-workspace/actions/runs/39979059134)
-also passed its build, emulator and browser checks. These tests use synthetic
-material; they do not establish authenticated production behavior.
-
-The owner's screenshot shows the same Admin SDK account used by Actions. After
-the owner created Firestore, [fresh read-only run 39990565880](https://github.com/Wolfrine/creative-workspace/actions/runs/39990565880)
-(job `120540930363`, checked `2026-10-23T16:53:57.573Z`) successfully read the new
-database using the existing key. In that same run, the Hosting service inspection
-still returned HTTP 403, `Permission denied to get service [firebasehosting.googleapis.com]`,
-and `testIamPermissions` still omitted `serviceusage.services.get`.
-Thus the earlier Firestore-unavailable observation is superseded by a real,
-readable database, while the independent Hosting access failure remains.
-
-The existing private key authenticates successfully. Creating Firestore later
-does not require regenerating that key. IAM roles govern what the authenticated
-service account can do; the screenshot's key-generation panel does not display
-those project roles. See [Google's service-account model](https://docs.cloud.google.com/iam/docs/service-account-overview).
-
-An earlier release attempt used the invalid permission name
-`firebasehosting.versions.create`. It was corrected to `firebasehosting.sites.update`
-using the [official Hosting permission reference](https://docs.cloud.google.com/iam/docs/roles-permissions/firebasehosting)
-and the pinned Firebase CLI deployment implementation. That correction exposed the
-actual access gap above. Missing local CLI login is not the blocker.
-
-## Comparison with working PTI and GTOP releases
-
-The owner requested this comparison after the first setup report. Both repositories
-were inspected directly; neither was changed.
-
-| Reference | Inspected implementation and actual outcome |
-|---|---|
-| [PTI workflow](https://github.com/Wolfrine/PTI/blob/main/.github/workflows/firebase-deploy.yml) | Writes the existing `FIREBASE_SERVICE_ACCOUNT` to a temporary ADC file inside Actions, then runs Firebase CLI. [Run 39768690142](https://github.com/Wolfrine/PTI/actions/runs/39768690142), job `119791103117`, used CLI **15.34.1** and successfully released both default and One Piece Hosting sites. Optional MCP Functions were skipped because their separate API-key secret was absent. |
-| [GTOP workflow](https://github.com/Wolfrine/gtop-app/blob/main/.github/workflows/firebase-deploy.yml) | Uses `FirebaseExtended/action-hosting-deploy@v0` with `firebaseServiceAccount` from the same secret name. Its Action invokes Firebase CLI. [Run 38210443615](https://github.com/Wolfrine/gtop-app/actions/runs/38210443615), job `114689130853`, successfully promoted Hosting. Its backend workflow was skipped for that frontend release; existing backend readiness/rules were verified separately. |
-| [GTOP backend workflow](https://github.com/Wolfrine/gtop-app/blob/main/.github/workflows/firebase-v2-backend.yml) | Uses Google's auth Action with the same secret and a separate protected backend release. Hosting and backend deployment scopes are explicit. |
-
-Noveliaa then repeated PTI's credential-file pattern with its own existing repo
-secret, verified the credential's project ID is exactly `noveliaa`, built the app,
-and ran **the same CLI version, 15.34.1**, without any custom release preflight:
-
-```text
-npx firebase deploy --project noveliaa --only hosting --dry-run --non-interactive
+```sh
+npx firebase deploy --project noveliaa --only firestore:rules,hosting --non-interactive
 ```
 
-[Run 39989576581](https://github.com/Wolfrine/creative-workspace/actions/runs/39989576581),
-job `120537535792`, failed with Firebase CLI's own response:
+`verify-hosted.mjs` compares every published file's SHA-256 to that run's build,
+then verifies `/__/firebase/init.json` matches the exact project and App ID. A
+successful HTTP response alone is not release acceptance. Actual desktop/mobile
+hosted inspection and the owner's Google sign-in remain separate checks.
 
-```text
-Request to https://serviceusage.googleapis.com/v1/projects/noveliaa/services/firebasehosting.googleapis.com
-had HTTP Error: 403, Permission denied to get service [firebasehosting.googleapis.com]
-```
+## Setup status and correction
 
-This confirms the secret exists and authenticates, and the failure survives removal
-of the custom preflight and use of PTI's working credential route. It does not
-establish the contents or role grants of either other repository's secret.
-Identically named secrets are not evidence of identical Google IAM grants.
-The temporary Noveliaa credential was removed by the job's cleanup step; no key
-or access token was printed or copied into the repository.
+The same existing account's standard Hosting dry run
+[passed](https://github.com/Wolfrine/creative-workspace/actions/runs/39989576581/attempts/2).
+The default native Firestore database exists in Mumbai (`asia-south1`), and the
+Web App is registered. Creating Firestore later did not invalidate the key.
 
-The owner supplied `serviceusage.services.get` with
-[Service Usage Viewer](https://docs.cloud.google.com/iam/docs/roles-permissions/serviceusage),
-and the standard CLI check now passes. Auth initialization, application Storage,
-Functions access and billing remain separate prerequisites below.
+Earlier release attempts chose Functions and Storage, then requested Blaze and
+additional deployment roles. That was the wrong Phase 1 architecture for the
+owner's Spark requirement. Those dependencies and the Auth CLI provisioning step
+have been removed. Do not repeat those role/billing requests.
 
-## Permission audit
+The latest verified owner setup gap is normal Google provider enablement in
+[Noveliaa Authentication](https://console.firebase.google.com/project/noveliaa/authentication/providers).
+Select Get started if shown, enable Google, choose support email and save. The
+release can then resolve the existing configured author account and publish.
+It makes no IAM, billing, API-enablement or bucket changes. If this state changes,
+record actual Actions evidence rather than assuming the earlier gap persists.
 
-The audit calls `testIamPermissions`; it does not grant roles. Project-level
-permissions returned as granted:
+The read-only metadata workflow projects only the Spark target and relevant
+permissions. No credentials, OAuth tokens or manuscript content enter its logs.
 
-```text
-datastore.indexes.list
-firebase.clients.create
-firebasehosting.sites.update
-firebaserules.releases.update
-firebaserules.rulesets.create
-serviceusage.services.get
-```
+## Evidence and release limits
 
-Requested permissions absent from the response:
+Original visual rounds and Functions tests remain historical evidence. Spark
+changes have a separate source/render manifest under `evidence/phase1/spark`;
+the old candidate digest does not cover the new cloud adapter. The release
+build embeds verified public Firebase settings, so its file hashes are recorded
+by the actual hosted verification rather than borrowed from an unconfigured
+local build.
 
-```text
-serviceusage.services.enable
-cloudfunctions.functions.list
-cloudfunctions.functions.create
-cloudfunctions.functions.get
-cloudfunctions.functions.update
-cloudfunctions.functions.delete
-cloudfunctions.operations.get
-cloudfunctions.functions.setIamPolicy
-iam.serviceAccounts.actAs
-run.services.setIamPolicy
-datastore.indexes.create
-datastore.indexes.update
-datastore.indexes.delete
-firebaserules.releases.create
-```
-
-This is an observed permission test, not a complete IAM policy or a prescription
-to grant every permission project-wide. `actAs` may be scoped to the selected
-runtime/build service accounts and needs a resource-specific check after those
-accounts are chosen. Firebase CLI requests the index permissions even though this
-release targets Firestore Rules. Service enablement is needed only for bootstrap
-when APIs are disabled; the prepared release script does not enable them.
-
-## One-time owner setup
-
-1. In [project settings](https://console.firebase.google.com/project/noveliaa/settings/general),
-   confirm the project above and intended Google account. The release binding
-   currently proposes `schttewary@gmail.com`, from the connected GitHub owner
-   profile; no Firebase author account exists yet. A different author must be
-   bound explicitly before release.
-2. Inspect [billing](https://console.firebase.google.com/project/noveliaa/usage/details).
-   Decide any billing linkage/upgrade in the console. Cloud Storage requires
-   Blaze under [Firebase's current policy](https://firebase.google.com/docs/storage/faqs-storage-changes-announced-sept-2024).
-   This run could not determine the existing plan and made no billing changes.
-3. Initialize [Authentication](https://console.firebase.google.com/project/noveliaa/authentication/providers)
-   and enable Google sign-in. Authorize `noveliaa.web.app` and
-   `noveliaa.firebaseapp.com` as applicable. Keep author access enforced by the
-   server UID allowlist; enabling a provider does not grant workspace access.
-4. The native `(default)` [Firestore database](https://console.firebase.google.com/project/noveliaa/firestore)
-   is now verified in `asia-south1` (Mumbai). Verify its private/production Rules.
-   Initialize/verify the default [Storage bucket](https://console.firebase.google.com/project/noveliaa/storage)
-   with private/production Rules and choose its location before creation.
-   `asia-south1` is also the proposed Functions region; the bucket location
-   remains unknown. Do not infer it from the database or Functions setting.
-5. In [project IAM](https://console.cloud.google.com/iam-admin/iam?project=noveliaa),
-   review the remaining known deployment access for the existing Actions account:
-
-   | Purpose | Predefined role and scope |
-   |---|---|
-   | Initial API setup required by the Auth provisioning API | **Service Usage Admin** (`roles/serviceusage.serviceUsageAdmin`), project; bootstrap access can be removed by the owner after required APIs are configured, retaining Viewer |
-   | Deploy the five trusted writing callables | **Cloud Functions Admin** (`roles/cloudfunctions.admin`), project |
-   | Create the initial private Firestore/Storage Rules releases | **Firebase Rules Admin** (`roles/firebaserules.admin`), project |
-   | Deploy using the selected runtime/build identities | **Service Account User** (`roles/iam.serviceAccountUser`), scoped to those service accounts; do not infer the identities before provisioning |
-
-   See the official [Functions deployment guide](https://firebase.google.com/docs/projects/iam/permissions#functions),
-   [Rules role](https://docs.cloud.google.com/iam/docs/roles-permissions/firebaserules),
-   and [Service Usage role](https://docs.cloud.google.com/iam/docs/roles-permissions/serviceusage).
-   This covers observed missing deployment capabilities, not a guarantee that
-   runtime/build identities are already provisioned. Independently verify the
-   runtime's Firestore/Storage access and the build service agents. Index-write
-   permissions in the CLI's generic permission probe are not a request to deploy
-   indexes or grant unrelated index administration. No project Owner/Editor role
-   or credential sharing is needed for this proposal.
-6. Rerun metadata preflight, then **Deploy Noveliaa to Firebase** from the approved
-   branch. Workflow dispatch is available once the workflow is on the default
-   branch; the current development branch also has a narrowly scoped push trigger
-   for deployment workflow/binding changes. The release validates the exact project,
-   site, Web App, Google sign-in, database, bucket and author UID, builds, deploys
-   private Rules and five writing callables, then publishes Hosting.
-
-After successful release, verify the actual Firebase app at desktop/mobile sizes,
-sign-in and production synchronization without importing a real manuscript as
-test data. Report authenticated/offline, physical-device and author acceptance
-separately. Do not present an HTTP response or a setup gate as a working app.
-
-## Source and evidence preservation
-
-`.firebaserc`, `firebase.json`, `deployment/firebase-binding.json`,
-`.github/workflows/firebase-deploy.yml` and the two Functions release/preflight
-scripts contain the concrete release path. No UI source changed during this
-follow-up. [Candidate verification](evidence/phase1/deployment/candidate-verification.json)
-confirmed 31 unchanged runtime/config source files, all 18 retained visual renders
-and all 24 rebuilt production files. Only the explicit Hosting-site binding differs
-from the original visual candidate's runtime/config inventory.
-
-Production publication, authenticated offline cold start, production IAM/CORS,
-separate backup identity/bucket/retention, scheduled backups and disaster recovery
-remain unverified. The workflow excludes scheduled backup deployment until its
-separate prerequisites are provisioned. No production login bypass, manuscript
-seed, IAM expansion, billing upgrade or retention lock was performed.
+Production author sign-in, authenticated offline cold start, physical mobile
+keyboards/IME and the author's writing/recovery session are distinct acceptance
+gates. No production Auth bypass or synthetic manuscript is deployed. Cloud
+history is not an independent disaster backup; downloadable archives are the
+current portable recovery path. Scheduled protected backups remain deferred.

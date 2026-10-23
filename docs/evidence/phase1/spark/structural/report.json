@@ -1,0 +1,15 @@
+{
+  "status": "STRUCTURAL_EVIDENCE_VALID",
+  "dataset_kind": "synthetic",
+  "app_revision": "spark-phase1",
+  "profile": "writing",
+  "scope": "supplied export projection only; runtime/human gates not assessed",
+  "checks": [
+    "C01 bytes",
+    "C02 revision graph",
+    "C03 saved-text oracle",
+    "C09 immutable history",
+    "later-phase absence"
+  ],
+  "problems": []
+}
