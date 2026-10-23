@@ -33,6 +33,47 @@ using the [official Hosting permission reference](https://docs.cloud.google.com/
 and the pinned Firebase CLI deployment implementation. That correction exposed the
 actual access gap above. Missing local CLI login is not the blocker.
 
+## Comparison with working PTI and GTOP releases
+
+The owner requested this comparison after the first setup report. Both repositories
+were inspected directly; neither was changed.
+
+| Reference | Inspected implementation and actual outcome |
+|---|---|
+| [PTI workflow](https://github.com/Wolfrine/PTI/blob/main/.github/workflows/firebase-deploy.yml) | Writes the existing `FIREBASE_SERVICE_ACCOUNT` to a temporary ADC file inside Actions, then runs Firebase CLI. [Run 39768690142](https://github.com/Wolfrine/PTI/actions/runs/39768690142), job `119791103117`, used CLI **15.34.1** and successfully released both default and One Piece Hosting sites. Optional MCP Functions were skipped because their separate API-key secret was absent. |
+| [GTOP workflow](https://github.com/Wolfrine/gtop-app/blob/main/.github/workflows/firebase-deploy.yml) | Uses `FirebaseExtended/action-hosting-deploy@v0` with `firebaseServiceAccount` from the same secret name. Its Action invokes Firebase CLI. [Run 38210443615](https://github.com/Wolfrine/gtop-app/actions/runs/38210443615), job `114689130853`, successfully promoted Hosting. Its backend workflow was skipped for that frontend release; existing backend readiness/rules were verified separately. |
+| [GTOP backend workflow](https://github.com/Wolfrine/gtop-app/blob/main/.github/workflows/firebase-v2-backend.yml) | Uses Google's auth Action with the same secret and a separate protected backend release. Hosting and backend deployment scopes are explicit. |
+
+Noveliaa then repeated PTI's credential-file pattern with its own existing repo
+secret, verified the credential's project ID is exactly `noveliaa`, built the app,
+and ran **the same CLI version, 15.34.1**, without any custom release preflight:
+
+```text
+npx firebase deploy --project noveliaa --only hosting --dry-run --non-interactive
+```
+
+[Run 39989576581](https://github.com/Wolfrine/creative-workspace/actions/runs/39989576581),
+job `120537535792`, failed with Firebase CLI's own response:
+
+```text
+Request to https://serviceusage.googleapis.com/v1/projects/noveliaa/services/firebasehosting.googleapis.com
+had HTTP Error: 403, Permission denied to get service [firebasehosting.googleapis.com]
+```
+
+This confirms the secret exists and authenticates, and the failure survives removal
+of the custom preflight and use of PTI's working credential route. It does not
+establish the contents or role grants of either other repository's secret.
+Identically named secrets are not evidence of identical Google IAM grants.
+The temporary Noveliaa credential was removed by the job's cleanup step; no key
+or access token was printed or copied into the repository.
+
+The immediate standard-CLI failure needs `serviceusage.services.get` on `noveliaa`.
+An owner can supply that inspection permission with
+[Service Usage Viewer](https://docs.cloud.google.com/iam/docs/roles-permissions/serviceusage).
+This addresses the observed Hosting CLI check only; it does not provision Auth,
+Firestore, Storage, Functions access or billing. Those remain separately reported
+below, rather than being presented as missing credentials.
+
 ## Permission audit
 
 The audit calls `testIamPermissions`; it does not grant roles. Project-level
