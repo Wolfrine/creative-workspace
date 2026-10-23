@@ -1,6 +1,6 @@
 # Noveliaa — creative writing workspace
 
-**Status:** Phase 1 development approved by the owner on 23 October 2026. Build and test recoverable, author-first writing using Living Atlas with Quiet Folio. External AI collaboration, reader editions and feedback remain later phases. Production deployment is not approved.
+**Status:** Phase 1 development and Firebase deployment approved by the owner on 23 October 2026. Build and test recoverable, author-first writing using Living Atlas with Quiet Folio. Deploy through GitHub Actions to the verified existing Firebase app/site and provide its live URL after hosted visual checks. External AI collaboration, reader editions and feedback remain later phases.
 **Project:** `Wolfrine/creative-workspace` (private). **App name:** Noveliaa (working name).
 
 ## Why this exists

@@ -1,6 +1,9 @@
 name: Firebase metadata preflight (read only)
 on:
   workflow_dispatch:
+  push:
+    branches: [codex/noveliaa-phase-1]
+    paths: [.github/workflows/firebase-preflight.yml, functions/scripts/inspect-firebase.mjs]
 permissions:
   contents: read
 jobs:
@@ -17,6 +20,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - run: npm --prefix functions ci
       - name: Inspect nonsecret project and storage metadata
         env:
           VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
@@ -29,4 +33,8 @@ jobs:
         env:
           VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
         run: npx --yes firebase-tools@15 hosting:sites:list --project "$VERIFIED_PROJECT" --json
+      - name: Verify app identity and author configuration
+        env:
+          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
+        run: node functions/scripts/inspect-firebase.mjs
       # No credentials are printed, no API/billing/IAM changes, no deploy step.

@@ -1,6 +1,6 @@
 # Noveliaa repository instructions
 
-Read [INTENT.md](INTENT.md) and [.harness/objective.md](.harness/objective.md) first. The owner approved **Phase 1 development on 23 October 2026**, then instructed “Implement the proposed plan.” Production deployment and later stages remain unapproved.
+Read [INTENT.md](INTENT.md) and [.harness/objective.md](.harness/objective.md) first. The owner approved **Phase 1 development and Firebase deployment on 23 October 2026**. Deploy through GitHub Actions using the existing Firebase identity, verify the matching app/project/site, check the hosted UI, and share its live URL. The owner does not review localhost. Later stages remain unapproved.
 
 ## Current assignment: implement and evaluate Phase 1
 

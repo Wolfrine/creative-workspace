@@ -2,7 +2,7 @@
 
 **Owner intent:** Build a private author-first writing workspace that preserves raw creative control, supports externally connected AI collaboration, prepares an approved reading experience, and gathers respectful peer reactions.
 
-**Stage:** Owner-approved Phase 1 development and evaluation (23 October 2026). Production deployment and phases 2–4 remain unapproved.
+**Stage:** Owner-approved Phase 1 development, evaluation and deployment through GitHub Actions (23 October 2026). Verify the existing Firebase app/site and use its live URL for owner review. Phases 2–4 remain unapproved.
 
 ## Constraints
 
