@@ -38,6 +38,6 @@ The earlier [Space intent draft](https://chatgpt.com/space/page_6ad9dead8cec8191
 
 ## Decisions still open
 
-Authentication and private sharing model; data/attachment schema; plugin/MCP authorization and writeback contract; media review and versioning; reader-consent data retention; whether/how to migrate existing fragments; exact Firebase project ID, hosting target and deployment workflow. The owner has reported a Firebase project and a GitHub Actions secret named `FIREBASE_SERVICE_ACCOUNT`; no credentials should be opened or copied into source.
+Private sharing beyond the author; later-stage data/attachment schema; plugin/MCP authorization and writeback contract; media review and versioning; reader-consent data retention; whether/how to migrate existing fragments. Phase 1 uses Google sign-in and a server-side author allowlist. Firebase project `noveliaa` (number `278082781314`) and Hosting site `noveliaa` / `https://noveliaa.web.app` were verified through GitHub Actions. Initial Authentication, Firestore and Storage setup, deployment IAM, billing status, region and author identity remain release prerequisites; see [deployment evidence](docs/DEPLOYMENT.md). The existing secret is `FIREBASE_SERVICE_ACCOUNT`; no credentials should be opened or copied into source.
 
 **Codex handoff:** Implement the approved writing phase, preserve provenance and originals, and provide observable test/visual evidence. Flag deployment configuration and decisions that require the owner. Do not infer approval for later stages or publication.

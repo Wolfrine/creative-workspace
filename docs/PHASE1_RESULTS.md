@@ -1,7 +1,8 @@
 # Noveliaa Phase 1 results
 
-**Implemented for author review; not deployed or release accepted.** The owner
-approved Phase 1 on 23 October 2026. Living Atlas supplies optional context and
+**Implemented and visually checked; deployment attempted through GitHub Actions,
+blocked by Firebase setup/access. Not live or release accepted.** The owner
+approved Phase 1 and deployment on 23 October 2026. Living Atlas supplies optional context and
 explicit links; Quiet Folio supplies focused writing. Story Workbench's broader
 review workflows, external AI, reader editions and feedback remain deferred.
 
@@ -13,8 +14,8 @@ and recovery, provenance, exact-original downloads and portable exports. See
 
 All automated material is **invented synthetic writing** executed through actual
 app/browser/emulator code. No author manuscript was imported or transformed.
-Firebase production identity, project mapping and deployed behavior are not
-inferred from local tests.
+Firebase production identity and site mapping were subsequently verified by
+Actions metadata checks; deployed behavior remains unverified.
 
 ## Candidate and retained evidence
 
@@ -23,8 +24,12 @@ Source candidate: `5d0035a034a94c8525316cd5cb47d047208b3d861539d4acadb243a2bb734
 source files, the fixture script, Chromium version, 18 unframed renders and their
 SHA-256 values. [Candidate index](evidence/phase1/candidate.json) binds the 24
 production build files, tests/scripts and retained evidence. Run
-`node scripts/verify-candidate.mjs` after building to detect changed sources or
-renders. Hash verification checks identity, not experience or literary quality.
+`node scripts/verify-candidate.mjs` validates the original unbound candidate.
+The deployment follow-up adds only `hosting.site = noveliaa` to its runtime/config
+inventory. After building, `node scripts/verify-deployment-candidate.mjs` verifies
+that exact configuration delta, all other 31 source files, 18 renders and all
+24 production build files against the original evidence. The [retained result](evidence/phase1/deployment/candidate-verification.json)
+passed. Hash verification checks identity, not experience or literary quality.
 
 | Verification | Actual result | Evidence |
 |---|---|---|
@@ -85,12 +90,17 @@ Hindi IME/rotation/background behavior, and H01–H04/H07 author sessions. The
 production backup schedule, ≤24-hour RPO, IAM/retention and production restore
 have not been established. G2–G4 are deferred and have no fabricated records.
 
-The next owner review is a real writing/recovery session using the local preview.
-Before deployment, verify and approve the Firebase project/site/bucket, author
-UID/allowlists and region; review any required billing, IAM and separate backup
-bucket/retention changes. Shared-project Rules require separate integration
-review. The metadata-only workflow is prepared but has not been dispatched.
-No secret was opened, no production bypass added, and no production deployment
-or irreversible bucket lock performed. The initial archive/import size limits
+The next owner review is a real writing/recovery session on the deployed Firebase
+app. The full GitHub CI run [39979059134](https://github.com/Wolfrine/creative-workspace/actions/runs/39979059134)
+passed on `36ecfeb`; the release run [39979048780](https://github.com/Wolfrine/creative-workspace/actions/runs/39979048780)
+authenticated to the verified `noveliaa` project/site but stopped before mutations
+because the deployment identity lacks `serviceusage.services.get`. A broader
+read-only audit also confirmed absent Functions deployment/Rules-release
+permissions and incomplete Firebase services. See the [exact report and owner
+setup steps](DEPLOYMENT.md). Billing status cannot be read by the identity.
+The project/site mapping is resolved; production author UID, bucket, region,
+IAM and billing remain prerequisites. Separate backup identity/retention remain
+unprovisioned. No secret was opened, production bypass added, or irreversible
+bucket lock performed. The initial archive/import size limits
 are explicit; a larger archive format is required before moving a notebook whose
 full history exceeds 64 MiB.

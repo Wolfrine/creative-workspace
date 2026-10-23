@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-23T15:36:38.932Z",
+  "commit": "426981e9f5af9a4d4464a41abf2b0cbedc5e6a89",
+  "originalCandidate": "5d0035a034a94c8525316cd5cb47d047208b3d861539d4acadb243a2bb734bf6",
+  "unchangedSources": 31,
+  "configurationChange": "Only hosting.site = noveliaa; .firebaserc and deployment scripts are separately reviewed deployment additions.",
+  "unchangedRenders": 18,
+  "unchangedBuildFiles": 24,
+  "deployed": false,
+  "verdict": "The unconfigured production build and reviewed UI are unchanged. Authenticated live behavior remains unverified."
+}

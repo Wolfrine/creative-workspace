@@ -1,9 +1,13 @@
-# Firebase Phase 1: prepared, not deployed
+# Firebase Phase 1: Actions release prepared, cloud setup blocked
 
 The repository contains a private Firebase adapter, owner-only callable services,
-Rules, a metadata-only preflight workflow and a daily backup implementation. No
-project ID, bucket, hosting target, service-account contents or production
-deployment is assumed. No `.firebaserc` is created until its mapping is verified.
+Rules, read-only metadata and deployment workflows, and a daily backup
+implementation. GitHub Actions verified project `noveliaa`, number
+`278082781314`, display name `Noveliaa`, and its existing default Hosting site
+`noveliaa`, URL **https://noveliaa.web.app**. `.firebaserc` and `hosting.site`
+are now bound to that verified project/site. The app is not live: release
+preflight fails before mutation on missing `serviceusage.services.get`.
+See [live metadata, permission evidence and setup steps](DEPLOYMENT.md).
 
 The supplied Rules are a complete deny-by-default policy for a dedicated
 Noveliaa project. If preflight identifies a shared project, inspect its deployed
@@ -12,10 +16,11 @@ unrelated product access policies by deploying these files unchanged.
 
 ## Author access and configuration
 
-1. Run the manual **Firebase metadata preflight (read only)** workflow after this
-   code is reviewed and committed. It consumes the existing
+1. The **Firebase metadata preflight (read only)** workflow has run successfully.
+   Repeat it after project setup changes. It consumes the existing
    `FIREBASE_SERVICE_ACCOUNT` through Google's authentication action and prints
-   only project, bucket, database and hosting-site metadata. Do not open or print
+   only public project/app/site settings, projected owner configuration and
+   permission-test results. Do not open or print
    that secret. The workflow does not deploy, enable APIs, change IAM or billing.
 2. Verify the chosen project, database location, primary bucket, Google sign-in
    provider, authorized domains and Functions region (`asia-south1` is the
@@ -25,11 +30,14 @@ unrelated product access policies by deploying these files unchanged.
    without complete configuration shows the application's setup gate. Verified
    public web configuration is cached locally so an offline restart does not
    need Hosting discovery; this cache contains no credentials or manuscript.
-4. Set the server's `NOVELIAA_OWNER_UID` to the verified author's Firebase Auth
-   UID. An authorized administrator must separately provision Firestore
-   `noveliaaConfig/access` with `{ "ownerUid": "<same UID>" }`. Neither identity
-   is inferred from an email or client-submitted actor. Unset or mismatched
-   settings fail closed; direct clients cannot read/write this config document.
+4. The Actions release script resolves the author account from the administrator's
+   deployment binding and sets `NOVELIAA_OWNER_UID` plus Firestore
+   `noveliaaConfig/access` to the same UID. It refuses to overwrite a different
+   existing allowlist. The current candidate email comes from the connected
+   GitHub owner's profile; verify it is the intended Google sign-in account
+   before completing setup. Runtime authorization checks UID, never a
+   client-submitted email. Unset or mismatched settings fail closed; direct
+   clients cannot read/write the config document.
 5. Set `NOVELIAA_STORAGE_BUCKET` when the Admin app's default bucket is absent.
    Verify Storage CORS permits the exact approved app origin for authenticated
    SDK byte reads. Do not create public buckets or long-lived download URLs.

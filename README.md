@@ -1,6 +1,6 @@
 # Noveliaa
 
-**Phase 1 implementation • awaiting author acceptance and deployment configuration**
+**Phase 1 implemented and visually checked • GitHub Actions deployment blocked by Firebase setup/access**
 
 A private, author-led workspace for writing stories, collaborating with external AI through plugin/MCP, preparing approved reader experiences, and gathering meaningful peer reactions.
 
@@ -34,4 +34,4 @@ npm run test:browser
 
 Browser checks start local dev/production-preview servers and require `npx playwright install chromium`. `npm run test:crash` and `npm run profile:writing` require the development server. Authenticated callable tests use the isolated emulator configuration documented in [docs/FIREBASE.md](docs/FIREBASE.md).
 
-[Phase 1 results and remaining gates](docs/PHASE1_RESULTS.md) distinguish synthetic runtime evidence, agent visual review, human acceptance and production checks. Production deployment has not been performed. The reported GitHub secret is never printed or copied into this repository.
+[Phase 1 results and remaining gates](docs/PHASE1_RESULTS.md) distinguish synthetic runtime evidence, agent visual review, human acceptance and production checks. Owner review takes place on Firebase, not localhost. The verified site is **https://noveliaa.web.app**; it is not live yet. The [deployment report and one-time setup steps](docs/DEPLOYMENT.md) record the actual Actions failure and missing project permissions. The GitHub secret is never printed or copied into this repository.
