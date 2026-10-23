@@ -1,0 +1,49 @@
+name: Deploy Noveliaa to Firebase
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, codex/noveliaa-phase-1]
+    paths:
+      - .github/workflows/firebase-deploy.yml
+      - deployment/**
+      - functions/scripts/prepare-release.mjs
+permissions:
+  contents: read
+concurrency:
+  group: firebase-noveliaa-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm --prefix functions ci
+      - run: npm test
+      - run: npm --prefix functions test
+      - run: npm run test:evidence
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+      - name: Verify exact Firebase app, site, author and cloud prerequisites
+        env:
+          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
+        run: node functions/scripts/prepare-release.mjs
+      - run: npm run build
+      - name: Deploy private storage and Firestore rules
+        run: npx firebase deploy --project noveliaa --only firestore:rules,storage --non-interactive
+      - name: Deploy writing callables (backup scheduling requires separate provisioning)
+        run: npx firebase deploy --project noveliaa --only functions:noveliaa-phase1:loadWorkspace,functions:noveliaa-phase1:saveCatalog,functions:noveliaa-phase1:registerDocumentIdentities,functions:noveliaa-phase1:preserveOriginal,functions:noveliaa-phase1:commitWriting --non-interactive
+      - name: Publish the verified Noveliaa Hosting site
+        run: npx firebase deploy --project noveliaa --only hosting --non-interactive
+      - name: Verify live app and reserved Firebase configuration
+        run: |
+          curl --fail --silent --show-error https://noveliaa.web.app/ | grep -q 'Noveliaa'
+          curl --fail --silent --show-error https://noveliaa.web.app/__/firebase/init.json
+          echo 'Live URL: https://noveliaa.web.app' >> "$GITHUB_STEP_SUMMARY"
