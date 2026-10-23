@@ -28,7 +28,7 @@ jobs:
           test -n "$VERIFIED_PROJECT"
           gcloud projects describe "$VERIFIED_PROJECT" --format='json(projectId,name,lifecycleState)'
           gcloud storage buckets list --project="$VERIFIED_PROJECT" --format='json(name,location,storageClass,retentionPolicy)'
-          gcloud firestore databases list --project="$VERIFIED_PROJECT" --format='json(name,locationId,type)'
+          gcloud firestore databases list --project="$VERIFIED_PROJECT" --quiet --format='json(name,locationId,type)' || true
       - name: Inspect hosting sites only
         env:
           VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
