@@ -11,7 +11,22 @@ const get = async (url, init = {}) => {
     return response.ok ? data : { status: response.status, error: data.error?.status || 'metadata unavailable', message: data.error?.message };
   } catch { return { error: 'Metadata request did not complete' }; }
 };
-const [apps, billing, auth, google, iam, users, hosting, firebase] = await Promise.all([
+// CLI target permissions are read from the pinned firebase-tools deployment
+// implementation. Testing permissions is read-only and never grants them.
+const requestedPermissions = [
+  'serviceusage.services.get', 'serviceusage.services.enable',
+  'firebase.clients.create', 'firebasehosting.sites.update',
+  'cloudfunctions.functions.list', 'cloudfunctions.functions.create',
+  'cloudfunctions.functions.get', 'cloudfunctions.functions.update',
+  'cloudfunctions.functions.delete', 'cloudfunctions.operations.get',
+  'cloudfunctions.functions.setIamPolicy', 'iam.serviceAccounts.actAs',
+  'run.services.setIamPolicy',
+  'datastore.indexes.list', 'datastore.indexes.create',
+  'datastore.indexes.update', 'datastore.indexes.delete',
+  'firebaserules.releases.create', 'firebaserules.rulesets.create',
+  'firebaserules.releases.update',
+];
+const [apps, billing, auth, google, iam, users, hosting, firebase, permissions, database, buckets] = await Promise.all([
   get(`https://firebase.googleapis.com/v1beta1/projects/${project}/webApps`),
   get(`https://cloudbilling.googleapis.com/v1/projects/${project}/billingInfo`),
   get(`https://identitytoolkit.googleapis.com/admin/v2/projects/${project}/config`),
@@ -20,11 +35,16 @@ const [apps, billing, auth, google, iam, users, hosting, firebase] = await Promi
   get(`https://identitytoolkit.googleapis.com/v1/projects/${project}/accounts:batchGet?maxResults=100&fields=users(localId,email,emailVerified,providerUserInfo(providerId)),nextPageToken`),
   get(`https://firebasehosting.googleapis.com/v1beta1/projects/${project}/sites`),
   get(`https://firebase.googleapis.com/v1beta1/projects/${project}`),
+  get(`https://cloudresourcemanager.googleapis.com/v1/projects/${project}:testIamPermissions`, { method: 'POST', body: JSON.stringify({ permissions: requestedPermissions }) }),
+  get(`https://firestore.googleapis.com/v1/projects/${project}/databases`),
+  get(`https://storage.googleapis.com/storage/v1/b?project=${project}&fields=items(name,location)`),
 ]);
 const publicConfigs = await Promise.all((apps.apps ?? []).map(app => get(`https://firebase.googleapis.com/v1beta1/${app.name}/config`)));
 const metadata = { project, firebase, hosting, apps: apps.apps ?? apps, publicConfigs, billing: { billingEnabled: billing.billingEnabled, status: billing.status, error: billing.error },
   auth: auth.error ? auth : { authorizedDomains: auth.authorizedDomains, signIn: { allowDuplicateEmails: auth.signIn?.allowDuplicateEmails, emailEnabled: auth.signIn?.email?.enabled } },
   google: google.error ? google : { enabled: google.enabled, clientIdConfigured: !!google.clientId },
   humanOwners: iam.bindings?.filter(binding => binding.role === 'roles/owner').flatMap(binding => binding.members).filter(member => member.startsWith('user:')) ?? iam,
-  users: users.users ?? users, moreUsers: !!users.nextPageToken };
+  users: users.users ?? users, moreUsers: !!users.nextPageToken,
+  deploymentPermissions: permissions.error ? permissions : { granted: permissions.permissions ?? [], missing: requestedPermissions.filter(permission => !permissions.permissions?.includes(permission)) },
+  database, buckets };
 console.log(JSON.stringify(metadata, null, 2));
