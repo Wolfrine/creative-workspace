@@ -1,0 +1,14 @@
+{
+  "auth": {
+    "providers": {
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "Noveliaa",
+        "supportEmail": "schttewary@gmail.com",
+        "authorizedRedirectUris": [
+          "https://noveliaa.web.app/__/auth/handler",
+          "https://noveliaa.firebaseapp.com/__/auth/handler"
+        ]
+      }
+    }
+  }
+}

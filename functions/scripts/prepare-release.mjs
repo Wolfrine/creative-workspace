@@ -35,6 +35,14 @@ if (!app && !(apps.apps ?? []).length) {
 }
 if (!app) throw new Error('Cannot unambiguously match a Firebase Web App to Noveliaa.');
 const config = await request(`https://firebase.googleapis.com/v1beta1/${app.name}/config`);
+console.log('Verified Firebase Web App: ' + app.appId);
+// The supported Firebase Auth CLI chooses the default/first app. A fresh
+// project must have exactly this one Web App before initial provider setup.
+if (process.argv.includes('--app-only')) {
+  if ((apps.apps ?? []).length > 1) throw new Error('Initial Auth CLI provisioning needs an unambiguous single Web App.');
+  console.log('Noveliaa Web App registration verified; no author data was created.');
+  process.exit(0);
+}
 const blockers = [];
 const inspect = async (label, url) => { try { return await request(url); } catch (error) { blockers.push(label + ': ' + error.message); return null; } };
 const [auth, google, database] = await Promise.all([
@@ -44,6 +52,7 @@ const [auth, google, database] = await Promise.all([
 ]);
 if (google && !google.enabled) blockers.push('Enable Google sign-in for the verified Firebase app.');
 if (!config.storageBucket) blockers.push('Initialize Firebase Storage and its default bucket, then verify billing prerequisites in the Firebase console.');
+if (config.storageBucket) await inspect('Verify actual application Storage bucket', `https://storage.googleapis.com/storage/v1/b/${encodeURIComponent(config.storageBucket)}?fields=name,location`);
 if (auth && !auth.authorizedDomains?.includes(new URL(binding.url).hostname)) blockers.push('Authorize noveliaa.web.app for Google sign-in.');
 if (database && database.type !== 'FIRESTORE_NATIVE') blockers.push('The default database must use Firestore native mode.');
 if (blockers.length) throw new Error('Cloud setup required before publishing a usable private app:\n' + blockers.join('\n'));

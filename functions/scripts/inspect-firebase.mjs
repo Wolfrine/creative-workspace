@@ -47,5 +47,5 @@ const metadata = { checkedAt: new Date().toISOString(), project, firebase, hosti
   humanOwners: iam.bindings?.filter(binding => binding.role === 'roles/owner').flatMap(binding => binding.members).filter(member => member.startsWith('user:')) ?? iam,
   users: users.users ?? users, moreUsers: !!users.nextPageToken,
   deploymentPermissions: permissions.error ? permissions : { granted: permissions.permissions ?? [], missing: requestedPermissions.filter(permission => !permissions.permissions?.includes(permission)) },
-  database, buckets, hostingService };
+  database, buckets, hostingService: hostingService.error ? hostingService : { name: hostingService.name, state: hostingService.state } };
 console.log(JSON.stringify(metadata, null, 2));

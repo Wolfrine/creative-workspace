@@ -35,6 +35,12 @@ jobs:
         env:
           VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
         run: node functions/scripts/inspect-firebase.mjs
+      - name: Register or verify the exact Noveliaa Web App
+        env:
+          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
+        run: node functions/scripts/prepare-release.mjs --app-only
+      - name: Configure Google sign-in with Firebase's supported CLI
+        run: npx firebase deploy --config deployment/firebase.auth.json --project noveliaa --only auth --non-interactive
       - name: Verify exact Firebase app, site, author and cloud prerequisites
         env:
           VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
