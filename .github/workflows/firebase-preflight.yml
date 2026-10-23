@@ -16,23 +16,10 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
-      - uses: google-github-actions/setup-gcloud@v2
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
       - run: npm --prefix functions ci
-      - name: Inspect nonsecret project and storage metadata
-        env:
-          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
-        run: |
-          test -n "$VERIFIED_PROJECT"
-          gcloud projects describe "$VERIFIED_PROJECT" --format='json(projectId,name,lifecycleState)'
-          gcloud storage buckets list --project="$VERIFIED_PROJECT" --format='json(name,location,storageClass,retentionPolicy)'
-          gcloud firestore databases list --project="$VERIFIED_PROJECT" --quiet --format='json(name,locationId,type)' || true
-      - name: Inspect hosting sites only
-        env:
-          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
-        run: npx --yes firebase-tools@15 hosting:sites:list --project "$VERIFIED_PROJECT" --json
       - name: Verify app identity and author configuration
         env:
           VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
