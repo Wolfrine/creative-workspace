@@ -1,0 +1,13 @@
+{
+  "firestore": { "rules": "firestore.rules" },
+  "storage": { "rules": "storage.rules" },
+  "functions": [{ "source": "functions", "codebase": "noveliaa-phase1", "runtime": "nodejs22" }],
+  "emulators": {
+    "auth": { "host": "127.0.0.1", "port": 19099 },
+    "functions": { "host": "127.0.0.1", "port": 15001 },
+    "firestore": { "host": "127.0.0.1", "port": 18080 },
+    "storage": { "host": "127.0.0.1", "port": 19199 },
+    "ui": { "enabled": false },
+    "singleProjectMode": true
+  }
+}

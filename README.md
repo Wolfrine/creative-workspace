@@ -1,6 +1,6 @@
 # Noveliaa
 
-**Working name • planning stage**
+**Phase 1 implementation • awaiting author acceptance and deployment configuration**
 
 A private, author-led workspace for writing stories, collaborating with external AI through plugin/MCP, preparing approved reader experiences, and gathering meaningful peer reactions.
 
@@ -11,4 +11,27 @@ A private, author-led workspace for writing stories, collaborating with external
 - [Automated and human evaluations](evals/README.md)
 - [Visual prototypes and owner preference](design/prototypes/README.md)
 
-**Development is not approved yet.** Codex should inspect existing projects and propose an implementation/evaluation plan first. Firebase project and GitHub secret `FIREBASE_SERVICE_ACCOUNT` were configured by the owner; deployment settings remain to be verified.
+Phase 1 provides untitled capture, a quiet rich-text editor, collections, explicit links/backlinks and Living Atlas, local search, immutable device checkpoints/outbox, expected-head cloud commits, recovery and portable exports. Exact imported bytes and provenance stay separate from editable writing. There is no embedded AI, reader publication or feedback collection.
+
+Use Node 22.12+ (tested with Node 24.19), Python 3.11+ and Java 21 for emulators:
+
+```sh
+npm ci
+npm --prefix functions ci
+npm run dev
+```
+
+Open `http://127.0.0.1:5817/?local=1` for a **development-only device notebook** with synthetic material you supply. It saves in this browser's IndexedDB and has no cloud access. This entry point is compiled out of production. Normal access requires Firebase Google sign-in and a server-side configured author allowlist; see [Firebase setup and backup boundaries](docs/FIREBASE.md). Do not put a real manuscript in a test notebook.
+
+```sh
+npm test
+npm --prefix functions test
+npm run build
+npm run test:evidence
+npm run test:rules
+npm run test:browser
+```
+
+Browser checks start local dev/production-preview servers and require `npx playwright install chromium`. `npm run test:crash` and `npm run profile:writing` require the development server. Authenticated callable tests use the isolated emulator configuration documented in [docs/FIREBASE.md](docs/FIREBASE.md).
+
+[Phase 1 results and remaining gates](docs/PHASE1_RESULTS.md) distinguish synthetic runtime evidence, agent visual review, human acceptance and production checks. Production deployment has not been performed. The reported GitHub secret is never printed or copied into this repository.

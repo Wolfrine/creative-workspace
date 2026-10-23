@@ -1,0 +1,23 @@
+✔ authorization fails closed for unauthenticated, other account and unset owner (2.197ms)
+✔ every callable service derives actor from verified uid (2.8473ms)
+✔ response-loss retry is exactly idempotent; changed payload with same ID conflicts (2.7847ms)
+✔ two concurrent devices retain both branches and promote only one from the same base (1.9808ms)
+✔ new document race and reverse reconnect preserve both variants (1.0489ms)
+✔ missing, mismatched and changed blobs never finalize a revision (0.65ms)
+✔ original source bytes and metadata are immutable and retryable (1.3285ms)
+✔ cross-universe source, collection, parent and link references are refused (2.2923ms)
+✔ identity registration supports mutually linked first revisions without creating a head or writing text (1.4ms)
+✔ writing identities cannot be forged, cross universes, carry placeholder text or bypass authorization (0.9713ms)
+✔ accepts Tiptap 3.32 link attributes including nullable title without stripping any field (0.9008ms)
+✔ unknown editor nodes, unknown fields, unsafe links and invalid text projections fail without stripping (0.9046ms)
+✔ restoration retains all history and cannot relabel source provenance (2.0622ms)
+✔ catalog cannot remove or move existing collections/universes (0.7192ms)
+✔ backup verifies blobs, revision graph and head inventory; interrupted/corrupt backup fails (2.8242ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 137.9931

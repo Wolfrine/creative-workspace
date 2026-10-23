@@ -1,0 +1,140 @@
+i  emulators: Starting emulators: auth, functions, firestore, storage
+i  emulators: Detected demo project ID "demo-noveliaa", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail.
+i  firestore: Firestore Emulator logging to firestore-debug.log
++  firestore: Firestore Emulator was started in standard edition.
++  firestore: Firestore Emulator UI websocket is running on 9150.
+i  functions: Watching "C:\Users\Sachit Tewary\Documents\Codex\2026-10-23\review-wolfrine-creative-workspace-github-repo\noveliaa\functions" for Cloud Functions...
+!  functions: Your requested "node" version "22" doesn't match your global version "24". Using node@24 from host.
+Serving at port 8231
+
++  functions: Loaded functions definitions from source: commitWriting, dailyWritingBackup, loadWorkspace, preserveOriginal, registerDocumentIdentities, saveCatalog.
++  functions[asia-south1-commitWriting]: http function initialized (http://127.0.0.1:15001/demo-noveliaa/asia-south1/commitWriting).
+i  functions[asia-south1-dailyWritingBackup]: function ignored because the pubsub emulator does not exist or is not running.
++  functions[asia-south1-loadWorkspace]: http function initialized (http://127.0.0.1:15001/demo-noveliaa/asia-south1/loadWorkspace).
++  functions[asia-south1-preserveOriginal]: http function initialized (http://127.0.0.1:15001/demo-noveliaa/asia-south1/preserveOriginal).
++  functions[asia-south1-registerDocumentIdentities]: http function initialized (http://127.0.0.1:15001/demo-noveliaa/asia-south1/registerDocumentIdentities).
++  functions[asia-south1-saveCatalog]: http function initialized (http://127.0.0.1:15001/demo-noveliaa/asia-south1/saveCatalog).
+i  Running script: node --test --test-concurrency=1 tests/rules.test.mjs functions/test/callable-emulator.mjs
+i  functions: Beginning execution of "asia-south1-loadWorkspace"
+>  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-loadWorkspace" in 19.4323ms
+i  functions: Beginning execution of "asia-south1-loadWorkspace"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-loadWorkspace" in 3.3454ms
+i  functions: Beginning execution of "asia-south1-saveCatalog"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-saveCatalog" in 17.4015ms
+i  functions: Beginning execution of "asia-south1-registerDocumentIdentities"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-registerDocumentIdentities" in 21.336ms
+i  functions: Beginning execution of "asia-south1-loadWorkspace"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-loadWorkspace" in 133.2852ms
+i  functions: Beginning execution of "asia-south1-loadWorkspace"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-loadWorkspace" in 143.5266ms
+✔ callables deny missing identity, other accounts and forged author fields (7714.6762ms)
+i  functions: Beginning execution of "asia-south1-saveCatalog"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-saveCatalog" in 280.6491ms
+i  functions: Beginning execution of "asia-south1-registerDocumentIdentities"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-registerDocumentIdentities" in 299.4225ms
+i  functions: Beginning execution of "asia-south1-commitWriting"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-commitWriting" in 411.7624ms
+i  functions: Beginning execution of "asia-south1-commitWriting"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-commitWriting" in 71.1908ms
+i  functions: Beginning execution of "asia-south1-commitWriting"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-commitWriting" in 157.4788ms
+i  functions: Beginning execution of "asia-south1-commitWriting"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-commitWriting" in 153.5253ms
+i  functions: Beginning execution of "asia-south1-commitWriting"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-commitWriting" in 71.7759ms
+i  functions: Beginning execution of "asia-south1-loadWorkspace"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-loadWorkspace" in 54.7928ms
+✔ authenticated callable commit is idempotent and preserves a concurrent losing branch (5613.3509ms)
+i  functions: Beginning execution of "asia-south1-commitWriting"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-commitWriting" in 23.0286ms
+i  functions: Beginning execution of "asia-south1-commitWriting"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-commitWriting" in 19.7191ms
+i  functions: Beginning execution of "asia-south1-loadWorkspace"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-south1-loadWorkspace" in 69.0366ms
+✔ callable rejects corrupt staged bytes and submitted actor fields without promotion (160.0685ms)
+✔ configured owner can read own writing, history, originals and save receipts (852.3398ms)
+✔ other and unauthenticated identities cannot read owner workspace (238.3945ms)
+[2026-10-23T14:10:26.307Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707ec error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L12, false for 'create' @ L14, false for 'update' @ L12, false for 'update' @ L14
+[2026-10-23T14:10:26.318Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707ed error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'delete' @ L12, false for 'delete' @ L14
+[2026-10-23T14:10:26.354Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707ee error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L12, false for 'create' @ L14, false for 'update' @ L12, false for 'update' @ L14
+[2026-10-23T14:10:26.368Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707ef error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'delete' @ L12, false for 'delete' @ L14
+[2026-10-23T14:10:26.385Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707f0 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L12, false for 'create' @ L14, false for 'update' @ L12, false for 'update' @ L14
+[2026-10-23T14:10:26.400Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707f1 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'delete' @ L12, false for 'delete' @ L14
+[2026-10-23T14:10:26.415Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707f2 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L12, false for 'create' @ L14, false for 'update' @ L12, false for 'update' @ L14
+[2026-10-23T14:10:26.429Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707f3 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'delete' @ L12, false for 'delete' @ L14
+[2026-10-23T14:10:26.447Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707f4 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L12, false for 'create' @ L14, false for 'update' @ L12, false for 'update' @ L14
+[2026-10-23T14:10:26.455Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707f5 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'delete' @ L12, false for 'delete' @ L14
+[2026-10-23T14:10:26.479Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707f6 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L12, false for 'create' @ L14, false for 'update' @ L12, false for 'update' @ L14
+[2026-10-23T14:10:26.492Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707f7 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'delete' @ L12, false for 'delete' @ L14
+[2026-10-23T14:10:26.511Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707f8 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L12, false for 'create' @ L14, false for 'update' @ L12, false for 'update' @ L14
+[2026-10-23T14:10:26.517Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707f9 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'delete' @ L12, false for 'delete' @ L14
+[2026-10-23T14:10:26.526Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707fa error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L12, false for 'create' @ L14, false for 'update' @ L12, false for 'update' @ L14
+[2026-10-23T14:10:26.538Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707fb error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'delete' @ L12, false for 'delete' @ L14
+[2026-10-23T14:10:26.547Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707fc error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L12, false for 'create' @ L14, false for 'update' @ L12, false for 'update' @ L14
+[2026-10-23T14:10:26.569Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707fd error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'delete' @ L12, false for 'delete' @ L14
+[2026-10-23T14:10:26.585Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b707fe error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L14, false for 'update' @ L14
+[2026-10-23T14:10:26.617Z]  @firebase/firestore: Firestore (13.1.0): GrpcConnection RPC 'Write' stream 0x14b70800 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L14, false for 'update' @ L14
+✔ direct writes, deletes, original edits, config edits and later-phase paths denied to owner too (414.2485ms)
+✔ missing allowlist denies signed-in owner (306.3182ms)
+✔ owner can stage bytes once; overwrites and deletes remain denied (224.3203ms)
+✔ Storage denies other account, unauthenticated access, invalid path and forged metadata (282.0331ms)
+✔ final blobs are readable by owner, immutable and private (266.4169ms)
+✔ backups and arbitrary recursive paths are never client readable/writable (227.2589ms)
+✔ trusted Admin path preserves concurrent branches, retries, byte digests and isolated backup recovery (9089.6154ms)
+ℹ {"dataset":"synthetic","revisions":3,"originals":1,"conflicts":1,"restoreMilliseconds":4670,"archiveSha256":"7eb7b7a78355fb3313ad8c25d382aa053c57b0b98654034708f1aabe3e52b7b2","archiveBytes":6610}
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 27163.5368
++  Script exited successfully (code 0)
+i  emulators: Shutting down emulators.
+i  functions: Stopping Functions Emulator
+i  firestore: Stopping Firestore Emulator
+!  Firestore Emulator has exited upon receiving signal: SIGINT
+i  auth: Stopping Authentication Emulator
+i  storage: Stopping Storage Emulator
+i  eventarc: Stopping Eventarc Emulator
+i  tasks: Stopping Cloud Tasks Emulator
+i  hub: Stopping emulator hub
+i  logging: Stopping Logging Emulator

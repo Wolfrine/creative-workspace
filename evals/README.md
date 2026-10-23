@@ -1,6 +1,6 @@
 # Noveliaa evaluations
 
-Research-stage acceptance package. No application exists at the reviewed commit, so **all product cases are NOT RUN**. Passing the evaluator's own tests is not passing Noveliaa.
+The original research-stage procedures remain the acceptance standard. Phase 1 now has an implementation; [current results](../docs/PHASE1_RESULTS.md) record executed subsets and missing gates. Passing the evaluator's own mutation tests is not passing Noveliaa.
 
 ## Run what is executable now
 
@@ -11,7 +11,7 @@ python3 -m unittest discover -s evals -p 'test_*.py' -v
 python3 evals/check_evidence.py --help
 ~~~
 
-The mutation tests generate small synthetic exports in temporary directories. They demonstrate that the checker rejects damaged originals, rewritten history, missing saved text, invalid references, unapproved editions and events outside consent. They do not simulate Firebase or implement the domain model.
+The mutation tests generate small synthetic exports in temporary directories. They demonstrate that the checker rejects damaged originals, rewritten history, missing saved text, invalid references, unapproved editions and events outside consent. They do not simulate Firebase or implement the domain model. `--profile writing` checks Phase 1 originals/revisions/receipts while requiring every later-phase array empty and behavior disabled. The default `full` gate is unchanged; do not fabricate later-phase records to satisfy it.
 
 When a real export adapter exists:
 

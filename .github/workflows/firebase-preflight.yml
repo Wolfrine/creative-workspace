@@ -1,0 +1,32 @@
+name: Firebase metadata preflight (read only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+      - uses: google-github-actions/setup-gcloud@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Inspect nonsecret project and storage metadata
+        env:
+          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
+        run: |
+          test -n "$VERIFIED_PROJECT"
+          gcloud projects describe "$VERIFIED_PROJECT" --format='json(projectId,name,lifecycleState)'
+          gcloud storage buckets list --project="$VERIFIED_PROJECT" --format='json(name,location,storageClass,retentionPolicy)'
+          gcloud firestore databases list --project="$VERIFIED_PROJECT" --format='json(name,locationId,type)'
+      - name: Inspect hosting sites only
+        env:
+          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
+        run: npx --yes firebase-tools@15 hosting:sites:list --project "$VERIFIED_PROJECT" --json
+      # No credentials are printed, no API/billing/IAM changes, no deploy step.

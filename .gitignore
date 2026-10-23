@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/
+playwright-report/
+test-results/
+__pycache__/
+functions/lib/
+functions/node_modules/
+.local/

@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function owner(uid) {
+      return request.auth != null && request.auth.uid == uid
+        && exists(/databases/$(database)/documents/noveliaaConfig/access)
+        && get(/databases/$(database)/documents/noveliaaConfig/access).data.ownerUid == uid;
+    }
+    match /noveliaaWorkspaces/{uid}/{collection}/{record} {
+      allow read: if owner(uid) && collection in ['meta', 'documentIdentities', 'documents', 'revisions', 'originals', 'operations'];
+      // All cloud writes pass through authenticated, validating callables.
+      allow write: if false;
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

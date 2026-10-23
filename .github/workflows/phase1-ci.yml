@@ -1,0 +1,49 @@
+name: Phase 1 integrity and browser checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  phase1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: npm --prefix functions ci
+      - run: npm test
+      - run: npm --prefix functions test
+      - run: npm run build
+      - run: npm run test:evidence
+      - run: npm run test:rules
+      - name: Authenticated callable integration (local emulators only)
+        env:
+          NOVELIAA_OWNER_UID: emulator-author
+          NOVELIAA_STORAGE_BUCKET: demo-noveliaa.appspot.com
+        run: npx firebase emulators:exec --only auth,functions,firestore,storage --project demo-noveliaa --config firebase.test.json "node --test functions/test/callable-emulator.mjs"
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        continue-on-error: true
+        with:
+          name: phase1-test-evidence
+          path: |
+            playwright-report/
+            test-results/
+            docs/evidence/phase1/browser-results.json
+          if-no-files-found: ignore

@@ -1,0 +1,22 @@
+
+ RUN  v5.0.5 C:/Users/Sachit Tewary/Documents/Codex/2026-10-23/review-wolfrine-creative-workspace-github-repo/noveliaa
+
+ ✓ src/state/cloud-integration.test.ts > Writing engine against actual trusted commit service > retains both offline variants in independent persistent stores when A reconnects first 39ms
+ ✓ src/state/cloud-integration.test.ts > Writing engine against actual trusted commit service > retains both offline variants in independent persistent stores when B reconnects first 21ms
+ ✓ src/state/cloud-integration.test.ts > Writing engine against actual trusted commit service > does not replace an acknowledged checkpoint made while a stale cloud merge is waiting 5ms
+ ✓ src/state/cloud-integration.test.ts > Writing engine against actual trusted commit service > keeps local-only concurrent-tab conflicts visible after restart 22ms
+ ✓ src/state/cloud-integration.test.ts > Writing engine against actual trusted commit service > preserves a newly imported original before committing its revision during an ongoing sync 6ms
+ ✓ src/state/cloud-integration.test.ts > Writing engine against actual trusted commit service > restores archive link targets before source revisions when timestamps tie 22ms
+ ✓ src/state/cloud-integration.test.ts > Writing engine against actual trusted commit service > restores valid mutually linked first revisions without inventing empty writing 6ms
+ ✓ src/state/cloud-integration.test.ts > Writing engine against actual trusted commit service > preserves an archive-selected branch or exposes a conflict when another branch sorts first 9ms
+ ✓ src/state/cloud-integration.test.ts > Writing engine against actual trusted commit service > rechecks that a restore notebook is empty inside its write transaction 9ms
+ ✓ src/state/cloud-integration.test.ts > Writing engine against actual trusted commit service > does not replace new author writing while an imported archive is synchronizing its selected branch 11ms
+ ✓ src/state/cloud-integration.test.ts > Writing engine against actual trusted commit service > does not publish an older tab-refresh snapshot after a newer checkpoint is acknowledged 4ms
+ ✓ src/state/cloud-integration.test.ts > Writing engine against actual trusted commit service > refuses unsupported rich-text attributes in an otherwise correctly hashed archive 2ms
+ ✓ src/state/cloud-integration.test.ts > Writing engine against actual trusted commit service > does not accept a restored revision whose source-original provenance has been removed 4ms
+
+ Test Files  1 passed (1)
+      Tests  13 passed (13)
+   Start at  19:58:05
+   Duration  520ms (tests 47%, import 31%, transform 20%, worker 2%)
+

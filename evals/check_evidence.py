@@ -113,7 +113,7 @@ def stamp(value):
     return parsed.astimezone(timezone.utc)
 
 
-def check(bundle_path, oracle_path, before_path, allow_synthetic=False):
+def check(bundle_path, oracle_path, before_path, allow_synthetic=False, profile="full"):
     bundle_path = Path(bundle_path)
     meta, tables = snapshot(bundle_path)
     before_meta, before = snapshot(before_path)
@@ -121,8 +121,15 @@ def check(bundle_path, oracle_path, before_path, allow_synthetic=False):
     require(meta["dataset_kind"] == before_meta["dataset_kind"], "before/after kind mismatch")
     require(allow_synthetic or meta["dataset_kind"] == "runtime",
             "synthetic evidence needs --allow-synthetic; product acceptance is not tested")
-    for table in ("originals", "revisions", "proposals", "decisions",
-                  "editions", "feedback", "save_receipts"):
+    require(profile in {"full", "writing"}, "unknown evidence profile")
+    required = (("originals", "revisions", "save_receipts") if profile == "writing"
+                else ("originals", "revisions", "proposals", "decisions",
+                      "editions", "feedback", "save_receipts"))
+    if profile == "writing":
+        require(meta["behavior_disabled"], "writing profile requires behavior disabled")
+        for table in ("proposals", "decisions", "assets", "editions", "feedback", "consents", "behavior"):
+            require(not tables[table], f"writing profile contains later-phase data: {table}")
+    for table in required:
         require(tables[table], f"incomplete after profile: {table} has no evidence")
     oracle = load_json(oracle_path)
     require(isinstance(oracle, dict) and oracle.get("schema_version") == 1,
@@ -315,11 +322,13 @@ def check(bundle_path, oracle_path, before_path, allow_synthetic=False):
             expect(tables[table].get(rid) == row, "C09",
                    f"prior {table}/{rid} removed or rewritten")
     return {"status": "FAIL" if problems else "STRUCTURAL_EVIDENCE_VALID",
-            "dataset_kind": meta["dataset_kind"], "app_revision": meta["app_revision"],
+            "dataset_kind": meta["dataset_kind"], "app_revision": meta["app_revision"], "profile": profile,
             "scope": "supplied export projection only; runtime/human gates not assessed",
-            "checks": ["C01 bytes", "C02 revision graph", "C03 saved-text oracle",
-                       "C04 proposals", "C05 decisions", "C06 editions",
-                       "C07 feedback", "C08 consent", "C09 immutable history"],
+            "checks": (["C01 bytes", "C02 revision graph", "C03 saved-text oracle",
+                        "C09 immutable history", "later-phase absence"] if profile == "writing" else
+                       ["C01 bytes", "C02 revision graph", "C03 saved-text oracle",
+                        "C04 proposals", "C05 decisions", "C06 editions",
+                        "C07 feedback", "C08 consent", "C09 immutable history"]),
             "problems": problems}
 
 
@@ -329,9 +338,10 @@ def main(argv=None):
     parser.add_argument("--oracle", type=Path, required=True)
     parser.add_argument("--before", type=Path, required=True)
     parser.add_argument("--allow-synthetic", action="store_true")
+    parser.add_argument("--profile", choices=("full", "writing"), default="full")
     args = parser.parse_args(argv)
     try:
-        report = check(args.bundle, args.oracle, args.before, args.allow_synthetic)
+        report = check(args.bundle, args.oracle, args.before, args.allow_synthetic, args.profile)
     except (InputError, TypeError, KeyError, AttributeError) as exc:
         print(json.dumps({"status": "BLOCKED", "reason": str(exc)}, indent=2))
         return 2

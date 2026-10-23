@@ -1,0 +1,326 @@
+{
+  "dataset": "synthetic writing through real development device engine; no Firebase project",
+  "candidateSourceDigest": "d42cf330fa27786e887cdc352309b0efce18af43efb6b1719f6f89885206592f",
+  "sourceInventory": [
+    {
+      "path": "firestore.rules",
+      "sha256": "7302bd4ae460bd8a716718d2be66a49a88a5c8714564c14ac94ce935db781709"
+    },
+    {
+      "path": "functions/src/backup.mjs",
+      "sha256": "16329332bcd789476e28aa36f7fc041de0f33c4bb4b60d48b4866a35f670436d"
+    },
+    {
+      "path": "functions/src/firebase-store.mjs",
+      "sha256": "2ae08ebd7dadebeca707c503462015975021705d465c82de35a8b83e31ccceae"
+    },
+    {
+      "path": "functions/src/index.mjs",
+      "sha256": "bcf1ab40acaad476f423954357112a22396aa693e28cb5a1a2762973e59c62ef"
+    },
+    {
+      "path": "functions/src/service.mjs",
+      "sha256": "3e0985df0ae43559b5b28d54c74a569a2f13b916ed262dbc637353cb53b97301"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "afbb12b6e82252fefe157fcac72a20e1799bb6665417d05bc78f85efdf934435"
+    },
+    {
+      "path": "package.json",
+      "sha256": "5ede8213d3ca04740e245bd1232a288c224be1487eec520ec0d20f27ec816cc4"
+    },
+    {
+      "path": "public/favicon.svg",
+      "sha256": "5ef276685dd0a12eb853fa8fcca0aa9d3c075a3d6f027ce120e04b35748e2a64"
+    },
+    {
+      "path": "public/manifest.webmanifest",
+      "sha256": "ea41bb72a70c94f8e7e78bcdc9701c2465e1eb84d4dd2e9a8dcb3b55e44d09c8"
+    },
+    {
+      "path": "public/sw.js",
+      "sha256": "3b07b5bb98a085f5d46fb399f98e1ef2684a07b291986956c1b616573acf4bbe"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "cf5a16754beb09a0f7ea2ae1bc8e3e51341fd989886d8fe8fd276cb06f142034"
+    },
+    {
+      "path": "src/AppHost.tsx",
+      "sha256": "6837b836407bbb607724e3d0d675f78759bcdf0b69b149d65fe2e9c98212ad83"
+    },
+    {
+      "path": "src/cloud/firebase.ts",
+      "sha256": "121d0d7a85856d10b068127dbe018ff874c0ed9003985c27491c78cfe734dfa4"
+    },
+    {
+      "path": "src/components/DocumentShelfRow.tsx",
+      "sha256": "df6b820bce505dfa5a10737795a31153d69cef9000d58937ab105d00ba833f24"
+    },
+    {
+      "path": "src/components/Modal.tsx",
+      "sha256": "b5d290d7073a27442d178b528c0447990de6042a6b1aee8c2e3a3300f11e73ce"
+    },
+    {
+      "path": "src/components/RevisionComparison.tsx",
+      "sha256": "f5cf1fa30b203b82e22d3d232a5ea6f0861cb7720427677146ee978646b35202"
+    },
+    {
+      "path": "src/components/Writer.tsx",
+      "sha256": "7428c5d5b310b2dbb432466a4e18de53f67fcfd8f52304809a0109a2a90e6133"
+    },
+    {
+      "path": "src/domain/codec.ts",
+      "sha256": "d18a6bc5237a7138e98fce4f843c4df569e77f5dacd84e07b9a2e8316a5e6300"
+    },
+    {
+      "path": "src/domain/model.ts",
+      "sha256": "66c9c30f98b064db3b273aa0bb22b621c7bc93cc7f2ed7ef14966f334ef87651"
+    },
+    {
+      "path": "src/domain/render.ts",
+      "sha256": "c460235984eff018ce556b8c42b547d528cfdb0a78a6fb2a0ba45f12bb879ce7"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "060f787e8eb7a2b1f7c0c16cc33b1d054663f5ee076c41f5e8495b60286bcf6d"
+    },
+    {
+      "path": "src/state/engine.ts",
+      "sha256": "7dffbd99e6cedb1d13be06edc1f49a73af57ae58615aa12015171cf82079abda"
+    },
+    {
+      "path": "src/state/useWorkspace.ts",
+      "sha256": "938c37c45b122237aa6e80e2ae3c1f2b4e4ac6c21079b08f3366a1d922001e02"
+    },
+    {
+      "path": "src/storage/archive.ts",
+      "sha256": "cd2798c77f2752331389f928ee69027618a2a0b39da2c3aefc0d53b3663b9eb8"
+    },
+    {
+      "path": "src/storage/database.ts",
+      "sha256": "85147578be18d84e3e8750f3521744114b4c19ab268b96adc7a935c547c71ee7"
+    },
+    {
+      "path": "src/styles.css",
+      "sha256": "b3978501585fe3cfe6a9f5beb91570840e6273a69b701d7d65e1d2e1576d7762"
+    },
+    {
+      "path": "storage.rules",
+      "sha256": "4c39641d271f56d72eae159179d01d513fde422baa081c8e83cad94c5617cab3"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "5c0632a328551fa9c5248866553525da60080f9cbdb1751e6eb675d88c1ab2f6"
+    }
+  ],
+  "capturedAt": "2026-10-23T14:23:00.727Z",
+  "browser": "156.0.8078.4",
+  "states": [
+    {
+      "name": "desktop-empty",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-5-qa/desktop-empty.png",
+      "sha256": "a87a2dee7fb1dcdc2d1b0a07597bd9d93dbc8acc93bd236766d6f8247a531e23"
+    },
+    {
+      "name": "desktop-writing",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-5-qa/desktop-writing.png",
+      "sha256": "89f4b6dfa72dc137dd1038fac5655ab06cf4d5a9c36ff052b1ebf0c35100e202"
+    },
+    {
+      "name": "desktop-atlas",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-5-qa/desktop-atlas.png",
+      "sha256": "6ca1b65f1433a48e372ee71b71611ec363fd9179765932e3719f8cec8231a375"
+    },
+    {
+      "name": "desktop-history",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-5-qa/desktop-history.png",
+      "sha256": "02236cd321c54ed8cd19f5fbc95709a5dda20d473eaf58175ea1edbbf9759c59"
+    },
+    {
+      "name": "narrow-history",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "docs/evidence/phase1/round-5-qa/narrow-history.png",
+      "sha256": "65a8e7126cba6a2f55284506b1775c9b919429c8f3df8dd6d4368d3f3e98b8e5"
+    },
+    {
+      "name": "narrow-history-preview",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "docs/evidence/phase1/round-5-qa/narrow-history-preview.png",
+      "sha256": "2a25847f71838716d1ea621db213a12bbc85089d45c58392b4ff7210c4fa021f"
+    },
+    {
+      "name": "narrow-history-preview-bottom",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "docs/evidence/phase1/round-5-qa/narrow-history-preview-bottom.png",
+      "sha256": "cc113b3c3eb549270b27a1f2d0543f29246fe82031e9eb643c5983b343e3890b"
+    },
+    {
+      "name": "desktop-focus",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-5-qa/desktop-focus.png",
+      "sha256": "379a027deaba1faec242a9067b46e9eb184dc7eedcbc29029eca5ce29681e98c"
+    },
+    {
+      "name": "mobile-writing",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-5-qa/mobile-writing.png",
+      "sha256": "76a1897fbb241e6b89e946d783a25c2b05a93e3e2e63006c57b8412f6ca0e76b"
+    },
+    {
+      "name": "mobile-focus",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-5-qa/mobile-focus.png",
+      "sha256": "a55a8d1b48088c142d75885938afa0318c78f087eed11dd8f447ffbb5824c17f"
+    },
+    {
+      "name": "mobile-navigation",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-5-qa/mobile-navigation.png",
+      "sha256": "5216d061a4430edf61bd925610a0c82374ea6f0f434f4aabdf6a2ac61a951499"
+    },
+    {
+      "name": "narrow-writing",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "docs/evidence/phase1/round-5-qa/narrow-writing.png",
+      "sha256": "f8db6a6f81e0b946516c01c130b79478160c7f49e9cda196e3ca2f024fab147f"
+    },
+    {
+      "name": "short-writing-formatting",
+      "viewport": {
+        "width": 390,
+        "height": 480
+      },
+      "path": "docs/evidence/phase1/round-5-qa/short-writing-formatting.png",
+      "sha256": "4d1632abcb6a24b10cbed7ce77c74e7b900cc2105365dbefec95caa93445ae6a"
+    },
+    {
+      "name": "desktop-save-error",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-5-qa/desktop-save-error.png",
+      "sha256": "6d04f05afad6fc45a7e661fd0365d3fb2d5277ae7e46c20acceddabcdd33f546"
+    },
+    {
+      "name": "mobile-save-error",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-5-qa/mobile-save-error.png",
+      "sha256": "2eba2fc4b8d25c277c5171a524b106887be1c60f30c56541d8ffae97d49df995"
+    },
+    {
+      "name": "mobile-conflict",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-5-qa/mobile-conflict.png",
+      "sha256": "9279a1205241e02f0528e9a71c4983d3669b99b9d5bec734fdaaeaacdd2e324f"
+    },
+    {
+      "name": "desktop-conflict",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-5-qa/desktop-conflict.png",
+      "sha256": "9a573a010f2d2b0075116b9ee3fd799c543db5cfda581a30ac34b9612daf40f8"
+    },
+    {
+      "name": "desktop-import-origin",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-5-qa/desktop-import-origin.png",
+      "sha256": "dfa57dded1fbd3bb1884cfb33512effda37950e708efc9b4a977afbaa67ef57a"
+    }
+  ],
+  "errors": [],
+  "shortToolbar": {
+    "expanded": "true",
+    "display": "flex",
+    "rect": {
+      "x": 75,
+      "y": 181,
+      "width": 290,
+      "height": 56,
+      "top": 181,
+      "right": 365,
+      "bottom": 237,
+      "left": 75
+    }
+  },
+  "lowerCaret": {
+    "caret": {
+      "x": 188.71875,
+      "y": 447.109375,
+      "width": 0,
+      "height": 28,
+      "top": 447.109375,
+      "right": 188.71875,
+      "bottom": 475.109375,
+      "left": 188.71875
+    },
+    "writingArea": {
+      "x": 0,
+      "y": 129,
+      "width": 390,
+      "height": 351,
+      "top": 129,
+      "right": 390,
+      "bottom": 480,
+      "left": 0
+    },
+    "visible": true
+  },
+  "axe": {
+    "desktop": [],
+    "mobile": []
+  }
+}

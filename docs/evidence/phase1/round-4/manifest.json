@@ -1,0 +1,148 @@
+{
+  "dataset": "synthetic writing through real development device engine; no Firebase project",
+  "candidateSourceDigest": "730eda82c6441bc527b9268e92936dc0ec7fa3830504cde8dee446d8fa1d8a46",
+  "capturedAt": "2026-10-23T14:09:38.746Z",
+  "browser": "156.0.8078.4",
+  "states": [
+    {
+      "name": "desktop-empty",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-4/desktop-empty.png",
+      "sha256": "a87a2dee7fb1dcdc2d1b0a07597bd9d93dbc8acc93bd236766d6f8247a531e23"
+    },
+    {
+      "name": "desktop-writing",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-4/desktop-writing.png",
+      "sha256": "0146cb6363d65e15a8e25ee30d5488e0257f4965f6ebda256bbd773214c88231"
+    },
+    {
+      "name": "desktop-atlas",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-4/desktop-atlas.png",
+      "sha256": "6ca1b65f1433a48e372ee71b71611ec363fd9179765932e3719f8cec8231a375"
+    },
+    {
+      "name": "desktop-history",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-4/desktop-history.png",
+      "sha256": "4e9927e73fdb201d2d732ab491c7a20dd83371cda9e154b2c5fec902ea74a338"
+    },
+    {
+      "name": "narrow-history",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "docs/evidence/phase1/round-4/narrow-history.png",
+      "sha256": "44a44a8f56b1e02d7fc11c213f87b30dbdfc726fb7ba1306b25e7b47322563a3"
+    },
+    {
+      "name": "desktop-focus",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-4/desktop-focus.png",
+      "sha256": "8e6d911f2e3a494fa13c738ca86fdb403a35f8c208aa8f2d7a79426a36d1b433"
+    },
+    {
+      "name": "mobile-writing",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-4/mobile-writing.png",
+      "sha256": "37696c703619bc597a186bc4e1b660302bd88d41dc5b799dcd7db609b426cd3e"
+    },
+    {
+      "name": "mobile-focus",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-4/mobile-focus.png",
+      "sha256": "d939c818471f563b6cb546a19a1d666596adef822a16f05ce18da3397d9e321e"
+    },
+    {
+      "name": "mobile-navigation",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-4/mobile-navigation.png",
+      "sha256": "5216d061a4430edf61bd925610a0c82374ea6f0f434f4aabdf6a2ac61a951499"
+    },
+    {
+      "name": "narrow-writing",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "docs/evidence/phase1/round-4/narrow-writing.png",
+      "sha256": "36838d8761c73701fda3498612a503e95d518b97f68b0815b8df8c076f9cf741"
+    },
+    {
+      "name": "short-writing-formatting",
+      "viewport": {
+        "width": 390,
+        "height": 480
+      },
+      "path": "docs/evidence/phase1/round-4/short-writing-formatting.png",
+      "sha256": "871e32cf3e011d225d62a9a02a7d25d764a84bc1c8c8fd02279f36381bcdf736"
+    },
+    {
+      "name": "desktop-save-error",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-4/desktop-save-error.png",
+      "sha256": "b04fa28ccd963b6d9b880966034403acabc516b94ae20914965e6355f1ae5ec9"
+    },
+    {
+      "name": "mobile-save-error",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-4/mobile-save-error.png",
+      "sha256": "99372ce55f92fa873c28744c07160aa5a9240842f841a1158df428e352acc425"
+    },
+    {
+      "name": "mobile-conflict",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-4/mobile-conflict.png",
+      "sha256": "ee2b2c0335aafa6fd0b5886fd5b62ec29c4b9dedac0a851dbbafc3ecff28f011"
+    },
+    {
+      "name": "desktop-conflict",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-4/desktop-conflict.png",
+      "sha256": "5ea41878660604633f3fcdcc9a96049c079ff5462700999344952e1385053ee5"
+    }
+  ],
+  "errors": [],
+  "axe": {
+    "desktop": [],
+    "mobile": []
+  }
+}

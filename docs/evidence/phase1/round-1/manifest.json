@@ -1,0 +1,117 @@
+{
+  "dataset": "synthetic writing through real development device engine; no Firebase project",
+  "candidateSourceDigest": "e7a6e0485a9d8c7ebce04ef21a8d76d24fad9dee39ef0e9dd74a6c6c81859861",
+  "capturedAt": "2026-10-23T13:43:58.977Z",
+  "browser": "156.0.8078.4",
+  "states": [
+    {
+      "name": "desktop-empty",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-1/desktop-empty.png",
+      "sha256": "002de20d58f066d018fcad82dff17bdc80dd5a7beefbf0df1526076220a28432"
+    },
+    {
+      "name": "desktop-writing",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-1/desktop-writing.png",
+      "sha256": "da867f1f68d1fb04946b9c3f9269136bbff5337dcb9cacb00fda07f97a6f01c0"
+    },
+    {
+      "name": "desktop-atlas",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-1/desktop-atlas.png",
+      "sha256": "adcf473d950e458890386d3ae1fd93ee05d91222c6442ee0b0edd8ec9a2c4c28"
+    },
+    {
+      "name": "desktop-history",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-1/desktop-history.png",
+      "sha256": "a56c0b328b73d5918fbea714fcc22dccafe3c09f4e6e20278ab9c4840fbdae32"
+    },
+    {
+      "name": "desktop-focus",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-1/desktop-focus.png",
+      "sha256": "1b2f499d3f9a576d9bab289da3420f0ace28477bc681961a369b9c50020538f0"
+    },
+    {
+      "name": "mobile-writing",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-1/mobile-writing.png",
+      "sha256": "e38585031f1b96a6b453020c2250d570fca8038f47e21227aa0c0d0508326f16"
+    },
+    {
+      "name": "mobile-focus",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-1/mobile-focus.png",
+      "sha256": "2ae6883d4c4500ee9bd5ab4c84f4bbc6bb4970c68705c494167156b6592783c2"
+    },
+    {
+      "name": "mobile-navigation",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-1/mobile-navigation.png",
+      "sha256": "7045fae6c38c5e1cc93b9275f68e80133d0cacf3aba480deeb7993cc3516cc82"
+    }
+  ],
+  "errors": [],
+  "axe": {
+    "desktop": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": 22
+      },
+      {
+        "id": "page-has-heading-one",
+        "impact": "moderate",
+        "nodes": 1
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "nodes": 2
+      }
+    ],
+    "mobile": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": 10
+      },
+      {
+        "id": "page-has-heading-one",
+        "impact": "moderate",
+        "nodes": 1
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "nodes": 1
+      }
+    ]
+  }
+}

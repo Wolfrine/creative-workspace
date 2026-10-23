@@ -1,0 +1,139 @@
+{
+  "dataset": "synthetic writing through real development device engine; no Firebase project",
+  "candidateSourceDigest": "94e831e2402d1c0df1dc96d690e798b10225903570a6be5c543009759f0829e6",
+  "capturedAt": "2026-10-23T14:02:22.498Z",
+  "browser": "156.0.8078.4",
+  "states": [
+    {
+      "name": "desktop-empty",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-3/desktop-empty.png",
+      "sha256": "a87a2dee7fb1dcdc2d1b0a07597bd9d93dbc8acc93bd236766d6f8247a531e23"
+    },
+    {
+      "name": "desktop-writing",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-3/desktop-writing.png",
+      "sha256": "0146cb6363d65e15a8e25ee30d5488e0257f4965f6ebda256bbd773214c88231"
+    },
+    {
+      "name": "desktop-atlas",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-3/desktop-atlas.png",
+      "sha256": "6ca1b65f1433a48e372ee71b71611ec363fd9179765932e3719f8cec8231a375"
+    },
+    {
+      "name": "desktop-history",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-3/desktop-history.png",
+      "sha256": "7bfb11f49e1676c48c153ce1ad85572634488e5f42a1dbfd2793e3caf1ca0503"
+    },
+    {
+      "name": "desktop-focus",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-3/desktop-focus.png",
+      "sha256": "8e6d911f2e3a494fa13c738ca86fdb403a35f8c208aa8f2d7a79426a36d1b433"
+    },
+    {
+      "name": "mobile-writing",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-3/mobile-writing.png",
+      "sha256": "37696c703619bc597a186bc4e1b660302bd88d41dc5b799dcd7db609b426cd3e"
+    },
+    {
+      "name": "mobile-focus",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-3/mobile-focus.png",
+      "sha256": "d939c818471f563b6cb546a19a1d666596adef822a16f05ce18da3397d9e321e"
+    },
+    {
+      "name": "mobile-navigation",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-3/mobile-navigation.png",
+      "sha256": "5216d061a4430edf61bd925610a0c82374ea6f0f434f4aabdf6a2ac61a951499"
+    },
+    {
+      "name": "narrow-writing",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "docs/evidence/phase1/round-3/narrow-writing.png",
+      "sha256": "36838d8761c73701fda3498612a503e95d518b97f68b0815b8df8c076f9cf741"
+    },
+    {
+      "name": "short-writing-formatting",
+      "viewport": {
+        "width": 390,
+        "height": 480
+      },
+      "path": "docs/evidence/phase1/round-3/short-writing-formatting.png",
+      "sha256": "176cf1ba760b63264552f3940a011353a765bcf52e5fe96d185a7b5d5c66ae87"
+    },
+    {
+      "name": "desktop-save-error",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-3/desktop-save-error.png",
+      "sha256": "b04fa28ccd963b6d9b880966034403acabc516b94ae20914965e6355f1ae5ec9"
+    },
+    {
+      "name": "mobile-save-error",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-3/mobile-save-error.png",
+      "sha256": "703f2e702ecdfebb9e22611114148e8c90473c2d40590c3ada22c8c9fd95a0c4"
+    },
+    {
+      "name": "mobile-conflict",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/round-3/mobile-conflict.png",
+      "sha256": "87259674c95e4b64e6b595f889c4f8cafd156cff357589a830ba3014dfe183e8"
+    },
+    {
+      "name": "desktop-conflict",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/round-3/desktop-conflict.png",
+      "sha256": "9fbfd39eb6a716f2695cc057198d7ec3992d171205f62014f6c2f8f14a377738"
+    }
+  ],
+  "errors": [],
+  "axe": {
+    "desktop": [],
+    "mobile": []
+  }
+}

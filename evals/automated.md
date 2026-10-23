@@ -1,6 +1,6 @@
 # Automated product acceptance cases
 
-All cases below: NOT RUN against Noveliaa. These are procedures for future browser/emulator/API adapters, not claims of existing endpoints. P0 blocks the relevant gate. Sources S12–S26 refer to the [research registry](../docs/research/sources.md).
+These are the full acceptance procedures, not blanket passing claims. Phase 1 execution and limitations are recorded in [current results](../docs/PHASE1_RESULTS.md); unlisted procedures remain NOT RUN. P0 blocks the relevant gate. Sources S12–S26 refer to the [research registry](../docs/research/sources.md).
 
 ## Fixed test material and environment
 

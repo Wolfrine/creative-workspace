@@ -2,7 +2,7 @@
 
 **Owner intent:** Build a private author-first writing workspace that preserves raw creative control, supports externally connected AI collaboration, prepares an approved reading experience, and gathers respectful peer reactions.
 
-**Stage:** Intent review; Codex to propose a plan before development.
+**Stage:** Owner-approved Phase 1 development and evaluation (23 October 2026). Production deployment and phases 2–4 remain unapproved.
 
 ## Constraints
 
@@ -21,8 +21,8 @@
 4. A peer reads that version, leaves effortless feedback, and may consent to limited behavior capture.
 5. The author traces every suggestion, visual, reaction and decision to the exact original/revision, or restores earlier material.
 
-## Unknowns to resolve during planning
+## Remaining release decisions
 
-Data model, authentication, external connector permissions, import/reconstruction process, Firebase project ID/hosting, versioned preview publishing, consent/retention and appropriate build/evaluation sequence.
+Verify the existing Firebase project/site/bucket and author UID; approve any new IAM, billing or backup-retention configuration. Complete physical-device and author writing/recovery acceptance. External connector permissions, reader publication and consent belong to later phases.
 
-**Detailed intent:** [INTENT.md](../INTENT.md). **Do not implement until approved.**
+**Detailed intent:** [INTENT.md](../INTENT.md). **Current evidence:** [Phase 1 results](../docs/PHASE1_RESULTS.md).

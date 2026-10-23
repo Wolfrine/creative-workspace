@@ -1,0 +1,13 @@
+
+> noveliaa@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.5 C:/Users/Sachit Tewary/Documents/Codex/2026-10-23/review-wolfrine-creative-workspace-github-repo/noveliaa
+
+
+ Test Files  3 passed (3)
+      Tests  31 passed (31)
+   Start at  20:12:12
+   Duration  585ms (tests 56%, import 34%, transform 7%, worker 3%)
+

@@ -1,0 +1,27 @@
+import { useMemo } from 'react';
+
+// Exact line matching only. This comparison never interprets or rewrites the author's text.
+function compareLines(before: string, after: string) {
+  const left = before.split('\n'); const right = after.split('\n');
+  if (before === after) return { left, right, removed: new Set<number>(), added: new Set<number>(), detailed: true };
+  if (left.length * right.length > 500000) return { left, right, removed: new Set<number>(), added: new Set<number>(), detailed: false };
+  const table = Array.from({ length: left.length + 1 }, () => new Uint32Array(right.length + 1));
+  for (let i = left.length - 1; i >= 0; i--) for (let j = right.length - 1; j >= 0; j--) table[i][j] = left[i] === right[j] ? table[i + 1][j + 1] + 1 : Math.max(table[i + 1][j], table[i][j + 1]);
+  const removed = new Set<number>(); const added = new Set<number>(); let i = 0; let j = 0;
+  while (i < left.length || j < right.length) {
+    if (i < left.length && j < right.length && left[i] === right[j]) { i++; j++; }
+    else if (i < left.length && (j === right.length || table[i + 1][j] >= table[i][j + 1])) removed.add(i++);
+    else added.add(j++);
+  }
+  return { left, right, removed, added, detailed: true };
+}
+
+export default function RevisionComparison({ selected, current }: { selected: string; current: string }) {
+  const result = useMemo(() => compareLines(selected, current), [selected, current]);
+  const identical = selected === current;
+  return <div className="comparison-content">
+    <p className="comparison-summary">{identical ? 'Text matches. Formatting or title may differ.' : result.detailed ? `Text comparison: ${result.removed.size} removed ${result.removed.size === 1 ? 'line' : 'lines'} · ${result.added.size} added ${result.added.size === 1 ? 'line' : 'lines'}.` : 'These long versions differ. Exact text is shown below without line highlighting.'}</p>
+    <div className="revision-texts is-comparing"><div><h4><span className="diff-key removed-key" />Selected version</h4><pre className="revision-prose">{result.left.map((line, index) => <span key={index} className={result.removed.has(index) ? 'diff-line diff-removed' : 'diff-line'}>{line}{index < result.left.length - 1 ? '\n' : ''}</span>)}</pre></div><div><h4><span className="diff-key added-key" />Current writing</h4><pre className="revision-prose">{result.right.map((line, index) => <span key={index} className={result.added.has(index) ? 'diff-line diff-added' : 'diff-line'}>{line}{index < result.right.length - 1 ? '\n' : ''}</span>)}</pre></div></div>
+    <p className="comparison-footnote">Text comparison only. Full revision data, including formatting, stays in your archive.</p>
+  </div>;
+}

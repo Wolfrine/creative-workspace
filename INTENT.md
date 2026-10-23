@@ -1,6 +1,6 @@
 # Noveliaa — creative writing workspace
 
-**Status:** Working intent draft for author review. **No development plan or implementation is approved yet.**
+**Status:** Phase 1 development approved by the owner on 23 October 2026. Build and test recoverable, author-first writing using Living Atlas with Quiet Folio. External AI collaboration, reader editions and feedback remain later phases. Production deployment is not approved.
 **Project:** `Wolfrine/creative-workspace` (private). **App name:** Noveliaa (working name).
 
 ## Why this exists
@@ -40,4 +40,4 @@ The earlier [Space intent draft](https://chatgpt.com/space/page_6ad9dead8cec8191
 
 Authentication and private sharing model; data/attachment schema; plugin/MCP authorization and writeback contract; media review and versioning; reader-consent data retention; whether/how to migrate existing fragments; exact Firebase project ID, hosting target and deployment workflow. The owner has reported a Firebase project and a GitHub Actions secret named `FIREBASE_SERVICE_ACCOUNT`; no credentials should be opened or copied into source.
 
-**Codex handoff:** Inspect the current repo and referenced projects. State understanding, gaps, trade-offs, phased plan and measurable evaluation methods **before writing code**. Development starts only after author approval.
+**Codex handoff:** Implement the approved writing phase, preserve provenance and originals, and provide observable test/visual evidence. Flag deployment configuration and decisions that require the owner. Do not infer approval for later stages or publication.

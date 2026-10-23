@@ -1,6 +1,6 @@
 # Structural evidence contract
 
-Version 1 is a normalized test projection. An adapter may map any product schema into it, but must keep original IDs, bytes, provenance and revision references. Do not rewrite app behavior merely to fit this checker. Store one JSON bundle with the arrays below and its referenced files in the same directory tree; use relative paths, no symlinks escaping that tree. The checker reads files only and never extracts archives or calls a service.
+Version 1 is a normalized test projection. An adapter may map any product schema into it, but must keep original IDs, bytes, provenance and revision references. Do not rewrite app behavior merely to fit this checker. Store one JSON bundle with the arrays below and its referenced files in the same directory tree; use relative paths, no symlinks escaping that tree. The checker reads files only and never extracts archives or calls a service. The default `full` profile retains all requirements below. The explicit `writing` profile requires originals, revisions and receipts, refuses later-phase records, and requires behavior disabled; it is not a full-release verdict.
 
 Top-level fields:
 

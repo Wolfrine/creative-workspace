@@ -1,11 +1,11 @@
 # Noveliaa repository instructions
 
-Read [INTENT.md](INTENT.md) and [.harness/objective.md](.harness/objective.md) first. They describe a **draft**, not development approval.
+Read [INTENT.md](INTENT.md) and [.harness/objective.md](.harness/objective.md) first. The owner approved **Phase 1 development on 23 October 2026**, then instructed “Implement the proposed plan.” Production deployment and later stages remain unapproved.
 
-## First assignment: plan, do not build
+## Current assignment: implement and evaluate Phase 1
 
 1. Inspect the actual repository and relevant writing/story projects. Verify evidence and separate known facts from assumptions.
-2. Return a concise understanding, open questions, architecture options, phased plan and evaluations. Start implementation **only after explicit author approval**.
+2. Build capture, freeform writing, optional organization, stable links/search, durable offline checkpoints, revision recovery and export. Follow Living Atlas with Quiet Folio writing; defer external AI, reader editions and feedback. Use the repository's evaluations and retain actual desktop/mobile and integrity evidence.
 3. Reuse existing work selectively; do not change NovaSaga, Novel-Encyclopedia, StoryForge or any other repository without a separate request.
 
 ## Non-negotiable creative safeguards

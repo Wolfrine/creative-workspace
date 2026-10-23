@@ -1,0 +1,15 @@
+{
+  "status": "STRUCTURAL_EVIDENCE_VALID",
+  "dataset_kind": "synthetic",
+  "app_revision": "5d0035a034a94c8525316cd5cb47d047208b3d861539d4acadb243a2bb734bf6",
+  "profile": "writing",
+  "scope": "supplied export projection only; runtime/human gates not assessed",
+  "checks": [
+    "C01 bytes",
+    "C02 revision graph",
+    "C03 saved-text oracle",
+    "C09 immutable history",
+    "later-phase absence"
+  ],
+  "problems": []
+}
