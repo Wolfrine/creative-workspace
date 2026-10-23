@@ -47,7 +47,9 @@ jobs:
       - run: npm run test:evidence
       - run: npm run test:rules
       - run: npm run build
-      - run: npx playwright install --with-deps chromium
+      - name: Install Chromium using the hosted runner's existing system libraries
+        timeout-minutes: 4
+        run: npx playwright install chromium
       - run: npm run test:cloud
       - run: npm run test:browser
       - name: Verify retained Spark source and visual evidence
