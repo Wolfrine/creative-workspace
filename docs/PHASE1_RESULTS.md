@@ -9,7 +9,8 @@ and portable exports. External AI, reader editions and feedback remain deferred.
 Firestore and Hosting. It replaces the earlier Functions/Storage design. No
 billing upgrade, new key, Functions deployment or Storage bucket is requested.
 The owner reviews the actual Firebase site, **https://noveliaa.web.app**, after
-the Actions release passes. See [current deployment status](DEPLOYMENT.md).
+the Actions release passes. **The Spark release is now live and verified**, with
+24 hosted file digests matching its build. See [release and hosted evidence](DEPLOYMENT.md).
 
 ## Current executed evidence
 
@@ -50,6 +51,13 @@ with no horizontal overflow or clipping. Authenticated desktop/mobile axe scans
 reported zero violations. [Desktop](evidence/phase1/spark/desktop-writing.png),
 [mobile](evidence/phase1/spark/mobile-writing.png),
 [mobile access explanation](evidence/phase1/spark/mobile-denied.png).
+
+The actual hosted sign-in screen was then visually checked at 1440×1000,
+390×844 and 320×640. Desktop/mobile axe scans reported zero violations, the public
+shell cold-reloaded offline, Firebase project/App ID matched and an unsigned
+Firestore read returned 403. [Hosted evidence](evidence/phase1/spark-hosted/visual-check.json).
+This establishes the hosted public entry point, not the owner's authenticated
+production writing session.
 
 The six original visual rounds, final critic 8.2 / lead 8.3, process-crash recovery
 20/20, and writing-performance profile remain historical evidence under

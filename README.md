@@ -7,7 +7,8 @@ immutable revision history, exact originals and portable export.
 Phase 1 uses **Firebase Spark**: Authentication, Firestore and Hosting. The owner
 reviews **https://noveliaa.web.app** after an authorized **GitHub Actions** release.
 The existing repository secret is used; Functions, Storage and Blaze are excluded.
-See [actual deployment status](docs/DEPLOYMENT.md) before calling the app live.
+**The app is live**, with matching project/App ID, all 24 hosted build files
+verified and desktop/mobile sign-in checks passed. See [release evidence](docs/DEPLOYMENT.md).
 
 - [Intent](INTENT.md), [agent instructions](AGENTS.md), [objective](.harness/objective.md)
 - [Architecture and trust boundary](docs/ARCHITECTURE.md), [Firebase operations](docs/FIREBASE.md)

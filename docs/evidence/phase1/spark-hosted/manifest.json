@@ -1,0 +1,39 @@
+{
+  "capturedAt": "2026-10-23T18:08:08.266Z",
+  "url": "https://noveliaa.web.app",
+  "scope": "Actual hosted public entry, file inventory and Actions Rules/source readback; owner authenticated production session not inferred",
+  "files": [
+    {
+      "path": "docs/evidence/phase1/spark-hosted/actions-release.json",
+      "sha256": "2b57d9918ef5311fdb3a0a92180941fdeff26e3852a5bb4a2764405674797bfc"
+    },
+    {
+      "path": "docs/evidence/phase1/spark-hosted/check-hosted.mjs",
+      "sha256": "0025a39e37ffd0326dc59b36bc59d6f352e4ffdcc8761ba4c6af0bf35f2217b7"
+    },
+    {
+      "path": "docs/evidence/phase1/spark-hosted/desktop.png",
+      "sha256": "27ae6f693d2e91e723dd51602c925e9dd2e82a54a9e6baca8e5fa9a9fdc6977e"
+    },
+    {
+      "path": "docs/evidence/phase1/spark-hosted/files.json",
+      "sha256": "f8196c7d61b3786b088ccf82e742667f8ffe2a3820d2ef9e8ddc96eabf237b6d"
+    },
+    {
+      "path": "docs/evidence/phase1/spark-hosted/mobile-320.png",
+      "sha256": "6af7bfe1109e0b0f40f779bdc3e17e906df187bf60cf87deee9db4f24a65e99c"
+    },
+    {
+      "path": "docs/evidence/phase1/spark-hosted/mobile.png",
+      "sha256": "565af1e8f6dddfed9be98b8b195afff980931aab79755dc9cf416e320c9fe947"
+    },
+    {
+      "path": "docs/evidence/phase1/spark-hosted/record-hosted.mjs",
+      "sha256": "dffeada040a5e0fde966d94c0499b49cbfba07cd18d90df2751bda0c582c05c1"
+    },
+    {
+      "path": "docs/evidence/phase1/spark-hosted/visual-check.json",
+      "sha256": "a92ec5ac0bf40b487644dcd34336bf55ea37695283dc0019238fdbc19544f2ca"
+    }
+  ]
+}

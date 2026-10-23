@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-23T18:03:51.111Z",
+  "url": "https://noveliaa.web.app",
+  "projectId": "noveliaa",
+  "appId": "1:278082781314:web:9a4b7acef07fa8e4dfb49b",
+  "desktop": "1440x1000",
+  "mobile": [
+    "390x844",
+    "320x640"
+  ],
+  "desktopAxe": [],
+  "mobileAxe": [],
+  "horizontalOverflow": false,
+  "pageErrors": [],
+  "offlinePublicShell": "cold reload passed with cached sign-in gate",
+  "authenticatedOwnerAcceptance": "Human Google sign-in required; no production bypass or manuscript seed"
+}

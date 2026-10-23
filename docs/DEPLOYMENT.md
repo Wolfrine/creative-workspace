@@ -5,6 +5,21 @@ project `noveliaa` (278082781314), Web App
 `1:278082781314:web:9a4b7acef07fa8e4dfb49b`. Localhost is development evidence
 only. Deployment is already authorized; the owner requires Spark.
 
+**Live and verified on 23 October 2026.** The first successful Spark release
+[39998452937](https://github.com/Wolfrine/creative-workspace/actions/runs/39998452937)
+passed all application checks, configured the private author, released Rules with
+matching source readback, published Hosting and matched all **24** hosted files
+to that run's configured build. No Functions, Storage or billing upgrade occurred.
+The [bounded-installer release 40000001285](https://github.com/Wolfrine/creative-workspace/actions/runs/40000001285)
+also passed, with the same Rules source digest and 24 verified hosted files.
+The [independent live inventory](evidence/phase1/spark-hosted/files.json) and
+[desktop/mobile check](evidence/phase1/spark-hosted/visual-check.json) retain the
+actual URL/App ID, file digests, denied unsigned read and offline public-shell
+reload. The live Google sign-in screen was visually inspected at 1440×1000,
+390×844 and 320×640, with zero reported desktop/mobile axe violations. Authenticated
+writing/sync/recovery passed the emulators; the human owner's production Google
+session and physical-phone acceptance remain separate.
+
 ## Release path
 
 [Deploy Noveliaa to Firebase](../.github/workflows/firebase-deploy.yml) uses the
@@ -49,6 +64,14 @@ supported [Admin SDK Rules release](https://firebase.google.com/docs/rules/manag
 uses the existing account's creation/update permissions after local emulator
 testing, and verifies deployed source readback. No additional role is requested.
 The release makes no IAM, billing, API-enablement or bucket changes.
+
+The second runner's system-package refresh stalled before publication, then
+resumed and completed successfully. A one-time guarded recovery workflow left
+both runs alone after they advanced beyond that stage; the temporary workflow
+has been removed. Browser setup now downloads Chromium with a four-minute bound
+using the hosted runner's existing libraries. All browser tests remain required.
+Optional artifact upload explicitly includes its selected hidden `.local` paths;
+essential evidence is also retained in the repository.
 
 The read-only metadata workflow projects only the Spark target and relevant
 permissions. No credentials, OAuth tokens or manuscript content enter its logs.
