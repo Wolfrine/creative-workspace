@@ -9,6 +9,6 @@ A private, author-led workspace for writing stories, collaborating with external
 - [Minimal harness objective](.harness/objective.md)
 - [Research and architecture review](docs/research/noveliaa-review-2026-10-23.md)
 - [Automated and human evaluations](evals/README.md)
+- [Visual prototypes and owner preference](design/prototypes/README.md)
 
 **Development is not approved yet.** Codex should inspect existing projects and propose an implementation/evaluation plan first. Firebase project and GitHub secret `FIREBASE_SERVICE_ACCOUNT` were configured by the owner; deployment settings remain to be verified.
-
