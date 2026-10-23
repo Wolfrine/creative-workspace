@@ -16,14 +16,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      npm_config_fetch_retries: '3'
+      npm_config_fetch_retry_mintimeout: '2000'
+      npm_config_fetch_retry_maxtimeout: '10000'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: npm
-      - run: npm ci
-      - run: npm --prefix functions ci
+      - run: npm ci --no-audit --no-fund
+      - run: npm --prefix functions ci --no-audit --no-fund
       - run: npm test
       - run: npm --prefix functions test
       - run: npm run test:evidence
