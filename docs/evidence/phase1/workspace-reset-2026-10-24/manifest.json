@@ -1,9 +1,9 @@
 {
-  "capturedAt": "2026-10-24T15:52:15.974Z",
+  "capturedAt": "2026-10-24T15:53:07.095Z",
   "plan": "Spark",
   "scope": "Explicit full workspace reset with retired-device write fencing; page-specific conflict review and acknowledged resolution",
   "dataset": "Synthetic fixtures in real app, IndexedDB, Auth/Firestore emulators and Chromium. Production reset is separately recorded after deployment; no manuscript in test fixtures.",
-  "sourceDigest": "97471e5a92e366f99525f400b81d58405f526e1b515d420a31aad75aa0200327",
+  "sourceDigest": "7ff866b17366de72e1dc03bff27c25f6ed8728c3951d368c3467c257c08993d1",
   "sources": [
     {
       "path": ".firebaserc",
@@ -12,8 +12,8 @@
     },
     {
       "path": ".github/workflows/firebase-deploy.yml",
-      "bytes": 3723,
-      "sha256": "8d5754bf0541c934ad9d5d19eacdc3a3a928ea915cdfe814073e5148df10816f"
+      "bytes": 3769,
+      "sha256": "ea4af8354b6e7ef2f7dd6aa768911dd036fa8bd1b7846e647aaa981fdcc11175"
     },
     {
       "path": ".github/workflows/phase1-ci.yml",

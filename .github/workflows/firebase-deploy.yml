@@ -15,6 +15,7 @@ on:
       - deployment/**
       - functions/scripts/prepare-spark-release.mjs
       - functions/scripts/deploy-spark-rules.mjs
+      - functions/scripts/reset-workspace.mjs
       - scripts/verify-*.mjs
       - .github/workflows/firebase-deploy.yml
 permissions:
