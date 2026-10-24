@@ -1,9 +1,9 @@
 {
-  "capturedAt": "2026-10-24T15:39:28.954Z",
+  "capturedAt": "2026-10-24T15:47:11.121Z",
   "plan": "Spark",
   "scope": "Explicit full workspace reset with retired-device write fencing; page-specific conflict review and acknowledged resolution",
   "dataset": "Synthetic fixtures in real app, IndexedDB, Auth/Firestore emulators and Chromium. Production reset is separately recorded after deployment; no manuscript in test fixtures.",
-  "sourceDigest": "c7531ad584db08bcaa3ac00f985cfcf56cf7bd82917ee9a640c1b38e1a27c1ad",
+  "sourceDigest": "a1f27ff681c94ab4f6b65e5fab9f16a72c3a2e30660471f5379065e30db9fccd",
   "sources": [
     {
       "path": ".firebaserc",
@@ -118,12 +118,12 @@
     {
       "path": "scripts/record-workspace-reset-candidate.mjs",
       "bytes": 3737,
-      "sha256": "235f3750d7f31f9d2dd48fc09afa114303ee9eaadf0952f2430f308023e3f694"
+      "sha256": "13b6e635eec2375cd752df45605b09f02814f3a23cabde47fbc31fe71cac6a8c"
     },
     {
       "path": "scripts/verify-deployment-candidate.mjs",
       "bytes": 1747,
-      "sha256": "3e50c841f9cc883a4ecec416e85a11c8e9c6d260f0d75415dc169aef9464b586"
+      "sha256": "3a45e9fd08f13aae01449cca548230a6e233b81df4f7e71d767805452bcbb053"
     },
     {
       "path": "scripts/verify-hosted.mjs",
@@ -132,13 +132,18 @@
     },
     {
       "path": "src/App.tsx",
-      "bytes": 53384,
-      "sha256": "85022c900913c5bbb8c38efcbc44ec5d06f7d6f5871b282cc41c4ad46c5a15b6"
+      "bytes": 53192,
+      "sha256": "e6f6e30729e2a624a937c64d1b3a4bebc4336c9d99b4a6bf0bb516978e30edf1"
     },
     {
       "path": "src/AppHost.tsx",
       "bytes": 4601,
       "sha256": "74a4491cbcb03b4caa841d3ba0eaad0cff0d315f4193530f415d327084070482"
+    },
+    {
+      "path": "src/cloud/firebase-access.test.ts",
+      "bytes": 4863,
+      "sha256": "902c86f944fa566a9405f9022381333ab0b45d11a920a1ab49ee40f74e3bbb91"
     },
     {
       "path": "src/cloud/firebase.test.ts",
@@ -147,8 +152,8 @@
     },
     {
       "path": "src/cloud/firebase.ts",
-      "bytes": 7839,
-      "sha256": "b35ca303e87cd28189692e397ddbbb9f5e8a500c49ee8167c29869890e2781af"
+      "bytes": 9244,
+      "sha256": "61e6dfe8cf0ae732d34a80b95c5e66f2730aca25f596b83c8eb5e2435f51e2ad"
     },
     {
       "path": "src/cloud/spark-listener.test.ts",
@@ -242,13 +247,13 @@
     },
     {
       "path": "src/storage/database.ts",
-      "bytes": 12319,
-      "sha256": "67bad17e2623e1497db3a22923ac0e5d4860c9db6820e585cc38e83078ab78d8"
+      "bytes": 12155,
+      "sha256": "21a9a35d526b237c17a520540c9d7e1b8715a4b0d052749e261ccf84d736f699"
     },
     {
       "path": "src/storage/workspace-reset.test.ts",
-      "bytes": 2814,
-      "sha256": "346fd9c84c58d172d7aa3a92391809466e966e63beef71d6da522321be9fab5b"
+      "bytes": 3304,
+      "sha256": "d132d88ca3a2717854c640417e063babbf6f9010d77e05f4178c58764c5b5aa7"
     },
     {
       "path": "src/styles.css",
@@ -309,18 +314,18 @@
   "renders": [
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/conflict-blank-history-1440.png",
-      "bytes": 181425,
-      "sha256": "10492e4dc2c57e782bdb651397dbbae6b4af108401835ce30af469defd234220"
+      "bytes": 180840,
+      "sha256": "5e4ead301fe8e23c43236eea3937545f92794478cb11d816c3f19729e39a750d"
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/conflict-blank-history-320.png",
-      "bytes": 42411,
-      "sha256": "67deda6a2ffef9d5e739d48011d41bba4d3acb6c2a35e6177cbfb093317b2cd4"
+      "bytes": 42210,
+      "sha256": "2c63157ac4ad6f8f005c72f237e49cd06534c0a50289f05e3fbcc0b01e4b77fa"
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/conflict-blank-history-390.png",
-      "bytes": 43341,
-      "sha256": "fde0fbd3bf751e65c60cdb4c605de8a283e6342190e0e9b63f888e49de9bf9f8"
+      "bytes": 43339,
+      "sha256": "9b3cab17b4c7a013c881203cacbd4359195cc688f7d71c10376c987cdffd96a0"
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/conflict-pages-1440.png",
@@ -386,33 +391,33 @@
   "testEvidence": [
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/README.md",
-      "bytes": 3059,
-      "sha256": "d4946ad3b613f9a67e37f5636351e4570b5b1926e0281766aa51ebfd0852f790"
+      "bytes": 3755,
+      "sha256": "829f3c8445040bc6b417ae1e5b515afc1239cc5d046b3ed7c45d763a3b285bc4"
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/browser-results.json",
-      "bytes": 24790,
-      "sha256": "e7ac673a7dc11d3320025223592078f22fbb537e2b048be7361ecdaf687fa713"
+      "bytes": 24798,
+      "sha256": "b0b279d757b3210f85095e8ec6468e05da15c9aea958c6af0ed06cc7dfc2dda1"
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/browser.log",
       "bytes": 3089,
-      "sha256": "0fbafea3afdcfd01070189e5d6b2ac0d66018eec950bc0f561ee5fd76e78faa3"
+      "sha256": "3f68ea2e72f2cbe7f2e1b485cea950a784c9d41f90e3ae19b0f675a0172f1163"
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/build.log",
       "bytes": 2226,
-      "sha256": "6a6e1ba66599fbfd6b14f80af28bcc8ad123e81239fdd7c416b30c1e248de045"
+      "sha256": "0c7cfb036dc268e4c48cad35860773e23f8a2b6b4e9500e66aac65635469eb33"
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/client.log",
       "bytes": 342,
-      "sha256": "666269343d020e27ec1a19a0e1339cfae1a1b594597c427965f65ff7f70532ee"
+      "sha256": "cdd56cb3ed1d4197732d5182789d2cfd9cfc27d5d50af77d317d700243dccbda"
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/cloud-browser.log",
-      "bytes": 3739,
-      "sha256": "341860df56ca1e35f952a17bbde075cd06ec8138cc103bf96f1dcef9fd0dccf1"
+      "bytes": 3461,
+      "sha256": "140bf9545c8a14dfb56c8b9fff917a4e913452b78ef5df63998265c848944b57"
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/evaluations.log",
@@ -431,23 +436,23 @@
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/spark-browser-results.json",
-      "bytes": 11650,
-      "sha256": "b6530edeecc5a329dadffd9f3a4b8cb1ed97b42db63186324cf3f515155abcfb"
+      "bytes": 11657,
+      "sha256": "3fa3e9b4eaee874b9e18d14fb543218736939acc001cf778d4a77fcb9df0bf87"
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/structural/after-archive.json",
       "bytes": 6300,
-      "sha256": "b3e7b7caf906a17a9888bbf6dd6c79f75195d4b40eb27636690bf9a3ffb0243d"
+      "sha256": "265915694e64c67d30614547ecbee14ac99edf0c93fa65ee69b9ba8774a1ae91"
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/structural/before-archive.json",
       "bytes": 5691,
-      "sha256": "0424dcdad78e8a8d0c3dc2c9d29e14649f35ca38e12d057757295503e3b809ba"
+      "sha256": "0adfa0d1fc82b5b5f48c2b1d5c298b4489d0ad0a5551a7c1a38c8cabf884634e"
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/structural/oracle.json",
       "bytes": 409,
-      "sha256": "1c6801fe417517d3bdd9f94cd5fd04c80d0d52eee0f618b815c10f161085241e"
+      "sha256": "8eb66f50b9cdb5b06c5aaf487ed55840313bf6356ed0f6036e128155a779a0dc"
     },
     {
       "path": "docs/evidence/phase1/workspace-reset-2026-10-24/visual-review.json",
@@ -477,9 +482,9 @@
       "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543"
     },
     {
-      "path": "dist/assets/index-C98JJagw.js",
-      "bytes": 1382240,
-      "sha256": "72db62845ad05f387bf64a7e88938cbdbdeb1303fcdc865f23dbf99fd50e4984"
+      "path": "dist/assets/index-DDsIXptb.js",
+      "bytes": 1382527,
+      "sha256": "51e5561f24c9599fd58b7c9a3fafbf43f52e94f3af86e5967e7a41bf249d74cb"
     },
     {
       "path": "dist/assets/index-V-0wUvJ2.css",
@@ -564,7 +569,7 @@
     {
       "path": "dist/index.html",
       "bytes": 700,
-      "sha256": "b021e18590e07d4dfe5269016e1fc742057d737d0d0c411f5e18abb271dc50ab"
+      "sha256": "f64adf330f8cbb77e2b4ba4d67bb7974a3d91c9c1c3491175af3781decfe9906"
     },
     {
       "path": "dist/manifest.webmanifest",
@@ -574,14 +579,14 @@
     {
       "path": "dist/sw.js",
       "bytes": 2495,
-      "sha256": "a8d910a437cf7f73d16e0629087fd9a6ab7aa561780524ae1ed2b365480d769c"
+      "sha256": "a4f5bab716887278ac946f57562490bddefdd2b3e9a7acdb32fbd2e822de8264"
     }
   ],
   "browserPasses": 7,
   "browserFailures": 0,
   "writingBrowserPasses": 20,
   "writingBrowserFailures": 0,
-  "clientPasses": 54,
+  "clientPasses": 58,
   "rulePasses": 12,
   "ruleFailures": 0,
   "visualInspection": {

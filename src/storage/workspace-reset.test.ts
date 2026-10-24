@@ -35,3 +35,9 @@ it('does not clear a concurrent tab warning while an unreviewed pending revision
   expect((await db.snapshot()).revisions).toHaveLength(3);
   db.close(); engine.dispose();
 });
+it('a stale named workspace selection cannot delete a newer named device store', async () => {
+  const newer = await DeviceDatabase.open('author', 'reset_newer'); await newer.setPreference('new-writing-canary', 'retain'); newer.close();
+  const stale = await DeviceDatabase.open('author', 'reset_older'); stale.close();
+  const reopened = await DeviceDatabase.open('author', 'reset_newer');
+  expect(await reopened.getPreference('new-writing-canary')).toBe('retain'); reopened.close();
+});

@@ -128,13 +128,11 @@ export default function App({ workspace, session }: { workspace: WorkspaceContro
   const confirmChoice = () => {
     if (!historyDocument || !selectedRevision) return;
     const documentId = historyDocument.id; const revisionId = selectedRevision.id;
-    const choosingCurrent = selectedCurrent; const wasConflicted = historyConflicted;
+    const wasConflicted = historyConflicted;
     void act(async () => {
-      if (!choosingCurrent || !pendingChoices.includes(documentId)) {
-        await workspace.restoreRevision(revisionId);
-        if (wasConflicted) setPendingChoices(previous => previous.includes(documentId) ? previous : [...previous, documentId]);
-        setHistoryId(null);
-      }
+      await workspace.restoreRevision(revisionId);
+      if (wasConflicted) setPendingChoices(previous => previous.includes(documentId) ? previous : [...previous, documentId]);
+      setHistoryId(null);
       await workspace.sync();
       await new Promise<void>(resolve => requestAnimationFrame(() => resolve()));
       if (latestState.current.error) return;
@@ -244,7 +242,7 @@ export default function App({ workspace, session }: { workspace: WorkspaceContro
         <div className="revision-preview">{selectedRevision && historyDocument ? <>
           <div className="revision-heading"><div><h3 title={selectedRevision.snapshot.title || 'Untitled'}>{selectedRevision.snapshot.title || 'Untitled'}</h3><small>{preciseTimeOf(selectedRevision.createdAt)} · {wordCount(selectedRevision.snapshot.plainText)} words{selectedCurrent ? ' · Current writing' : ''}</small></div>{!compact && <label className="check-label"><input type="checkbox" checked={compare} onChange={event => setCompare(event.target.checked)} />Compare current</label>}</div>
           {compare ? <RevisionComparison selected={selectedRevision.snapshot.plainText} current={historyDocument.plainText} differences={[...(selectedRevision.snapshot.title !== historyDocument.title ? ['The titles differ.'] : []), ...(JSON.stringify(selectedRevision.snapshot.body) !== JSON.stringify(historyDocument.body) && selectedRevision.snapshot.plainText === historyDocument.plainText ? ['The saved formatting differs.'] : []), ...(selectedRevision.snapshot.collectionId !== historyDocument.collectionId ? ['The collection differs.'] : [])]} /> : <div className="revision-texts"><div><pre className="revision-prose">{selectedRevision.snapshot.plainText || 'This version is a blank page.'}</pre></div></div>}
-          <div className="revision-bottom"><code title="Saved content fingerprint">{selectedRevision.contentHash.slice(0, 18)}…</code><button className="primary-button" disabled={busy || selectedCurrent && !historyConflicted} onClick={confirmChoice}>{busy ? <LoaderCircle size={16} className="spin" /> : selectedCurrent && historyConflicted ? <Check size={16} /> : <History size={16} />}{selectedCurrent && historyConflicted ? pendingChoices.includes(historyDocument.id) ? 'Retry cloud sync' : 'Keep current writing' : 'Restore this version'}</button></div>
+          <div className="revision-bottom"><code title="Saved content fingerprint">{selectedRevision.contentHash.slice(0, 18)}…</code><button className="primary-button" disabled={busy || selectedCurrent && !historyConflicted} onClick={confirmChoice}>{busy ? <LoaderCircle size={16} className="spin" /> : selectedCurrent && historyConflicted ? <Check size={16} /> : <History size={16} />}{selectedCurrent && historyConflicted ? 'Keep current writing' : 'Restore this version'}</button></div>
         </> : <p className="quiet-empty">{historyDocument ? 'Your first saved checkpoint will appear here.' : 'This page is unavailable in this workspace. Close history and check cloud sync.'}</p>}</div>
       </div>
     </Modal>}

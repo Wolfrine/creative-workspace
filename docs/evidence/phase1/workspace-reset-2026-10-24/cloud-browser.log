@@ -4,27 +4,26 @@ i  firestore: Firestore Emulator logging to firestore-debug.log
 +  firestore: Firestore Emulator was started in standard edition.
 +  firestore: Firestore Emulator UI websocket is running on 9150.
 i  Running script: node node_modules/@playwright/test/cli.js test --config playwright.spark.config.ts
-[WebServer] (node:151316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:169792) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
-[WebServer] (node:152684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:171292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
 Running 7 tests using 1 worker
 
-(node:165892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:177292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
-  ok 1 tests\spark-browser\reset.spec.ts:55:1 › authorized reset deletes exact originals/history, remounts a clean desktop workspace, preserves Auth and is idempotent (11.7s)
-[WebServer] 9:06:23 pm [vite] (client) [console.warn] [2026-10-24T15:36:22.607Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x2f7823f7 transport errored. Name: undefined Message: undefined
-[WebServer] 9:06:23 pm [vite] (client) [console.warn] [2026-10-24T15:36:22.704Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x2f7823f8 transport errored. Name: undefined Message: undefined
-  ok 2 tests\spark-browser\reset.spec.ts:90:1 › offline old-device drafts cannot repopulate a reset on reconnect and the mobile session opens its new store (7.7s)
-[WebServer] 9:06:37 pm [vite] (client) [console.warn] [2026-10-24T15:36:36.574Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x3ab7661e transport errored. Name: undefined Message: undefined
-[WebServer] 9:06:37 pm [vite] (client) [console.warn] [2026-10-24T15:36:36.676Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x3ab7661f transport errored. Name: undefined Message: undefined
-[WebServer] file watcher error: EBUSY: resource busy or locked, watch 'C:\Users\Sachit Tewary\Documents\Codex\2026-10-23\review-wolfrine-creative-workspace-github-repo\noveliaa\.local\spark-test-results\.playwright-artifacts-0\a4b4d21b-c333-487c-9529-c872072490e0.crdownload'
-  ok 3 tests\spark-browser\writing.spec.ts:52:1 › real author sign-in, cloud receipt, isolated-device restore, offline checkpoint and reconnect (16.7s)
-  ok 4 tests\spark-browser\writing.spec.ts:85:1 › imported conversation retains exact original and unverified provenance across devices; revision recovery and archive export (11.1s)
-  ok 5 tests\spark-browser\writing.spec.ts:114:1 › unapproved real Auth account is denied before opening the workspace (1.8s)
-  ok 6 tests\spark-browser\writing.spec.ts:124:1 › a used laptop silently refreshes phone edits, then receives live pages and edits with persistent SDK cache (13.4s)
-  ok 7 tests\spark-browser\writing.spec.ts:149:1 › real Firebase retains both genuinely concurrent device edits (10.9s)
+  ok 1 tests\spark-browser\reset.spec.ts:55:1 › authorized reset deletes exact originals/history, remounts a clean desktop workspace, preserves Auth and is idempotent (10.5s)
+[WebServer] 9:14:42 pm [vite] (client) [console.warn] [2026-10-24T15:44:41.401Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x8ac0ede0 transport errored. Name: undefined Message: undefined
+[WebServer] 9:14:42 pm [vite] (client) [console.warn] [2026-10-24T15:44:41.493Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x8ac0ede1 transport errored. Name: undefined Message: undefined
+  ok 2 tests\spark-browser\reset.spec.ts:90:1 › offline old-device drafts cannot repopulate a reset on reconnect and the mobile session opens its new store (8.8s)
+[WebServer] 9:14:57 pm [vite] (client) [console.warn] [2026-10-24T15:44:56.956Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x3d2d9023 transport errored. Name: undefined Message: undefined
+[WebServer] 9:14:57 pm [vite] (client) [console.warn] [2026-10-24T15:44:57.047Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x3d2d9024 transport errored. Name: undefined Message: undefined
+  ok 3 tests\spark-browser\writing.spec.ts:52:1 › real author sign-in, cloud receipt, isolated-device restore, offline checkpoint and reconnect (17.7s)
+  ok 4 tests\spark-browser\writing.spec.ts:85:1 › imported conversation retains exact original and unverified provenance across devices; revision recovery and archive export (10.3s)
+  ok 5 tests\spark-browser\writing.spec.ts:114:1 › unapproved real Auth account is denied before opening the workspace (1.9s)
+  ok 6 tests\spark-browser\writing.spec.ts:124:1 › a used laptop silently refreshes phone edits, then receives live pages and edits with persistent SDK cache (13.2s)
+  ok 7 tests\spark-browser\writing.spec.ts:149:1 › real Firebase retains both genuinely concurrent device edits (9.2s)
 
   7 passed (1.3m)
 +  Script exited successfully (code 0)

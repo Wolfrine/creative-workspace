@@ -17,5 +17,5 @@ assert.equal(binding.appId, '1:278082781314:web:9a4b7acef07fa8e4dfb49b');
 assert.equal(binding.planConstraint, 'Spark');
 assert.equal(manifest.browserFailures, 0); assert.equal(manifest.ruleFailures, 0);
 assert.equal(manifest.writingBrowserFailures, 0); assert.equal(manifest.browserPasses, 7); assert(manifest.writingBrowserPasses >= 20);
-assert(manifest.clientPasses >= 53); assert(manifest.rulePasses >= 12); assert.equal(manifest.visualInspection.result, 'pass');
+assert(manifest.clientPasses >= 58); assert(manifest.rulePasses >= 12); assert.equal(manifest.visualInspection.result, 'pass');
 console.log(JSON.stringify({ plan: 'Spark', sources: manifest.sources.length, actualRenders: manifest.renders.length, testEvidence: manifest.testEvidence.length, sourceDigest: manifest.sourceDigest, productionOwnerAcceptance: 'not inferred from emulator evidence' }));

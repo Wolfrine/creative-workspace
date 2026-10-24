@@ -27,11 +27,11 @@ dist/assets/literata-latin-ext-wght-italic-CC1SwlwQ.woff2        43.25 kB
 dist/assets/literata-latin-wght-normal-DLxlUchJ.woff2            52.49 kB
 dist/assets/literata-latin-wght-italic-Bm_GJfSc.woff2            53.72 kB
 dist/assets/index-V-0wUvJ2.css                                   72.16 kB │ gzip:  15.02 kB
-dist/assets/index-C98JJagw.js                                 1,382.24 kB │ gzip: 421.59 kB
+dist/assets/index-DDsIXptb.js                                 1,382.52 kB │ gzip: 421.63 kB
 
 [plugin builtin:vite-reporter] 
 (!) Some chunks are larger than 500 kB after minification. Consider:
 - Using dynamic import() to code-split the application
 - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
-✓ built in 1.59s
+✓ built in 914ms

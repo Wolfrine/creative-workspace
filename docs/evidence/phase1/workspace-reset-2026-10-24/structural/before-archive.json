@@ -1,14 +1,14 @@
 {
   "format": "noveliaa-writing-archive",
   "schemaVersion": 1,
-  "exportedAt": "2026-10-24T15:38:00.676Z",
+  "exportedAt": "2026-10-24T15:46:26.112Z",
   "snapshot": {
     "schemaVersion": 1,
-    "accountId": "device-preview-test-64364233ac88cbb4898bd16b30b3af5d99ea9bbf-1792856279228",
+    "accountId": "device-preview-test-64364233ac88cbb4898bd16b30b3af5d99ea9bbf-1792856784722",
     "documents": [
       {
-        "id": "93ce18df-ff66-48d3-a063-edb122a93028",
-        "universeId": "af9feea1-f1ca-4732-be9d-3b3621866e30",
+        "id": "badb0724-fec5-4789-8ff6-cbfb3fc9433d",
+        "universeId": "8da12249-b498-4bbe-976b-58e52ded683c",
         "title": "mixed-source",
         "body": {
           "type": "doc",
@@ -66,21 +66,21 @@
         "order": 0,
         "origin": "imported_chat",
         "sourceOriginalIds": [
-          "b730f6a4-861b-4be1-a054-2dd7fddced2b"
+          "4727cc1f-008e-4e0f-a1cb-c581c74c2cfb"
         ],
-        "createdAt": "2026-10-24T15:38:00.438Z",
-        "updatedAt": "2026-10-24T15:38:00.438Z",
-        "headRevisionId": "8436d7dc-be79-494d-a601-01619acbc685"
+        "createdAt": "2026-10-24T15:46:25.922Z",
+        "updatedAt": "2026-10-24T15:46:25.922Z",
+        "headRevisionId": "2dcf231a-f647-4a07-9d16-71ab8abd8a33"
       }
     ],
     "revisions": [
       {
-        "id": "8436d7dc-be79-494d-a601-01619acbc685",
-        "documentId": "93ce18df-ff66-48d3-a063-edb122a93028",
-        "universeId": "af9feea1-f1ca-4732-be9d-3b3621866e30",
+        "id": "2dcf231a-f647-4a07-9d16-71ab8abd8a33",
+        "documentId": "badb0724-fec5-4789-8ff6-cbfb3fc9433d",
+        "universeId": "8da12249-b498-4bbe-976b-58e52ded683c",
         "snapshot": {
-          "id": "93ce18df-ff66-48d3-a063-edb122a93028",
-          "universeId": "af9feea1-f1ca-4732-be9d-3b3621866e30",
+          "id": "badb0724-fec5-4789-8ff6-cbfb3fc9433d",
+          "universeId": "8da12249-b498-4bbe-976b-58e52ded683c",
           "title": "mixed-source",
           "body": {
             "type": "doc",
@@ -138,27 +138,27 @@
           "order": 0,
           "origin": "imported_chat",
           "sourceOriginalIds": [
-            "b730f6a4-861b-4be1-a054-2dd7fddced2b"
+            "4727cc1f-008e-4e0f-a1cb-c581c74c2cfb"
           ],
-          "createdAt": "2026-10-24T15:38:00.438Z",
-          "updatedAt": "2026-10-24T15:38:00.438Z"
+          "createdAt": "2026-10-24T15:46:25.922Z",
+          "updatedAt": "2026-10-24T15:46:25.922Z"
         },
-        "contentHash": "77e3a7c522beacff3e5b0a45dc21f6362ff41421582f18823ea4b4525a723de6",
+        "contentHash": "8c1701358d287259d3bf502f5d4c1c4035dda04ad70318554dc5faf3610be990",
         "parentIds": [],
-        "createdAt": "2026-10-24T15:38:00.551Z"
+        "createdAt": "2026-10-24T15:46:26.026Z"
       }
     ],
     "originals": [
       {
-        "id": "b730f6a4-861b-4be1-a054-2dd7fddced2b",
-        "universeId": "af9feea1-f1ca-4732-be9d-3b3621866e30",
+        "id": "4727cc1f-008e-4e0f-a1cb-c581c74c2cfb",
+        "universeId": "8da12249-b498-4bbe-976b-58e52ded683c",
         "name": "mixed-source.txt",
         "bytesBase64": "VXNlcjoNClRoZSByaXZlciByb3NlLg0KQXNzaXN0YW50Og0KQW4gdW5hcHByb3ZlZCB0b3dlci4NCuCkueCkv+CkguCkpuClgCBlzIEg8J+Zgg==",
         "sha256": "a2dfb229b30db8d489fb23dc4114ba15518b2aefb364fb8d833e99194ced7fa0",
         "origin": "imported_chat",
         "verification": "unverified",
         "sourceReference": "Explicit file import: mixed-source.txt",
-        "createdAt": "2026-10-24T15:38:00.433Z",
+        "createdAt": "2026-10-24T15:46:25.916Z",
         "speakerSegments": [
           {
             "role": "user",
@@ -175,19 +175,19 @@
     ],
     "universes": [
       {
-        "id": "af9feea1-f1ca-4732-be9d-3b3621866e30",
+        "id": "8da12249-b498-4bbe-976b-58e52ded683c",
         "name": "My writing",
-        "createdAt": "2026-10-24T15:38:00.158Z"
+        "createdAt": "2026-10-24T15:46:25.619Z"
       }
     ],
     "collections": [],
     "receipts": [
       {
-        "revisionId": "8436d7dc-be79-494d-a601-01619acbc685",
+        "revisionId": "2dcf231a-f647-4a07-9d16-71ab8abd8a33",
         "level": "local",
-        "at": "2026-10-24T15:38:00.564Z"
+        "at": "2026-10-24T15:46:26.042Z"
       }
     ]
   },
-  "sha256": "5d1af18dfbf7659aa70f1582a9b1f196a61ceed63e9804c21a213b2278326bd0"
+  "sha256": "14f7f2fcb8eaac98086933442fe654cfc79eea6e8f825fc8d573346946677b24"
 }

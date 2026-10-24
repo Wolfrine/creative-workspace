@@ -15,16 +15,14 @@ export class DeviceDatabase {
   static async open(accountId: string, workspaceId = accountId): Promise<DeviceDatabase> {
     if (!/^[A-Za-z0-9_-]{1,150}$/.test(accountId) || !/^[A-Za-z0-9_-]{1,150}$/.test(workspaceId)) throw new Error('Invalid device workspace identity.');
     const name = 'noveliaa-writing-v1-' + accountId + (workspaceId === accountId ? '' : ':' + workspaceId);
-    // A verified server workspace switch intentionally discards former writing
-    // stores on this device. A different path also prevents offline replay.
-    if (workspaceId !== accountId && typeof indexedDB.databases === 'function') {
-      const previous = (await indexedDB.databases()).map(database => database.name).filter((key): key is string => !!key && key !== name && (key === 'noveliaa-writing-v1-' + accountId || key.startsWith('noveliaa-writing-v1-' + accountId + ':')));
-      for (const key of previous) {
-        const deletion = indexedDB.deleteDatabase(key);
-        // Other open tabs close through onversionchange. Do not block the new
-        // empty workspace if an obsolete browser tab delays its own cleanup.
-        void request(deletion).catch(() => {});
-      }
+    // This authorized first reset retires the legacy UID store. Never enumerate
+    // and delete other named scopes: delayed access checks or stale offline
+    // access evidence must not erase newer writing in a different scope.
+    if (workspaceId !== accountId && (typeof navigator === 'undefined' || navigator.onLine !== false)) {
+      const deletion = indexedDB.deleteDatabase('noveliaa-writing-v1-' + accountId);
+      // Other open tabs close through onversionchange. A blocked obsolete tab
+      // cannot block opening the new store, and Rules reject its cloud writes.
+      void request(deletion).catch(() => {});
     }
     const req = indexedDB.open(name, 1);
     req.onupgradeneeded = () => { for (const name of stores) req.result.createObjectStore(name, { keyPath: name === 'receipts' ? 'key' : 'id' }); };

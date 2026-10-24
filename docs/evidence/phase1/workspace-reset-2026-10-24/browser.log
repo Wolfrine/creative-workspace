@@ -2,34 +2,34 @@
 > noveliaa@0.1.0 test:browser
 > playwright test
 
-[WebServer] (node:165176) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:176516) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
-[WebServer] (node:173248) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:174164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
 Running 20 tests using 1 worker
 
-(node:173052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:179336) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
-  ok  1 tests\browser\conflict.spec.ts:6:39 › page-specific conflict review and blank current-version choice at 1440px (6.3s)
-  ok  2 tests\browser\conflict.spec.ts:6:39 › page-specific conflict review and blank current-version choice at 390px (5.2s)
-  ok  3 tests\browser\conflict.spec.ts:6:39 › page-specific conflict review and blank current-version choice at 320px (5.0s)
+  ok  1 tests\browser\conflict.spec.ts:6:39 › page-specific conflict review and blank current-version choice at 1440px (5.7s)
+  ok  2 tests\browser\conflict.spec.ts:6:39 › page-specific conflict review and blank current-version choice at 390px (4.9s)
+  ok  3 tests\browser\conflict.spec.ts:6:39 › page-specific conflict review and blank current-version choice at 320px (5.2s)
   ok  4 tests\browser\production.spec.ts:3:1 › production shell cold reloads offline and development notebook access is absent (1.2s)
-  ok  5 tests\browser\writing.spec.ts:18:1 › A01/A08 immediate capture, Unicode, caret and undo (3.6s)
-  ok  6 tests\browser\writing.spec.ts:32:1 › A08 formatted archive restores into an isolated browser and HTML retains formatting (3.3s)
+  ok  5 tests\browser\writing.spec.ts:18:1 › A01/A08 immediate capture, Unicode, caret and undo (3.5s)
+  ok  6 tests\browser\writing.spec.ts:32:1 › A08 formatted archive restores into an isolated browser and HTML retains formatting (3.4s)
   ok  7 tests\browser\writing.spec.ts:51:1 › A03 failed storage leaves open text exportable and never says saved (2.0s)
-  ok  8 tests\browser\writing.spec.ts:60:1 › A22/A23 short mobile writing, keyboard navigation and 200 percent text remain usable (2.9s)
-  ok  9 tests\browser\writing.spec.ts:84:1 › A02 offline editing survives a new tab and preserves acknowledged revisions (3.0s)
-  ok 10 tests\browser\writing.spec.ts:92:1 › A06 revision restoration retains the intervening version (2.9s)
-  ok 11 tests\browser\writing.spec.ts:104:1 › A07/A09 archive from browser preserves sources and independent saved-text oracle (3.0s)
-  ok 12 tests\browser\writing.spec.ts:138:1 › A11 search stays in the selected universe (1.6s)
-  ok 13 tests\browser\writing.spec.ts:153:1 › A06 stable links, backlinks and non-drag organization survive title changes (3.1s)
-  ok 14 tests\browser\writing.spec.ts:170:39 › paragraph indentation and themed collection movement at 1440px (4.8s)
+  ok  8 tests\browser\writing.spec.ts:60:1 › A22/A23 short mobile writing, keyboard navigation and 200 percent text remain usable (2.8s)
+  ok  9 tests\browser\writing.spec.ts:84:1 › A02 offline editing survives a new tab and preserves acknowledged revisions (2.9s)
+  ok 10 tests\browser\writing.spec.ts:92:1 › A06 revision restoration retains the intervening version (3.0s)
+  ok 11 tests\browser\writing.spec.ts:104:1 › A07/A09 archive from browser preserves sources and independent saved-text oracle (3.1s)
+  ok 12 tests\browser\writing.spec.ts:138:1 › A11 search stays in the selected universe (1.5s)
+  ok 13 tests\browser\writing.spec.ts:153:1 › A06 stable links, backlinks and non-drag organization survive title changes (3.2s)
+  ok 14 tests\browser\writing.spec.ts:170:39 › paragraph indentation and themed collection movement at 1440px (4.5s)
   ok 15 tests\browser\writing.spec.ts:170:39 › paragraph indentation and themed collection movement at 390px (3.5s)
-  ok 16 tests\browser\writing.spec.ts:170:39 › paragraph indentation and themed collection movement at 320px (4.1s)
-  ok 17 tests\browser\writing.spec.ts:222:44 › A22/A23 writing layout and accessibility at 320px (3.7s)
-  ok 18 tests\browser\writing.spec.ts:222:44 › A22/A23 writing layout and accessibility at 390px (3.4s)
-  ok 19 tests\browser\writing.spec.ts:222:44 › A22/A23 writing layout and accessibility at 768px (3.5s)
+  ok 16 tests\browser\writing.spec.ts:170:39 › paragraph indentation and themed collection movement at 320px (3.4s)
+  ok 17 tests\browser\writing.spec.ts:222:44 › A22/A23 writing layout and accessibility at 320px (3.3s)
+  ok 18 tests\browser\writing.spec.ts:222:44 › A22/A23 writing layout and accessibility at 390px (2.9s)
+  ok 19 tests\browser\writing.spec.ts:222:44 › A22/A23 writing layout and accessibility at 768px (3.2s)
   ok 20 tests\browser\writing.spec.ts:222:44 › A22/A23 writing layout and accessibility at 1440px (3.4s)
 
   20 passed (1.2m)

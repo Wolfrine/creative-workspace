@@ -10,6 +10,8 @@ let pendingClient: Promise<FirebaseClient | null> | undefined;
 let initialized: FirebaseClient | null = null;
 let emulatorConnected = false;
 const activeWorkspaces = new Map<string, string>();
+const accessGenerations = new Map<string, number>();
+const pendingAccess = new Map<string, Promise<string>>();
 const workspaceKey = (value: unknown, uid: string): string => {
   const key = value === undefined ? uid : value;
   if (typeof key !== 'string' || !/^[A-Za-z0-9_-]{1,150}$/.test(key)) throw new Error('The private workspace configuration is invalid.');
@@ -65,9 +67,18 @@ export async function initializeFirebaseSession(): Promise<FirebaseClient | null
 }
 export const firebaseAuth = (): Auth | null => initialized?.auth ?? null;
 export async function verifyAuthorAccess(uid: string): Promise<string> {
+  // Google popup and Auth restoration fire together. Sharing their server read
+  // avoids racing two responses that may straddle a workspace reset.
+  const previous = pendingAccess.get(uid); if (previous) return previous;
+  const pending = readAuthorAccess(uid); pendingAccess.set(uid, pending);
+  try { return await pending; }
+  finally { if (pendingAccess.get(uid) === pending) pendingAccess.delete(uid); }
+}
+async function readAuthorAccess(uid: string): Promise<string> {
   const client = await initializeFirebaseSession();
   if (!client || client.auth.currentUser?.uid !== uid) throw new Error('Your signed-in account changed.');
   if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+    const known = activeWorkspaces.get(uid); if (known) return known;
     try {
       const cached = localStorage.getItem(accessCacheKey(client, uid));
       if (cached) {
@@ -77,10 +88,19 @@ export async function verifyAuthorAccess(uid: string): Promise<string> {
     } catch { /* Unreadable access evidence requires online verification. */ }
     throw new Error('Sign in online once to verify this device for your private writing.');
   }
+  const generation = accessGenerations.get(uid) ?? 0;
   const access = await getDocFromServer(doc(client.db, 'noveliaaConfig/access')).catch(error => {
     if (error.code === 'permission-denied') throw new Error('This Google account does not have author access to this workspace. Choose your authorized author account.');
     throw error;
   });
+  if (client.auth.currentUser?.uid !== uid) throw new Error('Your signed-in account changed.');
+  // Popup sign-in and Auth restoration may verify concurrently. A slow read
+  // must not roll back a newer listener-confirmed reset and reopen its outbox.
+  if ((accessGenerations.get(uid) ?? 0) !== generation) {
+    const current = activeWorkspaces.get(uid);
+    if (!current) throw new Error('Author access changed while opening the workspace. Sign in again.');
+    return current;
+  }
   if (!access.exists() || access.data().ownerUid !== uid) throw new Error('This Google account does not have author access to this workspace.');
   const key = workspaceKey(access.data().workspaceId, uid);
   rememberAccess(client, uid, key);
@@ -96,9 +116,10 @@ export function watchAuthorAccess(uid: string, onWorkspaceId: (workspaceId: stri
     try {
       if (!snapshot.exists() || snapshot.data().ownerUid !== uid) throw new Error('This Google account no longer has author access to this workspace.');
       const key = workspaceKey(snapshot.data().workspaceId, uid);
+      accessGenerations.set(uid, (accessGenerations.get(uid) ?? 0) + 1);
       rememberAccess(client, uid, key); onWorkspaceId(key);
-    } catch (error) { activeWorkspaces.delete(uid); onError(error instanceof Error ? error : new Error(String(error))); }
-  }, error => { activeWorkspaces.delete(uid); onError(error); });
+    } catch (error) { activeWorkspaces.delete(uid); accessGenerations.set(uid, (accessGenerations.get(uid) ?? 0) + 1); onError(error instanceof Error ? error : new Error(String(error))); }
+  }, error => { activeWorkspaces.delete(uid); accessGenerations.set(uid, (accessGenerations.get(uid) ?? 0) + 1); onError(error); });
 }
 export async function signInWithGoogle(): Promise<Session> {
   const client = await initializeFirebaseSession();

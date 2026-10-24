@@ -14,7 +14,7 @@ const browser = JSON.parse(await readFile(evidence + '/browser-results.json', 'u
 const client = await readFile(evidence + '/client.log', 'utf8'), rules = await readFile(evidence + '/rules.log', 'utf8');
 const clientPasses = Number(client.match(/Tests\s+(\d+) passed/)?.[1]);
 const rulePasses = Number(rules.match(/Tests\s+(\d+) passed/)?.[1]);
-assert(clientPasses >= 53 && !/\d+ failed/.test(client)); assert(rulePasses >= 12 && !/\d+ failed/.test(rules));
+assert(clientPasses >= 58 && !/\d+ failed/.test(client)); assert(rulePasses >= 12 && !/\d+ failed/.test(rules));
 assert.equal(cloud.stats.unexpected, 0); assert.equal(cloud.stats.expected, 7);
 assert.equal(browser.stats.unexpected, 0); assert(browser.stats.expected >= 20);
 const review = JSON.parse(await readFile(evidence + '/visual-review.json', 'utf8'));
