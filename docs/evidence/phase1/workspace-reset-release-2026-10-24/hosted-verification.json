@@ -1,0 +1,105 @@
+{
+  "checkedAt": "2026-10-24T15:56:37.787Z",
+  "url": "https://noveliaa.web.app",
+  "projectId": "noveliaa",
+  "appId": "1:278082781314:web:9a4b7acef07fa8e4dfb49b",
+  "files": [
+    {
+      "path": "assets/dm-sans-latin-ext-wght-italic-DUE6_iCb.woff2",
+      "sha256": "6e646d2022808fb4532e77d38a9348e4dcf832796be2acc43a79052b60900db2"
+    },
+    {
+      "path": "assets/dm-sans-latin-ext-wght-normal-BOFOeGcA.woff2",
+      "sha256": "a5d38fe99f930275684999b462c7123faa063d9e44e73b4b241723d884aa0f49"
+    },
+    {
+      "path": "assets/dm-sans-latin-wght-italic-Cz4n9dED.woff2",
+      "sha256": "f1a235db5bcb8730707844188d35201ecdf63e56c5dcce97bab24a9c7066091d"
+    },
+    {
+      "path": "assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2",
+      "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543"
+    },
+    {
+      "path": "assets/index-V-0wUvJ2.css",
+      "sha256": "c57e0edcc47349bee70cac45768043bda8bd0217c0498cc2561a649e575e4aba"
+    },
+    {
+      "path": "assets/index-aL3Avnby.js",
+      "sha256": "ac0b3ce47c1bddfb405b90548fd9c80b0d3ab941c2706e070323aca49f1332cc"
+    },
+    {
+      "path": "assets/literata-cyrillic-ext-wght-italic-DrMGjC4f.woff2",
+      "sha256": "129e7707a965e6f1b201e607f728b98b2695e5d9f55b669cd2a2da2689f26196"
+    },
+    {
+      "path": "assets/literata-cyrillic-ext-wght-normal-CGKlZYBf.woff2",
+      "sha256": "7be72c7ae574166a4e1a9d2bbaa859ebf3db0a0d29d5f7a58ee53fa596769b33"
+    },
+    {
+      "path": "assets/literata-cyrillic-wght-italic-C2hF6zFe.woff2",
+      "sha256": "62e8c9a48487878d0027e5946773f029f28ec6be99f1f20eb26b6aa401395c29"
+    },
+    {
+      "path": "assets/literata-cyrillic-wght-normal-DLqwHbi6.woff2",
+      "sha256": "df20f1a8ca3c15497861c6dbf36c0c59507ee351301527ec89543747067ad4d7"
+    },
+    {
+      "path": "assets/literata-greek-ext-wght-italic-f6xT_0ee.woff2",
+      "sha256": "5d26f44473fce0446af76fdf43834fa1cf05056b3ec27f661c68e22e7303b402"
+    },
+    {
+      "path": "assets/literata-greek-ext-wght-normal-e3e57Shi.woff2",
+      "sha256": "1e1f541a6f70f2549d1b9661667c26780279c6bd46b91f620961be7e841239d1"
+    },
+    {
+      "path": "assets/literata-greek-wght-italic-9BAkQpca.woff2",
+      "sha256": "e43ead3dd6acf3c07005a1f724d99522065b9363ae9fc6689f544c6782995730"
+    },
+    {
+      "path": "assets/literata-greek-wght-normal-CO1l-giJ.woff2",
+      "sha256": "393643556e420af45f8f0854c30f00e17ac52e85f1df4fd4ae2f2a29e0d279f1"
+    },
+    {
+      "path": "assets/literata-latin-ext-wght-italic-CC1SwlwQ.woff2",
+      "sha256": "ba0e6a12e2f0a1f5d455c23c47068b71f9898c571dcb92dab385294ebdae3e74"
+    },
+    {
+      "path": "assets/literata-latin-ext-wght-normal-BnEbWgdZ.woff2",
+      "sha256": "46792f7cd10b28fb512161caeaaa11b049feb2221ccaa72bb4d4ccc286199155"
+    },
+    {
+      "path": "assets/literata-latin-wght-italic-Bm_GJfSc.woff2",
+      "sha256": "ab198d6616c7cc966f26a4a5b28a3977dc47439640f09d9b3361226bd465c404"
+    },
+    {
+      "path": "assets/literata-latin-wght-normal-DLxlUchJ.woff2",
+      "sha256": "9adbeac5b167fe5ad6c49d9e29aa0c76e2f1bb3b46bf4ebf12a9eca7d3525384"
+    },
+    {
+      "path": "assets/literata-vietnamese-wght-italic-LyOFdRXZ.woff2",
+      "sha256": "126da32bf819312977fdc60e8f745c5248e7e1c806c9d0dac65501a76bc194bc"
+    },
+    {
+      "path": "assets/literata-vietnamese-wght-normal-LcSrhZ7T.woff2",
+      "sha256": "ceed7f68b3f869633ec366dcf5a72ab5a5ee7712794a9af680bd2083744908c5"
+    },
+    {
+      "path": "favicon.svg",
+      "sha256": "5ef276685dd0a12eb853fa8fcca0aa9d3c075a3d6f027ce120e04b35748e2a64"
+    },
+    {
+      "path": "index.html",
+      "sha256": "4486c14034e3660b8ae804bd5e618cd5d9676bbf87af02af5a8f80814c776064"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "sha256": "ea41bb72a70c94f8e7e78bcdc9701c2465e1eb84d4dd2e9a8dcb3b55e44d09c8"
+    },
+    {
+      "path": "sw.js",
+      "sha256": "54dbeb5490928c4552f9cdb668aac9f50124e7c3c5a05f0eac3d00b0d6bf5276"
+    }
+  ],
+  "authenticatedOwnerAcceptance": "Requires the human owner Google account; no production Auth bypass or writing seed."
+}

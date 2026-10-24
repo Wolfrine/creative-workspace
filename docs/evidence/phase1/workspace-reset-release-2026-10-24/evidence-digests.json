@@ -1,0 +1,92 @@
+[
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/actions-release.json",
+    "bytes": 824,
+    "sha256": "c860df0442a218981f22a584be37c01d3441f6add5bec36c7188858700452f6a"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/ci-spark-browser-results.json",
+    "bytes": 14222,
+    "sha256": "7d1f9e88812e03fec6a83055bce55fcf74f58fcb7e967366f1ffe84007e54f5a"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/first-hosted-verification.json",
+    "bytes": 4048,
+    "sha256": "a55fe28f2910a8bff61caa1922d9444b60f166c34002ac6740dd450b7420e968"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/first-rules-release.json",
+    "bytes": 442,
+    "sha256": "669183ff4dc4fb58e4849b8ff64ec427bd2d9ce9ca670d492865e71968c92e45"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/first-workspace-reset-result.json",
+    "bytes": 556,
+    "sha256": "0f876b65b4171d212bc413a90b7e12541eda6bf366bdca0866ba499b71a3a02f"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/hosted-gate-1440.jpg",
+    "bytes": 36193,
+    "sha256": "a86d01ae5eaec40b9fd479f96196a355884e8ccd375dd26f8b05582b9e56d061"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/hosted-gate-320.jpg",
+    "bytes": 20054,
+    "sha256": "def2fdc764e462e049a310c0a0f9b679f81e09065eadc9c105c72e555469f49d"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/hosted-gate-390.jpg",
+    "bytes": 20684,
+    "sha256": "fd0b15c46a99e1f71d8a1f2a67d1c511318b38b405de5f57e2df3f467e80add0"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/hosted-verification.json",
+    "bytes": 4048,
+    "sha256": "b722b7deb6ab98a094cfbe8635c7aea413e4d90e86f96e056a03d80e0bbeb95d"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/hosted-visual-checks.json",
+    "bytes": 711,
+    "sha256": "35c934b241f3b24f70fd75d50cc903a748ecbf695b19da63e93350e59c664006"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/independent-readback.json",
+    "bytes": 548,
+    "sha256": "33ea3bb04ec0b44f135c45b8ad70db97eafabbae9a4e1b443825bbe04ab87c20"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/README.md",
+    "bytes": 4373,
+    "sha256": "662e1de202e5252adf9b3ab16a1061b196aba18f2d89f7225615777f465e9ecb"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/reset-action-success.jpg",
+    "bytes": 105204,
+    "sha256": "2b0f9c172c80bba6afb94ba44970f6862a987dfd2b2ff9857a18a37eb2bce61e"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/rules-release.json",
+    "bytes": 442,
+    "sha256": "a8d4033436f97fb2d1895acaab01f0a2a5fac0e5f5b4f86812b4a18a565249c3"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/superseded-release-cancelled.jpg",
+    "bytes": 80041,
+    "sha256": "0e8bda74a6760208431706946a8683d750d071e980ed9bf40a6c23ee9e8fa3e2"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/superseded-release.json",
+    "bytes": 937,
+    "sha256": "b26671522d06198fc81626f85ffb738c7bd067d26a710e3e8a71424393d642c2"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/verification.json",
+    "bytes": 5504,
+    "sha256": "37c159b971c8ac323aa9d4106ce4c4b75a436906c1da7cbd5329e0aa9481b0a7"
+  },
+  {
+    "path": "docs/evidence/phase1/workspace-reset-release-2026-10-24/workspace-reset-result.json",
+    "bytes": 556,
+    "sha256": "0f876b65b4171d212bc413a90b7e12541eda6bf366bdca0866ba499b71a3a02f"
+  }
+]

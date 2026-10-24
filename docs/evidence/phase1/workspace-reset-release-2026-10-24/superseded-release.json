@@ -1,0 +1,17 @@
+{
+  "commit": "b627aeec9ba70de018f078f1d1cf19bd3bb16c01",
+  "runId": 40108000833,
+  "jobId": 120913605949,
+  "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40108000833",
+  "conclusion": "cancelled",
+  "reason": "Final review identified delayed access verification and overbroad named device-store cleanup. Cancelled before cloud administration; repaired and tested in8e47a20.",
+  "confirmedSkippedSteps": [
+    "Run google-github-actions/auth@v2",
+    "Verify exact Firebase app, site and private author on Spark",
+    "Release owner-only Rules using the supported Admin SDK",
+    "Publish the matching Hosting site",
+    "Verify every hosted build file and Firebase app identity",
+    "Apply explicitly authorized workspace reset after the guarded app is live"
+  ],
+  "confirmation": "GitHub job-step API and cancelled run UI; superseded-release-cancelled.jpg. No Firebase release or reset executed in this run."
+}

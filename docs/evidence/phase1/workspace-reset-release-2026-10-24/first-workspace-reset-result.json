@@ -1,0 +1,23 @@
+{
+  "requestId": "reset_585b26c53f054e56a01b66949bdec5ec",
+  "workspaceId": "reset_585b26c53f054e56a01b66949bdec5ec",
+  "status": "complete",
+  "authenticationPreserved": true,
+  "results": [
+    {
+      "workspaceId": "oAlDE81ERbNzCEDWedomTu9mex12",
+      "observedBeforeDelete": {
+        "universes": 1,
+        "collections": 1,
+        "documentIdentities": 4,
+        "documents": 4,
+        "revisions": 37,
+        "originals": 0,
+        "operations": 37,
+        "chunks": 37,
+        "blobs": 37
+      },
+      "verifiedEmpty": true
+    }
+  ]
+}

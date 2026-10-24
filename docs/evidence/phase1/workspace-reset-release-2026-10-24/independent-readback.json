@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-24T16:00:27.161022+00:00",
+  "matchedHostedFiles": 24,
+  "firebaseApp": "1:278082781314:web:9a4b7acef07fa8e4dfb49b",
+  "rulesSha256": "620681f4a059a699d367262d087dfe26a0e9233bb9df2de73928d873510d082a",
+  "workspaceResetComplete": true,
+  "retiredRootVerifiedEmpty": true,
+  "authenticationPreserved": true,
+  "loadedJavaScriptMatchesActions": true,
+  "desktopMobileOverflow": false,
+  "limits": "Hosted sign-in surface; authenticated writer and offline/reset flows use separate synthetic emulator evidence."
+}

@@ -1,0 +1,28 @@
+{
+  "inspectedAt": "2026-10-24T15:55:25.673Z",
+  "url": "https://noveliaa.web.app",
+  "desktop": {
+    "developmentHook": "undefined",
+    "fonts": "loaded",
+    "height": 1000,
+    "overflow": false,
+    "scripts": [
+      "https://noveliaa.web.app/assets/index-aL3Avnby.js"
+    ],
+    "width": 1440
+  },
+  "mobile": {
+    "fonts": "loaded",
+    "height": 844,
+    "overflow": false,
+    "width": 390
+  },
+  "narrow": {
+    "fonts": "loaded",
+    "height": 844,
+    "overflow": false,
+    "width": 320
+  },
+  "scope": "Actual hosted sign-in surface. Authenticated conflict/reset writing flows are separate synthetic Auth/Firestore emulator tests; no production bypass or manuscript seed.",
+  "result": "pass"
+}
