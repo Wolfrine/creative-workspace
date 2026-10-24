@@ -15,7 +15,8 @@ for (let i = 0; i <= 20; i++) {
   await page.waitForFunction(() => window.__NOVELIAA_TEST__?.getSnapshot().ready);
   if (i) {
     const recovered = await page.evaluate(() => window.__NOVELIAA_TEST__.getSnapshot());
-    for (const [revisionId, text] of expected) if (recovered.revisions.find(revision => revision.id === revisionId)?.snapshot.plainText !== text) throw new Error('Acknowledged writing was not recovered: ' + revisionId);
+    for (const [draftId, text] of expected) if (!recovered.revisions.some(revision => revision.snapshot.plainText === text)) throw new Error('Acknowledged draft was not recovered: ' + draftId);
+    if (recovered.documents.find(doc => doc.id === documentId)?.plainText !== [...expected.values()].at(-1)) throw new Error('Latest acknowledged device draft was not reopened');
     report.checkpoints[i - 1].recovered = true;
   }
   if (i === 20) break;
@@ -27,7 +28,7 @@ for (let i = 0; i <= 20; i++) {
     engine.updateDocument(documentId, { body: { type: 'doc', content: text.split('\n').map(line => ({ type: 'paragraph', content: [{ type: 'text', text: line }] })) } });
     await engine.flush();
     if (engine.getSnapshot().saveState !== 'local') throw new Error('No device acknowledgement');
-    return engine.getSnapshot().documents.find(doc => doc.id === documentId).headRevisionId;
+    return (await engine.db.all('drafts')).find(draft => draft.document.id === documentId && draft.document.plainText === text).id;
   }, { documentId, text });
   expected.set(revisionId, text);
   const pauseMs = next() % 180;
@@ -38,6 +39,7 @@ for (let i = 0; i <= 20; i++) {
   await Promise.race([context.close().catch(() => {}), new Promise(resolve => setTimeout(resolve, 1000))]);
 }
 await context.close();
-await mkdir('docs/evidence/phase1', { recursive: true });
-await writeFile('docs/evidence/phase1/crash-recovery.json', JSON.stringify(report, null, 2));
+const evidence = process.env.NOVELIAA_EVIDENCE_DIR ?? '.local/sync-recovery';
+await mkdir(evidence, { recursive: true });
+await writeFile(evidence + '/crash-recovery.json', JSON.stringify(report, null, 2));
 console.log(JSON.stringify({ recovered: report.checkpoints.filter(x => x.recovered).length, interruptions: report.checkpoints.length, browser: report.browser, limitation: report.limitation }));

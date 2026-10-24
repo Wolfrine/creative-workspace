@@ -26,8 +26,8 @@ it('does not clear a concurrent tab warning while an unreviewed pending revision
   const engine = new WritingEngine('author', null); await engine.initialize();
   const id = await engine.createDocument({ body: textBody('Base') });
   const base = engine.getSnapshot().documents[0].headRevisionId!;
-  engine.updateDocument(id, { body: textBody('An unreviewed tab revision') }); await engine.flush();
-  engine.updateDocument(id, { body: textBody('Explicit selected revision') }); await engine.flush();
+  engine.updateDocument(id, { body: textBody('An unreviewed tab revision') }); await engine.checkpoint();
+  engine.updateDocument(id, { body: textBody('Explicit selected revision') }); await engine.checkpoint();
   const selected = engine.getSnapshot().documents[0].headRevisionId!;
   const db = await DeviceDatabase.open('author'); await db.markConflict(id);
   expect(await db.finishResolution(id, selected, [base])).toBe(false);

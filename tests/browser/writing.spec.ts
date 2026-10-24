@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }, info) => {
   await page.goto('/?local=1&notebook=test-' + info.testId.replace(/[^a-z0-9]/gi, '') + '-' + Date.now());
   await page.waitForFunction(() => (window as any).__NOVELIAA_TEST__?.getSnapshot().ready);
 });
-const saved = async (page: any) => { await expect.poll(() => page.evaluate(() => (window as any).__NOVELIAA_TEST__.getSnapshot().saveState)).toBe('local'); };
+const saved = async (page: any) => { await page.evaluate(() => (window as any).__NOVELIAA_TEST__.flush()); await expect.poll(() => page.evaluate(() => (window as any).__NOVELIAA_TEST__.getSnapshot().saveState)).toBe('local'); };
 const create = async (page: any) => { await page.getByRole('button', { name: 'New thought ↗', exact: true }).click(); await page.getByRole('textbox', { name: 'Writing canvas', exact: true }).waitFor(); };
 
 test('A01/A08 immediate capture, Unicode, caret and undo', async ({ page }) => {
@@ -50,9 +50,10 @@ test('A08 formatted archive restores into an isolated browser and HTML retains f
 
 test('A03 failed storage leaves open text exportable and never says saved', async ({ page }) => {
   await create(page);
-  await page.evaluate(() => { const engine = (window as any).__NOVELIAA_TEST__; engine.db.checkpoint = async () => { throw new DOMException('Injected disk full', 'QuotaExceededError'); }; });
+  await page.evaluate(() => { const engine = (window as any).__NOVELIAA_TEST__; engine.db.saveDraft = async () => { throw new DOMException('Injected disk full', 'QuotaExceededError'); }; });
   await page.getByRole('textbox', { name: 'Writing canvas', exact: true }).fill('UNSAVED-RECOVERY-ORACLE हिंदी');
-  await expect(page.getByText('Save needs attention', { exact: true })).toBeVisible();
+  await page.evaluate(() => (window as any).__NOVELIAA_TEST__.flush().catch(() => {}));
+  await expect(page.getByRole('button', { name: 'Save needs attention', exact: true })).toBeVisible();
   const download = page.waitForEvent('download'); await page.getByRole('button', { name: 'Export open text', exact: true }).click();
   expect(await readFile((await (await download).path())!, 'utf8')).toBe('UNSAVED-RECOVERY-ORACLE हिंदी');
 });
@@ -87,11 +88,12 @@ test('A02 offline editing survives a new tab and preserves acknowledged revision
   const url = page.url(); await page.close(); await context.setOffline(false);
   const reopened = await context.newPage(); await reopened.goto(url);
   await expect(reopened.getByRole('textbox', { name: 'Writing canvas', exact: true })).toHaveText('OFFLINE-ACKNOWLEDGED — हिंदी 🙂');
-  await expect(reopened.getByText('Saved on this device', { exact: true }).first()).toBeVisible();
+  await expect(reopened.getByRole('button', { name: 'Saved on this device', exact: true })).toBeVisible();
 });
 test('A06 revision restoration retains the intervening version', async ({ page }) => {
   await create(page); const canvas = page.getByRole('textbox', { name: 'Writing canvas', exact: true });
   await canvas.fill('The original paragraph.'); await saved(page);
+  await page.evaluate(() => (window as any).__NOVELIAA_TEST__.checkpoint());
   await canvas.fill('An experiment worth keeping.'); await saved(page);
   await page.getByRole('button', { name: 'Revision history', exact: true }).click();
   const versions = page.getByRole('navigation', { name: 'Saved revisions', exact: true }).getByRole('button');

@@ -44,18 +44,22 @@ No Storage URLs or external machine writers exist in the runtime. A generated
 SDK config may contain a storageBucket string; that does not create or use a
 bucket. The public web API key is normal client configuration, not an Admin key.
 
-Firestore's current free allowance is 1 GiB stored data, 50,000 document reads
-and 20,000 writes per day. Initial metadata listeners read heads/history; each new
-revision writes chunks, a manifest, metadata, a receipt and possibly a head.
-Persistent multi-tab cache and long-lived listeners avoid recurring full-library
-GETs; unchanged verified revision/original bytes are reused. Clean devices adopt
-new heads automatically. Dirty/outbox branches retain expected-head protection.
-Device checkpoints stay at 300 ms; automatic cloud drain starts about one minute
-after the oldest pending checkpoint. Manual sync/reconnect/tab hiding can drain
-sooner. Compression and digest deduplication reduce repeated bytes, and no-op
-edits create no revision. Delaying uploads does not discard saved history or
-promise fewer writes per distinct revision. Exhausted quota
-interrupts sync without acknowledging or discarding pending local revisions.
+Firestore's free allowance is 1 GiB stored data, 50,000 document reads and 20,000
+writes per day. Current heads/worlds/collections use three data listeners, plus
+the separate access listener. History and originals are requested on demand;
+required head ancestry remains verified. Persistent multi-tab cache and reused
+verified bytes avoid repetitive reads. Clean devices adopt new heads; local
+drafts and pending revisions keep expected-head conflict protection.
+
+Local recovery saves after 10 seconds of idle time; automatic cloud upload starts
+after 60 seconds of idle time. Every edit resets both deadlines. Backgrounding,
+navigation and sign-out save locally, without an early cloud upload. Manual sync
+can upload immediately. A typical new single-chunk revision on an existing page
+still writes five Firestore documents; batching is not one billed write. Exact
+originals and existing history are never pruned. Quota failure retains device
+recovery/outbox records. See [sync contract](SYNC.md) and the [weekly aggregate
+usage audit](operations/firestore-usage.md).
+
 Server-confirmed metadata alone earns cloud receipts. An immutable cache does
 not continuously audit administrator rewrites that bypass Rules; fresh-device
 integrity tests still reject corrupt server bytes. Cloud backups, PITR and

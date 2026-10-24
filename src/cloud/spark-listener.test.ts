@@ -17,7 +17,10 @@ let app: ReturnType<typeof initializeApp>;
 let stop: (() => void) | undefined;
 beforeEach(() => { harness.listeners.clear(); harness.records.clear(); harness.read.mockClear(); harness.query.mockClear(); app = initializeApp({ projectId: 'demo-noveliaa' }, 'listener-' + crypto.randomUUID()); });
 afterEach(async () => { stop?.(); stop = undefined; await deleteApp(app); });
-const emit = (kind: string, rows: Record<string, unknown>, fromCache = false, pending = new Set<string>()) => harness.listeners.get(kind)!({ metadata: { fromCache, hasPendingWrites: pending.size > 0 }, docs: Object.entries(rows).map(([id, data]) => ({ id, data: () => data, metadata: { hasPendingWrites: pending.has(id) } })) });
+const emit = (kind: string, rows: Record<string, unknown>, fromCache = false, pending = new Set<string>()) => {
+  for (const [key, value] of Object.entries(rows)) if (value !== undefined) harness.records.set(root + kind + '/' + key, value);
+  harness.listeners.get(kind)?.({ metadata: { fromCache, hasPendingWrites: pending.size > 0 }, docs: Object.entries(rows).map(([id, data]) => ({ id, data: () => data, metadata: { hasPendingWrites: pending.has(id) } })) });
+};
 async function fixture() {
   const revision = async (id: string, documentId: string, parents: string[], linked = false): Promise<Revision> => {
     const snapshot = { id: documentId, universeId: 'world', title: id, body: linked ? { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Link', marks: [{ type: 'link', attrs: { href: 'noveliaa://document/b' } }] }] }] } : textBody(id), plainText: linked ? 'Link' : id, collectionId: null, trashed: false, order: 0, origin: 'author' as const, sourceOriginalIds: [], createdAt: time, updatedAt: time };
@@ -26,7 +29,7 @@ async function fixture() {
   const revisions = [await revision('a-main', 'a', [], true), await revision('b-base', 'b', []), await revision('b-main', 'b', ['b-base']), await revision('b-losing', 'b', ['b-base'])];
   const metadata = Object.fromEntries(await Promise.all(revisions.map(async value => [value.id, { id: value.id, documentId: value.documentId, universeId: 'world', contentHash: value.contentHash, blobHash: await sha256(stableStringify(value)) }])));
   const heads = { a: { headRevisionId: 'a-main', universeId: 'world' }, b: { headRevisionId: 'b-main', universeId: 'world' } };
-  const known: WorkspaceSnapshot = { schemaVersion: 1, accountId: 'author', universes: [{ id: 'world', name: 'World', createdAt: time }], collections: [], originals: [], receipts: [], revisions, documents: [revisions[0], revisions[2]].map(value => ({ ...value.snapshot, headRevisionId: value.id })) };
+  const known: WorkspaceSnapshot = { schemaVersion: 1, accountId: 'author', universes: [{ id: 'world', name: 'World', createdAt: time }], collections: [], originals: [], receipts: revisions.map(value => ({ revisionId: value.id, level: 'cloud', at: time })), revisions, documents: [revisions[0], revisions[2]].map(value => ({ ...value.snapshot, headRevisionId: value.id })) };
   const adapter = createFirestoreAdapter(getFirestore(app), 'author'); stop = adapter.watch!(() => {}, error => { throw error; });
   emit('universes', { world: known.universes[0] }); emit('collections', {}); emit('originals', {});
   return { adapter, known, metadata, heads };
@@ -41,7 +44,7 @@ it('hydrates a head ahead of its revision event, preserves all linked losing bra
   harness.records.set(root + 'revisions/a-main', metadata['a-main']); harness.records.set(root + 'documents/b', heads.b);
   const loaded = await adapter.load(known); await validateSnapshot(loaded);
   expect(loaded.revisions.map(value => value.id).sort()).toEqual(known.revisions.map(value => value.id).sort());
-  expect(harness.read.mock.calls.map(([value]) => value).sort()).toEqual([root + 'documents/b', root + 'revisions/a-main']);
+  expect(harness.read.mock.calls.map(([value]) => value).sort()).toEqual([root + 'documents/b']);
   expect(harness.query).not.toHaveBeenCalled();
 });
 
@@ -54,4 +57,15 @@ it('retains confirmed rows during optimistic events and never adopts cached or p
   const loaded = await adapter.load(known); await validateSnapshot(loaded);
   expect(loaded.documents).toHaveLength(2); expect(loaded.documents.find(value => value.id === 'b')?.headRevisionId).toBe('b-main');
   expect(harness.read).not.toHaveBeenCalled(); expect(harness.query).not.toHaveBeenCalled();
+});
+
+it('uses only three data listeners and never invents a cloud acknowledgement for a device-only revision', async () => {
+  const { adapter, known, metadata, heads } = await fixture(); emit('documents', heads); emit('revisions', metadata);
+  const pending = { ...structuredClone(known.revisions[2]), id: 'pending-only', parentIds: ['b-main'] };
+  known.revisions.push(pending); known.receipts.push({ revisionId: pending.id, level: 'local', at: time });
+  expect([...harness.listeners.keys()].sort()).toEqual(['collections', 'documents', 'universes']);
+  const loaded = await adapter.load(known);
+  expect(loaded.revisions.some(value => value.id === pending.id)).toBe(false);
+  expect(loaded.receipts.some(value => value.revisionId === pending.id)).toBe(false);
+  expect(harness.query).not.toHaveBeenCalled();
 });

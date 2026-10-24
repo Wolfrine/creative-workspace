@@ -30,14 +30,14 @@ export interface CommitResult { status: 'synced' | 'conflict'; headRevisionId: s
 export interface CloudAdapter {
   /** Active server-selected workspace; older device stores cannot repopulate a reset. */
   workspaceId?: string;
-  load(known?: WorkspaceSnapshot): Promise<WorkspaceSnapshot>;
+  load(known?: WorkspaceSnapshot, options?: { history?: boolean }): Promise<WorkspaceSnapshot>;
   watch?(onChange: () => void, onError: (error: unknown) => void): () => void;
   commit(operation: CommitOperation): Promise<CommitResult>;
   putOriginal(original: Original): Promise<void>;
   putCatalog(universes: Universe[], collections: Collection[]): Promise<void>;
   registerDocuments?(documents: { id: string; universeId: string }[]): Promise<void>;
 }
-export type SaveState = 'saving' | 'local' | 'syncing' | 'synced' | 'conflict' | 'error';
+export type SaveState = 'waiting' | 'local' | 'syncing' | 'synced' | 'conflict' | 'error';
 export interface WorkspaceState extends WorkspaceSnapshot {
   ready: boolean; localOnly: boolean; activeUniverseId: string; activeDocumentId: string | null;
   saveState: SaveState; error: string | null; pendingCount: number; online: boolean;
@@ -53,6 +53,7 @@ export interface WorkspaceController {
   selectUniverse(id: string): Promise<void>;
   createCollection(name: string): Promise<void>;
   restoreRevision(id: string): Promise<void>;
+  loadHistory(): Promise<void>;
   sync(): Promise<void>;
   flush(): Promise<void>;
   exportArchive(): Promise<Blob>;

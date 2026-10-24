@@ -1,0 +1,47 @@
+name: Weekly Firestore usage audit
+on:
+  schedule:
+    - cron: '30 4 * * 1' # Monday 10:00 India; thread review at 10:30.
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/firestore-usage.yml
+      - functions/scripts/firestore-usage.mjs
+      - scripts/summarize-firestore-usage.mjs
+permissions:
+  contents: read
+concurrency:
+  group: noveliaa-firestore-usage
+  cancel-in-progress: false
+jobs:
+  usage:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: functions/package-lock.json
+      - run: npm --prefix functions ci --no-audit --no-fund
+      - run: node --test scripts/firestore-usage.test.mjs
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+      - name: Read aggregate production usage without reading writing
+        env:
+          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
+        run: node functions/scripts/firestore-usage.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        continue-on-error: true
+        with:
+          name: firestore-usage
+          include-hidden-files: true
+          path: .local/firestore-usage.json
+          retention-days: 30
+          if-no-files-found: ignore

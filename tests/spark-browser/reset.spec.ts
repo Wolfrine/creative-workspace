@@ -29,7 +29,7 @@ async function synced(page: Page) {
   await page.getByRole('button', { name: 'Check cloud sync', exact: true }).click();
   await expect(page.getByRole('dialog').getByText('Cloud synchronization checked.', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Close your writing, in your hands', exact: true }).click();
-  await expect(page.getByText('Synced', { exact: true }).first()).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Synced', exact: true })).toBeVisible();
 }
 const resetOptions = (requestId: string) => ({ db, auth, binding: { projectId: 'demo-noveliaa', authorEmail: email }, request: { requestId, action: 'reset-entire-workspace', ownerEmail: email, approved: true, commitMarker: '[workspace-reset:' + requestId + ']' }, verifiedProject: 'demo-noveliaa', expectedRequestId: requestId });
 async function expectCurrentWorkspace(page: Page, workspaceId: string) {
@@ -96,7 +96,7 @@ test('offline old-device drafts cannot repopulate a reset on reconnect and the m
     (window as any).__retiredAdapter = firebase.createCloudAdapter('spark-reset-author');
   });
   await context.setOffline(true); await canvas(page).fill('Offline old device must never resurrect this.');
-  await expect(page.getByText('Saved here · cloud pending', { exact: true }).first()).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Saved on this device; cloud save pending', exact: true })).toBeVisible({ timeout: 15000 });
   await resetWorkspace(resetOptions('reset_browser_offline'));
   await context.setOffline(false);
   await expectCurrentWorkspace(page, 'reset_browser_offline');

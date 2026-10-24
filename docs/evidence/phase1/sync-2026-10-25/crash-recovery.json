@@ -1,0 +1,148 @@
+{
+  "dataset": "synthetic",
+  "profile": "Chromium persistent device store, offline checkpoint then Browser.crash; developer shell reopened online",
+  "limitation": "Does not prove authenticated offline cold bootstrap or physical power-loss durability.",
+  "browser": "156.0.8078.4",
+  "checkpoints": [
+    {
+      "revisionId": "adde2ecc-75c1-4079-ad90-1c54b528d6ee:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "749e8af3f7f13f832d315c83998372acc17ad9e343bdf4ebc1f92377f5f6513c",
+      "pauseAfterAcknowledgementMs": 88,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "ecb619e1-19d6-4baa-9550-549a0408b353:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "a3c8c4e2e06bc3900050772bd6d98c3c662138e5038ba0a4b3495611f63870f0",
+      "pauseAfterAcknowledgementMs": 93,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "d20f1425-aff9-4d98-80db-d91c352bba7a:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "454a21edc88b8578eed273a3b350e11bd4b761fef6a054037005d3f40533ad07",
+      "pauseAfterAcknowledgementMs": 162,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "d3ea3ddf-c137-4db8-909f-212c99e5e2b0:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "18edf15be7a854d6de3708eef9bb743bb04c9acfc01cda2ab480974cc22fb672",
+      "pauseAfterAcknowledgementMs": 3,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "21062acc-69ef-4c78-aabd-088855b16575:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "4aed772b344fc353fc03d0e35557239b9b4994174a80e07b16bcef01b1a9b0e8",
+      "pauseAfterAcknowledgementMs": 16,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "009c4481-b12d-49a5-9229-780028ad5eb7:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "7624aba16bd56a444ca41eddba1240b01a02eed6e9a5309d9430a2ce44c35bd0",
+      "pauseAfterAcknowledgementMs": 73,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "de84d29c-656a-498e-bb9a-21c978511854:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "e0773c36a148aa2d3b39a734c6e4d75e79559384aa20c523720f8725abc90eb5",
+      "pauseAfterAcknowledgementMs": 62,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "c48badc1-5bfe-4169-9485-4f1335e69e60:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "14cf7007796e578dc524e1f5fb2aed2e9f33928edd9c5cebe9947ed70e62c076",
+      "pauseAfterAcknowledgementMs": 155,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "9a802502-c575-4c37-9f70-78c7c2cb863d:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "6cc10fce41b1526d999a9832b75d2f8104235dc942ad212b4d90e083190f11a9",
+      "pauseAfterAcknowledgementMs": 96,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "c2b31f79-b3ad-4f28-971a-b5b2417c147c:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "219622c55586a494c79092b04027d4b1a1847e2e82c8b97d845ca45a5d098da1",
+      "pauseAfterAcknowledgementMs": 89,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "8161bea3-9589-4da2-915b-1f7cdb9e80a6:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "7f03fc882d401f38420417da2e6cbb4c0035a87e18449066e96b621b6d877e1d",
+      "pauseAfterAcknowledgementMs": 54,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "628bf59c-445d-4124-bc53-276676c60958:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "eb843271294bbc464051f2f9ab227ac3e7d76f2d67e8fe500fa3a45b0e343987",
+      "pauseAfterAcknowledgementMs": 179,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "e049ed61-d56b-4660-8cbc-b1cc75a5cf24:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "ae7ecf3e8f5cb30a37d68c79475e2052ea1dcbb7a24ddbbb226efc9b4b49168c",
+      "pauseAfterAcknowledgementMs": 8,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "4acd034a-eb97-48de-822e-c66348666874:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "bc7ee0c87ce0f65a4d10afb310a5496e4ae481ce44f42309e965f3acd0e0ab42",
+      "pauseAfterAcknowledgementMs": 117,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "1ca71dc6-952a-42ed-bdbe-852963de03f3:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "8a12300ae1cf6e27f671169d846fbc6bdbfafb825036e09c1166f10117e493de",
+      "pauseAfterAcknowledgementMs": 82,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "d384e037-1b38-477b-94d7-67a84e3fb8eb:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "9f69022ca9f0b9a589609c19886d1f67fb8f0d2ae40973a5a65302755e5ecd3b",
+      "pauseAfterAcknowledgementMs": 3,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "e416f800-5838-4d59-8de5-bf8e68a85b6f:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "67e6a005e53188d525938f112f18b78f4bcdcc286f2a430cb5e5cc840cd6cd8b",
+      "pauseAfterAcknowledgementMs": 164,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "503e0faa-4bca-4020-92b9-205748bb2092:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "e5add64b13e96dc69625a575662d9f21c281b0e1338d5433e62851adce40c58e",
+      "pauseAfterAcknowledgementMs": 1,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "cf7e1665-1a60-45e5-bbeb-9e563a0a36c6:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "a691b7f3f127442c02e6ac62461442869c999eb03b69029d48d5925f9411ee12",
+      "pauseAfterAcknowledgementMs": 50,
+      "offlineAtCrash": true,
+      "recovered": true
+    },
+    {
+      "revisionId": "f960c379-768e-4f83-9279-b17eb12a2f67:2b15e0cc-dc5a-4dff-8aae-15fc8edf9c9b",
+      "inputSha256": "16d901a405459c608e026bc25a77a969e220b5ec030c31bf950b13a280fc3954",
+      "pauseAfterAcknowledgementMs": 15,
+      "offlineAtCrash": true,
+      "recovered": true
+    }
+  ]
+}

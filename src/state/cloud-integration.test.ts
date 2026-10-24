@@ -51,8 +51,8 @@ describe('Writing engine against actual trusted commit service', () => {
     vi.stubGlobal('indexedDB', phoneStore); const phone = await open('author', cloud);
     const id = await phone.createDocument({ body: textBody('Shared base') }); await phone.sync();
     vi.stubGlobal('indexedDB', laptopStore); const laptop = await open('author', cloud);
-    laptop.updateDocument(id, { body: textBody('Laptop choice') }); await laptop.flush();
-    phone.updateDocument(id, { body: textBody('Phone branch') }); await phone.flush(); await phone.sync();
+    laptop.updateDocument(id, { body: textBody('Laptop choice') }); await laptop.checkpoint();
+    phone.updateDocument(id, { body: textBody('Phone branch') }); await phone.checkpoint(); await phone.sync();
     return { cloud, phone, laptop, laptopStore, id };
   }
 
@@ -76,7 +76,7 @@ describe('Writing engine against actual trusted commit service', () => {
 
   it('uploads queued branches before a resolution and retires only conflicts the author selected', async () => {
     const { cloud, laptop, id } = await parallelWriting();
-    laptop.updateDocument(id, { body: textBody('Second queued laptop draft') }); await laptop.flush();
+    laptop.updateDocument(id, { body: textBody('Second queued laptop draft') }); await laptop.checkpoint();
     const head = laptop.getSnapshot().documents.find(document => document.id === id)!.headRevisionId!;
     await laptop.restoreRevision(head); await laptop.sync();
     expect(laptop.getSnapshot().saveState).toBe('synced');
@@ -113,7 +113,7 @@ describe('Writing engine against actual trusted commit service', () => {
     vi.stubGlobal('indexedDB', new IDBFactory());
     const laptop = new WritingEngine('author', { ...cloud, load, watch: callback => { changed = callback; return () => {}; } }); engines.push(laptop);
     const initializing = laptop.initialize(); await entered.promise;
-    phone.updateDocument(id, { body: textBody('Newer head arrived during hydration') }); await phone.flush(); await phone.sync(); changed(); release.resolve(); await initializing;
+    phone.updateDocument(id, { body: textBody('Newer head arrived during hydration') }); await phone.checkpoint(); await phone.sync(); changed(); release.resolve(); await initializing;
     await vi.waitFor(() => expect(laptop.getSnapshot().documents.find(document => document.id === id)?.plainText).toBe('Newer head arrived during hydration'));
     expect(laptop.getSnapshot().error).toBeNull();
   });
@@ -126,7 +126,7 @@ describe('Writing engine against actual trusted commit service', () => {
     engine.updateDocument(id, { body: textBody('Server acknowledged but listener lagging') }); await engine.sync();
     const acknowledged = engine.getSnapshot().documents[0].headRevisionId;
     const commit = vi.spyOn(cloud, 'commit');
-    await engine.restoreRevision(base); await engine.sync(false);
+    await engine.restoreRevision(base); await engine.sync();
     expect(commit.mock.calls.at(-1)?.[0].expectedHeadId).toBe(acknowledged);
     expect(engine.getSnapshot().saveState).toBe('synced');
   });
@@ -137,7 +137,7 @@ describe('Writing engine against actual trusted commit service', () => {
     const entered = deferred(), release = deferred(), put = cloud.putCatalog.bind(cloud);
     vi.spyOn(cloud, 'putCatalog').mockImplementationOnce(async (...args) => { entered.resolve(); await release.promise; await put(...args); });
     const register = vi.spyOn(cloud, 'registerDocuments'); const publication = vi.fn(); engine.subscribe(publication);
-    const syncing = engine.sync(false); await entered.promise; engine.dispose(); const before = publication.mock.calls.length; release.resolve(); await syncing;
+    const syncing = engine.sync(); await entered.promise; engine.dispose(); const before = publication.mock.calls.length; release.resolve(); await syncing;
     expect(register).not.toHaveBeenCalled(); expect(publication).toHaveBeenCalledTimes(before);
   });
 
@@ -148,7 +148,7 @@ describe('Writing engine against actual trusted commit service', () => {
     const id = await phone.createDocument({ body: textBody('Earlier writing') }); await phone.sync();
     vi.stubGlobal('indexedDB', laptopStore); const laptop = await open('author', cloud); laptop.dispose();
     const disk = await DeviceDatabase.open('author'); await disk.markConflict(id); disk.close();
-    phone.updateDocument(id, { body: textBody('Latest phone writing') }); await phone.flush(); await phone.sync();
+    phone.updateDocument(id, { body: textBody('Latest phone writing') }); await phone.checkpoint(); await phone.sync();
     const extra = await phone.createDocument({ body: textBody('A new phone page') }); await phone.sync();
     const reopened = await open('author', cloud);
     expect(reopened.getSnapshot().documents.find(document => document.id === id)?.plainText).toBe('Latest phone writing');
@@ -165,33 +165,33 @@ describe('Writing engine against actual trusted commit service', () => {
     let changed!: () => void, detached = false;
     const watched = { ...cloud, watch: (callback: () => void) => { changed = callback; return () => { detached = true; }; } };
     vi.stubGlobal('indexedDB', laptopStore); const laptop = await open('author', watched);
-    phone.updateDocument(id, { body: textBody('Live clean update') }); await phone.flush(); await phone.sync(); changed();
+    phone.updateDocument(id, { body: textBody('Live clean update') }); await phone.checkpoint(); await phone.sync(); changed();
     await vi.waitFor(() => expect(laptop.getSnapshot().documents.find(document => document.id === id)?.plainText).toBe('Live clean update'));
     expect(laptop.getSnapshot().saveState).toBe('synced');
     laptop.updateDocument(id, { body: textBody('Unsaved typing kept') });
-    phone.updateDocument(id, { body: textBody('A parallel edit') }); await phone.flush(); await phone.sync(); changed();
+    phone.updateDocument(id, { body: textBody('A parallel edit') }); await phone.checkpoint(); await phone.sync(); changed();
     await vi.waitFor(() => expect(laptop.getSnapshot().revisions.some(revision => revision.snapshot.plainText === 'A parallel edit')).toBe(true));
     expect(laptop.getSnapshot().documents.find(document => document.id === id)?.plainText).toBe('Unsaved typing kept');
     expect((await cloud.load()).documents[0].plainText).toBe('A parallel edit');
-    await laptop.flush(); await laptop.sync();
+    await laptop.checkpoint(); await laptop.sync();
     expect(laptop.getSnapshot().saveState).toBe('conflict');
     expect((await cloud.load()).revisions.some(revision => revision.snapshot.plainText === 'Unsaved typing kept')).toBe(true);
     laptop.dispose(); expect(detached).toBe(true);
   });
 
-  it('keeps immediate device checkpoints, waits one minute for cloud, retains every revision and suppresses no-op saves', async () => {
+  it('resets the cloud idle deadline after each edit, retains explicit checkpoints and suppresses no-op saves', async () => {
     vi.stubGlobal('BroadcastChannel', undefined);
     const cloud = cloudService(), engine = await open('author', cloud);
     vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout', 'Date'] });
     const id = await engine.createDocument({ body: textBody('One') });
     const count = engine.getSnapshot().revisions.length;
-    engine.updateDocument(id, { body: textBody('One') }); await engine.flush();
+    engine.updateDocument(id, { body: textBody('One') }); await engine.checkpoint();
     expect(engine.getSnapshot().revisions).toHaveLength(count);
     await vi.advanceTimersByTimeAsync(30_000);
-    engine.updateDocument(id, { body: textBody('Two') }); await engine.flush();
+    engine.updateDocument(id, { body: textBody('Two') }); await engine.checkpoint();
     expect(engine.getSnapshot().saveState).toBe('local');
     expect((await cloud.load()).documents).toHaveLength(0);
-    await vi.advanceTimersByTimeAsync(CLOUD_SYNC_DELAY - 30_000 - 1);
+    await vi.advanceTimersByTimeAsync(CLOUD_SYNC_DELAY - 1);
     expect((await cloud.load()).documents).toHaveLength(0);
     await vi.advanceTimersByTimeAsync(1);
     await vi.waitFor(() => expect(engine.getSnapshot().pendingCount).toBe(0));
@@ -227,7 +227,7 @@ describe('Writing engine against actual trusted commit service', () => {
     (a as unknown as { offline(): void }).offline(); (b as unknown as { offline(): void }).offline();
     const textA = 'Offline device A — exact स्वतंत्र words'; const textB = 'Offline device B — a different exact branch 🪶';
     a.updateDocument(id, { body: textBody(textA) }); b.updateDocument(id, { body: textBody(textB) });
-    await a.flush(); await b.flush();
+    await a.checkpoint(); await b.checkpoint();
     const revisionA = a.getSnapshot().documents.find(document => document.id === id)!.headRevisionId!;
     const revisionB = b.getSnapshot().documents.find(document => document.id === id)!.headRevisionId!;
     expect(revisionA).not.toBe(revisionB);
@@ -240,8 +240,8 @@ describe('Writing engine against actual trusted commit service', () => {
       const result = await commit(operation); outcomes.push({ expectedHeadId: operation.expectedHeadId, status: result.status }); return result;
     });
     const winner = firstDevice === 'a' ? a : b; const loser = firstDevice === 'a' ? b : a;
-    (winner as unknown as { online(): void }).online(); await winner.sync(false);
-    (loser as unknown as { online(): void }).online(); await loser.sync(false);
+    (winner as unknown as { online(): void }).online(); await winner.sync();
+    (loser as unknown as { online(): void }).online(); await loser.sync();
     const remote = await cloud.load();
     expect(outcomes).toEqual([{ expectedHeadId: base.headRevisionId, status: 'synced' }, { expectedHeadId: base.headRevisionId, status: 'conflict' }]);
     expect(remote.revisions).toHaveLength(3);
@@ -271,7 +271,7 @@ describe('Writing engine against actual trusted commit service', () => {
       entered.resolve(); await release.promise; await merge.call(this, snapshot, preserve);
     });
     const syncing = engine.sync(); await entered.promise;
-    engine.updateDocument(id, { body: textBody('New acknowledged writing during pull') }); await engine.flush();
+    engine.updateDocument(id, { body: textBody('New acknowledged writing during pull') }); await engine.checkpoint();
     const acknowledgedHead = engine.getSnapshot().documents.find(document => document.id === id)!.headRevisionId;
     release.resolve(); await syncing;
     const state = engine.getSnapshot();
@@ -284,7 +284,7 @@ describe('Writing engine against actual trusted commit service', () => {
     const a = await open('device', null); const id = await a.createDocument({ body: textBody('Base') });
     const b = await open('device', null);
     a.updateDocument(id, { body: textBody('First tab retained') }); b.updateDocument(id, { body: textBody('Second tab retained') });
-    await a.flush(); await b.flush();
+    await a.checkpoint(); await b.checkpoint();
     expect(b.getSnapshot().saveState).toBe('conflict');
     a.dispose(); b.dispose();
     const reopened = await open('device', null);
@@ -294,9 +294,10 @@ describe('Writing engine against actual trusted commit service', () => {
   it('preserves a newly imported original before committing its revision during an ongoing sync', async () => {
     const cloud = cloudService(); const engine = await open('author', cloud);
     await engine.importText(new File(['Earlier raw bytes'], 'earlier.txt')); await engine.sync();
-    const entered = deferred(); const release = deferred(); const preserve = cloud.putOriginal.bind(cloud);
-    vi.spyOn(cloud, 'putOriginal').mockImplementationOnce(async original => { entered.resolve(); await release.promise; await preserve(original); });
-    const syncing = engine.sync(false); await entered.promise;
+    await engine.createDocument({ body: textBody('Pending before the import race') });
+    const entered = deferred(); const release = deferred(); const catalog = cloud.putCatalog.bind(cloud);
+    vi.spyOn(cloud, 'putCatalog').mockImplementationOnce(async (worlds, groups) => { entered.resolve(); await release.promise; await catalog(worlds, groups); });
+    const syncing = engine.sync(); await entered.promise;
     const id = await engine.importText(new File(['Late exact original\r\nहिन्दी'], 'late.txt'));
     release.resolve(); await syncing;
     expect(engine.getSnapshot().error).toBeNull();
@@ -347,7 +348,7 @@ describe('Writing engine against actual trusted commit service', () => {
     const last = makeRevision('later-unselected', ['base'], 'Later unselected alternative', '2026-10-23T00:00:03.000Z');
     const snapshot: WorkspaceSnapshot = { schemaVersion: 1, accountId: 'original', universes: [{ id: 'archive-world', name: 'Branches', createdAt: base.createdAt }], collections: [], originals: [], receipts: [], revisions: [base, first, selected, last], documents: [{ ...selected.snapshot, headRevisionId: selected.id }] };
     await engine.importArchive(new File([await encodeArchive(snapshot)], 'branches.json')); await engine.sync();
-    for (let attempt = 0; attempt < 10 && engine.getSnapshot().pendingCount; attempt++) await engine.sync(false);
+    for (let attempt = 0; attempt < 10 && engine.getSnapshot().pendingCount; attempt++) await engine.sync();
     const state = engine.getSnapshot();
     const restoredHead = state.documents.find(document => document.id === 'branched')!;
     expect(restoredHead.plainText).toBe(selected.snapshot.plainText);
@@ -390,9 +391,9 @@ describe('Writing engine against actual trusted commit service', () => {
     const entered = deferred(); const release = deferred(); const commit = cloud.commit.bind(cloud);
     vi.spyOn(cloud, 'commit').mockImplementationOnce(async operation => { entered.resolve(); await release.promise; return commit(operation); });
     await engine.importArchive(new File([await encodeArchive(archive)], 'archive.json')); await entered.promise;
-    engine.updateDocument('branched', { body: textBody('New author writing after the import') }); await engine.flush();
+    engine.updateDocument('branched', { body: textBody('New author writing after the import') }); await engine.checkpoint();
     release.resolve();
-    for (let attempt = 0; attempt < 10 && engine.getSnapshot().pendingCount; attempt++) await engine.sync(false);
+    for (let attempt = 0; attempt < 10 && engine.getSnapshot().pendingCount; attempt++) await engine.sync();
     expect(engine.getSnapshot().documents.find(document => document.id === 'branched')?.plainText).toBe('New author writing after the import');
     expect(engine.getSnapshot().revisions.some(revision => revision.id === selected.id)).toBe(true);
   });
@@ -404,7 +405,7 @@ describe('Writing engine against actual trusted commit service', () => {
       const rows = await all.call(this, name) as T[]; entered.resolve(); await release.promise; return rows;
     });
     const refreshing = (engine as unknown as { refreshDisk(): Promise<void> }).refreshDisk(); await entered.promise;
-    engine.updateDocument(id, { body: textBody('Acknowledged while refresh was waiting') }); await engine.flush();
+    engine.updateDocument(id, { body: textBody('Acknowledged while refresh was waiting') }); await engine.checkpoint();
     const head = engine.getSnapshot().documents.find(document => document.id === id)!.headRevisionId;
     const importedId = await engine.importText(new File(['Exact original captured during refresh\r\n'], 'during-refresh.txt'), 'recovered_original');
     const originalId = engine.getSnapshot().documents.find(document => document.id === importedId)!.sourceOriginalIds[0];
@@ -432,7 +433,7 @@ describe('Writing engine against actual trusted commit service', () => {
     const engine = await open('device', null);
     const id = await engine.importText(new File(['User:\nOriginal\nAssistant:\nUnverified suggestion'], 'chat.txt'), 'imported_chat');
     const first = engine.getSnapshot().documents.find(document => document.id === id)!.headRevisionId!;
-    engine.updateDocument(id, { body: textBody('A later experiment') }); await engine.flush(); await engine.restoreRevision(first);
+    engine.updateDocument(id, { body: textBody('A later experiment') }); await engine.checkpoint(); await engine.restoreRevision(first);
     const archive = JSON.parse(await (await engine.exportArchive()).text());
     const restored = archive.snapshot.revisions.find((revision: Revision) => revision.restoredFrom === first);
     restored.snapshot.sourceOriginalIds = []; restored.contentHash = sha256(stableStringify(restored.snapshot));

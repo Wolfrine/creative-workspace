@@ -1,0 +1,371 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Users\\Sachit Tewary\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Sachit Tewary\\Documents\\Codex\\2026-10-23\\review-wolfrine-creative-workspace-github-repo\\noveliaa\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "playwright.spark.config.ts"
+    ],
+    "configFile": "C:\\Users\\Sachit Tewary\\Documents\\Codex\\2026-10-23\\review-wolfrine-creative-workspace-github-repo\\noveliaa\\playwright.spark.config.ts",
+    "rootDir": "C:/Users/Sachit Tewary/Documents/Codex/2026-10-23/review-wolfrine-creative-workspace-github-repo/noveliaa/tests/spark-browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Sachit Tewary/Documents/Codex/2026-10-23/review-wolfrine-creative-workspace-github-repo/noveliaa/.local/spark-test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Sachit Tewary/Documents/Codex/2026-10-23/review-wolfrine-creative-workspace-github-repo/noveliaa/tests/spark-browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\Sachit Tewary\\Documents\\Codex\\2026-10-23\\review-wolfrine-creative-workspace-github-repo\\noveliaa\\.local\\spark-test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "C:\\Users\\Sachit Tewary\\Documents\\Codex\\2026-10-23\\review-wolfrine-creative-workspace-github-repo\\noveliaa\\tests\\spark-browser",
+        "snapshotDir": "C:\\Users\\Sachit Tewary\\Documents\\Codex\\2026-10-23\\review-wolfrine-creative-workspace-github-repo\\noveliaa\\tests\\spark-browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5820",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".local/spark-browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --port 5820 --strictPort",
+      "url": "http://127.0.0.1:5820",
+      "reuseExistingServer": false,
+      "env": {
+        "VITE_FIREBASE_EMULATORS": "true",
+        "VITE_FIREBASE_CONFIG": "{\"apiKey\":\"emulator-public-key\",\"projectId\":\"demo-noveliaa\",\"authDomain\":\"demo-noveliaa.firebaseapp.com\",\"appId\":\"synthetic-spark-app\"}"
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "reset.spec.ts",
+      "file": "reset.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authorized reset deletes exact originals/history, remounts a clean desktop workspace, preserves Auth and is idempotent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13676,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:35:54.191Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa2639a2f4206eb86f3a-c2557afa08d7b06a9d8b",
+          "file": "reset.spec.ts",
+          "line": 55,
+          "column": 1
+        },
+        {
+          "title": "offline old-device drafts cannot repopulate a reset on reconnect and the mobile session opens its new store",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 18640,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:36:08.172Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa2639a2f4206eb86f3a-3eefc863a59db4de896e",
+          "file": "reset.spec.ts",
+          "line": 90,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "writing.spec.ts",
+      "file": "writing.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real author sign-in, cloud receipt, isolated-device restore, offline checkpoint and reconnect",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26418,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:36:26.972Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-809b348f3437242d64c1",
+          "file": "writing.spec.ts",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "imported conversation retains exact original and unverified provenance across devices; revision recovery and archive export",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9736,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:36:53.501Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-fe71718c491d695247d8",
+          "file": "writing.spec.ts",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "unapproved real Auth account is denied before opening the workspace",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1714,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:37:03.259Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-862d6e73e0ae51aa7bb3",
+          "file": "writing.spec.ts",
+          "line": 114,
+          "column": 1
+        },
+        {
+          "title": "a used laptop silently refreshes phone edits, then receives live pages and edits with persistent SDK cache",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11762,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:37:04.991Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-51ca770ab13d41d5be13",
+          "file": "writing.spec.ts",
+          "line": 124,
+          "column": 1
+        },
+        {
+          "title": "real Firebase retains both genuinely concurrent device edits",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17985,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:37:16.773Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-432afc62986feb7aa72e",
+          "file": "writing.spec.ts",
+          "line": 149,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-24T18:35:48.935Z",
+    "duration": 107081.194,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -14,7 +14,7 @@ afterEach(() => { engines.forEach(engine => engine.dispose()); engines = []; vi.
 describe('Recoverable writing — IndexedDB transaction protocol with fake-indexeddb', () => {
   it('captures an untitled document without a taxonomy and distinguishes local persistence', async () => {
     const engine = await open(); const id = await engine.createDocument();
-    engine.updateDocument(id, { body: textBody('A beginning. हिंदी e\u0301 🙂\n\nThe next line.') }); await engine.flush();
+    engine.updateDocument(id, { body: textBody('A beginning. हिंदी e\u0301 🙂\n\nThe next line.') }); await engine.checkpoint();
     expect(engine.getSnapshot().documents[0].title).toBe('');
     expect(engine.getSnapshot().documents[0].plainText).toBe('A beginning. हिंदी e\u0301 🙂\n\nThe next line.');
     expect(engine.getSnapshot().saveState).toBe('local');
@@ -25,7 +25,7 @@ describe('Recoverable writing — IndexedDB transaction protocol with fake-index
     const expected = new Map<string, string>();
     for (let i = 0; i < 20; i++) {
       const text = `Checkpoint ${i} — हिंदी e\u0301 🙂\n${'word '.repeat(i + 1)}`;
-      engine.updateDocument(id, { body: textBody(text) }); await engine.flush();
+      engine.updateDocument(id, { body: textBody(text) }); await engine.checkpoint();
       const doc = engine.getSnapshot().documents[0]; expected.set(doc.headRevisionId!, text);
       engine.dispose(); engine = await open();
       expect(engine.getSnapshot().documents[0].plainText).toBe(text);
@@ -36,17 +36,17 @@ describe('Recoverable writing — IndexedDB transaction protocol with fake-index
     const engine = await open(); const id = await engine.createDocument(); const receipts = engine.getSnapshot().receipts.length;
     vi.spyOn(DeviceDatabase.prototype, 'checkpoint').mockRejectedValue(new DOMException('Device storage is full', 'QuotaExceededError'));
     engine.updateDocument(id, { body: textBody('Text that must remain available') });
-    await expect(engine.flush()).rejects.toThrow('Device storage is full');
+    await expect(engine.checkpoint()).rejects.toThrow('Device storage is full');
     expect(engine.getSnapshot().receipts).toHaveLength(receipts);
     expect(engine.getSnapshot().saveState).not.toBe('synced');
     expect(await (await engine.exportDocument(id, 'txt')).text()).toBe('Text that must remain available');
   });
   it('retains both tab variants from the same base', async () => {
     const a = await open(); const id = await a.createDocument();
-    a.updateDocument(id, { body: textBody('Base') }); await a.flush();
+    a.updateDocument(id, { body: textBody('Base') }); await a.checkpoint();
     const b = await open();
     a.updateDocument(id, { body: textBody('First tab') }); b.updateDocument(id, { body: textBody('Second tab') });
-    await a.flush(); await b.flush();
+    await a.checkpoint(); await b.checkpoint();
     const recovered = await open(); const texts = recovered.getSnapshot().revisions.map(x => x.snapshot.plainText);
     expect(texts).toContain('First tab'); expect(texts).toContain('Second tab');
     expect(b.getSnapshot().saveState).toBe('conflict');
@@ -54,7 +54,7 @@ describe('Recoverable writing — IndexedDB transaction protocol with fake-index
   it('restores into a new revision while preserving intermediate writing and origin', async () => {
     const engine = await open(); const id = await engine.createDocument({ body: textBody('Original paragraph') });
     const first = engine.getSnapshot().documents[0].headRevisionId!;
-    engine.updateDocument(id, { title: 'Renamed scene', body: textBody('Experiment, not the original') }); await engine.flush();
+    engine.updateDocument(id, { title: 'Renamed scene', body: textBody('Experiment, not the original') }); await engine.checkpoint();
     const count = engine.getSnapshot().revisions.length;
     await engine.restoreRevision(first);
     expect(engine.getSnapshot().revisions).toHaveLength(count + 1);

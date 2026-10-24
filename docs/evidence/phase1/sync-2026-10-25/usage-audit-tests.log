@@ -1,0 +1,10 @@
+✔ permission failure and missing samples are never reported as zero (26.5088ms)
+✔ uses complete Pacific days, totals observations and detects quota pressure without claiming billing truth (0.85ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 135.2246

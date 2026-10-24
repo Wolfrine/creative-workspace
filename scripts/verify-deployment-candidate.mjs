@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
-const manifest = JSON.parse(await readFile('docs/evidence/phase1/workspace-reset-2026-10-24/manifest.json', 'utf8'));
+const manifest = JSON.parse(await readFile('docs/evidence/phase1/sync-2026-10-25/manifest.json', 'utf8'));
 assert.equal(manifest.plan, 'Spark');
 for (const item of [...manifest.sources, ...manifest.renders, ...manifest.testEvidence]) {
   assert.equal(hash(await readFile(item.path)), item.sha256, 'Retained candidate changed: ' + item.path);
@@ -16,6 +16,7 @@ const binding = JSON.parse(await readFile('deployment/firebase-binding.json', 'u
 assert.equal(binding.appId, '1:278082781314:web:9a4b7acef07fa8e4dfb49b');
 assert.equal(binding.planConstraint, 'Spark');
 assert.equal(manifest.browserFailures, 0); assert.equal(manifest.ruleFailures, 0);
-assert.equal(manifest.writingBrowserFailures, 0); assert.equal(manifest.browserPasses, 7); assert(manifest.writingBrowserPasses >= 20);
-assert(manifest.clientPasses >= 58); assert(manifest.rulePasses >= 12); assert.equal(manifest.visualInspection.result, 'pass');
+assert.equal(manifest.writingBrowserFailures, 0); assert.equal(manifest.browserPasses, 7); assert(manifest.writingBrowserPasses >= 23);
+assert(manifest.clientPasses >= 71); assert(manifest.rulePasses >= 12); assert.equal(manifest.visualInspection.result, 'pass');
+assert.equal(manifest.crashRecoveries, 20);
 console.log(JSON.stringify({ plan: 'Spark', sources: manifest.sources.length, actualRenders: manifest.renders.length, testEvidence: manifest.testEvidence.length, sourceDigest: manifest.sourceDigest, productionOwnerAcceptance: 'not inferred from emulator evidence' }));

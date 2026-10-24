@@ -17,7 +17,7 @@ for (const width of [1440, 390, 320]) test(`page-specific conflict review and bl
   await page.reload(); await page.waitForFunction(() => (window as any).__NOVELIAA_TEST__?.getSnapshot().ready);
   await expect(page.getByRole('textbox', { name: 'Writing title', exact: true })).toHaveValue('');
   await expect(page.getByRole('button', { name: 'Compare history', exact: true })).toHaveCount(0);
-  await expect(page.getByText('Saved on this device', { exact: true }).first()).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Saved on this device', exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Review 1 other page with saved versions', exact: true }).click();
   await expect(page.getByRole('dialog', { name: 'Pages to review', exact: true })).toBeVisible();
   await mkdir(evidence, { recursive: true });

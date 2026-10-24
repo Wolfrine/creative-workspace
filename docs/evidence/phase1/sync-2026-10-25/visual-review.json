@@ -1,0 +1,25 @@
+{
+  "result": "pass",
+  "scope": "Mechanical status/control repair within the owner-accepted Living Atlas and Quiet Folio direction. No new design direction or owner acceptance claimed.",
+  "central": {
+    "version": "0.1.0",
+    "baseRevision": "ba1235fe7b220842778414f3f70fca38e7df4c53"
+  },
+  "reviewer": "parent agent; direct inspection of actual Chromium renders",
+  "viewports": [
+    1440,
+    390,
+    320
+  ],
+  "checks": {
+    "quietGlyph": "Static 17px icon without inline helper text or a live announcement region; exact timing and animation assertions in autosave browser tests.",
+    "writingLayout": "Desktop and mobile prose stay dominant; title, toolbar and header do not overflow.",
+    "details": "First review found dense paragraph spacing on 320px. Corrected padding/gaps and inspected the new rendered modal; text and dismissal fit."
+  },
+  "evidence": [
+    "quiet-writing-1440.png",
+    "quiet-writing-390.png",
+    "sync-details-320.png"
+  ],
+  "limits": "Synthetic local writing and emulator Auth. No production auth bypass, independent design critic, physical keyboard or human author acceptance."
+}

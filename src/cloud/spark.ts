@@ -39,7 +39,7 @@ export function createFirestoreAdapter(db: Firestore, uid: string, checkSession:
   const record = (kind: string, key: string) => doc(db, root + kind + '/' + id(key));
   const blobCache = new Map<string, Uint8Array>();
   const metadataCache = new Map<string, string>();
-  const namespaces = ['documents', 'universes', 'collections', 'revisions', 'originals'] as const;
+  const namespaces = ['documents', 'universes', 'collections'] as const;
   let snapshots: Map<string, Map<string, DocumentData>> | undefined;
   let liveReady: Promise<void> | undefined;
   const immutableRead = async (kind: string, key: string) => {
@@ -134,51 +134,67 @@ export function createFirestoreAdapter(db: Firestore, uid: string, checkSession:
           if (!item.metadata.hasPendingWrites) confirmed.set(item.id, item.data());
           else if (previous?.has(item.id)) confirmed.set(item.id, previous.get(item.id)!);
         }
+        const changed = !previous || previous.size !== confirmed.size || [...confirmed].some(([key, value]) => stableStringify(value) !== stableStringify(previous.get(key)));
         current.set(kind, confirmed);
-        if (current.size === namespaces.length) {
+        if (changed && current.size === namespaces.length) {
           resolveReady(); clearTimeout(notifyTimer);
           notifyTimer = setTimeout(() => { if (!stopped) onChange(); }, 120);
         }
       }, error => { if (!stopped) { rejectReady(error); onError(error); } }));
       return () => { stopped = true; clearTimeout(notifyTimer); stops.forEach(stop => stop()); if (snapshots === current) { snapshots = undefined; liveReady = undefined; } rejectReady(new Error('Writing listener closed.')); };
     },
-    async load(known) {
+    async load(known, options) {
       await checkSession();
       // Read heads first. Their immutable revisions and originals already exist
       // atomically; later unrelated writes cannot create dangling loaded heads.
       let heads: Map<string, DocumentData>, worlds: Map<string, DocumentData>, groups: Map<string, DocumentData>, storedRevisions: Map<string, DocumentData>, storedOriginals: Map<string, DocumentData>;
       if (snapshots && liveReady) {
         const current = snapshots; await liveReady; await checkSession();
-        [heads, worlds, groups, storedRevisions, storedOriginals] = namespaces.map(kind => new Map(current.get(kind)!));
+        [heads, worlds, groups] = namespaces.map(kind => new Map(current.get(kind)!));
       } else {
         const rows = async (kind: string) => new Map((await getDocsFromServer(collection(db, root + kind))).docs.map(item => [item.id, item.data()]));
         heads = await rows('documents');
-        [worlds, groups, storedRevisions, storedOriginals] = await Promise.all(['universes', 'collections', 'revisions', 'originals'].map(rows));
+        [worlds, groups] = await Promise.all(['universes', 'collections'].map(rows));
       }
+      // Ordinary writing watches current heads and catalog only. Full branch
+      // history is fetched explicitly for the history dialog or full archive.
+      const rows = async (kind: string) => new Map((await getDocsFromServer(collection(db, root + kind))).docs.map(item => [item.id, item.data()]));
+      [storedRevisions, storedOriginals] = options?.history || !known ? await Promise.all(['revisions', 'originals'].map(rows)) : [new Map(), new Map()];
       const knownRevisions = new Map((known?.revisions ?? []).map(revision => [revision.id, revision]));
+      const confirmedIds = new Set((known?.receipts ?? []).filter(receipt => receipt.level === 'cloud').map(receipt => receipt.revisionId));
       const knownOriginals = new Map((known?.originals ?? []).map(original => [original.id, original]));
       const ensure = async (kind: string, key: string, rows: Map<string, DocumentData>) => {
-        if (!rows.has(key)) { const missing = await read(kind, key); if (!missing.exists()) { if (snapshots && kind === 'documents') throw new CloudDependencyPending(); throw new Error('Cloud writing dependency is unavailable. Your device copy is retained.'); } rows.set(key, missing.data()); }
+        if (!rows.has(key)) { const missing = await (kind === 'revisions' || kind === 'originals' ? immutableRead : read)(kind, key); if (!missing.exists()) { if (snapshots && kind === 'documents') throw new CloudDependencyPending(); throw new Error('Cloud writing dependency is unavailable. Your device copy is retained.'); } rows.set(key, missing.data()); }
         return rows.get(key)!;
       };
       // Collection listeners are independent. A head can arrive before its
       // revision/source/catalog event; fetch only those missing dependencies.
       const revisionIndex = new Map<string, Revision>();
       const revisionQueue = [...storedRevisions].filter(([, value]) => heads.has(value.documentId)).map(([key]) => key);
+      revisionQueue.push(...[...knownRevisions.values()].filter(value => confirmedIds.has(value.id) && heads.has(value.documentId)).map(value => value.id));
       revisionQueue.push(...[...heads.values()].map(head => head.headRevisionId));
       for (let offset = 0; offset < revisionQueue.length; offset++) {
         const key = revisionQueue[offset]; if (revisionIndex.has(key)) continue;
-        const metadata = await ensure('revisions', key, storedRevisions) as CloudRevision;
         const existing = knownRevisions.get(key);
-        const revision: Revision = existing && await sha256(stableStringify(existing)) === metadata.blobHash
-          ? existing : JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(await readBlob(metadata.blobHash)));
-        if (revision.id !== key || revision.documentId !== metadata.documentId || revision.universeId !== metadata.universeId || revision.contentHash !== metadata.contentHash || await sha256(stableStringify(revision.snapshot)) !== revision.contentHash) throw new Error('Cloud revision identity or digest mismatch.');
+        const metadata = (storedRevisions.get(key) ?? (existing && !confirmedIds.has(key) ? await ensure('revisions', key, storedRevisions) : undefined)) as CloudRevision | undefined;
+        let revision: Revision;
+        if (existing && (!metadata || await sha256(stableStringify(existing)) === metadata.blobHash)) revision = existing;
+        else {
+          const source = metadata ?? await ensure('revisions', key, storedRevisions) as CloudRevision;
+          revision = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(await readBlob(source.blobHash)));
+          if (revision.id !== key || revision.documentId !== source.documentId || revision.universeId !== source.universeId || revision.contentHash !== source.contentHash) throw new Error('Cloud revision identity differs.');
+        }
+        if (await sha256(stableStringify(revision.snapshot)) !== revision.contentHash) throw new Error('Cloud revision digest mismatch.');
         revisionIndex.set(key, revision); revisionQueue.push(...revision.parentIds, ...(revision.restoredFrom ? [revision.restoredFrom] : []));
         for (const target of linkIds(revision.snapshot.body)) {
           const discovered = !heads.has(target), head = await ensure('documents', target, heads); revisionQueue.push(head.headRevisionId);
-          if (discovered) revisionQueue.push(...[...storedRevisions].filter(([, value]) => value.documentId === target).map(([key]) => key));
+          if (discovered) revisionQueue.push(...[...storedRevisions].filter(([, value]) => value.documentId === target).map(([key]) => key), ...[...knownRevisions.values()].filter(value => confirmedIds.has(value.id) && value.documentId === target).map(value => value.id));
         }
-        for (const source of revision.snapshot.sourceOriginalIds) await ensure('originals', source, storedOriginals);
+        for (const source of revision.snapshot.sourceOriginalIds) {
+          const original = knownOriginals.get(source);
+          if (original && !storedOriginals.has(source)) { const { bytesBase64: _, ...value } = original; storedOriginals.set(source, { ...value, blobHash: original.sha256 }); }
+          else await ensure('originals', source, storedOriginals);
+        }
       }
       const revisions = [...revisionIndex.values()];
       const originals: Original[] = [];
@@ -196,6 +212,10 @@ export function createFirestoreAdapter(db: Firestore, uid: string, checkSession:
         if (!revision) throw new Error('Cloud writing points to a missing revision.');
         return { ...revision.snapshot, headRevisionId: revision.id };
       });
+      // Existing heads already have registered identities (enforced atomically
+      // by Rules). The commit transaction still verifies its own identity.
+      for (const document of documents) metadataCache.set('documentIdentities/' + document.id, stableStringify({ id: document.id, universeId: document.universeId }));
+      for (const original of originals) metadataCache.set('originals/' + original.id, stableStringify(original));
       for (const document of documents) if (document.collectionId) await ensure('collections', document.collectionId, groups);
       for (const value of [...documents, ...originals, ...groups.values()]) await ensure('universes', value.universeId, worlds);
       for (const [key, value] of [...worlds].map(([key, value]) => ['universes/' + key, value] as const).concat([...groups].map(([key, value]) => ['collections/' + key, value] as const))) metadataCache.set(key, stableStringify(value));

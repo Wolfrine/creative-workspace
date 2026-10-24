@@ -11,13 +11,28 @@ React and Tiptap render versioned rich-text JSON. Titles and collections are
 optional. Links store stable document IDs within one universe; backlinks, Atlas
 and search derive from available device writing. Nothing invents a story schema.
 
-`WritingEngine` keeps typing immediate. After a 300 ms pause, one strict-durability
-IndexedDB transaction writes the immutable revision, current head, local receipt
-and outbox operation. Only completion earns the device-save label. Failure leaves
-open text exportable. Navigation and sign-out flush pending edits; dirty close
-attempts trigger the browser warning. Tabs preserve divergent versions instead
-of resolving meaning automatically. Fresh devices open the latest available page;
-returning devices remember their last-opened page.
+`WritingEngine` keeps typing in memory and resets independent idle timers after
+an actual content change. After **10 seconds without an edit**, a strict-durability
+IndexedDB transaction replaces this engine's mutable recovery draft. It does not
+create a permanent revision or enqueue a Firestore SDK write. Navigation, sign-out
+and backgrounding perform an immediate **local-only** safety save. Device failure
+keeps the current text exportable and never earns a save acknowledgement.
+
+After **60 seconds without an edit**, automatic cloud work checkpoints the latest
+writing into an immutable revision and durable outbox, then uploads it. Neither
+continued typing nor reconnecting starts an upload early. Manual sync, explicit
+history/recovery and archive export are version boundaries; opening history and
+exporting never upload early themselves. An old asynchronous save cannot mark
+newer typing saved. Returning exactly to the checkpoint discards only this writer's
+superseded mutable draft and creates no new revision.
+
+Draft keys are separate per engine/tab. Restart promotes surviving recovery drafts
+into durable revisions, preserving simultaneous variants. IndexedDB version 2
+adds the draft store without rewriting existing originals, revisions or outbox
+operations. All earlier immutable history remains. The sync indicator is a small
+static accessible button; details and manual sync are available on tap. Fresh
+devices open the latest available page; returning devices remember their page.
+See [the save and sync contract](SYNC.md) for lifecycle limits and verification.
 
 First-line indentation is optional per top-level paragraph (`firstLineIndent:
 true`), toggled in the formatting toolbar. Enter inherits it; the author can
@@ -50,21 +65,20 @@ under an existing operation ID fails. A stale optimistic transaction rejected by
 Rules is retried only after a server read proves that its observed head changed.
 Only an acknowledged transaction earns “Synced”; queued SDK writes do not.
 
-Automatic upload starts about **60 seconds after the first pending device
-checkpoint**. Continued typing does not postpone it indefinitely. Every distinct
-checkpoint stays in history and the outbox; a genuine no-op does not create a
-revision. Manual Check cloud sync flushes immediately. Reconnection and hiding
-the tab attempt an immediate drain to help device switching; browser shutdown
-cannot guarantee delivery. Wait for Synced before relying on another device.
+Automatic uploads follow the **60-second trailing idle deadline**. Every edit
+resets the deadline. Existing pending revisions remain immutable and upload in
+ancestry order. A manual cloud check can upload immediately; backgrounding saves
+only locally, and reconnecting respects the deadline. Wait for Synced before
+relying on another device; browser shutdown cannot guarantee cloud delivery.
 
-Firestore uses its persistent IndexedDB cache with multi-tab coordination.
-Long-lived `onSnapshot` subscriptions cover document heads, universe/collection
-metadata, revision metadata and original metadata. Only server-confirmed rows
-advance the cloud view; cached/optimistic events do not earn cloud receipts.
-Listeners arrive independently, so hydration fetches missing referenced metadata
-by ID, verifies a complete graph, and serializes adoption. Immutable content
-reuses verified local revisions and SDK-cached chunks; a failed digest retries
-once from the server. Newly uploaded bytes still require server readback.
+Firestore uses its persistent IndexedDB cache with multi-tab coordination. Three
+long-lived `onSnapshot` subscriptions cover heads, universes and collections,
+plus the separate access listener. Cached/optimistic snapshots cannot earn a
+cloud receipt, and unchanged confirmed metadata does not trigger hydration.
+Missing referenced records are fetched and verified by ID. Full branch history
+and originals load on explicit history/archive requests. Cold head ancestry is
+still loaded and validated. Verified local bytes are reused; new uploads still
+require server readback.
 
 A clean device automatically adopts descendant heads, including its selected
 page. Selection alone is never a conflict. Dirty text, durable pending operations
@@ -98,12 +112,12 @@ portable JSON archive, 200,000 editor nodes and depth 30. Exceeding a cloud limi
 leaves the complete device record exportable and reports failure. History is
 never silently pruned. Larger complete-history moves require a larger portable
 format. Firestore's free quota also bounds this design; quota failure retains the
-outbox and device checkpoint. Initial subscriptions read the complete metadata
-library/history; later events stream changed metadata without repeated full
-collection GETs or rereading verified blobs. Large-library pagination remains
-future work. A one-minute upload interval reduces sync churn, not the number of
-retained revision writes. Each distinct revision still has its integrity cost;
-idle listeners create no writes. Persistent reconnects beyond 30 minutes can be
+outbox and device checkpoint. Initial subscriptions read current heads and organization; later events stream
+changed records. Explicit history/export loads the full branch history. Cold
+head-ancestry loading and very large library pagination remain future work. Each
+cloud revision retains its integrity cost (typically five document writes for a
+small new single-chunk revision on an existing page); local recovery updates do
+not create cloud revisions. Idle listeners create no writes. Persistent reconnects beyond 30 minutes can be
 billed as a fresh query. See [Firebase persistence](https://firebase.google.com/docs/firestore/manage-data/enable-offline)
 and [listener pricing](https://firebase.google.com/docs/firestore/pricing).
 

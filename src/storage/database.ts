@@ -2,7 +2,8 @@ import type { CommitOperation, Original, Revision, SaveReceipt, WorkspaceSnapsho
 import { stableStringify } from '../domain/codec';
 
 export interface PendingOperation extends CommitOperation { status: 'pending' | 'conflict'; resolves?: string[] }
-const stores = ['documents', 'revisions', 'originals', 'universes', 'collections', 'receipts', 'outbox', 'preferences'] as const;
+export interface RecoveryDraft { id: string; generation: number; editedAt: number; document: WritingDocument }
+const stores = ['documents', 'revisions', 'originals', 'universes', 'collections', 'receipts', 'outbox', 'preferences', 'drafts'] as const;
 export type StoreName = typeof stores[number];
 export function request<T>(req: IDBRequest<T>): Promise<T> {
   return new Promise((resolve, reject) => { req.onsuccess = () => resolve(req.result); req.onerror = () => reject(req.error ?? new Error('Device storage failed.')); });
@@ -24,8 +25,8 @@ export class DeviceDatabase {
       // cannot block opening the new store, and Rules reject its cloud writes.
       void request(deletion).catch(() => {});
     }
-    const req = indexedDB.open(name, 1);
-    req.onupgradeneeded = () => { for (const name of stores) req.result.createObjectStore(name, { keyPath: name === 'receipts' ? 'key' : 'id' }); };
+    const req = indexedDB.open(name, 2);
+    req.onupgradeneeded = () => { for (const name of stores) if (!req.result.objectStoreNames.contains(name)) req.result.createObjectStore(name, { keyPath: name === 'receipts' ? 'key' : 'id' }); };
     const db = await request(req);
     db.onversionchange = () => db.close();
     return new DeviceDatabase(db, accountId);
@@ -42,8 +43,20 @@ export class DeviceDatabase {
   }
   async getPreference<T>(id: string): Promise<T | undefined> { return (await request(this.db.transaction('preferences').objectStore('preferences').get(id)))?.value; }
   async setPreference(id: string, value: unknown): Promise<void> { const tx = this.transaction(['preferences']); const done = completed(tx); tx.objectStore('preferences').put({ id, value }); await done; }
-  async checkpoint(doc: WritingDocument, revision: Revision, operation: PendingOperation, expectedLocalHead: string | null): Promise<boolean> {
-    const tx = this.transaction(['documents', 'revisions', 'receipts', 'outbox', 'preferences', 'universes']); const done = completed(tx);
+  async saveDraft(draft: RecoveryDraft): Promise<void> {
+    const tx = this.transaction(['drafts']); const done = completed(tx);
+    // Each engine owns a separate draft key. A simultaneous tab can never
+    // overwrite another tab's uncheckpointed words.
+    tx.objectStore('drafts').put(draft); await done;
+  }
+  async discardDraft(id: string, generation: number): Promise<void> {
+    const tx = this.transaction(['drafts']); const done = completed(tx);
+    const prior = await request<RecoveryDraft | undefined>(tx.objectStore('drafts').get(id));
+    if (prior && prior.generation <= generation) tx.objectStore('drafts').delete(id);
+    await done;
+  }
+  async checkpoint(doc: WritingDocument, revision: Revision, operation: PendingOperation, expectedLocalHead: string | null, draft?: Pick<RecoveryDraft, 'id' | 'generation'>): Promise<boolean> {
+    const tx = this.transaction(['documents', 'revisions', 'receipts', 'outbox', 'preferences', 'universes', 'drafts']); const done = completed(tx);
     const prior = await request<WritingDocument | undefined>(tx.objectStore('documents').get(doc.id));
     const universe = await request(tx.objectStore('universes').get(doc.universeId));
     if (!universe) { tx.abort(); await done.catch(() => {}); throw new Error('The workspace changed in another tab. This text has not been acknowledged. Export the open text, then reopen the workspace.'); }
@@ -53,6 +66,10 @@ export class DeviceDatabase {
     tx.objectStore('documents').put(doc);
     tx.objectStore('receipts').put({ key: revision.id + ':local', revisionId: revision.id, level: 'local', at: new Date().toISOString() });
     tx.objectStore('outbox').add({ ...operation, id: operation.operationId });
+    if (draft) {
+      const saved = await request<RecoveryDraft | undefined>(tx.objectStore('drafts').get(draft.id));
+      if (saved && saved.generation <= draft.generation) tx.objectStore('drafts').delete(draft.id);
+    }
     await done; return conflict;
   }
   async putOriginal(original: Original): Promise<void> { const tx = this.transaction(['originals']); const done = completed(tx); tx.objectStore('originals').add(original); await done; }
@@ -93,10 +110,11 @@ export class DeviceDatabase {
   async merge(snapshot: WorkspaceSnapshot, preserveDocumentIds: Set<string>): Promise<void> {
     // Guard against checkpoints made while the network request or merge was waiting.
     // Read guards and write heads inside ONE transaction, across tabs as well as engines.
-    const tx = this.transaction(['documents', 'revisions', 'originals', 'universes', 'collections', 'receipts', 'outbox', 'preferences']); const done = completed(tx);
-    const [localRevisions, localOriginals, localDocuments, pending] = await Promise.all([
+    const tx = this.transaction(['documents', 'revisions', 'originals', 'universes', 'collections', 'receipts', 'outbox', 'preferences', 'drafts']); const done = completed(tx);
+    const [localRevisions, localOriginals, localDocuments, pending, drafts] = await Promise.all([
       request<Revision[]>(tx.objectStore('revisions').getAll()), request<Original[]>(tx.objectStore('originals').getAll()),
       request<WritingDocument[]>(tx.objectStore('documents').getAll()), request<PendingOperation[]>(tx.objectStore('outbox').getAll()),
+      request<RecoveryDraft[]>(tx.objectStore('drafts').getAll()),
     ]);
     for (const name of ['revisions', 'originals'] as const) {
       const existing = new Map((name === 'revisions' ? localRevisions : localOriginals).map(x => [x.id, stableStringify(x)]));
@@ -104,7 +122,7 @@ export class DeviceDatabase {
         tx.abort(); await done.catch(() => {}); throw new Error('Immutable history differs for ' + item.id + '. Import stopped.');
       }
     }
-    const preserve = new Set([...preserveDocumentIds, ...pending.map(x => x.revision.documentId)]);
+    const preserve = new Set([...preserveDocumentIds, ...pending.map(x => x.revision.documentId), ...drafts.map(x => x.document.id)]);
     const remoteRevisions = new Map(snapshot.revisions.map(x => [x.id, x]));
     for (const local of localDocuments) {
       const remote = snapshot.documents.find(x => x.id === local.id);

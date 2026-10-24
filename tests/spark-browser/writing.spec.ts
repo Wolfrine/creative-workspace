@@ -27,7 +27,7 @@ const synced = async (page: Page) => {
   await page.getByRole('button', { name: 'Check cloud sync', exact: true }).click();
   await expect(page.getByRole('dialog').getByText('Cloud synchronization checked.', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Close your writing, in your hands', exact: true }).click();
-  await expect(page.getByText('Synced', { exact: true }).first()).toBeVisible({ timeout: 30000 });
+  await expect(page.getByRole('button', { name: 'Synced', exact: true })).toBeVisible({ timeout: 30000 });
 };
 async function signIn(page: Page, customToken = token) {
   await page.goto('/');
@@ -69,7 +69,7 @@ test('real author sign-in, cloud receipt, isolated-device restore, offline check
   await context.setOffline(true);
   const offline = first + '\nThis paragraph was written offline.';
   await canvas(page).fill(offline);
-  await expect(page.getByText('Saved here · cloud pending', { exact: true }).first()).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Saved on this device; cloud save pending', exact: true })).toBeVisible({ timeout: 15000 });
   // Closing the tab proves this is a durable checkpoint, rather than React state.
   await page.close(); await context.setOffline(false);
   const reopened = await context.newPage(); await reopened.goto('/');
@@ -132,7 +132,7 @@ test('a used laptop silently refreshes phone edits, then receives live pages and
   await canvas(page).fill('Phone words written while the laptop was closed.'); await synced(page);
   laptop = await laptopContext.newPage(); await laptop.goto('/');
   await expect(canvas(laptop)).toHaveText('Phone words written while the laptop was closed.');
-  await expect(laptop.getByText('Synced', { exact: true }).first()).toBeVisible();
+  await expect(laptop.getByRole('button', { name: 'Synced', exact: true })).toBeVisible();
   await expect(laptop.getByText('Versions need review', { exact: true })).toHaveCount(0);
   await canvas(page).fill('An incoming line while both devices are open.'); await synced(page);
   await expect(canvas(laptop)).toHaveText('An incoming line while both devices are open.');
@@ -153,14 +153,14 @@ test('real Firebase retains both genuinely concurrent device edits', async ({ pa
   await expect(canvas(parallel)).toHaveText('A common beginning.');
   await canvas(page).fill('First device keeps this version.');
   await canvas(parallel).fill('Second device keeps another version.');
-  await expect(parallel.getByText('Saved here · cloud pending', { exact: true }).first()).toBeVisible();
+  await expect(parallel.getByRole('button', { name: 'Saved on this device; cloud save pending', exact: true })).toBeVisible({ timeout: 15000 });
   await synced(page);
   await parallel.getByRole('button', { name: 'Import & export', exact: true }).click();
   await parallel.getByRole('button', { name: 'Check cloud sync', exact: true }).click();
   await expect(parallel.getByRole('dialog').getByText('Cloud synchronization checked.', { exact: true })).toBeVisible();
   await parallel.getByRole('button', { name: 'Close your writing, in your hands', exact: true }).click();
   await expect(canvas(parallel)).toHaveText('Second device keeps another version.');
-  await expect(parallel.locator('.save-status').first()).toContainText(/review|version|conflict/i);
+  await expect(parallel.getByRole('button', { name: 'Review this page', exact: true })).toBeVisible();
   const revisions = await db.collection('noveliaaWorkspaces/' + author + '/revisions').get();
   expect(revisions.size).toBeGreaterThanOrEqual(3);
   await capture(parallel, 'desktop-genuine-conflict'); await other.close();
