@@ -69,5 +69,5 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   await writeFile('.local/workspace-reset-result.json', JSON.stringify(result, null, 2) + '\n');
   console.log(JSON.stringify(result));
   console.log('Workspace reset complete; request=' + result.requestId + '; authentication preserved; retired roots verified empty=' + result.results.length + '.');
-  for (const retired of result.results) console.log('Retired root deletion verified: ' + retired.workspaceId + '; prior record counts: ' + Object.entries(retired.deletedKnownDocuments).map(([kind, count]) => kind + '=' + count).join(', ') + '; remaining=0.');
+  for (const retired of result.results) console.log('Retired root deletion verified: ' + retired.workspaceId + '; prior record counts: ' + Object.entries(retired.observedBeforeDelete ?? {}).map(([kind, count]) => kind + '=' + count).join(', ') + '; remaining=0.');
 }

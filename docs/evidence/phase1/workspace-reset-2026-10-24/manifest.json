@@ -1,9 +1,9 @@
 {
-  "capturedAt": "2026-10-24T15:47:11.121Z",
+  "capturedAt": "2026-10-24T15:52:15.974Z",
   "plan": "Spark",
   "scope": "Explicit full workspace reset with retired-device write fencing; page-specific conflict review and acknowledged resolution",
   "dataset": "Synthetic fixtures in real app, IndexedDB, Auth/Firestore emulators and Chromium. Production reset is separately recorded after deployment; no manuscript in test fixtures.",
-  "sourceDigest": "a1f27ff681c94ab4f6b65e5fab9f16a72c3a2e30660471f5379065e30db9fccd",
+  "sourceDigest": "97471e5a92e366f99525f400b81d58405f526e1b515d420a31aad75aa0200327",
   "sources": [
     {
       "path": ".firebaserc",
@@ -67,8 +67,8 @@
     },
     {
       "path": "functions/scripts/reset-workspace.mjs",
-      "bytes": 6975,
-      "sha256": "aedf587fc19cce63fb5b17d7ba14378025589e951f343862d5f96e2f9b12dcca"
+      "bytes": 6980,
+      "sha256": "be60cb64e88cc2aad6137d3acde7428620afddeb19d54a72ebd2e62a55575072"
     },
     {
       "path": "index.html",
