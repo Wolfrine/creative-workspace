@@ -5,6 +5,15 @@ project `noveliaa` (278082781314), Web App
 `1:278082781314:web:9a4b7acef07fa8e4dfb49b`. Localhost is development evidence
 only. Deployment is already authorized; the owner requires Spark.
 
+**Main-first delivery (owner instruction, 24 October 2026):** Every agent works,
+commits and deploys directly from `main` unless the owner explicitly specifies
+another workflow. Feature branches, worktrees and PRs are not the default review
+path. The production workflow accepts pushes only from `main` and rejects
+non-main manual dispatch through its job condition. Required tests and the
+existing Actions secret remain unchanged. The owner accepted the deployed UI;
+the completed Phase 1 branch is being fast-forwarded into `main` with its full
+history preserved, then removed after remote containment is verified.
+
 **Live and verified on 23 October 2026.** The first successful Spark release
 [39998452937](https://github.com/Wolfrine/creative-workspace/actions/runs/39998452937)
 passed all application checks, configured the private author, released Rules with

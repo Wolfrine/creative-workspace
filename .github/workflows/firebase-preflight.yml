@@ -2,7 +2,7 @@ name: Firebase metadata preflight (read only)
 on:
   workflow_dispatch:
   push:
-    branches: [codex/noveliaa-phase-1]
+    branches: [main]
     paths: [.github/workflows/firebase-preflight.yml, functions/scripts/inspect-firebase.mjs]
 permissions:
   contents: read

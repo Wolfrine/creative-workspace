@@ -2,6 +2,13 @@
 
 Read [INTENT.md](INTENT.md) and [.harness/objective.md](.harness/objective.md) first. The owner approved **Phase 1 development and Firebase deployment on 23 October 2026**. Deploy through GitHub Actions using the existing Firebase identity, verify the matching app/project/site, check the hosted UI, and share its live URL. The owner does not review localhost. Later stages remain unapproved.
 
+**Work and deploy directly from `main` by default.** The owner explicitly set
+this rule for every agent on 24 October 2026. Do not create a feature branch,
+worktree or PR unless the owner specifies that workflow. Run the required checks
+before pushing; use the existing GitHub Actions release from `main`. Preserve
+unique work before removing completed branches/PRs. This does not approve later
+product phases or override a plan-only request.
+
 **Keep Firebase on Spark**, as explicitly required by the owner. Phase 1 deploys
 Hosting and Firestore Rules and uses Google Authentication. Do not request Blaze,
 Functions/Storage deployment roles, API enablement or replacement keys for this

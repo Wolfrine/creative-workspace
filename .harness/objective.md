@@ -4,6 +4,10 @@
 
 **Stage:** Owner-approved Phase 1 development, evaluation and deployment through GitHub Actions (23 October 2026). Verify the existing Firebase app/site and use its live URL for owner review. Phases 2–4 remain unapproved.
 
+**Delivery default (24 October 2026):** All agents commit and deploy directly
+from `main` unless the owner explicitly specifies another workflow. Do not create
+feature branches, worktrees or PRs by default. Preserve unique work during cleanup.
+
 ## Constraints
 
 - Simple freeform writing comes first; no forced canon or wiki taxonomy.

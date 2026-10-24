@@ -2,7 +2,7 @@ name: Verify standard Firebase CLI deployment path
 on:
   workflow_dispatch:
   push:
-    branches: [codex/noveliaa-phase-1]
+    branches: [main]
     paths: [.github/workflows/firebase-cli-check.yml]
 permissions:
   contents: read

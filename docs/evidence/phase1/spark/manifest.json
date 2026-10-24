@@ -1,8 +1,8 @@
 {
-  "capturedAt": "2026-10-23T18:06:49.952Z",
+  "capturedAt": "2026-10-24T05:43:26.109Z",
   "plan": "Spark",
   "dataset": "Invented synthetic writing through actual Auth/Firestore emulators and browser app; no live manuscript or production Auth bypass",
-  "sourceDigest": "337f9acb287c56b05b1c775b48b7e5f487cf46b1f14dbadca1b5e24e2cd903cb",
+  "sourceDigest": "0283d127536b7e117d5882c3e4de4740004225d733273d0eb33b0046b00bb7d5",
   "sources": [
     {
       "path": ".firebaserc",
@@ -11,8 +11,8 @@
     },
     {
       "path": ".github/workflows/firebase-deploy.yml",
-      "bytes": 3002,
-      "sha256": "dfe3b7ff739a2b49f585947ec39d24f4517fb85e12e0c9342a992fca6004c393"
+      "bytes": 3018,
+      "sha256": "bbe0a4409eca0a9d69e84738fe5f435cd0c98b4ef77429d8e0cd1264917fa376"
     },
     {
       "path": ".github/workflows/phase1-ci.yml",
