@@ -86,10 +86,13 @@ export class DeviceDatabase {
     const remoteRevisions = new Map(snapshot.revisions.map(x => [x.id, x]));
     for (const local of localDocuments) {
       const remote = snapshot.documents.find(x => x.id === local.id);
-      if (!remote || remote.headRevisionId === local.headRevisionId || !local.headRevisionId) continue;
+      if (!remote || !local.headRevisionId) continue;
       const ancestors = new Set<string>(); const queue = [remote.headRevisionId!];
       while (queue.length) { const id = queue.pop()!; if (ancestors.has(id)) continue; ancestors.add(id); queue.push(...(remoteRevisions.get(id)?.parentIds ?? [])); }
       if (!ancestors.has(local.headRevisionId)) preserve.add(local.id);
+      // Automatic stale-flag repair never deletes an outbox entry. This guard
+      // and the head adoption share the transaction with cross-tab checkpoints.
+      if (!preserve.has(local.id)) tx.objectStore('preferences').delete('conflict:' + local.id);
     }
     for (const name of ['revisions', 'originals', 'universes', 'collections'] as const) snapshot[name].forEach(x => tx.objectStore(name).put(x));
     snapshot.documents.filter(x => !preserve.has(x.id)).forEach(x => tx.objectStore('documents').put(x));

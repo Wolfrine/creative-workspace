@@ -5,6 +5,8 @@ import path from 'node:path';
 import AxeBuilder from '@axe-core/playwright';
 
 const hash = (text: string | Buffer) => createHash('sha256').update(text).digest('hex');
+const structuralEvidence = process.env.NOVELIAA_EVIDENCE_DIR ? process.env.NOVELIAA_EVIDENCE_DIR + '/structural' : '.local/browser/structural';
+const refinementEvidence = process.env.NOVELIAA_EVIDENCE_DIR ?? '.local/refinement-browser';
 const originText = 'User:\r\nThe river rose.\r\nAssistant:\r\nAn unapproved tower.\r\nहिंदी e\u0301 🙂';
 test.beforeEach(async ({ page }, info) => {
   await page.goto('/?local=1&notebook=test-' + info.testId.replace(/[^a-z0-9]/gi, '') + '-' + Date.now());
@@ -100,7 +102,7 @@ test('A06 revision restoration retains the intervening version', async ({ page }
   expect(texts).toContain('An experiment worth keeping.');
 });
 test('A07/A09 archive from browser preserves sources and independent saved-text oracle', async ({ page }) => {
-  await mkdir('docs/evidence/phase1/structural', { recursive: true });
+  await mkdir(structuralEvidence, { recursive: true });
   // Independent source bytes exist in Node before they cross the app boundary.
   await page.getByRole('button', { name: 'Import & export', exact: true }).click();
   await page.getByRole('combobox', { name: /^Origin of this file/ }).selectOption('imported_chat');
@@ -124,9 +126,9 @@ test('A07/A09 archive from browser preserves sources and independent saved-text 
   const after = await page.evaluate(async () => await (await (window as any).__NOVELIAA_TEST__.exportArchive()).text());
   const afterState = JSON.parse(after).snapshot;
   for (const revision of afterState.revisions) if (!oracle.saved_revisions[revision.id]) oracle.saved_revisions[revision.id] = hash(expected);
-  await writeFile('docs/evidence/phase1/structural/before-archive.json', before);
-  await writeFile('docs/evidence/phase1/structural/after-archive.json', after);
-  await writeFile('docs/evidence/phase1/structural/oracle.json', JSON.stringify(oracle, null, 2));
+  await writeFile(structuralEvidence + '/before-archive.json', before);
+  await writeFile(structuralEvidence + '/after-archive.json', after);
+  await writeFile(structuralEvidence + '/oracle.json', JSON.stringify(oracle, null, 2));
   // Verify a normal user download as well as the engine adapter output.
   await page.getByRole('button', { name: 'Import & export', exact: true }).click();
   const download = page.waitForEvent('download'); await page.getByRole('button', { name: 'Download workspace archive', exact: true }).click();
@@ -163,6 +165,59 @@ test('A06 stable links, backlinks and non-drag organization survive title change
   await page.getByRole('button', { name: 'Living Atlas', exact: true }).click();
   await page.locator('.atlas-index').getByRole('button', { name: /The renamed ferry house/ }).click();
   await expect(page.getByRole('textbox', { name: 'Writing title', exact: true })).toHaveValue('The renamed ferry house');
+});
+
+for (const width of [1440, 390, 320]) test(`paragraph indentation and themed collection movement at ${width}px`, async ({ page }) => {
+  await mkdir(refinementEvidence, { recursive: true });
+  await page.setViewportSize({ width, height: width > 650 ? 1000 : 844 });
+  await page.evaluate(async () => {
+    const engine = (window as any).__NOVELIAA_TEST__;
+    await engine.createCollection('River chapters'); await engine.createCollection('Loose fragments');
+    await engine.createDocument({ title: 'Where the river turns', body: { type: 'doc', content: [
+      { type: 'paragraph', content: [{ type: 'text', text: 'At dawn the river carried the colour of old paper. Meera stayed a little longer, listening for the ferryman.' }] },
+      { type: 'paragraph', content: [{ type: 'text', text: '“Some stories begin here,” she said. हिंदी é 🙂' }] },
+    ] } });
+  });
+  const canvas = page.getByRole('textbox', { name: 'Writing canvas', exact: true });
+  const collection = page.getByRole('combobox', { name: 'Move writing to collection', exact: true });
+  await page.evaluate(() => document.fonts.ready);
+  if (width > 650) {
+    await collection.click();
+    await expect(page.getByRole('listbox', { name: 'Collections', exact: true })).toBeVisible();
+    await page.screenshot({ path: refinementEvidence + '/desktop-collection-open.png', fullPage: true });
+    const violations = (await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations;
+    expect(violations).toEqual([]);
+    await collection.press('End'); await collection.press('Enter');
+    await expect(collection).toContainText('Loose fragments');
+    await collection.click(); await collection.press('Home'); await collection.press('Enter');
+    await expect(collection).toContainText('Inbox');
+  } else {
+    await collection.selectOption({ label: 'River chapters' });
+    await expect(collection.locator('option:checked')).toHaveText('River chapters');
+    await collection.selectOption({ label: 'Inbox · unsorted' });
+  }
+  await canvas.press('Control+Home');
+  const indent = page.getByRole('button', { name: 'First-line indent', exact: true });
+  if (width <= 650) await page.getByRole('button', { name: 'More formatting', exact: true }).click();
+  await indent.click(); await saved(page);
+  await expect(canvas.locator('p').first()).toHaveAttribute('data-first-line-indent', 'true');
+  await expect(canvas.locator('p').nth(1)).not.toHaveAttribute('data-first-line-indent');
+  await canvas.press('Control+End');
+  if (width <= 650) await page.getByRole('button', { name: 'More formatting', exact: true }).click();
+  await indent.click(); await saved(page);
+  await expect(canvas.locator('p').nth(1)).toHaveAttribute('data-first-line-indent', 'true');
+  if (width <= 650) await page.getByRole('button', { name: 'More formatting', exact: true }).click();
+  await indent.click(); await saved(page);
+  await expect(canvas.locator('p').nth(1)).not.toHaveAttribute('data-first-line-indent');
+  if (width <= 650) await page.getByRole('button', { name: 'More formatting', exact: true }).click();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  await page.screenshot({ path: refinementEvidence + `/indentation-${width}.png`, fullPage: true });
+  const exported = await page.evaluate(async () => {
+    const engine = (window as any).__NOVELIAA_TEST__, id = engine.getSnapshot().activeDocumentId;
+    return { html: await (await engine.exportDocument(id, 'html')).text(), text: await (await engine.exportDocument(id, 'txt')).text() };
+  });
+  expect(exported.html.match(/text-indent:\s*2em/g)).toHaveLength(1);
+  expect(exported.text).toBe('At dawn the river carried the colour of old paper. Meera stayed a little longer, listening for the ferryman.\n“Some stories begin here,” she said. हिंदी é 🙂');
 });
 for (const width of [320, 390, 768, 1440]) test(`A22/A23 writing layout and accessibility at ${width}px`, async ({ page }) => {
   await page.setViewportSize({ width, height: 844 });

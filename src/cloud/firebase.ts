@@ -1,6 +1,6 @@
 import { getApp, getApps, initializeApp, type FirebaseOptions } from 'firebase/app';
 import { connectAuthEmulator, getAuth, GoogleAuthProvider, signInWithPopup, signOut, type Auth } from 'firebase/auth';
-import { connectFirestoreEmulator, doc, getDocFromServer, getFirestore, type Firestore } from 'firebase/firestore';
+import { connectFirestoreEmulator, doc, getDocFromServer, initializeFirestore, persistentLocalCache, persistentMultipleTabManager, type Firestore } from 'firebase/firestore';
 import { createFirestoreAdapter } from './spark';
 import type { CloudAdapter, Session } from '../domain/model';
 
@@ -36,7 +36,9 @@ export async function initializeFirebaseSession(): Promise<FirebaseClient | null
     const config = await readFirebaseConfig();
     if (!config) return null;
     const app = getApps().length ? getApp() : initializeApp(config);
-    const client = { auth: getAuth(app), db: getFirestore(app) };
+    // The SDK cache shares query targets across tabs. DeviceDatabase still owns
+    // acknowledged writing and its outbox; cached snapshots are not cloud receipts.
+    const client = { auth: getAuth(app), db: initializeFirestore(app, { localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() }) }) };
     if (import.meta.env.VITE_FIREBASE_EMULATORS === 'true') {
       if (!import.meta.env.DEV || !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) throw new Error('Firebase emulators are restricted to local development.');
       if (!emulatorConnected) {

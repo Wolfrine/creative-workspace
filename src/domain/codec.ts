@@ -22,12 +22,13 @@ const marks = new Set(['bold', 'italic', 'underline', 'strike', 'code', 'link'])
 export function assertBody(body: RichNode): void {
   let count = 0;
   const fields = (value: object, allowed: string[]) => { if (!value || typeof value !== 'object' || Array.isArray(value) || Object.keys(value).some(key => !allowed.includes(key))) throw new Error('Unsupported editor fields. Nothing was changed.'); };
-  const walk = (node: RichNode, depth: number) => {
+  const walk = (node: RichNode, depth: number, parentType?: string) => {
     if (!node || !nodes.has(node.type) || depth > 30 || ++count > 200_000) throw new Error('Unsupported editor structure. The original is preserved; nothing has been imported.');
     fields(node, ['type', 'text', 'attrs', 'marks', 'content']);
     if (node.type === 'text' && (typeof node.text !== 'string' || !node.text.length) || node.text !== undefined && node.type !== 'text') throw new Error('Invalid text node.');
     if (node.attrs) {
-      fields(node.attrs, node.type === 'heading' ? ['level'] : node.type === 'orderedList' ? ['start', 'type'] : node.type === 'codeBlock' ? ['language'] : []);
+      fields(node.attrs, node.type === 'paragraph' ? ['firstLineIndent'] : node.type === 'heading' ? ['level'] : node.type === 'orderedList' ? ['start', 'type'] : node.type === 'codeBlock' ? ['language'] : []);
+      if (node.type === 'paragraph' && node.attrs.firstLineIndent !== undefined && (node.attrs.firstLineIndent !== true || parentType !== 'doc')) throw new Error('First-line indentation is supported only on body paragraphs. Nothing was changed.');
       if (node.type === 'orderedList' && (!Number.isInteger(node.attrs.start) || Number(node.attrs.start) < 1 || node.attrs.type != null && !['1', 'a', 'A', 'i', 'I'].includes(String(node.attrs.type)))) throw new Error('Unsupported numbered-list attributes.');
       if (node.type === 'codeBlock' && node.attrs.language != null && typeof node.attrs.language !== 'string') throw new Error('Unsupported code language.');
     }
@@ -51,7 +52,7 @@ export function assertBody(body: RichNode): void {
     if ((node.content ?? []).some(child => !children.includes(child?.type))) throw new Error('Unsupported editor nesting.');
     if (['doc', 'blockquote', 'bulletList', 'orderedList'].includes(node.type) && !node.content?.length || node.type === 'listItem' && node.content?.[0]?.type !== 'paragraph') throw new Error('Incomplete editor structure.');
     if (node.type === 'codeBlock' && node.content?.some(child => child.marks?.length)) throw new Error('Unsupported code formatting.');
-    (node.content ?? []).forEach(child => walk(child, depth + 1));
+    (node.content ?? []).forEach(child => walk(child, depth + 1, node.type));
   };
   if (body?.type !== 'doc') throw new Error('Unsupported editor document.');
   walk(body, 0);

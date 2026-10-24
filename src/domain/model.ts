@@ -28,7 +28,8 @@ export interface WorkspaceSnapshot {
 export interface CommitOperation { operationId: string; expectedHeadId: string | null; revision: Revision }
 export interface CommitResult { status: 'synced' | 'conflict'; headRevisionId: string | null }
 export interface CloudAdapter {
-  load(): Promise<WorkspaceSnapshot>;
+  load(known?: WorkspaceSnapshot): Promise<WorkspaceSnapshot>;
+  watch?(onChange: () => void, onError: (error: unknown) => void): () => void;
   commit(operation: CommitOperation): Promise<CommitResult>;
   putOriginal(original: Original): Promise<void>;
   putCatalog(universes: Universe[], collections: Collection[]): Promise<void>;

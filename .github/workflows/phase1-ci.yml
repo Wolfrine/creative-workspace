@@ -43,7 +43,8 @@ jobs:
           include-hidden-files: true
           path: |
             playwright-report/
-            test-results/
-            docs/evidence/phase1/browser-results.json
+            .local/browser-test-results/
+            .local/spark-test-results/
+            .local/browser-results.json
             .local/spark-browser*
           if-no-files-found: ignore

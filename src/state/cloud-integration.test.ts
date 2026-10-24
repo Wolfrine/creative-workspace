@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { IDBFactory } from 'fake-indexeddb';
-import { WritingEngine } from './engine';
+import { WritingEngine, CLOUD_SYNC_DELAY } from './engine';
 import { DeviceDatabase } from '../storage/database';
 import { textBody, type CloudAdapter, type Revision, type WorkspaceSnapshot } from '../domain/model';
 import { stableStringify, toBase64 } from '../domain/codec';
@@ -12,7 +12,7 @@ function deferred() { let resolve!: () => void; const promise = new Promise<void
 const engines: WritingEngine[] = [];
 async function open(account: string, cloud: CloudAdapter | null) { const engine = new WritingEngine(account, cloud); engines.push(engine); await engine.initialize(); if (cloud) await engine.sync(); return engine; }
 beforeEach(() => { vi.stubGlobal('indexedDB', new IDBFactory()); });
-afterEach(() => { engines.forEach(engine => engine.dispose()); engines.length = 0; vi.restoreAllMocks(); vi.unstubAllGlobals(); });
+afterEach(() => { engines.forEach(engine => engine.dispose()); engines.length = 0; vi.useRealTimers(); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 
 function cloudService(uid = 'author'): CloudAdapter {
   const tables = new Map<string, any>(); const blobs = new Map<string, Uint8Array>(); let tail: Promise<unknown> = Promise.resolve();
@@ -45,6 +45,111 @@ function cloudService(uid = 'author'): CloudAdapter {
 }
 
 describe('Writing engine against actual trusted commit service', () => {
+  it('drains a remote change delivered during the initial device hydration', async () => {
+    vi.stubGlobal('BroadcastChannel', undefined);
+    const cloud = cloudService(), phone = await open('author', cloud);
+    const id = await phone.createDocument({ body: textBody('Hydrating older head') }); await phone.sync();
+    const old = await cloud.load(), entered = deferred(), release = deferred(); let changed!: () => void;
+    const load = vi.fn().mockImplementationOnce(async () => { entered.resolve(); await release.promise; return old; }).mockImplementation(() => cloud.load());
+    vi.stubGlobal('indexedDB', new IDBFactory());
+    const laptop = new WritingEngine('author', { ...cloud, load, watch: callback => { changed = callback; return () => {}; } }); engines.push(laptop);
+    const initializing = laptop.initialize(); await entered.promise;
+    phone.updateDocument(id, { body: textBody('Newer head arrived during hydration') }); await phone.flush(); await phone.sync(); changed(); release.resolve(); await initializing;
+    await vi.waitFor(() => expect(laptop.getSnapshot().documents.find(document => document.id === id)?.plainText).toBe('Newer head arrived during hydration'));
+    expect(laptop.getSnapshot().error).toBeNull();
+  });
+
+  it('does not regress the confirmed cloud predecessor when its listener lags a successful commit', async () => {
+    const cloud = cloudService(), engine = await open('author', cloud);
+    const id = await engine.createDocument({ body: textBody('Base') }); await engine.sync();
+    const old = await cloud.load(), base = old.documents[0].headRevisionId!;
+    vi.spyOn(cloud, 'load').mockResolvedValue(old);
+    engine.updateDocument(id, { body: textBody('Server acknowledged but listener lagging') }); await engine.sync();
+    const acknowledged = engine.getSnapshot().documents[0].headRevisionId;
+    const commit = vi.spyOn(cloud, 'commit');
+    await engine.restoreRevision(base); await engine.sync(false);
+    expect(commit.mock.calls.at(-1)?.[0].expectedHeadId).toBe(acknowledged);
+    expect(engine.getSnapshot().saveState).toBe('synced');
+  });
+
+  it('stops further cloud writes and publications after disposal during an upload', async () => {
+    const cloud = cloudService(), engine = await open('author', cloud);
+    await engine.createDocument({ body: textBody('Keep the durable pending copy') });
+    const entered = deferred(), release = deferred(), put = cloud.putCatalog.bind(cloud);
+    vi.spyOn(cloud, 'putCatalog').mockImplementationOnce(async (...args) => { entered.resolve(); await release.promise; await put(...args); });
+    const register = vi.spyOn(cloud, 'registerDocuments'); const publication = vi.fn(); engine.subscribe(publication);
+    const syncing = engine.sync(false); await entered.promise; engine.dispose(); const before = publication.mock.calls.length; release.resolve(); await syncing;
+    expect(register).not.toHaveBeenCalled(); expect(publication).toHaveBeenCalledTimes(before);
+  });
+
+  it('quietly refreshes a previously used clean laptop and repairs its legacy false conflict', async () => {
+    vi.stubGlobal('BroadcastChannel', undefined);
+    const phoneStore = new IDBFactory(), laptopStore = new IDBFactory(), cloud = cloudService();
+    vi.stubGlobal('indexedDB', phoneStore); const phone = await open('author', cloud);
+    const id = await phone.createDocument({ body: textBody('Earlier writing') }); await phone.sync();
+    vi.stubGlobal('indexedDB', laptopStore); const laptop = await open('author', cloud); laptop.dispose();
+    const disk = await DeviceDatabase.open('author'); await disk.markConflict(id); disk.close();
+    phone.updateDocument(id, { body: textBody('Latest phone writing') }); await phone.flush(); await phone.sync();
+    const extra = await phone.createDocument({ body: textBody('A new phone page') }); await phone.sync();
+    const reopened = await open('author', cloud);
+    expect(reopened.getSnapshot().documents.find(document => document.id === id)?.plainText).toBe('Latest phone writing');
+    expect(reopened.getSnapshot().documents.some(document => document.id === extra)).toBe(true);
+    expect(reopened.getSnapshot().saveState).toBe('synced');
+    const repaired = await DeviceDatabase.open('author'); expect(await repaired.conflicts()).toEqual([]); repaired.close();
+  });
+
+  it('receives live updates without uploading early, and preserves sub-checkpoint typing against a remote change', async () => {
+    vi.stubGlobal('BroadcastChannel', undefined);
+    const cloud = cloudService(), phoneStore = new IDBFactory(), laptopStore = new IDBFactory();
+    vi.stubGlobal('indexedDB', phoneStore); const phone = await open('author', cloud);
+    const id = await phone.createDocument({ body: textBody('Base') }); await phone.sync();
+    let changed!: () => void, detached = false;
+    const watched = { ...cloud, watch: (callback: () => void) => { changed = callback; return () => { detached = true; }; } };
+    vi.stubGlobal('indexedDB', laptopStore); const laptop = await open('author', watched);
+    phone.updateDocument(id, { body: textBody('Live clean update') }); await phone.flush(); await phone.sync(); changed();
+    await vi.waitFor(() => expect(laptop.getSnapshot().documents.find(document => document.id === id)?.plainText).toBe('Live clean update'));
+    expect(laptop.getSnapshot().saveState).toBe('synced');
+    laptop.updateDocument(id, { body: textBody('Unsaved typing kept') });
+    phone.updateDocument(id, { body: textBody('A parallel edit') }); await phone.flush(); await phone.sync(); changed();
+    await vi.waitFor(() => expect(laptop.getSnapshot().revisions.some(revision => revision.snapshot.plainText === 'A parallel edit')).toBe(true));
+    expect(laptop.getSnapshot().documents.find(document => document.id === id)?.plainText).toBe('Unsaved typing kept');
+    expect((await cloud.load()).documents[0].plainText).toBe('A parallel edit');
+    await laptop.flush(); await laptop.sync();
+    expect(laptop.getSnapshot().saveState).toBe('conflict');
+    expect((await cloud.load()).revisions.some(revision => revision.snapshot.plainText === 'Unsaved typing kept')).toBe(true);
+    laptop.dispose(); expect(detached).toBe(true);
+  });
+
+  it('keeps immediate device checkpoints, waits one minute for cloud, retains every revision and suppresses no-op saves', async () => {
+    vi.stubGlobal('BroadcastChannel', undefined);
+    const cloud = cloudService(), engine = await open('author', cloud);
+    vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout', 'Date'] });
+    const id = await engine.createDocument({ body: textBody('One') });
+    const count = engine.getSnapshot().revisions.length;
+    engine.updateDocument(id, { body: textBody('One') }); await engine.flush();
+    expect(engine.getSnapshot().revisions).toHaveLength(count);
+    await vi.advanceTimersByTimeAsync(30_000);
+    engine.updateDocument(id, { body: textBody('Two') }); await engine.flush();
+    expect(engine.getSnapshot().saveState).toBe('local');
+    expect((await cloud.load()).documents).toHaveLength(0);
+    await vi.advanceTimersByTimeAsync(CLOUD_SYNC_DELAY - 30_000 - 1);
+    expect((await cloud.load()).documents).toHaveLength(0);
+    await vi.advanceTimersByTimeAsync(1);
+    await vi.waitFor(() => expect(engine.getSnapshot().pendingCount).toBe(0));
+    expect((await cloud.load()).revisions.map(revision => revision.snapshot.plainText).sort()).toEqual(['One', 'Two']);
+    expect(engine.getSnapshot().saveState).toBe('synced');
+  });
+
+  it('manual sync flushes the current typing immediately and catalog-only changes also reach cloud', async () => {
+    const cloud = cloudService(), engine = await open('author', cloud);
+    const id = await engine.createDocument({ body: textBody('Base') }); await engine.sync();
+    engine.updateDocument(id, { body: textBody('Typing within 300ms') }); await engine.sync();
+    expect((await cloud.load()).documents[0].plainText).toBe('Typing within 300ms');
+    await engine.createUniverse('A new writing world'); await engine.createCollection('Notes');
+    expect(engine.getSnapshot().saveState).toBe('local'); await engine.sync();
+    expect((await cloud.load()).collections.some(collection => collection.name === 'Notes')).toBe(true);
+  });
+
   for (const firstDevice of ['a', 'b'] as const) it(`retains both offline variants in independent persistent stores when ${firstDevice.toUpperCase()} reconnects first`, async () => {
     // Separate factories model distinct browser/device stores. A shared
     // BroadcastChannel would model tabs, so it is explicitly absent here.

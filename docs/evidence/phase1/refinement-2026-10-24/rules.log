@@ -1,0 +1,27 @@
+
+> noveliaa@0.1.0 test:rules
+> firebase emulators:exec --only firestore --project demo-noveliaa --config firebase.spark-test.json "vitest run src/cloud/spark.emulator.test.ts"
+
+i  emulators: Starting emulators: firestore
+i  emulators: Detected demo project ID "demo-noveliaa", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail.
+!  hub: emulator hub unable to start on port 4400, starting on 4401 instead.
+!  logging: Logging Emulator unable to start on port 4500, starting on 4501 instead.
+i  firestore: Firestore Emulator logging to firestore-debug.log
++  firestore: Firestore Emulator was started in standard edition.
++  firestore: Firestore Emulator UI websocket is running on 9151.
+i  Running script: vitest run src/cloud/spark.emulator.test.ts
+
+ RUN  v5.0.5 C:/Users/Sachit Tewary/Documents/Codex/2026-10-23/review-wolfrine-creative-workspace-github-repo/noveliaa
+
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  15:58:06
+   Duration  8.48s (tests 95%, import 4%, transform 1%)
+
++  Script exited successfully (code 0)
+i  emulators: Shutting down emulators.
+i  firestore: Stopping Firestore Emulator
+!  Firestore Emulator has exited upon receiving signal: SIGINT
+i  hub: Stopping emulator hub
+i  logging: Stopping Logging Emulator

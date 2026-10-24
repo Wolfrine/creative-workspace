@@ -131,7 +131,11 @@ describe.skipIf(!enabled)('Spark adapter through actual Firestore emulator and o
     await environment.withSecurityRulesDisabled(async context => {
       await setDoc(doc(context.firestore(), chunks.docs[0].ref.path), { sha256: chunks.docs[0].id, bytes: Bytes.fromUint8Array(new TextEncoder().encode('corrupt')) });
     });
-    await expect(createFirestoreAdapter(db, 'author').load()).rejects.toThrow('digest');
+    // Admin corruption deliberately bypasses immutable Rules. A fresh device
+    // must reject it; an existing verified immutable-byte cache is not an audit
+    // of subsequent administrator changes to otherwise immutable server data.
+    const freshDevice = environment.authenticatedContext('author').firestore() as unknown as Firestore;
+    await expect(createFirestoreAdapter(freshDevice, 'author').load()).rejects.toThrow('digest');
     await expect(createFirestoreAdapter(db, 'author', async () => { throw new Error('account changed'); }).commit(await operation('r2', 'Two', 'r1'))).rejects.toThrow('account changed');
   });
   it('validates parent identities and the selected restoration text', async () => {

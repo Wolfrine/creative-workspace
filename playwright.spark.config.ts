@@ -1,7 +1,7 @@
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './tests/spark-browser', timeout: 90000, workers: 1,
+  testDir: './tests/spark-browser', timeout: 90000, workers: 1, outputDir: '.local/spark-test-results',
   reporter: [['list'], ['json', { outputFile: '.local/spark-browser-results.json' }]],
   use: { baseURL: 'http://127.0.0.1:5820', viewport: { width: 1440, height: 1000 }, trace: 'retain-on-failure', screenshot: 'only-on-failure' },
   webServer: {

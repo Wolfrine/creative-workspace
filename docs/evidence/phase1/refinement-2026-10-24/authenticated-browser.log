@@ -1,0 +1,38 @@
+
+> noveliaa@0.1.0 test:cloud
+> firebase emulators:exec --only auth,firestore --project demo-noveliaa --config firebase.spark-test.json "playwright test --config playwright.spark.config.ts"
+
+i  emulators: Starting emulators: auth, firestore
+i  emulators: Detected demo project ID "demo-noveliaa", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail.
+!  hub: emulator hub unable to start on port 4400, starting on 4401 instead.
+!  logging: Logging Emulator unable to start on port 4500, starting on 4501 instead.
+i  firestore: Firestore Emulator logging to firestore-debug.log
++  firestore: Firestore Emulator was started in standard edition.
++  firestore: Firestore Emulator UI websocket is running on 9151.
+i  Running script: playwright test --config playwright.spark.config.ts
+[WebServer] (node:165176) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:166420) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:167632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 4:07:03 pm [vite] (client) [console.warn] [2026-10-24T10:37:02.851Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x1a871c11 transport errored. Name: undefined Message: undefined
+[WebServer] 4:07:03 pm [vite] (client) [console.warn] [2026-10-24T10:37:02.958Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x1a871c12 transport errored. Name: undefined Message: undefined
+[WebServer] file watcher error: EBUSY: resource busy or locked, watch 'C:\Users\Sachit Tewary\Documents\Codex\2026-10-23\review-wolfrine-creative-workspace-github-repo\noveliaa\.local\spark-test-results\.playwright-artifacts-0\a9d29e26-c1f8-435c-bd35-504f02137063.crdownload'
+  ok 1 tests\spark-browser\writing.spec.ts:52:1 › real author sign-in, cloud receipt, isolated-device restore, offline checkpoint and reconnect (18.0s)
+  ok 2 tests\spark-browser\writing.spec.ts:85:1 › imported conversation retains exact original and unverified provenance across devices; revision recovery and archive export (11.5s)
+  ok 3 tests\spark-browser\writing.spec.ts:114:1 › unapproved real Auth account is denied before opening the workspace (1.9s)
+  ok 4 tests\spark-browser\writing.spec.ts:124:1 › a used laptop silently refreshes phone edits, then receives live pages and edits with persistent SDK cache (13.5s)
+  ok 5 tests\spark-browser\writing.spec.ts:149:1 › real Firebase retains both genuinely concurrent device edits (9.0s)
+
+  5 passed (1.0m)
++  Script exited successfully (code 0)
+i  emulators: Shutting down emulators.
+i  firestore: Stopping Firestore Emulator
+!  Firestore Emulator has exited upon receiving signal: SIGINT
+i  auth: Stopping Authentication Emulator
+i  hub: Stopping emulator hub
+i  logging: Stopping Logging Emulator

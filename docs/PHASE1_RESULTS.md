@@ -12,12 +12,38 @@ The owner reviews the actual Firebase site, **https://noveliaa.web.app**, after
 the Actions release passes. **The Spark release is now live and verified**, with
 24 hosted file digests matching its build. See [release and hosted evidence](DEPLOYMENT.md).
 
-## Current executed evidence
+## October 24 refinement evidence
+
+The owner requested themed desktop collection movement, optional first-line
+indentation and quieter sync. The new candidate uses persistent multi-tab
+Firestore cache and server-confirmed metadata listeners. Clean selected pages
+advance automatically; genuine unsent branches remain recoverable. Local saves
+still checkpoint after 300 ms; automatic cloud drain starts about one minute
+after the first pending checkpoint. Manual sync, reconnect and tab hiding can
+drain sooner. Every distinct saved revision remains in history.
+
+Current checks: **47 client/integration tests**, **11 actual Firestore
+Rules/adapter tests**, **5 authenticated browser flows**, **17 writing/browser
+checks**, and **26 evaluator mutation tests**. The authenticated flows include
+the previously used laptop reopening after phone edits, live new-page delivery,
+and genuine parallel-edit retention. Focused cases cover listener ordering,
+cached/optimistic event rejection, no recurring full-library GETs, the minute
+deadline, startup/disposal races, lagging head acknowledgement and unchanged
+legacy archive hashes. These results use invented fixtures, not live manuscripts.
+
+The retained [refinement manifest](evidence/phase1/refinement-2026-10-24/manifest.json)
+binds the revised source, logs and actual captures. Parent and independent critic
+visually inspected desktop 1440×1000 and mobile 390×844/320×844, including the
+open collection list and More controls. The final browser checks report no
+overflow and passing accessibility checks. Physical keyboards/IME, screen-reader
+interaction and the owner's current production session remain separate.
+
+## Original Spark release evidence (retained)
 
 All writing in tests and captures is **invented synthetic material** executed
 through real application, browser and emulator code. No live manuscript was
 imported, rewritten or seeded. The [Spark manifest](evidence/phase1/spark/manifest.json)
-binds the current source, test logs and actual browser captures. The old visual
+binds the original Spark source, test logs and actual browser captures. The old visual
 candidate digest does not cover this adapter. The release verifies its own
 configured production build against every hosted file.
 

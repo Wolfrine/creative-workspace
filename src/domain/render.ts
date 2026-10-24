@@ -5,8 +5,8 @@ const md = (text: string) => text.replace(/[\\`*_[\]<>#~]/g, '\\$&');
 const fence = (text: string, minimum = 1) => '`'.repeat(Math.max(minimum, ...[...text.matchAll(/`+/g)].map(match => match[0].length + 1)));
 
 /** Readable derivatives; the versioned JSON archive remains the lossless format. */
-export function renderHtml(node: RichNode): string {
-  let value = (node.content ?? []).map(renderHtml).join('');
+export function renderHtml(node: RichNode, parentType?: string): string {
+  let value = (node.content ?? []).map(child => renderHtml(child, node.type)).join('');
   if (node.type === 'text') {
     value = html(node.text ?? '');
     for (const mark of node.marks ?? []) {
@@ -20,6 +20,7 @@ export function renderHtml(node: RichNode): string {
   if (node.type === 'horizontalRule') return '<hr>';
   if (node.type === 'codeBlock') return '<pre><code>' + value + '</code></pre>';
   if (node.type === 'orderedList') return `<ol start="${Number(node.attrs?.start ?? 1)}">${value}</ol>`;
+  if (node.type === 'paragraph' && node.attrs?.firstLineIndent === true && parentType === 'doc') return `<p data-first-line-indent="true" style="text-indent: 2em">${value}</p>`;
   const tag = node.type === 'heading' ? 'h' + Number(node.attrs?.level ?? 2) : { paragraph: 'p', bulletList: 'ul', listItem: 'li', blockquote: 'blockquote' }[node.type];
   return tag ? `<${tag}>${value}</${tag}>` : value;
 }

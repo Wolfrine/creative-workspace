@@ -17,7 +17,18 @@ const author = 'spark-browser-author';
 let token: string;
 const evidence = '.local/spark-browser';
 const canvas = (page: Page) => page.getByRole('textbox', { name: 'Writing canvas', exact: true });
-const synced = async (page: Page) => expect(page.getByText('Synced', { exact: true }).first()).toBeVisible({ timeout: 30000 });
+const synced = async (page: Page) => {
+  // Most flows test integrity, not the minute-long scheduler. Use the actual
+  // author's manual sync action; the automatic deadline has a separate test.
+  // Focused mobile writing intentionally hides bottom navigation. The header
+  // menu remains available with the keyboard open as well as after a restore.
+  if ((page.viewportSize()?.width ?? 1440) <= 650) await page.getByRole('button', { name: 'Open navigation', exact: true }).click();
+  await page.getByRole('button', { name: 'Import & export', exact: true }).click();
+  await page.getByRole('button', { name: 'Check cloud sync', exact: true }).click();
+  await expect(page.getByRole('dialog').getByText('Cloud synchronization checked.', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'Close your writing, in your hands', exact: true }).click();
+  await expect(page.getByText('Synced', { exact: true }).first()).toBeVisible({ timeout: 30000 });
+};
 async function signIn(page: Page, customToken = token) {
   await page.goto('/');
   await page.evaluate(async value => {
@@ -108,4 +119,49 @@ test('unapproved real Auth account is denied before opening the workspace', asyn
   await expect(canvas(page)).toHaveCount(0);
   await capture(page, 'desktop-denied');
   await page.setViewportSize({ width: 320, height: 640 }); await capture(page, 'mobile-denied');
+});
+
+test('a used laptop silently refreshes phone edits, then receives live pages and edits with persistent SDK cache', async ({ page, browser }) => {
+  const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
+  await signIn(page); await page.getByRole('button', { name: 'New thought ↗', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Writing title', exact: true }).fill('Across the river');
+  await canvas(page).fill('Earlier shared words.'); await synced(page);
+  const laptopContext = await browser.newContext(); let laptop = await laptopContext.newPage(); await signIn(laptop);
+  await expect(canvas(laptop)).toHaveText('Earlier shared words.'); await laptop.close();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await canvas(page).fill('Phone words written while the laptop was closed.'); await synced(page);
+  laptop = await laptopContext.newPage(); await laptop.goto('/');
+  await expect(canvas(laptop)).toHaveText('Phone words written while the laptop was closed.');
+  await expect(laptop.getByText('Synced', { exact: true }).first()).toBeVisible();
+  await expect(laptop.getByText('Versions need review', { exact: true })).toHaveCount(0);
+  await canvas(page).fill('An incoming line while both devices are open.'); await synced(page);
+  await expect(canvas(laptop)).toHaveText('An incoming line while both devices are open.');
+  await page.getByRole('button', { name: 'New thought', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Writing title', exact: true }).fill('A fresh page from the phone');
+  await canvas(page).fill('New pages arrive through metadata listeners.'); await synced(page);
+  await expect(laptop.getByRole('button', { name: /A fresh page from the phone/ }).first()).toBeVisible();
+  const databases = await laptop.evaluate(async () => (await indexedDB.databases()).map(db => db.name));
+  expect(databases.some(name => name?.startsWith('firestore/'))).toBe(true);
+  await capture(laptop, 'desktop-live-refresh');
+  expect(errors).toEqual([]); await laptopContext.close();
+});
+
+test('real Firebase retains both genuinely concurrent device edits', async ({ page, browser }) => {
+  await signIn(page); await page.getByRole('button', { name: 'New thought ↗', exact: true }).click();
+  await canvas(page).fill('A common beginning.'); await synced(page);
+  const other = await browser.newContext(); const parallel = await other.newPage(); await signIn(parallel);
+  await expect(canvas(parallel)).toHaveText('A common beginning.');
+  await canvas(page).fill('First device keeps this version.');
+  await canvas(parallel).fill('Second device keeps another version.');
+  await expect(parallel.getByText('Saved here · cloud pending', { exact: true }).first()).toBeVisible();
+  await synced(page);
+  await parallel.getByRole('button', { name: 'Import & export', exact: true }).click();
+  await parallel.getByRole('button', { name: 'Check cloud sync', exact: true }).click();
+  await expect(parallel.getByRole('dialog').getByText('Cloud synchronization checked.', { exact: true })).toBeVisible();
+  await parallel.getByRole('button', { name: 'Close your writing, in your hands', exact: true }).click();
+  await expect(canvas(parallel)).toHaveText('Second device keeps another version.');
+  await expect(parallel.locator('.save-status').first()).toContainText(/review|version|conflict/i);
+  const revisions = await db.collection('noveliaaWorkspaces/' + author + '/revisions').get();
+  expect(revisions.size).toBeGreaterThanOrEqual(3);
+  await capture(parallel, 'desktop-genuine-conflict'); await other.close();
 });

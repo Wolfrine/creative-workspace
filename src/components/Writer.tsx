@@ -2,9 +2,10 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { EditorContent, useEditor, type Editor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
-import { Bold, Italic, Underline, List, ListOrdered, Link2, Undo2, Redo2, Quote, ArrowUpRight, Search, MoreHorizontal } from 'lucide-react';
+import { Bold, Italic, Underline, List, ListOrdered, Link2, Undo2, Redo2, Quote, ArrowUpRight, Search, MoreHorizontal, IndentIncrease } from 'lucide-react';
 import type { RichNode, WritingDocument } from '../domain/model';
 import Modal from './Modal';
+import { ParagraphIndent, paragraphSource } from './ParagraphIndent';
 
 export interface WriterProps {
   document: WritingDocument;
@@ -33,7 +34,7 @@ export default function Writer({ document: writing, documents, onChange, onNavig
     extensions: [StarterKit.configure({
       link: { openOnClick: false, protocols: ['noveliaa'], HTMLAttributes: { rel: 'noopener noreferrer', target: null }, isAllowedUri: (url, context) => url.startsWith('noveliaa://document/') || context.defaultValidate(url) },
       heading: { levels: [1, 2, 3] },
-    }), Placeholder.configure({ placeholder: 'Begin anywhere. A line, a thought, a whole new world…' })],
+    }), ParagraphIndent, Placeholder.configure({ placeholder: 'Begin anywhere. A line, a thought, a whole new world…' })],
     content: writing.body,
     editorProps: {
       attributes: { class: 'manuscript', 'aria-label': 'Writing canvas', role: 'textbox', 'aria-multiline': 'true', spellcheck: 'true' },
@@ -45,7 +46,7 @@ export default function Writer({ document: writing, documents, onChange, onNavig
         return false;
       },
     },
-    onUpdate: ({ editor: current }) => { const body = current.getJSON() as RichNode; lastEmitted.current = JSON.stringify(body); onChangeRef.current(body); },
+    onUpdate: ({ editor: current }) => { const body = paragraphSource(current.getJSON() as RichNode); lastEmitted.current = JSON.stringify(body); onChangeRef.current(body); },
     onSelectionUpdate: ({ editor: current }) => { selections.set(writing.id, { from: current.state.selection.from, to: current.state.selection.to }); setToolbarVersion(value => value + 1); },
     onTransaction: () => setToolbarVersion(value => value + 1),
     onCreate: ({ editor: current }) => {
@@ -73,7 +74,7 @@ export default function Writer({ document: writing, documents, onChange, onNavig
     if (!editor) return;
     const incoming = JSON.stringify(writing.body);
     // Local keystrokes already live in ProseMirror. Replacing them loses the caret and IME composition.
-    if (incoming !== lastEmitted.current && incoming !== JSON.stringify(editor.getJSON())) {
+    if (incoming !== lastEmitted.current && incoming !== JSON.stringify(paragraphSource(editor.getJSON() as RichNode))) {
       const selection = editor.state.selection;
       editor.commands.setContent(writing.body, { emitUpdate: false });
       editor.commands.setTextSelection({ from: Math.min(selection.from, editor.state.doc.content.size), to: Math.min(selection.to, editor.state.doc.content.size) });
@@ -102,6 +103,7 @@ export default function Writer({ document: writing, documents, onChange, onNavig
       <div id="additional-formatting" className={`toolbar-secondary ${moreFormatting ? 'is-open' : ''}`} role="group" aria-label="Additional text formatting">
         <span className="toolbar-divider" />
         <span className="secondary-underline">{toolbar('Underline', <Underline size={17} />, e => e.chain().focus().toggleUnderline().run(), editor?.isActive('underline'))}</span>
+        {toolbar('First-line indent', <IndentIncrease size={18} />, e => e.chain().focus().toggleFirstLineIndent().run(), editor?.isActive('paragraph', { firstLineIndent: true }), !editor?.can().toggleFirstLineIndent())}
         {toolbar('Bullet list', <List size={18} />, e => e.chain().focus().toggleBulletList().run(), editor?.isActive('bulletList'))}
         {toolbar('Numbered list', <ListOrdered size={18} />, e => e.chain().focus().toggleOrderedList().run(), editor?.isActive('orderedList'))}
         {toolbar('Block quote', <Quote size={17} />, e => e.chain().focus().toggleBlockquote().run(), editor?.isActive('blockquote'))}

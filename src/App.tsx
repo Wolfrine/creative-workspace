@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import { useCallback, useEffect, useId, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, ArrowUpRight, BookOpen, Check, CheckCheck, ChevronDown, ChevronRight, CircleAlert, Cloud, CloudOff, Download, FileText, Folder, History, Inbox, Leaf, Link2, List, LoaderCircle, LogOut, Maximize2, Menu, Minimize2, Network, PanelRightClose, PanelRightOpen, Plus, Search, Settings2, ShieldCheck, Trash2, Upload, WifiOff, X } from 'lucide-react';
-import type { Origin, RichNode, Session, WorkspaceController, WritingDocument } from './domain/model';
+import type { Collection, Origin, RichNode, Session, WorkspaceController, WritingDocument } from './domain/model';
 import { linkIds, wordCount } from './domain/model';
 import Writer from './components/Writer';
 import Modal from './components/Modal';
@@ -177,7 +177,7 @@ export default function App({ workspace, session }: { workspace: WorkspaceContro
         : active ? <div className={`writing-layout ${!contextOpen ? 'context-closed' : ''}`}>
           <section className="writing-pane" aria-label="Current writing">
             <h1 className="visually-hidden">{titleOf(active)}</h1>
-            <div className="document-topline"><div className="document-location"><FileText size={14} /><select aria-label="Move writing to collection" value={active.collectionId || ''} onChange={event => workspace.updateDocument(active.id, { collectionId: event.target.value || null })}><option value="">Inbox · unsorted</option>{collections.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}</select><ChevronDown size={12} /></div><div className="document-actions"><button className="icon-button" aria-label="Writing appearance" title="Writing appearance" onClick={() => setDialog('type')}><Settings2 size={17} /></button><button className="icon-button" aria-label="Revision history" title="Revision history" onClick={() => { setHistoryId(null); setCompare(false); setDialog('history'); }}><History size={18} /></button><button className="icon-button" aria-label={contextOpen ? 'Hide connections' : 'Show connections'} title={contextOpen ? 'Hide connections' : 'Show connections'} onClick={() => setContextOpen(!contextOpen)}>{contextOpen ? <PanelRightClose size={18} /> : <PanelRightOpen size={18} />}</button></div></div>
+            <div className="document-topline"><div className="document-location"><FileText size={14} /><CollectionPicker collections={collections} value={active.collectionId} onMove={collectionId => workspace.updateDocument(active.id, { collectionId })} /></div><div className="document-actions"><button className="icon-button" aria-label="Writing appearance" title="Writing appearance" onClick={() => setDialog('type')}><Settings2 size={17} /></button><button className="icon-button" aria-label="Revision history" title="Revision history" onClick={() => { setHistoryId(null); setCompare(false); setDialog('history'); }}><History size={18} /></button><button className="icon-button" aria-label={contextOpen ? 'Hide connections' : 'Show connections'} title={contextOpen ? 'Hide connections' : 'Show connections'} onClick={() => setContextOpen(!contextOpen)}>{contextOpen ? <PanelRightClose size={18} /> : <PanelRightOpen size={18} />}</button></div></div>
             <div ref={scrollRef} className="manuscript-scroll" onScroll={event => scrollPositions.current.set(active.id, event.currentTarget.scrollTop)}>
               <div className="manuscript-page"><div className="page-kicker"><span>{collections.find(c => c.id === active.collectionId)?.name || 'A THOUGHT IN PROGRESS'}</span><span className="page-rule" /></div><textarea ref={titleRef} className="manuscript-title" rows={1} aria-label="Writing title" placeholder="Untitled" value={active.title} onChange={event => workspace.updateDocument(active.id, { title: event.target.value.replace(/\n/g, ' ') })} onKeyDown={event => { if (event.key === 'Enter') { event.preventDefault(); document.querySelector<HTMLElement>('.manuscript')?.focus(); } }} />
                 <Writer key={active.id} document={active} documents={liveDocuments} selections={selections.current} focusMode={focused} focusOnMount={focusNew === active.id} onAutoFocused={() => setFocusNew(null)} onChange={body => workspace.updateDocument(active.id, { body })} onNavigate={id => { if (liveDocuments.some(d => d.id === id)) void act(() => openDocument(id)); else inform('That linked page is in Trash or is unavailable in this universe.'); }} />
@@ -207,5 +207,47 @@ function ConnectionMap({ document: current, outgoing, incoming, onOpen, large = 
     <div className="map-center"><FileText size={16} /><span>{titleOf(current)}</span><small>THIS PAGE</small></div>
     {connections.length > 0 ? <div className={`map-nodes nodes-${connections.length}`}>{connections.map(target => <button className="map-node" key={target.id} onClick={() => onOpen(target.id)}><span className="map-dot" /><FileText size={14} /><strong>{titleOf(target)}</strong><small>{outgoing.some(d => d.id === target.id) ? 'Linked page' : 'Links here'}</small></button>)}</div> : <p className="map-first-link"><span />The first thread starts with a link.</p>}
     {outgoing.length + incoming.filter(d => !outgoing.some(target => target.id === d.id)).length > 4 && <span className="map-more">More connections in the list below</span>}
+  </div>;
+}
+
+function CollectionPicker({ collections, value, onMove }: { collections: Collection[]; value: string | null; onMove(id: string | null): void }) {
+  const id = useId();
+  const ref = useRef<HTMLDivElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const typed = useRef({ text: '', at: 0 });
+  const [open, setOpen] = useState(false);
+  const [cursor, setCursor] = useState(0);
+  const options = [{ id: '', name: 'Inbox · unsorted' }, ...collections];
+  const selected = Math.max(0, options.findIndex(option => option.id === (value || '')));
+  useEffect(() => { setCursor(selected); setOpen(false); }, [value, selected]);
+  useEffect(() => {
+    if (!open) return;
+    const outside = (event: PointerEvent) => { if (!ref.current?.contains(event.target as Node)) setOpen(false); };
+    const media = window.matchMedia('(max-width:650px)');
+    const close = () => setOpen(false);
+    document.addEventListener('pointerdown', outside); media.addEventListener('change', close);
+    return () => { document.removeEventListener('pointerdown', outside); media.removeEventListener('change', close); };
+  }, [open]);
+  useEffect(() => { if (open) document.getElementById(`${id}-option-${cursor}`)?.scrollIntoView({ block: 'nearest' }); }, [cursor, open, id]);
+  const choose = (index: number) => { const option = options[index]; if (option && option.id !== (value || '')) onMove(option.id || null); setOpen(false); trigger.current?.focus(); };
+  return <div className="collection-picker" ref={ref}>
+    <button ref={trigger} className="collection-trigger" type="button" role="combobox" aria-label="Move writing to collection" aria-describedby={`${id}-value`} aria-haspopup="listbox" aria-expanded={open} aria-controls={`${id}-list`} aria-activedescendant={open ? `${id}-option-${cursor}` : undefined} onClick={() => { setCursor(selected); setOpen(!open); }} onKeyDown={event => {
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') { event.preventDefault(); setCursor(previous => open ? (previous + (event.key === 'ArrowDown' ? 1 : -1) + options.length) % options.length : selected); setOpen(true); }
+      else if (event.key === 'Home' || event.key === 'End') { event.preventDefault(); setCursor(event.key === 'Home' ? 0 : options.length - 1); setOpen(true); }
+      else if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); if (open) choose(cursor); else { setCursor(selected); setOpen(true); } }
+      else if (event.key === 'Escape' && open) { event.preventDefault(); event.stopPropagation(); setOpen(false); }
+      else if (event.key === 'Tab') setOpen(false);
+      else if (event.key.length === 1 && !event.ctrlKey && !event.metaKey && !event.altKey) {
+        event.preventDefault(); const at = performance.now();
+        const text = (at - typed.current.at < 800 ? typed.current.text : '') + event.key.toLocaleLowerCase();
+        typed.current = { text, at };
+        const start = open ? cursor + 1 : selected;
+        const indices = options.map((_, index) => (start + index) % options.length);
+        const match = indices.find(index => options[index].name.toLocaleLowerCase().startsWith(text));
+        if (match !== undefined) setCursor(match); setOpen(true);
+      }
+    }}><span id={`${id}-value`}>{options[selected]?.name}</span><ChevronDown size={13} aria-hidden="true" /></button>
+    <select className="collection-native" aria-label="Move writing to collection" value={value || ''} onChange={event => onMove(event.target.value || null)}>{options.map(option => <option key={option.id} value={option.id}>{option.name}</option>)}</select>
+    {open && <div id={`${id}-list`} className="collection-options" role="listbox" aria-label="Collections"><p aria-hidden="true">MOVE THIS PAGE</p>{options.map((option, index) => <button id={`${id}-option-${index}`} type="button" key={option.id} role="option" aria-selected={selected === index} className={`${cursor === index ? 'is-highlighted' : ''} ${selected === index ? 'is-selected' : ''}`} tabIndex={-1} onPointerMove={() => setCursor(index)} onMouseDown={event => event.preventDefault()} onClick={() => choose(index)}>{option.id ? <Folder size={15} aria-hidden="true" /> : <Inbox size={15} aria-hidden="true" />}<span>{option.name}</span>{selected === index && <Check size={15} aria-hidden="true" />}</button>)}</div>}
   </div>;
 }

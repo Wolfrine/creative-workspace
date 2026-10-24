@@ -8,6 +8,14 @@ const uuid = () => crypto.randomUUID();
 const now = () => new Date().toISOString();
 const clone = <T>(value: T): T => structuredClone(value);
 const blank = (accountId: string): WorkspaceSnapshot => ({ schemaVersion: 1, accountId, documents: [], revisions: [], originals: [], universes: [], collections: [], receipts: [] });
+export const CLOUD_SYNC_DELAY = 60_000;
+const ancestorOf = (ancestor: string | null, descendant: string | null, revisions: Revision[]): boolean => {
+  if (!ancestor || !descendant) return false;
+  const index = new Map(revisions.map(revision => [revision.id, revision]));
+  const seen = new Set<string>(), queue = [descendant];
+  while (queue.length) { const key = queue.pop()!; if (key === ancestor) return true; if (!seen.has(key)) { seen.add(key); queue.push(...(index.get(key)?.parentIds ?? [])); } }
+  return false;
+};
 export class WritingEngine {
   private state: WorkspaceState;
   private db?: DeviceDatabase;
@@ -24,39 +32,56 @@ export class WritingEngine {
   private localConflicts = new Set<string>();
   private initializePromise?: Promise<void>;
   private hasPulledCloud = false;
+  private cloudTimer?: ReturnType<typeof setTimeout>;
+  private catalogPending = false;
+  private catalogGeneration = 0;
+  private catalogChangedAt?: number;
+  private stopCloudWatch?: () => void;
+  private remoteRefreshRequested = false;
+  private refreshPromise?: Promise<void>;
+  private cloudReadFailed = false;
   constructor(readonly accountId: string, readonly cloud: CloudAdapter | null) {
     this.state = { ...blank(accountId), ready: false, localOnly: !cloud, activeUniverseId: '', activeDocumentId: null, saveState: 'local', error: null, pendingCount: 0, online: typeof navigator === 'undefined' || navigator.onLine !== false };
   }
   getSnapshot = (): WorkspaceState => this.state;
   subscribe = (callback: () => void): (() => void) => { this.listeners.add(callback); return () => this.listeners.delete(callback); };
   private publish(patch: Partial<WorkspaceState> = {}): void {
+    if (this.disposed) return;
     this.state = { ...this.state, ...patch, pendingCount: this.pending.length };
-    this.state.saveState = this.state.error ? 'error' : this.dirty.size ? 'saving' : this.pending.some(x => x.status === 'conflict') || this.localConflicts.size ? 'conflict' : this.syncing ? 'syncing' : this.pending.length || !this.cloud ? 'local' : 'synced';
+    this.state.saveState = this.state.error ? 'error' : this.dirty.size ? 'saving' : this.pending.some(x => x.status === 'conflict') || this.localConflicts.size ? 'conflict' : this.syncing ? 'syncing' : this.pending.length || this.catalogPending || !this.cloud ? 'local' : 'synced';
     this.listeners.forEach(callback => callback());
   }
-  private fail(error: unknown): void { this.publish({ error: (error instanceof Error ? error.message : String(error)) + ' Your open text is still available. Export text if saving cannot be restored.' }); }
+  private fail(error: unknown, cloudRead = false): void { this.cloudReadFailed = cloudRead; this.publish({ error: (error instanceof Error ? error.message : String(error)) + ' Your open text is still available. Export text if saving cannot be restored.' }); }
   clearError = (): void => { this.publish({ error: null }); };
   initialize(): Promise<void> { return this.initializePromise ??= this.open(); }
   private async open(): Promise<void> {
     try {
       this.db = await DeviceDatabase.open(this.accountId);
+      if (this.disposed) { this.db.close(); return; }
       let disk = await this.db.snapshot();
       this.pending = await this.db.all<PendingOperation>('outbox');
       this.localConflicts = new Set(await this.db.conflicts());
+      this.catalogPending = await this.db.getPreference<boolean>('catalogPending') ?? false;
+      if (this.catalogPending) this.catalogChangedAt = Date.now();
+      if (this.disposed) return;
+    this.stopCloudWatch = this.cloud?.watch?.(() => { if (!this.disposed) { this.remoteRefreshRequested = true; void this.refreshFromCloud(); } }, error => { if (!this.disposed) this.fail(error); });
       if (!disk.universes.length && this.cloud && this.state.online) {
         let deadline: ReturnType<typeof setTimeout> | undefined;
         try {
-          const remote = await Promise.race([this.cloud.load(), new Promise<never>((_, reject) => { deadline = setTimeout(() => reject(new Error('Cloud library is taking longer to open. Writing can continue on this device.')), 2500); })]);
+          const remote = await Promise.race([this.cloud.load(disk), new Promise<never>((_, reject) => { deadline = setTimeout(() => reject(new Error('Cloud library is taking longer to open. Writing can continue on this device.')), 2500); })]);
           await validateSnapshot(remote);
+          if (this.disposed) return;
           remote.documents.forEach(doc => this.cloudHeads.set(doc.id, doc.headRevisionId));
-          await this.db.merge(remote, new Set()); disk = await this.db.snapshot(); this.hasPulledCloud = true;
-        } catch (error) { this.fail(error); } finally { clearTimeout(deadline); }
+          await this.db.merge(remote, new Set()); disk = await this.db.snapshot(); this.localConflicts = new Set(await this.db.conflicts()); this.hasPulledCloud = true;
+        } catch (error) { if ((error as { code?: string }).code !== 'cloud-dependency-pending') this.fail(error, true); } finally { clearTimeout(deadline); }
       }
+      if (this.disposed) return;
       if (!disk.universes.length) {
         disk.universes = [{ id: uuid(), name: 'My writing', createdAt: now() }];
         await this.db.catalog(disk);
       }
       const preferences = await this.db.getPreference<{ universeId: string; documentId: string | null }>('navigation');
+      if (this.disposed) return;
       const activeUniverseId = disk.universes.some(x => x.id === preferences?.universeId) ? preferences!.universeId : disk.universes[0].id;
       const activeDocumentId = disk.documents.some(x => x.id === preferences?.documentId && x.universeId === activeUniverseId && !x.trashed) ? preferences!.documentId : disk.documents.filter(x => x.universeId === activeUniverseId && !x.trashed).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0]?.id ?? null;
       this.publish({ ...disk, ready: true, activeUniverseId, activeDocumentId });
@@ -69,16 +94,36 @@ export class WritingEngine {
         document.addEventListener('visibilitychange', this.visibility);
         window.addEventListener('beforeunload', this.beforeUnload);
       }
-      if (this.cloud && this.state.online) void this.sync(false);
+      if (this.cloud && this.state.online) {
+        if (!this.hasPulledCloud || this.remoteRefreshRequested) { this.remoteRefreshRequested = true; void this.refreshFromCloud(); }
+        this.scheduleSync();
+      }
     } catch (error) {
       const universe = { id: uuid(), name: 'My writing', createdAt: now() };
       this.publish({ ready: true, universes: this.state.universes.length ? this.state.universes : [universe], activeUniverseId: this.state.activeUniverseId || universe.id }); this.fail(error);
     }
   }
   private beforeUnload = (event: BeforeUnloadEvent): void => { if (this.dirty.size) { event.preventDefault(); event.returnValue = ''; } };
-  private visibility = (): void => { if (document.visibilityState === 'hidden') void this.flush().catch(error => this.fail(error)); };
+  private visibility = (): void => { if (document.visibilityState === 'hidden') void this.flush().then(() => this.state.online ? this.sync() : undefined).catch(error => this.fail(error)); };
   private online = (): void => { this.publish({ online: true }); void this.sync(); };
   private offline = (): void => { this.publish({ online: false }); };
+  private scheduleSync(): void {
+    if (!this.cloud || this.disposed || !this.state.online || this.cloudTimer || this.syncing) return;
+    const times = this.pending.filter(operation => operation.status === 'pending').map(operation => Date.parse(operation.revision.createdAt));
+    if (this.catalogPending) times.push(this.catalogChangedAt ?? Date.now());
+    if (!times.length) return;
+    const delay = Math.max(0, Math.min(...times) + CLOUD_SYNC_DELAY - Date.now());
+    this.cloudTimer = setTimeout(() => { this.cloudTimer = undefined; void this.sync(false); }, delay);
+  }
+  private async refreshFromCloud(): Promise<void> {
+    if (!this.cloud || !this.db || this.disposed || !this.state.ready || !this.state.online || this.syncPromise || this.refreshPromise) return;
+    this.remoteRefreshRequested = false;
+    this.refreshPromise = this.pullCloud().catch(error => { if ((error as { code?: string }).code !== 'cloud-dependency-pending') this.fail(error, true); }).finally(() => {
+      this.refreshPromise = undefined;
+      if (!this.disposed && this.remoteRefreshRequested) void this.refreshFromCloud();
+    });
+    await this.refreshPromise;
+  }
   private async refreshDisk(): Promise<void> {
     if (!this.db || this.disposed) return;
     const disk = await this.db.snapshot();
@@ -90,8 +135,10 @@ export class WritingEngine {
     const local = new Map(this.state.documents.map(x => [x.id, x]));
     const documents = disk.documents.map(doc => {
       const ours = local.get(doc.id);
-      if (ours && (this.dirty.has(doc.id) || freshIds.has(ours.headRevisionId ?? '') || (this.state.activeDocumentId === doc.id && ours.headRevisionId !== doc.headRevisionId))) {
-        if (ours.headRevisionId !== doc.headRevisionId && !freshIds.has(ours.headRevisionId ?? '')) { this.localConflicts.add(doc.id); void this.db!.markConflict(doc.id); }
+      const revisions = [...disk.revisions, ...this.state.revisions];
+      const ahead = ours && ancestorOf(doc.headRevisionId, ours.headRevisionId, revisions);
+      if (ours && (this.dirty.has(doc.id) || freshIds.has(ours.headRevisionId ?? '') || ahead)) {
+        if (ours.headRevisionId !== doc.headRevisionId && !ahead && !freshIds.has(ours.headRevisionId ?? '')) { this.localConflicts.add(doc.id); void this.db!.markConflict(doc.id); }
         return ours;
       }
       return doc;
@@ -117,6 +164,7 @@ export class WritingEngine {
   updateDocument(id: string, patch: Partial<Pick<WritingDocument, 'title' | 'body' | 'collectionId' | 'trashed' | 'order'>>): void {
     const doc = this.state.documents.find(x => x.id === id); if (!doc) return;
     try {
+      if (Object.entries(patch).every(([key, value]) => stableStringify(doc[key as keyof WritingDocument]) === stableStringify(value))) return;
       if (patch.body) {
         assertBody(patch.body);
         for (const target of linkIds(patch.body)) if (!this.state.documents.some(x => x.id === target && x.universeId === doc.universeId)) throw new Error('A document link must stay inside this writing world.');
@@ -148,7 +196,7 @@ export class WritingEngine {
       if (generation === this.dirty.get(id)) this.dirty.delete(id);
       this.publish({ documents: this.state.documents.map(x => x.id === id ? { ...x, headRevisionId: revision.id } : x), revisions: [...this.state.revisions, revision], receipts: [...this.state.receipts, { revisionId: revision.id, level: 'local', at: now() }], error: null });
       this.broadcast();
-      if (this.cloud && this.state.online && !this.syncing) void this.sync(false);
+      this.scheduleSync();
     });
     this.tail = job; return job;
   }
@@ -160,14 +208,20 @@ export class WritingEngine {
   async createUniverse(name: string): Promise<void> {
     if (!name.trim()) return; await this.flush(); const universe = { id: uuid(), name: name.trim(), createdAt: now() };
     const universes = [...this.state.universes, universe]; await this.db?.catalog({ universes, collections: this.state.collections });
-    this.publish({ universes, activeUniverseId: universe.id, activeDocumentId: null }); await this.remember(); this.broadcast();
+    this.publish({ universes, activeUniverseId: universe.id, activeDocumentId: null }); await this.remember(); this.broadcast(); await this.markCatalogPending();
   }
   async selectUniverse(id: string): Promise<void> { if (!this.state.universes.some(x => x.id === id)) return; await this.flush(); this.publish({ activeUniverseId: id, activeDocumentId: null }); await this.remember(); }
   async createCollection(name: string): Promise<void> {
     if (!name.trim()) return;
     const collection: Collection = { id: uuid(), universeId: this.state.activeUniverseId, name: name.trim(), order: this.state.collections.length };
     const collections = [...this.state.collections, collection]; await this.db?.catalog({ universes: this.state.universes, collections });
-    this.publish({ collections }); this.broadcast(); if (this.cloud) void this.sync();
+    this.publish({ collections }); this.broadcast(); await this.markCatalogPending();
+  }
+  private async markCatalogPending(): Promise<void> {
+    this.catalogPending = true; this.catalogGeneration++;
+    this.catalogChangedAt ??= Date.now();
+    await this.db?.setPreference('catalogPending', true);
+    this.publish(); this.scheduleSync();
   }
   async restoreRevision(id: string): Promise<void> {
     await this.flush();
@@ -184,41 +238,52 @@ export class WritingEngine {
   }
   private async pullCloud(): Promise<void> {
     if (!this.cloud || !this.db) return;
-    const remote = await this.cloud.load(); await validateSnapshot(remote);
+    const remote = await this.cloud.load(this.state); await validateSnapshot(remote);
+    if (this.disposed) return;
     this.hasPulledCloud = true;
-    remote.documents.forEach(doc => this.cloudHeads.set(doc.id, doc.headRevisionId));
+    const history = [...this.state.revisions, ...remote.revisions];
+    remote.documents.forEach(doc => {
+      const confirmed = this.cloudHeads.get(doc.id);
+      if (!confirmed || !ancestorOf(doc.headRevisionId, confirmed, history)) this.cloudHeads.set(doc.id, doc.headRevisionId);
+    });
     const preserve = new Set([...this.dirty.keys(), ...this.pending.map(x => x.revision.documentId)]);
-    // Avoid replacing an actively edited document behind its caret when another device advances it.
-    const current = this.state.documents.find(x => x.id === this.state.activeDocumentId);
-    const other = remote.documents.find(x => x.id === current?.id);
-    const ancestors = new Set<string>(); const queue = current?.headRevisionId ? [current.headRevisionId] : [];
-    while (queue.length) { const id = queue.pop()!; if (ancestors.has(id)) continue; ancestors.add(id); queue.push(...(this.state.revisions.find(x => x.id === id)?.parentIds ?? [])); }
-    if (current && other && current.headRevisionId !== other.headRevisionId) {
-      preserve.add(current.id);
-      if (!other.headRevisionId || !ancestors.has(other.headRevisionId)) { this.localConflicts.add(current.id); await this.db!.markConflict(current.id); }
-    }
+    // Active selection is not a conflicting edit. Clean heads advance quietly;
+    // unsent writing is protected by dirty/outbox guards and ancestry in merge.
+    if (this.disposed) return;
     await this.db!.merge(remote, preserve);
+    if (this.disposed) return;
     const disk = await this.db!.snapshot();
+    this.localConflicts = new Set(await this.db.conflicts());
+    if (this.disposed) return;
     const documents = disk.documents.map(doc => this.dirty.has(doc.id) || this.pending.some(x => x.revision.documentId === doc.id) ? this.state.documents.find(x => x.id === doc.id) ?? doc : doc);
     for (const doc of this.state.documents) if (!documents.some(x => x.id === doc.id) && (this.dirty.has(doc.id) || this.pending.some(x => x.revision.documentId === doc.id))) documents.push(doc);
-    this.publish({ ...disk, ...this.retainedRecords(disk), documents });
+    const active = documents.find(document => document.id === this.state.activeDocumentId && !document.trashed);
+    const nextActive = active?.id ?? documents.filter(document => document.universeId === this.state.activeUniverseId && !document.trashed).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0]?.id ?? null;
+    this.publish({ ...disk, ...this.retainedRecords(disk), documents, activeDocumentId: nextActive, ...(this.cloudReadFailed ? { error: null } : {}) }); this.cloudReadFailed = false;
   }
   sync = (refresh = true): Promise<void> => {
-    if (!this.cloud || !this.db || !this.state.online) return Promise.resolve();
+    if (this.disposed || !this.cloud || !this.db || !this.state.online) return Promise.resolve();
     if (this.syncPromise) return this.syncPromise;
-    this.syncPromise = this.synchronize(refresh).catch(error => this.fail(error)).finally(() => {
+    clearTimeout(this.cloudTimer); this.cloudTimer = undefined;
+    this.syncPromise = (async () => { await this.flush(); await this.refreshPromise; if (!this.disposed) await this.synchronize(refresh); })().catch(error => this.fail(error)).finally(() => {
       this.syncing = false; this.syncPromise = undefined; this.publish();
-      if (!this.disposed && !this.state.error && this.pending.some(x => x.status === 'pending') && this.state.online) queueMicrotask(() => { void this.sync(false); });
+      if (!this.disposed && !this.state.error) this.scheduleSync();
+      if (this.remoteRefreshRequested) void this.refreshFromCloud();
     });
     return this.syncPromise;
   };
   private async synchronize(refresh: boolean): Promise<void> {
     this.syncing = true; this.publish();
     if (refresh || !this.hasPulledCloud) await this.pullCloud();
+    if (this.disposed) return;
     // Do not call flush here: checkpoint scheduling can start sync while its own tail is finishing.
+    const catalogGeneration = this.catalogGeneration;
     await this.cloud!.putCatalog(this.state.universes, this.state.collections);
+    if (this.disposed) return;
+    if (this.catalogGeneration === catalogGeneration) { this.catalogPending = false; this.catalogChangedAt = undefined; await this.db!.setPreference('catalogPending', false); }
     await this.cloud!.registerDocuments?.(this.state.documents.map(({ id, universeId }) => ({ id, universeId })));
-    for (const original of this.state.originals) await this.cloud!.putOriginal(original);
+    if (this.disposed) return;
+    for (const original of this.state.originals) { if (this.disposed) return; await this.cloud!.putOriginal(original); }
     // IndexedDB returns UUID-key order after restart, not revision ancestry order.
     const remaining = new Map(this.pending.map(x => [x.operationId, x]));
     const operations: PendingOperation[] = [];
@@ -230,18 +295,24 @@ export class WritingEngine {
     }
     let conflicted = false;
     for (const operation of operations) {
+      if (this.disposed) return;
       if (operation.status === 'conflict') continue;
       // A source may have been imported after this sync began. Stage its exact bytes
       // and catalog before the dependent revision, never a stale captured source list.
       await this.cloud!.putCatalog(this.state.universes, this.state.collections);
+      if (this.disposed) return;
       await this.cloud!.registerDocuments?.(this.state.documents.map(({ id, universeId }) => ({ id, universeId })));
+      if (this.disposed) return;
       for (const originalId of operation.revision.snapshot.sourceOriginalIds) {
         const original = this.state.originals.find(x => x.id === originalId);
         if (!original) throw new Error('Source original is unavailable. The local revision is retained.');
         await this.cloud!.putOriginal(original);
       }
+      if (this.disposed) return;
       const result = await this.cloud!.commit({ operationId: operation.operationId, expectedHeadId: operation.expectedHeadId, revision: operation.revision });
-      this.cloudHeads.set(operation.revision.documentId, result.headRevisionId);
+      if (this.disposed) return;
+      const confirmed = this.cloudHeads.get(operation.revision.documentId);
+      if (!confirmed || !ancestorOf(result.headRevisionId, confirmed, this.state.revisions)) this.cloudHeads.set(operation.revision.documentId, result.headRevisionId);
       await this.db!.acknowledge(operation.revision.id, result.status === 'conflict');
       if (result.status === 'conflict') {
         conflicted = true;
@@ -251,7 +322,7 @@ export class WritingEngine {
         this.publish({ receipts: [...this.state.receipts.filter(x => !(x.revisionId === operation.revision.id && x.level === 'cloud')), { revisionId: operation.revision.id, level: 'cloud', at: now() }] });
       }
     }
-    if (conflicted) await this.pullCloud();
+    if (conflicted || operations.some(operation => operation.status === 'pending')) await this.pullCloud();
     // Full-archive restoration is an explicit author action. If replay retained a
     // branch or advanced a different head, select the archived text with a NEW,
     // expected-head revision; original IDs and all branches remain recoverable.
@@ -304,6 +375,7 @@ export class WritingEngine {
     return new Blob([format === 'md' ? (doc.title ? '# ' + doc.title.replace(/[\\`*_[\]<>#~]/g, '\\$&') + '\n\n' : '') + renderMarkdown(doc.body) : doc.plainText], { type: 'text/plain;charset=utf-8' });
   }
   dispose(): void {
+    clearTimeout(this.cloudTimer); this.stopCloudWatch?.(); this.stopCloudWatch = undefined;
     this.disposed = true; this.channel?.close();
     if (typeof window !== 'undefined') {
       window.removeEventListener('online', this.online); window.removeEventListener('offline', this.offline); document.removeEventListener('visibilitychange', this.visibility); window.removeEventListener('beforeunload', this.beforeUnload);

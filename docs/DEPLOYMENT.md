@@ -45,7 +45,16 @@ session and physical-phone acceptance remain separate.
 [Deploy Noveliaa to Firebase](../.github/workflows/firebase-deploy.yml) uses the
 existing `FIREBASE_SERVICE_ACCOUNT` secret. Before cloud changes it runs unit,
 Rules/emulator, authenticated browser, local-writing browser and evidence checks.
-The retained Spark manifest binds the reviewed source and actual renders.
+The current [October 24 refinement manifest](evidence/phase1/refinement-2026-10-24/manifest.json)
+binds the reviewed source and actual renders. Earlier Spark and visual evidence
+remain intact. Browser runs write temporary reports under `.local` so CI does
+not overwrite retained historical proof.
+
+This release adds paragraph formatting metadata while preserving old revision
+hashes. After publication, close and reopen Noveliaa on each device once, after
+Synced, so the waiting service worker can activate the complete new app. Open
+writers intentionally keep their coherent old version until closed. No source
+text or original-file migration is performed.
 
 `prepare-spark-release.mjs` verifies the project, exact Web App and site, native
 database, Google provider and private author UID. It preserves existing domains,

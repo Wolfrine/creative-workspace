@@ -19,6 +19,14 @@ attempts trigger the browser warning. Tabs preserve divergent versions instead
 of resolving meaning automatically. Fresh devices open the latest available page;
 returning devices remember their last-opened page.
 
+First-line indentation is optional per top-level paragraph (`firstLineIndent:
+true`), toggled in the formatting toolbar. Enter inherits it; the author can
+toggle the next paragraph off. No spaces or tabs are inserted. HTML retains the
+2em style; text and Markdown retain the exact words. Missing attributes in older
+revisions remain missing, preserving their hashes. Lists, quotes and headings
+keep their own layout. Desktop collection movement uses a themed keyboard
+listbox; phones use the native selection control.
+
 ## Spark cloud persistence and trust boundary
 
 The production client uses **Authentication + Firestore + Hosting**. No Functions
@@ -41,6 +49,28 @@ predecessor still matches. Losing revisions remain in history. A changed replay
 under an existing operation ID fails. A stale optimistic transaction rejected by
 Rules is retried only after a server read proves that its observed head changed.
 Only an acknowledged transaction earns “Synced”; queued SDK writes do not.
+
+Automatic upload starts about **60 seconds after the first pending device
+checkpoint**. Continued typing does not postpone it indefinitely. Every distinct
+checkpoint stays in history and the outbox; a genuine no-op does not create a
+revision. Manual Check cloud sync flushes immediately. Reconnection and hiding
+the tab attempt an immediate drain to help device switching; browser shutdown
+cannot guarantee delivery. Wait for Synced before relying on another device.
+
+Firestore uses its persistent IndexedDB cache with multi-tab coordination.
+Long-lived `onSnapshot` subscriptions cover document heads, universe/collection
+metadata, revision metadata and original metadata. Only server-confirmed rows
+advance the cloud view; cached/optimistic events do not earn cloud receipts.
+Listeners arrive independently, so hydration fetches missing referenced metadata
+by ID, verifies a complete graph, and serializes adoption. Immutable content
+reuses verified local revisions and SDK-cached chunks; a failed digest retries
+once from the server. Newly uploaded bytes still require server readback.
+
+A clean device automatically adopts descendant heads, including its selected
+page. Selection alone is never a conflict. Dirty text, durable pending operations
+and divergent branches stay protected. Old false conflict flags clear only
+inside the same IndexedDB transaction that proves safe head adoption, with no
+pending operation. Actual alternatives remain in immutable history.
 
 Rules deny other users, anonymous access, evidence updates/deletes, standalone
 head rollback, later-phase paths and client allowlist edits. They enforce chunk
@@ -68,8 +98,14 @@ portable JSON archive, 200,000 editor nodes and depth 30. Exceeding a cloud limi
 leaves the complete device record exportable and reports failure. History is
 never silently pruned. Larger complete-history moves require a larger portable
 format. Firestore's free quota also bounds this design; quota failure retains the
-outbox and device checkpoint. Cloud loading currently reads the complete library
-and history, so large-library pagination remains future work.
+outbox and device checkpoint. Initial subscriptions read the complete metadata
+library/history; later events stream changed metadata without repeated full
+collection GETs or rereading verified blobs. Large-library pagination remains
+future work. A one-minute upload interval reduces sync churn, not the number of
+retained revision writes. Each distinct revision still has its integrity cost;
+idle listeners create no writes. Persistent reconnects beyond 30 minutes can be
+billed as a fresh query. See [Firebase persistence](https://firebase.google.com/docs/firestore/manage-data/enable-offline)
+and [listener pricing](https://firebase.google.com/docs/firestore/pricing).
 
 ## Recovery and operating limits
 

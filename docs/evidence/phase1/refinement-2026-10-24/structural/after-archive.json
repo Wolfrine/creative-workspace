@@ -1,0 +1,201 @@
+{
+  "format": "noveliaa-writing-archive",
+  "schemaVersion": 1,
+  "exportedAt": "2026-10-24T10:24:44.232Z",
+  "snapshot": {
+    "schemaVersion": 1,
+    "accountId": "device-preview-test-64364233ac88cbb4898bd16b30b3af5d99ea9bbf-1792837480761",
+    "documents": [
+      {
+        "id": "4febe1d8-ffa0-4132-b254-4f70c7ec6763",
+        "universeId": "c338b260-4cf8-4e08-9c8a-af35d834bf9c",
+        "title": "mixed-source",
+        "body": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "A revised thought. हिंदी é 🙂"
+                }
+              ]
+            }
+          ]
+        },
+        "plainText": "A revised thought. हिंदी é 🙂",
+        "collectionId": null,
+        "trashed": false,
+        "order": 0,
+        "origin": "imported_chat",
+        "sourceOriginalIds": [
+          "878b47bf-a3a7-4a47-bbfe-e26f14503877"
+        ],
+        "createdAt": "2026-10-24T10:24:42.405Z",
+        "updatedAt": "2026-10-24T10:24:43.734Z",
+        "headRevisionId": "39f39273-e85f-41ee-b6b9-94f3c263249c"
+      }
+    ],
+    "revisions": [
+      {
+        "id": "08f4437d-77fb-4c05-be63-47ff19cac48d",
+        "documentId": "4febe1d8-ffa0-4132-b254-4f70c7ec6763",
+        "universeId": "c338b260-4cf8-4e08-9c8a-af35d834bf9c",
+        "snapshot": {
+          "id": "4febe1d8-ffa0-4132-b254-4f70c7ec6763",
+          "universeId": "c338b260-4cf8-4e08-9c8a-af35d834bf9c",
+          "title": "mixed-source",
+          "body": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "User:"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The river rose."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Assistant:"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "An unapproved tower."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "हिंदी é 🙂"
+                  }
+                ]
+              }
+            ]
+          },
+          "plainText": "User:\nThe river rose.\nAssistant:\nAn unapproved tower.\nहिंदी é 🙂",
+          "collectionId": null,
+          "trashed": false,
+          "order": 0,
+          "origin": "imported_chat",
+          "sourceOriginalIds": [
+            "878b47bf-a3a7-4a47-bbfe-e26f14503877"
+          ],
+          "createdAt": "2026-10-24T10:24:42.405Z",
+          "updatedAt": "2026-10-24T10:24:42.405Z"
+        },
+        "contentHash": "5898a463b66bd6bb9d7eab94db69cd67ca539bb6cdf94fd9985e7249b94a4051",
+        "parentIds": [],
+        "createdAt": "2026-10-24T10:24:42.556Z"
+      },
+      {
+        "id": "39f39273-e85f-41ee-b6b9-94f3c263249c",
+        "documentId": "4febe1d8-ffa0-4132-b254-4f70c7ec6763",
+        "universeId": "c338b260-4cf8-4e08-9c8a-af35d834bf9c",
+        "snapshot": {
+          "id": "4febe1d8-ffa0-4132-b254-4f70c7ec6763",
+          "universeId": "c338b260-4cf8-4e08-9c8a-af35d834bf9c",
+          "title": "mixed-source",
+          "body": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A revised thought. हिंदी é 🙂"
+                  }
+                ]
+              }
+            ]
+          },
+          "plainText": "A revised thought. हिंदी é 🙂",
+          "collectionId": null,
+          "trashed": false,
+          "order": 0,
+          "origin": "imported_chat",
+          "sourceOriginalIds": [
+            "878b47bf-a3a7-4a47-bbfe-e26f14503877"
+          ],
+          "createdAt": "2026-10-24T10:24:42.405Z",
+          "updatedAt": "2026-10-24T10:24:43.734Z"
+        },
+        "contentHash": "044521ec5a89df18ae3df913d0aa1c5f7500916197b9593073ad1611c441e4aa",
+        "parentIds": [
+          "08f4437d-77fb-4c05-be63-47ff19cac48d"
+        ],
+        "createdAt": "2026-10-24T10:24:44.043Z"
+      }
+    ],
+    "originals": [
+      {
+        "id": "878b47bf-a3a7-4a47-bbfe-e26f14503877",
+        "universeId": "c338b260-4cf8-4e08-9c8a-af35d834bf9c",
+        "name": "mixed-source.txt",
+        "bytesBase64": "VXNlcjoNClRoZSByaXZlciByb3NlLg0KQXNzaXN0YW50Og0KQW4gdW5hcHByb3ZlZCB0b3dlci4NCuCkueCkv+CkguCkpuClgCBlzIEg8J+Zgg==",
+        "sha256": "a2dfb229b30db8d489fb23dc4114ba15518b2aefb364fb8d833e99194ced7fa0",
+        "origin": "imported_chat",
+        "verification": "unverified",
+        "sourceReference": "Explicit file import: mixed-source.txt",
+        "createdAt": "2026-10-24T10:24:42.395Z",
+        "speakerSegments": [
+          {
+            "role": "user",
+            "start": 0,
+            "end": 24
+          },
+          {
+            "role": "assistant",
+            "start": 24,
+            "end": 69
+          }
+        ]
+      }
+    ],
+    "universes": [
+      {
+        "id": "c338b260-4cf8-4e08-9c8a-af35d834bf9c",
+        "name": "My writing",
+        "createdAt": "2026-10-24T10:24:42.001Z"
+      }
+    ],
+    "collections": [],
+    "receipts": [
+      {
+        "revisionId": "08f4437d-77fb-4c05-be63-47ff19cac48d",
+        "level": "local",
+        "at": "2026-10-24T10:24:42.570Z"
+      },
+      {
+        "revisionId": "39f39273-e85f-41ee-b6b9-94f3c263249c",
+        "level": "local",
+        "at": "2026-10-24T10:24:44.048Z"
+      }
+    ]
+  },
+  "sha256": "403273f1b4c9265ce214dda90586dd129110df5ba3d7671406155492965516bd"
+}

@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
-const manifest = JSON.parse(await readFile('docs/evidence/phase1/spark/manifest.json', 'utf8'));
+const manifest = JSON.parse(await readFile('docs/evidence/phase1/refinement-2026-10-24/manifest.json', 'utf8'));
 assert.equal(manifest.plan, 'Spark');
 for (const item of [...manifest.sources, ...manifest.renders, ...manifest.testEvidence]) {
   assert.equal(hash(await readFile(item.path)), item.sha256, 'Retained candidate changed: ' + item.path);
@@ -16,4 +16,5 @@ const binding = JSON.parse(await readFile('deployment/firebase-binding.json', 'u
 assert.equal(binding.appId, '1:278082781314:web:9a4b7acef07fa8e4dfb49b');
 assert.equal(binding.planConstraint, 'Spark');
 assert.equal(manifest.browserFailures, 0); assert.equal(manifest.ruleFailures, 0);
+assert.equal(manifest.writingBrowserFailures, 0); assert.equal(manifest.browserPasses, 5); assert.equal(manifest.writingBrowserPasses, 17);
 console.log(JSON.stringify({ plan: 'Spark', sources: manifest.sources.length, actualRenders: manifest.renders.length, testEvidence: manifest.testEvidence.length, sourceDigest: manifest.sourceDigest, productionOwnerAcceptance: 'not inferred from emulator evidence' }));

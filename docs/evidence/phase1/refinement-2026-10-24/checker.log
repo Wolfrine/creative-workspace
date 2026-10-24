@@ -1,0 +1,35 @@
+
+> noveliaa@0.1.0 test:evidence
+> python -m unittest discover -s evals -p test_*.py -v
+
+test_agent_decision_and_origin_laundering (test_check_evidence.EvidenceChecks.test_agent_decision_and_origin_laundering) ... ok
+test_ai_proposal_source_mismatch (test_check_evidence.EvidenceChecks.test_ai_proposal_source_mismatch) ... ok
+test_approval_digest_mismatch (test_check_evidence.EvidenceChecks.test_approval_digest_mismatch) ... ok
+test_changed_existing_edition_even_if_new_hash_is_approved (test_check_evidence.EvidenceChecks.test_changed_existing_edition_even_if_new_hash_is_approved) ... ok
+test_changed_original_even_with_recomputed_self_hash (test_check_evidence.EvidenceChecks.test_changed_original_even_with_recomputed_self_hash) ... ok
+test_cli_valid_and_failed_projection_exit_status (test_check_evidence.EvidenceChecks.test_cli_valid_and_failed_projection_exit_status) ... ok
+test_consent_boundaries_and_late_offline_upload (test_check_evidence.EvidenceChecks.test_consent_boundaries_and_late_offline_upload) ... ok
+test_cycle_and_cross_universe (test_check_evidence.EvidenceChecks.test_cycle_and_cross_universe) ... ok
+test_damaged_body_without_recomputed_hash (test_check_evidence.EvidenceChecks.test_damaged_body_without_recomputed_hash) ... ok
+test_disabled_behavior (test_check_evidence.EvidenceChecks.test_disabled_behavior) ... ok
+test_edition_revision_digest_mismatch (test_check_evidence.EvidenceChecks.test_edition_revision_digest_mismatch) ... ok
+test_empty_and_duplicate_evidence_blocked (test_check_evidence.EvidenceChecks.test_empty_and_duplicate_evidence_blocked) ... ok
+test_feedback_wrong_revision_or_missing_quote (test_check_evidence.EvidenceChecks.test_feedback_wrong_revision_or_missing_quote) ... ok
+test_missing_expected_saved_revision (test_check_evidence.EvidenceChecks.test_missing_expected_saved_revision) ... ok
+test_missing_json_and_cli_status (test_check_evidence.EvidenceChecks.test_missing_json_and_cli_status) ... ok
+test_naive_timestamp_blocked (test_check_evidence.EvidenceChecks.test_naive_timestamp_blocked) ... ok
+test_path_escape_and_symlink_blocked (test_check_evidence.EvidenceChecks.test_path_escape_and_symlink_blocked) ... ok
+test_restore_adds_revision_preserving_origin (test_check_evidence.EvidenceChecks.test_restore_adds_revision_preserving_origin) ... ok
+test_rewritten_history_metadata (test_check_evidence.EvidenceChecks.test_rewritten_history_metadata) ... ok
+test_synthetic_not_accepted_as_runtime (test_check_evidence.EvidenceChecks.test_synthetic_not_accepted_as_runtime) ... ok
+test_unapproved_edition_and_asset (test_check_evidence.EvidenceChecks.test_unapproved_edition_and_asset) ... ok
+test_valid_synthetic_projection (test_check_evidence.EvidenceChecks.test_valid_synthetic_projection) ... ok
+test_writing_profile_does_not_weaken_default_full_gate (test_writing_profile.WritingProfileChecks.test_writing_profile_does_not_weaken_default_full_gate) ... ok
+test_writing_profile_forbids_later_phase_records (test_writing_profile.WritingProfileChecks.test_writing_profile_forbids_later_phase_records) ... ok
+test_writing_profile_still_detects_missing_saved_text (test_writing_profile.WritingProfileChecks.test_writing_profile_still_detects_missing_saved_text) ... ok
+test_writing_profile_without_fabricated_later_phases (test_writing_profile.WritingProfileChecks.test_writing_profile_without_fabricated_later_phases) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.868s
+
+OK

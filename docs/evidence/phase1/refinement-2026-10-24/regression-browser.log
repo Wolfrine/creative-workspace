@@ -1,0 +1,32 @@
+
+> noveliaa@0.1.0 test:browser
+> playwright test
+
+[WebServer] (node:162948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:69984) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 17 tests using 1 worker
+
+(node:158352) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\browser\production.spec.ts:3:1 › production shell cold reloads offline and development notebook access is absent (1.4s)
+  ok  2 tests\browser\writing.spec.ts:18:1 › A01/A08 immediate capture, Unicode, caret and undo (4.0s)
+  ok  3 tests\browser\writing.spec.ts:32:1 › A08 formatted archive restores into an isolated browser and HTML retains formatting (3.8s)
+  ok  4 tests\browser\writing.spec.ts:51:1 › A03 failed storage leaves open text exportable and never says saved (2.4s)
+  ok  5 tests\browser\writing.spec.ts:60:1 › A22/A23 short mobile writing, keyboard navigation and 200 percent text remain usable (3.4s)
+  ok  6 tests\browser\writing.spec.ts:84:1 › A02 offline editing survives a new tab and preserves acknowledged revisions (3.4s)
+  ok  7 tests\browser\writing.spec.ts:92:1 › A06 revision restoration retains the intervening version (3.3s)
+  ok  8 tests\browser\writing.spec.ts:104:1 › A07/A09 archive from browser preserves sources and independent saved-text oracle (4.4s)
+  ok  9 tests\browser\writing.spec.ts:138:1 › A11 search stays in the selected universe (3.3s)
+  ok 10 tests\browser\writing.spec.ts:153:1 › A06 stable links, backlinks and non-drag organization survive title changes (6.6s)
+  ok 11 tests\browser\writing.spec.ts:170:39 › paragraph indentation and themed collection movement at 1440px (9.6s)
+  ok 12 tests\browser\writing.spec.ts:170:39 › paragraph indentation and themed collection movement at 390px (5.5s)
+  ok 13 tests\browser\writing.spec.ts:170:39 › paragraph indentation and themed collection movement at 320px (5.3s)
+  ok 14 tests\browser\writing.spec.ts:222:44 › A22/A23 writing layout and accessibility at 320px (6.1s)
+  ok 15 tests\browser\writing.spec.ts:222:44 › A22/A23 writing layout and accessibility at 390px (6.6s)
+  ok 16 tests\browser\writing.spec.ts:222:44 › A22/A23 writing layout and accessibility at 768px (6.6s)
+  ok 17 tests\browser\writing.spec.ts:222:44 › A22/A23 writing layout and accessibility at 1440px (5.6s)
+
+  17 passed (1.4m)

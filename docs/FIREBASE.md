@@ -45,11 +45,21 @@ SDK config may contain a storageBucket string; that does not create or use a
 bucket. The public web API key is normal client configuration, not an Admin key.
 
 Firestore's current free allowance is 1 GiB stored data, 50,000 document reads
-and 20,000 writes per day. Loading currently reads all heads/history; each new
+and 20,000 writes per day. Initial metadata listeners read heads/history; each new
 revision writes chunks, a manifest, metadata, a receipt and possibly a head.
-Compression and digest deduplication reduce repeated bytes. Exhausted quota
+Persistent multi-tab cache and long-lived listeners avoid recurring full-library
+GETs; unchanged verified revision/original bytes are reused. Clean devices adopt
+new heads automatically. Dirty/outbox branches retain expected-head protection.
+Device checkpoints stay at 300 ms; automatic cloud drain starts about one minute
+after the oldest pending checkpoint. Manual sync/reconnect/tab hiding can drain
+sooner. Compression and digest deduplication reduce repeated bytes, and no-op
+edits create no revision. Delaying uploads does not discard saved history or
+promise fewer writes per distinct revision. Exhausted quota
 interrupts sync without acknowledging or discarding pending local revisions.
-Cloud backups, PITR and managed restores require billing and are deferred under
+Server-confirmed metadata alone earns cloud receipts. An immutable cache does
+not continuously audit administrator rewrites that bypass Rules; fresh-device
+integrity tests still reject corrupt server bytes. Cloud backups, PITR and
+managed restores require billing and are deferred under
 the owner's Spark decision. [Official quota and backup policy](https://firebase.google.com/docs/firestore/pricing).
 
 ## Development verification

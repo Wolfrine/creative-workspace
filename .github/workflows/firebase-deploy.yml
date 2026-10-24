@@ -83,5 +83,6 @@ jobs:
             .local/spark-browser*
             .local/hosted-verification.json
             .local/rules-release.json
-            test-results/
+            .local/browser-test-results/
+            .local/spark-test-results/
           if-no-files-found: ignore
