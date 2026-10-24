@@ -10,9 +10,20 @@ commits and deploys directly from `main` unless the owner explicitly specifies
 another workflow. Feature branches, worktrees and PRs are not the default review
 path. The production workflow accepts pushes only from `main` and rejects
 non-main manual dispatch through its job condition. Required tests and the
-existing Actions secret remain unchanged. The owner accepted the deployed UI;
-the completed Phase 1 branch is being fast-forwarded into `main` with its full
-history preserved, then removed after remote containment is verified.
+existing Actions secret remain unchanged. The owner accepted the deployed UI.
+The complete Phase 1 history was fast-forwarded into `main`; GitHub marked
+[PR #1](https://github.com/Wolfrine/creative-workspace/pull/1) merged. After verifying
+the remote branch had no commits outside `main`, `codex/noveliaa-phase-1` was
+deleted remotely and locally. The repository now has **one branch (`main`) and
+zero open PRs**. The global Codex instructions and explicit memory note carry the
+same default across agents and repositories unless the owner gives an exception.
+
+The [first main release](https://github.com/Wolfrine/creative-workspace/actions/runs/40067371140)
+passed on `9b8055f`: all application checks, Rules source readback and all 24
+hosted-file comparisons succeeded. [Release and inventory proof](evidence/phase1/main-release.json)
+is retained in-repo. Optional Actions artifact upload hit GitHub's storage quota;
+it did not block publication or verification. No application or Rules source
+changed during the branch-policy correction.
 
 **Live and verified on 23 October 2026.** The first successful Spark release
 [39998452937](https://github.com/Wolfrine/creative-workspace/actions/runs/39998452937)
