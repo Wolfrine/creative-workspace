@@ -14,6 +14,13 @@ the Actions release passes. **The Spark release is now live and verified**, with
 
 ## October 24 refinement evidence
 
+Implementation and local verification are complete on `main` at `ae09cd8`.
+**The refinements are not yet live:** GitHub blocked the release before checkout
+because of its account payment/spending-limit restriction. One retry also ran no
+steps. See the [exact deployment status](DEPLOYMENT.md); the prior live release
+remains available. Runner-side CI, configured Hosting verification and new hosted
+visual captures are pending that external account action.
+
 The owner requested themed desktop collection movement, optional first-line
 indentation and quieter sync. The new candidate uses persistent multi-tab
 Firestore cache and server-confirmed metadata listeners. Clean selected pages

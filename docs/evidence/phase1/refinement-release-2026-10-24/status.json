@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-10-24T10:42:57.928Z",
+  "applicationCommit": "ae09cd8f636d985c5a3ec7a7b40fc2dc405e915a",
+  "branch": "main",
+  "sourceDigest": "067302b3554dacb9904e7a96c8d9a45808999f9cd8dd968ceada5780a460bed1",
+  "url": "https://noveliaa.web.app",
+  "deploymentRun": {
+    "id": 40086703018,
+    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018",
+    "attempt": 2,
+    "status": "completed",
+    "conclusion": "failure",
+    "stepsStarted": 0
+  },
+  "ciRun": {
+    "id": 40086702833,
+    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40086702833",
+    "status": "completed",
+    "conclusion": "failure",
+    "stepsStarted": 0
+  },
+  "annotation": {
+    "source": "Visible GitHub deployment job annotation, read through authenticated browser UI",
+    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018/job/120851008557",
+    "message": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings",
+    "screenshot": "github-block.png"
+  },
+  "localVerification": {
+    "client": 47,
+    "firestoreRules": 11,
+    "authenticatedBrowser": 5,
+    "writingBrowser": 17,
+    "evaluatorMutation": 26,
+    "typecheck": "pass",
+    "build": "pass",
+    "structuralOracle": "STRUCTURAL_EVIDENCE_VALID",
+    "visual": "Desktop/mobile parent and independent critic inspected actual renders",
+    "dataset": "Invented synthetic fixtures; no production manuscript"
+  },
+  "published": false,
+  "firebasePlan": "Spark",
+  "externalAction": "Human owner resolves GitHub Actions account billing/spending-limit restriction, then existing main workflow rerun and hosted verification.",
+  "notChanged": [
+    "GitHub billing/spending limits",
+    "Firebase billing/IAM/secrets",
+    "existing production manuscripts"
+  ],
+  "remaining": [
+    "Actions checks on runner",
+    "configured Rules/Hosting deployment readback",
+    "new hosted desktop/mobile checks",
+    "physical-device keyboard/IME and owner production session acceptance"
+  ]
+}

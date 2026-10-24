@@ -5,6 +5,23 @@ project `noveliaa` (278082781314), Web App
 `1:278082781314:web:9a4b7acef07fa8e4dfb49b`. Localhost is development evidence
 only. Deployment is already authorized; the owner requires Spark.
 
+**October 24 refinement release: implemented on `main`, publication blocked.**
+Commit `ae09cd8f636d985c5a3ec7a7b40fc2dc405e915a` contains the tested refinements.
+The [deployment Action](https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018)
+and [CI Action](https://github.com/Wolfrine/creative-workspace/actions/runs/40086702833)
+stopped before checkout. GitHub's visible job annotation says: “The job was not
+started because recent account payments have failed or your spending limit needs
+to be increased. Please check the 'Billing & plans' section in your settings”.
+A single deployment retry also stopped before any step. No new Firebase release
+occurred. The live site still serves the previous successful release.
+
+The human owner must resolve the GitHub account payment/spending-limit block;
+no financial setting was changed. Then rerun the existing Action, verify Rules
+readback, all configured hosted asset digests and desktop/mobile hosted renders.
+Firebase remains Spark; the pipeline, secret and target are unchanged.
+[Blocker evidence](evidence/phase1/refinement-release-2026-10-24/status.json)
+includes the exact run/commit and a retained screenshot of the annotation.
+
 **Main-first delivery (owner instruction, 24 October 2026):** Every agent works,
 commits and deploys directly from `main` unless the owner explicitly specifies
 another workflow. Feature branches, worktrees and PRs are not the default review
