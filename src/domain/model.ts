@@ -28,6 +28,8 @@ export interface WorkspaceSnapshot {
 export interface CommitOperation { operationId: string; expectedHeadId: string | null; revision: Revision }
 export interface CommitResult { status: 'synced' | 'conflict'; headRevisionId: string | null }
 export interface CloudAdapter {
+  /** Active server-selected workspace; older device stores cannot repopulate a reset. */
+  workspaceId?: string;
   load(known?: WorkspaceSnapshot): Promise<WorkspaceSnapshot>;
   watch?(onChange: () => void, onError: (error: unknown) => void): () => void;
   commit(operation: CommitOperation): Promise<CommitResult>;
@@ -39,8 +41,9 @@ export type SaveState = 'saving' | 'local' | 'syncing' | 'synced' | 'conflict' |
 export interface WorkspaceState extends WorkspaceSnapshot {
   ready: boolean; localOnly: boolean; activeUniverseId: string; activeDocumentId: string | null;
   saveState: SaveState; error: string | null; pendingCount: number; online: boolean;
+  conflictedDocumentIds: string[];
 }
-export interface Session { uid: string; displayName: string; localOnly: boolean; signOut(): Promise<void> }
+export interface Session { uid: string; displayName: string; localOnly: boolean; workspaceId?: string; signOut(): Promise<void> }
 export interface WorkspaceController {
   state: WorkspaceState;
   createDocument(options?: { title?: string; body?: RichNode; collectionId?: string | null }): Promise<string>;

@@ -33,9 +33,9 @@ async function transform(bytes: Uint8Array, compress: boolean, limit = MAX_BLOB 
 // Phase 1 has one trusted human writer. Firestore Rules enforce owner isolation,
 // immutable evidence and atomic head transitions. The client verifies full content
 // and provenance before merging it into the durable device workspace.
-export function createFirestoreAdapter(db: Firestore, uid: string, checkSession: () => Promise<void> = async () => {}): CloudAdapter {
-  id(uid);
-  const root = 'noveliaaWorkspaces/' + uid + '/';
+export function createFirestoreAdapter(db: Firestore, uid: string, checkSession: () => Promise<void> = async () => {}, workspaceId = uid): CloudAdapter {
+  id(uid); id(workspaceId);
+  const root = 'noveliaaWorkspaces/' + workspaceId + '/';
   const record = (kind: string, key: string) => doc(db, root + kind + '/' + id(key));
   const blobCache = new Map<string, Uint8Array>();
   const metadataCache = new Map<string, string>();
@@ -117,6 +117,7 @@ export function createFirestoreAdapter(db: Firestore, uid: string, checkSession:
     metadataCache.set(key, fingerprint);
   };
   return {
+    workspaceId,
     watch(onChange, onError) {
       if (snapshots) throw new Error('The writing listener is already attached.');
       const current = new Map<string, Map<string, DocumentData>>(); snapshots = current;

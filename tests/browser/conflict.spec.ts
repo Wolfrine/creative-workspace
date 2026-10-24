@@ -1,0 +1,52 @@
+import { test, expect } from '@playwright/test';
+import { mkdir } from 'node:fs/promises';
+import AxeBuilder from '@axe-core/playwright';
+
+const evidence = process.env.NOVELIAA_EVIDENCE_DIR ?? '.local/reset-browser';
+for (const width of [1440, 390, 320]) test(`page-specific conflict review and blank current-version choice at ${width}px`, async ({ page }) => {
+  await page.setViewportSize({ width, height: width === 1440 ? 1000 : 844 });
+  await page.goto('/?local=1&notebook=conflict-' + width + '-' + Date.now());
+  await page.waitForFunction(() => (window as any).__NOVELIAA_TEST__?.getSnapshot().ready);
+  const ids = await page.evaluate(async () => {
+    const engine = (window as any).__NOVELIAA_TEST__;
+    const other = await engine.createDocument({ title: 'Scene with saved versions', body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'A synthetic scene kept in history.' }] }] } });
+    await engine.db.markConflict(other); await engine.refreshDisk();
+    const blank = await engine.createDocument();
+    return { other, blank };
+  });
+  await page.reload(); await page.waitForFunction(() => (window as any).__NOVELIAA_TEST__?.getSnapshot().ready);
+  await expect(page.getByRole('textbox', { name: 'Writing title', exact: true })).toHaveValue('');
+  await expect(page.getByRole('button', { name: 'Compare history', exact: true })).toHaveCount(0);
+  await expect(page.getByText('Saved on this device', { exact: true }).first()).toBeVisible();
+  await page.getByRole('button', { name: 'Review 1 other page with saved versions', exact: true }).click();
+  await expect(page.getByRole('dialog', { name: 'Pages to review', exact: true })).toBeVisible();
+  await mkdir(evidence, { recursive: true });
+  await page.screenshot({ path: evidence + '/conflict-pages-' + width + '.png', fullPage: true });
+  await page.getByRole('button', { name: /Scene with saved versions/ }).last().click();
+  const history = page.getByRole('dialog', { name: 'Your writing history', exact: true });
+  await expect(history.getByRole('heading', { name: 'Scene with saved versions', exact: true })).toBeVisible();
+  await expect(history.getByRole('button', { name: 'Keep current writing', exact: true })).toBeEnabled();
+  await page.getByRole('button', { name: 'Close your writing history', exact: true }).click();
+  const count = await page.evaluate(async blank => {
+    const engine = (window as any).__NOVELIAA_TEST__; await engine.selectDocument(blank);
+    await engine.db.markConflict(blank); await engine.refreshDisk(); return engine.getSnapshot().revisions.length;
+  }, ids.blank);
+  await page.reload(); await page.waitForFunction(() => (window as any).__NOVELIAA_TEST__?.getSnapshot().ready);
+  await page.getByRole('button', { name: 'Compare history', exact: true }).click();
+  await expect(history.getByRole('heading', { name: 'No prose to compare', exact: true })).toBeVisible();
+  await expect(history.locator('.revision-texts.is-comparing')).toHaveCount(0);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  const keep = history.getByRole('button', { name: 'Keep current writing', exact: true });
+  await expect(keep).toBeEnabled(); await expect(keep).toBeInViewport();
+  await page.screenshot({ path: evidence + '/conflict-blank-history-' + width + '.png', fullPage: true });
+  const accessibility = await new AxeBuilder({ page }).analyze();
+  expect(accessibility.violations.filter(violation => ['critical', 'serious'].includes(violation.impact ?? ''))).toEqual([]);
+  await keep.click(); await expect(history).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Compare history', exact: true })).toHaveCount(0);
+  const state = await page.evaluate(() => (window as any).__NOVELIAA_TEST__.getSnapshot());
+  expect(state.conflictedDocumentIds).toEqual([ids.other]); expect(state.revisions).toHaveLength(count + 1);
+  await page.reload(); await page.waitForFunction(() => (window as any).__NOVELIAA_TEST__?.getSnapshot().ready);
+  await expect(page.getByRole('button', { name: 'Compare history', exact: true })).toHaveCount(0);
+  expect(await page.evaluate(() => (window as any).__NOVELIAA_TEST__.getSnapshot().conflictedDocumentIds)).toEqual([ids.other]);
+  await page.screenshot({ path: evidence + '/conflict-resolved-page-' + width + '.png', fullPage: true });
+});

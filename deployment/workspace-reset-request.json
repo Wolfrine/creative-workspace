@@ -1,0 +1,9 @@
+{
+  "requestId": "reset_585b26c53f054e56a01b66949bdec5ec",
+  "action": "reset-entire-workspace",
+  "ownerEmail": "schttewary@gmail.com",
+  "approved": true,
+  "authorization": "Owner explicitly requested Reset the entire workspace to scratch on 24 October 2026; supersedes the earlier keep-current-writing answer.",
+  "scope": "Delete all prior Noveliaa pages, universes, collections, exact originals, revision history, operations and chunks. Keep Authentication, owner allowlist, Firebase project and Hosting.",
+  "commitMarker": "[workspace-reset:reset_585b26c53f054e56a01b66949bdec5ec]"
+}

@@ -1,0 +1,10 @@
+{
+  "result": "pass",
+  "scope": "Mechanical repair within accepted Living Atlas and Quiet Folio direction; Central v0.1.0",
+  "desktop": "1440x1000",
+  "mobile": ["390x844", "320x844"],
+  "parentInspection": "Personally inspected actual desktop and mobile blank-history and resolved-writing captures. Controls fit, status belongs to the right page, no empty two-pane comparison or obstructing banner on unrelated writing.",
+  "independentReview": "independent-review.md; critic personally inspected all nine captures and operated the real local matching-blank history at1920x919. Exact seeded conflict resolution and mobile interactions are parent-run browser evidence, not critic-run interactions.",
+  "qa": "Real device engine persists flags, opens actual target history, creates a new resolution revision, retains the other conflict and survives reload. Desktop/mobile viewport, control visibility, horizontal overflow and axe critical/serious checks pass.",
+  "limits": "Synthetic device-preview and Auth/Firestore emulator writing. No production author sign-in, physical phone keyboard or screen-reader acceptance inferred. Production reset proof is recorded separately after release."
+}

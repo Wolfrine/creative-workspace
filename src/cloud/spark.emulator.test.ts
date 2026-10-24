@@ -98,6 +98,26 @@ describe.skipIf(!enabled)('Spark adapter through actual Firestore emulator and o
     await environment.withSecurityRulesDisabled(context => deleteDoc(doc(context.firestore(), 'noveliaaConfig/access')));
     await assertFails(getDocs(collection(db, 'noveliaaWorkspaces/author/universes')));
   });
+  it('revokes every retired workspace path after rotation while preserving owner identity and new-root access', async () => {
+    const retired = await ready(); await retired.commit(await operation('r1', 'Retired synthetic writing'));
+    await environment.withSecurityRulesDisabled(context => setDoc(doc(context.firestore(), 'noveliaaConfig/access'), { ownerUid: 'author', workspaceId: 'reset_synthetic' }));
+    expect((await getDoc(doc(db, 'noveliaaConfig/access'))).data()).toEqual({ ownerUid: 'author', workspaceId: 'reset_synthetic' });
+    for (const kind of ['universes', 'collections', 'documentIdentities', 'documents', 'revisions', 'originals', 'operations', 'chunks', 'blobs']) {
+      await assertFails(getDocs(collection(db, 'noveliaaWorkspaces/author/' + kind)));
+      await assertFails(setDoc(doc(db, 'noveliaaWorkspaces/author/' + kind + '/old_device'), { id: 'old_device' }));
+    }
+    await expect(retired.commit(await operation('old_replay', 'Queued before reset', 'r1'))).rejects.toThrow();
+    const current = createFirestoreAdapter(db, 'author', undefined, 'reset_synthetic');
+    expect(current.workspaceId).toBe('reset_synthetic');
+    expect((await current.load()).accountId).toBe('author');
+    expect((await current.load()).documents).toEqual([]);
+    await current.putCatalog([universe], []); await current.registerDocuments!([{ id: 'scene', universeId: 'world' }]);
+    expect(await current.commit(await operation('new_first', 'Clean start'))).toEqual({ status: 'synced', headRevisionId: 'new_first' });
+    expect((await current.load()).documents[0].plainText).toBe('Clean start');
+    for (const context of [environment.authenticatedContext('other'), environment.unauthenticatedContext()]) await assertFails(getDocs(collection(context.firestore(), 'noveliaaWorkspaces/reset_synthetic/universes')));
+    await assertFails(getDoc(doc(db, 'noveliaaOperations/workspaceReset-reset_synthetic')));
+    await assertFails(setDoc(doc(db, 'noveliaaOperations/workspaceReset-reset_synthetic'), { status: 'complete' }));
+  });
   it('denies direct head rollback, missing revision/receipt and unattached revision creation', async () => {
     const adapter = await ready(); await adapter.commit(await operation('r1', 'One')); await adapter.commit(await operation('r2', 'Two', 'r1'));
     await assertFails(setDoc(doc(db, path('documents', 'scene')), { id: 'scene', universeId: 'world', headRevisionId: 'r1', operationId: 'r1' }));

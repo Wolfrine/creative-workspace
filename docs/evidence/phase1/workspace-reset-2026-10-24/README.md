@@ -1,0 +1,15 @@
+# Authorized workspace reset and conflict repair — 24 October 2026
+
+The owner explicitly requested “Reset the entire workspace to scratch,” superseding the earlier keep-current-writing answer. `deployment/workspace-reset-request.json` binds this authorization to one idempotent request. This evidence folder describes synthetic tests; it is not itself proof of production deletion.
+
+The existing main GitHub Action deploys the tested app and owner-only Rules, verifies Hosting file digests and the exact Firebase app, then runs the reset only for the commit carrying that request marker. The Admin script verifies project, request ID, approval, owner email and the existing Auth UID. It atomically rotates the active workspace key and records the retired roots before recursive deletion. A repeated or interrupted attempt resumes the same retired roots; it never deletes fresh writing in the new workspace.
+
+Retired namespaces immediately fail Rules. The app watches the server-confirmed active key, preserves sign-in, remounts a fresh device store and removes older writing stores for this account where browser enumeration is supported. An offline device learns the reset when connected; its former cloud namespace cannot upload again. Firestore SDK cache entries and downloaded exports are not a forensic erasure promise. Google Auth, allowlist owner, Firebase project, Hosting URL and Spark remain.
+
+Conflict state now identifies actual pages. The active page shows a warning only for its own conflict; another-page review control opens that page's history, including universe/Trash context. Keeping current writing creates an explicit revision and retires only reviewed conflict operations after cloud acknowledgment. A new competing edit or unreviewed tab operation stays protected. Matching blank versions use one readable state instead of empty comparison columns.
+
+Verification: `client.log` covers54 unit checks; `rules.log` covers12 real emulator Rules checks; `spark-browser-results.json` covers7 Auth/Firestore Chromium scenarios, including reset, reconnect, idempotence and interruption recovery; `browser-results.json` covers20 writing/production-shell/desktop/mobile scenarios. `evaluations.log` covers26 evidence evaluator checks. `build.log` records the production build. Actual renders and independent review are retained; fixtures are invented, and no production manuscript was seeded.
+
+During development an early reset-mobile test used a hidden desktop selector and timed out; the visible mobile control replaced it. The final complete cloud run passes. Conflict fixtures reload persisted device flags before testing, matching real reopening behavior. Physical phone keyboard/IME and human author acceptance remain separate.
+
+`manifest.json` hashes the exact candidate sources and retained evidence. A later production release record must separately establish the successful Action, deployed file digests and verified-empty retired roots. The app creates only its normal empty “My writing” world until the author begins again.

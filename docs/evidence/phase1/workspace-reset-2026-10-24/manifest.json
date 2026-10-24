@@ -1,0 +1,601 @@
+{
+  "capturedAt": "2026-10-24T15:39:28.954Z",
+  "plan": "Spark",
+  "scope": "Explicit full workspace reset with retired-device write fencing; page-specific conflict review and acknowledged resolution",
+  "dataset": "Synthetic fixtures in real app, IndexedDB, Auth/Firestore emulators and Chromium. Production reset is separately recorded after deployment; no manuscript in test fixtures.",
+  "sourceDigest": "c7531ad584db08bcaa3ac00f985cfcf56cf7bd82917ee9a640c1b38e1a27c1ad",
+  "sources": [
+    {
+      "path": ".firebaserc",
+      "bytes": 44,
+      "sha256": "2f5d0059de2560b628e93ffe5e54936b2f85530a459de61225b51b3e4746b8e3"
+    },
+    {
+      "path": ".github/workflows/firebase-deploy.yml",
+      "bytes": 3723,
+      "sha256": "8d5754bf0541c934ad9d5d19eacdc3a3a928ea915cdfe814073e5148df10816f"
+    },
+    {
+      "path": ".github/workflows/phase1-ci.yml",
+      "bytes": 1446,
+      "sha256": "703c933fc224b8a3099560edece58af7ec6d537fbc1fea0bc1276e43af263a0c"
+    },
+    {
+      "path": "deployment/firebase-binding.json",
+      "bytes": 385,
+      "sha256": "d413525ab2a6e9767def5f300fbaf01c4f2e7aee954e50075dfaa6738e910b51"
+    },
+    {
+      "path": "deployment/workspace-reset-request.json",
+      "bytes": 592,
+      "sha256": "cd7954fb39aca449719c934e98894a1941cf9347bd543ae5399b87a54bb47433"
+    },
+    {
+      "path": "firebase.json",
+      "bytes": 1008,
+      "sha256": "2773f1297ca70a8d0706fa2b121d58a719fcfe5c0287ba6b7e506364f2fbc308"
+    },
+    {
+      "path": "firebase.spark-test.json",
+      "bytes": 243,
+      "sha256": "93b45344f564c34cbfc710559bda4bf0c1da9974764f247a51392e95c017de5c"
+    },
+    {
+      "path": "firestore.rules",
+      "bytes": 8479,
+      "sha256": "620681f4a059a699d367262d087dfe26a0e9233bb9df2de73928d873510d082a"
+    },
+    {
+      "path": "functions/package-lock.json",
+      "bytes": 106920,
+      "sha256": "e398db063c693acc541bdd7a8167e052a02ba9ec6998601504f2b0076ed03d73"
+    },
+    {
+      "path": "functions/package.json",
+      "bytes": 310,
+      "sha256": "734f94ddafea5d9d361a463b95e47fe9d970f7f57cb809674fd33e1de170e1f4"
+    },
+    {
+      "path": "functions/scripts/deploy-spark-rules.mjs",
+      "bytes": 2414,
+      "sha256": "f7b6a76102e9abc0a57c1c70ce4ffd4ed96227ee819bdac203302b24caffe9b5"
+    },
+    {
+      "path": "functions/scripts/prepare-spark-release.mjs",
+      "bytes": 4468,
+      "sha256": "0a05f734dccb49ecdf390e10e31ac2c7cd5e3118ef5fb6b597c98bcfe215162f"
+    },
+    {
+      "path": "functions/scripts/reset-workspace.mjs",
+      "bytes": 6975,
+      "sha256": "aedf587fc19cce63fb5b17d7ba14378025589e951f343862d5f96e2f9b12dcca"
+    },
+    {
+      "path": "index.html",
+      "bytes": 597,
+      "sha256": "27b11d42147071dd9b96e326bfca31de9c52d003d9f95b5fdaa526620939d020"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 368592,
+      "sha256": "afbb12b6e82252fefe157fcac72a20e1799bb6665417d05bc78f85efdf934435"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1656,
+      "sha256": "28e0e0fbf786252811e5097393b5144d89bd512c870f051d293e68963647276b"
+    },
+    {
+      "path": "playwright.config.ts",
+      "bytes": 759,
+      "sha256": "da8099a74c290964169344d9d485d38aeac2308524d06cdc3d8fbb0edd0bd6d0"
+    },
+    {
+      "path": "playwright.spark.config.ts",
+      "bytes": 776,
+      "sha256": "4421d60921895bac6d98b2804ce70ae47e62db4283a3e476353bd97007d1a446"
+    },
+    {
+      "path": "public/favicon.svg",
+      "bytes": 302,
+      "sha256": "5ef276685dd0a12eb853fa8fcca0aa9d3c075a3d6f027ce120e04b35748e2a64"
+    },
+    {
+      "path": "public/manifest.webmanifest",
+      "bytes": 321,
+      "sha256": "ea41bb72a70c94f8e7e78bcdc9701c2465e1eb84d4dd2e9a8dcb3b55e44d09c8"
+    },
+    {
+      "path": "public/sw.js",
+      "bytes": 1461,
+      "sha256": "3b07b5bb98a085f5d46fb399f98e1ef2684a07b291986956c1b616573acf4bbe"
+    },
+    {
+      "path": "scripts/record-refinement-candidate.mjs",
+      "bytes": 3913,
+      "sha256": "e4effb978dd27f986c8f10b4c762342a0345ef6ff252281078085090ddab74dd"
+    },
+    {
+      "path": "scripts/record-workspace-reset-candidate.mjs",
+      "bytes": 3737,
+      "sha256": "235f3750d7f31f9d2dd48fc09afa114303ee9eaadf0952f2430f308023e3f694"
+    },
+    {
+      "path": "scripts/verify-deployment-candidate.mjs",
+      "bytes": 1747,
+      "sha256": "3e50c841f9cc883a4ecec416e85a11c8e9c6d260f0d75415dc169aef9464b586"
+    },
+    {
+      "path": "scripts/verify-hosted.mjs",
+      "bytes": 2251,
+      "sha256": "9744a655bb978110984cbc471cfc851a6a0ffe35bb7c2c9e4025dea3adeedd4c"
+    },
+    {
+      "path": "src/App.tsx",
+      "bytes": 53384,
+      "sha256": "85022c900913c5bbb8c38efcbc44ec5d06f7d6f5871b282cc41c4ad46c5a15b6"
+    },
+    {
+      "path": "src/AppHost.tsx",
+      "bytes": 4601,
+      "sha256": "74a4491cbcb03b4caa841d3ba0eaad0cff0d315f4193530f415d327084070482"
+    },
+    {
+      "path": "src/cloud/firebase.test.ts",
+      "bytes": 2114,
+      "sha256": "d3cd5e98b0761bfe573f4b677b2d7ac2341d38b4dba7c723b8e4aeaf94ff3601"
+    },
+    {
+      "path": "src/cloud/firebase.ts",
+      "bytes": 7839,
+      "sha256": "b35ca303e87cd28189692e397ddbbb9f5e8a500c49ee8167c29869890e2781af"
+    },
+    {
+      "path": "src/cloud/spark-listener.test.ts",
+      "bytes": 5718,
+      "sha256": "64da4a8aee630839325baedd2a00b47fbea1b30be5c45953071a8283799648e0"
+    },
+    {
+      "path": "src/cloud/spark.emulator.test.ts",
+      "bytes": 14482,
+      "sha256": "c527c58e4f5e5e063080d2f1ea48cc2ed9bcc11574ea83252082e077ffb0c362"
+    },
+    {
+      "path": "src/cloud/spark.ts",
+      "bytes": 22392,
+      "sha256": "141f03634970da09fdc03428577382bbf88c13c507bd3be836db7023e7d89023"
+    },
+    {
+      "path": "src/components/DocumentShelfRow.tsx",
+      "bytes": 1252,
+      "sha256": "df6b820bce505dfa5a10737795a31153d69cef9000d58937ab105d00ba833f24"
+    },
+    {
+      "path": "src/components/Modal.tsx",
+      "bytes": 1180,
+      "sha256": "b5d290d7073a27442d178b528c0447990de6042a6b1aee8c2e3a3300f11e73ce"
+    },
+    {
+      "path": "src/components/ParagraphIndent.ts",
+      "bytes": 2954,
+      "sha256": "687a0eae5fbe04f96e2921efb4ddbd5dc2b01169c4a8e8ac981713321d6d2fd7"
+    },
+    {
+      "path": "src/components/RevisionComparison.tsx",
+      "bytes": 3558,
+      "sha256": "2c5b5313bb91b0d6be008e8fd1516ce289da856fa14c6668f78914b3797cad94"
+    },
+    {
+      "path": "src/components/Writer.tsx",
+      "bytes": 10502,
+      "sha256": "b6c817c1eb265d451cafa14872f2e12d08dcf863ae7b215f0f7da125495f7a7d"
+    },
+    {
+      "path": "src/domain/codec.ts",
+      "bytes": 14024,
+      "sha256": "b0f046c8287ccaa3605726c40403ef5cad6d5910068d46b52fb0896dc418c68f"
+    },
+    {
+      "path": "src/domain/model.ts",
+      "bytes": 5003,
+      "sha256": "f5530cd282b05644ac27659f803016c0085701182a94a4517c91524fd1472593"
+    },
+    {
+      "path": "src/domain/paragraph-formatting.test.ts",
+      "bytes": 6791,
+      "sha256": "5ee2537bb58b7f4449b5a2cfb9e19b2cb2f0c8fd84f71fe32f0aa96a33545e8a"
+    },
+    {
+      "path": "src/domain/render.ts",
+      "bytes": 3603,
+      "sha256": "e74ad5040ece35e22f1c13941add23f2c5515d37744fc5fea0f75dff8c3ea517"
+    },
+    {
+      "path": "src/main.tsx",
+      "bytes": 380,
+      "sha256": "060f787e8eb7a2b1f7c0c16cc33b1d054663f5ee076c41f5e8495b60286bcf6d"
+    },
+    {
+      "path": "src/state/cloud-integration.test.ts",
+      "bytes": 36993,
+      "sha256": "3cdb9dca83f2138e0529a2bcd2f4b16e96b6b4aa1ea441a18510378224581394"
+    },
+    {
+      "path": "src/state/engine.test.ts",
+      "bytes": 10748,
+      "sha256": "e80969f7af24905efe35b2960741bf1c7cd624c23a3398e34d47d7d021706605"
+    },
+    {
+      "path": "src/state/engine.ts",
+      "bytes": 31766,
+      "sha256": "7f568724fd69fac5d1adfa585b319dae5162f333e7c3676427f2894201f53e5b"
+    },
+    {
+      "path": "src/state/useWorkspace.ts",
+      "bytes": 1770,
+      "sha256": "c5b897287652409a944b74f42be3a938cf0682a93a810ebd404a52db17e0a281"
+    },
+    {
+      "path": "src/storage/archive.ts",
+      "bytes": 1873,
+      "sha256": "3e146877962af16e9ef5a0f49514ada68df31dc1ccfa5d401a782c5cc1de6875"
+    },
+    {
+      "path": "src/storage/database.ts",
+      "bytes": 12319,
+      "sha256": "67bad17e2623e1497db3a22923ac0e5d4860c9db6820e585cc38e83078ab78d8"
+    },
+    {
+      "path": "src/storage/workspace-reset.test.ts",
+      "bytes": 2814,
+      "sha256": "346fd9c84c58d172d7aa3a92391809466e966e63beef71d6da522321be9fab5b"
+    },
+    {
+      "path": "src/styles.css",
+      "bytes": 68347,
+      "sha256": "0b1e09a3a8905bce33b3dee33fea26d096bf3ce32c8f2deebf00527a9f5e2bf7"
+    },
+    {
+      "path": "tests/browser/conflict.spec.ts",
+      "bytes": 4368,
+      "sha256": "0efb398cec2549214f5ea13bc82262a30c1051073ede60597d55f07eba88b8b2"
+    },
+    {
+      "path": "tests/browser/production.spec.ts",
+      "bytes": 1413,
+      "sha256": "d103bb48aa541eee84d939ecc456629343df308802162f58542e6eb5c85c630a"
+    },
+    {
+      "path": "tests/browser/writing.spec.ts",
+      "bytes": 19034,
+      "sha256": "1c121c7ff2e4c0e1b8f7c8db44ab2e00195d2ee5e7dc2031488c1a4a5ec79701"
+    },
+    {
+      "path": "tests/helpers/emulator-auth.ts",
+      "bytes": 747,
+      "sha256": "4e32d5e9ddeb705acd4bff121e59583b4dee0a02381db076beb38447bcff2bcc"
+    },
+    {
+      "path": "tests/rules.test.mjs",
+      "bytes": 7107,
+      "sha256": "e3cd2bdbc959deaa03ad1ade93cfc43d05526a58a29c49eb27634c14bc30a82b"
+    },
+    {
+      "path": "tests/spark-browser/reset.spec.ts",
+      "bytes": 9378,
+      "sha256": "43a89b882689f5156b1c4f57e85c085e9f353c79eca4176eda6ada5f703bff09"
+    },
+    {
+      "path": "tests/spark-browser/writing.spec.ts",
+      "bytes": 12167,
+      "sha256": "65c2574d7c7ba827edf954a84d84397f7fefa4d13eb832c7631c0c57893c221c"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 359,
+      "sha256": "a4ee61877cb9d7a988ac90cf54622fabfb40220a5bc39e42f043c408d7ff62c2"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 862,
+      "sha256": "5c0632a328551fa9c5248866553525da60080f9cbdb1751e6eb675d88c1ab2f6"
+    },
+    {
+      "path": "vitest.config.ts",
+      "bytes": 161,
+      "sha256": "effcddf543e8d041dcd79f28af05a164309221de1cec9e61f62aafd1ceadb638"
+    }
+  ],
+  "renders": [
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/conflict-blank-history-1440.png",
+      "bytes": 181425,
+      "sha256": "10492e4dc2c57e782bdb651397dbbae6b4af108401835ce30af469defd234220"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/conflict-blank-history-320.png",
+      "bytes": 42411,
+      "sha256": "67deda6a2ffef9d5e739d48011d41bba4d3acb6c2a35e6177cbfb093317b2cd4"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/conflict-blank-history-390.png",
+      "bytes": 43341,
+      "sha256": "fde0fbd3bf751e65c60cdb4c605de8a283e6342190e0e9b63f888e49de9bf9f8"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/conflict-pages-1440.png",
+      "bytes": 178322,
+      "sha256": "114c2e56cd7f6922cb92c392bd463649708297427a3604697294ebba35a6ac96"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/conflict-pages-320.png",
+      "bytes": 65497,
+      "sha256": "309cbda0e6ec493ed16afef798bd841ef7f8b92c6c47dd2d1806ce93eacbc0da"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/conflict-pages-390.png",
+      "bytes": 68843,
+      "sha256": "8c84ae57222ebff25268364b2c0812d6ee91dcd85eba8617457506e5b1185cf4"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/conflict-resolved-page-1440.png",
+      "bytes": 151162,
+      "sha256": "b0173b1af60870afdc93a3c73507acfd63b9a3596d47a2a9f9e9dfd13fec80ba"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/conflict-resolved-page-320.png",
+      "bytes": 29413,
+      "sha256": "eb3bc1127bb2b5bcd0cad76b008be04b5319f929267341d3313424a37dc28ff4"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/conflict-resolved-page-390.png",
+      "bytes": 31172,
+      "sha256": "03f951c96bf4f32373e3dc9fedefa9bf6883094392b04a5ccf759a51373bb530"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/desktop-collection-open.png",
+      "bytes": 171483,
+      "sha256": "0971f7c7a3d222710fc069febbf366c1ab50b023eee631ca1a7e61a99e30c206"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/desktop-reset-clean-start.png",
+      "bytes": 142647,
+      "sha256": "a935053d06af7e7d8741e2c75d87240b1c44732189ffa80b7680ae5a33fb6211"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/indentation-1440.png",
+      "bytes": 164409,
+      "sha256": "81fa39cfe345ce62ca0bb4341a1b91f2b9a579067d00a854373505a11968692a"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/indentation-320.png",
+      "bytes": 38559,
+      "sha256": "7ef686eef08676a0c9827628896ea91dd2c5f4f3d3960cdc4b3554ac62a49ea0"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/indentation-390.png",
+      "bytes": 42992,
+      "sha256": "32f7d620367009c502fca10e6c30092569f1bbfe33f7f5bc74b00549b4a55b2a"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/mobile-reset-clean-start.png",
+      "bytes": 26196,
+      "sha256": "0dad15198924097050fef49d62266e885f1393040c067bd962f17b0fcbc1b98d"
+    }
+  ],
+  "testEvidence": [
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/README.md",
+      "bytes": 3059,
+      "sha256": "d4946ad3b613f9a67e37f5636351e4570b5b1926e0281766aa51ebfd0852f790"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/browser-results.json",
+      "bytes": 24790,
+      "sha256": "e7ac673a7dc11d3320025223592078f22fbb537e2b048be7361ecdaf687fa713"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/browser.log",
+      "bytes": 3089,
+      "sha256": "0fbafea3afdcfd01070189e5d6b2ac0d66018eec950bc0f561ee5fd76e78faa3"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/build.log",
+      "bytes": 2226,
+      "sha256": "6a6e1ba66599fbfd6b14f80af28bcc8ad123e81239fdd7c416b30c1e248de045"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/client.log",
+      "bytes": 342,
+      "sha256": "666269343d020e27ec1a19a0e1339cfae1a1b594597c427965f65ff7f70532ee"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/cloud-browser.log",
+      "bytes": 3739,
+      "sha256": "341860df56ca1e35f952a17bbde075cd06ec8138cc103bf96f1dcef9fd0dccf1"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/evaluations.log",
+      "bytes": 3522,
+      "sha256": "e987f832e2b0fa8363ffe20c18f81f01939aa0ed61b231e9b8924d2551001e8a"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/independent-review.md",
+      "bytes": 4363,
+      "sha256": "0ed24a77f3e24c7b8fddbf69717af1f39373a4f7514b22215ee959a423f94cc4"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/rules.log",
+      "bytes": 1023,
+      "sha256": "2c3e17f34e45e224bc20316a0a18554a492d16367dc55855b64d973f90ffc16a"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/spark-browser-results.json",
+      "bytes": 11650,
+      "sha256": "b6530edeecc5a329dadffd9f3a4b8cb1ed97b42db63186324cf3f515155abcfb"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/structural/after-archive.json",
+      "bytes": 6300,
+      "sha256": "b3e7b7caf906a17a9888bbf6dd6c79f75195d4b40eb27636690bf9a3ffb0243d"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/structural/before-archive.json",
+      "bytes": 5691,
+      "sha256": "0424dcdad78e8a8d0c3dc2c9d29e14649f35ca38e12d057757295503e3b809ba"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/structural/oracle.json",
+      "bytes": 409,
+      "sha256": "1c6801fe417517d3bdd9f94cd5fd04c80d0d52eee0f618b815c10f161085241e"
+    },
+    {
+      "path": "docs/evidence/phase1/workspace-reset-2026-10-24/visual-review.json",
+      "bytes": 1194,
+      "sha256": "f9bb15f9e88a2605f1ad5406a45a1637f5c3c033f674d11dfecba4a356353a4c"
+    }
+  ],
+  "localUnconfiguredBuild": [
+    {
+      "path": "dist/assets/dm-sans-latin-ext-wght-italic-DUE6_iCb.woff2",
+      "bytes": 20808,
+      "sha256": "6e646d2022808fb4532e77d38a9348e4dcf832796be2acc43a79052b60900db2"
+    },
+    {
+      "path": "dist/assets/dm-sans-latin-ext-wght-normal-BOFOeGcA.woff2",
+      "bytes": 18228,
+      "sha256": "a5d38fe99f930275684999b462c7123faa063d9e44e73b4b241723d884aa0f49"
+    },
+    {
+      "path": "dist/assets/dm-sans-latin-wght-italic-Cz4n9dED.woff2",
+      "bytes": 39712,
+      "sha256": "f1a235db5bcb8730707844188d35201ecdf63e56c5dcce97bab24a9c7066091d"
+    },
+    {
+      "path": "dist/assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2",
+      "bytes": 36932,
+      "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543"
+    },
+    {
+      "path": "dist/assets/index-C98JJagw.js",
+      "bytes": 1382240,
+      "sha256": "72db62845ad05f387bf64a7e88938cbdbdeb1303fcdc865f23dbf99fd50e4984"
+    },
+    {
+      "path": "dist/assets/index-V-0wUvJ2.css",
+      "bytes": 72168,
+      "sha256": "c57e0edcc47349bee70cac45768043bda8bd0217c0498cc2561a649e575e4aba"
+    },
+    {
+      "path": "dist/assets/literata-cyrillic-ext-wght-italic-DrMGjC4f.woff2",
+      "bytes": 9612,
+      "sha256": "129e7707a965e6f1b201e607f728b98b2695e5d9f55b669cd2a2da2689f26196"
+    },
+    {
+      "path": "dist/assets/literata-cyrillic-ext-wght-normal-CGKlZYBf.woff2",
+      "bytes": 9728,
+      "sha256": "7be72c7ae574166a4e1a9d2bbaa859ebf3db0a0d29d5f7a58ee53fa596769b33"
+    },
+    {
+      "path": "dist/assets/literata-cyrillic-wght-italic-C2hF6zFe.woff2",
+      "bytes": 29264,
+      "sha256": "62e8c9a48487878d0027e5946773f029f28ec6be99f1f20eb26b6aa401395c29"
+    },
+    {
+      "path": "dist/assets/literata-cyrillic-wght-normal-DLqwHbi6.woff2",
+      "bytes": 28068,
+      "sha256": "df20f1a8ca3c15497861c6dbf36c0c59507ee351301527ec89543747067ad4d7"
+    },
+    {
+      "path": "dist/assets/literata-greek-ext-wght-italic-f6xT_0ee.woff2",
+      "bytes": 12912,
+      "sha256": "5d26f44473fce0446af76fdf43834fa1cf05056b3ec27f661c68e22e7303b402"
+    },
+    {
+      "path": "dist/assets/literata-greek-ext-wght-normal-e3e57Shi.woff2",
+      "bytes": 12192,
+      "sha256": "1e1f541a6f70f2549d1b9661667c26780279c6bd46b91f620961be7e841239d1"
+    },
+    {
+      "path": "dist/assets/literata-greek-wght-italic-9BAkQpca.woff2",
+      "bytes": 19364,
+      "sha256": "e43ead3dd6acf3c07005a1f724d99522065b9363ae9fc6689f544c6782995730"
+    },
+    {
+      "path": "dist/assets/literata-greek-wght-normal-CO1l-giJ.woff2",
+      "bytes": 19252,
+      "sha256": "393643556e420af45f8f0854c30f00e17ac52e85f1df4fd4ae2f2a29e0d279f1"
+    },
+    {
+      "path": "dist/assets/literata-latin-ext-wght-italic-CC1SwlwQ.woff2",
+      "bytes": 43256,
+      "sha256": "ba0e6a12e2f0a1f5d455c23c47068b71f9898c571dcb92dab385294ebdae3e74"
+    },
+    {
+      "path": "dist/assets/literata-latin-ext-wght-normal-BnEbWgdZ.woff2",
+      "bytes": 42656,
+      "sha256": "46792f7cd10b28fb512161caeaaa11b049feb2221ccaa72bb4d4ccc286199155"
+    },
+    {
+      "path": "dist/assets/literata-latin-wght-italic-Bm_GJfSc.woff2",
+      "bytes": 53728,
+      "sha256": "ab198d6616c7cc966f26a4a5b28a3977dc47439640f09d9b3361226bd465c404"
+    },
+    {
+      "path": "dist/assets/literata-latin-wght-normal-DLxlUchJ.woff2",
+      "bytes": 52496,
+      "sha256": "9adbeac5b167fe5ad6c49d9e29aa0c76e2f1bb3b46bf4ebf12a9eca7d3525384"
+    },
+    {
+      "path": "dist/assets/literata-vietnamese-wght-italic-LyOFdRXZ.woff2",
+      "bytes": 11248,
+      "sha256": "126da32bf819312977fdc60e8f745c5248e7e1c806c9d0dac65501a76bc194bc"
+    },
+    {
+      "path": "dist/assets/literata-vietnamese-wght-normal-LcSrhZ7T.woff2",
+      "bytes": 11408,
+      "sha256": "ceed7f68b3f869633ec366dcf5a72ab5a5ee7712794a9af680bd2083744908c5"
+    },
+    {
+      "path": "dist/favicon.svg",
+      "bytes": 302,
+      "sha256": "5ef276685dd0a12eb853fa8fcca0aa9d3c075a3d6f027ce120e04b35748e2a64"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 700,
+      "sha256": "b021e18590e07d4dfe5269016e1fc742057d737d0d0c411f5e18abb271dc50ab"
+    },
+    {
+      "path": "dist/manifest.webmanifest",
+      "bytes": 321,
+      "sha256": "ea41bb72a70c94f8e7e78bcdc9701c2465e1eb84d4dd2e9a8dcb3b55e44d09c8"
+    },
+    {
+      "path": "dist/sw.js",
+      "bytes": 2495,
+      "sha256": "a8d910a437cf7f73d16e0629087fd9a6ab7aa561780524ae1ed2b365480d769c"
+    }
+  ],
+  "browserPasses": 7,
+  "browserFailures": 0,
+  "writingBrowserPasses": 20,
+  "writingBrowserFailures": 0,
+  "clientPasses": 54,
+  "rulePasses": 12,
+  "ruleFailures": 0,
+  "visualInspection": {
+    "result": "pass",
+    "scope": "Mechanical repair within accepted Living Atlas and Quiet Folio direction; Central v0.1.0",
+    "desktop": "1440x1000",
+    "mobile": [
+      "390x844",
+      "320x844"
+    ],
+    "parentInspection": "Personally inspected actual desktop and mobile blank-history and resolved-writing captures. Controls fit, status belongs to the right page, no empty two-pane comparison or obstructing banner on unrelated writing.",
+    "independentReview": "independent-review.md; critic personally inspected all nine captures and operated the real local matching-blank history at1920x919. Exact seeded conflict resolution and mobile interactions are parent-run browser evidence, not critic-run interactions.",
+    "qa": "Real device engine persists flags, opens actual target history, creates a new resolution revision, retains the other conflict and survives reload. Desktop/mobile viewport, control visibility, horizontal overflow and axe critical/serious checks pass.",
+    "limits": "Synthetic device-preview and Auth/Firestore emulator writing. No production author sign-in, physical phone keyboard or screen-reader acceptance inferred. Production reset proof is recorded separately after release."
+  },
+  "limits": "Emulators and rendered browser viewports do not prove physical phone keyboard, screen-reader or human author acceptance. Retired offline caches are cleared after the updated connected app learns the active key; Rules deny retired cloud writes immediately. Downloaded archives remain outside app control."
+}

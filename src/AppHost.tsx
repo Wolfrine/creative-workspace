@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import App from './App';
-import { createCloudAdapter, initializeFirebaseSession, signInWithGoogle, signOutFirebase, verifyAuthorAccess } from './cloud/firebase';
+import { createCloudAdapter, initializeFirebaseSession, signInWithGoogle, signOutFirebase, verifyAuthorAccess, watchAuthorAccess } from './cloud/firebase';
 import type { Session } from './domain/model';
 import { useWorkspace } from './state/useWorkspace';
 import './styles.css';
 
 function WritingWorkspace({ session }: { session: Session }) {
-  const cloud = useMemo(() => session.localOnly ? null : createCloudAdapter(session.uid), [session.uid, session.localOnly]);
+  const cloud = useMemo(() => session.localOnly ? null : createCloudAdapter(session.uid, session.workspaceId), [session.uid, session.workspaceId, session.localOnly]);
   const workspace = useWorkspace(session.uid, cloud);
   const protectedSession = { ...session, signOut: async () => { await workspace.flush(); await session.signOut(); } };
   return <App workspace={workspace} session={protectedSession} />;
@@ -34,17 +34,24 @@ export default function AppHost() {
         setSession(null);
         if (!user) { setError(''); setLoading(false); return; }
         setLoading(true);
-        void verifyAuthorAccess(user.uid).then(() => {
+        void verifyAuthorAccess(user.uid).then(workspaceId => {
           if (disposed || client.auth.currentUser?.uid !== user.uid) return;
           setError('');
-          setSession({ uid: user.uid, displayName: user.displayName || 'Author', localOnly: false, signOut: signOutFirebase });
+          setSession({ uid: user.uid, workspaceId, displayName: user.displayName || 'Author', localOnly: false, signOut: signOutFirebase });
           setLoading(false);
         }).catch(problem => { if (disposed || client.auth.currentUser?.uid !== user.uid) return; setSession(null); setError(problem instanceof Error ? problem.message : String(problem)); setLoading(false); });
       }, problem => { setError(problem.message); setLoading(false); });
     }).catch(problem => { setError(problem instanceof Error ? problem.message : String(problem)); setLoading(false); });
     return () => { disposed = true; stop?.(); };
   }, []);
-  if (session) return <WritingWorkspace key={session.uid} session={session} />;
+  const signedInUid = session && !session.localOnly ? session.uid : undefined;
+  useEffect(() => {
+    if (!signedInUid) return;
+    return watchAuthorAccess(signedInUid, workspaceId => {
+      setSession(previous => previous?.uid === signedInUid && previous.workspaceId !== workspaceId ? { ...previous, workspaceId } : previous);
+    }, problem => { setSession(null); setError(problem.message); setLoading(false); });
+  }, [signedInUid]);
+  if (session) return <WritingWorkspace key={session.uid + ':' + (session.workspaceId ?? session.uid)} session={session} />;
   return <main className="connection-gate">
     <div className="gate-wordmark">Noveliaa<span>✦</span></div>
     <div className="gate-rule" />

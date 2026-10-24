@@ -1,0 +1,21 @@
+i  emulators: Starting emulators: firestore
+i  emulators: Detected demo project ID "demo-noveliaa", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail.
+i  firestore: Firestore Emulator logging to firestore-debug.log
++  firestore: Firestore Emulator was started in standard edition.
++  firestore: Firestore Emulator UI websocket is running on 9150.
+i  Running script: node node_modules/vitest/vitest.mjs run src/cloud/spark.emulator.test.ts
+
+ RUN  v5.0.5 C:/Users/Sachit Tewary/Documents/Codex/2026-10-23/review-wolfrine-creative-workspace-github-repo/noveliaa
+
+
+ Test Files  1 passed (1)
+      Tests  12 passed (12)
+   Start at  21:08:14
+   Duration  11.66s (tests 96%, import 4%)
+
++  Script exited successfully (code 0)
+i  emulators: Shutting down emulators.
+i  firestore: Stopping Firestore Emulator
+!  Firestore Emulator has exited upon receiving signal: SIGINT
+i  hub: Stopping emulator hub
+i  logging: Stopping Logging Emulator

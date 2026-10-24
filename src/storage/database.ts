@@ -1,7 +1,7 @@
 import type { CommitOperation, Original, Revision, SaveReceipt, WorkspaceSnapshot, WritingDocument } from '../domain/model';
 import { stableStringify } from '../domain/codec';
 
-export interface PendingOperation extends CommitOperation { status: 'pending' | 'conflict' }
+export interface PendingOperation extends CommitOperation { status: 'pending' | 'conflict'; resolves?: string[] }
 const stores = ['documents', 'revisions', 'originals', 'universes', 'collections', 'receipts', 'outbox', 'preferences'] as const;
 export type StoreName = typeof stores[number];
 export function request<T>(req: IDBRequest<T>): Promise<T> {
@@ -12,8 +12,21 @@ export function completed(transaction: IDBTransaction): Promise<void> {
 }
 export class DeviceDatabase {
   private constructor(readonly db: IDBDatabase, readonly accountId: string) {}
-  static async open(accountId: string): Promise<DeviceDatabase> {
-    const req = indexedDB.open('noveliaa-writing-v1-' + accountId, 1);
+  static async open(accountId: string, workspaceId = accountId): Promise<DeviceDatabase> {
+    if (!/^[A-Za-z0-9_-]{1,150}$/.test(accountId) || !/^[A-Za-z0-9_-]{1,150}$/.test(workspaceId)) throw new Error('Invalid device workspace identity.');
+    const name = 'noveliaa-writing-v1-' + accountId + (workspaceId === accountId ? '' : ':' + workspaceId);
+    // A verified server workspace switch intentionally discards former writing
+    // stores on this device. A different path also prevents offline replay.
+    if (workspaceId !== accountId && typeof indexedDB.databases === 'function') {
+      const previous = (await indexedDB.databases()).map(database => database.name).filter((key): key is string => !!key && key !== name && (key === 'noveliaa-writing-v1-' + accountId || key.startsWith('noveliaa-writing-v1-' + accountId + ':')));
+      for (const key of previous) {
+        const deletion = indexedDB.deleteDatabase(key);
+        // Other open tabs close through onversionchange. Do not block the new
+        // empty workspace if an obsolete browser tab delays its own cleanup.
+        void request(deletion).catch(() => {});
+      }
+    }
+    const req = indexedDB.open(name, 1);
     req.onupgradeneeded = () => { for (const name of stores) req.result.createObjectStore(name, { keyPath: name === 'receipts' ? 'key' : 'id' }); };
     const db = await request(req);
     db.onversionchange = () => db.close();
@@ -65,6 +78,17 @@ export class DeviceDatabase {
     const tx = this.transaction(['outbox', 'preferences']); const done = completed(tx);
     tx.objectStore('preferences').delete('conflict:' + documentId);
     ops.filter(x => x.revision.documentId === documentId && x.status === 'conflict').forEach(x => tx.objectStore('outbox').delete(x.operationId)); await done;
+  }
+  async finishResolution(documentId: string, resolutionId: string, approvedIds: string[]): Promise<boolean> {
+    const tx = this.transaction(['documents', 'outbox', 'preferences']); const done = completed(tx);
+    const [head, operations] = await Promise.all([request<WritingDocument | undefined>(tx.objectStore('documents').get(documentId)), request<PendingOperation[]>(tx.objectStore('outbox').getAll())]);
+    const approved = new Set(approvedIds);
+    const retired = operations.filter(operation => operation.revision.documentId === documentId && operation.status === 'conflict' && approved.has(operation.operationId));
+    retired.forEach(operation => tx.objectStore('outbox').delete(operation.operationId));
+    const unresolved = operations.some(operation => operation.revision.documentId === documentId && operation.operationId !== resolutionId && !approved.has(operation.operationId));
+    const cleared = head?.headRevisionId === resolutionId && !unresolved;
+    if (cleared) tx.objectStore('preferences').delete('conflict:' + documentId);
+    await done; return cleared;
   }
   async markConflict(documentId: string): Promise<void> { await this.setPreference('conflict:' + documentId, true); }
   async conflicts(): Promise<string[]> { return (await this.all<{ id: string; value: unknown }>('preferences')).filter(x => x.id.startsWith('conflict:') && x.value === true).map(x => x.id.slice(9)); }

@@ -73,6 +73,14 @@ jobs:
         run: npx firebase deploy --project noveliaa --only hosting --non-interactive
       - name: Verify every hosted build file and Firebase app identity
         run: node scripts/verify-hosted.mjs
+      # One explicit owner request, idempotent by request ID. Later ordinary
+      # releases do not repeat a reset or change an existing writing workspace.
+      - name: Apply explicitly authorized workspace reset after the guarded app is live
+        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[workspace-reset:reset_585b26c53f054e56a01b66949bdec5ec]')
+        env:
+          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
+          WORKSPACE_RESET_REQUEST_ID: reset_585b26c53f054e56a01b66949bdec5ec
+        run: node functions/scripts/reset-workspace.mjs
       - if: always()
         uses: actions/upload-artifact@v4
         continue-on-error: true
@@ -83,6 +91,7 @@ jobs:
             .local/spark-browser*
             .local/hosted-verification.json
             .local/rules-release.json
+            .local/workspace-reset-result.json
             .local/browser-test-results/
             .local/spark-test-results/
           if-no-files-found: ignore

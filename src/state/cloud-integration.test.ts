@@ -45,6 +45,65 @@ function cloudService(uid = 'author'): CloudAdapter {
 }
 
 describe('Writing engine against actual trusted commit service', () => {
+  async function parallelWriting() {
+    vi.stubGlobal('BroadcastChannel', undefined);
+    const cloud = cloudService(), phoneStore = new IDBFactory(), laptopStore = new IDBFactory();
+    vi.stubGlobal('indexedDB', phoneStore); const phone = await open('author', cloud);
+    const id = await phone.createDocument({ body: textBody('Shared base') }); await phone.sync();
+    vi.stubGlobal('indexedDB', laptopStore); const laptop = await open('author', cloud);
+    laptop.updateDocument(id, { body: textBody('Laptop choice') }); await laptop.flush();
+    phone.updateDocument(id, { body: textBody('Phone branch') }); await phone.flush(); await phone.sync();
+    return { cloud, phone, laptop, laptopStore, id };
+  }
+
+  it('retains conflict warning until keeping current writing is acknowledged, then stays resolved after restart', async () => {
+    const { cloud, laptop, laptopStore, id } = await parallelWriting(); await laptop.sync();
+    expect(laptop.getSnapshot().conflictedDocumentIds).toEqual([id]);
+    const head = laptop.getSnapshot().documents.find(document => document.id === id)!.headRevisionId!;
+    await laptop.restoreRevision(head);
+    expect(laptop.getSnapshot().conflictedDocumentIds).toEqual([id]);
+    await laptop.sync();
+    expect(laptop.getSnapshot().saveState).toBe('synced');
+    expect(laptop.getSnapshot().conflictedDocumentIds).toEqual([]);
+    const remote = await cloud.load();
+    expect(remote.revisions.map(revision => revision.snapshot.plainText)).toEqual(expect.arrayContaining(['Shared base', 'Laptop choice', 'Phone branch']));
+    expect(remote.documents[0].plainText).toBe('Laptop choice');
+    laptop.dispose(); vi.stubGlobal('indexedDB', laptopStore);
+    const reopened = await open('author', cloud);
+    expect(reopened.getSnapshot().conflictedDocumentIds).toEqual([]);
+    expect(reopened.getSnapshot().saveState).toBe('synced');
+  });
+
+  it('uploads queued branches before a resolution and retires only conflicts the author selected', async () => {
+    const { cloud, laptop, id } = await parallelWriting();
+    laptop.updateDocument(id, { body: textBody('Second queued laptop draft') }); await laptop.flush();
+    const head = laptop.getSnapshot().documents.find(document => document.id === id)!.headRevisionId!;
+    await laptop.restoreRevision(head); await laptop.sync();
+    expect(laptop.getSnapshot().saveState).toBe('synced');
+    expect(laptop.getSnapshot().conflictedDocumentIds).toEqual([]);
+    const remote = await cloud.load();
+    expect(remote.documents[0].plainText).toBe('Second queued laptop draft');
+    expect(remote.revisions.map(revision => revision.snapshot.plainText)).toEqual(expect.arrayContaining(['Laptop choice', 'Second queued laptop draft', 'Phone branch']));
+  });
+
+  it('keeps a new competing cloud edit visible when the explicit resolution itself loses', async () => {
+    const { cloud, phone, laptop, id } = await parallelWriting(); await laptop.sync();
+    const head = laptop.getSnapshot().documents.find(document => document.id === id)!.headRevisionId!;
+    await laptop.restoreRevision(head);
+    phone.updateDocument(id, { body: textBody('New phone edit during selection') }); await phone.sync();
+    await laptop.sync();
+    expect(laptop.getSnapshot().saveState).toBe('conflict');
+    expect(laptop.getSnapshot().conflictedDocumentIds).toEqual([id]);
+    expect((await cloud.load()).documents[0].plainText).toBe('New phone edit during selection');
+  });
+
+  it('a conflict on one page does not attribute a conflict to an unrelated blank page', async () => {
+    const { laptop, id } = await parallelWriting(); await laptop.sync();
+    const blank = await laptop.createDocument(); await laptop.selectDocument(blank);
+    expect(laptop.getSnapshot().activeDocumentId).toBe(blank);
+    expect(laptop.getSnapshot().conflictedDocumentIds).toEqual([id]);
+    expect(laptop.getSnapshot().documents.find(document => document.id === blank)?.plainText).toBe('');
+  });
   it('drains a remote change delivered during the initial device hydration', async () => {
     vi.stubGlobal('BroadcastChannel', undefined);
     const cloud = cloudService(), phone = await open('author', cloud);
