@@ -1,5 +1,10 @@
 const DAY = 86400000;
 const date = time => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(time);
+export function monitoringFailure(payload, httpStatus) {
+  const info = payload.error?.details?.find(value => value['@type']?.endsWith('/google.rpc.ErrorInfo'));
+  const permission = info?.metadata?.permission ?? /Permission ['"]?([A-Za-z][A-Za-z0-9_.]+)['"]? (?:denied|is required)/i.exec(payload.error?.message ?? '')?.[1];
+  return { status: 'unavailable', reason: info?.reason ?? payload.error?.status ?? 'HTTP_' + httpStatus, httpStatus, ...(permission ? { permission } : {}) };
+}
 export function summarizeUsage(metrics, now = new Date()) {
   const today = date(now);
   // Calendar arithmetic on the Pacific date avoids skipping DST days.
@@ -8,7 +13,7 @@ export function summarizeUsage(metrics, now = new Date()) {
   const daily = dates.map(day => ({ date: day, reads: null, writes: null, deletes: null }));
   const gauges = {}, availability = {};
   for (const [name, metric] of Object.entries(metrics)) {
-    availability[name] = { status: metric.status, metricType: metric.metricType, ...(metric.reason ? { reason: metric.reason } : {}), ...(metric.httpStatus ? { httpStatus: metric.httpStatus } : {}) };
+    availability[name] = { status: metric.status, metricType: metric.metricType, ...(metric.reason ? { reason: metric.reason } : {}), ...(metric.httpStatus ? { httpStatus: metric.httpStatus } : {}), ...(metric.permission ? { permission: metric.permission } : {}) };
     if (metric.status !== 'available') continue;
     const points = metric.series.flatMap(series => series.points ?? []).map(point => ({ day: date(new Date(new Date(point.interval.endTime).getTime() - 1)), value: Number(point.value.int64Value ?? point.value.doubleValue) })).filter(point => Number.isFinite(point.value));
     if (['reads', 'writes', 'deletes'].includes(name)) {

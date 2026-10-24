@@ -4,9 +4,9 @@ import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
-const manifest = JSON.parse(await readFile('docs/evidence/phase1/sync-2026-10-25/manifest.json', 'utf8'));
+const manifest = JSON.parse(await readFile('docs/evidence/phase1/sync-monitoring-2026-10-25/manifest.json', 'utf8'));
 assert.equal(manifest.plan, 'Spark');
-for (const item of [...manifest.sources, ...manifest.renders, ...manifest.testEvidence]) {
+for (const item of [...manifest.sources, ...manifest.renders, ...manifest.testEvidence, ...(manifest.operationsEvidence ?? [])]) {
   assert.equal(hash(await readFile(item.path)), item.sha256, 'Retained candidate changed: ' + item.path);
 }
 const firebase = JSON.parse(await readFile('firebase.json', 'utf8'));

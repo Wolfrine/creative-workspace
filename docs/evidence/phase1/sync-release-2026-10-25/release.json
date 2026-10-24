@@ -1,0 +1,159 @@
+{
+  "release": {
+    "id": 40121889175,
+    "jobId": 120955059926,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40121889175",
+    "commit": "dd01004731c49cca19005d85a27199a77e59406f",
+    "candidateSourceDigest": "10b18a1a07b77aadd3ec37df1420339f115373c0c3d053a922b4fde5c5cd97f8"
+  },
+  "ci": {
+    "id": 40121889123,
+    "conclusion": "success",
+    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40121889123"
+  },
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-node@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-java@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-python@v5",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm ci --no-audit --no-fund",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm --prefix functions ci --no-audit --no-fund",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm test",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run test:evidence",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run test:rules",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run build",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install Chromium using the hosted runner's existing system libraries",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run test:cloud",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run test:browser",
+      "conclusion": "success"
+    },
+    {
+      "name": "Verify retained Spark source and visual evidence",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run google-github-actions/auth@v2",
+      "conclusion": "success"
+    },
+    {
+      "name": "Verify exact Firebase app, site and private author on Spark",
+      "conclusion": "success"
+    },
+    {
+      "name": "Build with verified public Firebase SDK configuration",
+      "conclusion": "success"
+    },
+    {
+      "name": "Release owner-only Rules using the supported Admin SDK",
+      "conclusion": "success"
+    },
+    {
+      "name": "Publish the matching Hosting site",
+      "conclusion": "success"
+    },
+    {
+      "name": "Verify every hosted build file and Firebase app identity",
+      "conclusion": "success"
+    },
+    {
+      "name": "Apply explicitly authorized workspace reset after the guarded app is live",
+      "conclusion": "skipped"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run google-github-actions/auth@v2",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-python@v5",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-java@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-node@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ],
+  "artifact": {
+    "id": 12570829403,
+    "sha256": "953f508c693fec021f9c39d8492d0dff4d8f03a6633c506de8bf80c215bcd925"
+  },
+  "productionVisualCheck": {
+    "url": "https://noveliaa.web.app",
+    "script": "/assets/index-xW9PBgcd.js",
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 1000,
+        "result": "pass"
+      },
+      {
+        "width": 320,
+        "height": 844,
+        "scrollWidth": 320,
+        "result": "pass"
+      }
+    ],
+    "consoleErrors": 0,
+    "surface": "Google sign-in gate; authenticated writing/sync verified in Auth/Firestore emulators",
+    "updateActivation": "Existing coherent service-worker cache was observed on first reopen; after the new worker finished and all app tabs closed, the new module was confirmed on a fresh tab.",
+    "limits": "No production auth bypass, writing seed, physical mobile keyboard or human author acceptance inferred."
+  }
+}

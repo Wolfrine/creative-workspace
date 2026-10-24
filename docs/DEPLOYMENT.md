@@ -5,6 +5,40 @@ project `noveliaa` (278082781314), Web App
 `1:278082781314:web:9a4b7acef07fa8e4dfb49b`. Localhost is development evidence
 only. Deployment is already authorized; the owner requires Spark.
 
+**25 October save/sync release: live and verified from `main`.** Application
+commit `dd01004731c49cca19005d85a27199a77e59406f` passed
+[Firebase release 40121889175](https://github.com/Wolfrine/creative-workspace/actions/runs/40121889175)
+and [CI 40121889123](https://github.com/Wolfrine/creative-workspace/actions/runs/40121889123).
+The runner passed 71 client, 12 Rules, 7 authenticated and 23 writing/browser
+checks plus 26 evidence evaluations. Source-bound local evidence also retains
+20/20 forced Chromium crash recoveries. The release verified all 24 configured
+Hosting files and the exact Firebase app/site. Independent HTTP SHA-256 checks
+matched those 24 artifact files; the Rules digest remains
+`620681f4a059a699d367262d087dfe26a0e9233bb9df2de73928d873510d082a`.
+The earlier guarded reset step was **skipped**; no new reset was requested.
+
+The live module is `assets/index-xW9PBgcd.js`. The hosted sign-in gate was visually
+checked at 1440x1000 and 320x844 with no console error or mobile overflow.
+Authenticated writing, offline recovery, draft timing, clean device refresh and
+real conflicts use actual emulator/Chromium tests; the owner's production
+writing and physical keyboard remain separate acceptance. [Release/readback
+proof](evidence/phase1/sync-release-2026-10-25/release.json) and
+[writing evidence](evidence/phase1/sync-2026-10-25/manifest.json) retain the distinction.
+
+Device saves now wait 10 seconds after the last edit; cloud work waits 60 seconds.
+Background/navigation saves are local only. The quiet icon opens sync details.
+Current heads/catalog retain long-lived listeners; complete history loads on
+request. See [the exact contract](SYNC.md). Old open tabs keep their coherent
+cached app: after the current writing is synced, close all Noveliaa tabs and
+reopen once the new service worker has downloaded to activate the update.
+
+The weekly review runs Monday 10:30 India time, following a 10:00 Actions audit.
+The first headless API audit returned 403; the existing owner console provided a
+real baseline and the review now has that fallback. There was no IAM, key, API or
+billing change. [Operations and baseline](operations/firestore-usage.md) document
+availability and measurement limits. A monitoring-only follow-up preserves the
+byte-identical application and original release evidence.
+
 **October 24 refinement release: live and verified from `main`.** Commit
 `ae09cd8f636d985c5a3ec7a7b40fc2dc405e915a` was published by
 [deployment attempt 5](https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018/attempts/5),

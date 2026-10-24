@@ -1,7 +1,7 @@
 // Read-only aggregate monitoring. Never connects to Firestore or reads writing.
 import { applicationDefault } from 'firebase-admin/app';
 import { readFile, writeFile, mkdir, appendFile } from 'node:fs/promises';
-import { summarizeUsage } from '../../scripts/summarize-firestore-usage.mjs';
+import { summarizeUsage, monitoringFailure } from '../../scripts/summarize-firestore-usage.mjs';
 
 const binding = JSON.parse(await readFile('deployment/firebase-binding.json', 'utf8'));
 if (process.env.VERIFIED_PROJECT !== 'noveliaa' || binding.projectId !== 'noveliaa' || binding.planConstraint !== 'Spark') throw new Error('Usage audit target mismatch.');
@@ -22,14 +22,14 @@ for (const [name, suffix, aligner] of definitions) {
       const token = await credential.getAccessToken();
       const response = await fetch('https://monitoring.googleapis.com/v3/projects/noveliaa/timeSeries?' + query, { headers: { Authorization: 'Bearer ' + token.access_token }, signal: AbortSignal.timeout(30000) });
       const data = await response.json();
-      if (!response.ok) throw Object.assign(new Error('Monitoring request unavailable'), { code: data.error?.status ?? 'HTTP_' + response.status, httpStatus: response.status });
+      if (!response.ok) throw Object.assign(new Error('Monitoring request unavailable'), monitoringFailure(data, response.status));
       series.push(...(data.timeSeries ?? [])); pageToken = data.nextPageToken;
       if (!pageToken) break;
     }
     metrics[name] = { status: series.some(row => row.points?.length) ? 'available' : 'no-data', metricType, series };
   } catch (error) {
     // No token, credential path, API response body or manuscript enters output.
-    metrics[name] = { status: 'unavailable', metricType, reason: error.code ?? error.name ?? 'REQUEST_FAILED', ...(error.httpStatus ? { httpStatus: error.httpStatus } : {}) };
+    metrics[name] = { status: 'unavailable', metricType, reason: error.reason ?? error.code ?? error.name ?? 'REQUEST_FAILED', ...(error.httpStatus ? { httpStatus: error.httpStatus } : {}), ...(error.permission ? { permission: error.permission } : {}) };
   }
 }
 const report = summarizeUsage(metrics, now);

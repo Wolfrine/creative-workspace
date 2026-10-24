@@ -33,6 +33,9 @@ jobs:
         with:
           credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
       - name: Read aggregate production usage without reading writing
+        # Keep the diagnostic report available; the thread review uses the
+        # existing owner console if this identity cannot read Monitoring.
+        continue-on-error: true
         env:
           VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
         run: node functions/scripts/firestore-usage.mjs
