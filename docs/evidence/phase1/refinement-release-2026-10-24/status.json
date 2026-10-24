@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-24T10:42:57.928Z",
+  "checkedAt": "2026-10-24T11:03:41.418Z",
   "applicationCommit": "ae09cd8f636d985c5a3ec7a7b40fc2dc405e915a",
   "branch": "main",
   "sourceDigest": "067302b3554dacb9904e7a96c8d9a45808999f9cd8dd968ceada5780a460bed1",
@@ -7,23 +7,26 @@
   "deploymentRun": {
     "id": 40086703018,
     "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018",
-    "attempt": 2,
+    "attempt": 4,
     "status": "completed",
     "conclusion": "failure",
-    "stepsStarted": 0
+    "stepsStarted": 0,
+    "jobId": 120855526488
   },
   "ciRun": {
     "id": 40086702833,
     "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40086702833",
     "status": "completed",
     "conclusion": "failure",
-    "stepsStarted": 0
+    "stepsStarted": 0,
+    "attempt": 2,
+    "jobId": 120855068161
   },
   "annotation": {
     "source": "Visible GitHub deployment job annotation, read through authenticated browser UI",
-    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018/job/120851008557",
+    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018/job/120855526488",
     "message": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings",
-    "screenshot": "github-block.png"
+    "screenshot": "github-block-attempt-4.png"
   },
   "localVerification": {
     "client": 47,
@@ -50,5 +53,18 @@
     "configured Rules/Hosting deployment readback",
     "new hosted desktop/mobile checks",
     "physical-device keyboard/IME and owner production session acceptance"
+  ],
+  "retryHistory": [
+    {
+      "ownerReportedResolved": true,
+      "deploymentAttempts": [
+        3,
+        4
+      ],
+      "ciAttempts": [
+        2
+      ],
+      "result": "All stopped before checkout; latest visible annotation repeats account payment/spending-limit restriction."
+    }
   ]
 }

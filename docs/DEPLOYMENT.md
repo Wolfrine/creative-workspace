@@ -12,7 +12,11 @@ and [CI Action](https://github.com/Wolfrine/creative-workspace/actions/runs/4008
 stopped before checkout. GitHub's visible job annotation says: “The job was not
 started because recent account payments have failed or your spending limit needs
 to be increased. Please check the 'Billing & plans' section in your settings”.
-A single deployment retry also stopped before any step. No new Firebase release
+A single deployment retry also stopped before any step. After the owner reported
+the account restriction resolved, deployment attempts 3 and 4 and CI attempt 2
+again stopped before checkout. The latest annotation at 11:02 UTC still repeats
+the same account restriction; see [attempt 4](https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018/job/120855526488).
+No new Firebase release
 occurred. The live site still serves the previous successful release.
 
 The human owner must resolve the GitHub account payment/spending-limit block;
