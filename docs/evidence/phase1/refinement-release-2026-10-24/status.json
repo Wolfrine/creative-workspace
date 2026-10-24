@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-24T11:03:41.418Z",
+  "checkedAt": "2026-10-24T11:19:40.196Z",
   "applicationCommit": "ae09cd8f636d985c5a3ec7a7b40fc2dc405e915a",
   "branch": "main",
   "sourceDigest": "067302b3554dacb9904e7a96c8d9a45808999f9cd8dd968ceada5780a460bed1",
@@ -7,26 +7,18 @@
   "deploymentRun": {
     "id": 40086703018,
     "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018",
-    "attempt": 4,
+    "attempt": 5,
+    "jobId": 120857566263,
     "status": "completed",
-    "conclusion": "failure",
-    "stepsStarted": 0,
-    "jobId": 120855526488
+    "conclusion": "success"
   },
   "ciRun": {
     "id": 40086702833,
     "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40086702833",
+    "attempt": 3,
+    "jobId": 120857658062,
     "status": "completed",
-    "conclusion": "failure",
-    "stepsStarted": 0,
-    "attempt": 2,
-    "jobId": 120855068161
-  },
-  "annotation": {
-    "source": "Visible GitHub deployment job annotation, read through authenticated browser UI",
-    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018/job/120855526488",
-    "message": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings",
-    "screenshot": "github-block-attempt-4.png"
+    "conclusion": "success"
   },
   "localVerification": {
     "client": 47,
@@ -40,19 +32,17 @@
     "visual": "Desktop/mobile parent and independent critic inspected actual renders",
     "dataset": "Invented synthetic fixtures; no production manuscript"
   },
-  "published": false,
+  "published": true,
   "firebasePlan": "Spark",
-  "externalAction": "Human owner resolves GitHub Actions account billing/spending-limit restriction, then existing main workflow rerun and hosted verification.",
+  "externalAction": null,
   "notChanged": [
     "GitHub billing/spending limits",
     "Firebase billing/IAM/secrets",
     "existing production manuscripts"
   ],
   "remaining": [
-    "Actions checks on runner",
-    "configured Rules/Hosting deployment readback",
-    "new hosted desktop/mobile checks",
-    "physical-device keyboard/IME and owner production session acceptance"
+    "Owner production writing/sign-in session and physical mobile keyboard/IME acceptance",
+    "Independent scheduled disaster backup remains deferred on Spark"
   ],
   "retryHistory": [
     {
@@ -65,6 +55,58 @@
         2
       ],
       "result": "All stopped before checkout; latest visible annotation repeats account payment/spending-limit restriction."
+    },
+    {
+      "ownerRequestedRetry": true,
+      "deploymentAttempts": [
+        5
+      ],
+      "ciAttempts": [
+        3
+      ],
+      "result": "All release and CI checks passed; Rules readback, Hosting publication and 24 configured hosted file comparisons succeeded."
     }
-  ]
+  ],
+  "previousBlock": {
+    "source": "Visible GitHub deployment job annotation, read through authenticated browser UI",
+    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018/job/120855526488",
+    "message": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings",
+    "screenshot": "github-block-attempt-4.png",
+    "resolved": true
+  },
+  "releaseProof": {
+    "checkedAt": "2026-10-24T11:17:05.833Z",
+    "run": "https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018",
+    "runId": 40086703018,
+    "attempt": 5,
+    "jobId": 120857566263,
+    "branch": "main",
+    "commit": "ae09cd8f636d985c5a3ec7a7b40fc2dc405e915a",
+    "conclusion": "success",
+    "ci": {
+      "run": "https://github.com/Wolfrine/creative-workspace/actions/runs/40086702833",
+      "attempt": 3,
+      "jobId": 120857658062,
+      "conclusion": "success"
+    },
+    "configuredJavaScript": "assets/index-OdbRN10S.js",
+    "rulesReadback": {
+      "releasedRuleset": "433102af-672b-44fe-98b0-c536cbafe4ae",
+      "sha256": "a9fba9d0beab3d05bcde28195b099aae4a56705dba52c0de812c024e3ba2413e",
+      "emulatorChecks": 11
+    },
+    "verifiedBuildFiles": 24,
+    "projectId": "noveliaa",
+    "appId": "1:278082781314:web:9a4b7acef07fa8e4dfb49b",
+    "checks": {
+      "client": 47,
+      "firestoreRules": 11,
+      "authenticatedBrowser": 5,
+      "writingBrowser": 17,
+      "evaluator": 26,
+      "retainedSourceDigest": "067302b3554dacb9904e7a96c8d9a45808999f9cd8dd968ceada5780a460bed1"
+    }
+  },
+  "hostedVerification": "../refinement-hosted-2026-10-24/verification.json",
+  "hostedVisualChecks": "../refinement-hosted-2026-10-24/visual-check.json"
 }

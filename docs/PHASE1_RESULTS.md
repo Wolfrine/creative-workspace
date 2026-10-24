@@ -14,12 +14,13 @@ the Actions release passes. **The Spark release is now live and verified**, with
 
 ## October 24 refinement evidence
 
-Implementation and local verification are complete on `main` at `ae09cd8`.
-**The refinements are not yet live:** GitHub blocked the release before checkout
-because of its account payment/spending-limit restriction. One retry also ran no
-steps. See the [exact deployment status](DEPLOYMENT.md); the prior live release
-remains available. Runner-side CI, configured Hosting verification and new hosted
-visual captures are pending that external account action.
+**The refinements are live at https://noveliaa.web.app**, deployed from `main`
+commit `ae09cd8`. Deployment attempt 5 and CI attempt 3 passed on GitHub after
+the earlier account restriction cleared. Rules source readback and all 24
+configured hosted asset digests matched. An independent live inventory matched
+the exact Firebase Web App and configured JavaScript, followed by actual hosted
+desktop/mobile sign-in inspection. See [release evidence](DEPLOYMENT.md) and
+[hosted checks](evidence/phase1/refinement-hosted-2026-10-24/visual-check.json).
 
 The owner requested themed desktop collection movement, optional first-line
 indentation and quieter sync. The new candidate uses persistent multi-tab

@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-10-24T11:19:04.410Z",
+  "url": "https://noveliaa.web.app/",
+  "surface": "Actual deployed public sign-in gate in the Codex in-app browser",
+  "checks": [
+    {
+      "height": 1000,
+      "scrollWidth": 1440,
+      "signInButton": {
+        "bottom": 677.078125,
+        "height": 45,
+        "left": 615,
+        "right": 825,
+        "top": 632.078125,
+        "width": 210
+      },
+      "width": 1440
+    },
+    {
+      "height": 844,
+      "scrollWidth": 390,
+      "signInButton": {
+        "bottom": 568.875,
+        "height": 45,
+        "left": 90,
+        "right": 300,
+        "top": 523.875,
+        "width": 210
+      },
+      "width": 390
+    },
+    {
+      "height": 844,
+      "scrollWidth": 320,
+      "signInButton": {
+        "bottom": 592.921875,
+        "height": 45,
+        "left": 55,
+        "right": 265,
+        "top": 547.921875,
+        "width": 210
+      },
+      "width": 320
+    }
+  ],
+  "consoleErrors": [],
+  "result": "Parent personally inspected actual desktop 1440x1000 and mobile 390x844/320x844 renders: clear hierarchy, readable text, sign-in button fits, no overlap or horizontal overflow.",
+  "authenticatedWriting": "Validated separately through real Auth/Firestore emulator browser flows and retained writing renders; owner production session and physical keyboard/IME acceptance remain separate.",
+  "screenshots": [
+    "gate-1440.png",
+    "gate-390.png",
+    "gate-320.png"
+  ]
+}

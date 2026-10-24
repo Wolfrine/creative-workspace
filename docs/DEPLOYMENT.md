@@ -5,26 +5,29 @@ project `noveliaa` (278082781314), Web App
 `1:278082781314:web:9a4b7acef07fa8e4dfb49b`. Localhost is development evidence
 only. Deployment is already authorized; the owner requires Spark.
 
-**October 24 refinement release: implemented on `main`, publication blocked.**
-Commit `ae09cd8f636d985c5a3ec7a7b40fc2dc405e915a` contains the tested refinements.
-The [deployment Action](https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018)
-and [CI Action](https://github.com/Wolfrine/creative-workspace/actions/runs/40086702833)
-stopped before checkout. GitHub's visible job annotation says: “The job was not
-started because recent account payments have failed or your spending limit needs
-to be increased. Please check the 'Billing & plans' section in your settings”.
-A single deployment retry also stopped before any step. After the owner reported
-the account restriction resolved, deployment attempts 3 and 4 and CI attempt 2
-again stopped before checkout. The latest annotation at 11:02 UTC still repeats
-the same account restriction; see [attempt 4](https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018/job/120855526488).
-No new Firebase release
-occurred. The live site still serves the previous successful release.
+**October 24 refinement release: live and verified from `main`.** Commit
+`ae09cd8f636d985c5a3ec7a7b40fc2dc405e915a` was published by
+[deployment attempt 5](https://github.com/Wolfrine/creative-workspace/actions/runs/40086703018/attempts/5),
+with [CI attempt 3](https://github.com/Wolfrine/creative-workspace/actions/runs/40086702833/attempts/3)
+also passing. All 47 client, 11 Rules, 5 authenticated browser, 17 writing/browser
+and 26 evaluator tests passed on the runner. The release verified the exact
+Firebase app/site/author, read back the released Rules source, published Hosting
+and compared all **24** hosted file digests against its configured build.
 
-The human owner must resolve the GitHub account payment/spending-limit block;
-no financial setting was changed. Then rerun the existing Action, verify Rules
-readback, all configured hosted asset digests and desktop/mobile hosted renders.
-Firebase remains Spark; the pipeline, secret and target are unchanged.
-[Blocker evidence](evidence/phase1/refinement-release-2026-10-24/status.json)
-includes the exact run/commit and a retained screenshot of the annotation.
+The independent live inventory matches the configured JavaScript
+`assets/index-OdbRN10S.js` and exact Firebase Web App ID. The public sign-in screen
+was visually inspected at desktop 1440×1000 and mobile 390×844/320×844: no
+horizontal overflow, clipped sign-in control or browser console error. Private
+writing, sync and recovery use actual emulator browser evidence; the owner's
+production session and physical mobile keyboard/IME remain separate acceptance.
+See [hosted verification](evidence/phase1/refinement-hosted-2026-10-24/verification.json)
+and [visual checks](evidence/phase1/refinement-hosted-2026-10-24/visual-check.json).
+
+Earlier attempts stopped before checkout because GitHub reported an account
+payment/spending-limit restriction. The owner resolved the account setup and
+requested another retry; attempt 5 completed on 24 October at 11:15 UTC. Historical
+failure screenshots remain alongside the [current release status](evidence/phase1/refinement-release-2026-10-24/status.json).
+Firebase remains Spark; the existing pipeline, secret and target were preserved.
 
 **Main-first delivery (owner instruction, 24 October 2026):** Every agent works,
 commits and deploys directly from `main` unless the owner explicitly specifies
