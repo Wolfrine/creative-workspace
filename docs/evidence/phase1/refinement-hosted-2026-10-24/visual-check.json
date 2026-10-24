@@ -47,8 +47,8 @@
   "result": "Parent personally inspected actual desktop 1440x1000 and mobile 390x844/320x844 renders: clear hierarchy, readable text, sign-in button fits, no overlap or horizontal overflow.",
   "authenticatedWriting": "Validated separately through real Auth/Firestore emulator browser flows and retained writing renders; owner production session and physical keyboard/IME acceptance remain separate.",
   "screenshots": [
-    "gate-1440.png",
-    "gate-390.png",
-    "gate-320.png"
+    "gate-1440.jpg",
+    "gate-390.jpg",
+    "gate-320.jpg"
   ]
 }

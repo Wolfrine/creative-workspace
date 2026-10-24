@@ -24,7 +24,7 @@ the successful run/commit. The live HTML references the configured runner build'
 
 The parent inspected the actual deployed public sign-in screen in the Codex
 in-app browser at 1440×1000, 390×844 and 320×844. `visual-check.json` retains
-DOM measurements and the inspection result. The three PNGs show these actual
+DOM measurements and the inspection result. The three JPEGs show these actual
 renders. No horizontal overflow, clipped sign-in control, overlapping content
 or browser console error was observed. The browser viewport was restored after
 the checks.
