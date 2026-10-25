@@ -1,0 +1,21 @@
+{
+  "artifactId": 12591872938,
+  "zipSha256": "ea4d2ef1203d8e18451780fd5e0d4d3720780930c3d4307bba3a0bf532f633db",
+  "files": [
+    {
+      "archivePath": "rules-release.json",
+      "file": "rules-release.json",
+      "sha256": "d58b71cd938aa0bcbc2549354f182ea0c27fdd6b0f6a1bba39005b9e3b1b6bcc"
+    },
+    {
+      "archivePath": "hosted-verification.json",
+      "file": "hosted-verification.json",
+      "sha256": "1acbb508057923fa0b87b8c7ef0e512c57ac31952c97bff8ae5f6327d25fb39b"
+    },
+    {
+      "archivePath": "spark-browser-results.json",
+      "file": "spark-browser-results.json",
+      "sha256": "1c1f825172f362b2ade73fe98c8c91ac8ddec258337d7d3b593bf71287efa7d5"
+    }
+  ]
+}

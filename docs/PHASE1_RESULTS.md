@@ -14,6 +14,12 @@ the Actions release passes. **The Spark release is now live and verified**, with
 
 ## October 25 Library and private author reader
 
+**Live at https://noveliaa.web.app**, released from `main` commit `a599c52`.
+[Deployment 40174907744](https://github.com/Wolfrine/creative-workspace/actions/runs/40174907744)
+and [CI 40174907781](https://github.com/Wolfrine/creative-workspace/actions/runs/40174907781)
+passed; independent hosted digests matched all 24 files and the exact Firebase
+Web App. Hosted desktop/mobile entry inspection confirmed the new bundle.
+
 The approved extension adds stable collection renaming, dedicated Library Pages/
 Collections and collection-detail views, bounded sidebar shortcuts, and Read in
 mobile navigation. Export remains in the side menu. Collections remain flat and

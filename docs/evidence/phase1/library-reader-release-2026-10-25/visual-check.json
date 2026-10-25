@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-25 08:08:44 UTC",
+  "url": "https://noveliaa.web.app/",
+  "method": "Root personally inspected actual hosted Codex browser screenshots and DOM",
+  "module": "/assets/index-81PB4aNv.js",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "horizontalOverflow": false,
+      "signInReadable": true
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "horizontalOverflow": false,
+      "signInReadable": true
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "serviceWorker": "Initial cached old shell observed. Closed the only owned hosted tab, reopened, and verified the new module on both viewports; no private storage cleared.",
+  "authenticatedWriting": "Actual private UI independently reviewed using isolated synthetic local notebooks and Auth/Firestore emulators. No production login bypass, owner account access or manuscript seeding.",
+  "remaining": "Physical phones, Safari, assistive technology and author production reading comfort remain separate.",
+  "viewportOverrideReset": true
+}

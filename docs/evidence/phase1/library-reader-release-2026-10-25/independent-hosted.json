@@ -1,0 +1,162 @@
+{
+  "checkedAt": "2026-10-25T08:06:16.114Z",
+  "url": "https://noveliaa.web.app",
+  "projectId": "noveliaa",
+  "appId": "1:278082781314:web:9a4b7acef07fa8e4dfb49b",
+  "configuredFiles": [
+    {
+      "path": "assets/dm-sans-latin-ext-wght-italic-DUE6_iCb.woff2",
+      "sha256": "6e646d2022808fb4532e77d38a9348e4dcf832796be2acc43a79052b60900db2",
+      "bytes": 20808,
+      "status": 200
+    },
+    {
+      "path": "assets/dm-sans-latin-ext-wght-normal-BOFOeGcA.woff2",
+      "sha256": "a5d38fe99f930275684999b462c7123faa063d9e44e73b4b241723d884aa0f49",
+      "bytes": 18228,
+      "status": 200
+    },
+    {
+      "path": "assets/dm-sans-latin-wght-italic-Cz4n9dED.woff2",
+      "sha256": "f1a235db5bcb8730707844188d35201ecdf63e56c5dcce97bab24a9c7066091d",
+      "bytes": 39712,
+      "status": 200
+    },
+    {
+      "path": "assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2",
+      "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543",
+      "bytes": 36932,
+      "status": 200
+    },
+    {
+      "path": "assets/index-81PB4aNv.js",
+      "sha256": "d78feebd4fffc55d14f3d961998084876594c4fe7483020ba876148cfa431878",
+      "bytes": 1425509,
+      "status": 200
+    },
+    {
+      "path": "assets/index-BQ8S7tnw.css",
+      "sha256": "b2dce4efddb528e9e676b7e50aef353882080c638cd9669973b535500c49a6ce",
+      "bytes": 93065,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-cyrillic-ext-wght-italic-DrMGjC4f.woff2",
+      "sha256": "129e7707a965e6f1b201e607f728b98b2695e5d9f55b669cd2a2da2689f26196",
+      "bytes": 9612,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-cyrillic-ext-wght-normal-CGKlZYBf.woff2",
+      "sha256": "7be72c7ae574166a4e1a9d2bbaa859ebf3db0a0d29d5f7a58ee53fa596769b33",
+      "bytes": 9728,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-cyrillic-wght-italic-C2hF6zFe.woff2",
+      "sha256": "62e8c9a48487878d0027e5946773f029f28ec6be99f1f20eb26b6aa401395c29",
+      "bytes": 29264,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-cyrillic-wght-normal-DLqwHbi6.woff2",
+      "sha256": "df20f1a8ca3c15497861c6dbf36c0c59507ee351301527ec89543747067ad4d7",
+      "bytes": 28068,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-greek-ext-wght-italic-f6xT_0ee.woff2",
+      "sha256": "5d26f44473fce0446af76fdf43834fa1cf05056b3ec27f661c68e22e7303b402",
+      "bytes": 12912,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-greek-ext-wght-normal-e3e57Shi.woff2",
+      "sha256": "1e1f541a6f70f2549d1b9661667c26780279c6bd46b91f620961be7e841239d1",
+      "bytes": 12192,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-greek-wght-italic-9BAkQpca.woff2",
+      "sha256": "e43ead3dd6acf3c07005a1f724d99522065b9363ae9fc6689f544c6782995730",
+      "bytes": 19364,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-greek-wght-normal-CO1l-giJ.woff2",
+      "sha256": "393643556e420af45f8f0854c30f00e17ac52e85f1df4fd4ae2f2a29e0d279f1",
+      "bytes": 19252,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-latin-ext-wght-italic-CC1SwlwQ.woff2",
+      "sha256": "ba0e6a12e2f0a1f5d455c23c47068b71f9898c571dcb92dab385294ebdae3e74",
+      "bytes": 43256,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-latin-ext-wght-normal-BnEbWgdZ.woff2",
+      "sha256": "46792f7cd10b28fb512161caeaaa11b049feb2221ccaa72bb4d4ccc286199155",
+      "bytes": 42656,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-latin-wght-italic-Bm_GJfSc.woff2",
+      "sha256": "ab198d6616c7cc966f26a4a5b28a3977dc47439640f09d9b3361226bd465c404",
+      "bytes": 53728,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-latin-wght-normal-DLxlUchJ.woff2",
+      "sha256": "9adbeac5b167fe5ad6c49d9e29aa0c76e2f1bb3b46bf4ebf12a9eca7d3525384",
+      "bytes": 52496,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-vietnamese-wght-italic-LyOFdRXZ.woff2",
+      "sha256": "126da32bf819312977fdc60e8f745c5248e7e1c806c9d0dac65501a76bc194bc",
+      "bytes": 11248,
+      "status": 200
+    },
+    {
+      "path": "assets/literata-vietnamese-wght-normal-LcSrhZ7T.woff2",
+      "sha256": "ceed7f68b3f869633ec366dcf5a72ab5a5ee7712794a9af680bd2083744908c5",
+      "bytes": 11408,
+      "status": 200
+    },
+    {
+      "path": "favicon.svg",
+      "sha256": "5ef276685dd0a12eb853fa8fcca0aa9d3c075a3d6f027ce120e04b35748e2a64",
+      "bytes": 302,
+      "status": 200
+    },
+    {
+      "path": "index.html",
+      "sha256": "e4fbb93615f5deefc63c1def445e8552ebef7061e02faa46b85ef100d3448e53",
+      "bytes": 700,
+      "status": 200
+    },
+    {
+      "path": "manifest.webmanifest",
+      "sha256": "ea41bb72a70c94f8e7e78bcdc9701c2465e1eb84d4dd2e9a8dcb3b55e44d09c8",
+      "bytes": 321,
+      "status": 200
+    },
+    {
+      "path": "sw.js",
+      "sha256": "bb7d5f84d4ea1c4cf47677489ebc3cde93f6e40c541a873aabea15d6e0bf2c49",
+      "bytes": 2495,
+      "status": 200
+    }
+  ],
+  "rules": {
+    "checkedAt": "2026-10-25T08:04:39.492Z",
+    "projectId": "noveliaa",
+    "previousRuleset": "aae2bd04-036d-4d56-a0f0-ae6cb6cc9640",
+    "releasedRuleset": "383772fe-4dec-4687-9420-7658477e66b3",
+    "sha256": "124b44b93e83e832105ee7da5ea62b4e9acef691e74a66581f6e3ff25e466d30",
+    "emulatorChecks": "15 passed in this workflow before release",
+    "method": "Firebase Admin SDK releaseFirestoreRulesetFromSource; matching source readback verified"
+  },
+  "authenticatedOwnerAcceptance": "Not inferred from hosted entry inspection or emulator fixtures"
+}

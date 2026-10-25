@@ -1,0 +1,217 @@
+{
+  "release": {
+    "id": 40174907744,
+    "jobId": 121113390683,
+    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40174907744",
+    "commit": "a599c52ed773e4d69e464619aa1a9933bb751bd7",
+    "status": "completed",
+    "conclusion": "success",
+    "candidateSourceDigest": "6df5e5da61de72de16267085bc5182151c2685d26414128053ccb5125f2e5a41"
+  },
+  "ci": {
+    "id": 40174907781,
+    "jobId": 121113390563,
+    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40174907781",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2
+    },
+    {
+      "name": "Run actions/setup-node@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3
+    },
+    {
+      "name": "Run actions/setup-java@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4
+    },
+    {
+      "name": "Run actions/setup-python@v5",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5
+    },
+    {
+      "name": "Run npm ci --no-audit --no-fund",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6
+    },
+    {
+      "name": "Run npm --prefix functions ci --no-audit --no-fund",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 7
+    },
+    {
+      "name": "Run npm test",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 8
+    },
+    {
+      "name": "Run npm run test:evidence",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 9
+    },
+    {
+      "name": "Run npm run test:rules",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 10
+    },
+    {
+      "name": "Run npm run build",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 11
+    },
+    {
+      "name": "Install Chromium using the hosted runner's existing system libraries",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 12
+    },
+    {
+      "name": "Run npm run test:cloud",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 13
+    },
+    {
+      "name": "Run npm run test:browser",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 14
+    },
+    {
+      "name": "Verify retained Spark source and visual evidence",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 15
+    },
+    {
+      "name": "Run google-github-actions/auth@v2",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 16
+    },
+    {
+      "name": "Verify exact Firebase app, site and private author on Spark",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 17
+    },
+    {
+      "name": "Build with verified public Firebase SDK configuration",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 18
+    },
+    {
+      "name": "Release owner-only Rules using the supported Admin SDK",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 19
+    },
+    {
+      "name": "Publish the matching Hosting site",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 20
+    },
+    {
+      "name": "Verify every hosted build file and Firebase app identity",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 21
+    },
+    {
+      "name": "Apply explicitly authorized workspace reset after the guarded app is live",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 22
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 23
+    },
+    {
+      "name": "Post Run google-github-actions/auth@v2",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 42
+    },
+    {
+      "name": "Post Run actions/setup-python@v5",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 43
+    },
+    {
+      "name": "Post Run actions/setup-java@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 44
+    },
+    {
+      "name": "Post Run actions/setup-node@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 45
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 46
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 47
+    }
+  ],
+  "runnerSummary": [
+    "2026-10-25T08:00:43.1908113Z       Tests  89 passed | 15 skipped (104)",
+    "2026-10-25T08:00:44.3614806Z Ran 26 tests in 0.074s",
+    "2026-10-25T08:00:44.3615389Z OK",
+    "2026-10-25T08:01:00.2429938Z       Tests  15 passed (15)",
+    "2026-10-25T08:03:05.4126683Z   10 passed (1.7m)",
+    "2026-10-25T08:04:26.9120759Z   35 passed (1.3m)",
+    "2026-10-25T08:04:27.0616674Z ***\"plan\":\"Spark\",\"sources\":93,\"actualRenders\":164,\"testEvidence\":30,\"sourceDigest\":\"6df5e5da61de72de16267085bc5182151c2685d26414128053ccb5125f2e5a41\",\"productionOwnerAcceptance\":\"not inferred from emulator evidence\"***",
+    "2026-10-25T08:04:47.8108748Z ***\"url\":\"https://noveliaa.web.app\",\"projectId\":\"noveliaa\",\"appId\":\"1:278082781314:web:9a4b7acef07fa8e4dfb49b\",\"verifiedBuildFiles\":24***"
+  ],
+  "scope": "Private author Library/reader; collections remain flat. Synthetic fixtures only. No production writing accessed or seeded; reset step skipped.",
+  "priorStoppedAttempts": [
+    {
+      "id": 40174076425,
+      "conclusion": "failure",
+      "reason": "New emulator test replaced retained synthetic inventory; retained-evidence check stopped publication."
+    },
+    {
+      "id": 40174190131,
+      "conclusion": "failure",
+      "reason": "Same report-output problem; no publication. Corrected test outputs now stay in .local."
+    }
+  ]
+}

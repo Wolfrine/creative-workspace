@@ -5,6 +5,49 @@ project `noveliaa` (278082781314), Web App
 `1:278082781314:web:9a4b7acef07fa8e4dfb49b`. Localhost is development evidence
 only. Deployment is already authorized; the owner requires Spark.
 
+**25 October Library/private reader release: live and verified from `main`.**
+Commit `a599c52ed773e4d69e464619aa1a9933bb751bd7` passed
+[Firebase release 40174907744](https://github.com/Wolfrine/creative-workspace/actions/runs/40174907744)
+and [CI 40174907781](https://github.com/Wolfrine/creative-workspace/actions/runs/40174907781).
+The runner passed 89 client, 15 actual Rules, 10 authenticated cloud, 35 browser
+and 26 evidence checks. Retained local evidence includes 20/20 crash recoveries,
+five visual cycles, 33 final desktop/mobile renders and separate critic/lead/QA
+review. All data used in those tests is synthetic.
+
+The configured live module is **`assets/index-81PB4aNv.js`**. Independent HTTP
+SHA-256 checks matched all **24** artifact build files and the exact Firebase
+project/App ID. Rules source readback matched
+`124b44b93e83e832105ee7da5ea62b4e9acef691e74a66581f6e3ff25e466d30`.
+The live sign-in screen was personally inspected at 1440x1000 and 320x844 with
+the new module, no horizontal overflow and no browser warnings/errors. No
+production manuscript was opened, seeded, transformed or reset. The guarded
+historical reset step was skipped. See [release and independent readback](evidence/phase1/library-reader-release-2026-10-25/release.json),
+[hosted checks](evidence/phase1/library-reader-release-2026-10-25/visual-check.json)
+and [source/render evidence](evidence/phase1/library-reader-2026-10-25/manifest.json).
+
+Collections remain flat. Inbox remains permanent; rename preserves stable IDs.
+Library and private Read mode preserve the author's exact writing and provenance.
+Reading preferences/position stay local; actual emulator RPC monitoring showed
+zero reader writes. Existing 10-second local / 60-second cloud trailing saves
+remain unchanged. Export stays in the side menu. Shared editions, external AI
+and feedback remain deferred.
+
+The first two release attempts stopped before publication because a test wrote
+fresh synthetic inventories over retained evidence. Test runs now write to
+`.local`, and the successful runner verified all 93 retained source files and
+164 rendered artifacts before publishing. The Rules publisher binds the current
+tested manifest. These corrections changed release/test plumbing, not writing.
+
+Development now uses `F:/Workspace/Programs/Independent-Products/Noveliaa` and
+the F-drive environment helper. The verified C copy is retained unchanged for
+recovery. The existing weekly review now targets F with its schedule unchanged.
+Codex/Windows-managed application state remains the documented platform exception.
+
+After writing is synced, close every Noveliaa tab/window and reopen to activate
+the complete cached update. This was verified during hosted inspection without
+clearing private browser storage. Physical-phone/assistive-technology and author
+production comfort acceptance remain separate from agent browser checks.
+
 **25 October save/sync release: live and verified from `main`.** Application
 commit `dd01004731c49cca19005d85a27199a77e59406f` passed
 [Firebase release 40121889175](https://github.com/Wolfrine/creative-workspace/actions/runs/40121889175)
@@ -103,7 +146,7 @@ session and physical-phone acceptance remain separate.
 [Deploy Noveliaa to Firebase](../.github/workflows/firebase-deploy.yml) uses the
 existing `FIREBASE_SERVICE_ACCOUNT` secret. Before cloud changes it runs unit,
 Rules/emulator, authenticated browser, local-writing browser and evidence checks.
-The current [October 24 refinement manifest](evidence/phase1/refinement-2026-10-24/manifest.json)
+The current [Library/reader manifest](evidence/phase1/library-reader-2026-10-25/manifest.json)
 binds the reviewed source and actual renders. Earlier Spark and visual evidence
 remain intact. Browser runs write temporary reports under `.local` so CI does
 not overwrite retained historical proof.
