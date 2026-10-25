@@ -1,9 +1,9 @@
 {
-  "capturedAt": "2026-10-25T07:46:22.348Z",
+  "capturedAt": "2026-10-25T07:48:42.418Z",
   "plan": "Spark",
   "scope": "Owner-approved stable collection renaming, dedicated Library/collection views and private semantic paginated author Read mode, optional paper-turn motion, mobile Read destination; flat collections and 10s/60s writing contract retained.",
   "dataset": "Synthetic writing only in isolated browser notebooks and actual loopback Auth/Firestore emulators. No production manuscript was accessed or used as a fixture. Existing production release separately verified after main push.",
-  "sourceDigest": "1e1ee77f687c9107c82f80808f8b9bede4bd268db25a1774ef6d3adb05f710c8",
+  "sourceDigest": "3a1865f70f9988e815743d335f63409fc00478c12b1b1ac8c3a31b786fb7408f",
   "sources": [
     {
       "path": ".firebaserc",
@@ -112,8 +112,8 @@
     },
     {
       "path": "functions/scripts/deploy-spark-rules.mjs",
-      "bytes": 2414,
-      "sha256": "f7b6a76102e9abc0a57c1c70ce4ffd4ed96227ee819bdac203302b24caffe9b5"
+      "bytes": 2413,
+      "sha256": "6137175fcff2b123e6a24af4cdcc803aa04cbde284e984cd81c99b126aa2fdab"
     },
     {
       "path": "functions/scripts/firestore-usage.mjs",
