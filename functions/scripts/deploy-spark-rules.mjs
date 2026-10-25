@@ -12,6 +12,7 @@ assert.equal(binding.projectId, 'noveliaa'); assert.equal(binding.planConstraint
 const source = await readFile('firestore.rules', 'utf8');
 const hash = content => createHash('sha256').update(content).digest('hex');
 const candidate = JSON.parse(await readFile('docs/evidence/phase1/library-reader-2026-10-25/manifest.json', 'utf8'));
+assert.equal(candidate.plan, 'Spark');
 assert.equal(candidate.sources.find(item => item.path === 'firestore.rules')?.sha256, hash(source));
 assert(candidate.rulePasses >= 15); assert.equal(candidate.ruleFailures, 0);
 const rules = getSecurityRules(initializeApp({ credential: applicationDefault(), projectId: binding.projectId }));
