@@ -1,0 +1,82 @@
+{
+  "inspectedAt": "2026-10-25",
+  "sources": {
+    "googlePlayVideo": "https://www.youtube.com/watch?v=gOJ15ysPsRo",
+    "kindleHistoricalTutorial": "https://www.youtube.com/watch?v=eiVw4DBM7jo",
+    "curlDemo": "https://nodlik.github.io/StPageFlip/",
+    "googlePlayStore": "https://play.google.com/store/apps/details?id=com.google.android.apps.books&hl=en"
+  },
+  "limits": "Historical independent video reference and current rendered public pages; no claim of current native implementation equivalence. Actual timestamps and failed seeks retained. These are browser screen captures, not fixed-rate motion samples.",
+  "files": [
+    {
+      "source": ".local/reader-reference-inspection/google-play-books.png",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/google-play-books.png",
+      "sha256": "dc26461255c0bbcf125249c8a4018d2356ca066271024b0ee383d92cef8b7a2e"
+    },
+    {
+      "source": ".local/reader-reference-inspection/google-play-books.json",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/google-play-books.json",
+      "sha256": "fc34677b4481ffb8e7d7472ca6ff0e76a7343b613c286ad90ec20e570b2bb5f1"
+    },
+    {
+      "source": ".local/reader-reference-inspection/kindle-25s.png",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/kindle-25s.png",
+      "sha256": "b8ee996b942a5b782f2b43d147d80cf2f650cdae13c2154fdb876fd456b58a8a"
+    },
+    {
+      "source": ".local/reader-reference-inspection/kindle-40s.png",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/kindle-40s.png",
+      "sha256": "cf0322f7586e42e58711d598acc03777418d16ce605fcef7c5a7d533a033c696"
+    },
+    {
+      "source": ".local/reader-reference-inspection/kindle-55s.png",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/kindle-55s.png",
+      "sha256": "50bb0bee3fd5f0db636cd739da5919660514051d6c8f0da9b65bbd463db8879c"
+    },
+    {
+      "source": ".local/reader-reference-inspection/motion.json",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/motion.json",
+      "sha256": "3a1ae95393285cbd2259ac617508a05deafcbeed826729267f3888eb81e0a4ca"
+    },
+    {
+      "source": ".local/reader-reference-inspection/curl-0.png",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/curl-0.png",
+      "sha256": "a878404d74c18e2ff34fc29a7d08d6c08b55b3a026c8e2ee2f4e666f9ec5081f"
+    },
+    {
+      "source": ".local/reader-reference-inspection/curl-120.png",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/curl-120.png",
+      "sha256": "296a2b5ad6e782b4be8f291679c2f4abc928f57f81ab7e2eebbdae9c9518f2e1"
+    },
+    {
+      "source": ".local/reader-reference-inspection/curl-260.png",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/curl-260.png",
+      "sha256": "33419de96211dbb4af1d7e339dd7ae21f44a29339b9e75ddc1e7878ba16c0b0a"
+    },
+    {
+      "source": ".local/reader-reference-inspection/curl-google-motion.json",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/curl-google-motion.json",
+      "sha256": "ef82fee1edfd760849d7a17cf0e69ee04ec395f650b576f7e9cc58c9451db261"
+    },
+    {
+      "source": ".local/reader-reference-inspection/google-play-8s.png",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/google-play-8s.png",
+      "sha256": "7cd7768afd25e51a5dbf49708e33a645204f4ae6914ff66dd8a19669f2b61908"
+    },
+    {
+      "source": ".local/reader-reference-inspection/google-play-11s.png",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/google-play-11s.png",
+      "sha256": "d6cd924abe32fcdc992c4def7f8ad3a007135f027401b245f7b2a91e83aa4cbb"
+    },
+    {
+      "source": ".local/reader-reference-inspection/google-play-14s.png",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/google-play-14s.png",
+      "sha256": "45406598ec83f7d366fddd3fa2bed786ebc26fd71d397031e91f777094592f67"
+    },
+    {
+      "source": ".local/reader-reference-inspection/google-play-18s.png",
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/references/google-play-18s.png",
+      "sha256": "f4215a2c89fe6ea26c94cea7cf74d333403975106ae2a856716191375e6b556a"
+    }
+  ]
+}

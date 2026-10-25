@@ -166,6 +166,7 @@ test('A06 stable links, backlinks and non-drag organization survive title change
   expect(await page.locator('.manuscript a').getAttribute('href')).toBe(href);
   await page.getByRole('button', { name: 'Living Atlas', exact: true }).click();
   await page.locator('.atlas-index').getByRole('button', { name: /The renamed ferry house/ }).click();
+  await page.getByRole('button', { name: 'Open writing', exact: true }).click();
   await expect(page.getByRole('textbox', { name: 'Writing title', exact: true })).toHaveValue('The renamed ferry house');
 });
 

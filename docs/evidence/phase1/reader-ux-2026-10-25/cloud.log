@@ -1,0 +1,51 @@
+
+> noveliaa@0.1.0 test:cloud
+> firebase emulators:exec --only auth,firestore --project demo-noveliaa --config firebase.spark-test.json "playwright test --config playwright.spark.config.ts"
+
+i  emulators: Starting emulators: auth, firestore
+i  emulators: Detected demo project ID "demo-noveliaa", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail.
+i  firestore: Firestore Emulator logging to firestore-debug.log
++  firestore: Firestore Emulator was started in standard edition.
++  firestore: Firestore Emulator UI websocket is running on 9150.
+i  Running script: playwright test --config playwright.spark.config.ts
+[WebServer] (node:195472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 10 tests using 1 worker
+
+(node:195188) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\spark-browser\collection-reader.spec.ts:91:1 › confirmed collection rename streams to a clean independent device without changing manuscript evidence (9.8s)
+[WebServer] 3:22:05 pm [vite] (client) [console.warn] [2026-10-25T09:52:03.011Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x57b9faf0 transport errored. Name: undefined Message: undefined
+[WebServer] 3:22:05 pm [vite] (client) [console.warn] [2026-10-25T09:52:03.101Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x57b9faf1 transport errored. Name: undefined Message: undefined
+[WebServer] 3:22:05 pm [vite] (client) [console.warn] [2026-10-25T09:52:04.511Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x57b9faf2 transport errored. Name: undefined Message: undefined
+  ok  2 tests\spark-browser\collection-reader.spec.ts:111:1 › an offline stale device can add unrelated writing and a collection without undoing the confirmed name (10.3s)
+  ok  3 tests\spark-browser\collection-reader.spec.ts:136:1 › reader entry, page turns, appearance changes and exit leave the complete server inventory unchanged (5.7s)
+  ok  4 tests\spark-browser\reset.spec.ts:55:1 › authorized reset deletes exact originals/history, remounts a clean desktop workspace, preserves Auth and is idempotent (6.1s)
+[WebServer] 3:22:32 pm [vite] (client) [console.warn] [2026-10-25T09:52:22.325Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x607d56db transport errored. Name: undefined Message: undefined
+[WebServer] 3:22:32 pm [vite] (client) [console.warn] [2026-10-25T09:52:22.415Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x607d56dc transport errored. Name: undefined Message: undefined
+[WebServer] 3:22:32 pm [vite] (client) [console.warn] [2026-10-25T09:52:23.680Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x607d56dd transport errored. Name: undefined Message: undefined
+[WebServer] 3:22:32 pm [vite] (client) [console.warn] [2026-10-25T09:52:25.513Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x607d56de transport errored. Name: undefined Message: undefined
+[WebServer] 3:22:32 pm [vite] (client) [console.warn] [2026-10-25T09:52:26.834Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x607d56df transport errored. Name: undefined Message: undefined
+[WebServer] 3:22:32 pm [vite] (client) [console.warn] [2026-10-25T09:52:31.387Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x607d56e0 transport errored. Name: undefined Message: undefined
+  ok  5 tests\spark-browser\reset.spec.ts:90:1 › offline old-device drafts cannot repopulate a reset on reconnect and the mobile session opens its new store (16.2s)
+[WebServer] 3:22:53 pm [vite] (client) [console.warn] [2026-10-25T09:52:42.835Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x3a037fdf transport errored. Name: undefined Message: undefined
+[WebServer] 3:22:53 pm [vite] (client) [console.warn] [2026-10-25T09:52:42.926Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x3a037fe0 transport errored. Name: undefined Message: undefined
+[WebServer] 3:22:53 pm [vite] (client) [console.warn] [2026-10-25T09:52:43.487Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x3a037fe1 transport errored. Name: undefined Message: undefined
+[WebServer] 3:22:53 pm [vite] (client) [console.warn] [2026-10-25T09:52:44.303Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x3a037fe2 transport errored. Name: undefined Message: undefined
+[WebServer] 3:22:53 pm [vite] (client) [console.warn] [2026-10-25T09:52:46.104Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x3a037fe3 transport errored. Name: undefined Message: undefined
+[WebServer] 3:22:53 pm [vite] (client) [console.warn] [2026-10-25T09:52:49.458Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x3a037fe4 transport errored. Name: undefined Message: undefined
+  ok  6 tests\spark-browser\writing.spec.ts:52:1 › real author sign-in, cloud receipt, isolated-device restore, offline checkpoint and reconnect (21.9s)
+  ok  7 tests\spark-browser\writing.spec.ts:85:1 › imported conversation retains exact original and unverified provenance across devices; revision recovery and archive export (7.9s)
+  ok  8 tests\spark-browser\writing.spec.ts:114:1 › unapproved real Auth account is denied before opening the workspace (1.5s)
+  ok  9 tests\spark-browser\writing.spec.ts:124:1 › a used laptop silently refreshes phone edits, then receives live pages and edits with persistent SDK cache (9.4s)
+  ok 10 tests\spark-browser\writing.spec.ts:149:1 › real Firebase retains both genuinely concurrent device edits (16.7s)
+
+  10 passed (1.8m)
++  Script exited successfully (code 0)
+i  emulators: Shutting down emulators.
+i  firestore: Stopping Firestore Emulator
+!  Firestore Emulator has exited upon receiving signal: SIGINT
+i  auth: Stopping Authentication Emulator
+i  hub: Stopping emulator hub
+i  logging: Stopping Logging Emulator

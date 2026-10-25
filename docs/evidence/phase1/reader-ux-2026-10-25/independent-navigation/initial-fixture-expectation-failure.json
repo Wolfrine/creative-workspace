@@ -1,0 +1,18 @@
+{
+  "dataset": "Independent critic UI journey; synthetic AI-generated unverified isolated DEV archive only",
+  "sourceBefore": "488155fe8ec9c3bbdd0ea7d372dfb7f7762adeccf582319389dcd1b77ab65668",
+  "sourceAfter": "488155fe8ec9c3bbdd0ea7d372dfb7f7762adeccf582319389dcd1b77ab65668",
+  "cases": [
+    {
+      "width": 1440,
+      "screenshots": [],
+      "checks": []
+    }
+  ],
+  "errors": [
+    {
+      "fatal": "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  locator('.library-page-row')\nExpected: 2\nReceived: 3\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveCount\" locator('.library-page-row') with timeout 5000ms\n  - waiting for locator('.library-page-row')\n    14 × locator resolved to 3 elements\n       - unexpected value \"3\"\n\n    at captureRawStack (F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\node_modules\\playwright-core\\lib\\coreBundle.js:9282:17)\n    at callMatcherAsStep (F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\node_modules\\playwright\\lib\\matchers\\expect.js:13316:57)\n    at Object.toHaveCount (F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\node_modules\\playwright\\lib\\matchers\\expect.js:13308:23)\n    at F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\critic-navigation.mjs:39:53"
+    }
+  ],
+  "browser": "156.0.8078.4"
+}

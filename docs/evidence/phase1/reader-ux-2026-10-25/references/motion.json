@@ -1,0 +1,25 @@
+{
+  "kindle": [
+    {
+      "requested": 10,
+      "actual": 10,
+      "path": ".local/reader-reference-inspection/kindle-10s.png"
+    },
+    {
+      "requested": 25,
+      "actual": 26.948807,
+      "path": ".local/reader-reference-inspection/kindle-25s.png"
+    },
+    {
+      "requested": 40,
+      "actual": 40,
+      "path": ".local/reader-reference-inspection/kindle-40s.png"
+    },
+    {
+      "requested": 55,
+      "actual": 55,
+      "path": ".local/reader-reference-inspection/kindle-55s.png"
+    }
+  ],
+  "curl": []
+}

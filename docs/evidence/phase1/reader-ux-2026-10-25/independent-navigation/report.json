@@ -1,0 +1,150 @@
+{
+  "dataset": "Independent critic UI journey; synthetic AI-generated unverified isolated DEV archive only",
+  "sourceBefore": "488155fe8ec9c3bbdd0ea7d372dfb7f7762adeccf582319389dcd1b77ab65668",
+  "sourceAfter": "488155fe8ec9c3bbdd0ea7d372dfb7f7762adeccf582319389dcd1b77ab65668",
+  "cases": [
+    {
+      "width": 1440,
+      "screenshots": [
+        {
+          "state": "salt-search",
+          "path": ".local/critic-navigation/salt-search-1440.png",
+          "sha256": "0209698a23fd02e279d8845bcfd90b4990d6055c403689ea95e75a1f0c6fb24a"
+        },
+        {
+          "state": "salt-collection",
+          "path": ".local/critic-navigation/salt-collection-1440.png",
+          "sha256": "694eb81dd3a8fb068cda0d2814449bb161b734c330d4ece41b187e7b46730b7c"
+        },
+        {
+          "state": "reader-return-focus",
+          "path": ".local/critic-navigation/reader-return-focus-1440.png",
+          "sha256": "694eb81dd3a8fb068cda0d2814449bb161b734c330d4ece41b187e7b46730b7c"
+        },
+        {
+          "state": "signal-library",
+          "path": ".local/critic-navigation/signal-library-1440.png",
+          "sha256": "d55e7792f22eb7c3f88e532a4b6b35f266a1fc676aab627a7963f9cfba31f34f"
+        },
+        {
+          "state": "signal-atlas",
+          "path": ".local/critic-navigation/signal-atlas-1440.png",
+          "sha256": "3bfc6ffc16f3fff83988026a59721dd01a15c93b206a3e93c2c7baed1a9ec1f6"
+        },
+        {
+          "state": "signal-edit",
+          "path": ".local/critic-navigation/signal-edit-1440.png",
+          "sha256": "9e88f8f0a4078565b462a3a2dc84661654856071eb5e94b55be0ba20d5ac1a5a"
+        },
+        {
+          "state": "lantern-search",
+          "path": ".local/critic-navigation/lantern-search-1440.png",
+          "sha256": "f9894f7ae14247838d3f142433253941a264f3bf5c3c09258ee96bcf00d03079"
+        }
+      ],
+      "checks": [
+        "Keyboard contents Escape and reader return preserve collection, Detailed layout and Read collection focus without editor activation",
+        "Universe switch clears foreign collection and query and shows Signal Orchard only",
+        "Atlas node/index inspection stays inside Atlas with matching focus",
+        "Explicit Open writing opens the inspected Iona source",
+        "Same-name The window page is scoped to Paper Lantern and its own prose"
+      ]
+    },
+    {
+      "width": 390,
+      "screenshots": [
+        {
+          "state": "salt-search",
+          "path": ".local/critic-navigation/salt-search-390.png",
+          "sha256": "3b1fc014558837fa55351f364bb95f116cf2bebc082a91f04f9b04ffb602d2b9"
+        },
+        {
+          "state": "salt-collection",
+          "path": ".local/critic-navigation/salt-collection-390.png",
+          "sha256": "af15880ef97fd359af3720b3a64af1987f8036332f8a9ef98c90ae24576ced9f"
+        },
+        {
+          "state": "reader-return-focus",
+          "path": ".local/critic-navigation/reader-return-focus-390.png",
+          "sha256": "09627853a5f5380b53b489827520e2f0b6999b2dd5c4fe8fe65bf7288636f0f1"
+        },
+        {
+          "state": "signal-library",
+          "path": ".local/critic-navigation/signal-library-390.png",
+          "sha256": "5727516ce70710c7a2fda239272bc02b266d2d241e3b1e5845139e5a6fb03396"
+        },
+        {
+          "state": "signal-atlas",
+          "path": ".local/critic-navigation/signal-atlas-390.png",
+          "sha256": "fae024fdab0110163d72e592418d718956996a6433c12cc69653b19a5dd31801"
+        },
+        {
+          "state": "signal-edit",
+          "path": ".local/critic-navigation/signal-edit-390.png",
+          "sha256": "0f07643b22d57f018504b281bd1af88a26cc0a79ce32d1ad6e4d9912c2e12e55"
+        },
+        {
+          "state": "lantern-search",
+          "path": ".local/critic-navigation/lantern-search-390.png",
+          "sha256": "4b51a88e7cc998bf6f949f2098f75d3d93024e565104d6ececf7090c95aa8a89"
+        }
+      ],
+      "checks": [
+        "Keyboard contents Escape and reader return preserve collection, Detailed layout and Read collection focus without editor activation",
+        "Universe switch clears foreign collection and query and shows Signal Orchard only",
+        "Atlas node/index inspection stays inside Atlas with matching focus",
+        "Explicit Open writing opens the inspected Iona source",
+        "Same-name The window page is scoped to Paper Lantern and its own prose"
+      ]
+    },
+    {
+      "width": 320,
+      "screenshots": [
+        {
+          "state": "salt-search",
+          "path": ".local/critic-navigation/salt-search-320.png",
+          "sha256": "524e45819faaab6e2fd43c759837604e3cbb6ce9afaee63d9b3dfc1b58eeb0b9"
+        },
+        {
+          "state": "salt-collection",
+          "path": ".local/critic-navigation/salt-collection-320.png",
+          "sha256": "61a55aa6029fe0f863780b63bd8b86f51243eb741b80ef0139fa16c116581be7"
+        },
+        {
+          "state": "reader-return-focus",
+          "path": ".local/critic-navigation/reader-return-focus-320.png",
+          "sha256": "64db95b96a49ec3c81981b277ddba0afeae1c402c80e1af361fc9da3ac19ec29"
+        },
+        {
+          "state": "signal-library",
+          "path": ".local/critic-navigation/signal-library-320.png",
+          "sha256": "fd097cd1d06f2b1f10aeef364e1706d50ed34a41b2fa7d9a3dab0ca0c588cf6c"
+        },
+        {
+          "state": "signal-atlas",
+          "path": ".local/critic-navigation/signal-atlas-320.png",
+          "sha256": "2c22af554844e29576c6baf0ba78db9a8747f28f2ad5293f57d54ea096e04365"
+        },
+        {
+          "state": "signal-edit",
+          "path": ".local/critic-navigation/signal-edit-320.png",
+          "sha256": "eea00d3d040f8e64c7276e33eb3921cbe929fe126aaa0e66187ed0cfa54ed965"
+        },
+        {
+          "state": "lantern-search",
+          "path": ".local/critic-navigation/lantern-search-320.png",
+          "sha256": "8d2a4bba479b725aa2649ebae2b667da73fe4607d49d4c56bea6e153479f9296"
+        }
+      ],
+      "checks": [
+        "Keyboard contents Escape and reader return preserve collection, Detailed layout and Read collection focus without editor activation",
+        "Universe switch clears foreign collection and query and shows Signal Orchard only",
+        "Atlas node/index inspection stays inside Atlas with matching focus",
+        "Explicit Open writing opens the inspected Iona source",
+        "Same-name The window page is scoped to Paper Lantern and its own prose"
+      ]
+    }
+  ],
+  "errors": [],
+  "browser": "156.0.8078.4"
+}

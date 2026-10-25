@@ -1,0 +1,110 @@
+{
+  "package": "page-flip",
+  "version": "2.0.7",
+  "license": "MIT",
+  "source": "https://github.com/Nodlik/StPageFlip",
+  "upstreamSourceSha256": "efa92671bde717e11a03820d29794dbb82a604bf106f41290814621ae9cc408a",
+  "upstreamFiles": [
+    [
+      "src/BasicTypes.ts",
+      "9a4ccb66d87125625d12cae96c6f8c019bc9bd1545c25e3ed461da7a013f3714"
+    ],
+    [
+      "src/Collection/HTMLPageCollection.ts",
+      "ead887f53f1ecc88064c268442391ba3493888c48e43e7234bc70806f79b019b"
+    ],
+    [
+      "src/Collection/ImagePageCollection.ts",
+      "6b7ea19b6a23b5d7f46bec904ff137b01c4bc7a184308ab39bdb4701b558e4fe"
+    ],
+    [
+      "src/Collection/PageCollection.ts",
+      "dfcb09bff51779bd6bb01d220f328b979f0878b8c6eb87a5de498bf72b088326"
+    ],
+    [
+      "src/Event/EventObject.ts",
+      "29142f0a22e268c3315e2425dfc94b868ad527ce3543105a3eaf08901e00a9ae"
+    ],
+    [
+      "src/Flip/Flip.ts",
+      "b693959a204a457e4440b8988d6340d45b56d2a7cfc5ba6118d267afdc95d63f"
+    ],
+    [
+      "src/Flip/FlipCalculation.ts",
+      "0f910941124f6d79a0ebc439219beeb2f9af0cc054bf41be15ee82f8799fdbb1"
+    ],
+    [
+      "src/Helper.ts",
+      "3bff04d1162c3701190009c1caf48904b4d2395926b8827a633ae6d242db7a25"
+    ],
+    [
+      "src/Page/HTMLPage.ts",
+      "9b511e38dc153f4a21eac3af84c7c4c475e6f44bbeba40d7f6d7972dd466f0d0"
+    ],
+    [
+      "src/Page/ImagePage.ts",
+      "2bb8a860338e01394bada072876cb406d860dd6bc90971f1872599d840e2c894"
+    ],
+    [
+      "src/Page/Page.ts",
+      "f0f64baf2e1d56222f6e94ec5d602d797a91fa0310d189c4f15bd0e9d928176e"
+    ],
+    [
+      "src/PageFlip.ts",
+      "e7757fad296bc0f3c650bd25688e63c9a433600b3f4c773619b70023e8a9e96b"
+    ],
+    [
+      "src/Render/CanvasRender.ts",
+      "19de20d103fed64c9c4384df2de77a9ea9de1c2c62a9ba4222745c6c9ab78e3d"
+    ],
+    [
+      "src/Render/HTMLRender.ts",
+      "8c3fe4488c929e19465cddf8492548d006372d1ab9327ab2553c8e62aa3bbdf0"
+    ],
+    [
+      "src/Render/Render.ts",
+      "1b243f65efd1ac84adceacb0db70445a9cd03752b46a2e8e8c50d089a6a6a3ee"
+    ],
+    [
+      "src/Settings.ts",
+      "f7863916ca5400ef6b27f8148738c45aa1e280e11191c85accdf8088a065c44f"
+    ],
+    [
+      "src/Style/stPageFlip.css",
+      "ebca2fc2e54480fe0a3faf34dc2361760e92d2309f132763338b0cfd0767739a"
+    ],
+    [
+      "src/UI/CanvasUI.ts",
+      "231f442eaebbd625a030f49114eccca2f1999254dca94866dbfac9db8632a431"
+    ],
+    [
+      "src/UI/HTMLUI.ts",
+      "b566581a23206b8c5cbae078a23c19cd17143f78d51a13eae55aee8ceffccee2"
+    ],
+    [
+      "src/UI/UI.ts",
+      "dc8da67e6a1a77fb5391c8b77d1485bc45cf53e0d14cbc83b5f65fcf03a66fe9"
+    ]
+  ],
+  "generator": "scripts/build-pageflip.mjs",
+  "esbuild": "0.28.2",
+  "patches": [
+    "Render.start owns one cancellable animation frame; Render.stop cancels it and drops active animation.",
+    "PageFlip.destroy is idempotent, cancels both init timers, stops render and releases page references.",
+    "UI.destroy removes its resize listener even when mouse/touch handling is disabled."
+  ],
+  "outputs": [
+    {
+      "path": "src/vendor/pageflip/page-flip.js",
+      "sha256": "6e13029cb2242e7860bcdfa68a8745ccf12c4fae8f1589b7bfb28c5691288fda"
+    },
+    {
+      "path": "src/vendor/pageflip/page-flip.css",
+      "sha256": "d51eb210784f4539d70bc2a4a9ae96768e271d7aae6730cc9ddba03ebebcbab1"
+    },
+    {
+      "path": "src/vendor/pageflip/LICENSE",
+      "sha256": "88d7b609a3be5efa2abe8648ddc35d5489579db5e06299545760df45c2c32d66"
+    }
+  ]
+}

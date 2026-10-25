@@ -35,7 +35,7 @@ test('Reader turns, appearance and resume remain local and preserve source/revis
   await page.getByRole('button', { name: 'Reading appearance', exact: true }).click();
   await page.getByRole('combobox', { name: 'Reading typeface' }).selectOption('sans');
   await page.getByRole('button', { name: 'Night', exact: true }).click();
-  await page.getByRole('checkbox', { name: 'Paper-turn animation', exact: true }).uncheck();
+  await page.getByRole('checkbox', { name: 'Page-turn animation', exact: true }).uncheck();
   await page.getByRole('button', { name: 'Close reading settings', exact: true }).click();
   await expect(page.locator('.reader')).toHaveClass(/reader-night/);
   expect(await page.evaluate(() => { const state = (window as any).__NOVELIAA_TEST__.getSnapshot(); return JSON.stringify({ documents: state.documents, revisions: state.revisions, originals: state.originals, pending: state.pendingCount }); })).toBe(before);
@@ -66,7 +66,7 @@ test('Read resumes the last collection by identity, with contents context and a 
   await page.getByRole('button', { name: 'Reading contents' }).click();
   await expect(page.locator('.reader-panel [aria-current="location"]')).toContainText('The room above the sea');
   await page.keyboard.press('Escape'); await expect(page.getByRole('dialog', { name: 'Reading contents panel' })).toHaveCount(0);
-  await page.getByRole('button', { name: 'Back to writing', exact: true }).click(); await expect(page.getByRole('textbox', { name: 'Writing canvas' })).toBeVisible();
+  await page.getByRole('button', { name: 'Edit current page', exact: true }).click(); await expect(page.getByRole('textbox', { name: 'Writing canvas' })).toBeVisible();
   await page.evaluate(async collectionId => { const engine = (window as any).__NOVELIAA_TEST__; await engine.createDocument({ title: 'A newly added ending', collectionId }); }, fixture.collectionId);
   await page.getByRole('navigation', { name: 'Quick navigation' }).getByRole('button', { name: 'Read', exact: true }).click();
   await expect(page.locator('.reader-book-title')).toContainText('The tide notebooks');
@@ -87,7 +87,7 @@ test('Changed source restarts deliberately and appearance panel traps keyboard f
   await page.getByRole('button', { name: 'Reading appearance' }).click();
   const panel = page.getByRole('dialog', { name: 'Reading appearance panel' });
   await expect(panel.getByRole('button', { name: 'Close reading settings' })).toBeFocused();
-  await page.keyboard.press('Shift+Tab'); await expect(panel.getByRole('checkbox', { name: 'Paper-turn animation' })).toBeFocused();
+  await page.keyboard.press('Shift+Tab'); await expect(panel.getByRole('checkbox', { name: 'Page-turn animation' })).toBeFocused();
   await page.keyboard.press('Tab'); await expect(panel.getByRole('button', { name: 'Close reading settings' })).toBeFocused();
   await page.keyboard.press('Escape'); await expect(panel).toHaveCount(0);
   expect(await page.evaluate(id => (window as any).__NOVELIAA_TEST__.getSnapshot().documents.find((item: any) => item.id === id).plainText, fixture.id)).toBe('A new opening, deliberately different.');

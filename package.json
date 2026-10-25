@@ -8,6 +8,8 @@
   },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
+    "verify:pageflip": "node scripts/build-pageflip.mjs --check",
+    "prebuild": "npm run verify:pageflip",
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "vitest run",
@@ -16,6 +18,7 @@
     "test:cloud": "firebase emulators:exec --only auth,firestore --project demo-noveliaa --config firebase.spark-test.json \"playwright test --config playwright.spark.config.ts\"",
     "test:crash": "node scripts/crash-recovery.mjs",
     "profile:writing": "node scripts/profile-writing.mjs",
+    "profile:reader-volume": "node scripts/measure-reader-volume.mjs",
     "test:evidence": "python -m unittest discover -s evals -p test_*.py -v",
     "typecheck": "tsc -b"
   },
@@ -38,8 +41,10 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "6.1.2",
+    "esbuild": "0.28.2",
     "fake-indexeddb": "^6.0.0",
     "firebase-tools": "^15.0.0",
+    "page-flip": "2.0.7",
     "typescript": "~5.9.3",
     "vite": "8.3.5",
     "vitest": "5.0.5"

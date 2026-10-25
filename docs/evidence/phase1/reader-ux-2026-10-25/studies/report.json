@@ -1,0 +1,150 @@
+[
+  {
+    "width": 1440,
+    "mode": "slide",
+    "video": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\motion-study\\page@745ab80e29cf316493c4ae1cb67653bb.webm",
+    "errors": [],
+    "page": 2,
+    "leafs": [
+      {
+        "client": 786,
+        "scroll": 786
+      },
+      {
+        "client": 786,
+        "scroll": 786
+      },
+      {
+        "client": 786,
+        "scroll": 786
+      },
+      {
+        "client": 786,
+        "scroll": 786
+      }
+    ],
+    "horizontal": 1440,
+    "viewport": 1440,
+    "retainedVideo": "docs/evidence/phase1/reader-ux-2026-10-25/studies/page@745ab80e29cf316493c4ae1cb67653bb.webm"
+  },
+  {
+    "width": 1440,
+    "mode": "curl",
+    "video": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\motion-study\\page@2aff1bfa6ccf0940f0d7b52274488b98.webm",
+    "errors": [],
+    "page": 2,
+    "leafs": [
+      {
+        "client": 0,
+        "scroll": 0
+      },
+      {
+        "client": 0,
+        "scroll": 0
+      },
+      {
+        "client": 786,
+        "scroll": 786
+      },
+      {
+        "client": 786,
+        "scroll": 786
+      }
+    ],
+    "horizontal": 1440,
+    "viewport": 1440,
+    "retainedVideo": "docs/evidence/phase1/reader-ux-2026-10-25/studies/page@2aff1bfa6ccf0940f0d7b52274488b98.webm"
+  },
+  {
+    "width": 1440,
+    "mode": "stack",
+    "video": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\motion-study\\page@66018e13bbfd6a5e8769c7bce87fb6a9.webm",
+    "errors": [],
+    "page": 2,
+    "leafs": [
+      {
+        "client": 786,
+        "scroll": 786
+      },
+      {
+        "client": 786,
+        "scroll": 786
+      }
+    ],
+    "horizontal": 1440,
+    "viewport": 1440,
+    "retainedVideo": "docs/evidence/phase1/reader-ux-2026-10-25/studies/page@66018e13bbfd6a5e8769c7bce87fb6a9.webm"
+  },
+  {
+    "width": 390,
+    "mode": "slide",
+    "video": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\motion-study\\page@56b5b9602b5fa208ff566a6728ed6140.webm",
+    "errors": [],
+    "page": 1,
+    "leafs": [
+      {
+        "client": 653,
+        "scroll": 653
+      },
+      {
+        "client": 653,
+        "scroll": 653
+      },
+      {
+        "client": 653,
+        "scroll": 653
+      },
+      {
+        "client": 653,
+        "scroll": 653
+      }
+    ],
+    "horizontal": 390,
+    "viewport": 390,
+    "retainedVideo": "docs/evidence/phase1/reader-ux-2026-10-25/studies/page@56b5b9602b5fa208ff566a6728ed6140.webm"
+  },
+  {
+    "width": 390,
+    "mode": "curl",
+    "video": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\motion-study\\page@6cbbb1f7db134f298f7b24381acfe5dc.webm",
+    "errors": [],
+    "page": 1,
+    "leafs": [
+      {
+        "client": 0,
+        "scroll": 0
+      },
+      {
+        "client": 653,
+        "scroll": 653
+      },
+      {
+        "client": 0,
+        "scroll": 0
+      },
+      {
+        "client": 0,
+        "scroll": 0
+      }
+    ],
+    "horizontal": 390,
+    "viewport": 390,
+    "retainedVideo": "docs/evidence/phase1/reader-ux-2026-10-25/studies/page@6cbbb1f7db134f298f7b24381acfe5dc.webm"
+  },
+  {
+    "width": 390,
+    "mode": "stack",
+    "video": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\motion-study\\page@4f897c5ed96e0ac4070a42d667a706de.webm",
+    "errors": [],
+    "page": 1,
+    "leafs": [
+      {
+        "client": 653,
+        "scroll": 653
+      }
+    ],
+    "horizontal": 390,
+    "viewport": 390,
+    "retainedVideo": "docs/evidence/phase1/reader-ux-2026-10-25/studies/page@4f897c5ed96e0ac4070a42d667a706de.webm"
+  }
+]

@@ -1,0 +1,93 @@
+
+> noveliaa@0.1.0 test:cloud
+> firebase emulators:exec --only auth,firestore --project demo-noveliaa --config firebase.spark-test.json "playwright test --config playwright.spark.config.ts"
+
+i  emulators: Starting emulators: auth, firestore
+i  emulators: Detected demo project ID "demo-noveliaa", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail.
+i  firestore: Firestore Emulator logging to firestore-debug.log
++  firestore: Firestore Emulator was started in standard edition.
++  firestore: Firestore Emulator UI websocket is running on 9150.
+i  Running script: playwright test --config playwright.spark.config.ts
+[WebServer] (node:187052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 10 tests using 1 worker
+
+(node:186924) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\spark-browser\collection-reader.spec.ts:91:1 › confirmed collection rename streams to a clean independent device without changing manuscript evidence (11.3s)
+[WebServer] 3:18:13 pm [vite] (client) [console.warn] [2026-10-25T09:48:11.519Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x61b90de7 transport errored. Name: undefined Message: undefined
+[WebServer] 3:18:13 pm [vite] (client) [console.warn] [2026-10-25T09:48:11.609Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x61b90de8 transport errored. Name: undefined Message: undefined
+[WebServer] 3:18:13 pm [vite] (client) [console.warn] [2026-10-25T09:48:12.483Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x61b90de9 transport errored. Name: undefined Message: undefined
+  ok  2 tests\spark-browser\collection-reader.spec.ts:111:1 › an offline stale device can add unrelated writing and a collection without undoing the confirmed name (11.0s)
+  x   3 tests\spark-browser\collection-reader.spec.ts:136:1 › reader entry, page turns, appearance changes and exit leave the complete server inventory unchanged (1.5m)
+(node:184272) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  4 tests\spark-browser\reset.spec.ts:55:1 › authorized reset deletes exact originals/history, remounts a clean desktop workspace, preserves Auth and is idempotent (7.1s)
+[WebServer] 3:20:08 pm [vite] (client) [console.warn] [2026-10-25T09:49:58.328Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x1a1e0a84 transport errored. Name: undefined Message: undefined
+[WebServer] 3:20:08 pm [vite] (client) [console.warn] [2026-10-25T09:49:58.418Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x1a1e0a85 transport errored. Name: undefined Message: undefined
+[WebServer] 3:20:08 pm [vite] (client) [console.warn] [2026-10-25T09:49:59.115Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x1a1e0a86 transport errored. Name: undefined Message: undefined
+[WebServer] 3:20:08 pm [vite] (client) [console.warn] [2026-10-25T09:50:01.100Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x1a1e0a87 transport errored. Name: undefined Message: undefined
+[WebServer] 3:20:08 pm [vite] (client) [console.warn] [2026-10-25T09:50:02.524Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x1a1e0a88 transport errored. Name: undefined Message: undefined
+[WebServer] 3:20:08 pm [vite] (client) [console.warn] [2026-10-25T09:50:05.502Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x1a1e0a89 transport errored. Name: undefined Message: undefined
+  ok  5 tests\spark-browser\reset.spec.ts:90:1 › offline old-device drafts cannot repopulate a reset on reconnect and the mobile session opens its new store (16.1s)
+[WebServer] 3:20:29 pm [vite] (client) [console.warn] [2026-10-25T09:50:18.704Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x44fcd481 transport errored. Name: undefined Message: undefined
+[WebServer] 3:20:29 pm [vite] (client) [console.warn] [2026-10-25T09:50:18.794Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x44fcd482 transport errored. Name: undefined Message: undefined
+[WebServer] 3:20:29 pm [vite] (client) [console.warn] [2026-10-25T09:50:19.611Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x44fcd483 transport errored. Name: undefined Message: undefined
+[WebServer] 3:20:29 pm [vite] (client) [console.warn] [2026-10-25T09:50:21.243Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x44fcd484 transport errored. Name: undefined Message: undefined
+[WebServer] 3:20:29 pm [vite] (client) [console.warn] [2026-10-25T09:50:23.428Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x44fcd485 transport errored. Name: undefined Message: undefined
+[WebServer] 3:20:29 pm [vite] (client) [console.warn] [2026-10-25T09:50:25.397Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x44fcd486 transport errored. Name: undefined Message: undefined
+[WebServer] 3:20:29 pm [vite] (client) [console.warn] [2026-10-25T09:50:28.863Z]  @firebase/firestore: Firestore (13.1.0): WebChannelConnection RPC 'Listen' stream 0x44fcd487 transport errored. Name: undefined Message: undefined
+  ok  6 tests\spark-browser\writing.spec.ts:52:1 › real author sign-in, cloud receipt, isolated-device restore, offline checkpoint and reconnect (22.5s)
+  ok  7 tests\spark-browser\writing.spec.ts:85:1 › imported conversation retains exact original and unverified provenance across devices; revision recovery and archive export (8.5s)
+  ok  8 tests\spark-browser\writing.spec.ts:114:1 › unapproved real Auth account is denied before opening the workspace (1.5s)
+  ok  9 tests\spark-browser\writing.spec.ts:124:1 › a used laptop silently refreshes phone edits, then receives live pages and edits with persistent SDK cache (9.7s)
+  ok 10 tests\spark-browser\writing.spec.ts:149:1 › real Firebase retains both genuinely concurrent device edits (16.4s)
+
+
+  1) tests\spark-browser\collection-reader.spec.ts:136:1 › reader entry, page turns, appearance changes and exit leave the complete server inventory unchanged 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.fill: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for getByRole('textbox', { name: 'Search library', exact: true })
+
+
+      147 |   await page.locator('.main-nav').getByRole('button', { name: 'Library', exact: true }).click();
+      148 |   for (const layout of ['Tile', 'List', 'Detailed']) await page.getByRole('button', { name: layout + ' view', exact: true }).click();
+    > 149 |   await page.getByRole('textbox', { name: 'Search library', exact: true }).fill('Passage 59');
+          |                                                                            ^
+      150 |   await page.locator('.main-nav').getByRole('button', { name: 'Continue writing', exact: true }).click();
+      151 |   await page.getByRole('button', { name: 'Read this page', exact: true }).click();
+      152 |   await expect.poll(async () => Number(await page.locator('.reader-stage').getAttribute('data-pages'))).toBeGreaterThan(2);
+        at F:\Workspace\Programs\Independent-Products\Noveliaa\tests\spark-browser\collection-reader.spec.ts:149:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    .local\spark-test-results\collection-reader-reader-e-52521--server-inventory-unchanged\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .local\spark-test-results\collection-reader-reader-e-52521--server-inventory-unchanged\error-context.md
+
+    Error Context: .local\spark-test-results\collection-reader-reader-e-52521--server-inventory-unchanged\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    .local\spark-test-results\collection-reader-reader-e-52521--server-inventory-unchanged\trace.zip
+    Usage:
+
+        npx playwright show-trace .local\spark-test-results\collection-reader-reader-e-52521--server-inventory-unchanged\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\spark-browser\collection-reader.spec.ts:136:1 › reader entry, page turns, appearance changes and exit leave the complete server inventory unchanged 
+  9 passed (3.6m)
+!  Script exited unsuccessfully (code 1)
+i  emulators: Shutting down emulators.
+i  firestore: Stopping Firestore Emulator
+!  Firestore Emulator has exited upon receiving signal: SIGINT
+i  auth: Stopping Authentication Emulator
+i  hub: Stopping emulator hub
+i  logging: Stopping Logging Emulator
+
+Error: Script "playwright test --config playwright.spark.config.ts" exited with code 1

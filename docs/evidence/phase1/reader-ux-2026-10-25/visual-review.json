@@ -1,0 +1,137 @@
+{
+  "checkedAt": "2026-10-25T09:54:37.575Z",
+  "result": "pass",
+  "ownerAcceptance": "not inferred",
+  "runtimeIdentity": "488155fe8ec9c3bbdd0ea7d372dfb7f7762adeccf582319389dcd1b77ab65668",
+  "dataset": "AI-generated synthetic unverified evaluation archives and procedural volume in isolated DEV notebooks/emulators. No production manuscript accessed or seeded.",
+  "method": "Designer, independent critic first scores, separate lead pixel/sequence review and actual browser/emulator QA. CUA transport unavailable; repository Chromium harness fallback, no production login bypass.",
+  "central": {
+    "version": "0.1.0",
+    "base": "ba1235fe7b220842778414f3f70fca38e7df4c53"
+  },
+  "cycles": [
+    {
+      "round": 1,
+      "result": "rejected; partial capture",
+      "captureCompleted": false,
+      "captures": 20,
+      "sourceBefore": "1ef6e035a509c15d6c49c361462c029da4775926f51e4c77898702bb6afdb3d6",
+      "sourceAfter": "1ef6e035a509c15d6c49c361462c029da4775926f51e4c77898702bb6afdb3d6",
+      "scope": "Earlier narrower component/style/reader fingerprint; see critic record",
+      "substantiveChange": "Populated Library/nav scaffold; rejected phone Tile density and Detailed preview; partial capture after wrong quick-navigation assumption."
+    },
+    {
+      "round": 2,
+      "result": "rejected; partial capture",
+      "captureCompleted": false,
+      "captures": 21,
+      "sourceBefore": "82696d460b3ad4cc131aba5eef9bcc9dd50123b9df37336638ac4486bacaabff",
+      "sourceAfter": "82696d460b3ad4cc131aba5eef9bcc9dd50123b9df37336638ac4486bacaabff",
+      "scope": "Earlier narrower component/style/reader fingerprint; see critic record",
+      "substantiveChange": "Compact/provenance/universe labels and Library return; motion clock integration failed; partial capture raced auto-closing drawer."
+    },
+    {
+      "round": 3,
+      "result": "rejected; backward motion and 320 containment",
+      "captureCompleted": true,
+      "captures": 33,
+      "sourceBefore": "fa13ef78005ee60141967d557e56c703e3c646b098e55c046b22848274c628ed",
+      "sourceAfter": "fa13ef78005ee60141967d557e56c703e3c646b098e55c046b22848274c628ed",
+      "scope": "All runtime TS/TSX/JS/CSS in src, including vendored motion; excludes test modules",
+      "substantiveChange": "Actual forward folds; rejected stalled phone backward effect and internally clipped 320px tiles despite passing initial cleanup tests."
+    },
+    {
+      "round": 4,
+      "result": "pass",
+      "captureCompleted": true,
+      "captures": 52,
+      "sourceBefore": "488155fe8ec9c3bbdd0ea7d372dfb7f7762adeccf582319389dcd1b77ab65668",
+      "sourceAfter": "488155fe8ec9c3bbdd0ea7d372dfb7f7762adeccf582319389dcd1b77ab65668",
+      "scope": "All runtime TS/TSX/JS/CSS in src, including vendored motion; excludes test modules",
+      "substantiveChange": "Fixed reverse, adaptive volume policy/retention, narrow tiles, tablet Atlas and origin-correct context/focus; complete multi-state review."
+    },
+    {
+      "round": 5,
+      "result": "pass",
+      "captureCompleted": true,
+      "captures": 52,
+      "sourceBefore": "488155fe8ec9c3bbdd0ea7d372dfb7f7762adeccf582319389dcd1b77ab65668",
+      "sourceAfter": "488155fe8ec9c3bbdd0ea7d372dfb7f7762adeccf582319389dcd1b77ab65668",
+      "scope": "All runtime TS/TSX/JS/CSS in src, including vendored motion; excludes test modules",
+      "substantiveChange": "Frozen exact source; complete desktop/tablet/phone layouts, soft folds and 50k-source slide recordings, independent navigation and final lead inspection."
+    }
+  ],
+  "finalCriticScores": {
+    "taskContext": 8.4,
+    "proseMotion": 8.2,
+    "hierarchyRestraint": 8.2,
+    "responsiveAccess": 8.2,
+    "overall": 8.2
+  },
+  "finalLeadScores": {
+    "taskContext": 8.3,
+    "proseMotion": 8.2,
+    "hierarchyRestraint": 8.2,
+    "responsiveAccess": 8.2,
+    "overall": 8.2
+  },
+  "finalLeadInspections": [
+    "List1440",
+    "Tile320",
+    "Detailed390",
+    "Atlas768",
+    "NightSingle390",
+    "Contents320",
+    "exact final soft-leaf1440/390 sampled full recordings",
+    "exact final large-source slide1440/390 sampled full recordings",
+    "Paper Lanterns same-title body retrieval320"
+  ],
+  "coverage": {
+    "widths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "browser": "Chromium156.0.8078.4",
+    "finalRenderedStates": 52,
+    "independentNavigation": {
+      "checks": 15,
+      "screenshots": 21,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "errors": 0
+    },
+    "clientTests": 89,
+    "rulesTests": 15,
+    "browserTests": 53,
+    "authenticatedCloudTests": 10,
+    "evidenceTests": 26,
+    "crashRecoveries": 20
+  },
+  "behavior": {
+    "library": "Tile/List/Detailed, List default; account/workspace/universe-scoped local preference; one capture action, flat collections and permanent Inbox",
+    "reader": "Content-bearing bounded curl <=20k UTF16 chars and <=600descendants; larger/complex books use single canonical-article slide; reduced motion/off direct; private author-only",
+    "saving": "Existing10s device /60s cloud trailing idle and local safety flush preserved; no keystroke timestamping introduced",
+    "integrity": "Exact source/revisions/originals/receipts/pending unchanged during reading; actual emulator inventory/RPC oracle shows zero cloud writes for layout/search/reader actions"
+  },
+  "evidence": {
+    "critic": "docs/design/reader-library-ux-critic.md",
+    "lead": "docs/design/reader-library-ux-qa.md",
+    "research": "docs/research/reader-motion-2026-10-25.md",
+    "performance": "docs/evidence/phase1/reader-ux-2026-10-25/final-performance.json",
+    "independentNavigation": "docs/evidence/phase1/reader-ux-2026-10-25/independent-navigation/report.json",
+    "recordings": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/critic-derived-contacts.json"
+  },
+  "limits": [
+    "Physical phones/GPU/Safari and real assistive-technology comfort are unverified.",
+    "Historical native references inform direction; this is triggered web motion, not native finger-follow simulation.",
+    "600element guard is functionally verified; its exact complexity-boundary timing is not separately characterized.",
+    "First RAF and GC are controlled desktop browser measurements, not60fps or hardware power-loss claims.",
+    "Large-volume path is a slide, not physical curl. Agent scores do not grant approval/canon/publication."
+  ],
+  "unresolvedVisualBlockers": []
+}

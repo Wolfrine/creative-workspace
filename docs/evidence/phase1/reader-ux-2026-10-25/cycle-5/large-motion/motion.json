@@ -1,0 +1,844 @@
+{
+  "round": 5,
+  "dataset": "AI-generated synthetic unverified multi-world archive; no production account",
+  "additionalProceduralStressWords": 50000,
+  "fixture": {
+    "version": "three-worlds-2026-10-25-v1",
+    "synthetic": true,
+    "aiGenerated": true,
+    "approval": "unverified",
+    "productionSeeded": false,
+    "archiveSha256": "194f57715a1a93e4c1a98d107067efd82ee29c242315a0daac4f33230f861d42",
+    "archiveBytes": 87554,
+    "universes": [
+      {
+        "id": "sample-saltwater",
+        "name": "The Saltwater Ledger",
+        "collections": 4,
+        "pages": 9
+      },
+      {
+        "id": "sample-signal",
+        "name": "Signal Orchard",
+        "collections": 4,
+        "pages": 7
+      },
+      {
+        "id": "sample-lantern",
+        "name": "Paper Lanterns · काग़ज़ की रोशनी",
+        "collections": 4,
+        "pages": 7
+      }
+    ],
+    "collections": [
+      {
+        "id": "salt-drafts",
+        "name": "Draft chapters",
+        "universeId": "sample-saltwater",
+        "pages": 2
+      },
+      {
+        "id": "salt-people",
+        "name": "People & places",
+        "universeId": "sample-saltwater",
+        "pages": 2
+      },
+      {
+        "id": "salt-scraps",
+        "name": "Fragments, remembered details, and questions still waiting for an answer",
+        "universeId": "sample-saltwater",
+        "pages": 3
+      },
+      {
+        "id": "salt-empty",
+        "name": "A room for the ending",
+        "universeId": "sample-saltwater",
+        "pages": 0
+      },
+      {
+        "id": "signal-scenes",
+        "name": "Draft chapters",
+        "universeId": "sample-signal",
+        "pages": 2
+      },
+      {
+        "id": "signal-rules",
+        "name": "Signals & field notes",
+        "universeId": "sample-signal",
+        "pages": 2
+      },
+      {
+        "id": "signal-people",
+        "name": "People",
+        "universeId": "sample-signal",
+        "pages": 1
+      },
+      {
+        "id": "signal-empty",
+        "name": "Possible futures",
+        "universeId": "sample-signal",
+        "pages": 0
+      },
+      {
+        "id": "lantern-letters",
+        "name": "Letters never sent",
+        "universeId": "sample-lantern",
+        "pages": 1
+      },
+      {
+        "id": "lantern-places",
+        "name": "Places & family",
+        "universeId": "sample-lantern",
+        "pages": 3
+      },
+      {
+        "id": "lantern-fragments",
+        "name": "Poems, tiny observations, and things overheard between two stations",
+        "universeId": "sample-lantern",
+        "pages": 2
+      },
+      {
+        "id": "lantern-empty",
+        "name": "Next season",
+        "universeId": "sample-lantern",
+        "pages": 0
+      }
+    ],
+    "documents": [
+      {
+        "id": "salt-tide",
+        "title": "When the steps returned",
+        "universeId": "sample-saltwater",
+        "collectionId": "salt-drafts",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "f6cb0d82759c0e617de1135de80018ed054d909e3b4d3fc2016bb9fae724b612",
+        "textSha256": "5b36b3d265cb3ff18c8ec1ca0530d4a34ecd6cd8cd91f617d5f08d63a37f594f",
+        "characters": 5731
+      },
+      {
+        "id": "salt-return",
+        "title": "The third glass",
+        "universeId": "sample-saltwater",
+        "collectionId": "salt-drafts",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "4322413b12847edcabd9021791980a570f8ba7c7602f8be5c055e024f9950bf7",
+        "textSha256": "dc27b4a529f7fd728a1dbb189bd2151ba9c0f7365fafd0f8a90335434d33092d",
+        "characters": 356
+      },
+      {
+        "id": "salt-mira",
+        "title": "Mira — what she refuses to forget",
+        "universeId": "sample-saltwater",
+        "collectionId": "salt-people",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "808ab329cc6fe2669726909164e2d8924f081a0ffc9527641226893aff69e576",
+        "textSha256": "41dbd9b0fb0aac053939487cdb5dd410ac641b8d48b0d469ce77ab11d500636a",
+        "characters": 352
+      },
+      {
+        "id": "salt-harbour",
+        "title": "The old harbour",
+        "universeId": "sample-saltwater",
+        "collectionId": "salt-people",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "b39e5f84498d7e6454415be55e51521b74801116a38569dd358c51e73e7c55ca",
+        "textSha256": "b87640445af8b14ef5990d67f96ff6ac6fcc1d34bd5f59665e4aa890e211fcb4",
+        "characters": 309
+      },
+      {
+        "id": "salt-ledger",
+        "title": "The ferry ledger",
+        "universeId": "sample-saltwater",
+        "collectionId": "salt-scraps",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "92c2d1b0f267c94ea5e7e07536b2d72d6642620aee7839bbcbdfe89338347e52",
+        "textSha256": "34425909f8e140d0a42a37676e022ab2ad1672efd14d904ba6dd61d4c5e987b4",
+        "characters": 177
+      },
+      {
+        "id": "salt-loose",
+        "title": "An idea on the bus",
+        "universeId": "sample-saltwater",
+        "collectionId": null,
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "a2060319d0d87d71c070084349f49724419a127f80c7dd12e054b9c37dfd6652",
+        "textSha256": "9886ced665da7c3ff085922271765da1147154ffe57fd794f574f7ccb8500caa",
+        "characters": 138
+      },
+      {
+        "id": "salt-untitled",
+        "title": "",
+        "universeId": "sample-saltwater",
+        "collectionId": null,
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "4feaa43ad64c8336ca554dca3df45798998e3ae793cc11d066df1a1d3adf3ac8",
+        "textSha256": "6ba48e91214088ec48577ffb4c27e218074e287ba97cda21077d065e65598e7e",
+        "characters": 111
+      },
+      {
+        "id": "salt-imported",
+        "title": "Found harbour notebook",
+        "universeId": "sample-saltwater",
+        "collectionId": "salt-scraps",
+        "origin": "unknown",
+        "trashed": false,
+        "bodySha256": "f45dd22bbbf32acb024528814c7b22f6dc62ca6ee1d3eaa767183bb2317fcfda",
+        "textSha256": "afd7ef6bf0ebac597f07b100ec39e7efcd5602814c503536ad83855501cb258d",
+        "characters": 119
+      },
+      {
+        "id": "salt-ai",
+        "title": "Unreviewed possibility — a second harbour",
+        "universeId": "sample-saltwater",
+        "collectionId": "salt-scraps",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "287d3d4669fa076142145998947ecb0ac03d47788b91d2de3465e4647020e024",
+        "textSha256": "862549862fad2a8bcece9cb74fb1efaf53c265e5d578cdd03ea0b4fd0c09e2eb",
+        "characters": 195
+      },
+      {
+        "id": "salt-trash",
+        "title": "Set aside — the talking compass",
+        "universeId": "sample-saltwater",
+        "collectionId": "salt-scraps",
+        "origin": "ai",
+        "trashed": true,
+        "bodySha256": "90f51a0c7fb2524277633f373e0c11949e73a64bb141ce59c14506f8cd75b163",
+        "textSha256": "5d5a7aad4a386892b7c501e17840d3256fffc4ae689e8800ad1da67467b9dd9b",
+        "characters": 134
+      },
+      {
+        "id": "signal-first-light",
+        "title": "First light at Relay Nine",
+        "universeId": "sample-signal",
+        "collectionId": "signal-scenes",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "a2d7b53537ff37b6108574767b0ff2702b1caab00ef3ddc6f62c33941d2d7dd0",
+        "textSha256": "1de84ca6fb8f154963c2f5fcfa299d680319c465ffb747fde8fbfcf9263bf03a",
+        "characters": 747
+      },
+      {
+        "id": "signal-relay",
+        "title": "Relay Nine — field sketch",
+        "universeId": "sample-signal",
+        "collectionId": "signal-rules",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "97c3f61619ea1947eaf8c35bc76bbefff18835545f5d15bad45dc3dfad660a11",
+        "textSha256": "d8fb6297b32496324d215798cd705d5867e0807d99b9d6b693747ec32a1c7d57",
+        "characters": 302
+      },
+      {
+        "id": "signal-rule",
+        "title": "The law of borrowed signals",
+        "universeId": "sample-signal",
+        "collectionId": "signal-rules",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "191d433056357a6667e16d243dd22f393190284ab3e34b5128f78a854cea3cf9",
+        "textSha256": "b23208ba65c032a5afd6d873e0befe32708977775ab68b4481dd384797545db6",
+        "characters": 291
+      },
+      {
+        "id": "signal-iona",
+        "title": "Iona",
+        "universeId": "sample-signal",
+        "collectionId": "signal-people",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "1ae24d95a114232da385e32372eb07d9b38af9895de5ebbd06f3b9f47b7aaf87",
+        "textSha256": "9c846674fbd467a4701242d19099742f2a1aec16e19b413a78dc9b5b801ac96f",
+        "characters": 282
+      },
+      {
+        "id": "signal-loose",
+        "title": "A question about silence",
+        "universeId": "sample-signal",
+        "collectionId": null,
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "0faf3542216376c88bf898727fb14a7912f704c56fd205e1d58b6eb934eb193c",
+        "textSha256": "94dd6c953d8ceb42001c9290b3d617ca2b38e158db0ad3d10ccfea85b8c98e28",
+        "characters": 118
+      },
+      {
+        "id": "signal-window",
+        "title": "The window",
+        "universeId": "sample-signal",
+        "collectionId": "signal-scenes",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "2e23b9b173599bdd6d6043f99296ddcdaca02e3f12726f8aeb25c97f33a46871",
+        "textSha256": "f7269de7235063c323557f6dc1fb1b0d1a7aaa44942c83756f23b10a601a798d",
+        "characters": 148
+      },
+      {
+        "id": "signal-chat",
+        "title": "Receiver conversation",
+        "universeId": "sample-signal",
+        "collectionId": null,
+        "origin": "imported_chat",
+        "trashed": false,
+        "bodySha256": "fc4a3e9b8df41e67408ec9548005a38b7a3e5c9b2ed923c52a35b74606f9b92c",
+        "textSha256": "1cccca7ac2d883196637917975df3caebcf6496388b85860b130a3b7d66fdcb4",
+        "characters": 125
+      },
+      {
+        "id": "lantern-letter",
+        "title": "A letter without an address",
+        "universeId": "sample-lantern",
+        "collectionId": "lantern-letters",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "09adf20c7e0e5ab14f096376617436ebb30cbd4ae82dcb93324c6e5ec07eeea0",
+        "textSha256": "39b8bf773debd72a529d231d499580262b907f24299c201995d54c92627c5511",
+        "characters": 449
+      },
+      {
+        "id": "lantern-station",
+        "title": "Platform four, after rain",
+        "universeId": "sample-lantern",
+        "collectionId": "lantern-places",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "97613bf3a2bda3b5296dfe6e747115d311572e76d63633833b6181499af2807e",
+        "textSha256": "012db33f3fbe9723c39e88accf5ef3b053a8ce810e97d1532c980487a5d0b034",
+        "characters": 238
+      },
+      {
+        "id": "lantern-grandmother",
+        "title": "Amma’s winter kitchen",
+        "universeId": "sample-lantern",
+        "collectionId": "lantern-places",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "9a7b3d437dd67905a5bf87531b008fbb6061da4e89a51b9f552ffd76d60b34f9",
+        "textSha256": "d80d3557294d3181a73fcb0bc09a9982b99ff0acc21c3ba35fd319b31b283035",
+        "characters": 180
+      },
+      {
+        "id": "lantern-poem",
+        "title": "Between two stations",
+        "universeId": "sample-lantern",
+        "collectionId": "lantern-fragments",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "0458e3bf3ab6a3973217c990c7f4d6473c3c177950c720578445ba309e51084c",
+        "textSha256": "00aebdc9e0cc97c13ffa51e048a51ac3f3846f7d2a655342a9b40177ae247189",
+        "characters": 134
+      },
+      {
+        "id": "lantern-hindi",
+        "title": "काग़ज़ की रोशनी",
+        "universeId": "sample-lantern",
+        "collectionId": "lantern-fragments",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "ff1d6548b7d876c7a11146bfd92bec83b5ed926c0c1990b927d2e6d580cb0c48",
+        "textSha256": "40e9e36c7665efbe8efc6fb5d9f28dbb4759f71c498a09c26686bfe8d9deea8f",
+        "characters": 239
+      },
+      {
+        "id": "lantern-loose",
+        "title": "A small thing to remember",
+        "universeId": "sample-lantern",
+        "collectionId": null,
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "c28cf81eb9595834a0b8934de42360959abdccae32d3818e24699be228e84c21",
+        "textSha256": "dbf5c6134284293b119a5c13db0ba8d09212382a7dc8ae89a5108f600c403b4e",
+        "characters": 139
+      },
+      {
+        "id": "lantern-window",
+        "title": "The window",
+        "universeId": "sample-lantern",
+        "collectionId": "lantern-places",
+        "origin": "ai",
+        "trashed": false,
+        "bodySha256": "34b94b147b0a29e0298ff9160321d0d7b27d38b3dcf2a7bdd39684cdd0b709c1",
+        "textSha256": "92a03457ffb19c520f5e407c5e083cf460c44e73c6c52db04b5c5980405819e3",
+        "characters": 150
+      }
+    ],
+    "originals": [
+      {
+        "id": "sample-original-notebook",
+        "name": "Found harbour notebook.txt",
+        "sha256": "50d9ffa033ec2f86d54666625a5f1bfc610164bd10cb86d114f1812a33c70011",
+        "verification": "unverified",
+        "origin": "unknown"
+      },
+      {
+        "id": "sample-original-chat",
+        "name": "Receiver conversation.txt",
+        "sha256": "71f24cba43a28c12ee06c3904a34a889917a70e5fa558959fcbacca3d8ca1ee5",
+        "verification": "unverified",
+        "origin": "imported_chat"
+      }
+    ]
+  },
+  "browser": "156.0.8078.4",
+  "sourceBefore": "488155fe8ec9c3bbdd0ea7d372dfb7f7762adeccf582319389dcd1b77ab65668",
+  "sourceAfter": "488155fe8ec9c3bbdd0ea7d372dfb7f7762adeccf582319389dcd1b77ab65668",
+  "cases": [
+    {
+      "width": 1440,
+      "turns": [
+        {
+          "direction": "forward",
+          "before": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-before-1440.png",
+          "frames": [
+            {
+              "targetMs": 0,
+              "actualElapsedMs": 120,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-1440-0.png",
+              "sha256": "6373baf16155bd130a42b9aaf14d2d0eb90c9e86b1ff4db01f8cb0088d49e031",
+              "observed": {
+                "page": "2",
+                "mode": "slide",
+                "active": "true",
+                "canonicalArticles": 1,
+                "animations": [
+                  {
+                    "state": "running",
+                    "currentTime": 0
+                  }
+                ],
+                "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 120,
+              "actualElapsedMs": 291,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-1440-120.png",
+              "sha256": "42450d18e814a9aed105bd3e2ce214a9c9969d3386734ad20dbbf9590415a063",
+              "observed": {
+                "page": "2",
+                "mode": "slide",
+                "active": "true",
+                "canonicalArticles": 1,
+                "animations": [
+                  {
+                    "state": "running",
+                    "currentTime": 166.73699999830126
+                  }
+                ],
+                "transform": "matrix(1, 0, 0, 1, -1171.88, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 260,
+              "actualElapsedMs": 532,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-1440-260.png",
+              "sha256": "02b95c4dd70235d0a4ae7b4c093b01e1eba435ca3079a81fd414ec1d96408819",
+              "observed": {
+                "page": "2",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, -1218, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 420,
+              "actualElapsedMs": 631,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-1440-420.png",
+              "sha256": "02b95c4dd70235d0a4ae7b4c093b01e1eba435ca3079a81fd414ec1d96408819",
+              "observed": {
+                "page": "2",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, -1218, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 650,
+              "actualElapsedMs": 737,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-1440-650.png",
+              "sha256": "02b95c4dd70235d0a4ae7b4c093b01e1eba435ca3079a81fd414ec1d96408819",
+              "observed": {
+                "page": "2",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, -1218, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 900,
+              "actualElapsedMs": 917,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-1440-900.png",
+              "sha256": "02b95c4dd70235d0a4ae7b4c093b01e1eba435ca3079a81fd414ec1d96408819",
+              "observed": {
+                "page": "2",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, -1218, 0)",
+                "leaves": []
+              }
+            }
+          ]
+        },
+        {
+          "direction": "back",
+          "before": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-before-1440.png",
+          "frames": [
+            {
+              "targetMs": 0,
+              "actualElapsedMs": 88,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-1440-0.png",
+              "sha256": "887ce49d2e089421565b0c38816af81c8d74598a31a9e07cf8320d9ed3251651",
+              "observed": {
+                "page": "0",
+                "mode": "slide",
+                "active": "true",
+                "canonicalArticles": 1,
+                "animations": [
+                  {
+                    "state": "running",
+                    "currentTime": 0
+                  }
+                ],
+                "transform": "matrix(1, 0, 0, 1, -1218, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 120,
+              "actualElapsedMs": 240,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-1440-120.png",
+              "sha256": "d14325d9e3357506bf377c10761982a7a4e04713b87ebea05ed7f9a1db352bd5",
+              "observed": {
+                "page": "0",
+                "mode": "slide",
+                "active": "true",
+                "canonicalArticles": 1,
+                "animations": [
+                  {
+                    "state": "running",
+                    "currentTime": 150.05499991185235
+                  }
+                ],
+                "transform": "matrix(1, 0, 0, 1, -69.4406, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 260,
+              "actualElapsedMs": 464,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-1440-260.png",
+              "sha256": "be5fe1488d9b62e53c98061016d59813bfd2684f24d51c50554d1f4bc2cd3dbe",
+              "observed": {
+                "page": "0",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 420,
+              "actualElapsedMs": 593,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-1440-420.png",
+              "sha256": "be5fe1488d9b62e53c98061016d59813bfd2684f24d51c50554d1f4bc2cd3dbe",
+              "observed": {
+                "page": "0",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 650,
+              "actualElapsedMs": 706,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-1440-650.png",
+              "sha256": "be5fe1488d9b62e53c98061016d59813bfd2684f24d51c50554d1f4bc2cd3dbe",
+              "observed": {
+                "page": "0",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 900,
+              "actualElapsedMs": 907,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-1440-900.png",
+              "sha256": "be5fe1488d9b62e53c98061016d59813bfd2684f24d51c50554d1f4bc2cd3dbe",
+              "observed": {
+                "page": "0",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                "leaves": []
+              }
+            }
+          ]
+        }
+      ],
+      "reducedMotionNoLeaf": true,
+      "video": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\docs\\evidence\\phase1\\reader-ux-2026-10-25\\cycle-5\\large-motion\\video\\page@46b7126d81930aeebdf74a090403b8a1.webm"
+    },
+    {
+      "width": 390,
+      "turns": [
+        {
+          "direction": "forward",
+          "before": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-before-390.png",
+          "frames": [
+            {
+              "targetMs": 0,
+              "actualElapsedMs": 119,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-390-0.png",
+              "sha256": "e2f47d827851cf2c45f920857f7f9601e8ee545c4525cf13ce99adc693cc1971",
+              "observed": {
+                "page": "1",
+                "mode": "slide",
+                "active": "true",
+                "canonicalArticles": 1,
+                "animations": [
+                  {
+                    "state": "running",
+                    "currentTime": 0
+                  }
+                ],
+                "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 120,
+              "actualElapsedMs": 185,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-390-120.png",
+              "sha256": "219e512d74609593210131dcfb0ff9c5c6c948f6d58cf2a206a9ca32a5a0672d",
+              "observed": {
+                "page": "1",
+                "mode": "slide",
+                "active": "true",
+                "canonicalArticles": 1,
+                "animations": [
+                  {
+                    "state": "running",
+                    "currentTime": 66.73600002729873
+                  }
+                ],
+                "transform": "matrix(1, 0, 0, 1, -269.581, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 260,
+              "actualElapsedMs": 263,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-390-260.png",
+              "sha256": "3cc7bd6bb205496d1e9b37f4a17cdca341b044853f8390cf182659d3d3434031",
+              "observed": {
+                "page": "1",
+                "mode": "slide",
+                "active": "true",
+                "canonicalArticles": 1,
+                "animations": [
+                  {
+                    "state": "running",
+                    "currentTime": 133.40000002729903
+                  }
+                ],
+                "transform": "matrix(1, 0, 0, 1, -357.808, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 420,
+              "actualElapsedMs": 436,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-390-420.png",
+              "sha256": "d7aab29438c8268e07b7f9f48bbf48bc9bf1e3f26c653311a3259c85fff902e1",
+              "observed": {
+                "page": "1",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, -390, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 650,
+              "actualElapsedMs": 664,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-390-650.png",
+              "sha256": "d7aab29438c8268e07b7f9f48bbf48bc9bf1e3f26c653311a3259c85fff902e1",
+              "observed": {
+                "page": "1",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, -390, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 900,
+              "actualElapsedMs": 904,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/forward-390-900.png",
+              "sha256": "d7aab29438c8268e07b7f9f48bbf48bc9bf1e3f26c653311a3259c85fff902e1",
+              "observed": {
+                "page": "1",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, -390, 0)",
+                "leaves": []
+              }
+            }
+          ]
+        },
+        {
+          "direction": "back",
+          "before": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-before-390.png",
+          "frames": [
+            {
+              "targetMs": 0,
+              "actualElapsedMs": 111,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-390-0.png",
+              "sha256": "15771c83b6b28b16203d0f4631f51a3c85d928e52f76502eb8f5a095c5a6971c",
+              "observed": {
+                "page": "0",
+                "mode": "slide",
+                "active": "true",
+                "canonicalArticles": 1,
+                "animations": [
+                  {
+                    "state": "running",
+                    "currentTime": 0
+                  }
+                ],
+                "transform": "matrix(1, 0, 0, 1, -390, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 120,
+              "actualElapsedMs": 184,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-390-120.png",
+              "sha256": "d69b0fd16365c3e3b423f42721c79b96257b2c23a39fb28669df914388294fb2",
+              "observed": {
+                "page": "0",
+                "mode": "slide",
+                "active": "true",
+                "canonicalArticles": 1,
+                "animations": [
+                  {
+                    "state": "running",
+                    "currentTime": 83.38399999307855
+                  }
+                ],
+                "transform": "matrix(1, 0, 0, 1, -87.3034, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 260,
+              "actualElapsedMs": 267,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-390-260.png",
+              "sha256": "ef548991271316825e05d38c3f62d8fbff777438e7225b384dd49cce3a35a6f8",
+              "observed": {
+                "page": "0",
+                "mode": "slide",
+                "active": "true",
+                "canonicalArticles": 1,
+                "animations": [
+                  {
+                    "state": "running",
+                    "currentTime": 166.71399999307823
+                  }
+                ],
+                "transform": "matrix(1, 0, 0, 1, -14.776, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 420,
+              "actualElapsedMs": 430,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-390-420.png",
+              "sha256": "126544624d044c1713aac84fb0b5cd78bbc2f6fd0f2118c9814a20c9b0a0a902",
+              "observed": {
+                "page": "0",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 650,
+              "actualElapsedMs": 664,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-390-650.png",
+              "sha256": "126544624d044c1713aac84fb0b5cd78bbc2f6fd0f2118c9814a20c9b0a0a902",
+              "observed": {
+                "page": "0",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                "leaves": []
+              }
+            },
+            {
+              "targetMs": 900,
+              "actualElapsedMs": 904,
+              "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/back-390-900.png",
+              "sha256": "126544624d044c1713aac84fb0b5cd78bbc2f6fd0f2118c9814a20c9b0a0a902",
+              "observed": {
+                "page": "0",
+                "mode": "slide",
+                "active": "false",
+                "canonicalArticles": 1,
+                "animations": [],
+                "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                "leaves": []
+              }
+            }
+          ]
+        }
+      ],
+      "reducedMotionNoLeaf": true,
+      "video": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\docs\\evidence\\phase1\\reader-ux-2026-10-25\\cycle-5\\large-motion\\video\\page@bbbaa1e67a8213823595eb898b542053.webm"
+    }
+  ],
+  "errors": []
+}

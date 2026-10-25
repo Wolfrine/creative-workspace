@@ -58,6 +58,7 @@ async function synced(page: Page) {
 }
 async function seed(page: Page) {
   await signIn(page);
+  await page.getByRole('button', { name: 'Browse collections', exact: true }).click();
   await page.getByRole('button', { name: 'New collection', exact: true }).click();
   await page.getByRole('textbox', { name: 'Collection name', exact: true }).fill(collectionName);
   await page.getByRole('button', { name: 'Create collection', exact: true }).click();
@@ -112,6 +113,7 @@ test('an offline stale device can add unrelated writing and a collection without
   try {
     const stale = await staleContext.newPage(); await signIn(stale); await expect(canvas(stale)).toContainText('Passage 59.');
     await staleContext.setOffline(true);
+    await stale.getByRole('button', { name: 'Browse collections', exact: true }).click();
     await stale.getByRole('button', { name: 'New collection', exact: true }).click();
     await stale.getByRole('textbox', { name: 'Collection name', exact: true }).fill('Unrelated offline collection');
     await stale.getByRole('button', { name: 'Create collection', exact: true }).click();
@@ -142,6 +144,11 @@ test('reader entry, page turns, appearance changes and exit leave the complete s
   // Positive control: the oracle must detect the real seed's cloud writes.
   expect(writeRequests.length).toBeGreaterThan(0); const seedWriteRequests = writeRequests.length;
   expect(before.originals).toHaveLength(1); expect(before.revisions.length).toBeGreaterThan(0);
+  await page.locator('.main-nav').getByRole('button', { name: 'Library', exact: true }).click();
+  await page.locator('.library-tabs').getByRole('button', { name: /^Pages/ }).click();
+  for (const layout of ['Tile', 'List', 'Detailed']) await page.getByRole('button', { name: layout + ' view', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Search library', exact: true }).fill('Passage 59');
+  await page.locator('.main-nav').getByRole('button', { name: 'Continue writing', exact: true }).click();
   await page.getByRole('button', { name: 'Read this page', exact: true }).click();
   await expect.poll(async () => Number(await page.locator('.reader-stage').getAttribute('data-pages'))).toBeGreaterThan(2);
   await page.getByRole('button', { name: 'Next reader page', exact: true }).click();
@@ -150,7 +157,7 @@ test('reader entry, page turns, appearance changes and exit leave the complete s
   await page.getByRole('combobox', { name: 'Reading typeface', exact: true }).selectOption('sans');
   await page.getByRole('combobox', { name: 'Reading margins', exact: true }).selectOption('wide');
   await page.getByRole('button', { name: 'Night', exact: true }).click();
-  await page.getByRole('checkbox', { name: 'Paper-turn animation', exact: true }).uncheck();
+  await page.getByRole('checkbox', { name: 'Page-turn animation', exact: true }).uncheck();
   await page.getByRole('button', { name: 'Close reading settings', exact: true }).click();
   await expect(page.locator('.reader')).toHaveClass(/reader-night/);
   await page.getByRole('button', { name: 'Back to writing', exact: true }).click();

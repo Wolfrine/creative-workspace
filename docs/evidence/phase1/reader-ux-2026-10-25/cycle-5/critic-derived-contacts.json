@@ -1,0 +1,43 @@
+{
+  "synthetic": true,
+  "source": "488155fe8ec9c3bbdd0ea7d372dfb7f7762adeccf582319389dcd1b77ab65668",
+  "method": "Actual retained WebMs decoded at 10 fps; frames scaled to 360 px desktop / 195 px mobile, tiled in time order with video-time labels. No content generation or scene editing.",
+  "captures": [
+    {
+      "mode": "soft",
+      "width": 1440,
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/motion/critic-contact-1440.png",
+      "sha256": "a0412a8155d8917b011a4d9e423b33697cc91f98f87603d4be0773d9c7ea60b8",
+      "video": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/motion/video/page@ec3186c8d8098d6a99ca1574d657c2cb.webm",
+      "videoSha256": "ad5b054d988faa9abaf898552288e59d95914317a00f3ccefdfa1be46db024ac",
+      "personallyInspected": true
+    },
+    {
+      "mode": "soft",
+      "width": 390,
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/motion/critic-contact-390.png",
+      "sha256": "9b916b5bb0a2d34fe63edc4cb05907878773a984f0483aa5610565804199c1bc",
+      "video": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/motion/video/page@d3f5aec675392ef35688683466ad76e8.webm",
+      "videoSha256": "0dde6e6a7972aa185ab4bf12f3092e85a277002a06828df536f506287f1e0bea",
+      "personallyInspected": true
+    },
+    {
+      "mode": "large",
+      "width": 1440,
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/critic-contact-1440.png",
+      "sha256": "5c4467d279a635f7dcf1ac21bf77c3fadb5464fb2f4a9bd4c6a58f3c5fa33e53",
+      "video": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/video/page@46b7126d81930aeebdf74a090403b8a1.webm",
+      "videoSha256": "0822ba821c2f8fe287a37fc2ff8122dec09377e44e8c016cba02d5a673ffd972",
+      "personallyInspected": true
+    },
+    {
+      "mode": "large",
+      "width": 390,
+      "path": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/critic-contact-390.png",
+      "sha256": "462361eafa107e3753120568d8c3759b10187245a381e2909be43a6ce06a2a2f",
+      "video": "docs/evidence/phase1/reader-ux-2026-10-25/cycle-5/large-motion/video/page@bbbaa1e67a8213823595eb898b542053.webm",
+      "videoSha256": "9b7013bf0903ae4c3cd171c4a0bec268b9849874606e7f60780953455b56fa06",
+      "personallyInspected": true
+    }
+  ]
+}

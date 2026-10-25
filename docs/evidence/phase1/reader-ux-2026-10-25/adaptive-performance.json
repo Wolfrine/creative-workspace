@@ -1,0 +1,4977 @@
+{
+  "measuredAt": "2026-10-25T09:37:13.873Z",
+  "runLabel": "adaptive",
+  "scope": "isolated actual loopback DEV application",
+  "synthetic": true,
+  "material": {
+    "generated": "AI-generated procedural volume, unverified; not the distinct three-world navigation corpus or owner manuscripts",
+    "approval": "none",
+    "testedWords": [
+      1000,
+      3000,
+      5000,
+      10000,
+      50000
+    ],
+    "sourceDocuments": 10,
+    "paragraphWords": 125,
+    "richInternalLinks": true,
+    "generatedBodyRule": "Eachbook has exactly requested whitespace-separated words in ten ordered sources; paragraphs contain up to125words. Scene/route/object combinations vary; sentence vocabulary repeats for volume measurement."
+  },
+  "host": {
+    "platform": "win32",
+    "release": "10.0.19045",
+    "arch": "x64",
+    "cpus": 12,
+    "cpuModel": "AMD Ryzen 5 2600 Six-Core Processor            ",
+    "totalMemoryBytes": 34287677440,
+    "freeMemoryBytesAtStart": 14096908288,
+    "node": "v24.22.1"
+  },
+  "browser": "156.0.8078.4",
+  "launch": {
+    "headless": true,
+    "cpuThrottleRate": 1,
+    "network": "loopback; no simulated throttle",
+    "otherBrowserLoad": "root paused capture/lifecycle runners for this measurement"
+  },
+  "sourceHashesBefore": {
+    "src/App.tsx": "9489108308d3f70586738737340122ffe6ac502d1da90feb1b13eb4f9ed7353d",
+    "src/components/Reader.tsx": "a1851a0cd6a5a11390c2994c1e260bc217002fdd0e10d016386ca4829194c04d",
+    "src/reader/page-turn.ts": "df91789bfc568d860d62c8f233b574ab0c776aeef5b4ca5593497dbb810b26c4",
+    "src/vendor/pageflip/page-flip.js": "6e13029cb2242e7860bcdfa68a8745ccf12c4fae8f1589b7bfb28c5691288fda",
+    "src/library-reader.css": "be1cbbfa564a19532a97dbeb857fee9bbf71e06ed71429e25ba1a8c62226f38d"
+  },
+  "cases": [
+    {
+      "words": 1000,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "errors": [],
+      "turns": [
+        {
+          "index": 1,
+          "clickCallMs": 62.58719999999994,
+          "probe": {
+            "clickAt": 1965.3000000715256,
+            "mode": "curl",
+            "projectionMountedAt": 1978.7000000476837,
+            "canonicalAnimationStartedAt": null,
+            "firstRafAt": 1983.3000000715256,
+            "settledAt": 2464.3000000715256,
+            "maxProjections": 4,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 0,
+            "maxElements": 1274,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 1964.5,
+                "duration": 40,
+                "processingStart": 1965.3000000715256,
+                "processingEnd": 1982.1000000238419,
+                "handlerMs": 16.799999952316284
+              }
+            ],
+            "canonicalAnimationFinishes": [],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:16.077Z",
+            "heap": {
+              "usedSize": 26296504,
+              "totalSize": 29335552,
+              "embedderHeapUsedSize": 8292384,
+              "backingStorageSize": 18209064
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 2037,
+              "jsEventListeners": 289
+            },
+            "counters": {
+              "elements": 1274,
+              "projections": 4,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 5994
+            },
+            "metrics": {
+              "LayoutObjects": 1801,
+              "Nodes": 2037,
+              "LayoutDuration": 0.180943,
+              "RecalcStyleDuration": 0.038265,
+              "ScriptDuration": 1.06417,
+              "TaskDuration": 1.549673,
+              "JSHeapUsedSize": 26296504,
+              "JSHeapTotalSize": 29335552
+            }
+          },
+          "clickToProjectionMs": 13.399999976158142,
+          "clickToCanonicalAnimationMs": null,
+          "clickToFirstRafMs": 18,
+          "clickToSettleMs": 499,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "curl",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 2,
+          "clickCallMs": 71.92120000000023,
+          "probe": {
+            "clickAt": 2599.100000023842,
+            "mode": "curl",
+            "projectionMountedAt": 2613.899999976158,
+            "canonicalAnimationStartedAt": null,
+            "firstRafAt": 2623.600000023842,
+            "settledAt": 3090.7000000476837,
+            "maxProjections": 4,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 0,
+            "maxElements": 1274,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2598.600000023842,
+                "duration": 40,
+                "processingStart": 2599.100000023842,
+                "processingEnd": 2621.899999976158,
+                "handlerMs": 22.799999952316284
+              }
+            ],
+            "canonicalAnimationFinishes": [],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:16.720Z",
+            "heap": {
+              "usedSize": 26689512,
+              "totalSize": 30908416,
+              "embedderHeapUsedSize": 14265680,
+              "backingStorageSize": 18211586
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 2780,
+              "jsEventListeners": 302
+            },
+            "counters": {
+              "elements": 1274,
+              "projections": 4,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 5994
+            },
+            "metrics": {
+              "LayoutObjects": 3345,
+              "Nodes": 2780,
+              "LayoutDuration": 0.202984,
+              "RecalcStyleDuration": 0.046521,
+              "ScriptDuration": 1.084001,
+              "TaskDuration": 1.645183,
+              "JSHeapUsedSize": 26689512,
+              "JSHeapTotalSize": 30908416
+            }
+          },
+          "clickToProjectionMs": 14.799999952316284,
+          "clickToCanonicalAnimationMs": null,
+          "clickToFirstRafMs": 24.5,
+          "clickToSettleMs": 491.60000002384186,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "curl",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 3,
+          "clickCallMs": 42.833300000000236,
+          "probe": {
+            "clickAt": 3214,
+            "mode": "curl",
+            "projectionMountedAt": 3226,
+            "canonicalAnimationStartedAt": null,
+            "firstRafAt": 3234.3000000715256,
+            "settledAt": 3697.3000000715256,
+            "maxProjections": 4,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 0,
+            "maxElements": 1274,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 3213.5,
+                "duration": 32,
+                "processingStart": 3213.899999976158,
+                "processingEnd": 3232.8000000715256,
+                "handlerMs": 18.90000009536743
+              }
+            ],
+            "canonicalAnimationFinishes": [],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:17.327Z",
+            "heap": {
+              "usedSize": 28185272,
+              "totalSize": 30646272,
+              "embedderHeapUsedSize": 10410032,
+              "backingStorageSize": 18213838
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 2777,
+              "jsEventListeners": 291
+            },
+            "counters": {
+              "elements": 1274,
+              "projections": 4,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 5994
+            },
+            "metrics": {
+              "LayoutObjects": 2577,
+              "Nodes": 2777,
+              "LayoutDuration": 0.221097,
+              "RecalcStyleDuration": 0.054359,
+              "ScriptDuration": 1.100328,
+              "TaskDuration": 1.737682,
+              "JSHeapUsedSize": 28185272,
+              "JSHeapTotalSize": 30646272
+            }
+          },
+          "clickToProjectionMs": 12,
+          "clickToCanonicalAnimationMs": null,
+          "clickToFirstRafMs": 20.300000071525574,
+          "clickToSettleMs": 483.3000000715256,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "curl",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        }
+      ],
+      "sourceBefore": {
+        "sha256": "fddd075b6cee98458b34bc62b3726b4e56683811747966686533be71c6b353c1",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 1000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "reader": {
+        "pages": 10,
+        "columns": 2,
+        "width": 1218,
+        "height": 716
+      },
+      "sourceComplexity": {
+        "textCharacters": 6555,
+        "descendantElements": 120,
+        "allNodes": 180
+      },
+      "gcBefore": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "before": {
+        "at": "2026-10-25T09:37:15.998Z",
+        "heap": {
+          "usedSize": 25837748,
+          "totalSize": 27762688,
+          "embedderHeapUsedSize": 2851104,
+          "backingStorageSize": 18197319
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 1294,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 779,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 5994
+        },
+        "metrics": {
+          "LayoutObjects": 257,
+          "Nodes": 1294,
+          "LayoutDuration": 0.164306,
+          "RecalcStyleDuration": 0.034051,
+          "ScriptDuration": 1.053551,
+          "TaskDuration": 1.501547,
+          "JSHeapUsedSize": 25837748,
+          "JSHeapTotalSize": 27762688
+        }
+      },
+      "cpu": {
+        "elapsedMs": 1868.5221999999999,
+        "systemBusyPercentAcrossLogicalCores": 13.01381998582566,
+        "scope": "System CPU includes unrelated background processes; own browser process CPU sampled separately when CDP supports it.",
+        "before": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 0.653187
+            },
+            {
+              "type": "renderer",
+              "id": 16296,
+              "cpuTime": 2.68565
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 0.288817
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.21812
+            }
+          ]
+        },
+        "after": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 0.704793
+            },
+            {
+              "type": "renderer",
+              "id": 16296,
+              "cpuTime": 3.717287
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 1.739379
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.21812
+            }
+          ]
+        },
+        "ownProcessCpuSeconds": [
+          {
+            "type": "browser",
+            "id": 136536,
+            "cpuSeconds": 0.05160600000000004
+          },
+          {
+            "type": "renderer",
+            "id": 16296,
+            "cpuSeconds": 1.031637
+          },
+          {
+            "type": "GPU",
+            "id": 4908,
+            "cpuSeconds": 1.4505620000000001
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 18512,
+            "cpuSeconds": 0
+          }
+        ]
+      },
+      "afterSettled": {
+        "at": "2026-10-25T09:37:17.870Z",
+        "heap": {
+          "usedSize": 27238992,
+          "totalSize": 30646272,
+          "embedderHeapUsedSize": 11071432,
+          "backingStorageSize": 18213839
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 2777,
+          "jsEventListeners": 292
+        },
+        "counters": {
+          "elements": 779,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 5994
+        },
+        "metrics": {
+          "LayoutObjects": 2577,
+          "Nodes": 2777,
+          "LayoutDuration": 0.223282,
+          "RecalcStyleDuration": 0.057868,
+          "ScriptDuration": 1.106437,
+          "TaskDuration": 1.780895,
+          "JSHeapUsedSize": 27238992,
+          "JSHeapTotalSize": 30646272
+        }
+      },
+      "gcAfter": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "afterGc": {
+        "at": "2026-10-25T09:37:17.899Z",
+        "heap": {
+          "usedSize": 26376288,
+          "totalSize": 26976256,
+          "embedderHeapUsedSize": 2573744,
+          "backingStorageSize": 18198472
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 1299,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 779,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 5994
+        },
+        "metrics": {
+          "LayoutObjects": 257,
+          "Nodes": 1299,
+          "LayoutDuration": 0.223282,
+          "RecalcStyleDuration": 0.057868,
+          "ScriptDuration": 1.106437,
+          "TaskDuration": 1.807473,
+          "JSHeapUsedSize": 26376288,
+          "JSHeapTotalSize": 26976256
+        }
+      },
+      "sourceAfter": {
+        "sha256": "fddd075b6cee98458b34bc62b3726b4e56683811747966686533be71c6b353c1",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 1000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "sourceUnchanged": true,
+      "maxProjections": 4,
+      "anyReviewFlag": false
+    },
+    {
+      "words": 1000,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "errors": [],
+      "turns": [
+        {
+          "index": 1,
+          "clickCallMs": 75.29489999999987,
+          "probe": {
+            "clickAt": 1823.7000000476837,
+            "mode": "curl",
+            "projectionMountedAt": 1839.5,
+            "canonicalAnimationStartedAt": null,
+            "firstRafAt": 1843.8000000715256,
+            "settledAt": 2169,
+            "maxProjections": 3,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 0,
+            "maxElements": 1151,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 1822,
+                "duration": 40,
+                "processingStart": 1823.6000000238419,
+                "processingEnd": 1842.7000000476837,
+                "handlerMs": 19.100000023841858
+              }
+            ],
+            "canonicalAnimationFinishes": [],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:19.832Z",
+            "heap": {
+              "usedSize": 26794316,
+              "totalSize": 28024832,
+              "embedderHeapUsedSize": 7644144,
+              "backingStorageSize": 18205990
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 1857,
+              "jsEventListeners": 289
+            },
+            "counters": {
+              "elements": 1151,
+              "projections": 3,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 7756
+            },
+            "metrics": {
+              "LayoutObjects": 1217,
+              "Nodes": 1857,
+              "LayoutDuration": 0.159561,
+              "RecalcStyleDuration": 0.04258,
+              "ScriptDuration": 1.017056,
+              "TaskDuration": 1.455984,
+              "JSHeapUsedSize": 26759936,
+              "JSHeapTotalSize": 28024832
+            }
+          },
+          "clickToProjectionMs": 15.799999952316284,
+          "clickToCanonicalAnimationMs": null,
+          "clickToFirstRafMs": 20.100000023841858,
+          "clickToSettleMs": 345.2999999523163,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "curl",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 2,
+          "clickCallMs": 54.69459999999981,
+          "probe": {
+            "clickAt": 2286.3000000715256,
+            "mode": "curl",
+            "projectionMountedAt": 2302.3000000715256,
+            "canonicalAnimationStartedAt": null,
+            "firstRafAt": 2311.9000000953674,
+            "settledAt": 2635.4000000953674,
+            "maxProjections": 3,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 0,
+            "maxElements": 1151,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2285.600000023842,
+                "duration": 40,
+                "processingStart": 2286.3000000715256,
+                "processingEnd": 2310.4000000953674,
+                "handlerMs": 24.100000023841858
+              }
+            ],
+            "canonicalAnimationFinishes": [],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:20.300Z",
+            "heap": {
+              "usedSize": 27209224,
+              "totalSize": 29335552,
+              "embedderHeapUsedSize": 12889560,
+              "backingStorageSize": 18207403
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 2418,
+              "jsEventListeners": 302
+            },
+            "counters": {
+              "elements": 1151,
+              "projections": 3,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 7756
+            },
+            "metrics": {
+              "LayoutObjects": 2185,
+              "Nodes": 2418,
+              "LayoutDuration": 0.182971,
+              "RecalcStyleDuration": 0.050528,
+              "ScriptDuration": 1.036944,
+              "TaskDuration": 1.553202,
+              "JSHeapUsedSize": 27209224,
+              "JSHeapTotalSize": 29335552
+            }
+          },
+          "clickToProjectionMs": 16,
+          "clickToCanonicalAnimationMs": null,
+          "clickToFirstRafMs": 25.600000023841858,
+          "clickToSettleMs": 349.10000002384186,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "curl",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 3,
+          "clickCallMs": 59.76729999999952,
+          "probe": {
+            "clickAt": 2754.9000000953674,
+            "mode": "curl",
+            "projectionMountedAt": 2767.8000000715256,
+            "canonicalAnimationStartedAt": null,
+            "firstRafAt": 2775.9000000953674,
+            "settledAt": 3102.2000000476837,
+            "maxProjections": 3,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 0,
+            "maxElements": 1151,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2754,
+                "duration": 32,
+                "processingStart": 2754.9000000953674,
+                "processingEnd": 2774.4000000953674,
+                "handlerMs": 19.5
+              }
+            ],
+            "canonicalAnimationFinishes": [],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:20.758Z",
+            "heap": {
+              "usedSize": 28042860,
+              "totalSize": 30121984,
+              "embedderHeapUsedSize": 9276896,
+              "backingStorageSize": 18207332
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 2415,
+              "jsEventListeners": 291
+            },
+            "counters": {
+              "elements": 1151,
+              "projections": 3,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 7756
+            },
+            "metrics": {
+              "LayoutObjects": 1801,
+              "Nodes": 2415,
+              "LayoutDuration": 0.201793,
+              "RecalcStyleDuration": 0.057865,
+              "ScriptDuration": 1.053328,
+              "TaskDuration": 1.652073,
+              "JSHeapUsedSize": 28042860,
+              "JSHeapTotalSize": 30121984
+            }
+          },
+          "clickToProjectionMs": 12.899999976158142,
+          "clickToCanonicalAnimationMs": null,
+          "clickToFirstRafMs": 21,
+          "clickToSettleMs": 347.2999999523163,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "curl",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        }
+      ],
+      "sourceBefore": {
+        "sha256": "6c41aca0afcc6946e04c3049c47b7f822625fd5365bab677576edfec4b5cbabc",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 1000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "reader": {
+        "pages": 20,
+        "columns": 1,
+        "width": 390,
+        "height": 613
+      },
+      "sourceComplexity": {
+        "textCharacters": 6555,
+        "descendantElements": 120,
+        "allNodes": 180
+      },
+      "gcBefore": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "before": {
+        "at": "2026-10-25T09:37:19.749Z",
+        "heap": {
+          "usedSize": 25833724,
+          "totalSize": 27238400,
+          "embedderHeapUsedSize": 3073264,
+          "backingStorageSize": 18196590
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 1296,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 778,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 7756
+        },
+        "metrics": {
+          "LayoutObjects": 249,
+          "Nodes": 1296,
+          "LayoutDuration": 0.141648,
+          "RecalcStyleDuration": 0.038054,
+          "ScriptDuration": 1.005612,
+          "TaskDuration": 1.407003,
+          "JSHeapUsedSize": 25833724,
+          "JSHeapTotalSize": 27238400
+        }
+      },
+      "cpu": {
+        "elapsedMs": 1418.6626999999999,
+        "systemBusyPercentAcrossLogicalCores": 14.17373501023691,
+        "scope": "System CPU includes unrelated background processes; own browser process CPU sampled separately when CDP supports it.",
+        "before": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 1.110387
+            },
+            {
+              "type": "renderer",
+              "id": 4088,
+              "cpuTime": 2.380324
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 1.796815
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.346371
+            }
+          ]
+        },
+        "after": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 1.163801
+            },
+            {
+              "type": "renderer",
+              "id": 4088,
+              "cpuTime": 3.215943
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 2.579357
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.346371
+            }
+          ]
+        },
+        "ownProcessCpuSeconds": [
+          {
+            "type": "browser",
+            "id": 136536,
+            "cpuSeconds": 0.05341400000000007
+          },
+          {
+            "type": "renderer",
+            "id": 4088,
+            "cpuSeconds": 0.8356190000000003
+          },
+          {
+            "type": "GPU",
+            "id": 4908,
+            "cpuSeconds": 0.7825419999999998
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 18512,
+            "cpuSeconds": 0
+          }
+        ]
+      },
+      "afterSettled": {
+        "at": "2026-10-25T09:37:21.170Z",
+        "heap": {
+          "usedSize": 27112592,
+          "totalSize": 30121984,
+          "embedderHeapUsedSize": 10019760,
+          "backingStorageSize": 18207332
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 2415,
+          "jsEventListeners": 292
+        },
+        "counters": {
+          "elements": 778,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 7756
+        },
+        "metrics": {
+          "LayoutObjects": 1801,
+          "Nodes": 2415,
+          "LayoutDuration": 0.204025,
+          "RecalcStyleDuration": 0.061644,
+          "ScriptDuration": 1.059967,
+          "TaskDuration": 1.69957,
+          "JSHeapUsedSize": 27112592,
+          "JSHeapTotalSize": 30121984
+        }
+      },
+      "gcAfter": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "afterGc": {
+        "at": "2026-10-25T09:37:21.196Z",
+        "heap": {
+          "usedSize": 26357532,
+          "totalSize": 27238400,
+          "embedderHeapUsedSize": 2734848,
+          "backingStorageSize": 18197669
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 1301,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 778,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 7756
+        },
+        "metrics": {
+          "LayoutObjects": 249,
+          "Nodes": 1301,
+          "LayoutDuration": 0.204025,
+          "RecalcStyleDuration": 0.061644,
+          "ScriptDuration": 1.059967,
+          "TaskDuration": 1.72276,
+          "JSHeapUsedSize": 26357532,
+          "JSHeapTotalSize": 27238400
+        }
+      },
+      "sourceAfter": {
+        "sha256": "6c41aca0afcc6946e04c3049c47b7f822625fd5365bab677576edfec4b5cbabc",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 1000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "sourceUnchanged": true,
+      "maxProjections": 3,
+      "anyReviewFlag": false
+    },
+    {
+      "words": 3000,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "errors": [],
+      "turns": [
+        {
+          "index": 1,
+          "clickCallMs": 158.10230000000047,
+          "probe": {
+            "clickAt": 1958.3999999761581,
+            "mode": "curl",
+            "projectionMountedAt": 2000.7999999523163,
+            "canonicalAnimationStartedAt": null,
+            "firstRafAt": 2016.7999999523163,
+            "settledAt": 2479,
+            "maxProjections": 4,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 0,
+            "maxElements": 1574,
+            "longTasks": [
+              {
+                "startTime": 1957.3999999761581,
+                "duration": 57,
+                "name": "self"
+              }
+            ],
+            "clickEvents": [
+              {
+                "startTime": 1956.6000000238419,
+                "duration": 96,
+                "processingStart": 1958.2999999523163,
+                "processingEnd": 2014.3999999761581,
+                "handlerMs": 56.10000002384186
+              }
+            ],
+            "canonicalAnimationFinishes": [],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:23.352Z",
+            "heap": {
+              "usedSize": 26780264,
+              "totalSize": 31694848,
+              "embedderHeapUsedSize": 6199608,
+              "backingStorageSize": 18199784
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 2637,
+              "jsEventListeners": 278
+            },
+            "counters": {
+              "elements": 1574,
+              "projections": 4,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 18174
+            },
+            "metrics": {
+              "LayoutObjects": 2881,
+              "Nodes": 2637,
+              "LayoutDuration": 0.226168,
+              "RecalcStyleDuration": 0.042218,
+              "ScriptDuration": 1.127445,
+              "TaskDuration": 1.680861,
+              "JSHeapUsedSize": 26780264,
+              "JSHeapTotalSize": 31694848
+            }
+          },
+          "clickToProjectionMs": 42.39999997615814,
+          "clickToCanonicalAnimationMs": null,
+          "clickToFirstRafMs": 58.39999997615814,
+          "clickToSettleMs": 520.6000000238419,
+          "maxLongTaskMs": 57,
+          "declaredMotion": {
+            "kind": "curl",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 2,
+          "clickCallMs": 109.75870000000032,
+          "probe": {
+            "clickAt": 2588.2000000476837,
+            "mode": "curl",
+            "projectionMountedAt": 2622.899999976158,
+            "canonicalAnimationStartedAt": null,
+            "firstRafAt": 2634.7999999523163,
+            "settledAt": 3111.7999999523163,
+            "maxProjections": 4,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 0,
+            "maxElements": 1574,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2587.600000023842,
+                "duration": 72,
+                "processingStart": 2588.100000023842,
+                "processingEnd": 2632.7999999523163,
+                "handlerMs": 44.699999928474426
+              }
+            ],
+            "canonicalAnimationFinishes": [],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:23.950Z",
+            "heap": {
+              "usedSize": 27510316,
+              "totalSize": 32743424,
+              "embedderHeapUsedSize": 20889696,
+              "backingStorageSize": 18223817
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 3857,
+              "jsEventListeners": 291
+            },
+            "counters": {
+              "elements": 1574,
+              "projections": 4,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 18174
+            },
+            "metrics": {
+              "LayoutObjects": 4137,
+              "Nodes": 3857,
+              "LayoutDuration": 0.28293,
+              "RecalcStyleDuration": 0.051532,
+              "ScriptDuration": 1.149857,
+              "TaskDuration": 1.826884,
+              "JSHeapUsedSize": 27510316,
+              "JSHeapTotalSize": 32743424
+            }
+          },
+          "clickToProjectionMs": 34.699999928474426,
+          "clickToCanonicalAnimationMs": null,
+          "clickToFirstRafMs": 46.59999990463257,
+          "clickToSettleMs": 523.5999999046326,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "curl",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 3,
+          "clickCallMs": 113.10169999999925,
+          "probe": {
+            "clickAt": 3237.7999999523163,
+            "mode": "curl",
+            "projectionMountedAt": 3272.2000000476837,
+            "canonicalAnimationStartedAt": null,
+            "firstRafAt": 3284.600000023842,
+            "settledAt": 3751.399999976158,
+            "maxProjections": 4,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 0,
+            "maxElements": 1574,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 3237.2999999523163,
+                "duration": 72,
+                "processingStart": 3237.7999999523163,
+                "processingEnd": 3282.7000000476837,
+                "handlerMs": 44.90000009536743
+              }
+            ],
+            "canonicalAnimationFinishes": [],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:24.599Z",
+            "heap": {
+              "usedSize": 28268784,
+              "totalSize": 33792000,
+              "embedderHeapUsedSize": 34851048,
+              "backingStorageSize": 18227309
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 5078,
+              "jsEventListeners": 304
+            },
+            "counters": {
+              "elements": 1574,
+              "projections": 4,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 18174
+            },
+            "metrics": {
+              "LayoutObjects": 6641,
+              "Nodes": 5078,
+              "LayoutDuration": 0.341554,
+              "RecalcStyleDuration": 0.061434,
+              "ScriptDuration": 1.171273,
+              "TaskDuration": 1.98105,
+              "JSHeapUsedSize": 28268784,
+              "JSHeapTotalSize": 33792000
+            }
+          },
+          "clickToProjectionMs": 34.40000009536743,
+          "clickToCanonicalAnimationMs": null,
+          "clickToFirstRafMs": 46.800000071525574,
+          "clickToSettleMs": 513.6000000238419,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "curl",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        }
+      ],
+      "sourceBefore": {
+        "sha256": "ff30edc382b405fdeea06e7b790913c6a321f55c4fa9a3ea6fcf1bb1f014f83b",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 3000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "reader": {
+        "pages": 30,
+        "columns": 2,
+        "width": 1218,
+        "height": 716
+      },
+      "sourceComplexity": {
+        "textCharacters": 18311,
+        "descendantElements": 180,
+        "allNodes": 300
+      },
+      "gcBefore": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "before": {
+        "at": "2026-10-25T09:37:23.175Z",
+        "heap": {
+          "usedSize": 26275264,
+          "totalSize": 28024832,
+          "embedderHeapUsedSize": 3267704,
+          "backingStorageSize": 18198633
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 1414,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 839,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 18174
+        },
+        "metrics": {
+          "LayoutObjects": 377,
+          "Nodes": 1414,
+          "LayoutDuration": 0.163689,
+          "RecalcStyleDuration": 0.03395,
+          "ScriptDuration": 1.100863,
+          "TaskDuration": 1.540217,
+          "JSHeapUsedSize": 26275264,
+          "JSHeapTotalSize": 28024832
+        }
+      },
+      "cpu": {
+        "elapsedMs": 1931.7237000000005,
+        "systemBusyPercentAcrossLogicalCores": 14.14588073670201,
+        "scope": "System CPU includes unrelated background processes; own browser process CPU sampled separately when CDP supports it.",
+        "before": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 1.621287
+            },
+            {
+              "type": "renderer",
+              "id": 195328,
+              "cpuTime": 2.6484
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 2.708371
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.471844
+            }
+          ]
+        },
+        "after": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 1.687235
+            },
+            {
+              "type": "renderer",
+              "id": 195328,
+              "cpuTime": 3.853805
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 4.070563
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.471844
+            }
+          ]
+        },
+        "ownProcessCpuSeconds": [
+          {
+            "type": "browser",
+            "id": 136536,
+            "cpuSeconds": 0.06594800000000012
+          },
+          {
+            "type": "renderer",
+            "id": 195328,
+            "cpuSeconds": 1.2054049999999998
+          },
+          {
+            "type": "GPU",
+            "id": 4908,
+            "cpuSeconds": 1.3621919999999998
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 18512,
+            "cpuSeconds": 0
+          }
+        ]
+      },
+      "afterSettled": {
+        "at": "2026-10-25T09:37:25.110Z",
+        "heap": {
+          "usedSize": 28624860,
+          "totalSize": 33792000,
+          "embedderHeapUsedSize": 35668472,
+          "backingStorageSize": 18227310
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 5078,
+          "jsEventListeners": 305
+        },
+        "counters": {
+          "elements": 839,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 18174
+        },
+        "metrics": {
+          "LayoutObjects": 6641,
+          "Nodes": 5078,
+          "LayoutDuration": 0.343211,
+          "RecalcStyleDuration": 0.064319,
+          "ScriptDuration": 1.177121,
+          "TaskDuration": 2.031993,
+          "JSHeapUsedSize": 28624860,
+          "JSHeapTotalSize": 33792000
+        }
+      },
+      "gcAfter": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "afterGc": {
+        "at": "2026-10-25T09:37:25.153Z",
+        "heap": {
+          "usedSize": 26957632,
+          "totalSize": 27500544,
+          "embedderHeapUsedSize": 3013176,
+          "backingStorageSize": 18199744
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 1419,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 839,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 18174
+        },
+        "metrics": {
+          "LayoutObjects": 377,
+          "Nodes": 1419,
+          "LayoutDuration": 0.343211,
+          "RecalcStyleDuration": 0.064319,
+          "ScriptDuration": 1.177121,
+          "TaskDuration": 2.072133,
+          "JSHeapUsedSize": 26957632,
+          "JSHeapTotalSize": 27500544
+        }
+      },
+      "sourceAfter": {
+        "sha256": "ff30edc382b405fdeea06e7b790913c6a321f55c4fa9a3ea6fcf1bb1f014f83b",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 3000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "sourceUnchanged": true,
+      "maxProjections": 4,
+      "anyReviewFlag": false
+    },
+    {
+      "words": 3000,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "errors": [],
+      "turns": [
+        {
+          "index": 1,
+          "clickCallMs": 100.71349999999984,
+          "probe": {
+            "clickAt": 1859.1999999284744,
+            "mode": "curl",
+            "projectionMountedAt": 1877.8999999761581,
+            "canonicalAnimationStartedAt": null,
+            "firstRafAt": 1883.6000000238419,
+            "settledAt": 2206.600000023842,
+            "maxProjections": 3,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 0,
+            "maxElements": 1391,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 1858.2999999523163,
+                "duration": 56,
+                "processingStart": 1859.1000000238419,
+                "processingEnd": 1882.1000000238419,
+                "handlerMs": 23
+              }
+            ],
+            "canonicalAnimationFinishes": [],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:27.158Z",
+            "heap": {
+              "usedSize": 26656156,
+              "totalSize": 28811264,
+              "embedderHeapUsedSize": 13216944,
+              "backingStorageSize": 18219459
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 2337,
+              "jsEventListeners": 289
+            },
+            "counters": {
+              "elements": 1391,
+              "projections": 3,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 15556
+            },
+            "metrics": {
+              "LayoutObjects": 1937,
+              "Nodes": 2337,
+              "LayoutDuration": 0.195136,
+              "RecalcStyleDuration": 0.042942,
+              "ScriptDuration": 1.015449,
+              "TaskDuration": 1.509024,
+              "JSHeapUsedSize": 26656156,
+              "JSHeapTotalSize": 28811264
+            }
+          },
+          "clickToProjectionMs": 18.700000047683716,
+          "clickToCanonicalAnimationMs": null,
+          "clickToFirstRafMs": 24.40000009536743,
+          "clickToSettleMs": 347.40000009536743,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "curl",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 2,
+          "clickCallMs": 94.79629999999997,
+          "probe": {
+            "clickAt": 2341.1999999284744,
+            "mode": "curl",
+            "projectionMountedAt": 2358.1999999284744,
+            "canonicalAnimationStartedAt": null,
+            "firstRafAt": 2371,
+            "settledAt": 2705.899999976158,
+            "maxProjections": 3,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 0,
+            "maxElements": 1391,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2340.399999976158,
+                "duration": 56,
+                "processingStart": 2341.1999999284744,
+                "processingEnd": 2369,
+                "handlerMs": 27.800000071525574
+              }
+            ],
+            "canonicalAnimationFinishes": [],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:27.646Z",
+            "heap": {
+              "usedSize": 27098900,
+              "totalSize": 30121984,
+              "embedderHeapUsedSize": 16183528,
+              "backingStorageSize": 18220978
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 3255,
+              "jsEventListeners": 291
+            },
+            "counters": {
+              "elements": 1391,
+              "projections": 3,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 15556
+            },
+            "metrics": {
+              "LayoutObjects": 2881,
+              "Nodes": 3255,
+              "LayoutDuration": 0.235441,
+              "RecalcStyleDuration": 0.05106,
+              "ScriptDuration": 1.040193,
+              "TaskDuration": 1.670957,
+              "JSHeapUsedSize": 27098900,
+              "JSHeapTotalSize": 30121984
+            }
+          },
+          "clickToProjectionMs": 17,
+          "clickToCanonicalAnimationMs": null,
+          "clickToFirstRafMs": 29.800000071525574,
+          "clickToSettleMs": 364.7000000476837,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "curl",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 3,
+          "clickCallMs": 100.91319999999905,
+          "probe": {
+            "clickAt": 2825.399999976158,
+            "mode": "curl",
+            "projectionMountedAt": 2843.5,
+            "canonicalAnimationStartedAt": null,
+            "firstRafAt": 2856.1999999284744,
+            "settledAt": 3189.6999999284744,
+            "maxProjections": 3,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 0,
+            "maxElements": 1391,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2824.899999976158,
+                "duration": 56,
+                "processingStart": 2825.399999976158,
+                "processingEnd": 2854.2999999523163,
+                "handlerMs": 28.899999976158142
+              }
+            ],
+            "canonicalAnimationFinishes": [],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:28.128Z",
+            "heap": {
+              "usedSize": 27762856,
+              "totalSize": 32481280,
+              "embedderHeapUsedSize": 26711744,
+              "backingStorageSize": 18220979
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 4174,
+              "jsEventListeners": 304
+            },
+            "counters": {
+              "elements": 1391,
+              "projections": 3,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 15556
+            },
+            "metrics": {
+              "LayoutObjects": 4449,
+              "Nodes": 4174,
+              "LayoutDuration": 0.275414,
+              "RecalcStyleDuration": 0.059536,
+              "ScriptDuration": 1.061383,
+              "TaskDuration": 1.820328,
+              "JSHeapUsedSize": 27762856,
+              "JSHeapTotalSize": 32481280
+            }
+          },
+          "clickToProjectionMs": 18.100000023841858,
+          "clickToCanonicalAnimationMs": null,
+          "clickToFirstRafMs": 30.799999952316284,
+          "clickToSettleMs": 364.2999999523163,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "curl",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        }
+      ],
+      "sourceBefore": {
+        "sha256": "59335f639f4e3df7d35281b4b622962b2724470aa41ea7720f85bcd63c36595d",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 3000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "reader": {
+        "pages": 40,
+        "columns": 1,
+        "width": 390,
+        "height": 613
+      },
+      "sourceComplexity": {
+        "textCharacters": 18311,
+        "descendantElements": 180,
+        "allNodes": 300
+      },
+      "gcBefore": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "before": {
+        "at": "2026-10-25T09:37:27.051Z",
+        "heap": {
+          "usedSize": 26230060,
+          "totalSize": 27500544,
+          "embedderHeapUsedSize": 3407600,
+          "backingStorageSize": 18197944
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 1416,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 838,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 15556
+        },
+        "metrics": {
+          "LayoutObjects": 369,
+          "Nodes": 1416,
+          "LayoutDuration": 0.159711,
+          "RecalcStyleDuration": 0.038687,
+          "ScriptDuration": 1.003374,
+          "TaskDuration": 1.432231,
+          "JSHeapUsedSize": 26230060,
+          "JSHeapTotalSize": 27500544
+        }
+      },
+      "cpu": {
+        "elapsedMs": 1466.2798000000003,
+        "systemBusyPercentAcrossLogicalCores": 12.25964273523723,
+        "scope": "System CPU includes unrelated background processes; own browser process CPU sampled separately when CDP supports it.",
+        "before": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 2.107458
+            },
+            {
+              "type": "renderer",
+              "id": 194576,
+              "cpuTime": 2.40977
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 4.13011
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.608431
+            }
+          ]
+        },
+        "after": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 2.163209
+            },
+            {
+              "type": "renderer",
+              "id": 194576,
+              "cpuTime": 3.398668
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 4.936683
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.608431
+            }
+          ]
+        },
+        "ownProcessCpuSeconds": [
+          {
+            "type": "browser",
+            "id": 136536,
+            "cpuSeconds": 0.05575100000000033
+          },
+          {
+            "type": "renderer",
+            "id": 194576,
+            "cpuSeconds": 0.9888979999999998
+          },
+          {
+            "type": "GPU",
+            "id": 4908,
+            "cpuSeconds": 0.8065730000000002
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 18512,
+            "cpuSeconds": 0
+          }
+        ]
+      },
+      "afterSettled": {
+        "at": "2026-10-25T09:37:28.519Z",
+        "heap": {
+          "usedSize": 28156972,
+          "totalSize": 32481280,
+          "embedderHeapUsedSize": 27275936,
+          "backingStorageSize": 18220979
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 4174,
+          "jsEventListeners": 305
+        },
+        "counters": {
+          "elements": 838,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 15556
+        },
+        "metrics": {
+          "LayoutObjects": 4449,
+          "Nodes": 4174,
+          "LayoutDuration": 0.277581,
+          "RecalcStyleDuration": 0.062995,
+          "ScriptDuration": 1.067442,
+          "TaskDuration": 1.882197,
+          "JSHeapUsedSize": 28156972,
+          "JSHeapTotalSize": 32481280
+        }
+      },
+      "gcAfter": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "afterGc": {
+        "at": "2026-10-25T09:37:28.554Z",
+        "heap": {
+          "usedSize": 26897044,
+          "totalSize": 27762688,
+          "embedderHeapUsedSize": 3224368,
+          "backingStorageSize": 18198970
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 1421,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 838,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 15556
+        },
+        "metrics": {
+          "LayoutObjects": 369,
+          "Nodes": 1421,
+          "LayoutDuration": 0.277581,
+          "RecalcStyleDuration": 0.062995,
+          "ScriptDuration": 1.067442,
+          "TaskDuration": 1.914605,
+          "JSHeapUsedSize": 26897044,
+          "JSHeapTotalSize": 27762688
+        }
+      },
+      "sourceAfter": {
+        "sha256": "59335f639f4e3df7d35281b4b622962b2724470aa41ea7720f85bcd63c36595d",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 3000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "sourceUnchanged": true,
+      "maxProjections": 3,
+      "anyReviewFlag": false
+    },
+    {
+      "words": 5000,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "errors": [],
+      "turns": [
+        {
+          "index": 1,
+          "clickCallMs": 38.33950000000186,
+          "probe": {
+            "clickAt": 1977.8999999761581,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 1984.5999999046326,
+            "firstRafAt": 1990.8999999761581,
+            "settledAt": 2274.6999999284744,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 879,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 1977.0999999046326,
+                "duration": 40,
+                "processingStart": 1977.8999999761581,
+                "processingEnd": 1984.7999999523163,
+                "handlerMs": 6.899999976158142
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 2274.5999999046326,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:30.617Z",
+            "heap": {
+              "usedSize": 27429984,
+              "totalSize": 28811264,
+              "embedderHeapUsedSize": 3842920,
+              "backingStorageSize": 18235598
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 1486,
+              "jsEventListeners": 289
+            },
+            "counters": {
+              "elements": 879,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 24264
+            },
+            "metrics": {
+              "LayoutObjects": 447,
+              "Nodes": 1486,
+              "LayoutDuration": 0.173654,
+              "RecalcStyleDuration": 0.034544,
+              "ScriptDuration": 1.100696,
+              "TaskDuration": 1.571471,
+              "JSHeapUsedSize": 27429912,
+              "JSHeapTotalSize": 28811264
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 6.699999928474426,
+          "clickToFirstRafMs": 13,
+          "clickToSettleMs": 296.7999999523163,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 2,
+          "clickCallMs": 40.9275000000016,
+          "probe": {
+            "clickAt": 2393.399999976158,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 2406.7999999523163,
+            "firstRafAt": 2408.899999976158,
+            "settledAt": 2674.2999999523163,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 879,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2392.899999976158,
+                "duration": 24,
+                "processingStart": 2393.2999999523163,
+                "processingEnd": 2406.899999976158,
+                "handlerMs": 13.600000023841858
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 2674.2999999523163,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:31.037Z",
+            "heap": {
+              "usedSize": 27265612,
+              "totalSize": 30908416,
+              "embedderHeapUsedSize": 4042328,
+              "backingStorageSize": 18238740
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 1488,
+              "jsEventListeners": 301
+            },
+            "counters": {
+              "elements": 879,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 24264
+            },
+            "metrics": {
+              "LayoutObjects": 447,
+              "Nodes": 1488,
+              "LayoutDuration": 0.175073,
+              "RecalcStyleDuration": 0.035857,
+              "ScriptDuration": 1.114919,
+              "TaskDuration": 1.608732,
+              "JSHeapUsedSize": 27265612,
+              "JSHeapTotalSize": 30908416
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 13.399999976158142,
+          "clickToFirstRafMs": 15.5,
+          "clickToSettleMs": 280.89999997615814,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 3,
+          "clickCallMs": 42.66519999999946,
+          "probe": {
+            "clickAt": 2794.6999999284744,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 2809.0999999046326,
+            "firstRafAt": 2811.899999976158,
+            "settledAt": 3074.2999999523163,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 879,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2794.399999976158,
+                "duration": 24,
+                "processingStart": 2794.6999999284744,
+                "processingEnd": 2809.1999999284744,
+                "handlerMs": 14.5
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 3074.1999999284744,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:31.442Z",
+            "heap": {
+              "usedSize": 27796640,
+              "totalSize": 32219136,
+              "embedderHeapUsedSize": 4372680,
+              "backingStorageSize": 18241661
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 1488,
+              "jsEventListeners": 313
+            },
+            "counters": {
+              "elements": 879,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 24264
+            },
+            "metrics": {
+              "LayoutObjects": 447,
+              "Nodes": 1488,
+              "LayoutDuration": 0.17676,
+              "RecalcStyleDuration": 0.037305,
+              "ScriptDuration": 1.129444,
+              "TaskDuration": 1.64782,
+              "JSHeapUsedSize": 27796640,
+              "JSHeapTotalSize": 32219136
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 14.399999976158142,
+          "clickToFirstRafMs": 17.200000047683716,
+          "clickToSettleMs": 279.60000002384186,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        }
+      ],
+      "sourceBefore": {
+        "sha256": "3452ca7d53c939fe4ae823db564a1c02e377e8d37a8b501522834b198ee79fc7",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 5000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "reader": {
+        "pages": 40,
+        "columns": 2,
+        "width": 1218,
+        "height": 716
+      },
+      "sourceComplexity": {
+        "textCharacters": 30253,
+        "descendantElements": 220,
+        "allNodes": 370
+      },
+      "gcBefore": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "before": {
+        "at": "2026-10-25T09:37:30.570Z",
+        "heap": {
+          "usedSize": 26490240,
+          "totalSize": 27762688,
+          "embedderHeapUsedSize": 3538576,
+          "backingStorageSize": 18199895
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 1484,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 879,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 24264
+        },
+        "metrics": {
+          "LayoutObjects": 447,
+          "Nodes": 1484,
+          "LayoutDuration": 0.1733,
+          "RecalcStyleDuration": 0.033875,
+          "ScriptDuration": 1.093777,
+          "TaskDuration": 1.551396,
+          "JSHeapUsedSize": 26490240,
+          "JSHeapTotalSize": 27762688
+        }
+      },
+      "cpu": {
+        "elapsedMs": 1230.2351999999992,
+        "systemBusyPercentAcrossLogicalCores": 6.636655071277541,
+        "scope": "System CPU includes unrelated background processes; own browser process CPU sampled separately when CDP supports it.",
+        "before": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 2.618907
+            },
+            {
+              "type": "renderer",
+              "id": 99628,
+              "cpuTime": 2.625021
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 5.053403
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.736284
+            }
+          ]
+        },
+        "after": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 2.67039
+            },
+            {
+              "type": "renderer",
+              "id": 99628,
+              "cpuTime": 2.823258
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 5.46089
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.736284
+            }
+          ]
+        },
+        "ownProcessCpuSeconds": [
+          {
+            "type": "browser",
+            "id": 136536,
+            "cpuSeconds": 0.05148299999999972
+          },
+          {
+            "type": "renderer",
+            "id": 99628,
+            "cpuSeconds": 0.19823700000000022
+          },
+          {
+            "type": "GPU",
+            "id": 4908,
+            "cpuSeconds": 0.4074869999999997
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 18512,
+            "cpuSeconds": 0
+          }
+        ]
+      },
+      "afterSettled": {
+        "at": "2026-10-25T09:37:31.802Z",
+        "heap": {
+          "usedSize": 27923528,
+          "totalSize": 32219136,
+          "embedderHeapUsedSize": 4480416,
+          "backingStorageSize": 18241662
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 1488,
+          "jsEventListeners": 313
+        },
+        "counters": {
+          "elements": 879,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 24264
+        },
+        "metrics": {
+          "LayoutObjects": 447,
+          "Nodes": 1488,
+          "LayoutDuration": 0.178001,
+          "RecalcStyleDuration": 0.038347,
+          "ScriptDuration": 1.129777,
+          "TaskDuration": 1.664714,
+          "JSHeapUsedSize": 27923528,
+          "JSHeapTotalSize": 32219136
+        }
+      },
+      "gcAfter": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "afterGc": {
+        "at": "2026-10-25T09:37:31.824Z",
+        "heap": {
+          "usedSize": 27101216,
+          "totalSize": 28024832,
+          "embedderHeapUsedSize": 3309728,
+          "backingStorageSize": 18200438
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 1488,
+          "jsEventListeners": 279
+        },
+        "counters": {
+          "elements": 879,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 24264
+        },
+        "metrics": {
+          "LayoutObjects": 447,
+          "Nodes": 1488,
+          "LayoutDuration": 0.178001,
+          "RecalcStyleDuration": 0.038347,
+          "ScriptDuration": 1.129777,
+          "TaskDuration": 1.683631,
+          "JSHeapUsedSize": 27101216,
+          "JSHeapTotalSize": 28024832
+        }
+      },
+      "sourceAfter": {
+        "sha256": "3452ca7d53c939fe4ae823db564a1c02e377e8d37a8b501522834b198ee79fc7",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 5000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "sourceUnchanged": true,
+      "maxProjections": 0,
+      "anyReviewFlag": false
+    },
+    {
+      "words": 5000,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "errors": [],
+      "turns": [
+        {
+          "index": 1,
+          "clickCallMs": 35.47370000000228,
+          "probe": {
+            "clickAt": 1896.1999999284744,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 1902.6000000238419,
+            "firstRafAt": 1910.1000000238419,
+            "settledAt": 2176.7999999523163,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 878,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 1895.2999999523163,
+                "duration": 24,
+                "processingStart": 1896.1000000238419,
+                "processingEnd": 1902.7999999523163,
+                "handlerMs": 6.699999928474426
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 2176.7999999523163,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:33.794Z",
+            "heap": {
+              "usedSize": 27405568,
+              "totalSize": 28811264,
+              "embedderHeapUsedSize": 4219536,
+              "backingStorageSize": 18231941
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 1488,
+              "jsEventListeners": 289
+            },
+            "counters": {
+              "elements": 878,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 23356
+            },
+            "metrics": {
+              "LayoutObjects": 439,
+              "Nodes": 1488,
+              "LayoutDuration": 0.167482,
+              "RecalcStyleDuration": 0.039208,
+              "ScriptDuration": 1.033083,
+              "TaskDuration": 1.489424,
+              "JSHeapUsedSize": 27405568,
+              "JSHeapTotalSize": 28811264
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 6.400000095367432,
+          "clickToFirstRafMs": 13.900000095367432,
+          "clickToSettleMs": 280.60000002384186,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 2,
+          "clickCallMs": 53.232599999999366,
+          "probe": {
+            "clickAt": 2312.100000023842,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 2333.600000023842,
+            "firstRafAt": 2336,
+            "settledAt": 2593,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 878,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2311.5,
+                "duration": 32,
+                "processingStart": 2312.100000023842,
+                "processingEnd": 2333.6999999284744,
+                "handlerMs": 21.59999990463257
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 2593,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:34.232Z",
+            "heap": {
+              "usedSize": 27203836,
+              "totalSize": 30908416,
+              "embedderHeapUsedSize": 4401320,
+              "backingStorageSize": 18233595
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 1490,
+              "jsEventListeners": 301
+            },
+            "counters": {
+              "elements": 878,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 23356
+            },
+            "metrics": {
+              "LayoutObjects": 439,
+              "Nodes": 1490,
+              "LayoutDuration": 0.169288,
+              "RecalcStyleDuration": 0.040715,
+              "ScriptDuration": 1.055251,
+              "TaskDuration": 1.546907,
+              "JSHeapUsedSize": 27203836,
+              "JSHeapTotalSize": 30908416
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 21.5,
+          "clickToFirstRafMs": 23.899999976158142,
+          "clickToSettleMs": 280.89999997615814,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 3,
+          "clickCallMs": 33.88900000000285,
+          "probe": {
+            "clickAt": 2712.399999976158,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 2727.899999976158,
+            "firstRafAt": 2729.6999999284744,
+            "settledAt": 2993.5,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 878,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2711.600000023842,
+                "duration": 24,
+                "processingStart": 2712.399999976158,
+                "processingEnd": 2728,
+                "handlerMs": 15.600000023841858
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 2993.5,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:34.621Z",
+            "heap": {
+              "usedSize": 27721528,
+              "totalSize": 32481280,
+              "embedderHeapUsedSize": 4616744,
+              "backingStorageSize": 18233596
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 1490,
+              "jsEventListeners": 313
+            },
+            "counters": {
+              "elements": 878,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 23356
+            },
+            "metrics": {
+              "LayoutObjects": 439,
+              "Nodes": 1490,
+              "LayoutDuration": 0.170412,
+              "RecalcStyleDuration": 0.04185,
+              "ScriptDuration": 1.070934,
+              "TaskDuration": 1.583645,
+              "JSHeapUsedSize": 27721528,
+              "JSHeapTotalSize": 32481280
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 15.5,
+          "clickToFirstRafMs": 17.299999952316284,
+          "clickToSettleMs": 281.10000002384186,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        }
+      ],
+      "sourceBefore": {
+        "sha256": "37a0a8e9236c815094fba636457ab405ff6493b19444ff438a8c8cec7bdb019c",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 5000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "reader": {
+        "pages": 60,
+        "columns": 1,
+        "width": 390,
+        "height": 613
+      },
+      "sourceComplexity": {
+        "textCharacters": 30253,
+        "descendantElements": 220,
+        "allNodes": 370
+      },
+      "gcBefore": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "before": {
+        "at": "2026-10-25T09:37:33.753Z",
+        "heap": {
+          "usedSize": 26487844,
+          "totalSize": 27762688,
+          "embedderHeapUsedSize": 3835280,
+          "backingStorageSize": 18199195
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 1486,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 878,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 23356
+        },
+        "metrics": {
+          "LayoutObjects": 439,
+          "Nodes": 1486,
+          "LayoutDuration": 0.167065,
+          "RecalcStyleDuration": 0.038624,
+          "ScriptDuration": 1.026714,
+          "TaskDuration": 1.473817,
+          "JSHeapUsedSize": 26487844,
+          "JSHeapTotalSize": 27762688
+        }
+      },
+      "cpu": {
+        "elapsedMs": 1228.1153999999988,
+        "systemBusyPercentAcrossLogicalCores": 3.587322993931219,
+        "scope": "System CPU includes unrelated background processes; own browser process CPU sampled separately when CDP supports it.",
+        "before": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 3.092559
+            },
+            {
+              "type": "renderer",
+              "id": 12260,
+              "cpuTime": 2.4574
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 5.512968
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.865317
+            }
+          ]
+        },
+        "after": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 3.138923
+            },
+            {
+              "type": "renderer",
+              "id": 12260,
+              "cpuTime": 2.639625
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 5.643004
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.865317
+            }
+          ]
+        },
+        "ownProcessCpuSeconds": [
+          {
+            "type": "browser",
+            "id": 136536,
+            "cpuSeconds": 0.04636400000000007
+          },
+          {
+            "type": "renderer",
+            "id": 12260,
+            "cpuSeconds": 0.1822250000000003
+          },
+          {
+            "type": "GPU",
+            "id": 4908,
+            "cpuSeconds": 0.13003600000000048
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 18512,
+            "cpuSeconds": 0
+          }
+        ]
+      },
+      "afterSettled": {
+        "at": "2026-10-25T09:37:34.984Z",
+        "heap": {
+          "usedSize": 27850744,
+          "totalSize": 32481280,
+          "embedderHeapUsedSize": 4681400,
+          "backingStorageSize": 18233597
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 1490,
+          "jsEventListeners": 313
+        },
+        "counters": {
+          "elements": 878,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 23356
+        },
+        "metrics": {
+          "LayoutObjects": 439,
+          "Nodes": 1490,
+          "LayoutDuration": 0.171493,
+          "RecalcStyleDuration": 0.042836,
+          "ScriptDuration": 1.071291,
+          "TaskDuration": 1.596188,
+          "JSHeapUsedSize": 27850744,
+          "JSHeapTotalSize": 32481280
+        }
+      },
+      "gcAfter": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "afterGc": {
+        "at": "2026-10-25T09:37:35.010Z",
+        "heap": {
+          "usedSize": 27102036,
+          "totalSize": 28024832,
+          "embedderHeapUsedSize": 3597712,
+          "backingStorageSize": 18199695
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 1490,
+          "jsEventListeners": 279
+        },
+        "counters": {
+          "elements": 878,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 23356
+        },
+        "metrics": {
+          "LayoutObjects": 439,
+          "Nodes": 1490,
+          "LayoutDuration": 0.171493,
+          "RecalcStyleDuration": 0.042836,
+          "ScriptDuration": 1.071291,
+          "TaskDuration": 1.618872,
+          "JSHeapUsedSize": 27102036,
+          "JSHeapTotalSize": 28024832
+        }
+      },
+      "sourceAfter": {
+        "sha256": "37a0a8e9236c815094fba636457ab405ff6493b19444ff438a8c8cec7bdb019c",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 5000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "sourceUnchanged": true,
+      "maxProjections": 0,
+      "anyReviewFlag": false
+    },
+    {
+      "words": 10000,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "errors": [],
+      "turns": [
+        {
+          "index": 1,
+          "clickCallMs": 54.01429999999891,
+          "probe": {
+            "clickAt": 2010.6000000238419,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 2022.5,
+            "firstRafAt": 2024.7000000476837,
+            "settledAt": 2304.899999976158,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 1009,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2009.3000000715256,
+                "duration": 32,
+                "processingStart": 2010.6000000238419,
+                "processingEnd": 2022.7000000476837,
+                "handlerMs": 12.100000023841858
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 2304.899999976158,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:37.109Z",
+            "heap": {
+              "usedSize": 27541780,
+              "totalSize": 30121984,
+              "embedderHeapUsedSize": 4718648,
+              "backingStorageSize": 18268279
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 1736,
+              "jsEventListeners": 289
+            },
+            "counters": {
+              "elements": 1009,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 42534
+            },
+            "metrics": {
+              "LayoutObjects": 697,
+              "Nodes": 1736,
+              "LayoutDuration": 0.188859,
+              "RecalcStyleDuration": 0.03508,
+              "ScriptDuration": 1.134482,
+              "TaskDuration": 1.642033,
+              "JSHeapUsedSize": 27541780,
+              "JSHeapTotalSize": 30121984
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 11.899999976158142,
+          "clickToFirstRafMs": 14.100000023841858,
+          "clickToSettleMs": 294.2999999523163,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 2,
+          "clickCallMs": 44.04469999999856,
+          "probe": {
+            "clickAt": 2425.100000023842,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 2451.2000000476837,
+            "firstRafAt": 2453.8000000715256,
+            "settledAt": 2722.100000023842,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 1009,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2424.399999976158,
+                "duration": 40,
+                "processingStart": 2425.100000023842,
+                "processingEnd": 2451.3000000715256,
+                "handlerMs": 26.200000047683716
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 2722.100000023842,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:37.536Z",
+            "heap": {
+              "usedSize": 28926832,
+              "totalSize": 32481280,
+              "embedderHeapUsedSize": 5004384,
+              "backingStorageSize": 18271369
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 1738,
+              "jsEventListeners": 301
+            },
+            "counters": {
+              "elements": 1009,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 42534
+            },
+            "metrics": {
+              "LayoutObjects": 697,
+              "Nodes": 1738,
+              "LayoutDuration": 0.190408,
+              "RecalcStyleDuration": 0.036637,
+              "ScriptDuration": 1.161192,
+              "TaskDuration": 1.693896,
+              "JSHeapUsedSize": 28926832,
+              "JSHeapTotalSize": 32481280
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 26.100000023841858,
+          "clickToFirstRafMs": 28.700000047683716,
+          "clickToSettleMs": 297,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 3,
+          "clickCallMs": 44.75350000000253,
+          "probe": {
+            "clickAt": 2840.600000023842,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 2859.5,
+            "firstRafAt": 2862.7000000476837,
+            "settledAt": 3123,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 1009,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2840.2000000476837,
+                "duration": 32,
+                "processingStart": 2840.5,
+                "processingEnd": 2859.5,
+                "handlerMs": 19
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 3122.899999976158,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:37.944Z",
+            "heap": {
+              "usedSize": 29018584,
+              "totalSize": 33529856,
+              "embedderHeapUsedSize": 5156408,
+              "backingStorageSize": 18274279
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 1738,
+              "jsEventListeners": 313
+            },
+            "counters": {
+              "elements": 1009,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 42534
+            },
+            "metrics": {
+              "LayoutObjects": 697,
+              "Nodes": 1738,
+              "LayoutDuration": 0.191761,
+              "RecalcStyleDuration": 0.037929,
+              "ScriptDuration": 1.180339,
+              "TaskDuration": 1.73659,
+              "JSHeapUsedSize": 29018584,
+              "JSHeapTotalSize": 33529856
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 18.899999976158142,
+          "clickToFirstRafMs": 22.100000023841858,
+          "clickToSettleMs": 282.39999997615814,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        }
+      ],
+      "sourceBefore": {
+        "sha256": "bf3c7f4573d2654ab47ee14357f14ee3c5f075cce706512ae790a997b273c162",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 10000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "reader": {
+        "pages": 70,
+        "columns": 2,
+        "width": 1218,
+        "height": 716
+      },
+      "sourceComplexity": {
+        "textCharacters": 59763,
+        "descendantElements": 350,
+        "allNodes": 620
+      },
+      "gcBefore": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "before": {
+        "at": "2026-10-25T09:37:37.050Z",
+        "heap": {
+          "usedSize": 27175816,
+          "totalSize": 28811264,
+          "embedderHeapUsedSize": 4486920,
+          "backingStorageSize": 18203065
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 1734,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 1009,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 42534
+        },
+        "metrics": {
+          "LayoutObjects": 697,
+          "Nodes": 1734,
+          "LayoutDuration": 0.188295,
+          "RecalcStyleDuration": 0.034283,
+          "ScriptDuration": 1.122557,
+          "TaskDuration": 1.612182,
+          "JSHeapUsedSize": 27175816,
+          "JSHeapTotalSize": 28811264
+        }
+      },
+      "cpu": {
+        "elapsedMs": 1240.9608000000007,
+        "systemBusyPercentAcrossLogicalCores": 7.686607383454591,
+        "scope": "System CPU includes unrelated background processes; own browser process CPU sampled separately when CDP supports it.",
+        "before": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 3.596161
+            },
+            {
+              "type": "renderer",
+              "id": 100040,
+              "cpuTime": 2.71877
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 5.755814
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.993205
+            }
+          ]
+        },
+        "after": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 3.652638
+            },
+            {
+              "type": "renderer",
+              "id": 100040,
+              "cpuTime": 2.946014
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 6.210717
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 0.993205
+            }
+          ]
+        },
+        "ownProcessCpuSeconds": [
+          {
+            "type": "browser",
+            "id": 136536,
+            "cpuSeconds": 0.05647700000000011
+          },
+          {
+            "type": "renderer",
+            "id": 100040,
+            "cpuSeconds": 0.22724399999999978
+          },
+          {
+            "type": "GPU",
+            "id": 4908,
+            "cpuSeconds": 0.45490299999999984
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 18512,
+            "cpuSeconds": 0
+          }
+        ]
+      },
+      "afterSettled": {
+        "at": "2026-10-25T09:37:38.294Z",
+        "heap": {
+          "usedSize": 29150908,
+          "totalSize": 33529856,
+          "embedderHeapUsedSize": 5542528,
+          "backingStorageSize": 18274279
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 1738,
+          "jsEventListeners": 313
+        },
+        "counters": {
+          "elements": 1009,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 42534
+        },
+        "metrics": {
+          "LayoutObjects": 697,
+          "Nodes": 1738,
+          "LayoutDuration": 0.19298,
+          "RecalcStyleDuration": 0.039046,
+          "ScriptDuration": 1.180723,
+          "TaskDuration": 1.75154,
+          "JSHeapUsedSize": 29150908,
+          "JSHeapTotalSize": 33529856
+        }
+      },
+      "gcAfter": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "afterGc": {
+        "at": "2026-10-25T09:37:38.321Z",
+        "heap": {
+          "usedSize": 28074060,
+          "totalSize": 29073408,
+          "embedderHeapUsedSize": 4305000,
+          "backingStorageSize": 18203578
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 1738,
+          "jsEventListeners": 279
+        },
+        "counters": {
+          "elements": 1009,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 42534
+        },
+        "metrics": {
+          "LayoutObjects": 697,
+          "Nodes": 1738,
+          "LayoutDuration": 0.19298,
+          "RecalcStyleDuration": 0.039046,
+          "ScriptDuration": 1.180723,
+          "TaskDuration": 1.776158,
+          "JSHeapUsedSize": 28074060,
+          "JSHeapTotalSize": 29073408
+        }
+      },
+      "sourceAfter": {
+        "sha256": "bf3c7f4573d2654ab47ee14357f14ee3c5f075cce706512ae790a997b273c162",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 10000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "sourceUnchanged": true,
+      "maxProjections": 0,
+      "anyReviewFlag": false
+    },
+    {
+      "words": 10000,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "errors": [],
+      "turns": [
+        {
+          "index": 1,
+          "clickCallMs": 61.53689999999915,
+          "probe": {
+            "clickAt": 1943.8999999761581,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 1953.5,
+            "firstRafAt": 1957.5,
+            "settledAt": 2240.5,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 1008,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 1943,
+                "duration": 32,
+                "processingStart": 1943.7999999523163,
+                "processingEnd": 1953.6000000238419,
+                "handlerMs": 9.800000071525574
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 2240.5,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:40.358Z",
+            "heap": {
+              "usedSize": 27745664,
+              "totalSize": 29859840,
+              "embedderHeapUsedSize": 5530576,
+              "backingStorageSize": 18264618
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 1738,
+              "jsEventListeners": 289
+            },
+            "counters": {
+              "elements": 1008,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 46756
+            },
+            "metrics": {
+              "LayoutObjects": 689,
+              "Nodes": 1738,
+              "LayoutDuration": 0.18712,
+              "RecalcStyleDuration": 0.040494,
+              "ScriptDuration": 1.049971,
+              "TaskDuration": 1.546306,
+              "JSHeapUsedSize": 27745664,
+              "JSHeapTotalSize": 29859840
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 9.600000023841858,
+          "clickToFirstRafMs": 13.600000023841858,
+          "clickToSettleMs": 296.60000002384186,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 2,
+          "clickCallMs": 45.563500000000204,
+          "probe": {
+            "clickAt": 2376.5,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 2396.600000023842,
+            "firstRafAt": 2399.2999999523163,
+            "settledAt": 2657.1999999284744,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 1008,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2376.1999999284744,
+                "duration": 32,
+                "processingStart": 2376.5,
+                "processingEnd": 2396.6999999284744,
+                "handlerMs": 20.199999928474426
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 2657.100000023842,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:40.794Z",
+            "heap": {
+              "usedSize": 29098212,
+              "totalSize": 32481280,
+              "embedderHeapUsedSize": 5568400,
+              "backingStorageSize": 18266284
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 1740,
+              "jsEventListeners": 301
+            },
+            "counters": {
+              "elements": 1008,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 46756
+            },
+            "metrics": {
+              "LayoutObjects": 689,
+              "Nodes": 1740,
+              "LayoutDuration": 0.18839,
+              "RecalcStyleDuration": 0.041655,
+              "ScriptDuration": 1.070456,
+              "TaskDuration": 1.594997,
+              "JSHeapUsedSize": 29098212,
+              "JSHeapTotalSize": 32481280
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 20.100000023841858,
+          "clickToFirstRafMs": 22.799999952316284,
+          "clickToSettleMs": 280.6999999284744,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 3,
+          "clickCallMs": 61.63920000000144,
+          "probe": {
+            "clickAt": 2793.7999999523163,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 2814.6999999284744,
+            "firstRafAt": 2817.600000023842,
+            "settledAt": 3074.5,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 1008,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 2793.1999999284744,
+                "duration": 32,
+                "processingStart": 2793.6999999284744,
+                "processingEnd": 2814.6999999284744,
+                "handlerMs": 21
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 3074.5,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:41.220Z",
+            "heap": {
+              "usedSize": 29220580,
+              "totalSize": 33529856,
+              "embedderHeapUsedSize": 5870952,
+              "backingStorageSize": 18266285
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 1740,
+              "jsEventListeners": 313
+            },
+            "counters": {
+              "elements": 1008,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 46756
+            },
+            "metrics": {
+              "LayoutObjects": 689,
+              "Nodes": 1740,
+              "LayoutDuration": 0.189865,
+              "RecalcStyleDuration": 0.043151,
+              "ScriptDuration": 1.091733,
+              "TaskDuration": 1.64471,
+              "JSHeapUsedSize": 29220580,
+              "JSHeapTotalSize": 33529856
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 20.899999976158142,
+          "clickToFirstRafMs": 23.800000071525574,
+          "clickToSettleMs": 280.7000000476837,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        }
+      ],
+      "sourceBefore": {
+        "sha256": "5a00a5bc73d00ce8d62dbaf541a8a36f6bdaa4c3496516a84246305db5089891",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 10000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "reader": {
+        "pages": 120,
+        "columns": 1,
+        "width": 390,
+        "height": 613
+      },
+      "sourceComplexity": {
+        "textCharacters": 59763,
+        "descendantElements": 350,
+        "allNodes": 620
+      },
+      "gcBefore": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "before": {
+        "at": "2026-10-25T09:37:40.292Z",
+        "heap": {
+          "usedSize": 27373128,
+          "totalSize": 28549120,
+          "embedderHeapUsedSize": 5065056,
+          "backingStorageSize": 18202361
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 1736,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 1008,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 46756
+        },
+        "metrics": {
+          "LayoutObjects": 689,
+          "Nodes": 1736,
+          "LayoutDuration": 0.186579,
+          "RecalcStyleDuration": 0.039801,
+          "ScriptDuration": 1.040084,
+          "TaskDuration": 1.516317,
+          "JSHeapUsedSize": 27373128,
+          "JSHeapTotalSize": 28549120
+        }
+      },
+      "cpu": {
+        "elapsedMs": 1274.5910999999978,
+        "systemBusyPercentAcrossLogicalCores": 6.058216702805708,
+        "scope": "System CPU includes unrelated background processes; own browser process CPU sampled separately when CDP supports it.",
+        "before": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 4.085495
+            },
+            {
+              "type": "renderer",
+              "id": 119952,
+              "cpuTime": 2.521432
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 6.260233
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 1.119428
+            }
+          ]
+        },
+        "after": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 4.150683
+            },
+            {
+              "type": "renderer",
+              "id": 119952,
+              "cpuTime": 2.742045
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 6.392974
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 1.119428
+            }
+          ]
+        },
+        "ownProcessCpuSeconds": [
+          {
+            "type": "browser",
+            "id": 136536,
+            "cpuSeconds": 0.06518800000000002
+          },
+          {
+            "type": "renderer",
+            "id": 119952,
+            "cpuSeconds": 0.22061300000000017
+          },
+          {
+            "type": "GPU",
+            "id": 4908,
+            "cpuSeconds": 0.13274099999999933
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 18512,
+            "cpuSeconds": 0
+          }
+        ]
+      },
+      "afterSettled": {
+        "at": "2026-10-25T09:37:41.569Z",
+        "heap": {
+          "usedSize": 29354520,
+          "totalSize": 33529856,
+          "embedderHeapUsedSize": 6073248,
+          "backingStorageSize": 18266286
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 1740,
+          "jsEventListeners": 313
+        },
+        "counters": {
+          "elements": 1008,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 46756
+        },
+        "metrics": {
+          "LayoutObjects": 689,
+          "Nodes": 1740,
+          "LayoutDuration": 0.190917,
+          "RecalcStyleDuration": 0.044049,
+          "ScriptDuration": 1.092081,
+          "TaskDuration": 1.667694,
+          "JSHeapUsedSize": 29354520,
+          "JSHeapTotalSize": 33529856
+        }
+      },
+      "gcAfter": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "afterGc": {
+        "at": "2026-10-25T09:37:41.593Z",
+        "heap": {
+          "usedSize": 28273368,
+          "totalSize": 29073408,
+          "embedderHeapUsedSize": 4746048,
+          "backingStorageSize": 18202873
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 1740,
+          "jsEventListeners": 279
+        },
+        "counters": {
+          "elements": 1008,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 46756
+        },
+        "metrics": {
+          "LayoutObjects": 689,
+          "Nodes": 1740,
+          "LayoutDuration": 0.190917,
+          "RecalcStyleDuration": 0.044049,
+          "ScriptDuration": 1.092081,
+          "TaskDuration": 1.689624,
+          "JSHeapUsedSize": 28273368,
+          "JSHeapTotalSize": 29073408
+        }
+      },
+      "sourceAfter": {
+        "sha256": "5a00a5bc73d00ce8d62dbaf541a8a36f6bdaa4c3496516a84246305db5089891",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 10000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "sourceUnchanged": true,
+      "maxProjections": 0,
+      "anyReviewFlag": false
+    },
+    {
+      "words": 50000,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "errors": [],
+      "turns": [
+        {
+          "index": 1,
+          "clickCallMs": 154.7385000000031,
+          "probe": {
+            "clickAt": 2522.6999999284744,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 2580.7999999523163,
+            "firstRafAt": 2589.6999999284744,
+            "settledAt": 2903.100000023842,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 2079,
+            "longTasks": [
+              {
+                "startTime": 2522.2999999523163,
+                "duration": 60,
+                "name": "self"
+              },
+              {
+                "startTime": 2582.6999999284744,
+                "duration": 56,
+                "name": "self"
+              }
+            ],
+            "clickEvents": [
+              {
+                "startTime": 2522,
+                "duration": 128,
+                "processingStart": 2522.6999999284744,
+                "processingEnd": 2581,
+                "handlerMs": 58.300000071525574
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 2903.100000023842,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:44.304Z",
+            "heap": {
+              "usedSize": 39989432,
+              "totalSize": 42967040,
+              "embedderHeapUsedSize": 13322096,
+              "backingStorageSize": 18530106
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 3766,
+              "jsEventListeners": 289
+            },
+            "counters": {
+              "elements": 2079,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 206964
+            },
+            "metrics": {
+              "LayoutObjects": 2727,
+              "Nodes": 3766,
+              "LayoutDuration": 0.304959,
+              "RecalcStyleDuration": 0.041283,
+              "ScriptDuration": 1.3735,
+              "TaskDuration": 2.175475,
+              "JSHeapUsedSize": 39989432,
+              "JSHeapTotalSize": 42967040
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 58.10000002384186,
+          "clickToFirstRafMs": 67,
+          "clickToSettleMs": 380.40000009536743,
+          "maxLongTaskMs": 60,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 2,
+          "clickCallMs": 89.22150000000329,
+          "probe": {
+            "clickAt": 3039.399999976158,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 3070.2999999523163,
+            "firstRafAt": 3076.899999976158,
+            "settledAt": 3352.600000023842,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 2079,
+            "longTasks": [],
+            "clickEvents": [
+              {
+                "startTime": 3038.6999999284744,
+                "duration": 64,
+                "processingStart": 3039.399999976158,
+                "processingEnd": 3070.399999976158,
+                "handlerMs": 31
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 3352.600000023842,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:44.763Z",
+            "heap": {
+              "usedSize": 40451408,
+              "totalSize": 45850624,
+              "embedderHeapUsedSize": 13593152,
+              "backingStorageSize": 18533186
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 3768,
+              "jsEventListeners": 301
+            },
+            "counters": {
+              "elements": 2079,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 206964
+            },
+            "metrics": {
+              "LayoutObjects": 2727,
+              "Nodes": 3768,
+              "LayoutDuration": 0.306588,
+              "RecalcStyleDuration": 0.042796,
+              "ScriptDuration": 1.404968,
+              "TaskDuration": 2.280183,
+              "JSHeapUsedSize": 40451408,
+              "JSHeapTotalSize": 45850624
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 30.899999976158142,
+          "clickToFirstRafMs": 37.5,
+          "clickToSettleMs": 313.2000000476837,
+          "maxLongTaskMs": 0,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 3,
+          "clickCallMs": 149.60399999999936,
+          "probe": {
+            "clickAt": 3474.2999999523163,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 3546.5,
+            "firstRafAt": 3558.2999999523163,
+            "settledAt": 3835.7999999523163,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 2079,
+            "longTasks": [
+              {
+                "startTime": 3473.6999999284744,
+                "duration": 74,
+                "name": "self"
+              }
+            ],
+            "clickEvents": [
+              {
+                "startTime": 3473.600000023842,
+                "duration": 120,
+                "processingStart": 3474.2999999523163,
+                "processingEnd": 3546.5,
+                "handlerMs": 72.20000004768372
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 3835.7999999523163,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:45.261Z",
+            "heap": {
+              "usedSize": 34802836,
+              "totalSize": 49258496,
+              "embedderHeapUsedSize": 12560304,
+              "backingStorageSize": 18229133
+            },
+            "dom": {
+              "documents": 1,
+              "nodes": 3768,
+              "jsEventListeners": 279
+            },
+            "counters": {
+              "elements": 2079,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 206964
+            },
+            "metrics": {
+              "LayoutObjects": 2727,
+              "Nodes": 3768,
+              "LayoutDuration": 0.308614,
+              "RecalcStyleDuration": 0.044828,
+              "ScriptDuration": 1.477788,
+              "TaskDuration": 2.450424,
+              "JSHeapUsedSize": 34802836,
+              "JSHeapTotalSize": 49258496
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 72.20000004768372,
+          "clickToFirstRafMs": 84,
+          "clickToSettleMs": 361.5,
+          "maxLongTaskMs": 74,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        }
+      ],
+      "sourceBefore": {
+        "sha256": "f0ce730a717d26b319db12e257389f1c76588591cee70734e83d28869980dbf5",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 50000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "reader": {
+        "pages": 340,
+        "columns": 2,
+        "width": 1218,
+        "height": 716
+      },
+      "sourceComplexity": {
+        "textCharacters": 296146,
+        "descendantElements": 1420,
+        "allNodes": 2650
+      },
+      "gcBefore": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "before": {
+        "at": "2026-10-25T09:37:44.142Z",
+        "heap": {
+          "usedSize": 36079268,
+          "totalSize": 36937728,
+          "embedderHeapUsedSize": 12646656,
+          "backingStorageSize": 18228502
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 3764,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 2079,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 206964
+        },
+        "metrics": {
+          "LayoutObjects": 2727,
+          "Nodes": 3764,
+          "LayoutDuration": 0.304548,
+          "RecalcStyleDuration": 0.040574,
+          "ScriptDuration": 1.315045,
+          "TaskDuration": 2.05306,
+          "JSHeapUsedSize": 36079268,
+          "JSHeapTotalSize": 36937728
+        }
+      },
+      "cpu": {
+        "elapsedMs": 1456.2695999999996,
+        "systemBusyPercentAcrossLogicalCores": 10.919935765083732,
+        "scope": "System CPU includes unrelated background processes; own browser process CPU sampled separately when CDP supports it.",
+        "before": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 4.72198
+            },
+            {
+              "type": "renderer",
+              "id": 189200,
+              "cpuTime": 3.515287
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 6.523178
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 1.251308
+            }
+          ]
+        },
+        "after": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 4.851957
+            },
+            {
+              "type": "renderer",
+              "id": 189200,
+              "cpuTime": 4.197515
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 6.973501
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 1.251308
+            }
+          ]
+        },
+        "ownProcessCpuSeconds": [
+          {
+            "type": "browser",
+            "id": 136536,
+            "cpuSeconds": 0.12997699999999934
+          },
+          {
+            "type": "renderer",
+            "id": 189200,
+            "cpuSeconds": 0.6822280000000003
+          },
+          {
+            "type": "GPU",
+            "id": 4908,
+            "cpuSeconds": 0.45032300000000003
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 18512,
+            "cpuSeconds": 0
+          }
+        ]
+      },
+      "afterSettled": {
+        "at": "2026-10-25T09:37:45.602Z",
+        "heap": {
+          "usedSize": 34998624,
+          "totalSize": 49258496,
+          "embedderHeapUsedSize": 12751432,
+          "backingStorageSize": 18229277
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 3768,
+          "jsEventListeners": 279
+        },
+        "counters": {
+          "elements": 2079,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 206964
+        },
+        "metrics": {
+          "LayoutObjects": 2727,
+          "Nodes": 3768,
+          "LayoutDuration": 0.310308,
+          "RecalcStyleDuration": 0.046204,
+          "ScriptDuration": 1.478197,
+          "TaskDuration": 2.490263,
+          "JSHeapUsedSize": 34998624,
+          "JSHeapTotalSize": 49258496
+        }
+      },
+      "gcAfter": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "afterGc": {
+        "at": "2026-10-25T09:37:45.654Z",
+        "heap": {
+          "usedSize": 34729624,
+          "totalSize": 35627008,
+          "embedderHeapUsedSize": 12249744,
+          "backingStorageSize": 18229008
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 3768,
+          "jsEventListeners": 279
+        },
+        "counters": {
+          "elements": 2079,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 206964
+        },
+        "metrics": {
+          "LayoutObjects": 2727,
+          "Nodes": 3768,
+          "LayoutDuration": 0.310308,
+          "RecalcStyleDuration": 0.046204,
+          "ScriptDuration": 1.478197,
+          "TaskDuration": 2.538405,
+          "JSHeapUsedSize": 34729624,
+          "JSHeapTotalSize": 35627008
+        }
+      },
+      "sourceAfter": {
+        "sha256": "f0ce730a717d26b319db12e257389f1c76588591cee70734e83d28869980dbf5",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 50000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "sourceUnchanged": true,
+      "maxProjections": 0,
+      "anyReviewFlag": false
+    },
+    {
+      "words": 50000,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "errors": [],
+      "turns": [
+        {
+          "index": 1,
+          "clickCallMs": 232.88930000000255,
+          "probe": {
+            "clickAt": 2359.2000000476837,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 2435.600000023842,
+            "firstRafAt": 2449.100000023842,
+            "settledAt": 2823.100000023842,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 2078,
+            "longTasks": [
+              {
+                "startTime": 2358.8000000715256,
+                "duration": 79,
+                "name": "self"
+              },
+              {
+                "startTime": 2448.7000000476837,
+                "duration": 109,
+                "name": "self"
+              }
+            ],
+            "clickEvents": [
+              {
+                "startTime": 2358.3000000715256,
+                "duration": 200,
+                "processingStart": 2359.2000000476837,
+                "processingEnd": 2435.600000023842,
+                "handlerMs": 76.39999997615814
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 2823.100000023842,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:48.304Z",
+            "heap": {
+              "usedSize": 37233440,
+              "totalSize": 43491328,
+              "embedderHeapUsedSize": 14799240,
+              "backingStorageSize": 18526443
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 3768,
+              "jsEventListeners": 289
+            },
+            "counters": {
+              "elements": 2078,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 218356
+            },
+            "metrics": {
+              "LayoutObjects": 2719,
+              "Nodes": 3768,
+              "LayoutDuration": 0.335646,
+              "RecalcStyleDuration": 0.049246,
+              "ScriptDuration": 1.23636,
+              "TaskDuration": 2.141445,
+              "JSHeapUsedSize": 37233440,
+              "JSHeapTotalSize": 43491328
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 76.39999997615814,
+          "clickToFirstRafMs": 89.89999997615814,
+          "clickToSettleMs": 463.89999997615814,
+          "maxLongTaskMs": 109,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 2,
+          "clickCallMs": 179.07770000000164,
+          "probe": {
+            "clickAt": 2942.399999976158,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 3010.600000023842,
+            "firstRafAt": 3021.5,
+            "settledAt": 3355.7000000476837,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 2078,
+            "longTasks": [
+              {
+                "startTime": 2941.899999976158,
+                "duration": 71,
+                "name": "self"
+              },
+              {
+                "startTime": 3013,
+                "duration": 89,
+                "name": "self"
+              },
+              {
+                "startTime": 3355.600000023842,
+                "duration": 84,
+                "name": "self"
+              }
+            ],
+            "clickEvents": [
+              {
+                "startTime": 2941.8000000715256,
+                "duration": 160,
+                "processingStart": 2942.399999976158,
+                "processingEnd": 3010.7000000476837,
+                "handlerMs": 68.30000007152557
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 3355.7000000476837,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:48.853Z",
+            "heap": {
+              "usedSize": 39170480,
+              "totalSize": 47947776,
+              "embedderHeapUsedSize": 15008712,
+              "backingStorageSize": 18528098
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 3770,
+              "jsEventListeners": 301
+            },
+            "counters": {
+              "elements": 2078,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 218356
+            },
+            "metrics": {
+              "LayoutObjects": 2719,
+              "Nodes": 3770,
+              "LayoutDuration": 0.337283,
+              "RecalcStyleDuration": 0.053001,
+              "ScriptDuration": 1.305417,
+              "TaskDuration": 2.413478,
+              "JSHeapUsedSize": 39170480,
+              "JSHeapTotalSize": 47947776
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 68.20000004768372,
+          "clickToFirstRafMs": 79.10000002384186,
+          "clickToSettleMs": 413.3000000715256,
+          "maxLongTaskMs": 89,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        },
+        {
+          "index": 3,
+          "clickCallMs": 182.69020000000455,
+          "probe": {
+            "clickAt": 3474.8000000715256,
+            "mode": "slide",
+            "projectionMountedAt": null,
+            "canonicalAnimationStartedAt": 3542,
+            "firstRafAt": 3554.2000000476837,
+            "settledAt": 3889.2000000476837,
+            "maxProjections": 0,
+            "maxCanonicalSources": 1,
+            "maxCanonicalAnimations": 1,
+            "maxElements": 2078,
+            "longTasks": [
+              {
+                "startTime": 3474.5,
+                "duration": 69,
+                "name": "self"
+              },
+              {
+                "startTime": 3544.3000000715256,
+                "duration": 91,
+                "name": "self"
+              },
+              {
+                "startTime": 3889.100000023842,
+                "duration": 79,
+                "name": "self"
+              }
+            ],
+            "clickEvents": [
+              {
+                "startTime": 3474.399999976158,
+                "duration": 160,
+                "processingStart": 3474.8000000715256,
+                "processingEnd": 3542,
+                "handlerMs": 67.19999992847443
+              }
+            ],
+            "canonicalAnimationFinishes": [
+              {
+                "at": 3889.2000000476837,
+                "state": "finished"
+              }
+            ],
+            "observedTypes": [
+              "element",
+              "event",
+              "first-input",
+              "interaction-contentful-paint",
+              "largest-contentful-paint",
+              "layout-shift",
+              "long-animation-frame",
+              "longtask",
+              "mark",
+              "measure",
+              "navigation",
+              "paint",
+              "resource",
+              "soft-navigation",
+              "visibility-state"
+            ]
+          },
+          "during": {
+            "at": "2026-10-25T09:37:49.379Z",
+            "heap": {
+              "usedSize": 40213084,
+              "totalSize": 52404224,
+              "embedderHeapUsedSize": 14619520,
+              "backingStorageSize": 18528024
+            },
+            "dom": {
+              "documents": 2,
+              "nodes": 3770,
+              "jsEventListeners": 291
+            },
+            "counters": {
+              "elements": 2078,
+              "projections": 0,
+              "canonicalSources": 1,
+              "nativeScrollWidth": 218356
+            },
+            "metrics": {
+              "LayoutObjects": 2719,
+              "Nodes": 3770,
+              "LayoutDuration": 0.338549,
+              "RecalcStyleDuration": 0.054411,
+              "ScriptDuration": 1.372887,
+              "TaskDuration": 2.67689,
+              "JSHeapUsedSize": 40213084,
+              "JSHeapTotalSize": 52404224
+            }
+          },
+          "clickToProjectionMs": null,
+          "clickToCanonicalAnimationMs": 67.19999992847443,
+          "clickToFirstRafMs": 79.39999997615814,
+          "clickToSettleMs": 414.39999997615814,
+          "maxLongTaskMs": 91,
+          "declaredMotion": {
+            "kind": "slide",
+            "active": "false",
+            "activeCanonicalAnimations": 0
+          },
+          "flagForReview": false
+        }
+      ],
+      "sourceBefore": {
+        "sha256": "e4d744603ad31af226de66fe847036d0d918811a6ab00867a248a1ae56d7b420",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 50000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "reader": {
+        "pages": 560,
+        "columns": 1,
+        "width": 390,
+        "height": 613
+      },
+      "sourceComplexity": {
+        "textCharacters": 296146,
+        "descendantElements": 1420,
+        "allNodes": 2650
+      },
+      "gcBefore": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "before": {
+        "at": "2026-10-25T09:37:48.064Z",
+        "heap": {
+          "usedSize": 34317760,
+          "totalSize": 35102720,
+          "embedderHeapUsedSize": 14139792,
+          "backingStorageSize": 18227799
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 3766,
+          "jsEventListeners": 277
+        },
+        "counters": {
+          "elements": 2078,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 218356
+        },
+        "metrics": {
+          "LayoutObjects": 2719,
+          "Nodes": 3766,
+          "LayoutDuration": 0.335353,
+          "RecalcStyleDuration": 0.048591,
+          "ScriptDuration": 1.159611,
+          "TaskDuration": 1.941711,
+          "JSHeapUsedSize": 34317760,
+          "JSHeapTotalSize": 35102720
+        }
+      },
+      "cpu": {
+        "elapsedMs": 1674.3933999999936,
+        "systemBusyPercentAcrossLogicalCores": 11.138564933781382,
+        "scope": "System CPU includes unrelated background processes; own browser process CPU sampled separately when CDP supports it.",
+        "before": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 5.353094
+            },
+            {
+              "type": "renderer",
+              "id": 39288,
+              "cpuTime": 3.215141
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 7.029773
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 1.377182
+            }
+          ]
+        },
+        "after": {
+          "available": true,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 136536,
+              "cpuTime": 5.509179
+            },
+            {
+              "type": "renderer",
+              "id": 39288,
+              "cpuTime": 4.335418
+            },
+            {
+              "type": "GPU",
+              "id": 4908,
+              "cpuTime": 7.17231
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 18512,
+              "cpuTime": 1.377182
+            }
+          ]
+        },
+        "ownProcessCpuSeconds": [
+          {
+            "type": "browser",
+            "id": 136536,
+            "cpuSeconds": 0.15608500000000003
+          },
+          {
+            "type": "renderer",
+            "id": 39288,
+            "cpuSeconds": 1.1202769999999997
+          },
+          {
+            "type": "GPU",
+            "id": 4908,
+            "cpuSeconds": 0.1425370000000008
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 18512,
+            "cpuSeconds": 0
+          }
+        ]
+      },
+      "afterSettled": {
+        "at": "2026-10-25T09:37:49.741Z",
+        "heap": {
+          "usedSize": 40398932,
+          "totalSize": 52666368,
+          "embedderHeapUsedSize": 14852160,
+          "backingStorageSize": 18528025
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 3770,
+          "jsEventListeners": 291
+        },
+        "counters": {
+          "elements": 2078,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 218356
+        },
+        "metrics": {
+          "LayoutObjects": 2719,
+          "Nodes": 3770,
+          "LayoutDuration": 0.339691,
+          "RecalcStyleDuration": 0.055604,
+          "ScriptDuration": 1.373332,
+          "TaskDuration": 2.771592,
+          "JSHeapUsedSize": 40398932,
+          "JSHeapTotalSize": 52666368
+        }
+      },
+      "gcAfter": {
+        "available": true,
+        "method": "CDP HeapProfiler.collectGarbage",
+        "performed": true
+      },
+      "afterGc": {
+        "at": "2026-10-25T09:37:49.786Z",
+        "heap": {
+          "usedSize": 36066604,
+          "totalSize": 36675584,
+          "embedderHeapUsedSize": 13863976,
+          "backingStorageSize": 18228301
+        },
+        "dom": {
+          "documents": 2,
+          "nodes": 3770,
+          "jsEventListeners": 279
+        },
+        "counters": {
+          "elements": 2078,
+          "projections": 0,
+          "canonicalSources": 1,
+          "nativeScrollWidth": 218356
+        },
+        "metrics": {
+          "LayoutObjects": 2719,
+          "Nodes": 3770,
+          "LayoutDuration": 0.339691,
+          "RecalcStyleDuration": 0.055604,
+          "ScriptDuration": 1.373332,
+          "TaskDuration": 2.814581,
+          "JSHeapUsedSize": 36066604,
+          "JSHeapTotalSize": 36675584
+        }
+      },
+      "sourceAfter": {
+        "sha256": "e4d744603ad31af226de66fe847036d0d918811a6ab00867a248a1ae56d7b420",
+        "documents": 10,
+        "revisions": 20,
+        "originals": 0,
+        "words": 50000,
+        "origins": [
+          "ai"
+        ]
+      },
+      "sourceUnchanged": true,
+      "maxProjections": 0,
+      "anyReviewFlag": false
+    }
+  ],
+  "errors": [],
+  "interpretation": {
+    "caution": "Observed timings on this Windows host and headless Chromium only. A phone-sized viewport is not a physical phone performance test. CDP JS heap excludes substantial native DOM/layout/GPU memory; DOM counters are separate.",
+    "reviewSignal": "Flag observed click main-thread/first-RAF delay above approximately150ms for review; no universal product pass budget is inferred."
+  },
+  "sourceHashesAfter": {
+    "src/App.tsx": "9489108308d3f70586738737340122ffe6ac502d1da90feb1b13eb4f9ed7353d",
+    "src/components/Reader.tsx": "a1851a0cd6a5a11390c2994c1e260bc217002fdd0e10d016386ca4829194c04d",
+    "src/reader/page-turn.ts": "df91789bfc568d860d62c8f233b574ab0c776aeef5b4ca5593497dbb810b26c4",
+    "src/vendor/pageflip/page-flip.js": "6e13029cb2242e7860bcdfa68a8745ccf12c4fae8f1589b7bfb28c5691288fda",
+    "src/library-reader.css": "be1cbbfa564a19532a97dbeb857fee9bbf71e06ed71429e25ba1a8c62226f38d"
+  },
+  "sourcesUnchanged": true,
+  "completedAt": "2026-10-25T09:37:49.809Z"
+}

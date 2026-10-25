@@ -1,0 +1,72 @@
+{
+  "curl": [
+    {
+      "targetMs": 0,
+      "actualElapsedMs": 517,
+      "path": ".local/reader-reference-inspection/curl-0.png"
+    },
+    {
+      "targetMs": 120,
+      "actualElapsedMs": 857,
+      "path": ".local/reader-reference-inspection/curl-120.png"
+    },
+    {
+      "targetMs": 260,
+      "actualElapsedMs": 1245,
+      "path": ".local/reader-reference-inspection/curl-260.png"
+    },
+    {
+      "targetMs": 420,
+      "actualElapsedMs": 1515,
+      "path": ".local/reader-reference-inspection/curl-420.png"
+    },
+    {
+      "targetMs": 650,
+      "actualElapsedMs": 1709,
+      "path": ".local/reader-reference-inspection/curl-650.png"
+    },
+    {
+      "targetMs": 1100,
+      "actualElapsedMs": 1894,
+      "path": ".local/reader-reference-inspection/curl-1100.png"
+    }
+  ],
+  "googleVideo": [
+    {
+      "requested": 2,
+      "actual": 2,
+      "path": ".local/reader-reference-inspection/google-play-2s.png"
+    },
+    {
+      "requested": 5,
+      "actual": 5,
+      "path": ".local/reader-reference-inspection/google-play-5s.png"
+    },
+    {
+      "requested": 8,
+      "actual": 9.076174,
+      "path": ".local/reader-reference-inspection/google-play-8s.png"
+    },
+    {
+      "requested": 11,
+      "actual": 11,
+      "path": ".local/reader-reference-inspection/google-play-11s.png"
+    },
+    {
+      "requested": 14,
+      "actual": 14,
+      "path": ".local/reader-reference-inspection/google-play-14s.png"
+    },
+    {
+      "requested": 18,
+      "actual": 18,
+      "path": ".local/reader-reference-inspection/google-play-18s.png"
+    },
+    {
+      "requested": 22,
+      "error": "TimeoutError: page.waitForFunction: Timeout 6000ms exceeded."
+    }
+  ],
+  "googleTitle": "Google Play Books page turning - YouTube",
+  "googleDuration": 19.411881
+}

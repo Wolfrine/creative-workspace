@@ -11,7 +11,7 @@ assert.equal(process.env.VERIFIED_PROJECT, 'noveliaa');
 assert.equal(binding.projectId, 'noveliaa'); assert.equal(binding.planConstraint, 'Spark');
 const source = await readFile('firestore.rules', 'utf8');
 const hash = content => createHash('sha256').update(content).digest('hex');
-const candidate = JSON.parse(await readFile('docs/evidence/phase1/library-reader-2026-10-25/manifest.json', 'utf8'));
+const candidate = JSON.parse(await readFile('docs/evidence/phase1/reader-ux-2026-10-25/manifest.json', 'utf8'));
 assert.equal(candidate.plan, 'Spark');
 assert.equal(candidate.sources.find(item => item.path === 'firestore.rules')?.sha256, hash(source));
 assert(candidate.rulePasses >= 15); assert.equal(candidate.ruleFailures, 0);
