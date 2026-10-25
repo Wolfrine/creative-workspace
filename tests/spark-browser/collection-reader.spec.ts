@@ -15,7 +15,9 @@ const { getFirestore } = requireAdmin('firebase-admin/firestore');
 const admin = initializeApp({ projectId: 'demo-noveliaa' }, 'spark-collection-reader-browser');
 const auth = getAuth(admin), db = getFirestore(admin);
 const author = 'spark-collection-reader-author';
-const evidence = 'docs/evidence/phase1/library-reader-2026-10-25';
+// Each CI/local run writes fresh reports outside the retained, hash-bound
+// release evidence. Copy a reviewed run into docs/evidence deliberately.
+const evidence = process.env.NOVELIAA_COLLECTION_READER_EVIDENCE_DIR || '.local/spark-browser-collection-reader';
 const namespaces = ['universes', 'collections', 'documentIdentities', 'documents', 'revisions', 'originals', 'operations', 'blobs', 'chunks'] as const;
 let token: string;
 const canvas = (page: Page) => page.getByRole('textbox', { name: 'Writing canvas', exact: true });

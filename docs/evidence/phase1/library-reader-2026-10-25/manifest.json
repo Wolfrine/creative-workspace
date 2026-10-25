@@ -1,9 +1,9 @@
 {
-  "capturedAt": "2026-10-25T07:48:42.418Z",
+  "capturedAt": "2026-10-25T07:59:07.070Z",
   "plan": "Spark",
   "scope": "Owner-approved stable collection renaming, dedicated Library/collection views and private semantic paginated author Read mode, optional paper-turn motion, mobile Read destination; flat collections and 10s/60s writing contract retained.",
   "dataset": "Synthetic writing only in isolated browser notebooks and actual loopback Auth/Firestore emulators. No production manuscript was accessed or used as a fixture. Existing production release separately verified after main push.",
-  "sourceDigest": "3a1865f70f9988e815743d335f63409fc00478c12b1b1ac8c3a31b786fb7408f",
+  "sourceDigest": "4938f1049c6fd1600f1d6b7ed5a33858e119a8badd3ac7b430aba535d7147ff7",
   "sources": [
     {
       "path": ".firebaserc",
@@ -27,8 +27,8 @@
     },
     {
       "path": ".harness/dev-environment.ps1",
-      "bytes": 1242,
-      "sha256": "5c3a3252450df9b733109dbfafa47854f429bd433890ece700cbdb4281f177ab"
+      "bytes": 1281,
+      "sha256": "2b9bcb11253782851e37758e721ead92d51239a64d372e9bd3048c3225ce489f"
     },
     {
       "path": ".harness/objective.md",
@@ -77,8 +77,8 @@
     },
     {
       "path": "docs/design/library-reader-qa.md",
-      "bytes": 7423,
-      "sha256": "dd6dc548b727b1380981764b69d028d8923779fd306679c02b08200d55f43805"
+      "bytes": 8285,
+      "sha256": "5b2d180da82b4a0e81cdb6ded6e1fc711a27d1d9966951b2d2f543fc759aec2d"
     },
     {
       "path": "docs/operations/firestore-usage.md",
@@ -442,8 +442,8 @@
     },
     {
       "path": "tests/spark-browser/collection-reader.spec.ts",
-      "bytes": 11406,
-      "sha256": "062484b8dcbc6498b04128f1812a5e42176b567f4f3cf49407213f7f2b0ffbb0"
+      "bytes": 11602,
+      "sha256": "f6cd786b1490cf3354d396592452ff87f2078ff3b528ea72d4a2050c2f1c6717"
     },
     {
       "path": "tests/spark-browser/reset.spec.ts",

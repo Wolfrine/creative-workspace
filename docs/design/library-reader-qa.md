@@ -121,3 +121,17 @@ are retained with this candidate. No production manuscript was accessed.
 
 Physical-phone keyboards/IME, Safari, manual screen-reader experience and the
 author's production writing session remain outside this browser acceptance.
+
+## Release harness correction
+
+The first runner's application tests passed, but its retained-evidence check
+caught the new collection/reader test writing a fresh synthetic server inventory
+over the retained JSON. The default output now uses
+`.local/spark-browser-collection-reader`; publishing reviewed evidence requires
+an explicit output-directory choice. The Rules release script also now binds
+the current Library/reader manifest rather than a historical reset manifest.
+No application source changed during these corrections. Syntax/type and source
+digest checks passed locally. A focused local emulator rerun stopped at emulator
+startup (port 18080 timeout) before any test; it is not counted as a pass. The
+final main Actions run must repeat the full actual cloud suite and then verify
+that all retained candidate files are unchanged before publication.

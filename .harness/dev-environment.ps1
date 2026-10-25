@@ -17,6 +17,7 @@ $env:TEMP = $noveliaaTemp
 $env:TMP = $noveliaaTemp
 $env:TMPDIR = $noveliaaTemp
 $env:NPM_CONFIG_CACHE = "$noveliaaCache/npm-cache"
+$env:NPM_CONFIG_PREFIX = $noveliaaNode
 $env:PLAYWRIGHT_BROWSERS_PATH = "$noveliaaCache/playwright-browsers"
 $env:FIREBASE_EMULATORS_PATH = "$noveliaaCache/firebase-emulators"
 $env:PYTHONPYCACHEPREFIX = Join-Path $noveliaaRoot '.local/python-cache'
