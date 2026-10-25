@@ -1,0 +1,69 @@
+{
+  "plugin_id": "plugins_6addf6b9d5848191b637c8289684e215",
+  "name": "noveliaa",
+  "description": "Author-owned creative writing: explore selected universes, research story questions and return traceable, unverified proposals without changing original writing.",
+  "version": "0.1.0",
+  "current_release_id": "pluginrel_6addf6bb1dd48191afa82337179ecc68",
+  "scope": "USER",
+  "discoverability": "PRIVATE",
+  "plugin_url": "https://chatgpt.com/plugins/plugins_6addf6b9d5848191b637c8289684e215",
+  "release_id": "pluginrel_6addf6bb1dd48191afa82337179ecc68",
+  "latest_release_id": "pluginrel_6addf6bb1dd48191afa82337179ecc68",
+  "status": "created",
+  "archiveSha256": "64fab9cbcc7dec82b7a49a47c0ac968682248c330735647bf0530a4c1cd73d79",
+  "storedFiles": [
+    {
+      "path": ".codex-plugin/plugin.json",
+      "size_bytes": 1481
+    },
+    {
+      "path": ".mcp.json",
+      "size_bytes": 523
+    },
+    {
+      "path": "assets/noveliaa.svg",
+      "size_bytes": 302
+    },
+    {
+      "path": "mcp.json",
+      "size_bytes": 478
+    },
+    {
+      "path": "plugin.json",
+      "size_bytes": 1609
+    },
+    {
+      "path": "skills/collaborate-on-writing/SKILL.md",
+      "size_bytes": 2561
+    },
+    {
+      "path": "skills/explore-writing/SKILL.md",
+      "size_bytes": 2110
+    },
+    {
+      "path": "skills/story-research/SKILL.md",
+      "size_bytes": 1758
+    }
+  ],
+  "storedSkills": [
+    "collaborate-on-writing",
+    "explore-writing",
+    "story-research"
+  ],
+  "storedMcp": {
+    "transport": "streamable-http",
+    "url": "https://noveliaa.web.app/mcp",
+    "auth": "OAuth DCR",
+    "baseScopes": [
+      "noveliaa:read"
+    ],
+    "defaultScopes": [
+      "noveliaa:read",
+      "noveliaa:propose"
+    ]
+  },
+  "installation": "Plugin Management reports already_installed. This is not evidence of successful OAuth.",
+  "connection": "Not connected: Function publication blocked by disabled Cloud Build and Artifact Registry APIs.",
+  "directory": "Private creation and readback verified; public directory/dependency lookup cannot resolve this private plugin.",
+  "sourceCommit": "c99a1c0aaeefac3efe4a335af8d7f079dc0eccbd"
+}

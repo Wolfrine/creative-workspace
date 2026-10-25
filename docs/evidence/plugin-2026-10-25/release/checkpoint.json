@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-25T12:42:00Z",
+  "sourceCommit": "c99a1c0aaeefac3efe4a335af8d7f079dc0eccbd",
+  "sourceDigest": "17dbd1649936e56086b0aa341d8ae5a3901c56dcb5a09304e8a9c518e485890c",
+  "ci": {
+    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40193397371",
+    "conclusion": "success"
+  },
+  "deployment": {
+    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40193397345",
+    "jobId": 121169006727,
+    "conclusion": "failure",
+    "failedStep": "Publish private plugin Function and matching Hosting site",
+    "reason": "Cloud Build and Artifact Registry disabled. Existing Actions identity cannot enable services."
+  },
+  "checks": {
+    "backendUnit": 17,
+    "backendUnitIntegrationSkip": "One emulator-only test group skipped in ordinary unit invocation; separately all 13 real emulator integration tests passed.",
+    "client": 89,
+    "rules": 15,
+    "oauthMcpIntegration": 13,
+    "authenticatedCloudBrowser": 10,
+    "browser": 63,
+    "retainedCandidate": "passed",
+    "appSiteAuthorIdentity": "passed",
+    "rulesSourceReadback": "passed"
+  },
+  "release": {
+    "functionsPublished": false,
+    "newHostingPublished": false,
+    "previousWriterUrl": "https://noveliaa.web.app",
+    "privatePluginUrl": "https://chatgpt.com/plugins/plugins_6addf6b9d5848191b637c8289684e215",
+    "privatePackageCreated": true,
+    "installation": "reported already_installed by Plugin Management",
+    "authenticatedConnectionVerified": false
+  },
+  "boundaries": {
+    "testData": "Synthetic emulator fixtures only. No production manuscript seeded, read, reset or changed by plugin tests.",
+    "authorConsent": "Google sign-in and explicit universe selection remain a human step after server publication.",
+    "monitoring": "Weekly aggregate Firestore read/write metrics unavailable (403); cleanup succeeded with zero expired OAuth items. Unavailable is not zero."
+  }
+}
