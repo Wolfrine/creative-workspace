@@ -1,0 +1,9 @@
+{
+  "runId": 40191005086,
+  "artifactId": 12598286148,
+  "sha256": "c8ca726c8d8f7ddc5f6de170b2bb2d5602fd089544775f13f84beaa2e7ff45e3",
+  "files": [
+    "firestore-usage.json",
+    "oauth-cleanup.json"
+  ]
+}

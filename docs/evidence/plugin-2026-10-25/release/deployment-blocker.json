@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-25",
+  "runUrl": "https://github.com/Wolfrine/creative-workspace/actions/runs/40191944316",
+  "commit": "1e9dff4a11be8b0c11e8a49d19a202a02242fc2e",
+  "jobId": 121164600167,
+  "checks": "Client, Rules, OAuth/MCP integration, cloud/browser tests and retained candidate verification passed before authentication and deployment.",
+  "identity": "Existing GitHub Actions Firebase identity; exact project, Web App, Hosting site and author verified.",
+  "rules": "Owner-only Rules released; source unchanged.",
+  "publication": "Function and new Hosting release were not published.",
+  "blockingServices": ["cloudbuild.googleapis.com", "artifactregistry.googleapis.com"],
+  "confirmedEnabled": ["cloudfunctions.googleapis.com"],
+  "error": "Cloud Build and Artifact Registry APIs disabled; existing Actions account cannot enable them.",
+  "requiredSetup": "Inspect and enable missing Firebase second-generation build/runtime services in the existing project. Do not rotate credentials or request speculative IAM roles.",
+  "separateMonitoringGap": "Weekly cleanup succeeded with zero expired records. Cloud Monitoring aggregate usage was unavailable with PERMISSION_DENIED; no zero-usage inference."
+}

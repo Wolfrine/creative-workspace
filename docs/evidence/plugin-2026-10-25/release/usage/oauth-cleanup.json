@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-25T11:57:24.355Z",
+  "namespaces": {
+    "pending": {
+      "removed": 0,
+      "reachedWeeklyBound": false
+    },
+    "codes": {
+      "removed": 0,
+      "reachedWeeklyBound": false
+    },
+    "access": {
+      "removed": 0,
+      "reachedWeeklyBound": false
+    },
+    "refresh": {
+      "removed": 0,
+      "reachedWeeklyBound": false
+    },
+    "spent": {
+      "removed": 0,
+      "reachedWeeklyBound": false
+    }
+  },
+  "scope": "Expired OAuth token/code metadata only. Author content, collaboration and consent evidence preserved."
+}

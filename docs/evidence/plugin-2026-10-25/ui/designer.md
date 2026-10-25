@@ -5,8 +5,9 @@ Bounded refinement of accepted Living Atlas / Quiet Folio, using Central 0.1.0
 ui-visual-verifier. The parent owns final QA and delivery; the independent critic
 owns [critic.md](critic.md). No designer self-awarded acceptance is implied.
 
-The author chooses permitted universes on `/connect`, then reads returned material
-and manages/revokes access on `/connections`. The writer gains one **AI
+The author chooses permitted universes on `/api/integrations/connect`, then reads
+returned material and manages/revokes access on `/api/integrations/review`.
+Legacy `/connect` and `/connections` aliases remain supported. The writer gains one **AI
 connections** side-menu item. This wording distinguishes external AI access from
 the writer's existing page-link Connections panel. There is no embedded chat or
 source-replacement action.
@@ -45,7 +46,7 @@ are retained separately. This capture artifact was not called an app focus bug.
 All 28 capture proofs in `final/` bind the same seven UI source/CSS dependency
 hashes, with exact source snapshots beside them:
 
-`f094e443319631003a11cf3a9b79a0d4a5fb58a8f2828685724a7223c93f1b85`
+`305ad579e68d4f53a769ceb5b8c93655e1eb702d166b8467287d8345861f1d9b`
 
 A final mechanical truthfulness repair clarifies that consent covers cloud-saved
 pages and that source freshness compares cloud revisions, not an unsynced device
@@ -53,16 +54,26 @@ draft. Earlier complete final evidence is preserved in `final-before-cloud-copy/
 the five original cycles also remain intact. No controls, behavior or styling
 changed in this copy repair.
 
+A subsequent mechanical route compatibility repair uses canonical consent/review
+paths containing `api`, so the previously deployed service worker does not serve
+its old cached writer for those navigation requests. Client aliases and management
+links were updated; legacy bookmarks still work once the current app is loaded.
+Backend/Hosting/real old-worker behavior is tested by the parent. This UI lane
+tested both canonical routes, legacy aliases, all four production authentication
+gates and canonical review-to-source navigation. No CSS or visible copy changed.
+The preceding exact final set is preserved in `final-before-legacy-cache/`.
+
 All owned source uses LF bytes. The final fresh build passed, producing
-`index-DIhG4wJi.js` and `index-C3_Wr6Dc.css` (the parent may subsequently rebuild
+`index-BLiK8Lvq.js` and `index-C3_Wr6Dc.css` (the parent may subsequently rebuild
 for release). No manuscript, original or sync-timer change is made by these screens.
 
 ## Verification and limits
 
 - `final/browser-results.json`: all eight browser tests passed, covering the five
   cycles, ten-universe/read-only scope constraint, real local source navigation
-  and the production guard against the fresh build. `/connect?local=1` remains
-  author-auth gated and makes no private integration API request before sign-in.
+  and production guards against the fresh build. Canonical and legacy consent
+  and review routes with `?local=1` remain author-auth gated and make no private
+  integration API request before sign-in.
 - `production-guard/browser-results.json` retains the earlier separate guard
   result; current source acceptance uses the eight-test report in `final/`.
 - Accessibility: no serious/critical Axe violations at 1440, 390 and 320px in the

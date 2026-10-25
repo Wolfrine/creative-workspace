@@ -24,7 +24,8 @@ author action. No automatic replacement or background AI processing.
 
 ## Author UI / accepted Living Atlas direction
 
-Use standalone `/connect?request=...` consent and `/connections` review pages,
+Use standalone `/api/integrations/connect?request=...` consent and
+`/api/integrations/review` review pages,
 reachable from the writer side menu. Retain the current paper, green, serif and
 quiet spacing. The primary objects are permitted writing and returned proposals.
 Eye path: requested access → selected universes/optional writeback → consent;
@@ -46,7 +47,7 @@ and author acceptance are not inferred from those captures.
 
 ## Frontend API contract
 
-All `/api/integrations/*` requests use the signed-in Firebase bearer token, JSON,
+All integration API data requests use the signed-in Firebase bearer token, JSON,
 same-origin fetch, no-store. Errors `{error:string}`; status 401/403/400/409.
 - GET `/api/integrations/consent?request=...`: `{clientName,requestedWrite,universes:[{id,name}]}`.
 - POST `/api/integrations/consent`: `{requestId,universeIds:string[],allowProposals:boolean}` → `{redirect}`. No implicit author approval.
@@ -60,6 +61,12 @@ same-origin fetch, no-store. Errors `{error:string}`; status 401/403/400/409.
 Consent requires server-set HttpOnly same-site `__session` cookie (Firebase Hosting
 forwards this cookie), verified against the pending request. Keep it out of JS.
 No MCP tokens, private keys or credentials in browser storage or plugin files.
+
+The two UI navigation paths are served as the application shell before API
+rewrites. OAuth discovery uses `/api/oauth/authorize`; legacy `/authorize`,
+`/connect` and `/connections` remain aliases. API-prefixed navigation avoids the
+old installed writing worker's stale shell without forcing an active writer to
+reload. The retained legacy-worker browser check verifies this at desktop/mobile.
 
 ## Evaluation
 

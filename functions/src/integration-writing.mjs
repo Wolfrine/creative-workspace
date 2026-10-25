@@ -87,7 +87,7 @@ export class WritingAccess {
       if (config?.ownerUid !== grant.uid || (config.workspaceId ?? grant.uid) !== grant.workspaceId || !fresh || fresh.revoked || fresh.expiresAt <= Date.now() / 1000 || !fresh.allowProposals || !fresh.universeIds.includes(source.revision.universeId)) fail('Connection changed. Reconnect before submitting.');
       if (previous.exists) {
         if (previous.data().fingerprint !== fingerprint) fail('Idempotency key was already used for different content.');
-        return { id, verification: 'unverified', replayed: true, reviewUrl: 'https://noveliaa.web.app/connections' };
+        return { id, verification: 'unverified', replayed: true, reviewUrl: 'https://noveliaa.web.app/api/integrations/review' };
       }
       const record = { id, kind: input.kind, title: input.title, body: input.body,
         origin: 'ai', verification: 'unverified', attribution: 'External client submission; authorship and conversation claims have not been independently verified.',
@@ -95,7 +95,7 @@ export class WritingAccess {
         universeId: source.revision.universeId, grantId: grant.id, clientName: grant.clientName,
         sourceIsCurrent: current.data()?.headRevisionId === input.revisionId, fingerprint, createdAt: new Date().toISOString() };
       tx.create(ref, record);
-      return { id, verification: 'unverified', sourceIsCurrent: record.sourceIsCurrent, replayed: false, reviewUrl: 'https://noveliaa.web.app/connections' };
+      return { id, verification: 'unverified', sourceIsCurrent: record.sourceIsCurrent, replayed: false, reviewUrl: 'https://noveliaa.web.app/api/integrations/review' };
     });
   }
 }

@@ -117,12 +117,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 7745,
+                  "duration": 5995,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-25T11:54:03.913Z",
+                  "startTime": "2026-10-25T12:18:20.486Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -132,7 +132,7 @@
           ],
           "id": "f05ffec10b94e432c99d-1068d31f21697cc0a0f1",
           "file": "plugin-ui.spec.ts",
-          "line": 54,
+          "line": 55,
           "column": 1
         },
         {
@@ -151,12 +151,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 8721,
+                  "duration": 6658,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-25T11:54:11.932Z",
+                  "startTime": "2026-10-25T12:18:26.632Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -166,7 +166,7 @@
           ],
           "id": "f05ffec10b94e432c99d-95590834218dae0e38e8",
           "file": "plugin-ui.spec.ts",
-          "line": 69,
+          "line": 70,
           "column": 1
         },
         {
@@ -185,12 +185,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3561,
+                  "duration": 2387,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-25T11:54:20.676Z",
+                  "startTime": "2026-10-25T12:18:33.309Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -200,7 +200,7 @@
           ],
           "id": "f05ffec10b94e432c99d-548d788251c9ea337c6f",
           "file": "plugin-ui.spec.ts",
-          "line": 88,
+          "line": 89,
           "column": 1
         },
         {
@@ -219,12 +219,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 16862,
+                  "duration": 12876,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-25T11:54:24.268Z",
+                  "startTime": "2026-10-25T12:18:35.713Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -234,7 +234,7 @@
           ],
           "id": "f05ffec10b94e432c99d-d4d3957dfa4866045992",
           "file": "plugin-ui.spec.ts",
-          "line": 101,
+          "line": 102,
           "column": 1
         },
         {
@@ -253,12 +253,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3288,
+                  "duration": 2166,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-25T11:54:41.158Z",
+                  "startTime": "2026-10-25T12:18:48.609Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -268,7 +268,7 @@
           ],
           "id": "f05ffec10b94e432c99d-22824ee003ca7b89b676",
           "file": "plugin-ui.spec.ts",
-          "line": 123,
+          "line": 125,
           "column": 1
         },
         {
@@ -287,12 +287,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 10064,
+                  "duration": 6323,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-25T11:54:44.476Z",
+                  "startTime": "2026-10-25T12:18:50.794Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -302,7 +302,7 @@
           ],
           "id": "f05ffec10b94e432c99d-a60191e121de0c4fd3ce",
           "file": "plugin-ui.spec.ts",
-          "line": 135,
+          "line": 137,
           "column": 1
         },
         {
@@ -321,12 +321,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5342,
+                  "duration": 4015,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-25T11:54:54.566Z",
+                  "startTime": "2026-10-25T12:18:57.130Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -336,7 +336,7 @@
           ],
           "id": "f05ffec10b94e432c99d-8f4f0acd0452a736b935",
           "file": "plugin-ui.spec.ts",
-          "line": 150,
+          "line": 152,
           "column": 1
         },
         {
@@ -355,12 +355,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 956,
+                  "duration": 1255,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-25T11:54:59.933Z",
+                  "startTime": "2026-10-25T12:19:01.162Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -370,7 +370,7 @@
           ],
           "id": "f05ffec10b94e432c99d-a7c106bd228ebef1afdd",
           "file": "plugin-ui.spec.ts",
-          "line": 169,
+          "line": 172,
           "column": 1
         }
       ]
@@ -378,8 +378,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-25T11:53:58.504Z",
-    "duration": 63900.757000000005,
+    "startTime": "2026-10-25T12:18:17.686Z",
+    "duration": 45531.848999999995,
     "expected": 8,
     "skipped": 0,
     "unexpected": 0,

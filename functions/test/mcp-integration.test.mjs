@@ -63,7 +63,7 @@ test('private plugin OAuth, scoped HTTP tools, immutable writeback and owner rev
   const client = await clientResponse.json(); assert.equal(clientResponse.status, 201);
   const connect = async (allowProposals = true) => {
     const verifier = secret(), challenge = Buffer.from(digest(verifier), 'hex').toString('base64url');
-    const authUrl = '/authorize?' + new URLSearchParams({ client_id: client.client_id, redirect_uri: client.redirect_uris[0], response_type: 'code', code_challenge: challenge, code_challenge_method: 'S256', resource: provider.resource, scope: READ + ' ' + PROPOSE, state: 'unchanged-state' });
+    const authUrl = '/api/oauth/authorize?' + new URLSearchParams({ client_id: client.client_id, redirect_uri: client.redirect_uris[0], response_type: 'code', code_challenge: challenge, code_challenge_method: 'S256', resource: provider.resource, scope: READ + ' ' + PROPOSE, state: 'unchanged-state' });
     const response = await request(authUrl); assert.equal(response.status, 302);
     const requestId = new URL(response.headers.get('location')).searchParams.get('request'), cookie = response.headers.get('set-cookie').split(';')[0];
     const consent = await request('/api/integrations/consent?request=' + requestId, { headers: { Authorization: 'Bearer ' + ownerToken, Cookie: cookie } });
@@ -78,6 +78,7 @@ test('private plugin OAuth, scoped HTTP tools, immutable writeback and owner rev
     await t.test('discovery advertises PKCE, resource and six tools; anonymous private calls challenge', async () => {
       const metadata = await (await request('/.well-known/oauth-authorization-server')).json();
       assert.deepEqual(metadata.code_challenge_methods_supported, ['S256']);
+      assert.equal(metadata.authorization_endpoint, origin + '/api/oauth/authorize');
       const resource = await (await request('/.well-known/oauth-protected-resource/mcp')).json(); assert.equal(resource.resource, provider.resource);
       const result = await rpc('tools/list', {}); assert.equal(result.body.result.tools.length, 6);
       for (const tool of result.body.result.tools) assert.equal(tool._meta.securitySchemes[0].type, 'oauth2');

@@ -79,7 +79,7 @@ function Consent({ api, online, session }: { api: Api; online: boolean; session:
           <div className="consent-actions"><button type="submit" className="primary-button" disabled={!selected.length || busy || !online}>{busy ? 'Returning to your AI…' : 'Allow selected access'}<ArrowRight size={16} /></button><button type="button" className="text-button" disabled={busy || !online} onClick={() => void choose(true)}>Don’t connect</button></div>
           <p className="consent-fineprint">You can revoke this access at any time in AI connections.</p>
         </form>}
-        {(!request || expired) && !loading && <a className="secondary-button" href={'/connections' + previewQuery(session)}>Manage AI connections<ArrowRight size={15} /></a>}
+        {(!request || expired) && !loading && <a className="secondary-button" href={'/api/integrations/review' + previewQuery(session)}>Manage AI connections<ArrowRight size={15} /></a>}
       </>}
     </section>
   </>;

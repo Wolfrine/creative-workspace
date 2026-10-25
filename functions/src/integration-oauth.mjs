@@ -42,7 +42,7 @@ export class NoveliaaOAuthProvider {
       scopes: this.scopes(params.scopes), csrf: digest(csrf), expiresAt: now() + 600 });
     // Hosting forwards only __session. Use that cookie, not a custom cookie name.
     res.cookie('__session', csrf, { httpOnly: true, secure: true, sameSite: 'lax', path: '/', maxAge: 600000 });
-    res.redirect(this.origin + '/connect?request=' + encodeURIComponent(requestId));
+    res.redirect(this.origin + '/api/integrations/connect?request=' + encodeURIComponent(requestId));
   }
   async pending(id, csrf) {
     const pending = checked(await this.store.get('pending', id));

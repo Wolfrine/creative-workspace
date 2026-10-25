@@ -1,0 +1,6 @@
+{
+  "sourceCommit": "4c4c1660625aa8efa84cea4635cf97623dc06be9",
+  "sourcePath": "public/sw.js",
+  "sha256": "3b07b5bb98a085f5d46fb399f98e1ef2684a07b291986956c1b616573acf4bbe",
+  "scope": "Retained exact previous deployed worker source for browser upgrade regression; synthetic cache entries only"
+}

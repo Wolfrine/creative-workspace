@@ -52,8 +52,9 @@ export default function AppHost() {
       setSession(previous => previous?.uid === signedInUid && previous.workspaceId !== workspaceId ? { ...previous, workspaceId } : previous);
     }, problem => { setSession(null); setError(problem.message); setLoading(false); });
   }, [signedInUid]);
-  const integrationRoute = location.pathname === '/connect' || location.pathname === '/connections';
-  if (session) return integrationRoute ? <Integrations key={session.uid + ':' + (session.workspaceId ?? session.uid)} session={session} consent={location.pathname === '/connect'} /> : <WritingWorkspace key={session.uid + ':' + (session.workspaceId ?? session.uid)} session={session} />;
+  const consentRoute = location.pathname === '/api/integrations/connect' || location.pathname === '/connect';
+  const integrationRoute = consentRoute || location.pathname === '/api/integrations/review' || location.pathname === '/connections';
+  if (session) return integrationRoute ? <Integrations key={session.uid + ':' + (session.workspaceId ?? session.uid)} session={session} consent={consentRoute} /> : <WritingWorkspace key={session.uid + ':' + (session.workspaceId ?? session.uid)} session={session} />;
   return <main className="connection-gate">
     <div className="gate-wordmark">Noveliaa<span>✦</span></div>
     <div className="gate-rule" />

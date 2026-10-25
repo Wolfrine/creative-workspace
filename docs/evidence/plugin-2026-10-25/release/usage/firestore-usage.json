@@ -1,0 +1,154 @@
+{
+  "capturedAt": "2026-10-25T11:57:23.441Z",
+  "project": "noveliaa",
+  "source": "Google Cloud Monitoring API; real aggregate production metrics",
+  "status": "unavailable",
+  "reportingTimezone": "America/Los_Angeles",
+  "excludesCurrentPartialDay": true,
+  "availability": {
+    "reads": {
+      "status": "unavailable",
+      "metricType": "firestore.googleapis.com/document/read_count",
+      "reason": "PERMISSION_DENIED",
+      "httpStatus": 403
+    },
+    "writes": {
+      "status": "unavailable",
+      "metricType": "firestore.googleapis.com/document/write_count",
+      "reason": "PERMISSION_DENIED",
+      "httpStatus": 403
+    },
+    "deletes": {
+      "status": "unavailable",
+      "metricType": "firestore.googleapis.com/document/delete_count",
+      "reason": "PERMISSION_DENIED",
+      "httpStatus": 403
+    },
+    "connections": {
+      "status": "unavailable",
+      "metricType": "firestore.googleapis.com/network/active_connections",
+      "reason": "PERMISSION_DENIED",
+      "httpStatus": 403
+    },
+    "listeners": {
+      "status": "unavailable",
+      "metricType": "firestore.googleapis.com/network/snapshot_listeners",
+      "reason": "PERMISSION_DENIED",
+      "httpStatus": 403
+    }
+  },
+  "daily": [
+    {
+      "date": "2026-10-11",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    },
+    {
+      "date": "2026-10-12",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    },
+    {
+      "date": "2026-10-13",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    },
+    {
+      "date": "2026-10-14",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    },
+    {
+      "date": "2026-10-15",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    },
+    {
+      "date": "2026-10-16",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    },
+    {
+      "date": "2026-10-17",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    },
+    {
+      "date": "2026-10-18",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    },
+    {
+      "date": "2026-10-19",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    },
+    {
+      "date": "2026-10-20",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    },
+    {
+      "date": "2026-10-21",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    },
+    {
+      "date": "2026-10-22",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    },
+    {
+      "date": "2026-10-23",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    },
+    {
+      "date": "2026-10-24",
+      "reads": null,
+      "writes": null,
+      "deletes": null
+    }
+  ],
+  "comparison": {
+    "reads": {
+      "previousWeek": null,
+      "latestWeek": null,
+      "ratio": null,
+      "observedDailyPeak": null,
+      "dailySparkAllowance": 50000
+    },
+    "writes": {
+      "previousWeek": null,
+      "latestWeek": null,
+      "ratio": null,
+      "observedDailyPeak": null,
+      "dailySparkAllowance": 20000
+    },
+    "deletes": {
+      "previousWeek": null,
+      "latestWeek": null,
+      "ratio": null,
+      "observedDailyPeak": null,
+      "dailySparkAllowance": 20000
+    }
+  },
+  "gauges": {},
+  "signals": [],
+  "limits": "Usage metrics are not billed-operation totals. Missing samples/days remain null. Hourly buckets approximate Pacific quota days; no client round-trip latency is inferred. No manuscript, database collection scan, API enablement, billing change or Firestore write.",
+  "plan": "Blaze",
+  "scope": "Aggregate writing plus private plugin operations, including OAuth metadata. Spark allowance comparisons are free-tier baselines, not Blaze spending caps."
+}

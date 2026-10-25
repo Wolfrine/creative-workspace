@@ -197,12 +197,18 @@ Author reviewed/dismissed decisions append a separate event and update a review
 projection (two writes for a new decision, none for an identical repeat).
 Review is not canon approval; applying any text remains a manual author action.
 
-`/connect` requests nonempty universe selection and optional writeback. The
+`/api/integrations/connect` requests nonempty universe selection and optional writeback. The
 Firebase Google author identity and HttpOnly same-site `__session` cookie bind
 the consent to this browser/request. Hosting forwards only that cookie. The
-same-origin `/connections` UI can revoke, review, dismiss and export collaboration
+same-origin `/api/integrations/review` UI can revoke, review, dismiss and export collaboration
 records separately from the existing writing archive. Client Firestore Rules
 deny OAuth and collaboration namespaces; the API verifies the author independently.
+
+OAuth discovery advertises `/api/oauth/authorize`. These canonical API-prefixed
+navigation paths bypass the previous writing service worker's cached shell while
+preserving its offline writing behavior. `/authorize`, `/connect` and `/connections`
+remain compatibility aliases. Hosting serves the two integration UI paths before
+the Function rewrites; other integration API paths reach the Function.
 
 No server-side AI inference, new Storage bucket, scheduled backup, shared
 reader, publication or feedback system is activated. The Function scales to

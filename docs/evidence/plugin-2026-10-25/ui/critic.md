@@ -253,3 +253,26 @@ mechanical copy correction does not increase visual scores. Inspected the new
 retained browser-results: 8 expected, 0 unexpected/skipped/flaky. The final
 capture JSON collection has 28 proofs and one unique source digest matching
 the new value above. Those test results do not substitute for the pixel checks.
+
+### Mechanical routing repair — prior service-worker compatibility
+
+The parent changed canonical consent/review routes to
+`/api/integrations/connect` and `/api/integrations/review`, retaining the legacy
+aliases. This addresses prior deployed navigation caching; it changes no style
+or visible copy and does not create another design cycle. The previous complete
+final set is retained under `ui/final-before-legacy-cache/`.
+
+Personally viewed the current `ui/final/consent-390.png`,
+`review-1440.top.png` and `review-390.top.png` as actual pixels. Capture metadata
+names the new canonical routes and source digest
+`305ad579e68d4f53a769ceb5b8c93655e1eb702d166b8467287d8345861f1d9b`.
+The consent hierarchy, scoped choices, cloud-saved source label and review
+controls remain visually unchanged and unclipped at the inspected desktop and
+mobile widths. No new visual blocker. Independent scores remain Agency 8.4,
+Reading clarity 8.4, Restraint 8.2, State continuity 8.4, overall 8.4.
+
+Inspected the current retained browser-results: 8 expected, 0 unexpected,
+0 skipped/flaky. All 28 current final capture JSON proofs share the new digest.
+The parent owns the real old-service-worker behavior tests and deployment/API
+enablement; this pixel check does not claim those passed or that the plugin is
+deployed/installed. Historical five-round evidence is retained without rewriting.

@@ -1,6 +1,6 @@
 import express from 'express';
 import { rateLimit } from 'express-rate-limit';
-import { mcpAuthRouter } from '@modelcontextprotocol/sdk/server/auth/router.js';
+import { mcpAuthRouter, createOAuthMetadata } from '@modelcontextprotocol/sdk/server/auth/router.js';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 import { FieldPath } from 'firebase-admin/firestore';
 import { createIntegrationServer } from './integration-tools.mjs';
@@ -11,8 +11,15 @@ export function integrationApp({ provider, store, access, verifyIdentity }) {
   app.use((_req, res, next) => { res.set({ 'Cache-Control': 'no-store, private', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer', 'X-Frame-Options': 'DENY' }); next(); });
   app.use(express.json({ limit: '128kb' }));
   app.get('/api/integrations/health', (_req, res) => res.json({ service: 'noveliaa-plugin', version: '0.1.0', resource: provider.resource }));
-  app.use(mcpAuthRouter({ provider, issuerUrl: new URL(provider.origin), resourceServerUrl: new URL(provider.resource), scopesSupported: [READ, PROPOSE], resourceName: 'Noveliaa private writing',
-    clientRegistrationOptions: { clientSecretExpirySeconds: 0, rateLimit: { max: 20 } } }));
+  const oauthOptions = { provider, issuerUrl: new URL(provider.origin), resourceServerUrl: new URL(provider.resource), scopesSupported: [READ, PROPOSE], resourceName: 'Noveliaa private writing',
+    clientRegistrationOptions: { clientSecretExpirySeconds: 0, rateLimit: { max: 20 } } };
+  const oauth = mcpAuthRouter(oauthOptions);
+  // Previously installed workers cache navigation except paths containing api.
+  // Publish an uncached authorization entry without forcing a live writer's
+  // coherent offline shell to activate a new worker or discard unsaved work.
+  app.get('/.well-known/oauth-authorization-server', (_req, res) => res.set('Access-Control-Allow-Origin', '*').json({ ...createOAuthMetadata(oauthOptions), authorization_endpoint: provider.origin + '/api/oauth/authorize' }));
+  app.use('/api/oauth', oauth);
+  app.use(oauth);
   const csrf = req => /(?:^|;\s*)__session=([^;]+)/.exec(req.get('cookie') || '')?.[1];
   app.use('/api/integrations', rateLimit({ windowMs: 60000, max: 90, standardHeaders: true, legacyHeaders: false }), async (req, res, next) => {
     if (req.method !== 'GET' && (req.get('origin') !== provider.origin || !req.is('application/json'))) { res.status(403).json({ error: 'This action must start in Noveliaa.' }); return; }
