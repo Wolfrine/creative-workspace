@@ -12,4 +12,4 @@ export default defineConfig({ plugins: [react(), {
     const worker = (await readFile('public/sw.js', 'utf8')).replace('__BUILD_ID__', version).replace('/*__PRECACHE__*/', files.map(name => JSON.stringify(name)).join(','));
     await writeFile('dist/sw.js', worker);
   },
-}], server: { port: 5817, strictPort: true }, build: { sourcemap: false } });
+}], server: { port: 5817, strictPort: true, watch: { ignored: ['**/.local/**', '**/docs/evidence/**'] } }, build: { sourcemap: false } });

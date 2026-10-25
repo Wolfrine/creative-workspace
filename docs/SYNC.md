@@ -11,6 +11,9 @@ Owner-approved on 24 October 2026. Changes stay within Phase 1 and Firebase Spar
 | Manual sync | Checkpoint current writing | Upload immediately if online |
 | History, restoration or complete archive | Explicit version boundary | Read full history when online; no early upload |
 | Reconnect/restart | Keep acknowledged writing and recover drafts | Refresh heads, then respect the last-edit deadline |
+| Confirm a collection rename | Atomically retain metadata and queued intent | One guarded collection write when due; competing names require a choice |
+| Open private Read mode | Local-only recovery flush and frozen reading projection | No early upload |
+| Turn reader pages/change appearance | Device reading position/preferences only | No writing revision or write request |
 
 The timers are trailing idle debounces, never periodic intervals or maximum-wait
 saves. They are independent: 60 seconds is measured from the edit, not the local

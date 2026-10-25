@@ -1,8 +1,11 @@
-import type { CommitOperation, Original, Revision, SaveReceipt, WorkspaceSnapshot, WritingDocument } from '../domain/model';
-import { stableStringify } from '../domain/codec';
+import type { Collection, CollectionRename, CollectionRenameResult, CommitOperation, Original, Revision, SaveReceipt, WorkspaceSnapshot, WritingDocument } from '../domain/model';
+import { assertCollectionMetadata, stableStringify } from '../domain/codec';
 
 export interface PendingOperation extends CommitOperation { status: 'pending' | 'conflict'; resolves?: string[] }
 export interface RecoveryDraft { id: string; generation: number; editedAt: number; document: WritingDocument }
+export interface PendingCollectionRename extends CollectionRename { id: string; editedAt: number; conflict?: Collection }
+const renameKey = (id: string) => 'collectionRename:' + id;
+const sameName = (a: Collection, b: Collection) => a.id === b.id && a.universeId === b.universeId && a.name === b.name && stableStringify(a.nameVersion) === stableStringify(b.nameVersion);
 const stores = ['documents', 'revisions', 'originals', 'universes', 'collections', 'receipts', 'outbox', 'preferences', 'drafts'] as const;
 export type StoreName = typeof stores[number];
 export function request<T>(req: IDBRequest<T>): Promise<T> {
@@ -75,7 +78,62 @@ export class DeviceDatabase {
   async putOriginal(original: Original): Promise<void> { const tx = this.transaction(['originals']); const done = completed(tx); tx.objectStore('originals').add(original); await done; }
   async catalog(data: Pick<WorkspaceSnapshot, 'universes' | 'collections'>): Promise<void> {
     const tx = this.transaction(['universes', 'collections']); const done = completed(tx);
-    data.universes.forEach(x => tx.objectStore('universes').put(x)); data.collections.forEach(x => tx.objectStore('collections').put(x)); await done;
+    // Creation must not rewrite names held by a newer tab. Renames use their
+    // own guarded transaction below, never a whole-catalog replacement.
+    for (const name of ['universes', 'collections'] as const) for (const item of data[name]) if (!await request(tx.objectStore(name).get(item.id))) tx.objectStore(name).add(item);
+    await done;
+  }
+  async collectionRenames(): Promise<PendingCollectionRename[]> { return (await this.all<{ id: string; value: PendingCollectionRename }>('preferences')).filter(row => row.id.startsWith('collectionRename:')).map(row => row.value); }
+  async queueCollectionRename(expectedLocal: Collection, name: string, token: string): Promise<void> {
+    const tx = this.transaction(['collections', 'preferences']); const done = completed(tx);
+    const current = await request<Collection | undefined>(tx.objectStore('collections').get(expectedLocal.id));
+    const prior = (await request(tx.objectStore('preferences').get(renameKey(expectedLocal.id))))?.value as PendingCollectionRename | undefined;
+    if (!current || !sameName(current, expectedLocal) || prior?.conflict) { tx.abort(); await done.catch(() => {}); throw new Error(prior?.conflict ? 'Resolve the collection name choice before renaming again.' : 'This collection changed in another tab. Review its current name and try again.'); }
+    const expected = prior?.expected ?? current;
+    // Even returning to the original name remains a queued intent: an earlier
+    // name may already be in flight. The adapter avoids a write if still equal.
+    const collection: Collection = { ...current, name, nameVersion: { id: token, generation: (expected.nameVersion?.generation ?? 0) + 1 } };
+    assertCollectionMetadata(collection);
+    tx.objectStore('collections').put(collection);
+    if (sameName(collection, expected)) tx.objectStore('preferences').delete(renameKey(current.id));
+    else tx.objectStore('preferences').put({ id: renameKey(current.id), value: { id: current.id, expected, collection, editedAt: Date.now() } satisfies PendingCollectionRename });
+    tx.objectStore('preferences').put({ id: 'catalogPending', value: true });
+    tx.objectStore('preferences').put({ id: 'catalogChangedAt', value: Date.now() });
+    await done;
+  }
+  async resolveCollectionRename(id: string, choice: 'local' | 'remote'): Promise<void> {
+    const tx = this.transaction(['collections', 'preferences']); const done = completed(tx);
+    const change = (await request(tx.objectStore('preferences').get(renameKey(id))))?.value as PendingCollectionRename | undefined;
+    if (!change?.conflict) { await done; return; }
+    if (choice === 'remote' || change.collection.name === change.conflict.name) {
+      tx.objectStore('collections').put(change.conflict); tx.objectStore('preferences').delete(renameKey(id));
+    } else {
+      const collection = { ...change.collection, nameVersion: { id: crypto.randomUUID(), generation: (change.conflict.nameVersion?.generation ?? 0) + 1 } };
+      assertCollectionMetadata(collection);
+      tx.objectStore('collections').put(collection);
+      tx.objectStore('preferences').put({ id: renameKey(id), value: { id, expected: change.conflict, collection, editedAt: Date.now() } satisfies PendingCollectionRename });
+    }
+    tx.objectStore('preferences').put({ id: 'catalogPending', value: true });
+    tx.objectStore('preferences').put({ id: 'catalogChangedAt', value: Date.now() });
+    await done;
+  }
+  async finishCollectionRename(sent: PendingCollectionRename, result: CollectionRenameResult): Promise<void> {
+    const tx = this.transaction(['collections', 'preferences']); const done = completed(tx);
+    const current = (await request(tx.objectStore('preferences').get(renameKey(sent.id))))?.value as PendingCollectionRename | undefined;
+    if (!current) { await done; return; }
+    if (result.status === 'synced' && (sameName(current.collection, sent.collection) || current.collection.name === result.collection.name)) {
+      tx.objectStore('collections').put(result.collection); tx.objectStore('preferences').delete(renameKey(sent.id));
+    } else if (result.status === 'synced' && sameName(current.expected, sent.expected)) {
+      // A second confirmed rename arrived while the first upload was in flight.
+      // Rebase that still-local name; the older acknowledgement cannot erase it.
+      const collection = { ...current.collection, nameVersion: { id: crypto.randomUUID(), generation: (result.collection.nameVersion?.generation ?? 0) + 1 } };
+      assertCollectionMetadata(collection);
+      tx.objectStore('collections').put(collection);
+      tx.objectStore('preferences').put({ id: renameKey(sent.id), value: { id: sent.id, expected: result.collection, collection, editedAt: current.editedAt } satisfies PendingCollectionRename });
+    } else {
+      tx.objectStore('preferences').put({ id: renameKey(sent.id), value: { ...current, conflict: result.collection } });
+    }
+    await done;
   }
   async acknowledge(revisionId: string, conflict: boolean): Promise<void> {
     const tx = this.transaction(['outbox', 'receipts']); const done = completed(tx);
@@ -111,10 +169,11 @@ export class DeviceDatabase {
     // Guard against checkpoints made while the network request or merge was waiting.
     // Read guards and write heads inside ONE transaction, across tabs as well as engines.
     const tx = this.transaction(['documents', 'revisions', 'originals', 'universes', 'collections', 'receipts', 'outbox', 'preferences', 'drafts']); const done = completed(tx);
-    const [localRevisions, localOriginals, localDocuments, pending, drafts] = await Promise.all([
+    const [localRevisions, localOriginals, localDocuments, pending, drafts, localCollections, preferences] = await Promise.all([
       request<Revision[]>(tx.objectStore('revisions').getAll()), request<Original[]>(tx.objectStore('originals').getAll()),
       request<WritingDocument[]>(tx.objectStore('documents').getAll()), request<PendingOperation[]>(tx.objectStore('outbox').getAll()),
       request<RecoveryDraft[]>(tx.objectStore('drafts').getAll()),
+      request<Collection[]>(tx.objectStore('collections').getAll()), request<{ id: string; value: unknown }[]>(tx.objectStore('preferences').getAll()),
     ]);
     for (const name of ['revisions', 'originals'] as const) {
       const existing = new Map((name === 'revisions' ? localRevisions : localOriginals).map(x => [x.id, stableStringify(x)]));
@@ -134,7 +193,21 @@ export class DeviceDatabase {
       // and the head adoption share the transaction with cross-tab checkpoints.
       if (!preserve.has(local.id)) tx.objectStore('preferences').delete('conflict:' + local.id);
     }
-    for (const name of ['revisions', 'originals', 'universes', 'collections'] as const) snapshot[name].forEach(x => tx.objectStore(name).put(x));
+    for (const name of ['revisions', 'originals', 'universes'] as const) snapshot[name].forEach(x => tx.objectStore(name).put(x));
+    const renames = new Map(preferences.filter(row => row.id.startsWith('collectionRename:')).map(row => { const change = row.value as PendingCollectionRename; return [change.id, change]; }));
+    for (const collection of snapshot.collections) {
+      const change = renames.get(collection.id), local = localCollections.find(item => item.id === collection.id);
+      if (local && local.universeId !== collection.universeId) { tx.abort(); await done.catch(() => {}); throw new Error('A collection cannot move between writing worlds.'); }
+      if (change) {
+        if (sameName(collection, change.collection) || collection.name === change.collection.name && (collection.nameVersion?.generation ?? 0) > (change.expected.nameVersion?.generation ?? 0)) {
+          tx.objectStore('collections').put(collection); tx.objectStore('preferences').delete(renameKey(collection.id));
+        } else if (!sameName(collection, change.expected) && (collection.nameVersion?.generation ?? 0) >= (change.expected.nameVersion?.generation ?? 0)) {
+          tx.objectStore('preferences').put({ id: renameKey(collection.id), value: { ...change, conflict: collection } });
+        }
+      } else if (!local || (collection.nameVersion?.generation ?? 0) >= (local.nameVersion?.generation ?? 0)) {
+        tx.objectStore('collections').put(collection);
+      }
+    }
     snapshot.documents.filter(x => !preserve.has(x.id)).forEach(x => tx.objectStore('documents').put(x));
     snapshot.receipts.forEach(x => tx.objectStore('receipts').put({ ...x, key: x.revisionId + ':' + x.level }));
     await done;
@@ -146,6 +219,8 @@ export class DeviceDatabase {
     const counts = await Promise.all(['documents', 'revisions', 'originals'].map(name => request(tx.objectStore(name).count())));
     if (counts.some(Boolean)) { tx.abort(); await done.catch(() => {}); throw new Error('Full archive restore requires an empty notebook. Another tab saved writing before the restore began. Nothing was replaced.'); }
     // Empty default universe is replaced only in this atomic, validated restoration.
+    const preferences = await request<{ id: string }[]>(tx.objectStore('preferences').getAll());
+    preferences.filter(row => row.id.startsWith('collectionRename:')).forEach(row => tx.objectStore('preferences').delete(row.id));
     tx.objectStore('universes').clear(); tx.objectStore('collections').clear();
     for (const name of ['documents', 'revisions', 'originals', 'universes', 'collections'] as const) snapshot[name].forEach(x => tx.objectStore(name).add(x));
     for (const revision of snapshot.revisions) {
@@ -153,6 +228,8 @@ export class DeviceDatabase {
       tx.objectStore('outbox').add({ id: revision.id, operationId: revision.id, expectedHeadId: revision.parentIds[0] ?? null, revision, status: 'pending' });
     }
     tx.objectStore('preferences').put({ id: 'archiveHeads', value: snapshot.documents.map(doc => ({ documentId: doc.id, revisionId: doc.headRevisionId })) });
+    tx.objectStore('preferences').put({ id: 'catalogPending', value: true });
+    tx.objectStore('preferences').put({ id: 'catalogChangedAt', value: Date.now() });
     await done;
   }
   close(): void { this.db.close(); }

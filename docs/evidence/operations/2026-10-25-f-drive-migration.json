@@ -1,0 +1,12 @@
+{
+  "verifiedAt": "2026-10-25T06:56:21.9856680Z",
+  "source": "C:/Users/Sachit Tewary/Documents/Codex/2026-10-23/review-wolfrine-creative-workspace-github-repo/noveliaa",
+  "target": "F:/Workspace/Programs/Independent-Products/Noveliaa",
+  "expectedHead": "17be1faa888e63fb9738488cc06fcff0129aa301",
+  "actualHead": "17be1faa888e63fb9738488cc06fcff0129aa301",
+  "checkedFiles": 459,
+  "mismatches": [],
+  "statusMatches": true,
+  "retainedSourceUntouched": true,
+  "note": "Copied checkout, ignored dependencies/build/test artifacts and Git history; source retained for recovery. All tracked and nonignored new file bytes verified."
+}

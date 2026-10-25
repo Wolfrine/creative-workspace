@@ -1,0 +1,539 @@
+{
+  "round": 5,
+  "dataset": "Synthetic test writing; no production author data or cloud access",
+  "browser": "156.0.8078.4",
+  "sourceBefore": "638d2859b83cae6f226590fdea923b6195b0865360e8b009c1588d7badde2137",
+  "sourceAfter": "638d2859b83cae6f226590fdea923b6195b0865360e8b009c1588d7badde2137",
+  "captures": [
+    {
+      "state": "library-pages",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/library-pages-1440.png",
+      "sha256": "027cbfea738c784d17315eba23746b663ae100f03478862d805d58bada1aa41a",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "scrollHeight": 1000,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "library-collections",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/library-collections-1440.png",
+      "sha256": "2f3fee2da8f4f5f667bc28d3b628a08f2315f1f0cbee75a9f5cd5c46993c8332",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "scrollHeight": 1000,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "collection-detail",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/collection-detail-1440.png",
+      "sha256": "bb5bc1bed9e4f92e70ec1fce5106c1a8aed722c6090f910b8c41061e0b3d4c69",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "scrollHeight": 1000,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "collection-rename",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/collection-rename-1440.png",
+      "sha256": "0aa90b5de997f74a135d7edea550eefa77b7c146ccfa2ed7f48136742dc0486a",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "scrollHeight": 1000,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-prose",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-prose-1440.png",
+      "sha256": "301df1898c3470057266e94e03066616867a87e75dc8dd4036a117230264a858",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "scrollHeight": 1000,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-next",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-next-1440.png",
+      "sha256": "4d4901034d2866c3f1dfd8ce441cb871cd4f48610fcb8995a8b100b6f32b4827",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "scrollHeight": 1000,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-contents",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-contents-1440.png",
+      "sha256": "2f5411a09891af3f1a8a9183bd60d1fb2facb99090f676bdca634bade9eae2e6",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "scrollHeight": 1000,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-appearance",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-appearance-1440.png",
+      "sha256": "691ba97d7e34b9678a48c8d756a6927379e653c9980d2fc0a499d2e7bd68f97d",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "scrollHeight": 1000,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-night",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-night-1440.png",
+      "sha256": "c832edae38876111529128c661b400f21ef4478f0445f7def7c9db75a3629e09",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "scrollHeight": 1000,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "writing-after-reading",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/writing-after-reading-1440.png",
+      "sha256": "a1630e08d5590587c36721996660edc01af31ad38f8fc55b7d0e9cc77324d52c",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "scrollHeight": 1000,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "library-empty",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/library-empty-1440.png",
+      "sha256": "07e628487687382f54692a13ed94450d2f2d95c76bd2e97c4d474842a0107cd5",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "scrollHeight": 1000,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "library-pages",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/library-pages-390.png",
+      "sha256": "ad885a523c439a52c879373a8faa8ebe8c229d25764512bbcdf794d5235fc355",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "library-collections",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/library-collections-390.png",
+      "sha256": "425cc86dfa8118bb8cb50009dbcc7509c55eb3fcbc37fbb073c96ee1ca4d501e",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "collection-detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/collection-detail-390.png",
+      "sha256": "526f545c01f431cd27dcdf7c2a5becf4688d5c8133e04ef8860240839e0fdb50",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "collection-rename",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/collection-rename-390.png",
+      "sha256": "99db506137c63cf01c9a299a8b4cf1d6b87fddb488cce9c4a45b126f97f72df9",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-prose",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-prose-390.png",
+      "sha256": "0d6a2a430747ab5992ed3b0d52a1aa8cf75ba8796de181a5243ff2b3e533848f",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-next",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-next-390.png",
+      "sha256": "5ca8ee23d65e614714f7abb449ddcbf023f5f48cb919dd2bb6351b553595147f",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-contents",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-contents-390.png",
+      "sha256": "ccc07017909b82d06605670c136cca50a00b6d4d3585a0d736264af0c4be17ab",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-appearance",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-appearance-390.png",
+      "sha256": "c8eedd776a7378400f6ffab2f52f0cca70aa2c73ca4ed9f63291101694b74a25",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-night",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-night-390.png",
+      "sha256": "eaf268252c9c28c1058adc8f05b9041a8bb850d5c8738a604add6d97fc6e390f",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "writing-after-reading",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/writing-after-reading-390.png",
+      "sha256": "2663d9b9bd293ce5014b61bcbb5509a0b81a1ced47876b3afda768862987087f",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "library-empty",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/library-empty-390.png",
+      "sha256": "3af4150a14ab88143bbab76fcac1bb82c6b8c28c9ca3a5cd2d85289f5f6e0da0",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "library-pages",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/library-pages-320.png",
+      "sha256": "43846258457dda8d97a17a386a774d5e18828c6a63f519790c7cd24a1edf77cc",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "library-collections",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/library-collections-320.png",
+      "sha256": "c9a8927d3c6ee60935ac705da2c5f49f937d7c02ecce72d6f20c497626b8e5c4",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "collection-detail",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/collection-detail-320.png",
+      "sha256": "682a0de48befc8a3116776116cdae04bf9e94981d7d6e9eeb99ae1b0f4c2f62f",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "collection-rename",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/collection-rename-320.png",
+      "sha256": "6b9cd8d594180f0e0d3e6bdc0f8380931f43fce2c5c8b88bcd71057d7f74da83",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-prose",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-prose-320.png",
+      "sha256": "6ea37a93eef758eda6e5cc1bfba62b9b835a1ae1cdab2b53aa78e1eaf6732338",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-next",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-next-320.png",
+      "sha256": "c69a3ae33e40d10da2fa336eaae402bde3fc8504811555fa36562621bf995ff9",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-contents",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-contents-320.png",
+      "sha256": "f84a5064d7daff0682713384f78a5a68f8853ed4f8fd956c8c0f2a124c085549",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-appearance",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-appearance-320.png",
+      "sha256": "ad0c5c4b4c72a22c3ec3597b4d9116adee622db715b6711988b0d9b884d49c53",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-night",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/reader-night-320.png",
+      "sha256": "00d8936f993ec365ed309852cc18d95e53ed4943ef9ddd00c292105191228df8",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "writing-after-reading",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/writing-after-reading-320.png",
+      "sha256": "9eb7f25651df59e583f11d16155968d92247186cea87c966dc97a4778e534d16",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "library-empty",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-5/library-empty-320.png",
+      "sha256": "372803c8187070a899356aa329c2075b06c22e6b14b4bdf8622df749d409afc2",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844,
+        "scrollHeight": 844,
+        "brokenImages": false
+      }
+    }
+  ],
+  "videos": [],
+  "errors": []
+}

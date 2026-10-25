@@ -3,6 +3,12 @@
 **Status:** Phase 1 development and Firebase deployment approved by the owner on 23 October 2026. Build and test recoverable, author-first writing using Living Atlas with Quiet Folio. Deploy through GitHub Actions to the verified existing Firebase app/site and provide its live URL after hosted visual checks. External AI collaboration, reader editions and feedback remain later phases.
 **Project:** `Wolfrine/creative-workspace` (private). **App name:** Noveliaa (working name).
 
+**Approved extension (25 October 2026):** Rename collections, browse dedicated
+Library/collection views, and privately reread current writing in paginated Read
+mode with optional paper-turn animation. Read replaces the mobile Export
+destination; export remains in the side menu. Collections remain flat. This
+author-only tool grants no AI approval, sharing, publication or peer access.
+
 ## Why this exists
 
 The author once developed stories directly in notebooks, then in personally organized folders and files. Writing evolved through chapters, lore and experimentation, with family and friends providing real reactions. Later AI-led attempts turned brief notes into confident but inaccurate structure, changed meaning, scattered discussions and diluted creative control.

@@ -1,5 +1,17 @@
 # Noveliaa repository instructions
 
+## Development location
+
+The verified owning Windows checkout is
+`F:/Workspace/Programs/Independent-Products/Noveliaa`. All new development source,
+scripts, build/test output, reports and scratch must stay on F. The earlier
+C-drive chat checkout is a retained recovery copy and must not be extended.
+Dot-source `. ./.harness/dev-environment.ps1` before Windows commands to keep
+Node, browser/emulator caches, temporary profiles and Python bytecode on F.
+Codex/Windows-managed application state and installed platform binaries remain
+in their required platform locations. Linux GitHub Actions runners retain the
+existing deployment workflow; deliver directly from `main`.
+
 Read [INTENT.md](INTENT.md) and [.harness/objective.md](.harness/objective.md) first. The owner approved **Phase 1 development and Firebase deployment on 23 October 2026**. Deploy through GitHub Actions using the existing Firebase identity, verify the matching app/project/site, check the hosted UI, and share its live URL. The owner does not review localhost. Later stages remain unapproved.
 
 **Work and deploy directly from `main` by default.** The owner explicitly set
@@ -20,7 +32,7 @@ need the owner. Verify current state before repeating any setup request.
 ## Current assignment: implement and evaluate Phase 1
 
 1. Inspect the actual repository and relevant writing/story projects. Verify evidence and separate known facts from assumptions.
-2. Build capture, freeform writing, optional organization, stable links/search, durable offline checkpoints, revision recovery and export. Follow Living Atlas with Quiet Folio writing; defer external AI, reader editions and feedback. Use the repository's evaluations and retain actual desktop/mobile and integrity evidence.
+2. Build capture, freeform writing, optional organization, stable links/search, durable offline checkpoints, revision recovery and export. Follow Living Atlas with Quiet Folio writing. The owner approved collection renaming, dedicated Library views and private author Read mode on 25 October 2026; see `docs/design/LIBRARY_READER.md`. Collections stay flat. External AI, shared reader editions and feedback remain deferred. Use the repository's evaluations and retain actual desktop/mobile and integrity evidence.
 3. Reuse existing work selectively; do not change NovaSaga, Novel-Encyclopedia, StoryForge or any other repository without a separate request.
 
 ## Non-negotiable creative safeguards

@@ -1,6 +1,6 @@
 import { type CloudAdapter, type Collection, type Original, type Origin, type Revision, type RichNode, type WorkspaceSnapshot, type WorkspaceState, type WritingDocument, emptyBody, textBody, plainText, linkIds } from '../domain/model';
 import { assertBody, sha256, stableStringify, toBase64, validateSnapshot } from '../domain/codec';
-import { DeviceDatabase, type PendingOperation, type RecoveryDraft } from '../storage/database';
+import { DeviceDatabase, type PendingCollectionRename, type PendingOperation, type RecoveryDraft } from '../storage/database';
 import { decodeArchive, encodeArchive, escapeHtml } from '../storage/archive';
 import { renderHtml, renderMarkdown } from '../domain/render';
 
@@ -41,19 +41,21 @@ export class WritingEngine {
   private catalogPending = false;
   private catalogGeneration = 0;
   private catalogChangedAt?: number;
+  private collectionRenames: PendingCollectionRename[] = [];
   private stopCloudWatch?: () => void;
   private remoteRefreshRequested = false;
   private refreshPromise?: Promise<void>;
   private cloudReadFailed = false;
   constructor(readonly accountId: string, readonly cloud: CloudAdapter | null) {
-    this.state = { ...blank(accountId), ready: false, localOnly: !cloud, activeUniverseId: '', activeDocumentId: null, saveState: 'local', error: null, pendingCount: 0, conflictedDocumentIds: [], online: typeof navigator === 'undefined' || navigator.onLine !== false };
+    this.state = { ...blank(accountId), ready: false, localOnly: !cloud, activeUniverseId: '', activeDocumentId: null, saveState: 'local', error: null, pendingCount: 0, conflictedDocumentIds: [], collectionConflicts: [], online: typeof navigator === 'undefined' || navigator.onLine !== false };
   }
   getSnapshot = (): WorkspaceState => this.state;
   subscribe = (callback: () => void): (() => void) => { this.listeners.add(callback); return () => this.listeners.delete(callback); };
   private publish(patch: Partial<WorkspaceState> = {}): void {
     if (this.disposed) return;
     this.state = { ...this.state, ...patch, pendingCount: this.pending.length, conflictedDocumentIds: [...new Set([...this.localConflicts, ...this.pending.filter(operation => operation.status === 'conflict').map(operation => operation.revision.documentId)])] };
-    this.state.saveState = this.state.error ? 'error' : this.pending.some(x => x.status === 'conflict') || this.localConflicts.size ? 'conflict' : this.dirty.size ? 'waiting' : this.syncing ? 'syncing' : this.pending.length || this.draftPending.size || this.catalogPending || !this.cloud ? 'local' : 'synced';
+    this.state.collectionConflicts = this.collectionRenames.filter(change => change.conflict).map(change => ({ collectionId: change.id, localName: change.collection.name, remoteName: change.conflict!.name }));
+    this.state.saveState = this.state.error ? 'error' : this.pending.some(x => x.status === 'conflict') || this.localConflicts.size || this.state.collectionConflicts.length ? 'conflict' : this.dirty.size ? 'waiting' : this.syncing ? 'syncing' : this.pending.length || this.draftPending.size || this.catalogPending || this.collectionRenames.length || !this.cloud ? 'local' : 'synced';
     this.listeners.forEach(callback => callback());
   }
   private fail(error: unknown, cloudRead = false): void { this.cloudReadFailed = cloudRead; this.publish({ error: (error instanceof Error ? error.message : String(error)) + ' Your open text is still available. Export text if saving cannot be restored.' }); }
@@ -76,6 +78,7 @@ export class WritingEngine {
       this.pending = await this.db.all<PendingOperation>('outbox');
       this.localConflicts = new Set(await this.db.conflicts());
       this.catalogPending = await this.db.getPreference<boolean>('catalogPending') ?? false;
+      this.collectionRenames = await this.db.collectionRenames();
       this.catalogChangedAt = await this.db.getPreference<number>('catalogChangedAt');
       this.lastEditAt = Math.max(0, ...this.pending.map(operation => Date.parse(operation.revision.snapshot.updatedAt)), this.catalogChangedAt ?? 0);
       if (this.disposed) return;
@@ -142,6 +145,8 @@ export class WritingEngine {
     if (!this.db || this.disposed) return;
     const disk = await this.db.snapshot();
     const diskPending = await this.db.all<PendingOperation>('outbox');
+    this.collectionRenames = await this.db.collectionRenames();
+    this.catalogPending = await this.db.getPreference<boolean>('catalogPending') ?? this.catalogPending;
     const known = new Set(disk.revisions.map(x => x.id));
     const fresh = this.state.revisions.filter(x => !known.has(x.id));
     const freshIds = new Set(fresh.map(x => x.id));
@@ -264,7 +269,25 @@ export class WritingEngine {
     if (!name.trim()) return;
     const collection: Collection = { id: uuid(), universeId: this.state.activeUniverseId, name: name.trim(), order: this.state.collections.length };
     const collections = [...this.state.collections, collection]; await this.db?.catalog({ universes: this.state.universes, collections });
-    this.publish({ collections }); this.broadcast(); await this.markCatalogPending();
+    this.publish({ collections }); await this.refreshDisk(); this.broadcast(); await this.markCatalogPending();
+  }
+  async renameCollection(id: string, name: string): Promise<void> {
+    if (!this.db) throw new Error('Device storage is unavailable.');
+    const collection = this.state.collections.find(item => item.id === id);
+    if (!collection) throw new Error('Choose an existing collection. Inbox is permanent and cannot be renamed.');
+    if (typeof name !== 'string' || !name.trim() || name.trim().length > 10000 || /[\u0000-\u001f\u007f]/u.test(name)) throw new Error('Enter a collection name without control characters (up to 10,000 characters).');
+    if (collection.name === name.trim()) return;
+    try { await this.db.queueCollectionRename(collection, name.trim(), uuid()); }
+    catch (error) { await this.refreshDisk(); throw error; }
+    await this.refreshDisk(); this.broadcast(); await this.markCatalogPending();
+  }
+  async resolveCollectionRename(id: string, choice: 'local' | 'remote'): Promise<void> {
+    if (choice !== 'local' && choice !== 'remote') throw new Error('Choose which collection name to keep.');
+    if (!this.db) throw new Error('Device storage is unavailable.');
+    await this.db.resolveCollectionRename(id, choice); await this.refreshDisk(); this.broadcast(); await this.markCatalogPending();
+  }
+  private collectionsForUpload(): Collection[] {
+    return this.state.collections.map(collection => this.collectionRenames.find(change => change.id === collection.id)?.expected ?? collection);
   }
   private async markCatalogPending(): Promise<void> {
     this.catalogPending = true; this.catalogGeneration++;
@@ -308,6 +331,7 @@ export class WritingEngine {
     await this.db!.merge(remote, preserve);
     if (this.disposed) return;
     const disk = await this.db!.snapshot();
+    this.collectionRenames = await this.db.collectionRenames();
     this.localConflicts = new Set(await this.db.conflicts());
     if (this.disposed) return;
     const documents = disk.documents.map(doc => this.dirty.has(doc.id) || this.draftPending.has(doc.id) || this.pending.some(x => x.revision.documentId === doc.id) ? this.state.documents.find(x => x.id === doc.id) ?? doc : doc);
@@ -336,9 +360,20 @@ export class WritingEngine {
     if (!this.catalogPending && !this.pending.some(operation => operation.status === 'pending') && !archiveRecovery?.length) return;
     // Do not call flush here: checkpoint scheduling can start sync while its own tail is finishing.
     const catalogGeneration = this.catalogGeneration;
-    if (this.catalogPending || this.pending.length) await this.cloud!.putCatalog(this.state.universes, this.state.collections);
+    if (this.catalogPending || this.pending.length) await this.cloud!.putCatalog(this.state.universes, this.collectionsForUpload());
     if (this.disposed) return;
+    this.collectionRenames = await this.db!.collectionRenames();
+    for (const change of this.collectionRenames) {
+      if (change.conflict) continue;
+      if (!this.cloud!.renameCollection) throw new Error('This cloud adapter does not support guarded collection renaming. The device name is retained.');
+      const result = await this.cloud!.renameCollection(change);
+      if (this.disposed) return;
+      await this.db!.finishCollectionRename(change, result);
+    }
+    this.collectionRenames = await this.db!.collectionRenames();
+    await this.refreshDisk();
     if (this.catalogGeneration === catalogGeneration) { this.catalogPending = false; this.catalogChangedAt = undefined; await this.db!.setPreference('catalogPending', false); }
+    if (this.collectionRenames.some(change => !change.conflict)) { this.catalogPending = true; await this.db!.setPreference('catalogPending', true); }
     await this.cloud!.registerDocuments?.(this.state.documents.map(({ id, universeId }) => ({ id, universeId })));
     if (this.disposed) return;
     // IndexedDB returns UUID-key order after restart, not revision ancestry order.
@@ -356,7 +391,7 @@ export class WritingEngine {
       if (operation.status === 'conflict') continue;
       // A source may have been imported after this sync began. Stage its exact bytes
       // and catalog before the dependent revision, never a stale captured source list.
-      await this.cloud!.putCatalog(this.state.universes, this.state.collections);
+      await this.cloud!.putCatalog(this.state.universes, this.collectionsForUpload());
       if (this.disposed) return;
       await this.cloud!.registerDocuments?.(this.state.documents.map(({ id, universeId }) => ({ id, universeId })));
       if (this.disposed) return;
@@ -414,13 +449,14 @@ export class WritingEngine {
     // History requests can overlap fresh typing. Export a matching checkpoint,
     // and keep device archives available when the cloud cannot be read.
     await this.checkpoint();
-    const { ready: _, localOnly: __, activeUniverseId: ___, activeDocumentId: ____, saveState: _____, error: ______, pendingCount: _______, online: ________, conflictedDocumentIds: _________, ...snapshot } = this.state;
+    const { ready: _, localOnly: __, activeUniverseId: ___, activeDocumentId: ____, saveState: _____, error: ______, pendingCount: _______, online: ________, conflictedDocumentIds: _________, collectionConflicts: __________, ...snapshot } = this.state;
     return encodeArchive(clone(snapshot));
   }
   async importArchive(file: File): Promise<void> {
     await this.flush(); const snapshot = await decodeArchive(await file.text());
     if (!this.db) throw new Error('Device storage unavailable.');
     await this.db.enqueueArchive({ ...snapshot, accountId: this.accountId });
+    this.collectionRenames = await this.db.collectionRenames(); this.catalogPending = true;
     this.pending = await this.db.all<PendingOperation>('outbox'); const disk = await this.db.snapshot();
     this.publish({ ...disk, activeUniverseId: disk.universes[0]?.id ?? '', activeDocumentId: disk.documents.find(x => !x.trashed)?.id ?? null, error: null }); await this.remember(); this.broadcast(); if (this.cloud) void this.sync();
   }

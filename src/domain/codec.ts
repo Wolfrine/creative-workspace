@@ -1,4 +1,11 @@
-import { type RichNode, type WorkspaceSnapshot, plainText, linkIds } from './model';
+import { type Collection, type RichNode, type WorkspaceSnapshot, plainText, linkIds } from './model';
+
+export function assertCollectionMetadata(value: Collection): void {
+  const validId = (id: unknown) => typeof id === 'string' && /^[A-Za-z0-9_-]{1,150}$/.test(id);
+  if (!value || typeof value !== 'object' || Array.isArray(value) || Object.keys(value).some(key => !['id', 'universeId', 'name', 'order', 'nameVersion'].includes(key)) || !validId(value.id) || !validId(value.universeId) || typeof value.name !== 'string' || value.name.length > 10000 || !Number.isFinite(value.order)) throw new Error('Invalid collection metadata. Nothing was changed.');
+  const version = value.nameVersion;
+  if (version !== undefined && (!version || typeof version !== 'object' || Array.isArray(version) || Object.keys(version).sort().join(',') !== 'generation,id' || !validId(version.id) || !Number.isSafeInteger(version.generation) || version.generation < 1)) throw new Error('Invalid collection name version. Nothing was changed.');
+}
 
 export function stableStringify(value: unknown): string {
   if (Array.isArray(value)) return '[' + value.map(item => stableStringify(item === undefined ? null : item)).join(',') + ']';
@@ -83,8 +90,8 @@ export async function validateSnapshot(data: WorkspaceSnapshot): Promise<void> {
     if (typeof universe.name !== 'string' || universe.name.length > 10000 || !date(universe.createdAt)) throw new Error('Invalid universe metadata.');
   }
   for (const collection of data.collections) {
-    keys(collection, ['id', 'universeId', 'name', 'order']);
-    if (!worlds.has(collection.universeId) || typeof collection.name !== 'string' || collection.name.length > 10000 || !Number.isFinite(collection.order)) throw new Error('Invalid collection metadata.');
+    assertCollectionMetadata(collection);
+    if (!worlds.has(collection.universeId)) throw new Error('Invalid collection metadata.');
   }
   const checkWriting = (writing: Omit<WorkspaceSnapshot['documents'][number], 'headRevisionId'>) => {
     keys(writing, ['id', 'universeId', 'title', 'body', 'plainText', 'collectionId', 'trashed', 'order', 'origin', 'sourceOriginalIds', 'createdAt', 'updatedAt']);

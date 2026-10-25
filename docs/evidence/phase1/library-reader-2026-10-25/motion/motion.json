@@ -1,0 +1,148 @@
+{
+  "dataset": "Synthetic isolated local notebook; actual Chromium animations and screenshots",
+  "browser": "156.0.8078.4",
+  "cases": [
+    {
+      "width": 1440,
+      "before": "docs/evidence/phase1/library-reader-2026-10-25/motion/before-1440.png",
+      "frames": [
+        {
+          "targetMs": 0,
+          "actualElapsedMs": 178,
+          "path": "docs/evidence/phase1/library-reader-2026-10-25/motion/turn-1440-0.png",
+          "observed": [
+            {
+              "transform": "matrix3d(0.08, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000714286, 0, 0, 0, 1)",
+              "opacity": "0",
+              "animationName": "paper-turn"
+            }
+          ],
+          "sha256": "27ffc00a8b2ed5e079609458e1db47c2c6c7ce9a6ff04be04f4b38e0b3e04a41"
+        },
+        {
+          "targetMs": 90,
+          "actualElapsedMs": 422,
+          "path": "docs/evidence/phase1/library-reader-2026-10-25/motion/turn-1440-90.png",
+          "observed": [
+            {
+              "transform": "matrix3d(0.795046, 0, 0.517015, -0.000369297, 0, 1, 0, 0, -0.545163, 0, 0.83833, -0.000598807, 0, 0, 0, 1)",
+              "opacity": "0.108813",
+              "animationName": "paper-turn"
+            }
+          ],
+          "sha256": "a8f7abf8d52dba86f76c2cd9bf5b114d33dfa8f56d741455cae4e4a8af9decc1"
+        },
+        {
+          "targetMs": 180,
+          "actualElapsedMs": 698,
+          "path": "docs/evidence/phase1/library-reader-2026-10-25/motion/turn-1440-180.png",
+          "observed": [],
+          "sha256": "421705995b1523abd0679e407884ff4bab0e63b967f37b701cf9c079e20596dc"
+        },
+        {
+          "targetMs": 270,
+          "actualElapsedMs": 792,
+          "path": "docs/evidence/phase1/library-reader-2026-10-25/motion/turn-1440-270.png",
+          "observed": [],
+          "sha256": "421705995b1523abd0679e407884ff4bab0e63b967f37b701cf9c079e20596dc"
+        },
+        {
+          "targetMs": 360,
+          "actualElapsedMs": 891,
+          "path": "docs/evidence/phase1/library-reader-2026-10-25/motion/turn-1440-360.png",
+          "observed": [],
+          "sha256": "421705995b1523abd0679e407884ff4bab0e63b967f37b701cf9c079e20596dc"
+        },
+        {
+          "targetMs": 500,
+          "actualElapsedMs": 1068,
+          "path": "docs/evidence/phase1/library-reader-2026-10-25/motion/turn-1440-500.png",
+          "observed": [],
+          "sha256": "421705995b1523abd0679e407884ff4bab0e63b967f37b701cf9c079e20596dc"
+        }
+      ],
+      "reducedMotionNoLeaf": true,
+      "video": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\docs\\evidence\\phase1\\library-reader-2026-10-25\\motion\\video\\page@0745190bd8e7845eb9931e5c1ca58c0a.webm"
+    },
+    {
+      "width": 390,
+      "before": "docs/evidence/phase1/library-reader-2026-10-25/motion/before-390.png",
+      "frames": [
+        {
+          "targetMs": 0,
+          "actualElapsedMs": 88,
+          "path": "docs/evidence/phase1/library-reader-2026-10-25/motion/turn-390-0.png",
+          "observed": [
+            {
+              "transform": "matrix3d(0.08, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000714286, 0, 0, 0, 1)",
+              "opacity": "0",
+              "animationName": "paper-turn"
+            }
+          ],
+          "sha256": "05e4444660dac10ce6725ce7093550655c060dc2173e034646812246b68a5bd2"
+        },
+        {
+          "targetMs": 90,
+          "actualElapsedMs": 158,
+          "path": "docs/evidence/phase1/library-reader-2026-10-25/motion/turn-390-90.png",
+          "observed": [
+            {
+              "transform": "matrix3d(0.12245, 0, 0.00345626, -2.46876e-06, 0, 1, 0, 0, -0.0282147, 0, 0.999602, -0.000714001, 0, 0, 0, 1)",
+              "opacity": "0.308755",
+              "animationName": "paper-turn"
+            }
+          ],
+          "sha256": "8014f34aab7fa382a177c95a780d6e8ea48ad61755fa6361a182bb688d6b4676"
+        },
+        {
+          "targetMs": 180,
+          "actualElapsedMs": 292,
+          "path": "docs/evidence/phase1/library-reader-2026-10-25/motion/turn-390-180.png",
+          "observed": [
+            {
+              "transform": "matrix3d(0.452896, 0, 0.119453, -8.53236e-05, 0, 1, 0, 0, -0.255032, 0, 0.966933, -0.000690666, 0, 0, 0, 1)",
+              "opacity": "0.758206",
+              "animationName": "paper-turn"
+            }
+          ],
+          "sha256": "a678022c7fc8e2b6d4e56b0267c3e40240ecde76377122be854c3aa1163454bc"
+        },
+        {
+          "targetMs": 270,
+          "actualElapsedMs": 388,
+          "path": "docs/evidence/phase1/library-reader-2026-10-25/motion/turn-390-270.png",
+          "observed": [
+            {
+              "transform": "matrix3d(0.714078, 0, 0.373551, -0.000266822, 0, 1, 0, 0, -0.46353, 0, 0.886081, -0.000632915, 0, 0, 0, 1)",
+              "opacity": "0.385401",
+              "animationName": "paper-turn"
+            }
+          ],
+          "sha256": "dfeeec2990974e342ae3647a0c1afc9031a60a1162d335d6d94bae50a39a0261"
+        },
+        {
+          "targetMs": 360,
+          "actualElapsedMs": 457,
+          "path": "docs/evidence/phase1/library-reader-2026-10-25/motion/turn-390-360.png",
+          "observed": [
+            {
+              "transform": "matrix3d(0.795038, 0, 0.516998, -0.000369284, 0, 1, 0, 0, -0.545154, 0, 0.838336, -0.000598812, 0, 0, 0, 1)",
+              "opacity": "0.108847",
+              "animationName": "paper-turn"
+            }
+          ],
+          "sha256": "73c07d4721e68fcdb8c529af5054784adbc035e834bb3e65c442e483e337bd4a"
+        },
+        {
+          "targetMs": 500,
+          "actualElapsedMs": 562,
+          "path": "docs/evidence/phase1/library-reader-2026-10-25/motion/turn-390-500.png",
+          "observed": [],
+          "sha256": "1566982a0227966f9d2dd822811f54a405208add17c6d532560d3d704d19bf5a"
+        }
+      ],
+      "reducedMotionNoLeaf": true,
+      "video": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\docs\\evidence\\phase1\\library-reader-2026-10-25\\motion\\video\\page@5e217f7f75ed7b953057edc6517280d5.webm"
+    }
+  ]
+}

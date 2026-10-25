@@ -8,6 +8,13 @@
 from `main` unless the owner explicitly specifies another workflow. Do not create
 feature branches, worktrees or PRs by default. Preserve unique work during cleanup.
 
+**Approved extension (25 October 2026):** Collection renaming, a dedicated
+Library and collection views, and a private author-only paginated Read mode
+with optional page-turn animation. Read replaces Export in mobile navigation;
+Import & export remains in the side menu. Nesting is deferred. This author
+rereading tool does not approve publication, shared editions, AI transformations
+or peer feedback. See [design contract](../docs/design/LIBRARY_READER.md).
+
 ## Constraints
 
 - Simple freeform writing comes first; no forced canon or wiki taxonomy.

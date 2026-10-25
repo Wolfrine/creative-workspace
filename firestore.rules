@@ -39,9 +39,20 @@ service cloud.firestore {
         allow update: if owner(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name']) && request.resource.data.name is string && request.resource.data.name.size() <= 10000;
       }
       match /collections/{key} {
-        allow create: if owner(uid) && validId(key) && request.resource.data.keys().hasOnly(['id', 'universeId', 'name', 'order'])
-          && request.resource.data.id == key && universe(uid, request.resource.data.universeId) && request.resource.data.name is string && request.resource.data.name.size() <= 10000 && request.resource.data.order is number;
-        allow update: if owner(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'order']) && request.resource.data.name is string && request.resource.data.order is number;
+        function validNameVersion(version) {
+          return version is map && version.keys().hasOnly(['id', 'generation'])
+            && validId(version.id) && version.generation is int && version.generation >= 1 && version.generation <= 9007199254740991;
+        }
+        allow create: if owner(uid) && validId(key) && request.resource.data.keys().hasOnly(['id', 'universeId', 'name', 'order', 'nameVersion'])
+          && request.resource.data.id == key && universe(uid, request.resource.data.universeId) && request.resource.data.name is string && request.resource.data.name.size() <= 10000 && request.resource.data.order is number
+          && (!('nameVersion' in request.resource.data) || validNameVersion(request.resource.data.nameVersion));
+        allow update: if owner(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'order', 'nameVersion'])
+          && request.resource.data.name is string && request.resource.data.name.size() > 0 && request.resource.data.name.size() <= 10000 && request.resource.data.order is number
+          && (request.resource.data.name == resource.data.name
+            ? request.resource.data.get('nameVersion', null) == resource.data.get('nameVersion', null)
+            : validNameVersion(request.resource.data.nameVersion)
+              && request.resource.data.nameVersion.generation == resource.data.get('nameVersion', {'generation': 0}).generation + 1
+              && request.resource.data.nameVersion.id != resource.data.get('nameVersion', {'id': ''}).id);
       }
       match /documentIdentities/{key} {
         allow create: if owner(uid) && validId(key) && request.resource.data.keys().hasOnly(['id', 'universeId']) && request.resource.data.id == key && universe(uid, request.resource.data.universeId);

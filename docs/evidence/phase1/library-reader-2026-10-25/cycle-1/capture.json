@@ -1,0 +1,66 @@
+{
+  "round": 1,
+  "dataset": "Synthetic test writing; no production author data or cloud access",
+  "browser": "156.0.8078.4",
+  "sourceBefore": "ceaad69bed33d68962001d9d34731c7e04c8745f3d07000dc2f27a80103d5d0b",
+  "sourceAfter": "ceaad69bed33d68962001d9d34731c7e04c8745f3d07000dc2f27a80103d5d0b",
+  "captures": [
+    {
+      "state": "library-pages",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-1/library-pages-1440.png",
+      "sha256": "ae35bc170a6ef55f110f47b1d754041438b09e31017de99a2fc3118642cf50a9",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "state": "library-collections",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-1/library-collections-1440.png",
+      "sha256": "bfe483378dd88bd56b4a32c3bd719d1d61ff191c5f625832326f8106d56693ae",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "state": "library-pages",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-1/library-pages-390.png",
+      "sha256": "d9f1c6114f9466da1b0e47540ab019947d0ebd991770aa015af15ddba2ff06a0",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844
+      }
+    },
+    {
+      "state": "library-collections",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-1/library-collections-390.png",
+      "sha256": "26105fbb80c84d28e2c3555e51e4f99dd64d34d73d55f36ff4525215e35ae3c6",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844
+      }
+    }
+  ],
+  "errors": []
+}

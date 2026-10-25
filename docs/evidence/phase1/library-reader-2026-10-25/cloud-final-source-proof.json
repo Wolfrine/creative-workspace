@@ -1,0 +1,51 @@
+{
+  "source": "actual loopback Auth and Firestore emulators",
+  "syntheticData": true,
+  "selectedSourceFilesVerifiedUnchangedDuringFinalRun": [
+    {
+      "path": "src/library-reader.css",
+      "sha256": "9a6f90ef8f05beabb4f267323056eb4f4ee4e486777d20c1c64979edfcf87943"
+    },
+    {
+      "path": "tests/spark-browser/collection-reader.spec.ts",
+      "sha256": "062484b8dcbc6498b04128f1812a5e42176b567f4f3cf49407213f7f2b0ffbb0"
+    },
+    {
+      "path": "src/reader/reading.ts",
+      "sha256": "613777b5137f3c52455fdb5d744e03e4e9a86a12fc0a878c52080080a64a69d3"
+    },
+    {
+      "path": "src/state/engine.ts",
+      "sha256": "02946bd71c5ce3b6fb87eeb861fb8e81baf1f3505bd0e2a214b7bd9c8d330e0f"
+    },
+    {
+      "path": "src/styles.css",
+      "sha256": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294"
+    },
+    {
+      "path": "src/components/Reader.tsx",
+      "sha256": "9506489d82443fd55031a82ade1664fb96aea1d82850a892df7382f6a01ead24"
+    },
+    {
+      "path": "src/components/Library.tsx",
+      "sha256": "febd52f9ce20a7790796272d4dbd8e6c08652b8d5eecabe5420c387b939ed965"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "8b6e552620e1cd2352903ef32899802b2af21549d2b076943b1a776756186c59"
+    }
+  ],
+  "cloudReport": "spark-browser-results.json",
+  "stats": {
+    "startTime": "2026-10-25T07:36:26.169Z",
+    "duration": 151930.331,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "readerWriteRpcOracle": {
+    "seedFirestoreWriteRequests": 12,
+    "readingFirestoreWriteRequests": []
+  }
+}

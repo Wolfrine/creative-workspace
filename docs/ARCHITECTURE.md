@@ -44,6 +44,41 @@ listbox; phones use the native selection control.
 
 ## Spark cloud persistence and trust boundary
 
+### Collection names
+
+A confirmed rename updates the existing collection identity and queues a durable
+metadata intent in the account/workspace IndexedDB preferences transaction. The
+optional `nameVersion` contains a unique proposal ID and monotonically increasing
+generation; old records and archives without it remain supported. Existing
+collections are create-only in ordinary catalog uploads. A dedicated expected-
+version transaction writes the changed name; unrelated stale uploads cannot put
+the old name back. Competing renames retain the local intent and expose explicit
+local/remote name choices. Clean listener updates adopt names silently. A normal
+successful rename writes one collection document and creates no text revision.
+
+### Library and private Read mode
+
+`Library` presents locally available pages/collections in the main workspace;
+sidebar shortcuts remain bounded. Inbox is still derived from null collection
+membership. Browsing/filtering does not add a Firestore query per action.
+
+`Reader` uses a cloned local snapshot of the exact rich-text documents, their
+authored order and origin labels. DOM text remains selectable and semantic;
+CSS multicolumn fragmentation provides one leaf on narrow screens and optional
+facing leaves on wide screens. Typography and viewport changes recalculate the
+layout around a passage/offset anchor. Local bookmarks carry a body fingerprint
+only for resume invalidation, never integrity, canon or approval. A changed body
+or missing source resets the stale anchor explicitly. The last reading scope and
+position are isolated by account, workspace and universe. Collection bookmarks
+use collection identity, so adding a page does not alone discard the bookmark.
+
+Read mode keeps incoming source changes separate from the current frozen reading
+session. Opening it performs a local-only recovery flush. Page turns, appearance
+and bookmarks do not call cloud writes or create manuscript revisions. Optional
+paper-turn motion is a restrained visual leaf/shadow effect; reduced motion and
+the reader preference disable it. Export remains in the sidebar. This is private
+author rereading; shared approved editions and feedback remain deferred.
+
 The production client uses **Authentication + Firestore + Hosting**. No Functions
 or Storage deployment, API enablement, scheduled job or billing upgrade is needed.
 Google sign-in verifies the configured human author's UID through Firestore Rules.

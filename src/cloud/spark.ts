@@ -1,6 +1,6 @@
 import { Bytes, collection, doc, getDocFromCache, getDocFromServer, getDocsFromServer, onSnapshot, runTransaction, type Firestore, type DocumentData } from 'firebase/firestore';
-import type { CloudAdapter, CommitOperation, CommitResult, Original, Revision, WorkspaceSnapshot } from '../domain/model';
-import { assertBody, fromBase64, sha256, stableStringify, toBase64 } from '../domain/codec';
+import type { CloudAdapter, Collection, CommitOperation, CommitResult, Original, Revision, WorkspaceSnapshot } from '../domain/model';
+import { assertBody, assertCollectionMetadata, fromBase64, sha256, stableStringify, toBase64 } from '../domain/codec';
 import { linkIds, plainText } from '../domain/model';
 
 const CHUNK = 192 * 1024;
@@ -112,7 +112,9 @@ export function createFirestoreAdapter(db: Firestore, uid: string, checkSession:
     await runTransaction(db, async transaction => {
       const reference = record(kind, value.id), previous = await transaction.get(reference);
       if (previous.exists() && (kind === 'universes' ? previous.data().createdAt !== value.createdAt : previous.data().universeId !== value.universeId)) throw new Error('An existing organization identity cannot be replaced or moved.');
-      if (!previous.exists() || stableStringify(previous.data()) !== fingerprint) transaction.set(reference, value);
+      // Existing collection names change only through expected-version renames.
+      // Sending an unrelated manuscript must never upload a stale catalog name.
+      if (!previous.exists() || kind === 'universes' && stableStringify(previous.data()) !== fingerprint) transaction.set(reference, value);
     });
     metadataCache.set(key, fingerprint);
   };
@@ -224,6 +226,45 @@ export function createFirestoreAdapter(db: Firestore, uid: string, checkSession:
     async putCatalog(universes, collections) {
       for (const universe of universes) await mutableCatalogEntry('universes', universe);
       for (const group of collections) await mutableCatalogEntry('collections', group);
+    },
+    async renameCollection(change) {
+      assertCollectionMetadata(change.expected); assertCollectionMetadata(change.collection);
+      if (change.expected.id !== change.collection.id || change.expected.universeId !== change.collection.universeId || change.expected.order !== change.collection.order || !change.collection.name.trim() || change.collection.nameVersion?.generation !== (change.expected.nameVersion?.generation ?? 0) + 1 || change.collection.nameVersion.id === change.expected.nameVersion?.id) throw new Error('Invalid guarded collection rename. The device name is retained.');
+      await checkSession();
+      let observedName: string | undefined;
+      const nameFingerprint = (value: Collection) => stableStringify({ name: value.name, version: value.nameVersion });
+      const attemptRename = () => runTransaction(db, async transaction => {
+        const reference = record('collections', change.collection.id), previous = await transaction.get(reference);
+        if (!previous.exists()) throw new Error('The cloud collection is unavailable. The device name is retained.');
+        const current = previous.data() as Collection; assertCollectionMetadata(current);
+        if (current.id !== change.expected.id || current.universeId !== change.expected.universeId) throw new Error('An existing organization identity cannot be replaced or moved.');
+        observedName = nameFingerprint(current);
+        if (current.name === change.collection.name) return { status: 'synced' as const, collection: current };
+        if (current.name !== change.expected.name || stableStringify(current.nameVersion) !== stableStringify(change.expected.nameVersion)) return { status: 'conflict' as const, collection: current };
+        const collection = { ...current, name: change.collection.name, nameVersion: change.collection.nameVersion };
+        transaction.set(reference, collection);
+        return { status: 'synced' as const, collection };
+      });
+      const guardedRename = async () => {
+        // As with manuscript heads, Rules can reject an optimistic stale
+        // version before the SDK reports its precondition race. A fresh server
+        // read must prove that race; permission/schema failures stay failures.
+        for (let attempt = 0; attempt < 3; attempt++) {
+          try { return await attemptRename(); }
+          catch (error) {
+            if (attempt === 2 || observedName === undefined || (error as { code?: string }).code !== 'permission-denied') throw error;
+            const fresh = await read('collections', change.collection.id);
+            if (!fresh.exists()) throw error;
+            const current = fresh.data() as Collection; assertCollectionMetadata(current);
+            if (current.id !== change.expected.id || current.universeId !== change.expected.universeId || nameFingerprint(current) === observedName) throw error;
+          }
+        }
+        throw new Error('The collection name is still changing. Your device name is retained; retry sync.');
+      };
+      const result = await guardedRename();
+      metadataCache.set('collections/' + result.collection.id, stableStringify(result.collection));
+      if (snapshots) snapshots.get('collections')?.set(result.collection.id, result.collection);
+      return result;
     },
     async registerDocuments(documents) {
       for (const identity of documents) {

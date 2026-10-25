@@ -2,6 +2,7 @@
 @import '@fontsource-variable/dm-sans/wght-italic.css';
 @import '@fontsource-variable/literata';
 @import '@fontsource-variable/literata/wght-italic.css';
+@import './library-reader.css';
 
 :root{font-family:'DM Sans Variable',ui-sans-serif,system-ui,sans-serif;color:#292f2a;background:#f8f7f2;font-synthesis:none;font-size:14px;font-weight:400;--paper:#fbfaf6;--ink:#29352f;--green:#31594c;--green-dark:#264b40;--sage:#e3e9df;--line:#e2e4da;--muted:#73796d;--soft:#f0f1e9;--serif:'Literata Variable','Iowan Old Style','Palatino Linotype',Georgia,serif}
 *{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button{color:inherit;cursor:pointer}button{border:0;background:none}button:disabled{cursor:default;opacity:.45}a{color:inherit}button,input,select,textarea{outline-offset:4px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #447963;outline-offset:3px}input,select,textarea{color:inherit}button svg{flex-shrink:0}button{touch-action:manipulation}h1,h2,h3,h4,p{margin:0}::selection{background:#d8e4ce;color:#1f392f}button .spin,.spin{animation:spin 1.4s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}

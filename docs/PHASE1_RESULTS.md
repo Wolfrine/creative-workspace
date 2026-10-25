@@ -3,7 +3,7 @@
 Phase 1 implements capture, quiet rich-text writing, optional universes and
 collections, stable links/backlinks, Living Atlas, local search, focus/type
 controls, durable offline checkpoints, revision recovery, original provenance
-and portable exports. External AI, reader editions and feedback remain deferred.
+and portable exports. External AI, shared reader editions and feedback remain deferred.
 
 **The owner requires Spark.** The current cloud adapter uses Authentication,
 Firestore and Hosting. It replaces the earlier Functions/Storage design. No
@@ -12,7 +12,42 @@ The owner reviews the actual Firebase site, **https://noveliaa.web.app**, after
 the Actions release passes. **The Spark release is now live and verified**, with
 24 hosted file digests matching its build. See [release and hosted evidence](DEPLOYMENT.md).
 
-## October 24 refinement evidence
+## October 25 Library and private author reader
+
+The approved extension adds stable collection renaming, dedicated Library Pages/
+Collections and collection-detail views, bounded sidebar shortcuts, and Read in
+mobile navigation. Export remains in the side menu. Collections remain flat and
+Inbox remains permanent. A private reader displays exact selectable source text
+in responsive single/facing pages with contents, typography, paper/night themes,
+local resume and optional reduced-motion-aware paper-turn effects. This does
+not create a public edition or approve AI material.
+
+Final local verification: **89 client tests, 15 actual Rules tests, 10 Auth/
+Firestore browser flows, 35 writing/browser checks, 26 evidence evaluations and
+20/20 forced Chromium crash recoveries** passed. The cloud reader test first
+detected 12 seed write RPCs, then observed zero reading write RPCs and unchanged
+server inventories in all nine workspace namespaces. Rename changes one
+collection document on a successful transaction; it preserves document,
+original and revision identities. Competing names require an explicit choice;
+an unrelated upload from a stale device cannot revert the name.
+
+The 150-page Library test checks offline phrase/Hindi retrieval. Long rich text
+is checked by DOM Range for every non-whitespace code point at 1440/390/320 px,
+including blank paragraphs, lists, hard breaks, links, indentation and code.
+All fixtures are synthetic; no production manuscript was read or seeded. Five
+actual visual cycles, independent critique and final source fingerprints are
+retained under [Library/reader evidence](evidence/phase1/library-reader-2026-10-25/).
+Desktop/mobile Chromium coverage does not establish physical-phone, Safari,
+manual screen-reader or author comfort acceptance.
+
+Local saves remain **10 seconds after the last edit**, cloud saves **60 seconds
+after the last edit**. Reading and navigation may make a local safety save but
+never force an early cloud upload. Reader preferences and position remain on the
+device. Development and final artifacts moved to the verified F-drive checkout;
+the old C checkout is retained unchanged for recovery. Release status and the
+configured hosted build are tracked in [deployment](DEPLOYMENT.md).
+
+## October 24 refinement evidence (historical)
 
 **The refinements are live at https://noveliaa.web.app**, deployed from `main`
 commit `ae09cd8`. Deployment attempt 5 and CI attempt 3 passed on GitHub after
@@ -26,7 +61,7 @@ The owner requested themed desktop collection movement, optional first-line
 indentation and quieter sync. The new candidate uses persistent multi-tab
 Firestore cache and server-confirmed metadata listeners. Clean selected pages
 advance automatically; genuine unsent branches remain recoverable. Local saves
-still checkpoint after 300 ms; automatic cloud drain starts about one minute
+in that historical version checkpointed after 300 ms; automatic cloud drain started about one minute
 after the first pending checkpoint. Manual sync, reconnect and tab hiding can
 drain sooner. Every distinct saved revision remains in history.
 
@@ -108,8 +143,8 @@ account switching, Safari/Firefox, manual screen-reader and 400% zoom checks are
 not inferred from Chromium emulator results. G2–G4 remain deferred.
 
 Spark has finite storage/read/write quotas. Failure retains local writing and its
-outbox; it never earns a false cloud receipt. Cloud load currently reads the full
-library/history. Per-import, blob and archive limits are explicit in
+outbox; it never earns a false cloud receipt. Current heads/catalog use persistent
+listeners; complete history is loaded on request. Per-import, blob and archive limits are explicit in
 [architecture](ARCHITECTURE.md). Large libraries need pagination and a larger
 archive format before complete-history portability beyond the current limit.
 

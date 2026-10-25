@@ -136,6 +136,42 @@ describe.skipIf(!enabled)('Spark adapter through actual Firestore emulator and o
     await other.putCatalog([universe, { ...universe, id: 'third' }], []);
     expect((await other.load()).universes.map(value => value.id).sort()).toEqual(['second', 'third', 'world']);
   });
+  it('renames legacy collections once and blocks stale legacy/token rollback without manuscript writes', async () => {
+    const first = await ready(), original = { id: 'group', universeId: 'world', name: 'Original', order: 0 };
+    await first.putCatalog([universe], [original]);
+    const changed = { ...original, name: 'Renamed हिंदी', nameVersion: { id: 'rename-one', generation: 1 } };
+    expect(await first.renameCollection!({ expected: original, collection: changed })).toEqual({ status: 'synced', collection: changed });
+    expect(await first.renameCollection!({ expected: original, collection: changed })).toEqual({ status: 'synced', collection: changed });
+    const stale = createFirestoreAdapter(environment.authenticatedContext('author').firestore() as unknown as Firestore, 'author');
+    await stale.putCatalog([universe], [original]);
+    expect((await stale.load()).collections).toEqual([changed]);
+    await assertFails(setDoc(doc(db, path('collections', 'group')), original));
+    await assertFails(setDoc(doc(db, path('collections', 'group')), { ...changed, name: 'Stale name', nameVersion: { id: 'different-token', generation: 1 } }));
+    await assertFails(setDoc(doc(db, path('collections', 'group')), { ...changed, name: 'Skipped generation', nameVersion: { id: 'different-token', generation: 3 } }));
+    const withoutVersion = { ...original, name: changed.name }; await assertFails(setDoc(doc(db, path('collections', 'group')), withoutVersion));
+    for (const kind of ['revisions', 'operations', 'blobs', 'chunks']) expect((await getDocs(collection(db, 'noveliaaWorkspaces/author/' + kind))).size).toBe(0);
+    await validateSnapshot(await stale.load());
+  });
+  it('detects actual racing metadata transactions and accepts only an explicit rebase of the losing name', async () => {
+    const first = await ready(), original = { id: 'group', universeId: 'world', name: 'Original', order: 0 };
+    await first.putCatalog([universe], [original]);
+    const second = createFirestoreAdapter(environment.authenticatedContext('author').firestore() as unknown as Firestore, 'author');
+    const names = ['Phone', 'Laptop'].map((name, index) => ({ ...original, name, nameVersion: { id: 'rename-' + index, generation: 1 } }));
+    const results = await Promise.all([first.renameCollection!({ expected: original, collection: names[0] }), second.renameCollection!({ expected: original, collection: names[1] })]);
+    expect(results.map(result => result.status).sort()).toEqual(['conflict', 'synced']);
+    const loser = results.findIndex(result => result.status === 'conflict'), winner = results[loser].collection;
+    const chosen = { ...winner, name: names[loser].name, nameVersion: { id: 'explicit-author-choice', generation: 2 } };
+    expect(await first.renameCollection!({ expected: winner, collection: chosen })).toEqual({ status: 'synced', collection: chosen });
+    expect((await second.load()).collections).toEqual([chosen]);
+    expect((await getDocs(collection(db, 'noveliaaWorkspaces/author/revisions'))).size).toBe(0);
+  });
+  it('rejects malformed remote collection metadata before attempting any rename', async () => {
+    const adapter = await ready(), original = { id: 'group', universeId: 'world', name: 'Original', order: 0 };
+    await adapter.putCatalog([universe], [original]);
+    await environment.withSecurityRulesDisabled(context => setDoc(doc(context.firestore(), path('collections', 'group')), { ...original, nameVersion: { id: 'broken', generation: -1 } }));
+    await expect(adapter.renameCollection!({ expected: original, collection: { ...original, name: 'New', nameVersion: { id: 'valid', generation: 1 } } })).rejects.toThrow('Invalid collection name version');
+    expect((await getDoc(doc(db, path('collections', 'group')))).data()?.name).toBe('Original');
+  });
   it('reconstructs a multi-chunk original without Firestore document truncation', async () => {
     const adapter = await ready(), bytes = new Uint8Array(720000);
     for (let start = 0; start < bytes.length; start += 60000) crypto.getRandomValues(bytes.subarray(start, Math.min(start + 60000, bytes.length)));

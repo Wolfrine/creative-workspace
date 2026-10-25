@@ -1,0 +1,364 @@
+{
+  "round": 4,
+  "dataset": "Synthetic test writing; no production author data or cloud access",
+  "browser": "156.0.8078.4",
+  "sourceBefore": "1e640d6a72c4dd6b4a61c18d6c5bd7a037488873faeec385858426da0a06d503",
+  "sourceAfter": "1e640d6a72c4dd6b4a61c18d6c5bd7a037488873faeec385858426da0a06d503",
+  "captures": [
+    {
+      "state": "reader-prose",
+      "viewport": {
+        "width": 1440,
+        "height": 720
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-prose-1440.png",
+      "sha256": "74feccfdd3ea951dae920d981ef717297758e79e750d15ebd1341a5283090900",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 720,
+        "scrollHeight": 720,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-next",
+      "viewport": {
+        "width": 1440,
+        "height": 720
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-next-1440.png",
+      "sha256": "e3ce7c06fe49fa24e5881cdd0147345db6f3dd718da8fd01ad354ea1939f8801",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 720,
+        "scrollHeight": 720,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-contents",
+      "viewport": {
+        "width": 1440,
+        "height": 720
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-contents-1440.png",
+      "sha256": "60ee46b5a9fa0b018f7c19ba0711b8a5cee7271de77867f5b497a483868f00da",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 720,
+        "scrollHeight": 720,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-appearance",
+      "viewport": {
+        "width": 1440,
+        "height": 720
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-appearance-1440.png",
+      "sha256": "411aa858a2129e82b7288197d659909eaa90554e352ed47900ea837d80694cd7",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 720,
+        "scrollHeight": 720,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-night-large",
+      "viewport": {
+        "width": 1440,
+        "height": 720
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-night-large-1440.png",
+      "sha256": "c206f27bb62282ed49449ae56ebc4a3fd36653df6226f9e1f13e75ca774dae37",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 720,
+        "scrollHeight": 720,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-prose",
+      "viewport": {
+        "width": 768,
+        "height": 620
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-prose-768.png",
+      "sha256": "b63eb58d6c7848c86ef33f8a5afc1fc650b92643002bcafbc4926bd51d5d2416",
+      "bounds": {
+        "width": 768,
+        "scrollWidth": 768,
+        "height": 620,
+        "scrollHeight": 620,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-next",
+      "viewport": {
+        "width": 768,
+        "height": 620
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-next-768.png",
+      "sha256": "d2d7c58c38abe573ab8ee3a46e93744eb5af55f4bdba87aab1b7afa75da6798f",
+      "bounds": {
+        "width": 768,
+        "scrollWidth": 768,
+        "height": 620,
+        "scrollHeight": 620,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-contents",
+      "viewport": {
+        "width": 768,
+        "height": 620
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-contents-768.png",
+      "sha256": "859ea2974955e1ac5b1c7145b50f58dae45c50607c9e0919b8ceacf279df823f",
+      "bounds": {
+        "width": 768,
+        "scrollWidth": 768,
+        "height": 620,
+        "scrollHeight": 620,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-appearance",
+      "viewport": {
+        "width": 768,
+        "height": 620
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-appearance-768.png",
+      "sha256": "fbe423e983d71a4c243bcba61dce13df90c18e0260d013f9e5bc8b6a5f635432",
+      "bounds": {
+        "width": 768,
+        "scrollWidth": 768,
+        "height": 620,
+        "scrollHeight": 620,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-night-large",
+      "viewport": {
+        "width": 768,
+        "height": 620
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-night-large-768.png",
+      "sha256": "6860a76748401487532a27464ec3f65c5b8f25a107ccd97a50c21f7893bae3c1",
+      "bounds": {
+        "width": 768,
+        "scrollWidth": 768,
+        "height": 620,
+        "scrollHeight": 620,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-prose",
+      "viewport": {
+        "width": 390,
+        "height": 568
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-prose-390.png",
+      "sha256": "8e8f6e51ec00422304fc33b7857aa02ee08773e5864ac4af971ac12df519bec0",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 568,
+        "scrollHeight": 568,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-next",
+      "viewport": {
+        "width": 390,
+        "height": 568
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-next-390.png",
+      "sha256": "2d95d20c692b903df34eb2394e564f64a9878b2c11f406994ec08ad24de15dc7",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 568,
+        "scrollHeight": 568,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-contents",
+      "viewport": {
+        "width": 390,
+        "height": 568
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-contents-390.png",
+      "sha256": "f65dadf6dcd51bdf42a3621bee15087468c232bc3799bf36cffc76bcaa1f4d1e",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 568,
+        "scrollHeight": 568,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-appearance",
+      "viewport": {
+        "width": 390,
+        "height": 568
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-appearance-390.png",
+      "sha256": "03f9c07f7b69b3097375dbbde3e22520b6f62f6f7d596c81454bc3d3d07bcc0d",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 568,
+        "scrollHeight": 568,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-night-large",
+      "viewport": {
+        "width": 390,
+        "height": 568
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-night-large-390.png",
+      "sha256": "26d299eb89e7d41cdaad8e3d2cebd327703c1e17a4202c357b0c5a08e4105327",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 568,
+        "scrollHeight": 568,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-prose",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-prose-320.png",
+      "sha256": "77c29d0305cff8379fa6d334b54f57d7919740b54ff400a84d288b0895cb8294",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 568,
+        "scrollHeight": 568,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-next",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-next-320.png",
+      "sha256": "39279e40b59d3e0ca67d9022cffd8b6be062a379317655bacc2b8e0fb078a2a4",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 568,
+        "scrollHeight": 568,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-contents",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-contents-320.png",
+      "sha256": "b253d6a5932fc5950ded0e9340541ccde5827324eba584c53afeccb12915aa1a",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 568,
+        "scrollHeight": 568,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-appearance",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-appearance-320.png",
+      "sha256": "16badc24c2c68a7de6bb8f467d002945d11c436adb0277fe6bd42cecad6eff81",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 568,
+        "scrollHeight": 568,
+        "brokenImages": false
+      }
+    },
+    {
+      "state": "reader-night-large",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-4/reader-night-large-320.png",
+      "sha256": "e57f17723f1125360bf775bfedc528698fe6fe1d3186642f8e73ce9391a6a46b",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 568,
+        "scrollHeight": 568,
+        "brokenImages": false
+      }
+    }
+  ],
+  "videos": [
+    {
+      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\docs\\evidence\\phase1\\library-reader-2026-10-25\\cycle-4\\video\\page@6f5dd5045eedecec95fe561ddef0ea94.webm",
+      "sha256": "62165e1e41ef78ed57d31ad21d0a071ab1e470ec14ca666645b6580b39381a2a",
+      "viewport": {
+        "width": 1440,
+        "height": 720
+      }
+    },
+    {
+      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\docs\\evidence\\phase1\\library-reader-2026-10-25\\cycle-4\\video\\page@180a0e74d86389ff6f77596ed49e7b73.webm",
+      "sha256": "8f9d63db585288afa0c56f6564ea48a6cd5fbd06255983987c7334b6a7a8d6fa",
+      "viewport": {
+        "width": 768,
+        "height": 620
+      }
+    },
+    {
+      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\docs\\evidence\\phase1\\library-reader-2026-10-25\\cycle-4\\video\\page@9a856e127f526c866d00211fbe35c696.webm",
+      "sha256": "70cd6c9d1c5df580587cdece4d26c659ee8048cc3f640affa4c1ded14944e46f",
+      "viewport": {
+        "width": 390,
+        "height": 568
+      }
+    },
+    {
+      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\docs\\evidence\\phase1\\library-reader-2026-10-25\\cycle-4\\video\\page@94bc8d3d92012f8da0a8b5998ac890fc.webm",
+      "sha256": "e2ef0db339e7e185acda64228619ab5370982cbb6eef505f2c52576444c4dc60",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      }
+    }
+  ],
+  "errors": []
+}

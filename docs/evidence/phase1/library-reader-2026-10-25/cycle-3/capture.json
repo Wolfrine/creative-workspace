@@ -1,0 +1,136 @@
+{
+  "round": 3,
+  "dataset": "Synthetic test writing; no production author data or cloud access",
+  "browser": "156.0.8078.4",
+  "sourceBefore": "9ebfc721008d51602b93838964606b6aa0fd6c7429efbe1cca174f74db093a24",
+  "sourceAfter": "9ebfc721008d51602b93838964606b6aa0fd6c7429efbe1cca174f74db093a24",
+  "captures": [
+    {
+      "state": "reader-prose",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-3/reader-prose-1440.png",
+      "sha256": "193a253b32c66768e09e1020c97299a8b7689cd6a5f9f0c68964dbf00cf890b6",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "state": "reader-contents",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-3/reader-contents-1440.png",
+      "sha256": "1516dba4c43a8a175d80e09003f3f8cc948085865dc31b18896d6da26d8ad26b",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "state": "reader-appearance",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-3/reader-appearance-1440.png",
+      "sha256": "e5d662a98a9f20709e95b79cd86120d2a3eaf1953356d5fa0ed97187581fdef2",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "state": "reader-prose",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-3/reader-prose-390.png",
+      "sha256": "728406d4c9b009312bcdfc75e35b9ab30d382967a62c0fe42738c215780c00a5",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844
+      }
+    },
+    {
+      "state": "reader-contents",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-3/reader-contents-390.png",
+      "sha256": "8fa962b51e72d3a998b61bc7a246963715f1df6d715d1d991caff7b7b2488760",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844
+      }
+    },
+    {
+      "state": "reader-appearance",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-3/reader-appearance-390.png",
+      "sha256": "64630a17b2e206dc35db4f4ff4df7d009d4dcf3fc7690f1a52a0e266fa1a8f78",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844
+      }
+    },
+    {
+      "state": "reader-prose",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-3/reader-prose-320.png",
+      "sha256": "b1096765d7995cab4e51610adae9469760262889a718300b828f793b66773315",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844
+      }
+    },
+    {
+      "state": "reader-contents",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-3/reader-contents-320.png",
+      "sha256": "078499787436394fcb2e61fb1427dd721ec3e1bd298e8dc36e86a8fe5dfc7013",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844
+      }
+    },
+    {
+      "state": "reader-appearance",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-3/reader-appearance-320.png",
+      "sha256": "ad0c5c4b4c72a22c3ec3597b4d9116adee622db715b6711988b0d9b884d49c53",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844
+      }
+    }
+  ],
+  "errors": []
+}

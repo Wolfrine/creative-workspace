@@ -19,7 +19,11 @@ export interface Original {
   speakerSegments?: { role: 'user' | 'assistant' | 'unknown'; start: number; end: number }[];
 }
 export interface Universe { id: string; name: string; createdAt: string }
-export interface Collection { id: string; universeId: string; name: string; order: number }
+/** Legacy collections have no version; they are generation zero. */
+export interface Collection { id: string; universeId: string; name: string; order: number; nameVersion?: { id: string; generation: number } }
+export interface CollectionRename { expected: Collection; collection: Collection }
+export interface CollectionRenameResult { status: 'synced' | 'conflict'; collection: Collection }
+export interface CollectionConflict { collectionId: string; localName: string; remoteName: string }
 export interface SaveReceipt { revisionId: string; level: 'local' | 'cloud'; at: string; conflict?: boolean }
 export interface WorkspaceSnapshot {
   schemaVersion: 1; accountId: string; universes: Universe[]; collections: Collection[];
@@ -35,6 +39,7 @@ export interface CloudAdapter {
   commit(operation: CommitOperation): Promise<CommitResult>;
   putOriginal(original: Original): Promise<void>;
   putCatalog(universes: Universe[], collections: Collection[]): Promise<void>;
+  renameCollection?(change: CollectionRename): Promise<CollectionRenameResult>;
   registerDocuments?(documents: { id: string; universeId: string }[]): Promise<void>;
 }
 export type SaveState = 'waiting' | 'local' | 'syncing' | 'synced' | 'conflict' | 'error';
@@ -42,6 +47,7 @@ export interface WorkspaceState extends WorkspaceSnapshot {
   ready: boolean; localOnly: boolean; activeUniverseId: string; activeDocumentId: string | null;
   saveState: SaveState; error: string | null; pendingCount: number; online: boolean;
   conflictedDocumentIds: string[];
+  collectionConflicts: CollectionConflict[];
 }
 export interface Session { uid: string; displayName: string; localOnly: boolean; workspaceId?: string; signOut(): Promise<void> }
 export interface WorkspaceController {
@@ -52,6 +58,8 @@ export interface WorkspaceController {
   createUniverse(name: string): Promise<void>;
   selectUniverse(id: string): Promise<void>;
   createCollection(name: string): Promise<void>;
+  renameCollection(id: string, name: string): Promise<void>;
+  resolveCollectionRename(id: string, choice: 'local' | 'remote'): Promise<void>;
   restoreRevision(id: string): Promise<void>;
   loadHistory(): Promise<void>;
   sync(): Promise<void>;

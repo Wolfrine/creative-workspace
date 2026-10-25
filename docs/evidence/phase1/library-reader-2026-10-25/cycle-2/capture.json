@@ -1,0 +1,178 @@
+{
+  "round": 2,
+  "dataset": "Synthetic test writing; no production author data or cloud access",
+  "browser": "156.0.8078.4",
+  "sourceBefore": "3bd7a7ea52d4750a48c5a4eb781ae3fe7376abc28ce4a0bcd034d6c02d972e7f",
+  "sourceAfter": "3bd7a7ea52d4750a48c5a4eb781ae3fe7376abc28ce4a0bcd034d6c02d972e7f",
+  "captures": [
+    {
+      "state": "library-pages",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-2/library-pages-1440.png",
+      "sha256": "460d360d3f3d103622dde8c41935cf1d83c77342badf78705a863e68a1bfad36",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "state": "library-collections",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-2/library-collections-1440.png",
+      "sha256": "669da50b1681d98f6ec28a89e3c24d38c7016f5617b4c9a38a21957ecd202297",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "state": "collection-detail",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-2/collection-detail-1440.png",
+      "sha256": "f3318618ed04b4ea2444cd930d621758c81348c403f49dbf9259125bc2951b21",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "state": "collection-rename",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-2/collection-rename-1440.png",
+      "sha256": "921ccd44ec08b2692a409cf47317d1b8f3683a61909c82ededbfde31d1555f51",
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "state": "library-pages",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-2/library-pages-390.png",
+      "sha256": "8ed3457e9aa1fd48ed56e0bc9498f3b2999707e6e96270cc1eb06f30c30a1226",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844
+      }
+    },
+    {
+      "state": "library-collections",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-2/library-collections-390.png",
+      "sha256": "0612e29fc65e6daa8d5270b0e6fd3202bad1fe4fe38690525467e7df4b18c8bb",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844
+      }
+    },
+    {
+      "state": "collection-detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-2/collection-detail-390.png",
+      "sha256": "7baef4d68daeaa3d2857d59c97e6589fa3a771e024f3f9b02b9a5ece99e6a345",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844
+      }
+    },
+    {
+      "state": "collection-rename",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-2/collection-rename-390.png",
+      "sha256": "03496357186b1734ce895635336e374a9169bb892d164f4abddc051f58181a67",
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844
+      }
+    },
+    {
+      "state": "library-pages",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-2/library-pages-320.png",
+      "sha256": "a8384b09e118b1932241ec13439d1368c5024a0c4cdce091644db15bfa801927",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844
+      }
+    },
+    {
+      "state": "library-collections",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-2/library-collections-320.png",
+      "sha256": "046a386aa1aa1434ee5ee956490a3befe9f0bf97724c0698842e16c1bdca1729",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844
+      }
+    },
+    {
+      "state": "collection-detail",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-2/collection-detail-320.png",
+      "sha256": "ecc4e2e0d781471b2c89a74381b3f9767b9c0527e7320c9dd342d91a659f3ffb",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844
+      }
+    },
+    {
+      "state": "collection-rename",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "path": "docs/evidence/phase1/library-reader-2026-10-25/cycle-2/collection-rename-320.png",
+      "sha256": "9098c75b6e45241c3eecf1ce5055f97ab21d9ca4be5d3d9cb8852a109f5d9e56",
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844
+      }
+    }
+  ],
+  "errors": []
+}
