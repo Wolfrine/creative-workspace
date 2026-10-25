@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-25T11:56:28.876Z",
+  "capturedAt": "2026-10-25T12:09:06.937Z",
   "plan": "Blaze",
   "scope": "Full private ChatGPT plugin: three skills, scoped OAuth/DCR, six MCP tools, author consent/review/revoke/export. MCP never modifies source writing.",
   "dataset": "Synthetic AI-origin unverified fixtures, loopback UI interception and actual Firebase Auth/Firestore emulators. No production manuscript seeded, reset or read.",
@@ -711,8 +711,8 @@
     },
     {
       "path": "tests/browser/library-reader.spec.ts",
-      "bytes": 14633,
-      "sha256": "5c94f2da01eec43f4ba390fba279861cd9d83a9cc8048b3c95088d660fc5e868"
+      "bytes": 15364,
+      "sha256": "f7bb71fda99f3a03736bf84abac502b6d4eb1fe5972a480036ae99324e8039c3"
     },
     {
       "path": "tests/browser/library-release.spec.ts",
@@ -790,7 +790,7 @@
       "sha256": "effcddf543e8d041dcd79f28af05a164309221de1cec9e61f62aafd1ceadb638"
     }
   ],
-  "sourceDigest": "f08cc6d2f90aa23c64782be4be410e4cce9480c11ff70ddf50f7588b74265956",
+  "sourceDigest": "d9dae4bc3d2b156ec2d8a4f60ab76157c18e1aab31493427bf3b90459dcc1389",
   "renders": [
     {
       "path": "docs/evidence/plugin-2026-10-25/checks/conflict-blank-history-1440.png",
@@ -2110,6 +2110,11 @@
       "sha256": "a20bf0892e77fcb2a41f68e6525adff0c0e27f0757c06aca733aea8332b8e6fe"
     },
     {
+      "path": "docs/evidence/plugin-2026-10-25/checks/ci-first-attempt.json",
+      "bytes": 7873,
+      "sha256": "33afd324711c935841624600e28bb5d4c3f4b89382eddbca99e341f800c8a5af"
+    },
+    {
       "path": "docs/evidence/plugin-2026-10-25/checks/client-tests.json",
       "bytes": 45231,
       "sha256": "3116e12644430529b4c21ef394edb530878bba06d5189b30997d5f0dd6ac83b3"
@@ -2138,6 +2143,11 @@
       "path": "docs/evidence/plugin-2026-10-25/checks/plugin-package.json",
       "bytes": 1573,
       "sha256": "6530bed8a781f35371fa6958868ab71dbbd65422f944b2b41238f7a30953033e"
+    },
+    {
+      "path": "docs/evidence/plugin-2026-10-25/checks/reader-replacement-repeated.json",
+      "bytes": 24401,
+      "sha256": "032bb5e4da431292deb55de35d4bf542520eec9e80cb5b22edf71797f3a399e3"
     },
     {
       "path": "docs/evidence/plugin-2026-10-25/checks/rules-tests.json",

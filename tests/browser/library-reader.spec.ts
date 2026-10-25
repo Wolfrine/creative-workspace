@@ -80,7 +80,17 @@ test('Read resumes the last collection by identity, with contents context and a 
 test('Changed source restarts deliberately and appearance panel traps keyboard focus', async ({ page }) => {
   const fixture = await seed(page, 50); await page.getByRole('button', { name: 'Read this page' }).click();
   await page.getByRole('button', { name: 'Next reader page' }).click(); await page.getByRole('button', { name: 'Back to writing' }).click();
-  await page.getByRole('textbox', { name: 'Writing canvas' }).fill('A new opening, deliberately different.');
+  // Use and verify the author's actual keyboard selection before replacing a
+  // multi-paragraph ProseMirror document. Native contenteditable fill inserted
+  // before the old body in one runner; it did not establish this precondition.
+  const canvas = page.getByRole('textbox', { name: 'Writing canvas' });
+  await canvas.click(); await canvas.press('ControlOrMeta+A');
+  await expect.poll(() => canvas.evaluate(element => {
+    const selection = window.getSelection();
+    return Boolean(selection?.anchorNode && selection.focusNode && element.contains(selection.anchorNode) && element.contains(selection.focusNode) && selection.toString().includes('Passage 49.'));
+  })).toBe(true);
+  await page.keyboard.insertText('A new opening, deliberately different.');
+  await expect(canvas).toHaveText('A new opening, deliberately different.');
   await page.getByRole('button', { name: 'Read this page' }).click();
   await expect(page.getByRole('status')).toContainText('This writing changed since your last reading');
   await expect(page.locator('.reader-stage')).toHaveAttribute('data-page', '0');
