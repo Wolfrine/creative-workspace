@@ -4,7 +4,7 @@ import { readFile, writeFile, mkdir, appendFile } from 'node:fs/promises';
 import { summarizeUsage, monitoringFailure } from '../../scripts/summarize-firestore-usage.mjs';
 
 const binding = JSON.parse(await readFile('deployment/firebase-binding.json', 'utf8'));
-if (process.env.VERIFIED_PROJECT !== 'noveliaa' || binding.projectId !== 'noveliaa' || binding.planConstraint !== 'Spark') throw new Error('Usage audit target mismatch.');
+if (process.env.VERIFIED_PROJECT !== 'noveliaa' || binding.projectId !== 'noveliaa' || binding.planConstraint !== 'Blaze') throw new Error('Usage audit target mismatch.');
 const credential = applicationDefault();
 const now = new Date(), start = new Date(now.getTime() - 16 * 86400000);
 const definitions = [
@@ -33,6 +33,8 @@ for (const [name, suffix, aligner] of definitions) {
   }
 }
 const report = summarizeUsage(metrics, now);
+report.plan = binding.planConstraint;
+report.scope = 'Aggregate writing plus private plugin operations, including OAuth metadata. Spark allowance comparisons are free-tier baselines, not Blaze spending caps.';
 await mkdir('.local', { recursive: true });
 await writeFile('.local/firestore-usage.json', JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify(report, null, 2));

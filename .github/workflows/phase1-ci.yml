@@ -25,10 +25,14 @@ jobs:
           python-version: '3.12'
       - run: npm ci
       - run: npm --prefix functions ci
+      - run: npm --prefix functions run check
+      - run: npm --prefix functions test
       - run: npm test
       - run: npm run build
       - run: npm run test:evidence
       - run: npm run test:rules
+      - name: Plugin OAuth and scoped MCP through actual emulators
+        run: npx firebase emulators:exec --only auth,firestore --project demo-noveliaa --config firebase.spark-test.json "npm --prefix functions run test:integration"
       - name: Install Chromium using the hosted runner's existing system libraries
         timeout-minutes: 4
         run: npx playwright install chromium

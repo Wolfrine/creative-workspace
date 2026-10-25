@@ -29,7 +29,8 @@ export function validateBody(node, depth = 0, state = { count: 0, links: [] }) {
   if (node.type === 'text' && (typeof node.text !== 'string' || !node.text.length)) fail('Invalid text node.');
   if (node.text !== undefined && (node.type !== 'text' || typeof node.text !== 'string')) fail('Invalid text node.');
   if (node.attrs) {
-    keys(node.attrs, node.type === 'heading' ? ['level'] : node.type === 'orderedList' ? ['start', 'type'] : node.type === 'codeBlock' ? ['language'] : []);
+    keys(node.attrs, node.type === 'paragraph' ? ['firstLineIndent'] : node.type === 'heading' ? ['level'] : node.type === 'orderedList' ? ['start', 'type'] : node.type === 'codeBlock' ? ['language'] : []);
+    if (node.type === 'paragraph' && node.attrs.firstLineIndent !== undefined && (node.attrs.firstLineIndent !== true || depth !== 1)) fail('First-line indentation is supported only on body paragraphs.');
     if (node.type === 'heading' && ![1, 2, 3].includes(node.attrs.level)) fail('Unsupported heading level.');
     if (node.type === 'orderedList' && (!Number.isInteger(node.attrs.start) || node.attrs.start < 1)) fail('Invalid list start.');
     if (node.type === 'orderedList' && node.attrs.type != null && !['1', 'a', 'A', 'i', 'I'].includes(node.attrs.type)) fail('Unsupported numbered-list style.');

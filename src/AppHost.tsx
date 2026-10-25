@@ -5,6 +5,7 @@ import { createCloudAdapter, initializeFirebaseSession, signInWithGoogle, signOu
 import type { Session } from './domain/model';
 import { useWorkspace } from './state/useWorkspace';
 import './styles.css';
+import Integrations from './components/Integrations';
 
 function WritingWorkspace({ session }: { session: Session }) {
   const cloud = useMemo(() => session.localOnly ? null : createCloudAdapter(session.uid, session.workspaceId), [session.uid, session.workspaceId, session.localOnly]);
@@ -51,13 +52,14 @@ export default function AppHost() {
       setSession(previous => previous?.uid === signedInUid && previous.workspaceId !== workspaceId ? { ...previous, workspaceId } : previous);
     }, problem => { setSession(null); setError(problem.message); setLoading(false); });
   }, [signedInUid]);
-  if (session) return <WritingWorkspace key={session.uid + ':' + (session.workspaceId ?? session.uid)} session={session} />;
+  const integrationRoute = location.pathname === '/connect' || location.pathname === '/connections';
+  if (session) return integrationRoute ? <Integrations key={session.uid + ':' + (session.workspaceId ?? session.uid)} session={session} consent={location.pathname === '/connect'} /> : <WritingWorkspace key={session.uid + ':' + (session.workspaceId ?? session.uid)} session={session} />;
   return <main className="connection-gate">
     <div className="gate-wordmark">Noveliaa<span>✦</span></div>
     <div className="gate-rule" />
-    <p className="eyebrow">A PLACE FOR YOUR WORDS</p>
-    <h1>Your next world<br />begins with a line.</h1>
-    <p className="gate-copy">A private space to gather a thought, follow a connection, and stay with your writing.</p>
+    <p className="eyebrow">{integrationRoute ? 'PRIVATE AUTHOR ACCESS' : 'A PLACE FOR YOUR WORDS'}</p>
+    <h1>{integrationRoute ? <>Your words.<br />Your permission.</> : <>Your next world<br />begins with a line.</>}</h1>
+    <p className="gate-copy">{integrationRoute ? 'Sign in as the author to choose AI access and review returned material. Nothing is shared before you choose.' : 'A private space to gather a thought, follow a connection, and stay with your writing.'}</p>
     {loading ? <p role="status">Opening your writing space…</p> : configured ? <>
       <button className="primary-button gate-button" onClick={() => { setError(''); void signInWithGoogle().then(setSession).catch(problem => setError(problem.message)); }}>Sign in with Google <span aria-hidden="true">↗</span></button>
       <p className="gate-footnote">Private author access. Your words stay yours.</p>

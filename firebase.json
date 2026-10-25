@@ -12,6 +12,70 @@
     ],
     "rewrites": [
       {
+        "source": "/mcp",
+        "function": {
+          "functionId": "noveliaaMcp",
+          "region": "asia-south1",
+          "pinTag": true
+        }
+      },
+      {
+        "source": "/.well-known/**",
+        "function": {
+          "functionId": "noveliaaMcp",
+          "region": "asia-south1",
+          "pinTag": true
+        }
+      },
+      {
+        "source": "/authorize",
+        "function": {
+          "functionId": "noveliaaMcp",
+          "region": "asia-south1",
+          "pinTag": true
+        }
+      },
+      {
+        "source": "/token",
+        "function": {
+          "functionId": "noveliaaMcp",
+          "region": "asia-south1",
+          "pinTag": true
+        }
+      },
+      {
+        "source": "/register",
+        "function": {
+          "functionId": "noveliaaMcp",
+          "region": "asia-south1",
+          "pinTag": true
+        }
+      },
+      {
+        "source": "/revoke",
+        "function": {
+          "functionId": "noveliaaMcp",
+          "region": "asia-south1",
+          "pinTag": true
+        }
+      },
+      {
+        "source": "/api/integrations",
+        "function": {
+          "functionId": "noveliaaMcp",
+          "region": "asia-south1",
+          "pinTag": true
+        }
+      },
+      {
+        "source": "/api/integrations/**",
+        "function": {
+          "functionId": "noveliaaMcp",
+          "region": "asia-south1",
+          "pinTag": true
+        }
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
@@ -48,5 +112,21 @@
         ]
       }
     ]
-  }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "noveliaa-plugin",
+      "runtime": "nodejs22",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "test",
+        "scripts",
+        "src/index.mjs",
+        "src/backup.mjs",
+        "src/firebase-store.mjs"
+      ]
+    }
+  ]
 }

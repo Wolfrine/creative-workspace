@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "noveliaa",
+  "version": "0.1.0",
+  "description": "Author-owned creative writing: explore selected universes, research story questions and return traceable, unverified proposals without changing original writing.",
+  "author": { "name": "Wolfrine" },
+  "homepage": "https://noveliaa.web.app",
+  "repository": "https://github.com/Wolfrine/creative-workspace",
+  "keywords": ["writing", "stories", "provenance", "research"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Noveliaa",
+        "shortDescription": "Your writing, your world",
+        "longDescription": "Work with your private Noveliaa writing from ChatGPT. Browse only universes you allow, read exact cloud-saved revisions, explore story questions and return discussions, research, critiques or proposals for your review. Original writing stays untouched; all AI material remains unverified. Includes reusable skills for source-led story exploration, research and careful collaboration.",
+        "developerName": "Wolfrine",
+        "category": "Productivity",
+        "capabilities": [],
+        "logo": "./assets/noveliaa.svg",
+        "brandColor": "#31594C",
+        "defaultPrompt": ["Explore the writing I have shared in Noveliaa.", "Help me investigate a story question using my exact source revisions.", "Critique this scene and save a separate, unverified proposal after I ask."]
+      }
+    }
+  }
+}

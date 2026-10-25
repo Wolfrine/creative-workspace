@@ -1,0 +1,39 @@
+i  emulators: Starting emulators: auth, firestore
+i  emulators: Detected demo project ID "demo-noveliaa", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail.
+i  firestore: Firestore Emulator logging to firestore-debug.log
++  firestore: Firestore Emulator was started in standard edition.
++  firestore: Firestore Emulator UI websocket is running on 9150.
+i  Running script: npm --prefix functions run test:integration
+
+> test:integration
+> node --test test/mcp-integration.test.mjs
+
+▶ private plugin OAuth, scoped HTTP tools, immutable writeback and owner review
+  ✔ discovery advertises PKCE, resource and six tools; anonymous private calls challenge (121.8046ms)
+  ✔ rejects rogue callbacks and wrong author, origin and CSRF (134.8828ms)
+  ✔ empty scopes fail; denial consumes the request without creating a grant (433.6821ms)
+  ✔ PKCE, resource and exact redirect binding fail before one-use exchange (148.1928ms)
+  ✔ authorization code is consumed once, exact source and scope enforced (810.8828ms)
+  ✔ append is one write, idempotent, unverified, no writing mutation (567.9528ms)
+  ✔ author review is separate and export preserves exact proposal bytes/hash (189.5979ms)
+  ✔ readonly grant cannot append; stale source is labelled and corrupt bytes fail (723.6271ms)
+  ✔ refresh rotates and reuse revokes the whole connection (215.7582ms)
+  ✔ concurrent refresh replay revokes the winning rotated access (3539.2895ms)
+  ✔ owner revocation and workspace reset invalidate live tokens (726.2756ms)
+  ✔ weekly cleanup removes only expired OAuth metadata (194.2733ms)
+✔ private plugin OAuth, scoped HTTP tools, immutable writeback and owner review (10741.0453ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12408.5609
++  Script exited successfully (code 0)
+i  emulators: Shutting down emulators.
+i  firestore: Stopping Firestore Emulator
+!  Firestore Emulator has exited upon receiving signal: SIGINT
+i  auth: Stopping Authentication Emulator
+i  hub: Stopping emulator hub
+i  logging: Stopping Logging Emulator

@@ -93,6 +93,12 @@ describe.skipIf(!enabled)('Spark adapter through actual Firestore emulator and o
       await assertFails(getDoc(doc(context.firestore(), 'noveliaaConfig/access')));
     }
     await assertFails(setDoc(doc(db, 'noveliaaConfig/access'), { ownerUid: 'other' }));
+    // Plugin records and OAuth state are server-only, even for the human owner.
+    // The author UI uses a verified same-origin API; no generic Firestore CRUD.
+    for (const reference of ['_noveliaaMcp/access/oauthItems/token', path('collaboration', 'proposal'), path('collaborationReview', 'proposal'), path('collaborationDecisions', 'decision')]) {
+      await assertFails(getDoc(doc(db, reference)));
+      await assertFails(setDoc(doc(db, reference), { verification: 'verified', approved: true }));
+    }
     for (const kind of ['editions', 'feedback', 'grants']) await assertFails(setDoc(doc(db, path(kind, 'forged')), { invented: true }));
     await assertFails(setDoc(doc(db, path('revisions', 'r1') + '/nested/leak'), { invented: true }));
     await environment.withSecurityRulesDisabled(context => deleteDoc(doc(context.firestore(), 'noveliaaConfig/access')));

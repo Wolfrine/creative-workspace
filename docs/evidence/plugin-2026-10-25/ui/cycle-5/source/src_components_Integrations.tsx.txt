@@ -1,0 +1,135 @@
+import { useEffect, useMemo, useState } from 'react';
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Download, FileText, Leaf, Link2, LockKeyhole, RefreshCw, ShieldCheck, Unplug } from 'lucide-react';
+import type { Session } from '../domain/model';
+import { integrationClient, IntegrationError, type CollaborationRecord, type ConsentRequest, type IntegrationOverview } from '../cloud/integrations';
+import './integrations.css';
+
+const when = (value: string) => new Date(value).toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
+const problemText = (error: unknown) => error instanceof Error ? error.message : 'This request could not be completed. Please try again.';
+const previewQuery = (session: Session) => {
+  if (!session.localOnly) return '';
+  const query = new URLSearchParams({ local: '1' });
+  const notebook = new URLSearchParams(location.search).get('notebook'); if (notebook) query.set('notebook', notebook);
+  return '?' + query;
+};
+function downloadArchive(value: unknown) {
+  const url = URL.createObjectURL(new Blob([JSON.stringify(value, null, 2)], { type: 'application/json' }));
+  const anchor = document.createElement('a'); anchor.href = url; anchor.download = 'noveliaa-collaboration-' + new Date().toISOString().slice(0, 10) + '.json'; anchor.click();
+  setTimeout(() => URL.revokeObjectURL(url), 30000);
+}
+
+export default function Integrations({ session, consent = false }: { session: Session; consent?: boolean }) {
+  const api = useMemo(() => integrationClient(session.localOnly), [session.localOnly]);
+  const [online, setOnline] = useState(navigator.onLine);
+  useEffect(() => { const update = () => setOnline(navigator.onLine); window.addEventListener('online', update); window.addEventListener('offline', update); return () => { window.removeEventListener('online', update); window.removeEventListener('offline', update); }; }, []);
+  return <div className="integration-shell">
+    <a className="skip-link" href="#integration-content">Skip to {consent ? 'access request' : 'returned material'}</a>
+    <header className="integration-header"><a className="integration-wordmark" href={'/' + previewQuery(session)}><Leaf size={23} strokeWidth={1.3} />Noveliaa<span>.</span></a><a className="integration-back" href={'/' + previewQuery(session)}><ArrowLeft size={15} />Back to writing</a></header>
+    {!online && <p className="integration-offline" role="status">You’re offline. Your writing stays on your device. Reconnect to manage AI connections.</p>}
+    {session.localOnly && <p className="integration-preview">Device preview · synthetic connection data in tests only</p>}
+    <main id="integration-content" className={consent ? 'integration-main consent-main' : 'integration-main'}>
+      {consent ? <Consent api={api} online={online} session={session} /> : <Connections api={api} online={online} session={session} />}
+    </main>
+    <footer className="integration-footer"><ShieldCheck size={15} />Your writing stays yours. AI cannot change your pages or approve canon.</footer>
+  </div>;
+}
+
+type Api = ReturnType<typeof integrationClient>;
+function Consent({ api, online, session }: { api: Api; online: boolean; session: Session }) {
+  const requestId = new URLSearchParams(location.search).get('request') || '';
+  const [request, setRequest] = useState<ConsentRequest | null>(null);
+  const [selected, setSelected] = useState<string[]>([]);
+  const [allowProposals, setAllowProposals] = useState(false);
+  const [loading, setLoading] = useState(Boolean(requestId));
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState(requestId ? '' : 'This access request is missing. Start the connection again from ChatGPT.');
+  const [expired, setExpired] = useState(!requestId);
+  const [attempt, setAttempt] = useState(0);
+  useEffect(() => {
+    if (!requestId || !online) { setLoading(false); return; }
+    const controller = new AbortController(); setLoading(true); setError(''); setExpired(false);
+    void api.consent(requestId, controller.signal).then(value => { if (!controller.signal.aborted) { setRequest(value); setSelected([]); setAllowProposals(false); } }).catch(error => {
+      if (!controller.signal.aborted) { setRequest(null); setError(problemText(error)); setExpired(error instanceof IntegrationError && [400, 403, 404, 409, 410].includes(error.status)); }
+    }).finally(() => { if (!controller.signal.aborted) setLoading(false); });
+    return () => controller.abort();
+  }, [api, requestId, online, attempt]);
+  async function choose(deny = false) {
+    setBusy(true); setError('');
+    try {
+      const result = deny ? await api.deny(requestId) : await api.allow(requestId, selected, allowProposals);
+      // Redirect URI was validated by the server against this OAuth request.
+      const destination = new URL(result.redirect);
+      if (destination.protocol !== 'https:' && !(import.meta.env.DEV && destination.protocol === 'http:' && ['localhost', '127.0.0.1'].includes(destination.hostname))) throw new Error('The connection returned an invalid destination. Start again from ChatGPT.');
+      location.assign(destination.href);
+    } catch (error) { setError(problemText(error)); setBusy(false); }
+  }
+  return <>
+    <section className="integration-intro"><p className="eyebrow">A CONNECTION, ON YOUR TERMS</p><h1>Choose what <br />leaves the page.</h1><p>Give your external AI a little context. Keep the rest of your worlds private.</p><div className="consent-boundary"><LockKeyhole size={18} /><p>Originals and writing stay untouched. Returned ideas are kept separately, as unverified material.</p></div></section>
+    <section className="consent-sheet" aria-labelledby="consent-heading">
+      <div className="consent-client"><Link2 size={20} /><div><p className="eyebrow">REQUESTED CONNECTION</p><h2 id="consent-heading">{request?.clientName || 'Your external AI'}</h2></div></div>
+      {loading ? <div className="integration-state" role="status"><p>Opening the access request…</p><span>No writing has been shared.</span></div> : <>
+        {error && <div className="integration-error" role="alert"><strong>{expired ? 'This request is no longer available.' : 'The request could not be completed.'}</strong><p>{error}</p>{!expired && online && <button className="text-button" onClick={() => setAttempt(value => value + 1)}><RefreshCw size={14} />Try again</button>}</div>}
+        {request && !expired && <form onSubmit={event => { event.preventDefault(); void choose(); }}>
+          <fieldset disabled={busy || !online}><legend>Which universes may it read?</legend><p className="consent-explanation">Access includes existing and future pages in the universes you choose.</p>
+            {request.universes.length > 10 && <p className="consent-limit">Choose up to 10 universes for this connection.</p>}
+            <div className="consent-universes">{request.universes.map(universe => <label className="consent-universe" key={universe.id}><input type="checkbox" checked={selected.includes(universe.id)} disabled={selected.length >= 10 && !selected.includes(universe.id)} onChange={() => setSelected(value => value.includes(universe.id) ? value.filter(id => id !== universe.id) : value.length < 10 ? [...value, universe.id] : value)} /><span>{universe.name}</span><FileText size={16} /></label>)}</div>
+            {!request.universes.length && <p className="consent-empty">There are no universes to share yet. Create one in your writing space, then start this connection again.</p>}
+            {request.requestedWrite && request.universes.length > 0 && <label className="consent-proposals"><input type="checkbox" checked={allowProposals} onChange={event => setAllowProposals(event.target.checked)} /><span><strong>Also allow discussions & proposals</strong><small>Ideas return to AI connections for your review. They cannot edit your pages or become approved writing.</small></span></label>}
+          </fieldset>
+          <div className="consent-actions"><button type="submit" className="primary-button" disabled={!selected.length || busy || !online}>{busy ? 'Returning to your AI…' : 'Allow selected access'}<ArrowRight size={16} /></button><button type="button" className="text-button" disabled={busy || !online} onClick={() => void choose(true)}>Don’t connect</button></div>
+          <p className="consent-fineprint">You can revoke this access at any time in AI connections.</p>
+        </form>}
+        {(!request || expired) && !loading && <a className="secondary-button" href={'/connections' + previewQuery(session)}>Manage AI connections<ArrowRight size={15} /></a>}
+      </>}
+    </section>
+  </>;
+}
+
+function Connections({ api, online, session }: { api: Api; online: boolean; session: Session }) {
+  const [overview, setOverview] = useState<IntegrationOverview | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [feedback, setFeedback] = useState('');
+  const [busy, setBusy] = useState('');
+  const [attempt, setAttempt] = useState(0);
+  const [filter, setFilter] = useState<'waiting' | 'all'>('waiting');
+  const [revoke, setRevoke] = useState<string | null>(null);
+  useEffect(() => {
+    if (!online) { setLoading(false); return; }
+    const controller = new AbortController(); setLoading(true); setError('');
+    void api.overview(undefined, controller.signal).then(value => { if (!controller.signal.aborted) setOverview(value); }).catch(error => { if (!controller.signal.aborted) setError(problemText(error)); }).finally(() => { if (!controller.signal.aborted) setLoading(false); });
+    return () => controller.abort();
+  }, [api, online, attempt]);
+  async function action(key: string, run: () => Promise<void>) { setBusy(key); setError(''); setFeedback(''); try { await run(); } catch (error) { setError(problemText(error)); } finally { setBusy(''); } }
+  const records = overview?.records || [];
+  const waiting = records.filter(record => !record.decision);
+  const visible = filter === 'waiting' ? waiting : records;
+  return <>
+    <section className="connections-heading"><div><p className="eyebrow">EXTERNAL COLLABORATION</p><h1>Ideas come back.<br /><span>You keep the pen.</span></h1><p>Review discussions and proposals alongside the writing they came from.</p></div><button className="integration-export text-button" disabled={!overview || Boolean(busy) || !online} onClick={() => void action('export', async () => { downloadArchive(await api.exportArchive()); setFeedback('Collaboration archive downloaded. Your writing archive remains available in Import & export.'); })}><Download size={16} />{busy === 'export' ? 'Preparing archive…' : 'Export collaboration'}</button></section>
+    {error && <div className="integration-error" role="alert"><p>{error}</p><button className="text-button" disabled={!online || Boolean(busy)} onClick={() => setAttempt(value => value + 1)}><RefreshCw size={14} />Try again</button></div>}
+    {feedback && <p className="integration-feedback" role="status"><Check size={15} />{feedback}</p>}
+    {loading && !overview ? <div className="integration-state" role="status"><p>Opening your AI connections…</p><span>Writing and originals stay untouched.</span></div> : !overview ? <div className="integration-state"><p>{online ? 'Your connections could not be opened.' : 'Reconnect to open your connections.'}</p><span>Existing writing and returned material stay unchanged.</span>{online && !error && <button className="text-button" onClick={() => setAttempt(value => value + 1)}><RefreshCw size={14} />Try again</button>}</div> : <div className="connections-layout">
+      <aside className="integration-access" id="permitted-access" tabIndex={-1} aria-labelledby="access-heading"><div className="integration-section-label"><Link2 size={16} /><h2 id="access-heading">Permitted access</h2></div><p className="access-intro">Only the universes you choose. You can close the connection at any time.</p>
+        {!overview?.grants.length && <div className="access-empty"><p>No AI connections yet.</p><span>Connect the Noveliaa plugin from ChatGPT to choose what it can read.</span></div>}
+        {overview?.grants.map(grant => <article className={'access-grant' + (grant.revoked ? ' access-revoked' : '')} key={grant.id}><header><strong>{grant.clientName}</strong><span>{grant.revoked ? 'Revoked' : 'Connected'}</span></header><ul>{grant.universeNames.map((name, index) => <li key={index}>{name}</li>)}</ul><p>{grant.revoked && 'Previously allowed: '}{grant.allowProposals ? 'Read · discussions & proposals' : 'Read only'}<br /><small>Connected {when(grant.createdAt)}</small></p>{!grant.revoked && (revoke === grant.id ? <div className="revoke-confirm"><p>Stop future access? Returned material stays in your archive.</p><button className="secondary-button" disabled={Boolean(busy) || !online} onClick={() => void action(grant.id, async () => { await api.revoke(grant.id); setOverview(value => value && { ...value, grants: value.grants.map(item => item.id === grant.id ? { ...item, revoked: true } : item) }); setRevoke(null); setFeedback('Access revoked. Previously returned material is preserved.'); })}>Revoke access</button><button className="text-button" disabled={Boolean(busy)} onClick={() => setRevoke(null)}>Keep connected</button></div> : <button className="text-button revoke-trigger" disabled={Boolean(busy) || !online} onClick={() => setRevoke(grant.id)}><Unplug size={14} />Revoke access</button>)}</article>)}
+      </aside>
+      <section className="integration-records" aria-labelledby="records-heading"><div className="records-heading"><h2 id="records-heading">Returned material</h2><div><a className="manage-access-jump" href="#permitted-access">Manage access</a><button className="icon-button" aria-label="Refresh returned material" disabled={Boolean(busy) || loading || !online} onClick={() => setAttempt(value => value + 1)}><RefreshCw size={16} /></button></div></div><div className="integration-tabs" role="group" aria-label="Filter returned material"><button aria-pressed={filter === 'waiting'} onClick={() => setFilter('waiting')}>To review<span>{waiting.length}</span></button><button aria-pressed={filter === 'all'} onClick={() => setFilter('all')}>All material</button></div>
+        {!visible.length && <div className="records-empty"><FileText size={28} strokeWidth={1.2} /><h3>{records.length ? 'A little room to think.' : 'A place for the next possibility.'}</h3><p>{records.length ? 'Everything loaded has been reviewed or dismissed. You can return to it in All material.' : 'Discussions and proposals from your connected AI will appear here, with their source preserved.'}</p></div>}
+        {visible.map(record => <Record key={record.id} record={record} preview={previewQuery(session)} disabled={Boolean(busy) || !online} deciding={busy === record.id} onDecision={decision => void action(record.id, async () => { await api.decide(record.id, decision); setOverview(value => value && { ...value, records: value.records.map(item => item.id === record.id ? { ...item, decision } : item) }); setFeedback(decision === 'reviewed' ? 'Marked reviewed. This does not approve the material or change your writing.' : 'Dismissed from To review. The original record remains in All material and your archive.'); })} />)}
+        {overview?.nextCursor && <button className="secondary-button load-older" disabled={Boolean(busy) || !online} onClick={() => void action('older', async () => { const previous = await api.overview(overview.nextCursor!); setOverview(value => value && { ...value, records: [...value.records, ...previous.records.filter(record => !value.records.some(existing => existing.id === record.id))], nextCursor: previous.nextCursor }); })}>{busy === 'older' ? 'Opening older material…' : 'Load older material'}<ChevronDown size={15} /></button>}
+        <p className="review-boundary">Review is a reading decision. To use an idea, make a deliberate change in your writing space.</p>
+      </section>
+    </div>}
+  </>;
+}
+
+function Record({ record, preview, disabled, deciding, onDecision }: { record: CollaborationRecord; preview: string; disabled: boolean; deciding: boolean; onDecision: (decision: 'reviewed' | 'dismissed') => void }) {
+  return <article className="collaboration-record" id={'record-' + record.id}>
+    <header><p className="record-origin">AI-origin · unverified<span>{{ proposal: 'Proposal', discussion: 'Discussion', research: 'Research', critique: 'Critique' }[record.kind]}</span></p><time dateTime={record.createdAt}>{when(record.createdAt)}</time></header>
+    <h3>{record.title || 'Untitled ' + record.kind}</h3>
+    <div className="record-source"><FileText size={15} /><span>From <strong>{record.anchor.title || 'Untitled page'}</strong><small>{record.sourceIsCurrent === false ? 'Your page has changed since this source revision.' : record.sourceIsCurrent === true ? 'Matches your current saved source revision.' : 'Saved source revision · may differ from your current page'}</small></span><a href={'/' + (preview || '?') + (preview ? '&' : '') + 'page=' + encodeURIComponent(record.anchor.documentId)}>Open current page<ArrowRight size={13} /></a></div>
+    <div className="record-body">{record.body}</div>
+    <details className="record-reference"><summary>Exact source reference</summary><dl><dt>Page</dt><dd>{record.anchor.documentId}</dd><dt>Revision</dt><dd>{record.anchor.revisionId}</dd><dt>SHA-256</dt><dd>{record.anchor.contentHash}</dd></dl></details>
+    <footer>{record.decision ? <p className="record-decision"><Check size={15} />{record.decision === 'reviewed' ? 'Reviewed · still unverified' : 'Dismissed · preserved in your archive'}</p> : <><button className="secondary-button" disabled={disabled} onClick={() => onDecision('reviewed')}><Check size={15} />{deciding ? 'Saving decision…' : 'Mark reviewed'}</button><button className="text-button" disabled={disabled} onClick={() => onDecision('dismissed')}>Dismiss</button><span>Neither changes your writing.</span></>}</footer>
+  </article>;
+}

@@ -1,0 +1,28 @@
+{
+  "synthetic": true,
+  "route": "/connections",
+  "fixture": "long-source-390",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "focus": "cleared for ordinary reading baseline; keyboard interaction checked separately",
+  "imageSha256": "e9e7248a00dd5db60bcd41ee21e48480152c43605fd61525d05ad0cc33a6f2b9",
+  "viewportSha256": "b6d9bf8f15dd9c69314fbf6bb4fdc3b54f54436a51f0f9684a48e87cdd598121",
+  "topSha256": "05963d1f8437b1f98bc0a06d6d1b8d1c3453e57351a3eb95079331805967a13d",
+  "regions": {
+    "record-source": "783abd455c329ce732985da494db5b656c6937393cf1b479b29c4ca66f345f8e",
+    "record-reference": "b225facbcd8a32715c3b071542b58dd23832a59499cd243eea673cf7830fed18"
+  },
+  "sourceFiles": {
+    "src/components/Integrations.tsx": "8f031291a0ec840e04ec00a9edbbe3f405922281bf1b0c3b6d6e9740eb7b4ff6",
+    "src/components/integrations.css": "7ccfdd94b59273204080530185d6fc236952f825f2e94717d87817998bbc8bc0",
+    "src/cloud/integrations.ts": "771dc3ca8484dba9d01c9989c56a6f06f502cfa5f62e362f185555d916757375",
+    "src/AppHost.tsx": "901b9f6e6f2e3ecf2815149ed8d910b257aab2088fe3647edb347f7d83421507",
+    "src/App.tsx": "eeb0e8426dea06502b0973c155109710fa58ddb1d9b0a9aece210afeb03ae4cf",
+    "src/styles.css": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294",
+    "src/library-reader.css": "91aa863426ddc86677ee2a88c891fc1499edd5749c9b502ae6ca05b6e4021cd9"
+  },
+  "sourceDigest": "f094e443319631003a11cf3a9b79a0d4a5fb58a8f2828685724a7223c93f1b85",
+  "capturedAt": "2026-10-25T11:54:18.789Z"
+}

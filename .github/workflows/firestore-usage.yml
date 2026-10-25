@@ -9,6 +9,8 @@ on:
       - .github/workflows/firestore-usage.yml
       - functions/scripts/firestore-usage.mjs
       - scripts/summarize-firestore-usage.mjs
+      - functions/scripts/cleanup-oauth.mjs
+      - functions/src/integration-cleanup.mjs
 permissions:
   contents: read
 concurrency:
@@ -39,12 +41,18 @@ jobs:
         env:
           VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
         run: node functions/scripts/firestore-usage.mjs
+      - name: Reclaim expired plugin token metadata (never writing or proposals)
+        env:
+          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
+        run: node functions/scripts/cleanup-oauth.mjs
       - if: always()
         uses: actions/upload-artifact@v4
         continue-on-error: true
         with:
           name: firestore-usage
           include-hidden-files: true
-          path: .local/firestore-usage.json
+          path: |
+            .local/firestore-usage.json
+            .local/oauth-cleanup.json
           retention-days: 30
           if-no-files-found: ignore

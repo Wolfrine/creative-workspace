@@ -1,9 +1,11 @@
-# Phase 1 architecture — Spark
+# Noveliaa architecture — writing plus private plugin
 
 The author owns the editable manuscript. Immutable originals and revisions stay
 separate from that surface. Living Atlas supplies optional links and context;
-Quiet Folio supplies focused writing. External AI, reader editions and feedback
-remain deferred. The owner requires the Firebase project to stay on **Spark**.
+Quiet Folio supplies focused writing. The owner approved a full private ChatGPT
+plugin on 25 October 2026 and reports Blaze/Functions enabled. Shared editions
+and feedback remain deferred. Existing Firestore writing and save timing stay
+unchanged; the plugin adds a separate, scoped collaboration boundary.
 
 ## Writing and device persistence
 
@@ -165,7 +167,48 @@ these are not cloud grants and do not bypass Rules when online.
 
 Device checkpoints, immutable cloud revisions and downloadable complete archives
 provide Phase 1 recovery. Scheduled independent backups, PITR, protected backup
-buckets and a verified 24-hour disaster RPO are **not shipped** on Spark. Existing
-Functions/Storage backup and callable sources are retained reference work only;
-`firebase.json` excludes them. See [Firebase operations](FIREBASE.md) and
+buckets and a verified 24-hour disaster RPO are **not shipped**. Existing
+Functions/Storage backup and callable sources remain reference work; the new
+entrypoint exports only `noveliaaMcp`. See [Firebase operations](FIREBASE.md) and
 [current evidence](PHASE1_RESULTS.md).
+
+## Private ChatGPT plugin
+
+`plugin/noveliaa` packages three skills (explore writing, story research,
+collaborate on writing) with OAuth/DCR MCP configuration. A single stateless
+Streamable HTTP Function at the existing Hosting `/mcp` path supplies six tools.
+Discovery is public schema only; every private tool requires an author-issued
+OAuth grant, current account access, current workspace generation and selected
+universes. Read-only is the default consent; proposals are an optional permission.
+The grant covers future cloud-saved pages in the selected universes. Tokens
+have a one-hour access lifetime and rotating refresh families lasting up to 90
+days. Author revocation, refresh replay or workspace reset invalidates access.
+
+Reads verify chunk SHA-256, manifest sizes, bounded decompression, canonical
+snapshot hash and editor/text projection before returning source text. Search
+scans ten pages per explicit call with a cursor, avoiding a new indexing worker.
+No per-keystroke Function calls or new writer listeners are introduced.
+
+`submit_record` performs one new immutable collaboration document write after
+checking the grant and source. Identical idempotent retry performs no record
+write. Writing blobs, originals, heads and revisions are never written by MCP.
+Every record remains AI-origin/unverified and names its exact revision/hash.
+Author reviewed/dismissed decisions append a separate event and update a review
+projection (two writes for a new decision, none for an identical repeat).
+Review is not canon approval; applying any text remains a manual author action.
+
+`/connect` requests nonempty universe selection and optional writeback. The
+Firebase Google author identity and HttpOnly same-site `__session` cookie bind
+the consent to this browser/request. Hosting forwards only that cookie. The
+same-origin `/connections` UI can revoke, review, dismiss and export collaboration
+records separately from the existing writing archive. Client Firestore Rules
+deny OAuth and collaboration namespaces; the API verifies the author independently.
+
+No server-side AI inference, new Storage bucket, scheduled backup, shared
+reader, publication or feedback system is activated. The Function scales to
+zero, max two instances; the existing weekly aggregate Firestore audit includes
+its usage. The weekly job also reclaims expired pending requests, codes and
+token metadata in fixed OAuth namespaces (bounded 1,000 each); consent grants,
+client registrations, proposals and author evidence remain preserved. Expiry is
+enforced on every request independently of this cleanup. See
+[plugin contract](design/PLUGIN_CONNECTION.md) and retained tests.

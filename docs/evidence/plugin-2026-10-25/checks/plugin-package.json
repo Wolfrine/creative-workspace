@@ -1,0 +1,38 @@
+{
+  "archive": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\plugin-package\\noveliaa-0.1.0.zip",
+  "sha256": "64fab9cbcc7dec82b7a49a47c0ac968682248c330735647bf0530a4c1cd73d79",
+  "skills": [
+    "collaborate-on-writing",
+    "explore-writing",
+    "story-research"
+  ],
+  "server": "https://noveliaa.web.app/mcp",
+  "files": [
+    {
+      "path": "assets/noveliaa.svg",
+      "sha256": "5ef276685dd0a12eb853fa8fcca0aa9d3c075a3d6f027ce120e04b35748e2a64"
+    },
+    {
+      "path": "mcp.json",
+      "sha256": "db341ed8367cbb2232dfe6f0cc1fefd8f0ca37eabba0a60cd22ac084fcd71ad9"
+    },
+    {
+      "path": "plugin.json",
+      "sha256": "6517fa2e393853d8002e32eebf159bd72729225c7b85f15e1f1e453833c72dff"
+    },
+    {
+      "path": "skills/collaborate-on-writing/SKILL.md",
+      "sha256": "87b5dca046e85ccbdd1d1effcaec2a44d17b9bd2098a3cd6b5023e1194e8ec99"
+    },
+    {
+      "path": "skills/explore-writing/SKILL.md",
+      "sha256": "27e09c0ee12f627723565960b2474171e25124f0c78c0810d4a6c24190e05bfb"
+    },
+    {
+      "path": "skills/story-research/SKILL.md",
+      "sha256": "90c3c95cf627baa08b66f678bab3c363c61f743346b4dd0ae53e6687b8b1db4a"
+    }
+  ],
+  "validation": "Agent Plugins 1.0 manifest and portable MCP transport JSON schemas; OpenAI OAuth extension semantic checks; YAML skill triggers; packaged byte equality and ZIP integrity passed",
+  "schemaLimit": "Published canonical MCP schema omits extensions; OpenAI OAuth extensions are validated separately against current plugin packaging requirements."
+}

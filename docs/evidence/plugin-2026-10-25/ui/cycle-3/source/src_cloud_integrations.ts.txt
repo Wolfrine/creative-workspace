@@ -1,0 +1,65 @@
+import { firebaseAuth } from './firebase';
+
+export interface ConsentRequest {
+  clientName: string;
+  requestedWrite: boolean;
+  universes: { id: string; name: string }[];
+}
+export interface IntegrationGrant {
+  id: string; clientName: string; universeNames: string[];
+  allowProposals: boolean; createdAt: string; revoked: boolean;
+}
+export interface CollaborationRecord {
+  id: string; kind: 'discussion' | 'proposal'; title: string; body: string;
+  createdAt: string; origin: 'ai'; verification: 'unverified';
+  anchor: { documentId: string; revisionId: string; contentHash: string; title: string };
+  decision: null | 'reviewed' | 'dismissed';
+  sourceIsCurrent?: boolean;
+}
+export interface IntegrationOverview {
+  grants: IntegrationGrant[]; records: CollaborationRecord[]; nextCursor?: string | null;
+}
+export class IntegrationError extends Error {
+  constructor(message: string, public status: number) { super(message); }
+}
+
+// Preview has no credential or server access: Playwright intercepts this request.
+// It is impossible to select the device-preview session in a production build.
+export function integrationClient(localPreview: boolean) {
+  async function request<T>(path: string, body?: unknown, signal?: AbortSignal): Promise<T> {
+    if (!navigator.onLine) throw new IntegrationError('You are offline. Reconnect to manage AI access or review returned material.', 0);
+    const headers: Record<string, string> = { Accept: 'application/json' };
+    if (!localPreview) {
+      const user = firebaseAuth()?.currentUser;
+      if (!user) throw new IntegrationError('Sign in again to manage your private connections.', 401);
+      headers.Authorization = 'Bearer ' + await user.getIdToken();
+    } else if (!import.meta.env.DEV || !['localhost', '127.0.0.1'].includes(location.hostname)) {
+      throw new IntegrationError('A verified author session is required.', 401);
+    }
+    if (body !== undefined) headers['Content-Type'] = 'application/json';
+    let response: Response;
+    try {
+      response = await fetch('/api/integrations' + path, {
+        method: body === undefined ? 'GET' : 'POST', headers,
+        body: body === undefined ? undefined : JSON.stringify(body),
+        credentials: 'same-origin', cache: 'no-store',
+        signal: signal ? AbortSignal.any([signal, AbortSignal.timeout(20000)]) : AbortSignal.timeout(20000),
+      });
+    } catch (error) {
+      if (signal?.aborted) throw error;
+      throw new IntegrationError('The connection could not be reached. Your writing is safe; try again when you are online.', 0);
+    }
+    const result = await response.json().catch(() => null);
+    if (!response.ok) throw new IntegrationError(typeof result?.error === 'string' ? result.error : 'This request could not be completed. Try again.', response.status);
+    return result as T;
+  }
+  return {
+    consent: (id: string, signal?: AbortSignal) => request<ConsentRequest>('/consent?request=' + encodeURIComponent(id), undefined, signal),
+    allow: (requestId: string, universeIds: string[], allowProposals: boolean) => request<{ redirect: string }>('/consent', { requestId, universeIds, allowProposals }),
+    deny: (requestId: string) => request<{ redirect: string }>('/consent', { requestId, deny: true }),
+    overview: (before?: string, signal?: AbortSignal) => request<IntegrationOverview>(before ? '?before=' + encodeURIComponent(before) : '', undefined, signal),
+    revoke: (grantId: string) => request<{ ok: boolean }>('/revoke', { grantId }),
+    decide: (recordId: string, decision: 'reviewed' | 'dismissed') => request<{ ok: boolean }>('/decision', { recordId, decision }),
+    exportArchive: () => request<unknown>('/export'),
+  };
+}

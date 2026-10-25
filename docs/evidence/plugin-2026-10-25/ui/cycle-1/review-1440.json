@@ -1,0 +1,13 @@
+{
+  "synthetic": true,
+  "route": "/connections",
+  "fixture": "review-1440",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "imageSha256": "0029f889eb40ffa16a27aa4fba057a90b9eb974b55e26060720c1f38e700a55a",
+  "inspectedSource": "src/components/Integrations.tsx",
+  "sourceSha256": "aadceaa0f6748d60863c61b1df499491a8b2b0d7d56c496a9c8e763fc27d1e84",
+  "capturedAt": "2026-10-25T11:28:24.993Z"
+}

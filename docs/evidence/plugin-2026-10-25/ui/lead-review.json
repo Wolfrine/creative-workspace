@@ -1,0 +1,22 @@
+{
+  "result": "agent-reviewed",
+  "ownerAcceptance": "not inferred",
+  "cycles": 5,
+  "centralVersion": "0.1.0",
+  "centralBaseRevision": "ba1235fe7b220842778414f3f70fca38e7df4c53",
+  "uiSourceDigest": "f094e443319631003a11cf3a9b79a0d4a5fb58a8f2828685724a7223c93f1b85",
+  "cycle5BeforeMechanicalCopyDigest": "e6c6230c1f3395c1192edbbf1199e53e3531fcdf0a14d2d6b60006547ab9d0ea",
+  "criticScores": { "agency": 8.4, "readingClarity": 8.4, "restraint": 8.2, "stateContinuity": 8.4, "overall": 8.4 },
+  "leadScores": { "agency": 8.4, "readingClarity": 8.2, "restraint": 8.1, "stateContinuity": 8.3, "overall": 8.2 },
+  "parentCheckpoints": [
+    { "cycle": 3, "personallyViewed": ["cycle-3/decisions-revoked-1440.png", "cycle-3/decisions-revoked-390.png"], "finding": "Reviewed remains unverified; dismissed material preserved; revoked access identifiable. Mobile access jump and source opening make next steps clear. Full-page focused skip link was subsequently corrected as capture geometry, not claimed to be a persistent product overlay." },
+    { "cycle": 5, "personallyViewed": ["cycle-5/review-final-1440.top.png", "cycle-5/review-final-390.png", "cycle-5/consent-final-390.png"], "finding": "Paper/green direction retained; source remains the dominant review context. Scope and future-page permission visible before allow; optional proposal permission explicit. Four AI record kinds carry unverified labels. No observed clipping or competing primary action. Tall full-page mobile render was downscaled by display; readable viewport and consent captures assessed separately." }
+  ],
+  "finalPersonallyViewed": ["final/consent-390.png", "final/review-1440.top.png", "final/long-source-390.record-source.png"],
+  "beforeMechanicalCopyPersonallyViewed": ["final-before-cloud-copy/review-final-1440.top.png", "final-before-cloud-copy/long-source-390.record-source.png", "final-before-cloud-copy/denied-390.top.png", "final-before-cloud-copy/decisions-revoked-390.top.png"],
+  "finalFinding": "Final mechanical copy repair explicitly says cloud-saved, avoiding an implied claim about unsynced local drafts. Parent personally viewed exact new final consent/mobile, desktop review and long-source crop. Same layout, readable source text and no new visual blocker; critic independently confirmed unchanged scores. Eight affected UI checks rerun after repair; full61 browser regression passed before copy-only repair. Earlier failure-state final evidence preserved, new final suite covers all28states again.",
+  "qa": "Eight new UI browser checks including exact local writing preservation on cross-universe navigation, keyboard/focus, desktop/390/320 Axe checks, scope cap, denied/expired/offline/retry/revoke/export and production build authentication guard. Full browser and cloud regressions recorded separately.",
+  "data": "All collaboration content in rendered evidence is synthetic and unverified. No production author manuscript was seeded or reset.",
+  "lifecycleLimit": "AI reads last cloud-confirmed revisions. Navigating away closes that writer instance after local flush; pending cloud work resumes when writing reopens. This does not earn a false cloud-save receipt. Manual sync remains available in writing.",
+  "limits": "Agent review of Chromium viewport evidence, not physical phone/Safari/screen-reader or human author acceptance. Creation/install/OAuth/live private tool execution are independent checks. No unavailable model capability override claimed."
+}

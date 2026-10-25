@@ -62,6 +62,7 @@ export default function App({ workspace, session }: { workspace: WorkspaceContro
   const queryRef = useRef<HTMLInputElement>(null);
   const sidebarRef = useRef<HTMLElement>(null);
   const latestState = useRef(state);
+  const requestedPage = useRef(new URLSearchParams(location.search).get('page'));
   latestState.current = state;
   const linkCache = useRef(new WeakMap<RichNode, string[]>());
   const shelfOpenRef = useRef<(document: WritingDocument) => void>(() => {});
@@ -143,6 +144,17 @@ export default function App({ workspace, session }: { workspace: WorkspaceContro
   const inform = (message: string, error = false) => { setNotice(message); setNoticeError(error); };
   const act = async (action: () => Promise<unknown>, success?: string) => { setBusy(true); inform(''); try { await action(); if (success) inform(success); } catch (error) { inform(error instanceof Error ? error.message : 'This action could not finish. Your writing remains available.', true); } finally { setBusy(false); } };
   const openDocument = async (id: string) => { await workspace.selectDocument(id); setView('writing'); setCollection(null); setMobileNav(false); setSearching(false); setQuery(''); };
+  useEffect(() => {
+    if (!state.ready || !requestedPage.current) return;
+    const target = state.documents.find(item => item.id === requestedPage.current);
+    // A cloud page may arrive after the device workspace opens. Resolve only an
+    // actual identity in this account; never create or infer a missing source.
+    if (!target) return;
+    requestedPage.current = null;
+    const url = new URL(location.href); url.searchParams.delete('page'); history.replaceState(null, '', url.pathname + url.search + url.hash);
+    if (target.trashed) { inform('This source page is in Trash. Restore it to continue writing.'); return; }
+    void act(async () => { if (target.universeId !== state.activeUniverseId) await workspace.selectUniverse(target.universeId); await openDocument(target.id); });
+  }, [state.ready, state.documents, state.activeUniverseId, workspace]);
   const openHistory = (id: string, compareVersions = false) => { setHistoryDocumentId(id); setHistoryId(null); setCompare(compareVersions); inform(''); setDialog('history'); void act(() => workspace.loadHistory()); };
   const confirmChoice = () => {
     if (!historyDocument || !selectedRevision) return;
@@ -232,7 +244,7 @@ export default function App({ workspace, session }: { workspace: WorkspaceContro
         {searching && <p className="offline-coverage">Searches writing saved on this device, in this universe.</p>}
         <div className="document-list">{shelfDocuments.map(d => <DocumentShelfRow key={d.id} document={d} selected={active?.id === d.id} onOpen={onShelfOpen} />)}{!visibleDocuments.length && <p className="shelf-empty">{searching ? 'No matching pages in this universe.' : 'Nothing here yet.'}</p>}</div>{!searching && visibleDocuments.length > shelfDocuments.length && <button className="sidebar-library-link" onClick={() => { navigate('library', collection); setMobileNav(false); }}>Browse all {visibleDocuments.length} pages<ArrowRight size={13} /></button>}
       </div>
-      <footer className="sidebar-footer"><div className="utility-nav"><button onClick={() => navigate('trash')} className={view === 'trash' ? 'active' : ''}><Trash2 size={16} />Trash</button><button onClick={() => setDialog('data')}><Download size={16} />Import & export</button></div><button className="account" onClick={() => setDialog('data')}><span className="avatar">{session.displayName?.slice(0, 1).toUpperCase() || 'N'}</span><span><strong>{session.displayName || 'Your workspace'}</strong><small>{session.localOnly ? 'Private on this device' : 'Private writing space'}</small></span><ShieldCheck size={16} /></button></footer>
+      <footer className="sidebar-footer"><div className="utility-nav"><button onClick={() => navigate('trash')} className={view === 'trash' ? 'active' : ''}><Trash2 size={16} />Trash</button><button onClick={() => void act(async () => { await workspace.flush(); const destination = new URL('/connections', location.origin); if (session.localOnly) { destination.searchParams.set('local', '1'); destination.searchParams.set('notebook', new URLSearchParams(location.search).get('notebook') || 'preview'); } location.assign(destination.pathname + destination.search); })}><Link2 size={16} />AI connections</button><button onClick={() => setDialog('data')}><Download size={16} />Import & export</button></div><button className="account" onClick={() => setDialog('data')}><span className="avatar">{session.displayName?.slice(0, 1).toUpperCase() || 'N'}</span><span><strong>{session.displayName || 'Your workspace'}</strong><small>{session.localOnly ? 'Private on this device' : 'Private writing space'}</small></span><ShieldCheck size={16} /></button></footer>
     </aside>
     <div className="workspace" inert={mobileNav && compact}>
       {session.localOnly && <aside className="device-preview-note" aria-label="Device preview connection status"><CloudOff size={12} /><span>Device preview · cloud not connected</span><small>Saved in this browser only</small></aside>}

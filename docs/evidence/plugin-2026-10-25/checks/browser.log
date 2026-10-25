@@ -1,0 +1,98 @@
+
+> noveliaa@0.1.0 test:browser
+> playwright test
+
+[WebServer] (node:193876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 61 tests using 1 worker
+
+(node:110604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\browser\autosave.spec.ts:4:39 › quiet sync icon, exact idle timer, recovery and details at 1440px (8.0s)
+  ok  2 tests\browser\autosave.spec.ts:4:39 › quiet sync icon, exact idle timer, recovery and details at 390px (6.3s)
+  ok  3 tests\browser\autosave.spec.ts:4:39 › quiet sync icon, exact idle timer, recovery and details at 320px (5.4s)
+  ok  4 tests\browser\conflict.spec.ts:6:39 › page-specific conflict review and blank current-version choice at 1440px (11.5s)
+  ok  5 tests\browser\conflict.spec.ts:6:39 › page-specific conflict review and blank current-version choice at 390px (8.3s)
+  ok  6 tests\browser\conflict.spec.ts:6:39 › page-specific conflict review and blank current-version choice at 320px (7.7s)
+  ok  7 tests\browser\library-reader.spec.ts:12:1 › Library has searchable pages, same-ID rename and collection reading (3.7s)
+  ok  8 tests\browser\library-reader.spec.ts:29:1 › Reader turns, appearance and resume remain local and preserve source/revisions (5.2s)
+  ok  9 tests\browser\library-reader.spec.ts:47:1 › Mobile Read replaces Export, reduced motion and reader accessibility (4.4s)
+  ok 10 tests\browser\library-reader.spec.ts:59:1 › Read resumes the last collection by identity, with contents context and a true editing return (4.3s)
+  ok 11 tests\browser\library-reader.spec.ts:80:1 › Changed source restarts deliberately and appearance panel traps keyboard focus (3.4s)
+  ok 12 tests\browser\library-reader.spec.ts:96:1 › Library navigation makes a local recovery copy without a writing revision (3.7s)
+  ok 13 tests\browser\library-reader.spec.ts:108:1 › New thought follows collection detail; all Library and Inbox create uncollected writing (3.6s)
+[WebServer] 5:15:51 pm [vite] (client) [console.warn] linkifyjs: already initialized - will not register custom scheme "noveliaa" until manual call of linkify.init(). Register all schemes and plugins before invoking linkify the first time.
+  ok 14 tests\browser\library-reader.spec.ts:120:1 › Keyboard follows offscreen links and opens available linked writing; unavailable links explain (5.2s)
+  ok 15 tests\browser\library-release.spec.ts:13:1 › 150-page library retrieves offline body matches without a sidebar inventory (20.9s)
+  ok 16 tests\browser\library-release.spec.ts:43:39 › reader retains exact rich text and reaches every fragmented character at 1440px (4.0s)
+  ok 17 tests\browser\library-release.spec.ts:43:39 › reader retains exact rich text and reaches every fragmented character at 390px (4.9s)
+  ok 18 tests\browser\library-release.spec.ts:43:39 › reader retains exact rich text and reaches every fragmented character at 320px (4.6s)
+  ok 19 tests\browser\page-turn-lifecycle.spec.ts:34:34 › Actual content curl is bounded and releases resources after 20 turns at 1440 (18.4s)
+  ok 20 tests\browser\page-turn-lifecycle.spec.ts:34:34 › Actual content curl is bounded and releases resources after 20 turns at 390 (12.6s)
+[WebServer] 5:17:22 pm [vite] (client) [Unhandled error] Error: ResizeObserver loop completed with undelivered notifications.
+[WebServer]  > ../../../../@vite/client:374:50
+[WebServer] 
+  ok 21 tests\browser\page-turn-lifecycle.spec.ts:59:1 › Rapid replacement, 20 reader exits, resize and reduced motion cancel all leaf work (24.9s)
+[WebServer] 5:17:40 pm [vite] (client) [Unhandled error] Error: ResizeObserver loop completed with undelivered notifications.
+[WebServer]  > ../../../../@vite/client:374:50
+[WebServer] 
+  ok 22 tests\browser\page-turn-lifecycle.spec.ts:81:1 › Large books animate only the canonical track and cancel slide work on every exit path (18.2s)
+  ok 23 tests\browser\page-turn-lifecycle.spec.ts:114:1 › DOM-rich small writing uses the node budget independently of character count (2.8s)
+  ok 24 tests\browser\plugin-ui.spec.ts:54:1 › Plugin cycle 1: consent scope and returned proposal baseline (6.2s)
+  ok 25 tests\browser\plugin-ui.spec.ts:69:1 › Plugin cycle 2: scope choice, denial and long returned source (6.7s)
+  ok 26 tests\browser\plugin-ui.spec.ts:88:1 › Plugin cycle 3: author decisions, revoke and collaboration archive (2.8s)
+  ok 27 tests\browser\plugin-ui.spec.ts:101:1 › Plugin cycle 4: empty, expired, pending and offline recoveries (13.2s)
+  ok 28 tests\browser\plugin-ui.spec.ts:123:1 › Consent narrows large catalogues to ten universes and supports read only requests (3.1s)
+  ok 29 tests\browser\plugin-ui.spec.ts:135:1 › Plugin cycle 5: pagination, accessibility and 320px author journey (8.9s)
+  ok 30 tests\browser\plugin-ui.spec.ts:150:1 › Current source navigation resolves a real page and preserves writing across universes (5.2s)
+  ok 31 tests\browser\plugin-ui.spec.ts:169:1 › Production consent ignores device preview and does not request private data before sign-in (1.2s)
+  ok 32 tests\browser\populated-journeys.spec.ts:55:1 › Three coherent worlds retain exact originals and never claim approval (2.6s)
+  ok 33 tests\browser\populated-journeys.spec.ts:78:39 › Library layouts retrieve varied pages and collections at 1440px (7.3s)
+[WebServer] 5:18:42 pm [vite] (client) [Unhandled error] Error: ResizeObserver loop completed with undelivered notifications.
+[WebServer]  > ../../../../@vite/client:374:50
+[WebServer] 
+  ok 34 tests\browser\populated-journeys.spec.ts:78:39 › Library layouts retrieve varied pages and collections at 390px (7.8s)
+[WebServer] 5:18:50 pm [vite] (client) [Unhandled error] Error: ResizeObserver loop completed with undelivered notifications.
+[WebServer]  > ../../../../@vite/client:374:50
+[WebServer] 
+  ok 35 tests\browser\populated-journeys.spec.ts:78:39 › Library layouts retrieve varied pages and collections at 320px (7.8s)
+[WebServer] 5:18:58 pm [vite] (client) [Unhandled error] Error: ResizeObserver loop completed with undelivered notifications.
+[WebServer]  > ../../../../@vite/client:374:50
+[WebServer] 
+  ok 36 tests\browser\populated-journeys.spec.ts:120:1 › Mobile backward curl actually transforms its leaf and returns visible first-page content (4.1s)
+  ok 37 tests\browser\populated-journeys.spec.ts:146:1 › Collection detail, universe switching and shortcuts keep an unambiguous scope (5.0s)
+  ok 38 tests\browser\populated-journeys.spec.ts:186:1 › One capture action follows a collection; move, rename and creating a world preserve writing (4.9s)
+  ok 39 tests\browser\populated-journeys.spec.ts:223:39 › Atlas follows explicit links and backlinks without dropping into the editor at 1440px (3.4s)
+  ok 40 tests\browser\populated-journeys.spec.ts:223:39 › Atlas follows explicit links and backlinks without dropping into the editor at 768px (3.5s)
+[WebServer] 5:19:19 pm [vite] (client) [Unhandled error] Error: ResizeObserver loop completed with undelivered notifications.
+[WebServer]  > ../../../../@vite/client:374:50
+[WebServer] 
+  ok 41 tests\browser\populated-journeys.spec.ts:223:39 › Atlas follows explicit links and backlinks without dropping into the editor at 390px (3.7s)
+  ok 42 tests\browser\populated-journeys.spec.ts:264:34 › Library reading returns to its exact browse context and edits only on request at 1440px (5.4s)
+[WebServer] 5:19:28 pm [vite] (client) [Unhandled error] Error: ResizeObserver loop completed with undelivered notifications.
+[WebServer]  > ../../../../@vite/client:374:50
+[WebServer] 
+  ok 43 tests\browser\populated-journeys.spec.ts:264:34 › Library reading returns to its exact browse context and edits only on request at 390px (5.2s)
+  ok 44 tests\browser\populated-journeys.spec.ts:323:1 › Leaving writing makes a recovery copy before idle; reload retains exact draft and originals (5.4s)
+  ok 45 tests\browser\production.spec.ts:3:1 › production shell cold reloads offline and development notebook access is absent (2.9s)
+  ok 46 tests\browser\writing.spec.ts:18:1 › A01/A08 immediate capture, Unicode, caret and undo (3.7s)
+  ok 47 tests\browser\writing.spec.ts:32:1 › A08 formatted archive restores into an isolated browser and HTML retains formatting (4.3s)
+  ok 48 tests\browser\writing.spec.ts:51:1 › A03 failed storage leaves open text exportable and never says saved (2.3s)
+  ok 49 tests\browser\writing.spec.ts:61:1 › A22/A23 short mobile writing, keyboard navigation and 200 percent text remain usable (3.5s)
+  ok 50 tests\browser\writing.spec.ts:85:1 › A02 offline editing survives a new tab and preserves acknowledged revisions (3.4s)
+  ok 51 tests\browser\writing.spec.ts:93:1 › A06 revision restoration retains the intervening version (3.3s)
+  ok 52 tests\browser\writing.spec.ts:106:1 › A07/A09 archive from browser preserves sources and independent saved-text oracle (3.7s)
+  ok 53 tests\browser\writing.spec.ts:140:1 › A11 search stays in the selected universe (2.0s)
+  ok 54 tests\browser\writing.spec.ts:155:1 › A06 stable links, backlinks and non-drag organization survive title changes (3.3s)
+  ok 55 tests\browser\writing.spec.ts:173:39 › paragraph indentation and themed collection movement at 1440px (5.1s)
+  ok 56 tests\browser\writing.spec.ts:173:39 › paragraph indentation and themed collection movement at 390px (3.1s)
+  ok 57 tests\browser\writing.spec.ts:173:39 › paragraph indentation and themed collection movement at 320px (3.1s)
+  ok 58 tests\browser\writing.spec.ts:225:44 › A22/A23 writing layout and accessibility at 320px (3.6s)
+  ok 59 tests\browser\writing.spec.ts:225:44 › A22/A23 writing layout and accessibility at 390px (3.6s)
+  ok 60 tests\browser\writing.spec.ts:225:44 › A22/A23 writing layout and accessibility at 768px (3.8s)
+  ok 61 tests\browser\writing.spec.ts:225:44 › A22/A23 writing layout and accessibility at 1440px (4.2s)
+
+  61 passed (6.3m)

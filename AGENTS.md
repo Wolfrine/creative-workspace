@@ -12,7 +12,7 @@ Codex/Windows-managed application state and installed platform binaries remain
 in their required platform locations. Linux GitHub Actions runners retain the
 existing deployment workflow; deliver directly from `main`.
 
-Read [INTENT.md](INTENT.md) and [.harness/objective.md](.harness/objective.md) first. The owner approved **Phase 1 development and Firebase deployment on 23 October 2026**. Deploy through GitHub Actions using the existing Firebase identity, verify the matching app/project/site, check the hosted UI, and share its live URL. The owner does not review localhost. Later stages remain unapproved.
+Read [INTENT.md](INTENT.md) and [.harness/objective.md](.harness/objective.md) first. The owner approved **Phase 1 development and Firebase deployment on 23 October 2026** and **a full private ChatGPT plugin with MCP and skills on 25 October 2026**. Deploy through GitHub Actions using the existing Firebase identity, verify the matching app/project/site, check the hosted UI, and share its live URL. The owner does not review localhost. Shared editions and feedback remain unapproved.
 
 **Work and deploy directly from `main` by default.** The owner explicitly set
 this rule for every agent on 24 October 2026. Do not create a feature branch,
@@ -21,18 +21,18 @@ before pushing; use the existing GitHub Actions release from `main`. Preserve
 unique work before removing completed branches/PRs. This does not approve later
 product phases or override a plan-only request.
 
-**Keep Firebase on Spark**, as explicitly required by the owner. Phase 1 deploys
-Hosting and Firestore Rules and uses Google Authentication. Do not request Blaze,
-Functions/Storage deployment roles, API enablement or replacement keys for this
-release. The earlier callable/backup architecture is unshipped reference work;
-the current adapter and evidence are in `src/cloud/spark.ts` and
-`docs/evidence/phase1/spark`. Normal console Google-provider enablement may still
-need the owner. Verify current state before repeating any setup request.
+**The owner reports Blaze and Functions enabled (25 October 2026).** This
+supersedes the earlier Spark-only constraint for the plugin integration. Keep
+the current Firestore writing adapter, Google Authentication and existing
+Actions identity. Deploy only `noveliaaMcp` from `functions/src/mcp-entry.mjs`;
+the older Storage callables/scheduled backup remain unshipped reference work.
+Never request replacement keys or speculative roles; investigate actual failures
+and PTI's working deployment before reporting a concrete permission blocker.
 
 ## Current assignment: implement and evaluate Phase 1
 
 1. Inspect the actual repository and relevant writing/story projects. Verify evidence and separate known facts from assumptions.
-2. Build capture, freeform writing, optional organization, stable links/search, durable offline checkpoints, revision recovery and export. Follow Living Atlas with Quiet Folio writing. The owner approved collection renaming, dedicated Library views and private author Read mode on 25 October 2026; see `docs/design/LIBRARY_READER.md`. Collections stay flat. External AI, shared reader editions and feedback remain deferred. Use the repository's evaluations and retain actual desktop/mobile and integrity evidence.
+2. Build capture, freeform writing, optional organization, stable links/search, durable offline checkpoints, revision recovery and export. Follow Living Atlas with Quiet Folio writing. The owner approved collection renaming, dedicated Library views and private author Read mode on 25 October 2026; see `docs/design/LIBRARY_READER.md`. Collections stay flat. The private plugin approval and boundary are in `docs/design/PLUGIN_CONNECTION.md`; shared reader editions and feedback remain deferred. Use the repository's evaluations and retain actual desktop/mobile and integrity evidence.
 3. Reuse existing work selectively; do not change NovaSaga, Novel-Encyclopedia, StoryForge or any other repository without a separate request.
 
 ## Non-negotiable creative safeguards

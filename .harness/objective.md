@@ -2,7 +2,7 @@
 
 **Owner intent:** Build a private author-first writing workspace that preserves raw creative control, supports externally connected AI collaboration, prepares an approved reading experience, and gathers respectful peer reactions.
 
-**Stage:** Owner-approved Phase 1 development, evaluation and deployment through GitHub Actions (23 October 2026). Verify the existing Firebase app/site and use its live URL for owner review. Phases 2–4 remain unapproved.
+**Stage:** Owner-approved Phase 1 development, evaluation and deployment through GitHub Actions (23 October 2026), plus a full private ChatGPT plugin with MCP and skills (25 October 2026). The owner reports Blaze and Functions enabled. Verify the existing Firebase app/site and use its live URL for owner review. Shared reader editions and feedback remain unapproved.
 
 **Delivery default (24 October 2026):** All agents commit and deploy directly
 from `main` unless the owner explicitly specifies another workflow. Do not create
@@ -34,12 +34,15 @@ or peer feedback. See [design contract](../docs/design/LIBRARY_READER.md).
 
 ## Remaining release decisions
 
-Keep the existing Firebase project on **Spark**. Use its existing GitHub Actions
-secret for Hosting and Firestore Rules; do not request Functions, Storage, Blaze
-or API-enablement access for Phase 1. Verify matching Web App/site, Google
+The owner moved the existing Firebase project to **Blaze** and enabled Functions
+for the private plugin. Use its existing GitHub Actions secret for Hosting,
+Firestore Rules and the single MCP HTTP Function. Do not activate the older
+Storage callable/backup reference. Verify matching Web App/site, Google
 provider and author UID. Independent scheduled backups are deferred; device
 recovery, immutable cloud history and downloadable archives are current recovery.
 Complete hosted, physical-device and author writing/recovery acceptance. External
-connector permissions, reader publication and consent belong to later phases.
+reader publication and reader consent belong to later phases. Plugin consent is
+limited to selected universes and optional unverified writeback; see the plugin
+design contract.
 
 **Detailed intent:** [INTENT.md](../INTENT.md). **Current evidence:** [Phase 1 results](../docs/PHASE1_RESULTS.md).

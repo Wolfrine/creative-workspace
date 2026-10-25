@@ -1,9 +1,18 @@
-# Noveliaa deployment — GitHub Actions, Spark
+# Noveliaa deployment — GitHub Actions, existing Firebase project
 
 Owner review uses **https://noveliaa.web.app**, the existing Firebase site for
 project `noveliaa` (278082781314), Web App
 `1:278082781314:web:9a4b7acef07fa8e4dfb49b`. Localhost is development evidence
-only. Deployment is already authorized; the owner requires Spark.
+only. Deployment is already authorized. On 25 October the owner moved to Blaze,
+enabled Functions and approved the full private plugin. The earlier Spark
+releases below remain historical evidence, not the current plan constraint.
+
+**Private plugin candidate:** `docs/evidence/plugin-2026-10-25/manifest.json`
+binds source, emulator/HTTP tests and desktop/mobile consent/review captures.
+Actions deploys only `noveliaaMcp` plus the same site/Rules; the old callable and
+scheduled-backup exports are excluded by the Functions entrypoint. The portable
+plugin source and skills are in `plugin/noveliaa`; account creation/installation
+and human OAuth consent are recorded separately from server deployment.
 
 **25 October populated Library/reader refinement: live and independently verified.**
 Commit `4c4c1660625aa8efa84cea4635cf97623dc06be9` passed

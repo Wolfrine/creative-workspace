@@ -1,6 +1,6 @@
 # Noveliaa — creative writing workspace
 
-**Status:** Phase 1 development and Firebase deployment approved by the owner on 23 October 2026. Build and test recoverable, author-first writing using Living Atlas with Quiet Folio. Deploy through GitHub Actions to the verified existing Firebase app/site and provide its live URL after hosted visual checks. External AI collaboration, reader editions and feedback remain later phases.
+**Status:** Phase 1 development and Firebase deployment approved by the owner on 23 October 2026. A full private ChatGPT plugin (MCP plus skills) was approved on 25 October 2026; the owner reports Blaze and Functions enabled. Build recoverable, author-first writing using Living Atlas with Quiet Folio. Deploy through GitHub Actions to the existing Firebase app/site. Shared editions and feedback remain later phases.
 **Project:** `Wolfrine/creative-workspace` (private). **App name:** Noveliaa (working name).
 
 **Approved extension (25 October 2026):** Rename collections, browse dedicated
@@ -44,6 +44,14 @@ The earlier [Space intent draft](https://chatgpt.com/space/page_6ad9dead8cec8191
 
 ## Decisions still open
 
-Private sharing beyond the author; later-stage data/attachment schema; plugin/MCP authorization and writeback contract; media review and versioning; reader-consent data retention; whether/how to migrate existing fragments. **The owner requires Spark.** Phase 1 uses Google sign-in, an author UID allowlist enforced by Firestore Rules, immutable Firestore history, device recovery and downloadable archives. Functions, Storage, paid recovery and scheduled independent backups are deferred. Firebase project `noveliaa` (number `278082781314`), Web App `1:278082781314:web:9a4b7acef07fa8e4dfb49b`, native Firestore in Mumbai and Hosting site `noveliaa` / `https://noveliaa.web.app` were verified through GitHub Actions. See [current deployment evidence](docs/DEPLOYMENT.md) for Google-provider setup and actual release status. The existing secret is `FIREBASE_SERVICE_ACCOUNT`; no credentials should be opened or copied into source.
+**Approved integration (25 October 2026):** A private plugin with source-led
+exploration, research and collaboration skills. OAuth grants selected universes;
+optional writeback appends unverified records anchored to exact revisions/hashes.
+It cannot overwrite writing, approve canon or publish. Author review/dismiss and
+collaboration export are separate from original writing. See
+[plugin boundary and design](docs/design/PLUGIN_CONNECTION.md). This supersedes
+the historical Spark-only and Stage 2 deferral below for this bounded integration.
+
+Private sharing beyond the author; media review/versioning; reader-consent data retention; whether/how to migrate existing fragments remain open. The owner reports **Blaze** and Functions enabled. Writing retains Google sign-in, an author UID allowlist enforced by Firestore Rules, immutable Firestore history, device recovery and downloadable archives. Only the private plugin HTTP Function is newly deployed; Storage, paid recovery and scheduled independent backups remain deferred. Firebase project `noveliaa` (number `278082781314`), Web App `1:278082781314:web:9a4b7acef07fa8e4dfb49b`, native Firestore in Mumbai and Hosting site `noveliaa` / `https://noveliaa.web.app` were verified through GitHub Actions. See [current deployment evidence](docs/DEPLOYMENT.md) for setup and actual release status. The existing secret is `FIREBASE_SERVICE_ACCOUNT`; no credentials should be opened or copied into source.
 
 **Codex handoff:** Implement the approved writing phase, preserve provenance and originals, and provide observable test/visual evidence. Flag deployment configuration and decisions that require the owner. Do not infer approval for later stages or publication.
