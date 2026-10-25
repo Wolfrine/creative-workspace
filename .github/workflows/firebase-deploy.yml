@@ -6,6 +6,7 @@ on:
     paths:
       - src/**
       - public/**
+      - tests/**
       - index.html
       - package*.json
       - vite.config.ts
