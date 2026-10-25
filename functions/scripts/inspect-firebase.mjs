@@ -1,4 +1,4 @@
-// Read-only Spark release metadata. Never print credentials or manuscripts.
+// Read-only release metadata. Never print credentials or manuscripts.
 import { applicationDefault } from 'firebase-admin/app';
 const project = process.env.VERIFIED_PROJECT;
 if (project !== 'noveliaa') throw new Error('Expected verified project noveliaa.');
@@ -9,6 +9,11 @@ const get = async (url, init = {}) => {
   return response.ok ? data : { status: response.status, error: data.error?.status, message: data.error?.message };
 };
 const requested = ['serviceusage.services.get', 'firebasehosting.sites.update', 'firebaserules.rulesets.create', 'firebaserules.releases.update'];
+const requiredServices = ['cloudfunctions.googleapis.com', 'cloudbuild.googleapis.com', 'artifactregistry.googleapis.com', 'run.googleapis.com', 'eventarc.googleapis.com', 'pubsub.googleapis.com', 'storage.googleapis.com'];
+const services = await Promise.all(requiredServices.map(async service => {
+  const result = await get(`https://serviceusage.googleapis.com/v1/projects/278082781314/services/${service}`);
+  return { service, state: result.state ?? 'UNKNOWN', ...(result.status ? { status: result.status, error: result.error } : {}) };
+}));
 const [firebase, apps, hosting, database, google, auth, permissions] = await Promise.all([
   get(`https://firebase.googleapis.com/v1beta1/projects/${project}`),
   get(`https://firebase.googleapis.com/v1beta1/projects/${project}/webApps`),
@@ -18,4 +23,4 @@ const [firebase, apps, hosting, database, google, auth, permissions] = await Pro
   get(`https://identitytoolkit.googleapis.com/admin/v2/projects/${project}/config?fields=authorizedDomains`),
   get(`https://cloudresourcemanager.googleapis.com/v1/projects/${project}:testIamPermissions`, { method: 'POST', body: JSON.stringify({ permissions: requested }) }),
 ]);
-console.log(JSON.stringify({ checkedAt: new Date().toISOString(), planConstraint: 'Keep Spark; no billing/IAM/API changes', firebase, apps, hosting, database, google, auth, permissions }, null, 2));
+console.log(JSON.stringify({ checkedAt: new Date().toISOString(), planConstraint: 'Approved Blaze plugin; read only, no billing/IAM/API changes', services, disabledServices: services.filter(item => item.state === 'DISABLED').map(item => item.service), firebase, apps, hosting, database, google, auth, permissions }, null, 2));
