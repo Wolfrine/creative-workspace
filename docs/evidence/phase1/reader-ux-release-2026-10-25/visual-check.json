@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-10-25T10:04:27.857Z",
+  "commit": "4c4c1660625aa8efa84cea4635cf97623dc06be9",
+  "browser": "156.0.8078.4",
+  "module": "assets/index-B_ymLoge.js",
+  "cases": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "file": "docs/evidence/phase1/reader-ux-release-2026-10-25/entry-1440.png",
+      "sha256": "27ae6f693d2e91e723dd51602c925e9dd2e82a54a9e6baca8e5fa9a9fdc6977e",
+      "scripts": [
+        "/assets/index-B_ymLoge.js"
+      ],
+      "bounds": {
+        "width": 1440,
+        "scrollWidth": 1440
+      },
+      "issues": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "file": "docs/evidence/phase1/reader-ux-release-2026-10-25/entry-390.png",
+      "sha256": "565af1e8f6dddfed9be98b8b195afff980931aab79755dc9cf416e320c9fe947",
+      "scripts": [
+        "/assets/index-B_ymLoge.js"
+      ],
+      "bounds": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "issues": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "file": "docs/evidence/phase1/reader-ux-release-2026-10-25/entry-320.png",
+      "sha256": "dc5d0eb444e013715bff15c9226808016a6ef0f1a8c94dce10152adc5d6353af",
+      "scripts": [
+        "/assets/index-B_ymLoge.js"
+      ],
+      "bounds": {
+        "width": 320,
+        "scrollWidth": 320
+      },
+      "issues": []
+    }
+  ],
+  "limits": "Fresh signed-out production contexts only; authenticated workflows tested with isolated actual Auth/Firestore emulators. Desktop/phone-sized Chromium is not physical-phone acceptance."
+}

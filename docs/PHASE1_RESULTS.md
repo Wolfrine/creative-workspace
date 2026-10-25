@@ -12,7 +12,46 @@ The owner reviews the actual Firebase site, **https://noveliaa.web.app**, after
 the Actions release passes. **The Spark release is now live and verified**, with
 24 hosted file digests matching its build. See [release and hosted evidence](DEPLOYMENT.md).
 
-## October 25 Library and private author reader
+## October 25 populated navigation and reader refinement
+
+**Live at https://noveliaa.web.app**, from `main` commit `4c4c166` via
+[Firebase Action 40182774879](https://github.com/Wolfrine/creative-workspace/actions/runs/40182774879).
+[CI 40182774743](https://github.com/Wolfrine/creative-workspace/actions/runs/40182774743)
+also passed; independent HTTP verification matched all 24 live files and the
+exact App ID. The configured module is `assets/index-B_ymLoge.js`.
+
+The owner's rejected animation was replaced with text-bearing soft leaves and
+a bounded-work canonical slide for large/complex books. Actual forward/back
+recordings, reduced motion, cleanup and volume tests exposed and corrected the
+first-frame clock, portrait back, retained-copy and 50k-word blocking defects.
+Library now has Tile/List/Detailed icons, shared retrieval/actions, scoped local
+preferences, correct universe isolation, context/focus-preserving reading return
+and Atlas inspection before explicit editing. Narrow tiles and tablet Atlas
+intrinsic overflow were fixed after real populated visual checks.
+
+The corpus has 3 universes, 12 collections and 24 distinct sources, including
+Inbox fragments, rich scenes, people/place/rule notes, links/backlinks, Hindi,
+exact synthetic imports, unverified proposals and Trash. All generated material
+remains unverified; no samples were inserted into the author's account. Separate
+procedural volumes cover 1k–50k words. Original writing/revisions/provenance and
+10s local / 60s cloud trailing idle remain intact. Layout/reading actions caused
+zero cloud writes in actual emulator inventories and observed write RPCs.
+
+**89 client, 15 Rules, 53 browser, 10 cloud, 26 evidence checks and 20 crash
+recoveries passed.** Retained CI browser reports have no failures/skips/flaky
+cases. Fifty-two final states cover 320/390/768/1440 px; exact final soft-leaf and
+large-slide sequences were independently viewed. Final critic and lead reviews
+each scored 8.2 overall with all critical dimensions at least 8; these are agent
+judgments, not author approval or physical-phone performance acceptance.
+
+[Source/evaluation manifest](evidence/phase1/reader-ux-2026-10-25/manifest.json),
+[release proof](evidence/phase1/reader-ux-release-2026-10-25/release.json),
+[lead QA](design/reader-library-ux-qa.md) and
+[reference research](research/reader-motion-2026-10-25.md) retain the evidence,
+failed candidates and practical limits. Deployment stayed on Spark and skipped
+the historical reset.
+
+## Earlier October 25 Library and private author reader
 
 **Live at https://noveliaa.web.app**, released from `main` commit `a599c52`.
 [Deployment 40174907744](https://github.com/Wolfrine/creative-workspace/actions/runs/40174907744)

@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-25T10:03:26.987Z",
+  "projectId": "noveliaa",
+  "previousRuleset": "383772fe-4dec-4687-9420-7658477e66b3",
+  "releasedRuleset": "9eb551d9-b0a0-41ca-b36a-25a4bd69e0e0",
+  "sha256": "124b44b93e83e832105ee7da5ea62b4e9acef691e74a66581f6e3ff25e466d30",
+  "emulatorChecks": "15 passed in this workflow before release",
+  "method": "Firebase Admin SDK releaseFirestoreRulesetFromSource; matching source readback verified"
+}

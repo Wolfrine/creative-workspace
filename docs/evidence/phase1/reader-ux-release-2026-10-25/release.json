@@ -1,0 +1,99 @@
+{
+  "checkedAt": "2026-10-25T10:06:47.037Z",
+  "sourceCommit": "4c4c1660625aa8efa84cea4635cf97623dc06be9",
+  "url": "https://noveliaa.web.app",
+  "projectId": "noveliaa",
+  "appId": "1:278082781314:web:9a4b7acef07fa8e4dfb49b",
+  "plan": "Spark",
+  "deployment": {
+    "runId": 40182774879,
+    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40182774879",
+    "result": "success"
+  },
+  "ci": {
+    "runId": 40182774743,
+    "url": "https://github.com/Wolfrine/creative-workspace/actions/runs/40182774743",
+    "result": "success"
+  },
+  "candidateSourceDigest": "7e3ef6773ffc77464297e64ed3d0e58c9e5d85d95d34805a57a9a763df497430",
+  "retainedSources": 119,
+  "retainedRenders": 341,
+  "module": "assets/index-B_ymLoge.js",
+  "hostedMatchingFiles": 24,
+  "rulesSha256": "124b44b93e83e832105ee7da5ea62b4e9acef691e74a66581f6e3ff25e466d30",
+  "authenticatedBrowserPasses": 10,
+  "writingBrowserPasses": 53,
+  "browserSkips": 0,
+  "browserFlaky": 0,
+  "liveEntryWidths": [
+    1440,
+    390,
+    320
+  ],
+  "entryPersonallyViewed": [
+    1440,
+    320
+  ],
+  "workspaceReset": "guarded historical step skipped; no production writing seeded/opened/reset",
+  "privateAuthenticatedVisualScope": "Actual app workflows with synthetic loopback Auth/Firestore accounts. Live signed-out entry and every deployed file verified independently; no production auth bypass.",
+  "ownerAcceptance": "not inferred",
+  "remainingLimits": "Fresh signed-out production contexts only; authenticated workflows tested with isolated actual Auth/Firestore emulators. Desktop/phone-sized Chromium is not physical-phone acceptance.",
+  "inventory": [
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/ci-artifact-proof.json",
+      "sha256": "939ef67b5ace28e19095ef22f55bf778a0a9d04b1146706915a99efb2df3bb3d"
+    },
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/ci-browser-results.json",
+      "sha256": "844bba78af1d60d69e0131c1819b12f0621691892fc185bd786d3adddc0f628f"
+    },
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/ci-cloud-results.json",
+      "sha256": "299e1c4199a96f34b50b31fa4be92c484272e355906d0e50a4150721643fc4c6"
+    },
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/entry-1440.png",
+      "sha256": "27ae6f693d2e91e723dd51602c925e9dd2e82a54a9e6baca8e5fa9a9fdc6977e"
+    },
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/entry-320.png",
+      "sha256": "dc5d0eb444e013715bff15c9226808016a6ef0f1a8c94dce10152adc5d6353af"
+    },
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/entry-390.png",
+      "sha256": "565af1e8f6dddfed9be98b8b195afff980931aab79755dc9cf416e320c9fe947"
+    },
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/independent-hosted.json",
+      "sha256": "d5195a2b0b4afa9d806fa364b82a204999b0f2db2cbb27b4f16c23ef75fd672e"
+    },
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/release-artifact-proof.json",
+      "sha256": "ee436f6ead6d472f4ee1cbf11004d31208b427ca5851d98914bed229e4a97063"
+    },
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/release-cloud-results.json",
+      "sha256": "0b7c2716ed11a2750a1dd50a7b948835a1e9c588de8e900cc8dd5f4055b36496"
+    },
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/runner-hosted.json",
+      "sha256": "b9c2d4b3d993bf1a67f0aaa44ce849a59eb8f552f77ff6e492d96e946a89aabf"
+    },
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/runner-rules.json",
+      "sha256": "72545a06654352edcf830590cfa5508aa2cf568b85070d00700a8f80d7a73600"
+    },
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/verify-hosted-readback.mjs",
+      "sha256": "bb6c15ed907d85dcc1020464b2a5313fb31915970fbfa5787f38b737d45ca0db"
+    },
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/visual-check.json",
+      "sha256": "dd6c8ec833409206fbdf2a5b8b0e46932a2c30bda4392fdcc0f7ec780f073a7e"
+    },
+    {
+      "path": "docs/evidence/phase1/reader-ux-release-2026-10-25/workflows.json",
+      "sha256": "d0dd47f12e9a57e84009115784b1003eec84c5cccf05f06c8f0a91501eebb371"
+    }
+  ]
+}

@@ -5,7 +5,44 @@ project `noveliaa` (278082781314), Web App
 `1:278082781314:web:9a4b7acef07fa8e4dfb49b`. Localhost is development evidence
 only. Deployment is already authorized; the owner requires Spark.
 
-**25 October Library/private reader release: live and verified from `main`.**
+**25 October populated Library/reader refinement: live and independently verified.**
+Commit `4c4c1660625aa8efa84cea4635cf97623dc06be9` passed
+[Firebase release 40182774879](https://github.com/Wolfrine/creative-workspace/actions/runs/40182774879)
+and [CI 40182774743](https://github.com/Wolfrine/creative-workspace/actions/runs/40182774743).
+The live module is **`assets/index-B_ymLoge.js`**. Independent HTTP checks matched
+all 24 configured build files, the exact Firebase App ID and the unchanged Rules
+SHA below. Signed-out live entry renders were checked at 1440/390/320; the lead
+personally viewed desktop and narrow phone entry, with no overflow/errors.
+
+Tile/List/Detailed Library views share search/actions, with List as the default
+and per-universe device preferences. Read returns to the same Library context
+and focus; editing is explicit. Universe switches clear foreign filters, and
+Atlas inspection stays in Atlas until Open writing. Actual source text turns
+with a bounded soft leaf; books above 20k UTF-16 characters or 600 elements use
+a fast canonical-text slide. Reduced motion/off is direct. Flat collections,
+permanent Inbox, original provenance and the 10s/60s writing contract remain.
+
+Both runners passed **53 browser and 10 authenticated cloud checks**, with zero
+skips/flaky cases in retained CI reports. Local verification also passed 89
+client tests, 15 actual Rules checks, 26 evidence checks and 20 crash recoveries.
+Five review cycles retained failed candidates instead of inheriting the owner's
+rejected old-motion scores. Final desktop/tablet/phone states and actual curl/
+large-slide recordings passed separate critic and lead review. Evaluation uses
+3 synthetic universes, 12 collections and 24 varied sources plus separate volume
+fixtures through 50k words; generated material stays unverified and out of the
+owner's account. Actual emulator inventories/RPCs show zero cloud writes for
+Library view/search and reader operations. The historical reset step was
+**skipped**. No production manuscript was accessed, seeded or reset.
+
+See [release/artifact/hosted proof](evidence/phase1/reader-ux-release-2026-10-25/release.json),
+[bound source and evaluation](evidence/phase1/reader-ux-2026-10-25/manifest.json),
+[research](research/reader-motion-2026-10-25.md) and
+[independent critique](design/reader-library-ux-critic.md).
+Physical phones/Safari/assistive-technology comfort and author acceptance remain
+separate from Chromium viewport and emulator evidence. The large-book path is
+a slide, not physical curl; native finger-follow behavior is not claimed.
+
+**Earlier 25 October Library/private reader release.**
 Commit `a599c52ed773e4d69e464619aa1a9933bb751bd7` passed
 [Firebase release 40174907744](https://github.com/Wolfrine/creative-workspace/actions/runs/40174907744)
 and [CI 40174907781](https://github.com/Wolfrine/creative-workspace/actions/runs/40174907781).
