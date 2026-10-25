@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-25T12:55:17Z",
+  "runUrl": "https://github.com/Wolfrine/creative-workspace/actions/runs/40195237342",
+  "jobId": 121174548731,
+  "sourceCommit": "467ca050a7edc10d80c05a241e21989237291160",
+  "inspection": "Read-only Google Service Usage metadata from the existing Actions identity; no services, IAM, billing or manuscripts changed.",
+  "deploymentRetry": {
+    "runUrl": "https://github.com/Wolfrine/creative-workspace/actions/runs/40193397345/attempts/2",
+    "jobId": 121172111900,
+    "tests": "All required checks passed again, including 63 browser and 13 OAuth/MCP integration tests.",
+    "failure": "Cloud Run and Eventarc remained disabled. CLI failed enabling run.googleapis.com because the Actions identity cannot enable APIs.",
+    "newFunctionPublished": false,
+    "newHostingPublished": false
+  }
+}
