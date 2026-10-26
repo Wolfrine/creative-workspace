@@ -1,0 +1,41 @@
+name: Noveliaa Functions identity bootstrap
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/plugin-bootstrap.yml, functions/scripts/bootstrap-plugin.mjs]
+permissions:
+  contents: read
+concurrency:
+  group: noveliaa-functions-bootstrap
+  cancel-in-progress: false
+jobs:
+  bootstrap:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm --prefix functions ci --no-audit --no-fund
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+      - name: Recover only the standard managed Functions identity and verify cleanup
+        env:
+          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
+        run: node functions/scripts/bootstrap-plugin.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        continue-on-error: true
+        with:
+          name: plugin-bootstrap
+          include-hidden-files: true
+          path: |
+            .local/plugin-bootstrap.json
+            .local/plugin-artifacts.json
+          retention-days: 30
+          if-no-files-found: ignore
