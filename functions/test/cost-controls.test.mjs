@@ -60,6 +60,13 @@ test('budget pagination does not create a duplicate on a later page', async () =
   }, policy);
   assert.equal(result.created, false); assert.equal(writes, 0);
 });
+test('console INR25 budget with INR100 fourth warning prevents duplicate creation', async () => {
+  const item = { ...budgetDefinition(policy), displayName: 'Firebase Project noveliaa', name: account + '/budgets/test',
+    amount: { specifiedAmount: { currencyCode: 'INR', units: '25' } },
+    thresholdRules: [0.5, 0.9, 1, 4].map(thresholdPercent => ({ thresholdPercent, spendBasis: 'CURRENT_SPEND' })) };
+  const api = budgetApi([item]); const result = await ensureBudget(api.request, policy);
+  assert.equal(result.created, false); assert.equal(result.budgetBasis, 'INR 25'); assert.equal(api.writes.length, 0);
+});
 function artifactApi(repository) {
   const writes = []; let repo = structuredClone(repository);
   const request = async (url, init = {}) => {

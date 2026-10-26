@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-26T09:06:43.844Z",
+  "capturedAt": "2026-10-26T09:19:54.442Z",
   "plan": "Blaze",
   "scope": "Full private ChatGPT plugin: three skills, scoped OAuth/DCR, six MCP tools, author consent/review/revoke/export. MCP never modifies source writing.",
   "dataset": "Synthetic AI-origin unverified fixtures, loopback UI interception and actual Firebase Auth/Firestore emulators. No production manuscript seeded, reset or read.",
@@ -66,8 +66,8 @@
     },
     {
       "path": "deployment/cost-policy.json",
-      "bytes": 462,
-      "sha256": "677dcedab00f73e340e6368cb18b05a1b6cf312d717e694ec6ad983fe1f493ac"
+      "bytes": 604,
+      "sha256": "c6ba3b9a523924270665a1d0dedfb6c1f19a6a12d578569ebf628ff1e89458ff"
     },
     {
       "path": "deployment/firebase-binding.json",
@@ -86,8 +86,8 @@
     },
     {
       "path": "docs/DEPLOYMENT.md",
-      "bytes": 19659,
-      "sha256": "aa411464fae7db4ddbb1a917c866871b038ddb7fe502e9763a78fa64050018c8"
+      "bytes": 19591,
+      "sha256": "f3ba1c425474caf414ee98229a202040e7b44eef65357ed08bd028250acc65e5"
     },
     {
       "path": "docs/SYNC.md",
@@ -176,8 +176,8 @@
     },
     {
       "path": "functions/scripts/configure-cost-controls.mjs",
-      "bytes": 7852,
-      "sha256": "8383bf62f2fa6a932cfa43e1201ea7c1084a0a8d7c9ef68b6eae0c5f98e693bb"
+      "bytes": 8843,
+      "sha256": "802549374e1317aec14af7f4262d981138f05138489aacd90ec6ed86f3be0d6d"
     },
     {
       "path": "functions/scripts/deploy-spark-rules.mjs",
@@ -191,8 +191,8 @@
     },
     {
       "path": "functions/scripts/inspect-firebase.mjs",
-      "bytes": 2562,
-      "sha256": "acd75036a39b9bffe12b800dc329d66134c846fd58e4a8904e041a7c71950a43"
+      "bytes": 2593,
+      "sha256": "3f6508f7154d27c6ecd0ea78de68f840b53a4923122ab8686f86391023d8df47"
     },
     {
       "path": "functions/scripts/prepare-release.mjs",
@@ -281,8 +281,8 @@
     },
     {
       "path": "functions/test/cost-controls.test.mjs",
-      "bytes": 6225,
-      "sha256": "40a5c8ff6ef16081aa24c69633a3920926068bb21c82b4b507b3fb7f0fb2c914"
+      "bytes": 6844,
+      "sha256": "9f2dcf6f9ca3882075b2764b555517befcdfa3225642bb5b436798194f8057e0"
     },
     {
       "path": "functions/test/firebase-emulator.mjs",
@@ -830,7 +830,7 @@
       "sha256": "effcddf543e8d041dcd79f28af05a164309221de1cec9e61f62aafd1ceadb638"
     }
   ],
-  "sourceDigest": "909797a697602db7a43fb9be082155c82fc5382037c06a071665981cc67c6a72",
+  "sourceDigest": "728d64deff92fdc8ec6de2ce669459b2e9db84b617b9691d13478cd6f04e3891",
   "renders": [
     {
       "path": "docs/evidence/plugin-2026-10-25/checks/conflict-blank-history-1440.png",

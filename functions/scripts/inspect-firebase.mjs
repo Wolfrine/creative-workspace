@@ -9,7 +9,7 @@ const get = async (url, init = {}) => {
   return response.ok ? data : { status: response.status, error: data.error?.status, message: data.error?.message };
 };
 const requested = ['serviceusage.services.get', 'firebasehosting.sites.update', 'firebaserules.rulesets.create', 'firebaserules.releases.update'];
-const requiredServices = ['cloudfunctions.googleapis.com', 'cloudbuild.googleapis.com', 'artifactregistry.googleapis.com', 'run.googleapis.com', 'eventarc.googleapis.com', 'pubsub.googleapis.com', 'storage.googleapis.com'];
+const requiredServices = ['cloudfunctions.googleapis.com', 'cloudbuild.googleapis.com', 'artifactregistry.googleapis.com', 'run.googleapis.com', 'eventarc.googleapis.com', 'pubsub.googleapis.com', 'storage.googleapis.com', 'cloudbilling.googleapis.com'];
 const services = await Promise.all(requiredServices.map(async service => {
   const result = await get(`https://serviceusage.googleapis.com/v1/projects/278082781314/services/${service}`);
   return { service, state: result.state ?? 'UNKNOWN', ...(result.status ? { status: result.status, error: result.error } : {}) };

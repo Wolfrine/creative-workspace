@@ -25,15 +25,16 @@ export function assertBudget(actual, expected) {
   for (const field of ['services', 'subaccounts', 'resourceAncestors', 'creditTypes']) assert.equal(actual.budgetFilter?.[field]?.length ?? 0, 0, 'Unexpected budget restriction: ' + field);
   assert.equal(Object.keys(actual.budgetFilter?.labels ?? {}).length, 0);
   assert.equal(actual.amount?.specifiedAmount?.currencyCode, 'INR');
-  assert.equal(actual.amount?.specifiedAmount?.units, '100'); assert.equal(actual.amount?.specifiedAmount?.nanos ?? 0, 0);
-  assert.deepEqual(actual.thresholdRules, expected.thresholdRules);
+  assert.equal(actual.amount?.specifiedAmount?.units, expected.amount.specifiedAmount.units); assert.equal(actual.amount?.specifiedAmount?.nanos ?? 0, 0);
+  const rules = values => [...values].sort((a, b) => a.thresholdPercent - b.thresholdPercent);
+  assert.deepEqual(rules(actual.thresholdRules ?? []), rules(expected.thresholdRules));
   assert.equal(actual.notificationsRule?.disableDefaultIamRecipients ?? false, false);
   assert.equal(actual.notificationsRule?.enableProjectLevelRecipients, true);
   assert.equal(actual.spendCap, undefined, 'A warning must never become a spend cap.');
 }
 
 export async function ensureBudget(request, policy) {
-  const desired = budgetDefinition(policy);
+  let desired = budgetDefinition(policy);
   const billing = await request('https://cloudbilling.googleapis.com/v1/projects/noveliaa/billingInfo');
   assert.equal(billing.billingEnabled, true, 'Billing is not enabled; no billing link will be changed.');
   assert.match(billing.billingAccountName ?? '', /^billingAccounts\/[A-Z0-9-]+$/);
@@ -42,18 +43,27 @@ export async function ensureBudget(request, policy) {
   let pageToken;
   do {
     const page = await request(base + '?pageSize=100' + (pageToken ? '&pageToken=' + encodeURIComponent(pageToken) : ''));
-    matches.push(...(page.budgets ?? []).filter(b => b.displayName === desired.displayName));
+    matches.push(...(page.budgets ?? []).filter(b => b.displayName === desired.displayName || b.displayName === policy.compatibleExistingBudget));
     pageToken = page.nextPageToken;
   } while (pageToken);
   assert(matches.length <= 1, 'Duplicate warning names require owner review; no budgets changed.');
   let actual = matches[0], created = false;
+  if (actual?.displayName === policy.compatibleExistingBudget) {
+    // Reuse the console's fourth warning on the original budget. Never create
+    // another budget just because its INR25 basis differs from the INR100 alert.
+    assert.equal(policy.compatibleExistingBudget, 'Firebase Project noveliaa');
+    assert.equal(policy.existingBudgetBaseUnits, '25'); assert.deepEqual(policy.existingBudgetThresholds, [0.5, 0.9, 1, 4]);
+    desired = { ...desired, displayName: policy.compatibleExistingBudget,
+      amount: { specifiedAmount: { currencyCode: 'INR', units: '25', nanos: 0 } },
+      thresholdRules: policy.existingBudgetThresholds.map(thresholdPercent => ({ thresholdPercent, spendBasis: 'CURRENT_SPEND' })) };
+  }
   if (actual) assertBudget(actual, desired); // Never overwrite an existing, different budget.
   else { actual = await request(base, { method: 'POST', body: JSON.stringify(desired) }); created = true; }
   assert(actual.name?.startsWith(billing.billingAccountName + '/budgets/'));
   assert.match(actual.name.split('/').at(-1), /^[A-Za-z0-9_-]+$/);
   const verified = await request('https://billingbudgets.googleapis.com/v1/' + actual.name);
   assertBudget(verified, desired);
-  return { status: 'verified', created, project: policy.projectId, monthlyAmount: 'INR 100', scope: 'this project, all services, after credits', threshold: '100% actual spend', recipients: 'default billing recipients and project owners', spendingCap: false };
+  return { status: 'verified', created, project: policy.projectId, monthlyWarning: 'INR 100', budgetBasis: 'INR ' + desired.amount.specifiedAmount.units, scope: 'this project, all services, after credits', threshold: 'actual spend', recipients: 'default billing recipients and project owners', spendingCap: false };
 }
 
 export async function ensureArtifactCleanup(request, policy, allowMissing = false) {
@@ -113,7 +123,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     const policy = JSON.parse(await readFile('deployment/cost-policy.json', 'utf8'));
     await reportCost('plugin-budget', await ensureBudget(await authenticatedRequest(), policy));
   } catch (error) {
-    await reportCost('plugin-budget', { status: 'unavailable', message: error.message, ...(error.reason ? { reason: error.reason } : {}), configured: false });
+    await reportCost('plugin-budget', { status: 'unavailable', message: error.message, ...(error.reason ? { reason: error.reason } : {}), configurationVerified: false });
     process.exitCode = 1;
   }
 }
