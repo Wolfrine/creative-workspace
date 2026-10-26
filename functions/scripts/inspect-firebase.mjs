@@ -14,7 +14,7 @@ const services = await Promise.all(requiredServices.map(async service => {
   const result = await get(`https://serviceusage.googleapis.com/v1/projects/278082781314/services/${service}`);
   return { service, state: result.state ?? 'UNKNOWN', ...(result.status ? { status: result.status, error: result.error } : {}) };
 }));
-const [firebase, apps, hosting, database, google, auth, permissions, billing, buildAccount, runtimeActAs, projectPolicy] = await Promise.all([
+const [firebase, apps, hosting, database, google, auth, permissions, billing, buildAccount, runtimeActAs, appspotActAs, projectPolicy] = await Promise.all([
   get(`https://firebase.googleapis.com/v1beta1/projects/${project}`),
   get(`https://firebase.googleapis.com/v1beta1/projects/${project}/webApps`),
   get(`https://firebasehosting.googleapis.com/v1beta1/projects/${project}/sites/noveliaa`),
@@ -25,9 +25,11 @@ const [firebase, apps, hosting, database, google, auth, permissions, billing, bu
   get(`https://cloudbilling.googleapis.com/v1/projects/${project}/billingInfo`).then(result => ({ billingEnabled: result.billingEnabled, ...(result.status ? { status: result.status, error: result.error, message: result.message } : {}) })),
   get(`https://cloudbuild.googleapis.com/v1/projects/${project}/locations/asia-south1/defaultServiceAccount`),
   get(`https://iam.googleapis.com/v1/projects/${project}/serviceAccounts/278082781314-compute@developer.gserviceaccount.com:testIamPermissions`, { method: 'POST', body: JSON.stringify({ permissions: ['iam.serviceAccounts.actAs'] }) }),
+  get(`https://iam.googleapis.com/v1/projects/${project}/serviceAccounts/${project}@appspot.gserviceaccount.com:testIamPermissions`, { method: 'POST', body: JSON.stringify({ permissions: ['iam.serviceAccounts.actAs'] }) }),
   get(`https://cloudresourcemanager.googleapis.com/v1/projects/${project}:getIamPolicy`, { method: 'POST', body: JSON.stringify({ options: { requestedPolicyVersion: 3 } }) }),
 ]);
 const buildIdentity = buildAccount.serviceAccountEmail?.split('/').at(-1);
 const runtimeIdentity = '278082781314-compute@developer.gserviceaccount.com';
-const selectedBindings = (projectPolicy.bindings ?? []).filter(binding => (binding.members ?? []).some(member => member === 'serviceAccount:' + runtimeIdentity || member === 'serviceAccount:' + buildIdentity)).map(binding => ({ role: binding.role, identities: binding.members.filter(member => member === 'serviceAccount:' + runtimeIdentity || member === 'serviceAccount:' + buildIdentity), conditional: !!binding.condition }));
-console.log(JSON.stringify({ checkedAt: new Date().toISOString(), planConstraint: 'Approved Blaze plugin; read only, no billing/IAM/API changes', services, disabledServices: services.filter(item => item.state === 'DISABLED').map(item => item.service), firebase, apps, hosting, database, google, auth, permissions, missingProjectPermissions: permissions.permissions ? requested.filter(permission => !permissions.permissions.includes(permission)) : null, billing, buildAccount, runtimeActAs, selectedBindings, policyReadStatus: projectPolicy.status ?? 200, limits: 'testIamPermissions covers this caller only; service-account roles and resource-specific grants need actual deployment/runtime verification.' }, null, 2));
+const identities = [runtimeIdentity, buildIdentity, `${project}@appspot.gserviceaccount.com`].filter(Boolean).map(email => 'serviceAccount:' + email);
+const selectedBindings = (projectPolicy.bindings ?? []).filter(binding => (binding.members ?? []).some(member => identities.includes(member))).map(binding => ({ role: binding.role, identities: binding.members.filter(member => identities.includes(member)), conditional: !!binding.condition }));
+console.log(JSON.stringify({ checkedAt: new Date().toISOString(), planConstraint: 'Approved Blaze plugin; read only, no billing/IAM/API changes', services, disabledServices: services.filter(item => item.state === 'DISABLED').map(item => item.service), firebase, apps, hosting, database, google, auth, permissions, missingProjectPermissions: permissions.permissions ? requested.filter(permission => !permissions.permissions.includes(permission)) : null, billing, buildAccount, runtimeActAs, appspotActAs, selectedBindings, policyReadStatus: projectPolicy.status ?? 200, limits: 'testIamPermissions covers this caller only; service-account roles and resource-specific grants need actual deployment/runtime verification.' }, null, 2));
