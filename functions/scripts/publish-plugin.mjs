@@ -26,7 +26,8 @@ if (result.code !== 0) process.exitCode = result.code || 1;
 else {
   await reportCost('plugin-artifacts', await ensureArtifactCleanup(request, policy));
   await reportCost('plugin-function-limits', await verifyFunctionLimits(request));
-  // First pinned Hosting deployment otherwise inserts default:functionId when
-  // the named-codebase Function does not exist. Its actual codebase is now known.
+  // Standard unpinned rewrites use the verified active Function. Avoid pinTag:
+  // it rebuilds the Function again and replaces Cloud Run traffic configuration.
+  // Hosting rollback therefore requires a separate matching Function release.
   process.exitCode = (await publish('hosting')).code || 0;
 }

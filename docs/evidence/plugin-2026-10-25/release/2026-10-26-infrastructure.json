@@ -44,7 +44,10 @@
     "resource": "projects/noveliaa/serviceAccounts/278082781314-compute@developer.gserviceaccount.com",
     "role": "roles/iam.serviceAccountUser",
     "scope": "This service account only, no project-wide grant",
-    "status": "Prepared in owner console, Save not clicked; action-time confirmation requested"
+    "status": "Saved through owner Console after explicit action-time approval on26October; row readback shows Service Account User with No inheritance on this resource only",
+    "approval": "Yes — save it and finish deployment",
+    "consoleResult": "Policy updated. It may take a few minutes for these changes to become active.",
+    "releaseRetry": "https://github.com/Wolfrine/creative-workspace/actions/runs/40299803139/attempts/3"
   },
   "allManagedIdentities": {
     "run": "https://github.com/Wolfrine/creative-workspace/actions/runs/40302254258",
@@ -73,5 +76,5 @@
     "tests": "Client, backend, Rules, evaluations, real OAuth/MCP HTTP integration, authenticated cloud and desktop/mobile browser suites passed again before publication",
     "runtimeSourceDifferenceFromCurrentMain": "None in src, public, functions/src, plugin, Firebase config, Rules or Functions package/lockfile"
   },
-  "deferred": "The exact resource-scoped runtime grant is prepared but unsaved, with an action-time security confirmation request pending. Final Function/Hosting publication, actual runtime and hosted-file checks and human OAuth/universe consent remain separate. No production manuscript was read, seeded, reset or changed."
+  "deferred": "The exact resource-scoped runtime grant is now saved with explicit approval; publication retry is in progress. Final Function/Hosting publication, actual runtime and hosted-file checks and human OAuth/universe consent remain separate. ChatGPT Personal directory shows the ZIP-imported MCP package as Desktop only; cloud access requires a registered App dependency while preserving its three skills. No production manuscript was read, seeded, reset or changed."
 }

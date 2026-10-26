@@ -23,72 +23,63 @@
         "source": "/api/oauth/**",
         "function": {
           "functionId": "noveliaaMcp",
-          "region": "asia-south1",
-          "pinTag": true
+          "region": "asia-south1"
         }
       },
       {
         "source": "/mcp",
         "function": {
           "functionId": "noveliaaMcp",
-          "region": "asia-south1",
-          "pinTag": true
+          "region": "asia-south1"
         }
       },
       {
         "source": "/.well-known/**",
         "function": {
           "functionId": "noveliaaMcp",
-          "region": "asia-south1",
-          "pinTag": true
+          "region": "asia-south1"
         }
       },
       {
         "source": "/authorize",
         "function": {
           "functionId": "noveliaaMcp",
-          "region": "asia-south1",
-          "pinTag": true
+          "region": "asia-south1"
         }
       },
       {
         "source": "/token",
         "function": {
           "functionId": "noveliaaMcp",
-          "region": "asia-south1",
-          "pinTag": true
+          "region": "asia-south1"
         }
       },
       {
         "source": "/register",
         "function": {
           "functionId": "noveliaaMcp",
-          "region": "asia-south1",
-          "pinTag": true
+          "region": "asia-south1"
         }
       },
       {
         "source": "/revoke",
         "function": {
           "functionId": "noveliaaMcp",
-          "region": "asia-south1",
-          "pinTag": true
+          "region": "asia-south1"
         }
       },
       {
         "source": "/api/integrations",
         "function": {
           "functionId": "noveliaaMcp",
-          "region": "asia-south1",
-          "pinTag": true
+          "region": "asia-south1"
         }
       },
       {
         "source": "/api/integrations/**",
         "function": {
           "functionId": "noveliaaMcp",
-          "region": "asia-south1",
-          "pinTag": true
+          "region": "asia-south1"
         }
       },
       {

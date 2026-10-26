@@ -26,12 +26,18 @@ warning exists: inspect its run result.
 The owner console already contained an INR25 project-only budget. The approved
 INR100 actual-spend warning was added as its fourth rule (400%), preserving the
 earlier INR12.50/22.50/25 rules and enabling project-owner emails. No duplicate
-budget or spend cap was created. The Billing API is disabled; the console save
-and readback, rather than the unsuccessful API Action, prove this setting.
+budget or spend cap was created. Cloud Billing is now enabled; the optional
+Budgets API remains disabled. Console save/readback proves this setting without
+enabling another API or duplicating the existing budget.
 
 The existing release Action still runs all required checks and the standard
-Firebase deployment. It publishes the named-codebase Function before pinned
-Hosting, avoiding Firebase CLI's first-release default-codebase filter mismatch.
+Firebase deployment. It publishes and verifies the named-codebase Function before
+Hosting. Rewrites use Firebase's standard unpinned Function destination. The first
+Function creation succeeded after the explicitly approved runtime-account-only
+Service Account User grant. Optional `pinTag` then failed while replacing Cloud
+Run traffic and redundantly rebuilt the Function; it has been removed rather than
+requesting broader access. A Hosting rollback now needs a separate matching
+Function release; there is no claim of an atomic backend/frontend rollback.
 The wrapper verifies one-day cleanup of the `asia-south1/gcf-artifacts` build-image
 repository before and after Function publication, preserving other policies. On
 the first build only, Firebase can publish Functions then stop for its cleanup
