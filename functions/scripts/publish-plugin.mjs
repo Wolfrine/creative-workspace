@@ -6,9 +6,9 @@ import { authenticatedRequest, ensureArtifactCleanup, reportCost, verifyFunction
 const policy = JSON.parse(await readFile('deployment/cost-policy.json', 'utf8'));
 const request = await authenticatedRequest();
 await reportCost('plugin-artifacts', await ensureArtifactCleanup(request, policy, true));
-async function publish() {
+async function publish(only = 'functions:noveliaa-plugin') {
   return new Promise((resolve, reject) => {
-    const child = spawn(process.execPath, ['node_modules/firebase-tools/lib/bin/firebase.js', 'deploy', '--project', 'noveliaa', '--only', 'functions:noveliaa-plugin,hosting', '--non-interactive'], { stdio: ['ignore', 'pipe', 'pipe'] });
+    const child = spawn(process.execPath, ['node_modules/firebase-tools/lib/bin/firebase.js', 'deploy', '--project', 'noveliaa', '--only', only, '--non-interactive'], { stdio: ['ignore', 'pipe', 'pipe'] });
     let tail = '';
     for (const [stream, target] of [[child.stdout, process.stdout], [child.stderr, process.stderr]]) stream.on('data', bytes => { target.write(bytes); tail = (tail + bytes).slice(-32768); });
     child.on('error', reject); child.on('close', code => resolve({ code, tail }));
@@ -26,4 +26,7 @@ if (result.code !== 0) process.exitCode = result.code || 1;
 else {
   await reportCost('plugin-artifacts', await ensureArtifactCleanup(request, policy));
   await reportCost('plugin-function-limits', await verifyFunctionLimits(request));
+  // First pinned Hosting deployment otherwise inserts default:functionId when
+  // the named-codebase Function does not exist. Its actual codebase is now known.
+  process.exitCode = (await publish('hosting')).code || 0;
 }

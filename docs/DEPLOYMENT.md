@@ -23,8 +23,17 @@ or drift, never converts currency, and reports actual API/access failures withou
 changing IAM, APIs or billing links. A configured script is not proof that the
 warning exists: inspect its run result.
 
+The owner console already contained an INR25 project-only budget. The approved
+INR100 actual-spend warning was added as its fourth rule (400%), preserving the
+earlier INR12.50/22.50/25 rules and enabling project-owner emails. No duplicate
+budget or spend cap was created. The Billing API is disabled; the console save
+and readback, rather than the unsuccessful API Action, prove this setting.
+
 The existing release Action still runs all required checks and the standard
 Firebase deployment. Its publication wrapper verifies one-day cleanup of the
+build-image repository after publishing the Function, before pinned Hosting.
+Publishing Functions first avoids Firebase CLI's first-release default-codebase
+filter mismatch. Its publication wrapper verifies one-day cleanup of the
 `asia-south1/gcf-artifacts` build-image repository, preserving other policies. On
 the first build only, Firebase can publish Functions then stop for its cleanup
 prompt; the wrapper sets and reads back the approved policy before retrying once.
