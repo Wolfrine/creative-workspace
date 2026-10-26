@@ -1,0 +1,40 @@
+{
+  "observedOn": "2026-10-26",
+  "project": "noveliaa",
+  "source": "Signed-in owner Chrome, Google Cloud Billing Budgets and alerts",
+  "apiAttempt": {
+    "run": "https://github.com/Wolfrine/creative-workspace/actions/runs/40289764106",
+    "checkedAt": "2026-10-26T08:04:39.069Z",
+    "status": "unavailable",
+    "host": "cloudbilling.googleapis.com",
+    "httpStatus": 403,
+    "reason": "SERVICE_DISABLED",
+    "apiOrIamChanges": false
+  },
+  "actualConsoleResult": {
+    "status": "saved-and-read-back",
+    "saveConfirmation": "Firebase Project noveliaa has been saved",
+    "budgetName": "Firebase Project noveliaa",
+    "period": "Monthly",
+    "appliesTo": "Project Noveliaa",
+    "services": "All services",
+    "currency": "INR",
+    "existingBudgetBasis": 25,
+    "actualSpendThresholdPercentages": [50, 90, 100, 400],
+    "actualSpendWarningAmounts": [12.5, 22.5, 25, 100],
+    "billingAdminAndUserEmails": true,
+    "projectOwnerEmails": true,
+    "spendCap": false,
+    "duplicateBudgetCreated": false,
+    "creditsIncluded": true,
+    "displayedCurrentSpend": "INR 0.00",
+    "currentSpendLimit": "Console value at observation; delayed billing data, not a guarantee of final charges"
+  },
+  "actions": [
+    "Preserved the original project budget and three earlier warnings",
+    "Added the approved INR100 actual-spend warning as the fourth rule",
+    "Enabled project-owner notification on the same budget",
+    "Discarded the unsaved new-budget draft"
+  ],
+  "limits": "The API Action did not configure the warning. Actual saved console settings are authoritative. Do not create a second warning budget merely to make the unavailable API Action green. No key, billing-link, API, IAM, manuscript, history or save-timing change."
+}

@@ -1,0 +1,42 @@
+
+> test
+> node --test test/*.test.mjs
+
+✔ project-only INR100 actual-spend alert, not a cap (5.8045ms)
+✔ first budget creates once; later execution verifies without writing (4.3972ms)
+✔ does not modify other budgets (1.6424ms)
+✔ duplicate name or existing drift stops without writes (4.903ms)
+✔ no currency conversion, billing link or permission changes (1.6967ms)
+✔ budget create response requires readback to report verified (1.3819ms)
+✔ budget pagination does not create a duplicate on a later page (1.7071ms)
+✔ console INR25 budget with INR100 fourth warning prevents duplicate creation (1.3396ms)
+✔ artifact cleanup preserves other policies and labels; repeat has no write (1.2392ms)
+✔ missing artifact repository is pending before deployment, fails final verification (0.688ms)
+✔ artifact write must be read back and dry-run must be off (0.8151ms)
+✔ actual function must be active with exact approved instance/concurrency limits (1.1558ms)
+﹣ private plugin OAuth, scoped HTTP tools, immutable writeback and owner review (1.1066ms) # SKIP
+✔ concurrent refresh replay revokes the family: both-before-consume (7.4245ms)
+✔ concurrent refresh replay revokes the family: winner-before-second-source-read (2.5868ms)
+✔ authorization fails closed for unauthenticated, other account and unset owner (2.7631ms)
+✔ every callable service derives actor from verified uid (5.4585ms)
+✔ response-loss retry is exactly idempotent; changed payload with same ID conflicts (5.9085ms)
+✔ two concurrent devices retain both branches and promote only one from the same base (5.6668ms)
+✔ new document race and reverse reconnect preserve both variants (2.4982ms)
+✔ missing, mismatched and changed blobs never finalize a revision (2.0136ms)
+✔ original source bytes and metadata are immutable and retryable (5.2005ms)
+✔ cross-universe source, collection, parent and link references are refused (4.5993ms)
+✔ identity registration supports mutually linked first revisions without creating a head or writing text (2.6141ms)
+✔ writing identities cannot be forged, cross universes, carry placeholder text or bypass authorization (6.2671ms)
+✔ accepts Tiptap 3.32 link attributes including nullable title without stripping any field (3.8311ms)
+✔ unknown editor nodes, unknown fields, unsafe links and invalid text projections fail without stripping (4.4784ms)
+✔ restoration retains all history and cannot relabel source provenance (2.8456ms)
+✔ catalog cannot remove or move existing collections/universes (1.0785ms)
+✔ backup verifies blobs, revision graph and head inventory; interrupted/corrupt backup fails (6.3507ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 2085.3271
