@@ -12,6 +12,7 @@ const managedServices = {
   'cloudbuild.googleapis.com': 'service-278082781314@gcp-sa-cloudbuild.iam.gserviceaccount.com',
   'run.googleapis.com': 'service-278082781314@serverless-robot-prod.iam.gserviceaccount.com',
 };
+const generatedIdentities = {};
 for (const [service, expectedIdentity] of Object.entries(managedServices)) {
   let operation = await request(`https://serviceusage.googleapis.com/v1beta1/projects/278082781314/services/${service}:generateServiceIdentity`, { method: 'POST', body: '{}' });
   for (let attempt = 0; !operation.done && attempt < 15; attempt++) {
@@ -21,14 +22,18 @@ for (const [service, expectedIdentity] of Object.entries(managedServices)) {
   }
   assert(operation.done, 'Service identity setup did not finish in the bounded wait: ' + service);
   assert(!operation.error, 'Service identity setup failed: ' + service + ' code ' + operation.error?.code);
-  assert.equal(operation.response?.email, expectedIdentity);
+  // Cloud Build's generation RPC returns its legacy build identity rather than
+  // the distinct gcp-sa-cloudbuild service agent. Verify both identities below.
+  const allowedIdentities = service === 'cloudbuild.googleapis.com' ? [expectedIdentity, '278082781314@cloudbuild.gserviceaccount.com'] : [expectedIdentity];
+  assert(allowedIdentities.includes(operation.response?.email), 'Unexpected managed identity: ' + service);
+  generatedIdentities[service] = operation.response.email;
 }
 const [projectPolicy, runtimeActAs, repository] = await Promise.all([
   request('https://cloudresourcemanager.googleapis.com/v1/projects/noveliaa:getIamPolicy', { method: 'POST', body: '{}' }),
   request('https://iam.googleapis.com/v1/projects/noveliaa/serviceAccounts/278082781314-compute@developer.gserviceaccount.com:testIamPermissions', { method: 'POST', body: JSON.stringify({ permissions: ['iam.serviceAccounts.actAs'] }) }),
   request('https://artifactregistry.googleapis.com/v1/projects/noveliaa/locations/asia-south1/repositories/gcf-artifacts'),
 ]);
-await reportCost('plugin-bootstrap', { status: 'identity-ready', deployer, managedServices,
+await reportCost('plugin-bootstrap', { status: 'identity-ready', deployer, managedServices, generatedIdentities,
   serviceAgentRoles: Object.fromEntries(Object.entries(managedServices).map(([service, identity]) => [service, (projectPolicy.bindings ?? []).filter(b => b.members?.includes('serviceAccount:' + identity)).map(b => b.role)])),
   runtimeActAs: runtimeActAs.permissions?.includes('iam.serviceAccounts.actAs') ?? false,
   artifactPolicy: repository.cleanupPolicies?.['firebase-functions-cleanup'], artifactDryRun: repository.cleanupPolicyDryRun ?? false,
