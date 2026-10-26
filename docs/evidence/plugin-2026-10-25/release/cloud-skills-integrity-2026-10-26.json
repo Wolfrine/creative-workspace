@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-26T11:39:44.682Z",
+  "unchangedSkills": [
+    {
+      "path": "skills/collaborate-on-writing/SKILL.md",
+      "sha256": "87b5dca046e85ccbdd1d1effcaec2a44d17b9bd2098a3cd6b5023e1194e8ec99"
+    },
+    {
+      "path": "skills/explore-writing/SKILL.md",
+      "sha256": "27e09c0ee12f627723565960b2474171e25124f0c78c0810d4a6c24190e05bfb"
+    },
+    {
+      "path": "skills/story-research/SKILL.md",
+      "sha256": "90c3c95cf627baa08b66f678bab3c363c61f743346b4dd0ae53e6687b8b1db4a"
+    }
+  ],
+  "release": "pluginrel_6adf3b42cef88191831d69f9b3f8c329"
+}

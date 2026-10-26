@@ -22,6 +22,14 @@ records, never edits to the original proposal or source. This release supports
 review/dismiss and export; applying a proposal to writing is a deliberate manual
 author action. No automatic replacement or background AI processing.
 
+The private full plugin uses a registered ChatGPT App dependency in `.app.json`,
+retaining its existing plugin ID, skills, prompts and privacy. A ZIP containing raw
+`mcp.json` declarations is Desktop only, including HTTPS servers; the registered
+App is needed for ChatGPT web/mobile. OAuth is configured through ChatGPT's Add
+custom MCP server flow: DCR, S256, base read scope, default read/proposal scopes.
+No universes are preselected and proposal permission remains optional at consent.
+See [official packaging guidance](https://learn.chatgpt.com/docs/enterprise/plugin-management#desktop-only-plugins).
+
 ## Author UI / accepted Living Atlas direction
 
 Use standalone `/api/integrations/connect?request=...` consent and

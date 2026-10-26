@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-26T11:39:44.155Z",
+  "pluginId": "plugins_6addf6b9d5848191b637c8289684e215",
+  "version": "0.1.1",
+  "releaseId": "pluginrel_6adf3b42cef88191831d69f9b3f8c329",
+  "scope": "USER",
+  "discoverability": "PRIVATE",
+  "appId": "asdk_app_6adf3ada84a88191af04f9f933b42804",
+  "connectionPluginId": "plugin_asdk_app_6adf3ada84a88191af04f9f933b42804",
+  "pluginUrl": "https://chatgpt.com/plugins/plugins_6addf6b9d5848191b637c8289684e215",
+  "files": [
+    ".app.json",
+    ".codex-plugin/plugin.json",
+    "assets/noveliaa.svg",
+    "plugin.json",
+    "skills/collaborate-on-writing/SKILL.md",
+    "skills/explore-writing/SKILL.md",
+    "skills/story-research/SKILL.md"
+  ],
+  "missing": [
+    "mcp.json",
+    ".mcp.json"
+  ],
+  "nextOffset": null,
+  "readback": "Root and compatibility manifests reference the registered required App. Both raw MCP declarations are absent. Three skills and asset retained.",
+  "browser": "Signed-in owner Chrome shows Try in chat, Apps1 with Connect, Skills3, version0.1.1; no Desktop-only link.",
+  "oauth": "Pending author Google sign-in and selected-universe consent. Registered App is not yet installed/authenticated; no authenticated ChatGPT tool claim.",
+  "server": "https://noveliaa.web.app/mcp",
+  "auth": "OAuth DCR, S256, base noveliaa:read; default read plus optional propose. No universes preselected.",
+  "archiveSha256": "5a4ac95a2174163123b5df7eed263ef41607e29c1fc23176596b497946d98ff5",
+  "source": "https://learn.chatgpt.com/docs/enterprise/plugin-management#desktop-only-plugins"
+}

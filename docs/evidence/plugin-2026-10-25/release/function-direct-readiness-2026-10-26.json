@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-26T11:29:50.731Z",
+  "origin": "https://noveliaamcp-a32ckljmta-el.a.run.app",
+  "health": {
+    "service": "noveliaa-plugin",
+    "version": "0.1.0",
+    "resource": "https://noveliaa.web.app/mcp"
+  },
+  "httpStatus": 400,
+  "readiness": {
+    "error": "invalid_client",
+    "error_description": "Invalid client_id"
+  },
+  "scope": "Direct Function transport and unknown-client Firestore lookup only. No production writing read, grant created or record written. Canonical Hosting checks remain required."
+}

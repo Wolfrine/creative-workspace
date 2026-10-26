@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-26T11:26:39.896Z",
+  "capturedAt": "2026-10-26T11:40:11.263Z",
   "plan": "Blaze",
   "scope": "Full private ChatGPT plugin: three skills, scoped OAuth/DCR, six MCP tools, author consent/review/revoke/export. MCP never modifies source writing.",
   "dataset": "Synthetic AI-origin unverified fixtures, loopback UI interception and actual Firebase Auth/Firestore emulators. No production manuscript seeded, reset or read.",
@@ -91,8 +91,8 @@
     },
     {
       "path": "docs/DEPLOYMENT.md",
-      "bytes": 20051,
-      "sha256": "21cf3dabb78107d31a73a87aea0f85138cf94c227e9fbda6d8fb24760fa3d63b"
+      "bytes": 21242,
+      "sha256": "b1a4e6f6695cb555cdc9f9494dab94f06797577856680cc45b71526c0ce4720f"
     },
     {
       "path": "docs/SYNC.md",
@@ -106,8 +106,8 @@
     },
     {
       "path": "docs/design/PLUGIN_CONNECTION.md",
-      "bytes": 5184,
-      "sha256": "6706341b54aa130ea2340272df057264714de0b049210751955148492bb75b8c"
+      "bytes": 5792,
+      "sha256": "77eb3782f029354a703af08155d3b37ffe6e688f345b5932d01b0bb8d233833e"
     },
     {
       "path": "docs/design/READER_LIBRARY_UX.md",
@@ -345,19 +345,19 @@
       "sha256": "ae55b77f256186cee4d1140f76915528975365928ca5abfa0f9fef2202b17d5d"
     },
     {
+      "path": "plugin/noveliaa/.app.json",
+      "bytes": 124,
+      "sha256": "b770a862f7eab6d9a68922a79b941b8cfc46bf0d747a423348696c577c373f51"
+    },
+    {
       "path": "plugin/noveliaa/assets/noveliaa.svg",
       "bytes": 302,
       "sha256": "5ef276685dd0a12eb853fa8fcca0aa9d3c075a3d6f027ce120e04b35748e2a64"
     },
     {
-      "path": "plugin/noveliaa/mcp.json",
-      "bytes": 478,
-      "sha256": "db341ed8367cbb2232dfe6f0cc1fefd8f0ca37eabba0a60cd22ac084fcd71ad9"
-    },
-    {
       "path": "plugin/noveliaa/plugin.json",
-      "bytes": 1496,
-      "sha256": "6517fa2e393853d8002e32eebf159bd72729225c7b85f15e1f1e453833c72dff"
+      "bytes": 1525,
+      "sha256": "6688aeb65ad88906c0651f4a8f569dfb382b83ae34afbcc1b4da94cd6c4f990a"
     },
     {
       "path": "plugin/noveliaa/skills/collaborate-on-writing/SKILL.md",
@@ -840,7 +840,7 @@
       "sha256": "effcddf543e8d041dcd79f28af05a164309221de1cec9e61f62aafd1ceadb638"
     }
   ],
-  "sourceDigest": "c567e7e0c7ca8a8470dfec89873f116013c9dc6e65308f13d4e51cd3a4fb4666",
+  "sourceDigest": "0594e48bc83ccb0c91713610dd71c27f7f51250d1204e950381641e52e14731c",
   "renders": [
     {
       "path": "docs/evidence/plugin-2026-10-25/checks/conflict-blank-history-1440.png",

@@ -7,6 +7,22 @@ only. Deployment is already authorized. On 25 October the owner moved to Blaze,
 enabled Functions and approved the full private plugin. The earlier Spark
 releases below remain historical evidence, not the current plan constraint.
 
+**26 October private plugin server: live.** Main commit `c50d852d02ae91a41df8f31c05b5bffad91a9964`
+passed [release40315115848](https://github.com/Wolfrine/creative-workspace/actions/runs/40315115848).
+Actions matched all24 hosted file hashes and the exact Web App; independent
+live checks verified OAuth/PKCE/DCR discovery, all six tools, an actual Firestore
+unknown-client lookup, anonymous challenges and invalid-bearer rejection. Runtime
+readback confirmed ACTIVE, min0/max2/concurrency1 and one-day build-image cleanup.
+The workspace-reset step was skipped; no production manuscript was read or changed.
+
+**Full plugin0.1.1:** the existing private plugin ID is preserved. Its registered
+cloud App replaces raw MCP declarations, which ChatGPT marks Desktop only even
+for HTTPS servers. Source is `plugin/noveliaa/.app.json` plus the same three skills.
+Signed-in ChatGPT now shows Try in chat, Apps1/Connect, Skills3 and version0.1.1.
+Author Google sign-in, universe selection and optional proposal consent remain a
+human step; creation/installation is not authenticated tool-execution evidence.
+See [cloud release proof](evidence/plugin-2026-10-25/release/cloud-plugin-2026-10-26.json).
+
 **Private plugin candidate:** `docs/evidence/plugin-2026-10-25/manifest.json`
 binds source, emulator/HTTP tests and desktop/mobile consent/review captures.
 Actions deploys only `noveliaaMcp` plus the same site/Rules; the old callable and
