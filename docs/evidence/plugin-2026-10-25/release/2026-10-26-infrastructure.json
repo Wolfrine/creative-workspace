@@ -1,0 +1,77 @@
+{
+  "project": "noveliaa",
+  "observedOn": "2026-10-26",
+  "releaseSource": "430cba19267c7f65fd72ca1ea0da2d0f4768da32",
+  "readOnlyAudit": {
+    "run": "https://github.com/Wolfrine/creative-workspace/actions/runs/40299803148",
+    "checkedAt": "2026-10-26T09:28:40Z",
+    "allEightRequiredApisEnabled": true,
+    "billingEnabled": true,
+    "buildAccount": "278082781314-compute@developer.gserviceaccount.com",
+    "runtimeProjectRole": "roles/editor",
+    "deployerRuntimeActAs": false,
+    "missingCallerProjectPermissions": ["serviceusage.services.use", "cloudbuild.builds.create", "artifactregistry.repositories.create", "artifactregistry.repositories.update", "artifactregistry.versions.delete"],
+    "interpretation": "Caller permission checks are not service-agent checks. The managed build/runtime account has its existing Editor role. Do not request every missing caller permission as a project-wide role."
+  },
+  "artifactRepository": {
+    "createdThrough": "Existing signed-in owner Chrome console",
+    "name": "projects/noveliaa/locations/asia-south1/repositories/gcf-artifacts",
+    "format": "DOCKER",
+    "mode": "STANDARD_REPOSITORY",
+    "encryption": "Google managed",
+    "vulnerabilityScanning": "disabled",
+    "cleanupPolicyDryRun": false,
+    "cleanupPolicy": {"id": "firebase-functions-cleanup", "action": "DELETE", "condition": {"tagState": "ANY", "olderThan": "86400s"}},
+    "writingAndHistoryTouched": false,
+    "apiReadbackRun": "https://github.com/Wolfrine/creative-workspace/actions/runs/40301157217",
+    "apiReadbackAt": "2026-10-26T09:39:07.559Z",
+    "apiReadbackStatus": "verified",
+    "apiChanged": false
+  },
+  "functionsServiceIdentity": {
+    "priorFailure": "Functions generateUploadUrl returned404 because its Google-managed gcf-admin-robot account was missing",
+    "recovery": "Standard serviceusage generateServiceIdentity through existing Actions identity",
+    "run": "https://github.com/Wolfrine/creative-workspace/actions/runs/40301157217",
+    "checkedAt": "2026-10-26T09:39:04.098Z",
+    "identity": "service-278082781314@gcf-admin-robot.iam.gserviceaccount.com",
+    "googleAssignedRole": "roles/cloudfunctions.standardServiceAgent",
+    "status": "identity-ready",
+    "keysCreated": false,
+    "arbitraryIamChanges": false
+  },
+  "preparedRuntimeGrant": {
+    "principal": "serviceAccount:firebase-adminsdk-fbsvc@noveliaa.iam.gserviceaccount.com",
+    "resource": "projects/noveliaa/serviceAccounts/278082781314-compute@developer.gserviceaccount.com",
+    "role": "roles/iam.serviceAccountUser",
+    "scope": "This service account only, no project-wide grant",
+    "status": "Prepared in owner console, Save not clicked; action-time confirmation requested"
+  },
+  "allManagedIdentities": {
+    "run": "https://github.com/Wolfrine/creative-workspace/actions/runs/40302254258",
+    "checkedAt": "2026-10-26T09:47:30.390Z",
+    "status": "identity-ready",
+    "cloudfunctions.googleapis.com": "roles/cloudfunctions.standardServiceAgent",
+    "cloudbuild.googleapis.com": "roles/cloudbuild.serviceAgent",
+    "run.googleapis.com": "roles/run.serviceAgent",
+    "cloudBuildGenerationResponse": "The generation RPC returns the distinct legacy build account; the backend service-agent role was verified separately",
+    "artifactReadbackStatus": "verified",
+    "artifactChangedByAction": false,
+    "apiEnablement": false,
+    "keysCreated": false,
+    "arbitraryIamChanges": false
+  },
+  "actualFunctionCreationCheck": {
+    "run": "https://github.com/Wolfrine/creative-workspace/actions/runs/40299803139/attempts/2",
+    "source": "430cba19267c7f65fd72ca1ea0da2d0f4768da32",
+    "checkedAt": "2026-10-26T09:54:23.340Z",
+    "httpStatus": 403,
+    "missingPermission": "iam.serviceaccounts.actAs",
+    "runtime": "278082781314-compute@developer.gserviceaccount.com",
+    "requiredResourceRole": "roles/iam.serviceAccountUser",
+    "result": "Actual create request confirms the earlier read-only audit; prepared grant is necessary",
+    "artifactCleanup": "Verified unchanged through Actions at09:54:03UTC before the create attempt",
+    "tests": "Client, backend, Rules, evaluations, real OAuth/MCP HTTP integration, authenticated cloud and desktop/mobile browser suites passed again before publication",
+    "runtimeSourceDifferenceFromCurrentMain": "None in src, public, functions/src, plugin, Firebase config, Rules or Functions package/lockfile"
+  },
+  "deferred": "The exact resource-scoped runtime grant is prepared but unsaved, with an action-time security confirmation request pending. Final Function/Hosting publication, actual runtime and hosted-file checks and human OAuth/universe consent remain separate. No production manuscript was read, seeded, reset or changed."
+}
