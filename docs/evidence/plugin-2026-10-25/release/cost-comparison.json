@@ -1,0 +1,122 @@
+{
+  "asOf": "2026-10-25",
+  "userConstraint": "Mostly free or low cost. No numeric monthly budget or approval to change billing limits supplied.",
+  "deployment": "Not retried during cost review.",
+  "comparisons": {
+    "pti": {
+      "commit": "bc7b44c301e8f071b7878f9c014f1a946507568e",
+      "localMatchesRemoteMain": true,
+      "source": "https://github.com/Wolfrine/PTI/blob/bc7b44c301e8f071b7878f9c014f1a946507568e/.github/workflows/pti-hosted-mcp.yml",
+      "deployment": "Docker built in GitHub Actions, pushed to existing Artifact Registry, deployed directly to Cloud Run in asia-south1",
+      "runtime": {
+        "minInstances": 0,
+        "maxInstances": 2,
+        "cpu": 1,
+        "memory": "512Mi",
+        "concurrency": 40
+      },
+      "billing": "Deployment requires existing active billing. Actual invoice not inspected."
+    },
+    "gtop": {
+      "remoteMain": "b102a63a515ac755534f4b3a5204061f3a6e365c",
+      "localCheckout": "ca82cbf518430ac71aeddbbd782522872fb762e0",
+      "usedRemoteBecauseLocalStale": true,
+      "repoMcp": "tools/gtop-mcp/src/index.ts uses StdioServerTransport, not a hosted HTTP deployment.",
+      "otherBackend": "gtop-app/functions/index.mjs uses Firebase second-generation HTTP/Firestore-triggered Functions for paper services.",
+      "installedPlugin": "GTOP Firestore plugin app-backed manifest references an App ID only. It contains no server URL, deployment configuration or billing data; exact connected connector hosting not established.",
+      "pluginId": "plugin_asdk_app_6aaf6c33bc3081918b8e977f1a800a2a"
+    },
+    "noveliaa": {
+      "source": "functions/src/mcp-entry.mjs",
+      "deployment": "Firebase CLI second-generation HTTP Function, under existing Firebase Hosting and GitHub Actions.",
+      "runtime": {
+        "minInstances": 0,
+        "maxInstances": 2,
+        "memory": "512MiB",
+        "concurrency": 1,
+        "timeoutSeconds": 60
+      },
+      "whyAdditionalApis": "Installed Firebase CLI prepare.js requires Cloud Run, Eventarc, Pub/Sub and Storage APIs for every gcfv2 backend. No Eventarc trigger or Pub/Sub topic is defined for this HTTP plugin.",
+      "whyServer": "Remote MCP/OAuth requires a reachable authorization and scoped data-access service. Skills alone do not require this server.",
+      "aiInference": "No OpenAI/Gemini model API calls, GPU or inference worker in the plugin server."
+    }
+  },
+  "pricing": {
+    "cloudRun": {
+      "url": "https://cloud.google.com/run/pricing",
+      "requestBasedFreeBaselineMonthly": {
+        "requests": 2000000,
+        "vCpuSeconds": 180000,
+        "GiBSeconds": 360000
+      },
+      "region": "asia-south1 is listed Tier 1",
+      "freeAllowance": "Aggregated by billing account across projects",
+      "aboveAllowanceTier1USD": {
+        "perVcpuSecond": 0.000024,
+        "perGiBSecond": 0.0000025,
+        "perMillionRequests": 0.4
+      }
+    },
+    "artifactRegistry": {
+      "url": "https://cloud.google.com/artifact-registry/pricing",
+      "freeStorageGiBMonthsPerBillingAccount": 0.5,
+      "excessUSDPerGiBMonthApprox": 0.1,
+      "warning": "Retained deployment images can accumulate while runtime compute remains within free tier."
+    },
+    "cloudBuild": {
+      "url": "https://cloud.google.com/build/pricing",
+      "eligiblePromotionalFreeMinutesPerMonth": 2500,
+      "eligibleMachine": "e2-standard-2 default pool only; eligibility and quota must not be assumed for all Functions builds",
+      "builds": "Deployment-time work, not author typing or MCP inference."
+    },
+    "firestore": {
+      "url": "https://firebase.google.com/pricing",
+      "standardFreeDaily": {
+        "reads": 50000,
+        "writes": 20000,
+        "deletes": 20000
+      },
+      "standardFreeStoredGiB": 1,
+      "note": "MCP calls can read multiple documents/chunks and auth metadata. One tool call is not one Firestore read; one new proposal is one collaboration document write plus any separate OAuth lifecycle operations."
+    },
+    "eventarc": {
+      "url": "https://cloud.google.com/eventarc/pricing",
+      "noveliaaEvents": "No runtime event pipeline configured by this plugin."
+    },
+    "cloudStorage": {
+      "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
+      "note": "Deployment source archives/operations can cost money; regional Storage free benefits are US-only. Do not claim Mumbai build storage is always free."
+    },
+    "budgets": {
+      "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets-spend-caps",
+      "note": "Cloud Run/Functions support eligible service-scoped spend caps. Caps use gross estimates before credits, enforcement is not instant, and storage persists. Alerts-only budgets do not stop charges. No cap has been configured."
+    }
+  },
+  "illustrativeNotMeasured": {
+    "requestsMonthly": 10000,
+    "averageRequestSeconds": 1,
+    "vCpu": 1,
+    "memoryGiB": 0.5,
+    "vCpuSeconds": 10000,
+    "GiBSeconds": 5000,
+    "preCreditComputeAndRequestsUSD": 0.2565,
+    "computeIfFreeAllowanceAvailableUSD": 0,
+    "excludes": [
+      "startup/shutdown billed time",
+      "Firestore",
+      "builds",
+      "stored images and archives",
+      "network egress",
+      "logs",
+      "GitHub Actions",
+      "tax/currency differences"
+    ],
+    "notAQuoteOrMonthlyCeiling": true
+  },
+  "gaps": [
+    "Actual billing statement and billing-account-wide free-tier consumption not inspected.",
+    "Retained weekly Cloud Monitoring aggregate usage report is unavailable (403); not zero usage.",
+    "Exact hosting of the installed GTOP ChatGPT App connector not exposed in available package/repository metadata."
+  ],
+  "recommendation": "Keep low-traffic scale-to-zero operation, bounded source reads, image cleanup and complete usage visibility. A budget/ceiling value requires the author's choice; do not silently set a financial threshold or disable writing."
+}

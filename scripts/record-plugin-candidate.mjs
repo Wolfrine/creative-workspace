@@ -28,7 +28,7 @@ for (const path of final) {
   assert.equal(evidence.sourceDigest, review.uiSourceDigest);
 }
 const sources = await inventory([...baseline.sources.map(item => item.path), ...await list('src'), ...await list('public'), ...await list('tests'), ...await list('functions/src'), ...await list('functions/test'), ...await list('functions/scripts'), ...await list('scripts'), ...await list('plugin'), ...await list('.github/workflows'),
-  'AGENTS.md', 'INTENT.md', '.harness/objective.md', 'docs/ARCHITECTURE.md', 'docs/DEPLOYMENT.md', 'docs/design/PLUGIN_CONNECTION.md', 'package.json', 'package-lock.json', 'functions/package.json', 'functions/package-lock.json', 'firebase.json', 'firestore.rules', 'deployment/firebase-binding.json']);
+  'AGENTS.md', 'INTENT.md', '.harness/objective.md', 'docs/ARCHITECTURE.md', 'docs/DEPLOYMENT.md', 'docs/design/PLUGIN_CONNECTION.md', 'package.json', 'package-lock.json', 'functions/package.json', 'functions/package-lock.json', 'firebase.json', 'firestore.rules', 'deployment/firebase-binding.json', 'deployment/cost-policy.json']);
 const retained = (await list(directory)).filter(p => !p.endsWith('/manifest.json') && !p.includes('/release/'));
 const image = p => /\.(png|jpg|webp)$/.test(p);
 const manifest = { capturedAt: new Date().toISOString(), plan: 'Blaze',

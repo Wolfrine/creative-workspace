@@ -17,6 +17,8 @@ on:
       - functions/scripts/prepare-spark-release.mjs
       - functions/scripts/deploy-spark-rules.mjs
       - functions/scripts/reset-workspace.mjs
+      - functions/scripts/publish-plugin.mjs
+      - functions/scripts/configure-cost-controls.mjs
       - functions/src/**
       - functions/test/**
       - functions/package*.json
@@ -79,7 +81,9 @@ jobs:
           VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
         run: node functions/scripts/deploy-spark-rules.mjs
       - name: Publish private plugin Function and matching Hosting site
-        run: npx firebase deploy --project noveliaa --only functions:noveliaa-plugin,hosting --non-interactive
+        env:
+          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
+        run: node functions/scripts/publish-plugin.mjs
       - name: Verify every hosted build file and Firebase app identity
         run: node scripts/verify-hosted.mjs
       - name: Verify live OAuth discovery, tool schemas and private-access denial
@@ -103,6 +107,8 @@ jobs:
             .local/hosted-verification.json
             .local/rules-release.json
             .local/plugin-hosted-verification.json
+            .local/plugin-artifacts.json
+            .local/plugin-function-limits.json
             .local/workspace-reset-result.json
             .local/browser-test-results/
             .local/spark-test-results/

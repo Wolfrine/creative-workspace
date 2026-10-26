@@ -1,0 +1,14 @@
+{
+  "approvedOn": "2026-10-26",
+  "projectId": "noveliaa",
+  "projectNumber": "278082781314",
+  "region": "asia-south1",
+  "budgetDisplayName": "Noveliaa monthly INR 100 warning",
+  "currencyCode": "INR",
+  "monthlyUnits": "100",
+  "alertThreshold": 1,
+  "minimumInstances": 0,
+  "maximumInstances": 2,
+  "artifactRetentionSeconds": "86400s",
+  "boundary": "Alerts only, not a spending cap. No billing-link, IAM, API, writing, history or save-timing changes."
+}

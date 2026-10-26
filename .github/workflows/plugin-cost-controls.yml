@@ -1,0 +1,44 @@
+name: Noveliaa approved cost warning
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - deployment/cost-policy.json
+      - functions/scripts/configure-cost-controls.mjs
+      - functions/test/cost-controls.test.mjs
+      - .github/workflows/plugin-cost-controls.yml
+permissions:
+  contents: read
+concurrency:
+  group: noveliaa-budget-configuration
+  cancel-in-progress: false
+jobs:
+  configure:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm --prefix functions ci --no-audit --no-fund
+      - run: node --test functions/test/cost-controls.test.mjs
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+      - name: Configure and read back approved project-only INR100 warning
+        env:
+          VERIFIED_PROJECT: '${{ steps.auth.outputs.project_id }}'
+        run: node functions/scripts/configure-cost-controls.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        continue-on-error: true
+        with:
+          name: plugin-cost-warning
+          include-hidden-files: true
+          path: .local/plugin-budget.json
+          retention-days: 30
+          if-no-files-found: ignore

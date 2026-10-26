@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-25T12:54:56.876Z",
+  "capturedAt": "2026-10-26T08:04:18.191Z",
   "plan": "Blaze",
   "scope": "Full private ChatGPT plugin: three skills, scoped OAuth/DCR, six MCP tools, author consent/review/revoke/export. MCP never modifies source writing.",
   "dataset": "Synthetic AI-origin unverified fixtures, loopback UI interception and actual Firebase Auth/Firestore emulators. No production manuscript seeded, reset or read.",
@@ -21,8 +21,8 @@
     },
     {
       "path": ".github/workflows/firebase-deploy.yml",
-      "bytes": 4371,
-      "sha256": "9969e54fd4272774a3f3a5dc59963416f168fbfcd658b08723b6c7f7f5a7bdb7"
+      "bytes": 4582,
+      "sha256": "b6bb1bfceec620c6f04c0893b1ed7d5510598e5eaffd330f194e6b1c90f18984"
     },
     {
       "path": ".github/workflows/firebase-preflight.yml",
@@ -40,6 +40,11 @@
       "sha256": "265d55bb5331eff364835d2789df30485fdbf86e325b23412e871ec5206ded5d"
     },
     {
+      "path": ".github/workflows/plugin-cost-controls.yml",
+      "bytes": 1407,
+      "sha256": "4205065ec6e8175b429cfaf4fbc02ffe74b84920fcc5be4a9b1b43acad527513"
+    },
+    {
       "path": ".harness/dev-environment.ps1",
       "bytes": 1281,
       "sha256": "2b9bcb11253782851e37758e721ead92d51239a64d372e9bd3048c3225ce489f"
@@ -51,13 +56,18 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 4822,
-      "sha256": "906073e55f553825be39de38a251f43c89a7ee7d6445860b70b2499aa44404f6"
+      "bytes": 5358,
+      "sha256": "c0793ae03249f3d0c7186428741abe39c80e938f394c9129a191b138cc1d40e6"
     },
     {
       "path": "INTENT.md",
       "bytes": 6878,
       "sha256": "2fe34dc210e4d094504497935979ddecd35b64dc5bd02a0f6e2b0307da91b6cf"
+    },
+    {
+      "path": "deployment/cost-policy.json",
+      "bytes": 462,
+      "sha256": "677dcedab00f73e340e6368cb18b05a1b6cf312d717e694ec6ad983fe1f493ac"
     },
     {
       "path": "deployment/firebase-binding.json",
@@ -76,8 +86,8 @@
     },
     {
       "path": "docs/DEPLOYMENT.md",
-      "bytes": 17635,
-      "sha256": "d9c6fc61db073dd962686264f36c612bfd24d9b08c1b93ee5816a3f464b6dbd8"
+      "bytes": 19035,
+      "sha256": "b683369c42ca7eae532b8bde27332693d1645f8bb48c732f50700c3f8ee5dff4"
     },
     {
       "path": "docs/SYNC.md",
@@ -165,6 +175,11 @@
       "sha256": "789c79bfb914c32f2d759fe2dac2c45cfe997680260d968cd5dbaa90cc0c1ed4"
     },
     {
+      "path": "functions/scripts/configure-cost-controls.mjs",
+      "bytes": 7852,
+      "sha256": "8383bf62f2fa6a932cfa43e1201ea7c1084a0a8d7c9ef68b6eae0c5f98e693bb"
+    },
+    {
       "path": "functions/scripts/deploy-spark-rules.mjs",
       "bytes": 2437,
       "sha256": "d338bce20e247ff1e7ad65e93db8a7803bf789c2d3a9ebbe57809b55829392cc"
@@ -188,6 +203,11 @@
       "path": "functions/scripts/prepare-spark-release.mjs",
       "bytes": 4464,
       "sha256": "9f2fb34d628455ac47f612f5f39abe0ab20fd8ab3720817678e0c2f7c67b5b5d"
+    },
+    {
+      "path": "functions/scripts/publish-plugin.mjs",
+      "bytes": 1838,
+      "sha256": "0d7f9dfcfda6cff81ed0023327557a0e9905a032d1d44699e56f8e4035e28855"
     },
     {
       "path": "functions/scripts/reset-workspace.mjs",
@@ -258,6 +278,11 @@
       "path": "functions/test/callable-emulator.mjs",
       "bytes": 6364,
       "sha256": "41cb3acdc5df8bbbf832b07c34ce8ce4263fda0c8dc20a7bcc868f1e2ab3bfe0"
+    },
+    {
+      "path": "functions/test/cost-controls.test.mjs",
+      "bytes": 6225,
+      "sha256": "40a5c8ff6ef16081aa24c69633a3920926068bb21c82b4b507b3fb7f0fb2c914"
     },
     {
       "path": "functions/test/firebase-emulator.mjs",
@@ -426,8 +451,8 @@
     },
     {
       "path": "scripts/record-plugin-candidate.mjs",
-      "bytes": 5005,
-      "sha256": "0855b7290857271f7e9782f986bd86a4230f10b4fb26f8e2d5c2a20608e3547c"
+      "bytes": 5036,
+      "sha256": "92946930f67dc3f1de72fd1348d8a9c261a9c0cf805d0a24b044dffba3f4df4a"
     },
     {
       "path": "scripts/record-reader-ux-candidate.mjs",
@@ -805,7 +830,7 @@
       "sha256": "effcddf543e8d041dcd79f28af05a164309221de1cec9e61f62aafd1ceadb638"
     }
   ],
-  "sourceDigest": "c5495bf233e0d820f3caf03499ad3b4c29e3f72038e045a987e6dca67439b950",
+  "sourceDigest": "a9f885736300025bc2a4030c8ab8e2281d24fb0634de1d2a486160561cee206b",
   "renders": [
     {
       "path": "docs/evidence/plugin-2026-10-25/checks/conflict-blank-history-1440.png",

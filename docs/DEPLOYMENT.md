@@ -14,6 +14,26 @@ scheduled-backup exports are excluded by the Functions entrypoint. The portable
 plugin source and skills are in `plugin/noveliaa`; account creation/installation
 and human OAuth consent are recorded separately from server deployment.
 
+**26 October approved cost controls.** `deployment/cost-policy.json` records the
+owner's approval for a Noveliaa-only INR100 monthly actual-spend warning, including
+credits, sent to default billing recipients and project owners. This is an alert,
+not a spending cap; other projects on the billing account are excluded. The
+separate cost-warning Action verifies the setting by readback, refuses duplicates
+or drift, never converts currency, and reports actual API/access failures without
+changing IAM, APIs or billing links. A configured script is not proof that the
+warning exists: inspect its run result.
+
+The existing release Action still runs all required checks and the standard
+Firebase deployment. Its publication wrapper verifies one-day cleanup of the
+`asia-south1/gcf-artifacts` build-image repository, preserving other policies. On
+the first build only, Firebase can publish Functions then stop for its cleanup
+prompt; the wrapper sets and reads back the approved policy before retrying once.
+It does not pass deployment `--force` or bypass unrelated confirmations. Final
+readback must show the Function ACTIVE, min instances0, max2 and concurrency1.
+Build-image deletion never deletes writing, original files or revision history;
+the live Function retains its deployed image. Actual usage/billing and human
+plugin consent remain separate evidence from these settings and synthetic tests.
+
 **25 October populated Library/reader refinement: live and independently verified.**
 Commit `4c4c1660625aa8efa84cea4635cf97623dc06be9` passed
 [Firebase release 40182774879](https://github.com/Wolfrine/creative-workspace/actions/runs/40182774879)

@@ -29,6 +29,14 @@ the older Storage callables/scheduled backup remain unshipped reference work.
 Never request replacement keys or speculative roles; investigate actual failures
 and PTI's working deployment before reporting a concrete permission blocker.
 
+On 26 October the owner approved a **project-only INR100 monthly cost warning**
+(an alert, not a spending cap), one-day Functions build-image cleanup, and
+finishing deployment/connection of the existing private plugin. Keep scale to
+zero and at most two instances; verify actual deployed settings. Do not change
+billing links, IAM, APIs, the 10s/60s trailing idle-save design or manuscript/history
+retention. See `deployment/cost-policy.json` and the release evidence for whether
+each operational setting has actually been configured.
+
 ## Current assignment: implement and evaluate Phase 1
 
 1. Inspect the actual repository and relevant writing/story projects. Verify evidence and separate known facts from assumptions.

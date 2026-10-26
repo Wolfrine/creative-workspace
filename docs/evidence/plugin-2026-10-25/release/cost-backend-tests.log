@@ -1,0 +1,41 @@
+
+> test
+> node --test test/*.test.mjs
+
+✔ project-only INR100 actual-spend alert, not a cap (6.1635ms)
+✔ first budget creates once; later execution verifies without writing (2.0645ms)
+✔ does not modify other budgets (0.5929ms)
+✔ duplicate name or existing drift stops without writes (2.2435ms)
+✔ no currency conversion, billing link or permission changes (1.3568ms)
+✔ budget create response requires readback to report verified (0.8402ms)
+✔ budget pagination does not create a duplicate on a later page (0.5507ms)
+✔ artifact cleanup preserves other policies and labels; repeat has no write (0.8456ms)
+✔ missing artifact repository is pending before deployment, fails final verification (0.6953ms)
+✔ artifact write must be read back and dry-run must be off (0.7357ms)
+✔ actual function must be active with exact approved instance/concurrency limits (1.2111ms)
+﹣ private plugin OAuth, scoped HTTP tools, immutable writeback and owner review (1.0442ms) # SKIP
+✔ concurrent refresh replay revokes the family: both-before-consume (30.7105ms)
+✔ concurrent refresh replay revokes the family: winner-before-second-source-read (7.0776ms)
+✔ authorization fails closed for unauthenticated, other account and unset owner (6.7707ms)
+✔ every callable service derives actor from verified uid (9.052ms)
+✔ response-loss retry is exactly idempotent; changed payload with same ID conflicts (13.0165ms)
+✔ two concurrent devices retain both branches and promote only one from the same base (5.4816ms)
+✔ new document race and reverse reconnect preserve both variants (17.8498ms)
+✔ missing, mismatched and changed blobs never finalize a revision (1.9284ms)
+✔ original source bytes and metadata are immutable and retryable (3.4143ms)
+✔ cross-universe source, collection, parent and link references are refused (16.0644ms)
+✔ identity registration supports mutually linked first revisions without creating a head or writing text (5.5692ms)
+✔ writing identities cannot be forged, cross universes, carry placeholder text or bypass authorization (3.7586ms)
+✔ accepts Tiptap 3.32 link attributes including nullable title without stripping any field (2.6615ms)
+✔ unknown editor nodes, unknown fields, unsafe links and invalid text projections fail without stripping (2.7135ms)
+✔ restoration retains all history and cannot relabel source provenance (6.6361ms)
+✔ catalog cannot remove or move existing collections/universes (2.4844ms)
+✔ backup verifies blobs, revision graph and head inventory; interrupted/corrupt backup fails (7.9469ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 8721.1264
