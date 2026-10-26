@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-26T11:40:11.263Z",
+  "capturedAt": "2026-10-26T11:50:56.603Z",
   "plan": "Blaze",
   "scope": "Full private ChatGPT plugin: three skills, scoped OAuth/DCR, six MCP tools, author consent/review/revoke/export. MCP never modifies source writing.",
   "dataset": "Synthetic AI-origin unverified fixtures, loopback UI interception and actual Firebase Auth/Firestore emulators. No production manuscript seeded, reset or read.",
@@ -91,8 +91,8 @@
     },
     {
       "path": "docs/DEPLOYMENT.md",
-      "bytes": 21242,
-      "sha256": "b1a4e6f6695cb555cdc9f9494dab94f06797577856680cc45b71526c0ce4720f"
+      "bytes": 21533,
+      "sha256": "75c2af0c4de54f58849d52867559605e9b95c023b89179d1f72ce798281aa401"
     },
     {
       "path": "docs/SYNC.md",
@@ -840,7 +840,7 @@
       "sha256": "effcddf543e8d041dcd79f28af05a164309221de1cec9e61f62aafd1ceadb638"
     }
   ],
-  "sourceDigest": "0594e48bc83ccb0c91713610dd71c27f7f51250d1204e950381641e52e14731c",
+  "sourceDigest": "4e4044d8e84728ba61ea9f72147b36a6ffb4c7bd1738760e500bcdd74fb98856",
   "renders": [
     {
       "path": "docs/evidence/plugin-2026-10-25/checks/conflict-blank-history-1440.png",

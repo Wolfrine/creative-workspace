@@ -76,5 +76,16 @@
     "tests": "Client, backend, Rules, evaluations, real OAuth/MCP HTTP integration, authenticated cloud and desktop/mobile browser suites passed again before publication",
     "runtimeSourceDifferenceFromCurrentMain": "None in src, public, functions/src, plugin, Firebase config, Rules or Functions package/lockfile"
   },
-  "deferred": "The exact resource-scoped runtime grant is now saved with explicit approval; publication retry is in progress. Final Function/Hosting publication, actual runtime and hosted-file checks and human OAuth/universe consent remain separate. ChatGPT Personal directory shows the ZIP-imported MCP package as Desktop only; cloud access requires a registered App dependency while preserving its three skills. No production manuscript was read, seeded, reset or changed."
+  "finalPublication": {
+    "run": "https://github.com/Wolfrine/creative-workspace/actions/runs/40315115848",
+    "source": "c50d852d02ae91a41df8f31c05b5bffad91a9964",
+    "result": "success",
+    "function": "ACTIVE, min0/max2/concurrency1; actual API readback",
+    "hosting": "All24 hosted file digests and exact Firebase Web App verified",
+    "readiness": "Live canonical OAuth discovery, all six tool schemas, unknown-client Firestore lookup, anonymous challenge and invalid-bearer denial passed",
+    "pinning": "Function creation passed. Optional Hosting pinTag later failed replacing Cloud Run traffic. Standard unpinned Function rewrites then released successfully without a further IAM grant.",
+    "cloudPlugin": "Existing private plugin ID updated to0.1.1 with registered App asdk_app_6adf3ada84a88191af04f9f933b42804; both raw MCP declarations removed, all three skill hashes preserved. ChatGPT shows Try in chat and Connect.",
+    "workspaceReset": "skipped"
+  },
+  "deferred": "Only human author Google sign-in, universe selection and optional proposal consent remain. No authenticated ChatGPT tool execution is claimed yet. No production manuscript was read, seeded, reset or changed."
 }

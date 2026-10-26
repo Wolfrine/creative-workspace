@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-26T11:43:09.667Z",
+  "url": "https://noveliaa.web.app/api/integrations/review",
+  "module": "/assets/index-WslnA_Zv.js",
+  "data": "Actual signed-out production UI; no production account bypass or manuscript read.",
+  "surfaces": [
+    {
+      "viewport": "1440x1000",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "scrollHeight": 1000,
+      "visual": "Inspected rendered private author entry, headline, explanation and Google sign-in control."
+    },
+    {
+      "viewport": "390x844",
+      "width": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "visual": "Inspected settled mobile screenshot; legible copy, visible sign-in button and footer, no clipping or horizontal overflow."
+    },
+    {
+      "viewport": "320x640",
+      "width": 320,
+      "scrollWidth": 320,
+      "scrollHeight": 640,
+      "visual": "Inspected settled narrow-phone screenshot; heading wraps without clipping, sign-in control remains visible."
+    }
+  ],
+  "browserWarningsAndErrors": [],
+  "viewportReset": true,
+  "chatgpt": {
+    "pluginId": "plugins_6addf6b9d5848191b637c8289684e215",
+    "version": "0.1.1",
+    "signedInOwnerChrome": true,
+    "observed": [
+      "Try in chat",
+      "Apps1",
+      "Noveliaa Connection / Connect",
+      "Skills3",
+      "version0.1.1"
+    ],
+    "desktopOnly": false,
+    "consent": "Pending human action. No author universes chosen by the agent."
+  },
+  "captures": "Screenshots returned through native browser tools and visually inspected in this conversation; no screenshot file path is claimed.",
+  "limits": "Chromium viewport inspection is not physical-device, Safari, authenticated ChatGPT execution or author acceptance."
+}

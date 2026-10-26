@@ -1,0 +1,7 @@
+{
+  "checkedAt": "2026-10-26T11:45:46.808Z",
+  "origin": "https://noveliaa.web.app",
+  "verifiedFiles": 24,
+  "method": "Independent network re-fetch and SHA-256 comparison against the retained deployed CI build inventory",
+  "inventory": "docs/evidence/plugin-2026-10-25/release/hosted-verification-2026-10-26.json"
+}

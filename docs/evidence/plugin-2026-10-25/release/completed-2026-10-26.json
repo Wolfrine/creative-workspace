@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-10-26T11:50:55.910Z",
+  "source": "251bee8f650888221673e87e04d6a2d88ef1c9ed",
+  "release": "https://github.com/Wolfrine/creative-workspace/actions/runs/40316783926",
+  "integrity": "https://github.com/Wolfrine/creative-workspace/actions/runs/40316783964",
+  "result": "Both passed",
+  "tests": {
+    "backend": 29,
+    "client": 89,
+    "actualRules": 15,
+    "evaluations": 26,
+    "actualOAuthMcpHttp": 13,
+    "authenticatedCloudBrowser": 10,
+    "desktopMobileBrowser": 63
+  },
+  "hosted": {
+    "origin": "https://noveliaa.web.app",
+    "verifiedBuildFiles": 24,
+    "appId": "1:278082781314:web:9a4b7acef07fa8e4dfb49b",
+    "mcpTools": 6,
+    "oauth": "S256/DCR discovery",
+    "runtimeReadiness": "Actual unknown-client Firestore lookup returns400 invalid_client",
+    "anonymousPrivateTool": "challenged",
+    "invalidBearer": "rejected401"
+  },
+  "runtime": {
+    "checkedAt": "2026-10-26T11:46:42.704Z",
+    "state": "ACTIVE",
+    "minimumInstances": 0,
+    "maximumInstances": 2,
+    "concurrency": 1,
+    "buildImageCleanup": "1day; unchanged API readback"
+  },
+  "plugin": {
+    "id": "plugins_6addf6b9d5848191b637c8289684e215",
+    "version": "0.1.1",
+    "release": "pluginrel_6adf3b42cef88191831d69f9b3f8c329",
+    "cloudApp": "asdk_app_6adf3ada84a88191af04f9f933b42804",
+    "visibility": "private",
+    "skills": 3,
+    "skillContent": "All three exact SHA256 values match the initial package",
+    "browser": "Actual owner ChatGPT page shows Try in chat and Connected",
+    "hostPermissionReadback": "App status found after being not_installed before owner consent",
+    "consent": "Owner explicitly reports completed; Connected badge independently verified",
+    "authenticatedToolExecution": "Not performed in this pre-existing Codex chat: new app tools remain absent from its tool inventory after a brief retry. No credential extraction, invented call or unsolicited new chat."
+  },
+  "integrityBoundary": {
+    "workspaceReset": "skipped",
+    "productionManuscripts": "Not read, seeded, edited or reset by these release/connection probes",
+    "writingAndSyncSourceChange": "None from c50d852 through251bee8",
+    "fixtureData": "Synthetic emulator writing only",
+    "visualAcceptance": "Actual signed-out production desktop1440, phone390 and narrow320; physical-device and human writing acceptance not inferred"
+  },
+  "nextUse": "Open a fresh ChatGPT chat, choose @Noveliaa, and ask for the shared universes. No further Firebase API, IAM or key setup is requested."
+}
