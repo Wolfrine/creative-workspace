@@ -1,0 +1,114 @@
+{
+  "capturedAt": "2026-11-02T05:00:06.019Z",
+  "periods": [
+    {
+      "period": "previous",
+      "start": "2026-10-18",
+      "end": "2026-10-24",
+      "metrics": {
+        "reads": {
+          "observedDays": 2,
+          "observedSubtotalLowerBound": 2902,
+          "weeklyTotal": null,
+          "missingDates": [
+            "2026-10-18",
+            "2026-10-19",
+            "2026-10-20",
+            "2026-10-21",
+            "2026-10-22"
+          ]
+        },
+        "writes": {
+          "observedDays": 2,
+          "observedSubtotalLowerBound": 769,
+          "weeklyTotal": null,
+          "missingDates": [
+            "2026-10-18",
+            "2026-10-19",
+            "2026-10-20",
+            "2026-10-21",
+            "2026-10-22"
+          ]
+        },
+        "deletes": {
+          "observedDays": 1,
+          "observedSubtotalLowerBound": 160,
+          "weeklyTotal": null,
+          "missingDates": [
+            "2026-10-18",
+            "2026-10-19",
+            "2026-10-20",
+            "2026-10-21",
+            "2026-10-22",
+            "2026-10-23"
+          ]
+        }
+      }
+    },
+    {
+      "period": "latest",
+      "start": "2026-10-25",
+      "end": "2026-10-31",
+      "metrics": {
+        "reads": {
+          "observedDays": 6,
+          "observedSubtotalLowerBound": 1321,
+          "weeklyTotal": null,
+          "missingDates": [
+            "2026-10-31"
+          ]
+        },
+        "writes": {
+          "observedDays": 6,
+          "observedSubtotalLowerBound": 69,
+          "weeklyTotal": null,
+          "missingDates": [
+            "2026-10-31"
+          ]
+        },
+        "deletes": {
+          "observedDays": 5,
+          "observedSubtotalLowerBound": 20,
+          "weeklyTotal": null,
+          "missingDates": [
+            "2026-10-25",
+            "2026-10-31"
+          ]
+        }
+      }
+    }
+  ],
+  "metricAvailability": {
+    "reads": {
+      "status": "available",
+      "metricType": "firestore.googleapis.com/document/read_count"
+    },
+    "writes": {
+      "status": "available",
+      "metricType": "firestore.googleapis.com/document/write_count"
+    },
+    "deletes": {
+      "status": "available",
+      "metricType": "firestore.googleapis.com/document/delete_count"
+    },
+    "connections": {
+      "status": "available",
+      "metricType": "firestore.googleapis.com/network/active_connections"
+    },
+    "listeners": {
+      "status": "available",
+      "metricType": "firestore.googleapis.com/network/snapshot_listeners"
+    }
+  },
+  "gauges": {
+    "connections": {
+      "hourlyPeakObserved": 3,
+      "note": "Sum of per-series hourly maxima; not an exact simultaneous client count."
+    },
+    "listeners": {
+      "hourlyPeakObserved": 12,
+      "note": "Sum of per-series hourly maxima; not an exact simultaneous client count."
+    }
+  },
+  "currentPartialPacificDate": "2026-11-01"
+}

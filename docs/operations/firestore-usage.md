@@ -58,3 +58,10 @@ configured 60-second idle wait.
 Initial verification: the API audit on main `dd01004` received HTTP 403 for all
 five metrics. The already-authorized owner console successfully supplied the
 aggregate baseline on 25 October; see the [first review](../evidence/operations/2026-10-25-firestore-baseline.md). No access or billing change was needed.
+
+**2 November update:** a refresh of the existing audit returned all five real
+production metric series. Its earlier 26 October 10:21 UTC attempt had also
+returned data, superseding historical access-gap notes. Daily coverage remains
+sparse: `status: available` means series were observed, not that both complete
+weeks can be totaled. Keep missing days null and withhold week-over-week ratios
+until coverage permits. See the [dated review and raw evidence](../evidence/operations/2026-11-02-firestore-review.md).
