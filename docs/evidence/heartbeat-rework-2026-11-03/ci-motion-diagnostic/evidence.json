@@ -1,0 +1,66 @@
+[
+  {
+    "width": 1366,
+    "height": 768,
+    "start": {
+      "at": 18988,
+      "motion": "true",
+      "projections": 3,
+      "height": 583
+    },
+    "after": {
+      "at": 19034.899999976158,
+      "projections": 3,
+      "motion": "true",
+      "trace": []
+    }
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "start": {
+      "at": 1043.5999999940395,
+      "motion": "true",
+      "projections": 2,
+      "height": 671
+    },
+    "after": {
+      "at": 1082.0999999940395,
+      "projections": 0,
+      "motion": "false",
+      "trace": [
+        {
+          "time": 1058.4000000059605,
+          "stack": "Error\n    at Element.replaceChildren (<anonymous>:2:254)\n    at stop (http://127.0.0.1:5841/src/reader/page-turn.ts:118:11)\n    at Object.current (http://127.0.0.1:5841/src/reader/page-turn.ts:33:3)\n    at http://127.0.0.1:5841/src/components/Reader.tsx:207:26\n    at measure (http://127.0.0.1:5841/src/components/Reader.tsx:324:4)",
+          "stage": {
+            "x": 0,
+            "y": 63,
+            "width": 390,
+            "height": 671,
+            "top": 63,
+            "right": 390,
+            "bottom": 734,
+            "left": 0
+          },
+          "page": "1"
+        }
+      ]
+    }
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "start": {
+      "at": 990.3000000119209,
+      "motion": "true",
+      "projections": 2,
+      "height": 398
+    },
+    "after": {
+      "at": 1048.5,
+      "projections": 3,
+      "motion": "true",
+      "trace": []
+    }
+  }
+]

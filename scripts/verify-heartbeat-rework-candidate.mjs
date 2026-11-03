@@ -27,7 +27,7 @@ for (const path of ['docs/evidence/plugin-2026-10-25/manifest.json', 'docs/evide
   for (const item of prior.sources) assert(paths.has(item.path), 'Missing inherited source path: ' + item.path);
   for (const item of [...(prior.artifacts || []), ...(prior.renders || []), ...(prior.testEvidence || []), ...(prior.operationsEvidence || [])]) assert.equal(hash(await readFile(item.path)), item.sha256, 'Historical evidence changed: ' + item.path);
 }
-for (const [name, minimum] of Object.entries({ client: 98, functions: 37, rules: 16, mcpIntegration: 18, browser: 93, cloud: 11, evidence: 26, typecheck: 0, build: 0, packaging: 0 })) {
+for (const [name, minimum] of Object.entries({ client: 98, functions: 37, rules: 16, mcpIntegration: 18, browser: 93, cloud: 11, evidence: 26, typecheck: 0, build: 0, packaging: 0, motionProbe: 45 })) {
   const result = manifest.checks[name]; assert.equal(result.status, 'pass', 'Required check: ' + name); assert.equal(result.failures, 0);
   assert((result.passes || 0) >= minimum, 'Incomplete suite: ' + name);
   assert(manifest.artifacts.some(item => item.path === result.evidence), 'Unbound check evidence: ' + name);

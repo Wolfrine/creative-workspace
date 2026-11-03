@@ -1,0 +1,35 @@
+[
+  {
+    "width": 1366,
+    "initialCount": 3,
+    "activeCurlSamples": 1,
+    "active": true,
+    "count": 3,
+    "painted": 3,
+    "projectedRanges": 21,
+    "exactInertRanges": true,
+    "offWhileActive": true
+  },
+  {
+    "width": 390,
+    "initialCount": 2,
+    "activeCurlSamples": 1,
+    "active": true,
+    "count": 3,
+    "painted": 3,
+    "projectedRanges": 21,
+    "exactInertRanges": true,
+    "offWhileActive": true
+  },
+  {
+    "width": 320,
+    "initialCount": 2,
+    "activeCurlSamples": 1,
+    "active": true,
+    "count": 3,
+    "painted": 3,
+    "projectedRanges": 21,
+    "exactInertRanges": true,
+    "offWhileActive": true
+  }
+]

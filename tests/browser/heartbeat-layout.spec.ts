@@ -82,25 +82,52 @@ for (const width of [1366, 320]) test(`Every source character appears once acros
 
 for (const width of [1366, 390, 320]) test(`Bounded page-turn projections preserve native range text and clean off, resize and exit at ${width}px`, async ({ page }) => {
   const fixture = await reader(page, width, width === 1366 ? 768 : width === 390 ? 844 : 568, true); const source = fixture.workspace.documents[0].plainText;
-  const start = () => page.evaluate(() => {
+  const start = (turnOff = false) => page.evaluate(async turnOff => {
+    await document.fonts.ready;
+    const stage = document.querySelector<HTMLElement>('.reader-stage')!;
+    const article = document.querySelector<HTMLElement>('.reader-prose')!;
+    // A ready key can precede the font-ready/ResizeObserver pagination frame.
+    // Wait for observable geometry to settle before exercising optional motion.
+    let previousGeometry = ''; let stableFrames = 0;
+    while (stableFrames < 2) {
+      await new Promise(requestAnimationFrame);
+      const geometry = JSON.stringify([stage.clientWidth, stage.clientHeight, stage.dataset.page, stage.dataset.pages, stage.dataset.columns, article.style.width, article.style.height, article.style.opacity]);
+      stableFrames = geometry === previousGeometry && article.style.opacity === '1' ? stableFrames + 1 : 0;
+      previousGeometry = geometry;
+    }
     const next = document.querySelector<HTMLButtonElement>('[aria-label="Next reader page"]')!;
     const previous = document.querySelector<HTMLButtonElement>('[aria-label="Previous reader page"]')!;
     (next.disabled ? previous : next).click();
     const registry = (CSS as any).highlights as Map<string, Set<Range>>;
     const canonical = [...registry].filter(([name]) => name.startsWith('heartbeat-reader-')).flatMap(([, ranges]) => [...ranges].map(range => range.toString()));
-    const projected = [...registry].filter(([name]) => name.startsWith('heartbeat-motion-')).flatMap(([, ranges]) => [...ranges].map(range => ({ text: range.toString(), inert: !!range.startContainer.parentElement?.closest('[inert]') })));
-    return { canonical, projected, leaves: document.querySelectorAll('.reader-page-content').length };
-  });
-  const projection = await start(); expect(projection.leaves).toBeLessThanOrEqual(4); expect(projection.projected.length).toBeGreaterThan(0); expect(projection.projected.filter(range => !range.inert || !projection.canonical.includes(range.text))).toEqual([]);
-  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-  const moving = await page.evaluate(() => {
-    const ranges = [...((CSS as any).highlights as Map<string, Set<Range>>)].filter(([name]) => name.startsWith('heartbeat-motion-')).flatMap(([, value]) => [...value]);
-    const projections = [...document.querySelectorAll('.reader-page-content')];
-    return { count: projections.length, painted: projections.filter(element => ranges.some(range => element.contains(range.startContainer) && element.contains(range.endContainer) && range.toString().length > 0)).length };
-  });
-  // Includes the extra temporary portrait clone created at animation start.
-  expect(moving.count).toBeGreaterThan(0); expect(moving.painted).toBe(moving.count);
-  await page.getByRole('button', { name: 'Emotional Heartbeat', exact: true }).click();
+    const snapshot = () => {
+      const ranges = [...registry].filter(([name]) => name.startsWith('heartbeat-motion-')).flatMap(([, value]) => [...value]);
+      const projections = [...document.querySelectorAll('.reader-page-content')];
+      return { active: stage.dataset.motionActive === 'true' && stage.dataset.motion === 'curl', count: projections.length, painted: projections.filter(element => ranges.some(range => element.contains(range.startContainer) && element.contains(range.endContainer) && range.toString().length > 0)).length, projected: ranges.map(range => ({ text: range.toString(), inert: !!range.startContainer.parentElement?.closest('[inert]') })) };
+    };
+    const initial = snapshot();
+    if (!turnOff) return { canonical, initial, moving: null, activeCurlSamples: 0, offWhileActive: false };
+    // Arm the frame probe in the browser before yielding to another protocol call.
+    // The first complete portrait frame also contains PageFlip's temporary clone.
+    let moving = initial; let activeCurlSamples = 0;
+    do {
+      await new Promise(requestAnimationFrame);
+      moving = snapshot();
+      if (moving.active) activeCurlSamples++;
+    } while (moving.active && (moving.count === 0 || (stage.dataset.columns === '1' && moving.count <= initial.count)));
+    const offWhileActive = moving.active && moving.count > 0;
+    if (offWhileActive) document.querySelector<HTMLButtonElement>('.reader-header [aria-label="Emotional Heartbeat"]')!.click();
+    return { canonical, initial, moving, activeCurlSamples, offWhileActive };
+  }, turnOff);
+  const projection = await start(true);
+  expect(projection.initial.count).toBeLessThanOrEqual(4); expect(projection.initial.projected.length).toBeGreaterThan(0); expect(projection.initial.projected.filter(range => !range.inert || !projection.canonical.includes(range.text))).toEqual([]);
+  const moving = projection.moving!;
+  await test.info().attach('active-curl-probe', { contentType: 'application/json', body: JSON.stringify({ width, initialCount: projection.initial.count, activeCurlSamples: projection.activeCurlSamples, active: moving.active, count: moving.count, painted: moving.painted, projectedRanges: moving.projected.length, exactInertRanges: moving.projected.every(range => range.inert && projection.canonical.includes(range.text)), offWhileActive: projection.offWhileActive }) });
+  expect(projection.activeCurlSamples).toBeGreaterThan(0); expect(moving.active).toBe(true); expect(moving.count).toBeGreaterThan(0); expect(moving.count).toBeLessThanOrEqual(4); expect(moving.painted).toBe(moving.count);
+  expect(moving.projected.filter(range => !range.inert || !projection.canonical.includes(range.text))).toEqual([]);
+  if (width < 1366) expect(moving.count).toBeGreaterThan(projection.initial.count);
+  expect(projection.offWhileActive).toBe(true);
+  await expect(page.getByRole('button', { name: 'Emotional Heartbeat', exact: true })).toHaveAttribute('aria-pressed', 'false');
   await expect.poll(() => page.evaluate(() => [...((CSS as any).highlights?.keys() || [])].filter((name: string) => name.startsWith('heartbeat-reader-') || name.startsWith('heartbeat-motion-')))).toEqual([]);
   await page.getByRole('button', { name: 'Emotional Heartbeat', exact: true }).click(); await expect.poll(() => page.locator('.heartbeat-legend-item').count()).toBeGreaterThan(0);
   await start(); await page.setViewportSize({ width: 1200, height: 768 }); await expect.poll(() => page.evaluate(() => [...((CSS as any).highlights?.keys() || [])].filter((name: string) => name.startsWith('heartbeat-motion-')))).toEqual([]);

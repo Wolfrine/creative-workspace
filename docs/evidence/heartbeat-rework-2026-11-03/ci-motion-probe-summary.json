@@ -1,0 +1,16 @@
+{
+  "tests": 45,
+  "passesByViewport": {
+    "1366": 15,
+    "390": 15,
+    "320": 15
+  },
+  "nativeExit": 0,
+  "emptyProjectionFailures": 0,
+  "unpaintedProjectionFailures": 0,
+  "offWhileActivePasses": 45,
+  "proof": "Every pass asserts positive active-curl sample, all actual projections painted, exact/inert native ranges, bounded copies, OFF inside that same active browser callback, and off/resize/exit cleanup. No test retries or sleeps added.",
+  "log": ".local/heartbeat-rework/ci-motion-probe.log",
+  "runtimeUiBefore": ".local/heartbeat-rework/ui-before-motion-test.json",
+  "runtimeUiAfter": ".local/heartbeat-rework/ui-after-motion-test.json"
+}

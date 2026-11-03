@@ -1,0 +1,24 @@
+import { chromium } from '@playwright/test';
+import { createServer } from 'vite';
+import { mkdir, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+const out=path.resolve('.local/heartbeat-rework/ci-motion-diagnostic-settled');await mkdir(out,{recursive:true});
+const server=await createServer({cacheDir:out+'/vite-cache',server:{port:5841,host:'127.0.0.1',strictPort:true}});await server.listen();
+const {seedContinuityWorkspace,continuityAnnotation}=await server.ssrLoadModule('/tests/helpers/heartbeat-continuity-fixture.ts');
+const browser=await chromium.launch({headless:true});const records=[];
+try{for(const[width,height]of[[1366,768],[390,844],[320,568]]){
+ const page=await browser.newPage({viewport:{width,height},reducedMotion:'no-preference'});
+ await page.addInitScript(()=>{window.__TURN_CLEANUP_TRACE__=[];const original=Element.prototype.replaceChildren;Element.prototype.replaceChildren=function(...args){if(this.classList.contains('reader-turn'))window.__TURN_CLEANUP_TRACE__.push({time:performance.now(),stack:new Error().stack,stage:document.querySelector('.reader-stage')?.getBoundingClientRect().toJSON(),page:document.querySelector('.reader-stage')?.dataset.page});return original.apply(this,args);};});
+ let release;const fontGate=new Promise(resolve=>release=resolve);
+ await page.route('**/*.woff2*',async route=>{await fontGate;await route.continue();});
+ const notebook=`ci-turn-race-${width}-${Date.now()}`;await page.goto(`http://127.0.0.1:5841/?local=1&notebook=${notebook}`);await page.waitForFunction(()=>window.__NOVELIAA_TEST__?.getSnapshot().ready);
+ const workspace=await seedContinuityWorkspace(page,notebook),annotation=continuityAnnotation(workspace);
+ await page.route('**/api/integrations/heartbeat?**',route=>route.fulfill({json:{schema:'noveliaa-heartbeat-1',annotations:[annotation],sourceIsCurrent:true}}));
+ await page.getByRole('button',{name:'Read this page',exact:true}).click();await page.getByRole('button',{name:'Emotional Heartbeat',exact:true}).click();await page.locator('.heartbeat-legend-item').first().waitFor();
+ release();await page.evaluate(()=>document.fonts.ready);
+ await page.evaluate(async()=>{const stage=document.querySelector('.reader-stage'),article=document.querySelector('.reader-prose');let previous='',stable=0;while(stable<2){await new Promise(requestAnimationFrame);const geometry=JSON.stringify([stage.clientWidth,stage.clientHeight,stage.dataset.page,stage.dataset.pages,stage.dataset.columns,article.style.width,article.style.height,article.style.opacity]);stable=geometry===previous&&article.style.opacity==='1'?stable+1:0;previous=geometry;}});
+ const start=await page.evaluate(()=>{window.__TURN_STARTED__=performance.now();const next=document.querySelector('[aria-label="Next reader page"]');next.click();return{at:window.__TURN_STARTED__,motion:document.querySelector('.reader-stage')?.dataset.motionActive,projections:document.querySelectorAll('.reader-page-content').length,height:document.querySelector('.reader-stage')?.clientHeight};});
+ await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+ const after=await page.evaluate(()=>({at:performance.now(),projections:document.querySelectorAll('.reader-page-content').length,motion:document.querySelector('.reader-stage')?.dataset.motionActive,trace:window.__TURN_CLEANUP_TRACE__}));
+ records.push({width,height,start,after});await page.close();
+}}finally{await browser.close();await server.close();await writeFile(out+'/evidence.json',JSON.stringify(records,null,2));}console.log(JSON.stringify(records));

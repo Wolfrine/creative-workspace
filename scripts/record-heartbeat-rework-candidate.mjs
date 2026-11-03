@@ -7,14 +7,14 @@ const local = '.local/heartbeat-rework', directory = 'docs/evidence/heartbeat-re
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 async function list(path) { return (await Promise.all((await readdir(path, { withFileTypes: true })).map(item => item.isDirectory() ? list(path + '/' + item.name) : path + '/' + item.name))).flat(); }
 async function copy(source, target) { await mkdir(target.slice(0, target.lastIndexOf('/')), { recursive: true }); await copyFile(source, target); }
-for (const folder of ['baseline', 'backend', 'checks', 'real-browser', 'usable-height', 'critic/matched-baseline', 'critic/round1-alternatives', 'critic/round2', 'critic/round3', 'critic/round3-details', 'critic/round4-details', 'critic/round4-semantics', 'critic/round5', 'critic/round5-motion', 'critic/round5-slide', 'critic/round6', 'critic/round6-motion', 'critic/round6-slide', 'critic/round6-fallback', 'critic/round7-final', 'critic/round7-final-motion', 'critic/round7-final-rich', 'critic/round7-final-slide', 'critic/round7-final-fallback']) {
+for (const folder of ['baseline', 'backend', 'checks', 'real-browser', 'usable-height', 'ci-motion-diagnostic', 'ci-motion-diagnostic-settled', 'critic/matched-baseline', 'critic/round1-alternatives', 'critic/round2', 'critic/round3', 'critic/round3-details', 'critic/round4-details', 'critic/round4-semantics', 'critic/round5', 'critic/round5-motion', 'critic/round5-slide', 'critic/round6', 'critic/round6-motion', 'critic/round6-slide', 'critic/round6-fallback', 'critic/round7-final', 'critic/round7-final-motion', 'critic/round7-final-rich', 'critic/round7-final-slide', 'critic/round7-final-fallback']) {
   if (!existsSync(local + '/' + folder)) continue;
   for (const source of await list(local + '/' + folder)) {
     if (!/\.(png|md|json|log|txt|html|webm)$/.test(source) || /\/(?:vite-cache|tmp|downloads|node_modules|private)\//.test(source) || /firebase\.emulator-test\.json$/.test(source)) continue;
     await copy(source, directory + source.slice(local.length));
   }
 }
-for (const path of ['parent-qa.md', 'UI-HANDOFF.md', 'proposal-quality.json', 'critic/review.md', 'critic/verdict-round6.json', 'critic/verdict-round7-final.json', 'ui-browser-final.log', 'typecheck-final.log', 'rich-regression.log', 'browse-regression.log', 'round-3-sources.json', 'round-5-sources.json', 'round-6-sources.json', 'round-7-sources.json']) if (existsSync(local + '/' + path)) await copy(local + '/' + path, directory + '/' + path);
+for (const path of ['parent-qa.md', 'UI-HANDOFF.md', 'proposal-quality.json', 'critic/review.md', 'critic/verdict-round6.json', 'critic/verdict-round7-final.json', 'ui-browser-final.log', 'typecheck-final.log', 'rich-regression.log', 'browse-regression.log', 'ci-motion-probe.log', 'ci-motion-probe-summary.json', 'ui-before-motion-test.json', 'ui-after-motion-test.json', 'diagnose-ci-motion.mjs', 'diagnose-ci-motion-settled.mjs', 'round-3-sources.json', 'round-5-sources.json', 'round-6-sources.json', 'round-7-sources.json']) if (existsSync(local + '/' + path)) await copy(local + '/' + path, directory + '/' + path);
 await copy('.local/spark-browser-results.json', directory + '/checks/cloud-results.json');
 await copy('.local/plugin-package/validation.json', directory + '/checks/plugin-package.json');
 const browser = JSON.parse(await readFile(directory + '/checks/browser-results.json', 'utf8'));
@@ -22,6 +22,9 @@ const cloud = JSON.parse(await readFile(directory + '/checks/cloud-results.json'
 for (const value of [browser, cloud]) { assert.equal(value.stats.unexpected, 0); assert.equal(value.stats.skipped, 0); assert.equal(value.stats.flaky, 0); assert.equal(value.errors.length, 0); }
 assert(browser.stats.expected >= 93); assert(cloud.stats.expected >= 11);
 async function output(path) { const bytes = await readFile(directory + '/' + path); return bytes[0] === 255 && bytes[1] === 254 ? bytes.subarray(2).toString('utf16le') : bytes.toString('utf8'); }
+const probe = JSON.parse(await output('ci-motion-probe-summary.json'));
+assert.equal(probe.nativeExit, 0); assert.equal(probe.emptyProjectionFailures, 0); assert.equal(probe.unpaintedProjectionFailures, 0); assert.equal(probe.offWhileActivePasses, probe.tests); assert(probe.tests >= 45);
+assert.deepEqual(JSON.parse(await output('ui-before-motion-test.json')), JSON.parse(await output('ui-after-motion-test.json')));
 const checks = {
   client: { passes: 98, skipped: 16, evidence: 'checks/client.log', pattern: /98 passed/ },
   functions: { passes: 37, skipped: 1, evidence: 'checks/functions.log', pattern: /pass 37/ },
@@ -32,6 +35,7 @@ const checks = {
   evidence: { passes: 26, evidence: 'checks/evidence.log', pattern: /Ran 26 tests/ },
   typecheck: { evidence: 'checks/typecheck.log' }, build: { evidence: 'checks/build.log', pattern: /built in/ },
   functionsCheck: { evidence: 'checks/functions-check.log' }, packaging: { evidence: 'checks/plugin-package.json' },
+  motionProbe: { passes: probe.tests, evidence: 'ci-motion-probe-summary.json' },
 };
 for (const value of Object.values(checks)) if (value.pattern) assert.match(await output(value.evidence), value.pattern);
 const review = JSON.parse(await readFile(local + '/final-review.json', 'utf8'));

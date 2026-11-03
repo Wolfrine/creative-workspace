@@ -1,0 +1,84 @@
+[WebServer] (node:43304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:9688) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 45 tests using 1 worker
+
+(node:44796) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (3.4s)
+  ok  2 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (3.3s)
+  ok  3 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (3.5s)
+(node:37708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  4 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (3.5s)
+  ok  5 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.8s)
+  ok  6 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (2.9s)
+(node:11344) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  7 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (3.1s)
+  ok  8 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.6s)
+  ok  9 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (2.8s)
+(node:26988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 10 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (3.2s)
+  ok 11 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.8s)
+  ok 12 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (2.8s)
+(node:156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 13 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (3.2s)
+  ok 14 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.9s)
+  ok 15 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (2.9s)
+(node:24744) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 16 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (3.1s)
+  ok 17 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.8s)
+  ok 18 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (2.8s)
+(node:18636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 19 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (3.3s)
+  ok 20 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (3.0s)
+  ok 21 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (3.0s)
+(node:38932) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 22 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (3.4s)
+  ok 23 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.7s)
+  ok 24 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (2.9s)
+(node:43468) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 25 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (3.1s)
+  ok 26 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.7s)
+  ok 27 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (3.1s)
+(node:7864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 28 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (3.1s)
+  ok 29 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.9s)
+  ok 30 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (2.7s)
+(node:40512) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 31 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (2.7s)
+  ok 32 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.6s)
+  ok 33 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (2.5s)
+(node:36224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 34 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (2.9s)
+  ok 35 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.6s)
+  ok 36 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (2.6s)
+(node:32568) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 37 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (2.9s)
+  ok 38 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.6s)
+  ok 39 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (2.6s)
+(node:38832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 40 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (3.0s)
+  ok 41 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.5s)
+  ok 42 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (2.7s)
+(node:40724) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 43 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (3.1s)
+  ok 44 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.6s)
+  ok 45 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (2.6s)
+
+  45 passed (2.5m)

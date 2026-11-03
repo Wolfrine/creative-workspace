@@ -1,6 +1,6 @@
 {
   "schema": "noveliaa-heartbeat-rework-evidence-1",
-  "recordedAt": "2026-11-03T09:12:56.163Z",
+  "recordedAt": "2026-11-03T09:44:31.429Z",
   "baseCommit": "73b8455337f0c4223fa8973fe072755bd622f23c",
   "priorOwnerVerdict": "rejected",
   "ownerAcceptance": "not inferred",
@@ -490,8 +490,8 @@
     },
     {
       "path": "scripts/record-heartbeat-rework-candidate.mjs",
-      "bytes": 9042,
-      "sha256": "cd9e916786c0ff756035bdd71673467a072990261863ce9f9ddcae7914423494"
+      "bytes": 9772,
+      "sha256": "b6e20b7ce0eaf847fb81ea27802e0c5f96c48d2ffc5e11f044a185311c1b8211"
     },
     {
       "path": "scripts/record-library-reader-candidate.mjs",
@@ -555,8 +555,8 @@
     },
     {
       "path": "scripts/verify-heartbeat-rework-candidate.mjs",
-      "bytes": 4448,
-      "sha256": "ff1050038eed37b02b6a3f01a84ddaa882e3597c167d431d0fe37ccc919d1671"
+      "bytes": 4465,
+      "sha256": "db05f484d919e82ddad78dd66312e80b92e8a1eb10cce4dc07c05e7436fc8380"
     },
     {
       "path": "scripts/verify-hosted.mjs",
@@ -830,8 +830,8 @@
     },
     {
       "path": "tests/browser/heartbeat-layout.spec.ts",
-      "bytes": 11955,
-      "sha256": "cf53e28b58fd3c7417e3230392a0c40f17f0e2060915606a23f8c9ef34aa866a"
+      "bytes": 14286,
+      "sha256": "5c31845b77beec00f3f402f7a22a5652585e5e4d69a8f93c38b76689ef6b8175"
     },
     {
       "path": "tests/browser/heartbeat-visual.spec.ts",
@@ -944,7 +944,7 @@
       "sha256": "effcddf543e8d041dcd79f28af05a164309221de1cec9e61f62aafd1ceadb638"
     }
   ],
-  "sourceDigest": "242dcd5edc6cf5bc7aff189580e934a0c650ad5d1beaac4e4a6ff252809c6073",
+  "sourceDigest": "98b3c3d84bfd3c1ea16b2a2ed28ddaaba726d120fb7a7b029cde9f5550463f73",
   "artifacts": [
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/UI-HANDOFF.md",
@@ -1047,6 +1047,11 @@
       "sha256": "3403638dd6afb796594a88949ddc5ff8ededacd95fa43b44296f787d57355f3d"
     },
     {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/browser-active-curl-probes.json",
+      "bytes": 652,
+      "sha256": "f772d3e3f2b827d5de9ff4c55c02d75e7ff8313768bfd257f09ff6ed2f88af68"
+    },
+    {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/browser-attempt-1.json",
       "bytes": 133539,
       "sha256": "57e0e7cdc46661a73176921f91c0743add53e74d1ef24a287e8f8cd3dbdc8f0e"
@@ -1057,14 +1062,24 @@
       "sha256": "6e5661e06cddd259b84f7f11c1b89db6ca1ca98220e39381c2034f0f5b5f06cc"
     },
     {
-      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/browser-results.json",
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/browser-before-ci-probe-repair.json",
       "bytes": 103330,
       "sha256": "96001c0bf90c7c7cefb9ef740e66770be5d02125ef9d5c699c193b30ae98d14c"
     },
     {
-      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/browser.log",
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/browser-before-ci-probe-repair.log",
       "bytes": 26766,
       "sha256": "7cbbbd84a7cf47b852ae77e4838f7de97d2b5ce4a45e36ec02a9fbbeecfe1520"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/browser-results.json",
+      "bytes": 104566,
+      "sha256": "5f4fdeac7191fabce86a34b052c4baf348cb2a082ea6aaaf455791ef61dab51d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/browser.log",
+      "bytes": 26766,
+      "sha256": "e687c20816d201cf83214c81e144d95e5ed87c964ff3b1d9f9db2b0b841d0c91"
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/build.log",
@@ -1088,18 +1103,18 @@
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-blank-history-1440.png",
-      "bytes": 185365,
-      "sha256": "8e3f531f4ef0ce19cbde6cf3c0c7e878f8cdc9e7aea3deab88067978a1a9f802"
+      "bytes": 185005,
+      "sha256": "490a35f5938c363ba7e5a5d9d1400e88b716b0243448c6e4509539ebb408497a"
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-blank-history-320.png",
-      "bytes": 42053,
-      "sha256": "d8fd47ea7fc2ecd8caeef4324d750aa24d715ebd3ee7c042b96e2a0c986dce5d"
+      "bytes": 42005,
+      "sha256": "5fa89f374271839a752c145e10119412ec8cd356d585c67d056f88e9b4720a97"
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-blank-history-390.png",
-      "bytes": 43278,
-      "sha256": "f0f9bb3f808c046186030cbc596972cf3e17648377cbb2d8f9cc538111cf45ff"
+      "bytes": 43341,
+      "sha256": "66967da13193b1b530edcaab051892c0b73cf4f8ecb37e0527b575c9c72fcddc"
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-pages-1440.png",
@@ -1128,8 +1143,13 @@
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-resolved-page-390.png",
-      "bytes": 29631,
-      "sha256": "00ac89ee4e02b46e51dc2721e3fd793bd9ba1d9b25c9f1fd0c5d4f1decefdd7e"
+      "bytes": 29686,
+      "sha256": "cbde4ef3bf1f5a062a3543596a2a9a23050fe18a77683894d67739e94a5cbcb9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/deployment-attempt-1.log",
+      "bytes": 3843,
+      "sha256": "c96d45f8c63e22548744370ddb9283f1efd93f02b6aa078307b237bfa91ca19a"
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/desktop-collection-open.png",
@@ -1199,17 +1219,17 @@
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/structural/after-archive.json",
       "bytes": 6300,
-      "sha256": "1ea39822080f85e0b47ebd834a3801d09a70b150fbd3a4b884c4da67c4c6702d"
+      "sha256": "976dc330894dfc71dbf9b77f4bb5f8c3488ea5f49e49e7aee23aefab13883670"
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/structural/before-archive.json",
       "bytes": 5691,
-      "sha256": "f6069fd3ff7a293220e18929634c8483d2526e7f27a49d42e912708702f4b115"
+      "sha256": "2edfa6576f69fb66d3b4abca4a7fd9c790296c4c59efbfb84bdbae6263ca2c79"
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/structural/oracle.json",
       "bytes": 409,
-      "sha256": "7d977dab64924f3674467ab5e0b44e09416bb04237502c084fa8a2f4eb0d7354"
+      "sha256": "c1a80299c61d867054e32d3f897495ed4ab99e527b8105cdb77850a46de6091c"
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/sync-details-1440.png",
@@ -1230,6 +1250,26 @@
       "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/typecheck.log",
       "bytes": 86,
       "sha256": "96fb526310e5a666090b361c5dc343d0a2db6f25ee09f1b09a4014355b93ab68"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/ci-motion-diagnostic-settled/evidence.json",
+      "bytes": 849,
+      "sha256": "ffc0806244eb5357e2b5ee4ecf2de5020321b03a36c2e6b7f3ef196239d7466b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/ci-motion-diagnostic/evidence.json",
+      "bytes": 1511,
+      "sha256": "8c164896af95beb889cde17451f645f7c1dfe1b754ad8a4b2f7fa09963304b34"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/ci-motion-probe-summary.json",
+      "bytes": 674,
+      "sha256": "d4b62dbddec2a85b957a0921144851f287ebd19e25ae11a2190b414ff21123b0"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/ci-motion-probe.log",
+      "bytes": 10230,
+      "sha256": "a70f0ce6150881f986ace68db3af950694b847861c87a2884e3b806ccd31a5e4"
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/matched-baseline/measurements.json",
@@ -3342,14 +3382,24 @@
       "sha256": "13372e106d633b12ce596af083c3dace5a5f2f9349c2dcff71ed4d36601eac96"
     },
     {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/diagnose-ci-motion-settled.mjs",
+      "bytes": 3612,
+      "sha256": "44a37166bb9be1c97803d9bc6c9bbedc46965db670b5b47f03d1a504ba6bd45e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/diagnose-ci-motion.mjs",
+      "bytes": 3107,
+      "sha256": "b868cddac1ba78dfbbeb8ba5bdb4be56fd56044666aab457de65488c0350a83f"
+    },
+    {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/final-review.json",
       "bytes": 388,
       "sha256": "fa3c71d73c2b02cdc943af665310c42e36083bc2a1ab5db387ea9194fba337c4"
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/parent-qa.md",
-      "bytes": 8083,
-      "sha256": "5094d0c81da77bcfbd8dff03eb7c9265cd1609a2f4fc6e5fbd80ad35e7fb1de4"
+      "bytes": 9197,
+      "sha256": "eb3413f4dce8a5c4cbafca8425f705c7ae418813b87b951c4aa38e24de34973a"
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/proposal-quality.json",
@@ -3400,6 +3450,16 @@
       "path": "docs/evidence/heartbeat-rework-2026-11-03/typecheck-final.log",
       "bytes": 42,
       "sha256": "dddc554232e4be85645fb8a4e6122b04acdc2737344529565f23e1fa336cd37b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/ui-after-motion-test.json",
+      "bytes": 1867,
+      "sha256": "4fcd8cc2d4eb48d179c48d148a42a4c4d89a83a888ef3347c00f5956aaf8e708"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/ui-before-motion-test.json",
+      "bytes": 1867,
+      "sha256": "4fcd8cc2d4eb48d179c48d148a42a4c4d89a83a888ef3347c00f5956aaf8e708"
     },
     {
       "path": "docs/evidence/heartbeat-rework-2026-11-03/ui-browser-final.log",
@@ -3479,6 +3539,12 @@
     },
     "packaging": {
       "evidence": "docs/evidence/heartbeat-rework-2026-11-03/checks/plugin-package.json",
+      "status": "pass",
+      "failures": 0
+    },
+    "motionProbe": {
+      "passes": 45,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/ci-motion-probe-summary.json",
       "status": "pass",
       "failures": 0
     }

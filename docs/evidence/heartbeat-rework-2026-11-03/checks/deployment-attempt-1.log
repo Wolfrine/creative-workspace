@@ -1,0 +1,35 @@
+2026-11-03T09:21:16.5986590Z   1) tests/browser/heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px 
+2026-11-03T09:21:16.5987609Z 
+2026-11-03T09:21:16.5988342Z     Error: expect(received).toBeGreaterThan(expected)
+2026-11-03T09:21:16.5988724Z 
+2026-11-03T09:21:16.5988899Z     Expected: > 0
+2026-11-03T09:21:16.5989252Z     Received:   0
+2026-11-03T09:21:16.5989460Z 
+2026-11-03T09:21:16.5989687Z       100 |   ***);
+2026-11-03T09:21:16.5990314Z       101 |   // Includes the extra temporary portrait clone created at animation start.
+2026-11-03T09:21:16.5991245Z     > 102 |   expect(moving.count).toBeGreaterThan(0); expect(moving.painted).toBe(moving.count);
+2026-11-03T09:21:16.5991992Z           |                        ^
+2026-11-03T09:21:16.5992737Z       103 |   await page.getByRole('button', *** name: 'Emotional Heartbeat', exact: true ***).click();
+2026-11-03T09:21:16.5994068Z       104 |   await expect.poll(() => page.evaluate(() => [...((CSS as any).highlights?.keys() || [])].filter((name: string) => name.startsWith('heartbeat-reader-') || name.startsWith('heartbeat-motion-')))).toEqual([]);
+2026-11-03T09:21:16.5995914Z       105 |   await page.getByRole('button', *** name: 'Emotional Heartbeat', exact: true ***).click(); await expect.poll(() => page.locator('.heartbeat-legend-item').count()).toBeGreaterThan(0);
+2026-11-03T09:21:16.5997478Z         at /home/runner/work/creative-workspace/creative-workspace/tests/browser/heartbeat-layout.spec.ts:102:24
+2026-11-03T09:21:16.5998088Z 
+2026-11-03T09:21:16.5998804Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-11-03T09:21:16.5999934Z     .local/browser-test-results/heartbeat-layout-Bounded-p-0acf6-ff-resize-and-exit-at-320px/test-failed-1.png
+2026-11-03T09:21:16.6001142Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-11-03T09:21:16.6001584Z 
+2026-11-03T09:21:16.6002263Z     Error Context: .local/browser-test-results/heartbeat-layout-Bounded-p-0acf6-ff-resize-and-exit-at-320px/error-context.md
+2026-11-03T09:21:16.6002965Z 
+2026-11-03T09:21:16.6003587Z     attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+2026-11-03T09:21:16.6004627Z     .local/browser-test-results/heartbeat-layout-Bounded-p-0acf6-ff-resize-and-exit-at-320px/trace.zip
+2026-11-03T09:21:16.6005364Z     Usage:
+2026-11-03T09:21:16.6005533Z 
+2026-11-03T09:21:16.6006213Z         npx playwright show-trace .local/browser-test-results/heartbeat-layout-Bounded-p-0acf6-ff-resize-and-exit-at-320px/trace.zip
+2026-11-03T09:21:16.6007255Z 
+2026-11-03T09:21:16.6007804Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-11-03T09:21:16.6008221Z 
+2026-11-03T09:21:16.6008368Z   1 failed
+2026-11-03T09:21:16.6009398Z     tests/browser/heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px 
+2026-11-03T09:21:16.6010273Z   92 passed (3.8m)
+2026-11-03T09:21:16.6275985Z ##[error]Process completed with exit code 1.
+
