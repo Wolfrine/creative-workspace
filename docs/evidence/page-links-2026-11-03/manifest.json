@@ -119,8 +119,8 @@
     },
     {
       "path": "docs/design/PAGE_LINKS.md",
-      "bytes": 3831,
-      "sha256": "ec692c1cbe37426d64502e1c94c2a2dde6a86db198a4ed917dab6b3c052c2886"
+      "bytes": 5212,
+      "sha256": "bdc6f1a164fa1c9b9b7347b2e3c3d7bbefc3466976646d44b4122987faf3146d"
     },
     {
       "path": "docs/design/PLUGIN_CONNECTION.md",
@@ -395,12 +395,12 @@
     {
       "path": "plugin/noveliaa/plugin.json",
       "bytes": 1525,
-      "sha256": "2a30a3efd535ffeee3aed673ac5baca7b19e573dc65cdc368e825f0b06e0608f"
+      "sha256": "1c4bb6c69015643726302bb8a84d00c2253f90353dd9e33b50eb68505e3b8e7c"
     },
     {
       "path": "plugin/noveliaa/skills/collaborate-on-writing/SKILL.md",
-      "bytes": 6609,
-      "sha256": "4db144f73253d8a8b64bdcfa213447877914a9cd0e96630072949f557a5b4735"
+      "bytes": 7450,
+      "sha256": "47d2add0c8668943868bc3ad1599c09dceb4393113376dfac402734451b83fcd"
     },
     {
       "path": "plugin/noveliaa/skills/collaborate-on-writing/references/heartbeat-continuity.md",
@@ -409,13 +409,13 @@
     },
     {
       "path": "plugin/noveliaa/skills/explore-writing/SKILL.md",
-      "bytes": 3319,
-      "sha256": "057d1e16242ad182142e310c141c2438077126afefb424bb5497908c9cf6fb5d"
+      "bytes": 4160,
+      "sha256": "17bc872166c1e82b421ec79f9c0f859d22305eda8f08a4191639aed23f45086e"
     },
     {
       "path": "plugin/noveliaa/skills/story-research/SKILL.md",
-      "bytes": 2967,
-      "sha256": "ddd86ce61abdfedb6b18e5b3e9c9cf260fdb22ec0884bcb2e4dc9550f431bbc3"
+      "bytes": 3808,
+      "sha256": "18168e2603e25e582fb1b4979d336842994d128d612dfe62f45e77dbfd9f3c75"
     },
     {
       "path": "public/favicon.svg",
@@ -1038,7 +1038,7 @@
       "sha256": "effcddf543e8d041dcd79f28af05a164309221de1cec9e61f62aafd1ceadb638"
     }
   ],
-  "sourceDigest": "a8a758ef516681e1740976036f82d1ace36063725a3da547b8365be63ebab3db",
+  "sourceDigest": "74a9760f9455cf94a73ff55d09504de38d15eb3d4095aa071fb95ea44aea7a91",
   "artifacts": [
     {
       "path": "docs/evidence/page-links-2026-11-03/after/1440-copy-fallback.png",
@@ -1229,6 +1229,11 @@
       "path": "docs/evidence/page-links-2026-11-03/critic-review.md",
       "bytes": 7440,
       "sha256": "fd7dcd022b0a9df068fb8edfdb039e20fe78e0b7f393672e5dfcca33653eb90e"
+    },
+    {
+      "path": "docs/evidence/page-links-2026-11-03/connector-compatibility.md",
+      "bytes": 1700,
+      "sha256": "b78666085338fbae861ecdb52cbbac57e0d6a6bd0f29776bcd7d4318f1422cd7"
     }
   ],
   "checks": {
@@ -1295,5 +1300,11 @@
       "evidence": "checks/route-context-followup.json",
       "scope": "Final page-link and Library/Reader regression suite, including Back from history and invalid navigation from Reader."
     }
+  },
+  "compatibilityUpdate": {
+    "parentCommit": "e4c5f75d4d5b3122729ef54f0391cebe852736a4",
+    "previousSourceDigest": "a8a758ef516681e1740976036f82d1ace36063725a3da547b8365be63ebab3db",
+    "scope": "Three skills, page-link design contract and plugin version only; retained UI/runtime evidence is unchanged.",
+    "evidence": "docs/evidence/page-links-2026-11-03/connector-compatibility.md"
   }
 }

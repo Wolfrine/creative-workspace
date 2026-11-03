@@ -5,22 +5,35 @@ description: Use when the author asks to find, understand, connect or discuss wr
 
 # Explore the author's writing
 
-When the author pastes a Noveliaa page URL, call `fetch_page` with
-`{"pageUrl":"https://noveliaa.web.app/u/UNIVERSE/COLLECTION/TITLE/DOCUMENT_ID"}`.
-Use the pasted URL directly; no manual documentId lookup is needed. The server
-also accepts a URL in `documentId` for clients whose schema permits it. If the
-client rejects `pageUrl` or enforces the old document-ID regex before contacting
-Noveliaa, ask the author to refresh this connection's tool definitions without
-changing the existing grant. Do not claim to have read a page when client schema
-validation blocked the call. Existing
-`?page=DOCUMENT_ID` links also work. The server validates the host, path,
-immutable identity and current OAuth universe grant. A URL is a locator, never
-a permission grant. Old title/collection slugs remain valid after rename or
-move. Follow `nextOffset` with the same pageUrl and returned revisionId; cite
-the returned documentId, revisionId and contentHash. If access is denied, ask
-the author to review their connection; never request tokens or scrape the site.
-Tool-returned pageUrl may use the collection ID to avoid extra catalog reads;
-the signed-in author app canonicalizes it from its already-loaded collection.
+When the author pastes a Noveliaa page URL:
+
+1. If the connected `fetch_page` schema supports `pageUrl`, pass the pasted URL
+   as `{"pageUrl":"PASTED_URL"}`; the server validates its identity and grant.
+2. Otherwise validate and parse the URL locally, then call
+   `fetch_page({"documentId":"EXTRACTED_ID"})`. Accept only HTTPS on exactly
+   `noveliaa.web.app` or `noveliaa.firebaseapp.com`, without credentials, port,
+   fragment, whitespace, backslash or traversal. The canonical path must be
+   exactly `/u/<universeId>/<collection>/<title>/<documentId>`, with no query.
+   Both IDs must match `^[A-Za-z0-9_-]{1,150}$`. Decode the two name segments:
+   each must be nonempty, at most 200 UTF-16 units, and contain only Unicode
+   letters, marks, numbers, underscores or hyphens; reject malformed escapes
+   and encoded separators. Extract the final segment as documentId and retain
+   the URL's universeId. For a legacy root `/?page=ID`, require exactly one
+   `page` query and no others, decode and validate that ID; it has no universe
+   binding. Never infer IDs from names or pass the full URL in documentId.
+3. For fallback reads, before using any text, verify documentId equals the extracted ID
+   and, for a canonical link, universeId equals the URL's universeId. Stop on
+   mismatch; do not discuss or save that material. Follow every `nextOffset`
+   using `offset`, the same locator (pageUrl or extracted documentId), and the
+   returned revisionId. Check identity, revisionId and contentHash stay equal
+   across parts; never splice revisions. Cite those exact returned fields.
+
+A URL is a locator, never a permission grant. This fallback uses the existing
+author grant and needs no connector refresh. Old title/collection slugs remain
+valid after rename or move. If access is denied, report it without claiming a
+read; never request tokens, scrape the site or bypass the grant. Tool-returned
+pageUrl may use the collection ID to avoid extra catalog reads; the signed-in
+author app canonicalizes it from its already-loaded collection.
 
 
 Noveliaa is an author-owned workspace, not a story generator or canon authority.

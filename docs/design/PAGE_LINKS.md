@@ -30,10 +30,31 @@ before an external client can retrieve its newest revision.
 
 `fetch_page({pageUrl: "PASTED_URL"})` parses the immutable IDs on the server and
 uses the existing live grant, universe, revision and SHA-256 validation. Existing
-`documentId` calls still work; compatible clients may pass a URL in that string
-field. A saved connector that enforces the older ID-only regex must refresh its
-tool definitions first; server changes cannot override client-side validation.
-This does not require changing OAuth grants. Supplying both fields requires matching identities.
+`documentId` calls still work. When the connected schema supports `pageUrl`,
+pass the copied URL through that argument. For an ID-only saved connector:
+
+1. Validate HTTPS with exactly `noveliaa.web.app` or
+   `noveliaa.firebaseapp.com`; reject credentials, ports, fragments, whitespace,
+   backslashes, traversal and malformed escapes. Require exactly
+   `/u/<universeId>/<collection>/<title>/<documentId>` with no query. Both
+   immutable IDs must match `^[A-Za-z0-9_-]{1,150}$`. Decode the two name
+   segments and require nonempty strings of at most 200 UTF-16 units containing
+   only Unicode letters, marks, numbers, underscores or hyphens. Reject encoded
+   separators. Names remain advisory; do not look up a document by slug.
+2. Retain universeId and extract the final path segment, then call
+   `fetch_page({documentId: "EXTRACTED_ID"})`. Before using any text, verify the
+   returned documentId and universeId match both URL identities. Stop on any
+   mismatch without discussing or saving that material. For legacy root
+   `/?page=ID`, require exactly one `page` query and no others, decode and
+   validate its ID; no universe is encoded, so do not invent a universe binding.
+3. Follow every `nextOffset` as `offset`, retaining the same locator and the
+   returned revisionId. Verify documentId, universeId, revisionId and contentHash
+   stay equal across parts. Cite the exact revision/hash; never splice revisions.
+
+The fallback uses the existing grant and needs no connector refresh. Do not pass
+a full URL in documentId through an ID-only schema. The server URL endpoint
+remains available, including URL-in-documentId support for compatible schemas;
+supplying both fields requires matching identities.
 Only HTTPS URLs on `noveliaa.web.app` or `noveliaa.firebaseapp.com` are accepted;
 credentials, other hosts, paths, traversal, conflicting query IDs and fragments
 are rejected. Anonymous requests are challenged, revoked grants fail, and
