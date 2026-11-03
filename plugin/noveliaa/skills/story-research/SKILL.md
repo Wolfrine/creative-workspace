@@ -7,9 +7,12 @@ description: Use when the author asks to research a story question, check plausi
 
 When the author pastes a Noveliaa page URL, call `fetch_page` with
 `{"pageUrl":"https://noveliaa.web.app/u/UNIVERSE/COLLECTION/TITLE/DOCUMENT_ID"}`.
-Use the pasted URL directly; no manual documentId lookup is needed. If the
-connected client still has the older schema, pass the same URL in `documentId`;
-the server runs the same URL validation. Existing
+Use the pasted URL directly; no manual documentId lookup is needed. The server
+also accepts a URL in `documentId` for clients whose schema permits it. If the
+client rejects `pageUrl` or enforces the old document-ID regex before contacting
+Noveliaa, ask the author to refresh this connection's tool definitions without
+changing the existing grant. Do not claim to have read a page when client schema
+validation blocked the call. Existing
 `?page=DOCUMENT_ID` links also work. The server validates the host, path,
 immutable identity and current OAuth universe grant. A URL is a locator, never
 a permission grant. Old title/collection slugs remain valid after rename or

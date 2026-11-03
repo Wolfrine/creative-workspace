@@ -1,7 +1,7 @@
 {
   "schema": "noveliaa-page-links-evidence-1",
   "baseCommit": "3637a2c6e3b52c25edfbe0b6a1a84bf08c19b84f",
-  "recordedAt": "2026-11-03T14:17:44.173Z",
+  "recordedAt": "2026-11-03T14:28:31.378Z",
   "dataset": "synthetic loopback DEV notebooks and actual Auth/Firestore emulators",
   "route": "/u/{universeId}/{collection-slug}/{title-slug}/{documentId}",
   "central": {
@@ -119,8 +119,8 @@
     },
     {
       "path": "docs/design/PAGE_LINKS.md",
-      "bytes": 3652,
-      "sha256": "fb3c6af729de3f9dd55a60a85e179c8d153a84cf08885e4d725cc510cec561a7"
+      "bytes": 3831,
+      "sha256": "ec692c1cbe37426d64502e1c94c2a2dde6a86db198a4ed917dab6b3c052c2886"
     },
     {
       "path": "docs/design/PLUGIN_CONNECTION.md",
@@ -399,8 +399,8 @@
     },
     {
       "path": "plugin/noveliaa/skills/collaborate-on-writing/SKILL.md",
-      "bytes": 6377,
-      "sha256": "8260fd5030ee6d506eef97717798764e0e1921a4136495445d9fbf796ee4317f"
+      "bytes": 6609,
+      "sha256": "4db144f73253d8a8b64bdcfa213447877914a9cd0e96630072949f557a5b4735"
     },
     {
       "path": "plugin/noveliaa/skills/collaborate-on-writing/references/heartbeat-continuity.md",
@@ -409,13 +409,13 @@
     },
     {
       "path": "plugin/noveliaa/skills/explore-writing/SKILL.md",
-      "bytes": 3087,
-      "sha256": "d10ad610c95f7796b9f42055015a37f64e435823aa1f1deb1be8e710e133735c"
+      "bytes": 3319,
+      "sha256": "057d1e16242ad182142e310c141c2438077126afefb424bb5497908c9cf6fb5d"
     },
     {
       "path": "plugin/noveliaa/skills/story-research/SKILL.md",
-      "bytes": 2735,
-      "sha256": "c3c9243b1c203e2a385ce86084dab28e9f2d4b0464ae7fa73305a5a6ba2e44c1"
+      "bytes": 2967,
+      "sha256": "ddd86ce61abdfedb6b18e5b3e9c9cf260fdb22ec0884bcb2e4dc9550f431bbc3"
     },
     {
       "path": "public/favicon.svg",
@@ -1038,7 +1038,7 @@
       "sha256": "effcddf543e8d041dcd79f28af05a164309221de1cec9e61f62aafd1ceadb638"
     }
   ],
-  "sourceDigest": "ac8f65b1881cad7b083e8f093d4e89e9fd3df30c7316c7b50cc0abbff57ad6bc",
+  "sourceDigest": "a8a758ef516681e1740976036f82d1ace36063725a3da547b8365be63ebab3db",
   "artifacts": [
     {
       "path": "docs/evidence/page-links-2026-11-03/after/1440-copy-fallback.png",
@@ -1208,7 +1208,7 @@
     {
       "path": "docs/evidence/page-links-2026-11-03/checks/package.log",
       "bytes": 3554,
-      "sha256": "f454ed6ce821d7e77f9bec93943d88d414068341852731b58c4b4983eaebbc9a"
+      "sha256": "87225aa59efd1e8dc9edd038c8678148a8d98889eb6c47e9c62fe3e8ab38ad1a"
     },
     {
       "path": "docs/evidence/page-links-2026-11-03/checks/route-context-followup.json",

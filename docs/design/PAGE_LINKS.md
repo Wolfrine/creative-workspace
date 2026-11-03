@@ -30,8 +30,10 @@ before an external client can retrieve its newest revision.
 
 `fetch_page({pageUrl: "PASTED_URL"})` parses the immutable IDs on the server and
 uses the existing live grant, universe, revision and SHA-256 validation. Existing
-`documentId` calls still work; clients with cached schemas may pass the pasted
-URL in that string field. Supplying both fields requires matching identities.
+`documentId` calls still work; compatible clients may pass a URL in that string
+field. A saved connector that enforces the older ID-only regex must refresh its
+tool definitions first; server changes cannot override client-side validation.
+This does not require changing OAuth grants. Supplying both fields requires matching identities.
 Only HTTPS URLs on `noveliaa.web.app` or `noveliaa.firebaseapp.com` are accepted;
 credentials, other hosts, paths, traversal, conflicting query IDs and fragments
 are rejected. Anonymous requests are challenged, revoked grants fail, and
