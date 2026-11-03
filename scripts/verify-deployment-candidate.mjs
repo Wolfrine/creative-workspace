@@ -9,7 +9,8 @@ const heartbeatRework = existsSync('docs/evidence/heartbeat-rework-2026-11-03/ma
 const heartbeatCurrent = existsSync('docs/evidence/heartbeat-current-2026-11-03/manifest.json');
 // A later feature binds the complete current source inventory. Do not rewrite
 // or mistake the original plugin source hashes for the newly reviewed source.
-if (heartbeatCurrent) await import('./verify-heartbeat-current-candidate.mjs');
+if (existsSync('docs/evidence/page-links-2026-11-03/manifest.json')) await import('./verify-page-links-candidate.mjs');
+else if (heartbeatCurrent) await import('./verify-heartbeat-current-candidate.mjs');
 else if (heartbeatRework) await import('./verify-heartbeat-rework-candidate.mjs');
 else if (heartbeat) await import('./verify-heartbeat-candidate.mjs');
 const manifest = JSON.parse(await readFile('docs/evidence/plugin-2026-10-25/manifest.json', 'utf8'));

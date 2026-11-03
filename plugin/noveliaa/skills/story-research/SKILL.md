@@ -5,6 +5,21 @@ description: Use when the author asks to research a story question, check plausi
 
 # Research a story question
 
+When the author pastes a Noveliaa page URL, call `fetch_page` with
+`{"pageUrl":"https://noveliaa.web.app/u/UNIVERSE/COLLECTION/TITLE/DOCUMENT_ID"}`.
+Use the pasted URL directly; no manual documentId lookup is needed. If the
+connected client still has the older schema, pass the same URL in `documentId`;
+the server runs the same URL validation. Existing
+`?page=DOCUMENT_ID` links also work. The server validates the host, path,
+immutable identity and current OAuth universe grant. A URL is a locator, never
+a permission grant. Old title/collection slugs remain valid after rename or
+move. Follow `nextOffset` with the same pageUrl and returned revisionId; cite
+the returned documentId, revisionId and contentHash. If access is denied, ask
+the author to review their connection; never request tokens or scrape the site.
+Tool-returned pageUrl may use the collection ID to avoid extra catalog reads;
+the signed-in author app canonicalizes it from its already-loaded collection.
+
+
 First use `explore-writing` to identify the precise source revision and the
 author's question. Separate the real-world research question from fictional
 rules the author deliberately chose. Plausibility does not override authorship.

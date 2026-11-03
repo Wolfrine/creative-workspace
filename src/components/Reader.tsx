@@ -1,6 +1,6 @@
 import { Fragment, useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, BookOpen, Check, ChevronLeft, ChevronRight, List, Pencil, Settings2, ShieldCheck, X } from 'lucide-react';
-import type { Revision, RichNode } from '../domain/model';
+import type { Collection, Revision, RichNode, WritingDocument } from '../domain/model';
 import Heartbeat, { HeartbeatToggle } from '../heartbeat/Heartbeat';
 import { useHeartbeat, type HeartbeatState } from '../heartbeat/useHeartbeat';
 import { heartbeatRanges, useHeartbeatRail } from '../heartbeat/decorations';
@@ -8,6 +8,7 @@ import type { HeartbeatBeat } from '../heartbeat/model';
 import { beginReadingTransition } from '../reader/page-turn';
 import { readerOrigin, safeReaderHref, readingBookmark, readerPageStart, resumeReading, type ReadingAnchor, type ReadingSnapshot } from '../reader/reading';
 import Modal from './Modal';
+import CopyPageLink from './CopyPageLink';
 
 interface Preferences { size: number; leading: number; margin: 'comfortable' | 'wide'; theme: 'paper' | 'night'; font: 'serif' | 'sans'; animation: boolean; spread: boolean; layout: 'auto' | 'pages' | 'scroll' }
 const defaults: Preferences = { size: 20, leading: 1.85, margin: 'comfortable', theme: 'paper', font: 'serif', animation: true, spread: true, layout: 'auto' };
@@ -39,7 +40,7 @@ function passageRange(element: HTMLElement, offset: number): Range {
   range.selectNodeContents(element); return range;
 }
 
-export default function Reader({ snapshot, availableDocumentIds, onClose, onEdit, changed, returnToLibrary = false, heartbeatSourceChanged = false, heartbeatEnabled, onHeartbeatToggle, heartbeatLocalPreview, revisions }: { returnToLibrary?: boolean; snapshot: ReadingSnapshot; availableDocumentIds: string[]; onClose(): void; onEdit(id: string): void; changed: boolean; heartbeatEnabled: boolean; onHeartbeatToggle(): void; heartbeatLocalPreview: boolean; revisions: Revision[]; heartbeatSourceChanged?: boolean }) {
+export default function Reader({ onCurrentDocument, linkDocuments, collections, snapshot, availableDocumentIds, onClose, onEdit, changed, returnToLibrary = false, heartbeatSourceChanged = false, heartbeatEnabled, onHeartbeatToggle, heartbeatLocalPreview, revisions }: { onCurrentDocument(id: string): void; linkDocuments: WritingDocument[]; collections: Collection[]; returnToLibrary?: boolean; snapshot: ReadingSnapshot; availableDocumentIds: string[]; onClose(): void; onEdit(id: string): void; changed: boolean; heartbeatEnabled: boolean; onHeartbeatToggle(): void; heartbeatLocalPreview: boolean; revisions: Revision[]; heartbeatSourceChanged?: boolean }) {
   const [preferences, setPreferences] = useState(readPreferences);
   const [windowSize, setWindowSize] = useState({ width: window.innerWidth, height: window.innerHeight });
   const flow = preferences.layout === 'scroll' || (preferences.layout === 'auto' && (windowSize.width <= 350 || (windowSize.width <= 650 && windowSize.height <= 740)));
@@ -67,6 +68,8 @@ export default function Reader({ snapshot, availableDocumentIds, onClose, onEdit
   const [linkNotice, setLinkNotice] = useState(false);
   const [activeTitle, setActiveTitle] = useState(snapshot.documents[0]?.title || 'Untitled');
   const [activeDocumentId, setActiveDocumentId] = useState(anchor.current.documentId);
+  useEffect(() => { onCurrentDocument(activeDocumentId); }, [activeDocumentId, onCurrentDocument]);
+  const linkDocument = linkDocuments.find(item => item.id === activeDocumentId && !item.trashed);
   const heartbeatDocument = snapshot.documents.find(item => item.id === activeDocumentId) || snapshot.documents[0];
   const heartbeatRequest = useHeartbeat(heartbeatDocument, revisions, heartbeatEnabled && !changed && !heartbeatSourceChanged, heartbeatLocalPreview);
   const heartbeat: HeartbeatState = heartbeatEnabled && (changed || heartbeatSourceChanged) ? { status: 'stale', refresh: heartbeatRequest.refresh } : heartbeatRequest;
@@ -240,7 +243,7 @@ export default function Reader({ snapshot, availableDocumentIds, onClose, onEdit
   const touch = useRef<{ x: number; y: number } | null>(null);
   const css = { '--reader-size': `${preferences.size}px`, '--reader-leading': preferences.leading, '--reader-font': preferences.font === 'serif' ? 'var(--serif)' : "'DM Sans Variable', sans-serif" } as CSSProperties;
   return <section className={`reader reader-${preferences.theme} ${columns === 2 ? 'reader-spread' : ''} ${flow ? 'reader-flow' : ''} ${compactFlow ? 'reader-compact-flow' : ''} ${flow && scrollProgress > .99 ? 'reader-flow-at-end' : ''}`} style={css} aria-label="Private reading mode">
-    <header className="reader-header"><button className="reader-back" onClick={() => returnToLibrary ? onClose() : onEdit(anchor.current.documentId)}><ArrowLeft size={17} /><span>{returnToLibrary ? 'Back to Library' : 'Back to writing'}</span></button><div className="reader-book-title"><BookOpen size={15} /><span title={snapshot.title === activeTitle ? snapshot.title : `${snapshot.title} ? ${activeTitle}`}>{snapshot.title}</span></div><div className="reader-header-actions"><HeartbeatToggle enabled={heartbeatEnabled} onToggle={onHeartbeatToggle} />{returnToLibrary && <button className="icon-button" aria-label="Edit current page" title="Edit current page" onClick={() => onEdit(anchor.current.documentId)}><Pencil size={18} /></button>}<button className="icon-button" aria-label="Reading contents" aria-pressed={panel === 'contents'} onClick={() => setPanel(panel === 'contents' ? null : 'contents')}><List size={20} /></button><button className="icon-button" aria-label="Reading appearance" aria-pressed={panel === 'appearance'} onClick={() => setPanel(panel === 'appearance' ? null : 'appearance')}><Settings2 size={19} /></button></div></header>
+    <header className="reader-header"><button className="reader-back" onClick={() => returnToLibrary ? onClose() : onEdit(anchor.current.documentId)}><ArrowLeft size={17} /><span>{returnToLibrary ? 'Back to Library' : 'Back to writing'}</span></button><div className="reader-book-title"><BookOpen size={15} /><span title={snapshot.title === activeTitle ? snapshot.title : `${snapshot.title} ? ${activeTitle}`}>{snapshot.title}</span></div><div className="reader-header-actions">{linkDocument && <CopyPageLink document={linkDocument} collectionName={collections.find(item => item.id === linkDocument.collectionId)?.name} />}<HeartbeatToggle enabled={heartbeatEnabled} onToggle={onHeartbeatToggle} />{returnToLibrary && <button className="icon-button" aria-label="Edit current page" title="Edit current page" onClick={() => onEdit(anchor.current.documentId)}><Pencil size={18} /></button>}<button className="icon-button" aria-label="Reading contents" aria-pressed={panel === 'contents'} onClick={() => setPanel(panel === 'contents' ? null : 'contents')}><List size={20} /></button><button className="icon-button" aria-label="Reading appearance" aria-pressed={panel === 'appearance'} onClick={() => setPanel(panel === 'appearance' ? null : 'appearance')}><Settings2 size={19} /></button></div></header>
     {resumeNotice && <div className="reader-update" role="status">This writing changed since your last reading. Starting at the beginning of this page.<button aria-label="Dismiss reading position notice" onClick={() => setResumeNotice(false)}><X size={13} /></button></div>}
     {changed && <div className="reader-update">Newer writing is available. This reading session keeps its place.<button onClick={onClose}>{returnToLibrary ? 'Return to Library' : 'Return to writing'}<ArrowRight size={13} /></button></div>}
     {linkNotice && <div className="reader-update" role="status">That linked writing is in Trash or is unavailable in this universe.<button aria-label="Dismiss reading link notice" onClick={() => setLinkNotice(false)}><X size={13} /></button></div>}

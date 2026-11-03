@@ -1,0 +1,4578 @@
+{
+  "config": {
+    "argv": [
+      "F:\\Workspace\\Support\\tools\\node-24\\node.exe",
+      "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\playwright.config.ts",
+    "rootDir": "F:/Workspace/Programs/Independent-Products/Noveliaa/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "F:/Workspace/Programs/Independent-Products/Noveliaa/.local/browser-test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "F:/Workspace/Programs/Independent-Products/Noveliaa/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser",
+        "snapshotDir": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5817",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".local/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "autosave.spec.ts",
+      "file": "autosave.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "quiet sync icon, exact idle timer, recovery and details at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6344,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:49:22.094Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef2e57cca4928d3dc33e-146b6a00430097ff41ff",
+          "file": "autosave.spec.ts",
+          "line": 4,
+          "column": 39
+        },
+        {
+          "title": "quiet sync icon, exact idle timer, recovery and details at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5368,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:49:28.639Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef2e57cca4928d3dc33e-e55ace7e106c62516594",
+          "file": "autosave.spec.ts",
+          "line": 4,
+          "column": 39
+        },
+        {
+          "title": "quiet sync icon, exact idle timer, recovery and details at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5293,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:49:34.031Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef2e57cca4928d3dc33e-33e2b1390646a9593c4e",
+          "file": "autosave.spec.ts",
+          "line": 4,
+          "column": 39
+        }
+      ]
+    },
+    {
+      "title": "conflict.spec.ts",
+      "file": "conflict.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "page-specific conflict review and blank current-version choice at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10600,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:49:39.481Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "85d4cfac8cba6550f57c-a238672c3d9c09280260",
+          "file": "conflict.spec.ts",
+          "line": 6,
+          "column": 39
+        },
+        {
+          "title": "page-specific conflict review and blank current-version choice at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8745,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:49:50.101Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "85d4cfac8cba6550f57c-48868d6638072df14113",
+          "file": "conflict.spec.ts",
+          "line": 6,
+          "column": 39
+        },
+        {
+          "title": "page-specific conflict review and blank current-version choice at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8040,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:49:58.869Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "85d4cfac8cba6550f57c-797351361fc83de3eb5b",
+          "file": "conflict.spec.ts",
+          "line": 6,
+          "column": 39
+        }
+      ]
+    },
+    {
+      "title": "heartbeat-current.spec.ts",
+      "file": "heartbeat-current.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Auto layout keeps prose capacity and a compact rail key at 1366x590",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2455,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:06.985Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "prose-capacity",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MTM2NiwiaGVpZ2h0Ijo1OTAsImxpbmVzIjoxOCwibGF5b3V0IjoicGFnZXMifSwiZ2VvbWV0cnkiOnsibGluZXMiOjE5LCJmb290ZXIiOjY2LCJmb250IjoyMCwibGVhZGluZyI6MS44NSwib3ZlcmZsb3ciOjAsImNvbnRyb2xzIjpbeyJsYWJlbCI6IlByZXZpb3VzIHJlYWRlciBwYWdlIiwidmlzaWJsZSI6dHJ1ZX0seyJsYWJlbCI6Ik5leHQgcmVhZGVyIHBhZ2UiLCJ2aXNpYmxlIjp0cnVlfSx7ImxhYmVsIjoiQWJvdXQgdGhpcyBBSSBpbnRlcnByZXRhdGlvbiIsInZpc2libGUiOnRydWV9LHsibGFiZWwiOiJFYWdlciBjYWxtLiBTaG93IGludGVycHJldGF0aW9uLiIsInZpc2libGUiOnRydWV9LHsibGFiZWwiOiJGb25kIGxvbmdpbmcuIFNob3cgaW50ZXJwcmV0YXRpb24uIiwidmlzaWJsZSI6dHJ1ZX0seyJsYWJlbCI6IlJlbmV3ZWQgY3VyaW9zaXR5LiBTaG93IGludGVycHJldGF0aW9uLiIsInZpc2libGUiOnRydWV9LHsibGFiZWwiOiJEaXNhcHBvaW50bWVudC4gU2hvdyBpbnRlcnByZXRhdGlvbi4iLCJ2aXNpYmxlIjp0cnVlfV0sImtleXMiOlt7ImxhYmVsIjoiRWFnZXIgY2FsbSIsImZvbnQiOjE0LCJ2aXNpYmxlIjp0cnVlLCJjbGlwcGVkIjpmYWxzZX0seyJsYWJlbCI6IkZvbmQgbG9uZ2luZyIsImZvbnQiOjE0LCJ2aXNpYmxlIjp0cnVlLCJjbGlwcGVkIjpmYWxzZX0seyJsYWJlbCI6IlJlbmV3ZWQgY3VyaW9zaXR5IiwiZm9udCI6MTQsInZpc2libGUiOnRydWUsImNsaXBwZWQiOmZhbHNlfSx7ImxhYmVsIjoiRGlzYXBwb2ludG1lbnQiLCJmb250IjoxNCwidmlzaWJsZSI6dHJ1ZSwiY2xpcHBlZCI6ZmFsc2V9XX19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-7a99ebd8a71b2250f04c",
+          "file": "heartbeat-current.spec.ts",
+          "line": 167,
+          "column": 35
+        },
+        {
+          "title": "Auto layout keeps prose capacity and a compact rail key at 1366x768",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2535,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:09.464Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "prose-capacity",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MTM2NiwiaGVpZ2h0Ijo3NjgsImxpbmVzIjoyOCwibGF5b3V0IjoicGFnZXMifSwiZ2VvbWV0cnkiOnsibGluZXMiOjI4LCJmb290ZXIiOjY2LCJmb250IjoyMCwibGVhZGluZyI6MS44NSwib3ZlcmZsb3ciOjAsImNvbnRyb2xzIjpbeyJsYWJlbCI6IlByZXZpb3VzIHJlYWRlciBwYWdlIiwidmlzaWJsZSI6dHJ1ZX0seyJsYWJlbCI6Ik5leHQgcmVhZGVyIHBhZ2UiLCJ2aXNpYmxlIjp0cnVlfSx7ImxhYmVsIjoiQWJvdXQgdGhpcyBBSSBpbnRlcnByZXRhdGlvbiIsInZpc2libGUiOnRydWV9LHsibGFiZWwiOiJFYWdlciBjYWxtLiBTaG93IGludGVycHJldGF0aW9uLiIsInZpc2libGUiOnRydWV9LHsibGFiZWwiOiJGb25kIGxvbmdpbmcuIFNob3cgaW50ZXJwcmV0YXRpb24uIiwidmlzaWJsZSI6dHJ1ZX0seyJsYWJlbCI6IlJlbmV3ZWQgY3VyaW9zaXR5LiBTaG93IGludGVycHJldGF0aW9uLiIsInZpc2libGUiOnRydWV9LHsibGFiZWwiOiJEaXNhcHBvaW50bWVudC4gU2hvdyBpbnRlcnByZXRhdGlvbi4iLCJ2aXNpYmxlIjp0cnVlfSx7ImxhYmVsIjoiVGVtcGVyZWQgZWFnZXJuZXNzLiBTaG93IGludGVycHJldGF0aW9uLiIsInZpc2libGUiOnRydWV9LHsibGFiZWwiOiJGcnVzdHJhdGlvbi4gU2hvdyBpbnRlcnByZXRhdGlvbi4iLCJ2aXNpYmxlIjp0cnVlfV0sImtleXMiOlt7ImxhYmVsIjoiRWFnZXIgY2FsbSIsImZvbnQiOjE0LCJ2aXNpYmxlIjp0cnVlLCJjbGlwcGVkIjpmYWxzZX0seyJsYWJlbCI6IkZvbmQgbG9uZ2luZyIsImZvbnQiOjE0LCJ2aXNpYmxlIjp0cnVlLCJjbGlwcGVkIjpmYWxzZX0seyJsYWJlbCI6IlJlbmV3ZWQgY3VyaW9zaXR5IiwiZm9udCI6MTQsInZpc2libGUiOnRydWUsImNsaXBwZWQiOmZhbHNlfSx7ImxhYmVsIjoiRGlzYXBwb2ludG1lbnQiLCJmb250IjoxNCwidmlzaWJsZSI6dHJ1ZSwiY2xpcHBlZCI6ZmFsc2V9LHsibGFiZWwiOiJUZW1wZXJlZCBlYWdlcm5lc3MiLCJmb250IjoxNCwidmlzaWJsZSI6dHJ1ZSwiY2xpcHBlZCI6ZmFsc2V9LHsibGFiZWwiOiJGcnVzdHJhdGlvbiIsImZvbnQiOjE0LCJ2aXNpYmxlIjp0cnVlLCJjbGlwcGVkIjpmYWxzZX1dfX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-adb2e364473a7c81f391",
+          "file": "heartbeat-current.spec.ts",
+          "line": 167,
+          "column": 35
+        },
+        {
+          "title": "Auto layout keeps prose capacity and a compact rail key at 390x700",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2282,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:12.024Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "prose-capacity",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzkwLCJoZWlnaHQiOjcwMCwibGluZXMiOjExLCJsYXlvdXQiOiJzY3JvbGwifSwiZ2VvbWV0cnkiOnsibGluZXMiOjEzLCJmb290ZXIiOjcwLCJmb250IjoyMCwibGVhZGluZyI6MS44NSwib3ZlcmZsb3ciOjAsImNvbnRyb2xzIjpbeyJsYWJlbCI6IlN3aXRjaCB0byBwYWdpbmF0ZWQgcmVhZGluZyIsInZpc2libGUiOnRydWV9LHsibGFiZWwiOiJBYm91dCB0aGlzIEFJIGludGVycHJldGF0aW9uIiwidmlzaWJsZSI6dHJ1ZX0seyJsYWJlbCI6IkVhZ2VyIGNhbG0uIFNob3cgaW50ZXJwcmV0YXRpb24uIiwidmlzaWJsZSI6dHJ1ZX0seyJsYWJlbCI6IkZvbmQgbG9uZ2luZy4gU2hvdyBpbnRlcnByZXRhdGlvbi4iLCJ2aXNpYmxlIjp0cnVlfV0sImtleXMiOlt7ImxhYmVsIjoiRWFnZXIgY2FsbSIsImZvbnQiOjE0LCJ2aXNpYmxlIjp0cnVlLCJjbGlwcGVkIjpmYWxzZX0seyJsYWJlbCI6IkZvbmQgbG9uZ2luZyIsImZvbnQiOjE0LCJ2aXNpYmxlIjp0cnVlLCJjbGlwcGVkIjpmYWxzZX1dfX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-143b15ae6ee6026b7c55",
+          "file": "heartbeat-current.spec.ts",
+          "line": 167,
+          "column": 35
+        },
+        {
+          "title": "Auto layout keeps prose capacity and a compact rail key at 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2208,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:14.327Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "prose-capacity",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzkwLCJoZWlnaHQiOjg0NCwibGluZXMiOjE1LCJsYXlvdXQiOiJwYWdlcyJ9LCJnZW9tZXRyeSI6eyJsaW5lcyI6MTcsImZvb3RlciI6NzAsImZvbnQiOjIwLCJsZWFkaW5nIjoxLjg1LCJvdmVyZmxvdyI6MCwiY29udHJvbHMiOlt7ImxhYmVsIjoiUHJldmlvdXMgcmVhZGVyIHBhZ2UiLCJ2aXNpYmxlIjp0cnVlfSx7ImxhYmVsIjoiTmV4dCByZWFkZXIgcGFnZSIsInZpc2libGUiOnRydWV9LHsibGFiZWwiOiJBYm91dCB0aGlzIEFJIGludGVycHJldGF0aW9uIiwidmlzaWJsZSI6dHJ1ZX0seyJsYWJlbCI6IkVhZ2VyIGNhbG0uIFNob3cgaW50ZXJwcmV0YXRpb24uIiwidmlzaWJsZSI6dHJ1ZX0seyJsYWJlbCI6IkZvbmQgbG9uZ2luZy4gU2hvdyBpbnRlcnByZXRhdGlvbi4iLCJ2aXNpYmxlIjp0cnVlfV0sImtleXMiOlt7ImxhYmVsIjoiRWFnZXIgY2FsbSIsImZvbnQiOjE0LCJ2aXNpYmxlIjp0cnVlLCJjbGlwcGVkIjpmYWxzZX0seyJsYWJlbCI6IkZvbmQgbG9uZ2luZyIsImZvbnQiOjE0LCJ2aXNpYmxlIjp0cnVlLCJjbGlwcGVkIjpmYWxzZX1dfX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-4c81910b983c810eaeb4",
+          "file": "heartbeat-current.spec.ts",
+          "line": 167,
+          "column": 35
+        },
+        {
+          "title": "Auto layout keeps prose capacity and a compact rail key at 320x568",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2645,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:16.553Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "prose-capacity",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjU2OCwibGluZXMiOjgsImxheW91dCI6InNjcm9sbCJ9LCJnZW9tZXRyeSI6eyJsaW5lcyI6MTAsImZvb3RlciI6NzAsImZvbnQiOjIwLCJsZWFkaW5nIjoxLjg1LCJvdmVyZmxvdyI6MCwiY29udHJvbHMiOlt7ImxhYmVsIjoiU3dpdGNoIHRvIHBhZ2luYXRlZCByZWFkaW5nIiwidmlzaWJsZSI6dHJ1ZX0seyJsYWJlbCI6IkFib3V0IHRoaXMgQUkgaW50ZXJwcmV0YXRpb24iLCJ2aXNpYmxlIjp0cnVlfSx7ImxhYmVsIjoiRWFnZXIgY2FsbS4gU2hvdyBpbnRlcnByZXRhdGlvbi4iLCJ2aXNpYmxlIjp0cnVlfV0sImtleXMiOlt7ImxhYmVsIjoiRWFnZXIgY2FsbSIsImZvbnQiOjE0LCJ2aXNpYmxlIjp0cnVlLCJjbGlwcGVkIjpmYWxzZX1dfX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-9d7e1b0f6e1876e26c0d",
+          "file": "heartbeat-current.spec.ts",
+          "line": 167,
+          "column": 35
+        },
+        {
+          "title": "Auto layout exposes every rich-text character at 1366x590",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3420,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:19.218Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "native-scroll-reachability",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MTM2NiwiaGVpZ2h0Ijo1OTAsImxpbmVzIjoxOCwibGF5b3V0IjoicGFnZXMifSwic291cmNlQ2hhcmFjdGVycyI6MjkwNiwicmVhY2hlZE1lYW5pbmdmdWxDaGFyYWN0ZXJzIjoyNDA3LCJ0cmFjZSI6W3sidG9wIjowLCJoZWlnaHQiOjQzOSwidG90YWwiOjQzOSwicGFnZSI6IjAifSx7InRvcCI6MCwiaGVpZ2h0Ijo0MzksInRvdGFsIjo0MzksInBhZ2UiOiIyIn0seyJ0b3AiOjAsImhlaWdodCI6NDM5LCJ0b3RhbCI6NDM5LCJwYWdlIjoiNCJ9LHsidG9wIjowLCJoZWlnaHQiOjQzOSwidG90YWwiOjQzOSwicGFnZSI6IjYifV0sIm1pc3NpbmciOltdfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-cf5c9f64069f3cd8aae0",
+          "file": "heartbeat-current.spec.ts",
+          "line": 227,
+          "column": 35
+        },
+        {
+          "title": "Auto layout exposes every rich-text character at 1366x768",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2578,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:22.665Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "native-scroll-reachability",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MTM2NiwiaGVpZ2h0Ijo3NjgsImxpbmVzIjoyOCwibGF5b3V0IjoicGFnZXMifSwic291cmNlQ2hhcmFjdGVycyI6MjkwNiwicmVhY2hlZE1lYW5pbmdmdWxDaGFyYWN0ZXJzIjoyNDA3LCJ0cmFjZSI6W3sidG9wIjowLCJoZWlnaHQiOjYxNywidG90YWwiOjYxNywicGFnZSI6IjAifSx7InRvcCI6MCwiaGVpZ2h0Ijo2MTcsInRvdGFsIjo2MTcsInBhZ2UiOiIyIn0seyJ0b3AiOjAsImhlaWdodCI6NjE3LCJ0b3RhbCI6NjE3LCJwYWdlIjoiNCJ9XSwibWlzc2luZyI6W119"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-c08fc7d87418c67771b1",
+          "file": "heartbeat-current.spec.ts",
+          "line": 227,
+          "column": 35
+        },
+        {
+          "title": "Auto layout exposes every rich-text character at 390x700",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3599,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:25.262Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "native-scroll-reachability",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzkwLCJoZWlnaHQiOjcwMCwibGluZXMiOjExLCJsYXlvdXQiOiJzY3JvbGwifSwic291cmNlQ2hhcmFjdGVycyI6MjkwNiwicmVhY2hlZE1lYW5pbmdmdWxDaGFyYWN0ZXJzIjoyNDA3LCJ0cmFjZSI6W3sidG9wIjowLCJoZWlnaHQiOjU3OCwidG90YWwiOjQwOTEsInBhZ2UiOiIwIn0seyJ0b3AiOjAsImhlaWdodCI6NTc4LCJ0b3RhbCI6NDA5MSwicGFnZSI6IjAifSx7InRvcCI6NDk4LCJoZWlnaHQiOjU3OCwidG90YWwiOjQwOTEsInBhZ2UiOiIwIn0seyJ0b3AiOjk5NiwiaGVpZ2h0Ijo1NzgsInRvdGFsIjo0MDkxLCJwYWdlIjoiMCJ9LHsidG9wIjoxNDk0LCJoZWlnaHQiOjU3OCwidG90YWwiOjQwOTEsInBhZ2UiOiIwIn0seyJ0b3AiOjE5OTIsImhlaWdodCI6NTc4LCJ0b3RhbCI6NDA5MSwicGFnZSI6IjAifSx7InRvcCI6MjQ5MCwiaGVpZ2h0Ijo1NzgsInRvdGFsIjo0MDkxLCJwYWdlIjoiMCJ9LHsidG9wIjoyOTg4LCJoZWlnaHQiOjU3OCwidG90YWwiOjQwOTEsInBhZ2UiOiIwIn0seyJ0b3AiOjM0ODYsImhlaWdodCI6NTc4LCJ0b3RhbCI6NDA5MSwicGFnZSI6IjAifSx7InRvcCI6MzUxMywiaGVpZ2h0Ijo1NzgsInRvdGFsIjo0MDkxLCJwYWdlIjoiMCJ9XSwibWlzc2luZyI6W119"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-cd53449e575f3e0f095d",
+          "file": "heartbeat-current.spec.ts",
+          "line": 227,
+          "column": 35
+        },
+        {
+          "title": "Auto layout exposes every rich-text character at 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2827,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:28.879Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "native-scroll-reachability",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzkwLCJoZWlnaHQiOjg0NCwibGluZXMiOjE1LCJsYXlvdXQiOiJwYWdlcyJ9LCJzb3VyY2VDaGFyYWN0ZXJzIjoyOTA2LCJyZWFjaGVkTWVhbmluZ2Z1bENoYXJhY3RlcnMiOjI0MDcsInRyYWNlIjpbeyJ0b3AiOjAsImhlaWdodCI6NzI0LCJ0b3RhbCI6NzI0LCJwYWdlIjoiMCJ9LHsidG9wIjowLCJoZWlnaHQiOjcyNCwidG90YWwiOjcyNCwicGFnZSI6IjEifSx7InRvcCI6MCwiaGVpZ2h0Ijo3MjQsInRvdGFsIjo3MjQsInBhZ2UiOiIyIn0seyJ0b3AiOjAsImhlaWdodCI6NzI0LCJ0b3RhbCI6NzI0LCJwYWdlIjoiMyJ9LHsidG9wIjowLCJoZWlnaHQiOjcyNCwidG90YWwiOjcyNCwicGFnZSI6IjQifSx7InRvcCI6MCwiaGVpZ2h0Ijo3MjQsInRvdGFsIjo3MjQsInBhZ2UiOiI1In1dLCJtaXNzaW5nIjpbXX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-f617b490ed926c1bf6c7",
+          "file": "heartbeat-current.spec.ts",
+          "line": 227,
+          "column": 35
+        },
+        {
+          "title": "Auto layout exposes every rich-text character at 320x568",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3604,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:31.723Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "native-scroll-reachability",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjU2OCwibGluZXMiOjgsImxheW91dCI6InNjcm9sbCJ9LCJzb3VyY2VDaGFyYWN0ZXJzIjoyOTA2LCJyZWFjaGVkTWVhbmluZ2Z1bENoYXJhY3RlcnMiOjI0MDcsInRyYWNlIjpbeyJ0b3AiOjAsImhlaWdodCI6NDQ5LCJ0b3RhbCI6NDY3OCwicGFnZSI6IjAifSx7InRvcCI6MzY5LCJoZWlnaHQiOjQ0OSwidG90YWwiOjQ2NzgsInBhZ2UiOiIwIn0seyJ0b3AiOjczOCwiaGVpZ2h0Ijo0NDksInRvdGFsIjo0Njc4LCJwYWdlIjoiMCJ9LHsidG9wIjoxMTA3LCJoZWlnaHQiOjQ0OSwidG90YWwiOjQ2NzgsInBhZ2UiOiIwIn0seyJ0b3AiOjE0NzYsImhlaWdodCI6NDQ5LCJ0b3RhbCI6NDY3OCwicGFnZSI6IjAifSx7InRvcCI6MTg0NSwiaGVpZ2h0Ijo0NDksInRvdGFsIjo0Njc4LCJwYWdlIjoiMCJ9LHsidG9wIjoyMjE0LCJoZWlnaHQiOjQ0OSwidG90YWwiOjQ2NzgsInBhZ2UiOiIwIn0seyJ0b3AiOjI1ODMsImhlaWdodCI6NDQ5LCJ0b3RhbCI6NDY3OCwicGFnZSI6IjAifSx7InRvcCI6Mjk1MiwiaGVpZ2h0Ijo0NDksInRvdGFsIjo0Njc4LCJwYWdlIjoiMCJ9LHsidG9wIjozMzIxLCJoZWlnaHQiOjQ0OSwidG90YWwiOjQ2NzgsInBhZ2UiOiIwIn0seyJ0b3AiOjM2OTAsImhlaWdodCI6NDQ5LCJ0b3RhbCI6NDY3OCwicGFnZSI6IjAifSx7InRvcCI6NDA1OSwiaGVpZ2h0Ijo0NDksInRvdGFsIjo0Njc4LCJwYWdlIjoiMCJ9LHsidG9wIjo0MjI5LCJoZWlnaHQiOjQ0OSwidG90YWwiOjQ2NzgsInBhZ2UiOiIwIn1dLCJtaXNzaW5nIjpbXX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-4eea04ce382ff5e482bc",
+          "file": "heartbeat-current.spec.ts",
+          "line": 227,
+          "column": 35
+        },
+        {
+          "title": "Rail keeps legacy-rest honest without changing the synthetic source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1814,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:35.342Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-25567733520da1c67223",
+          "file": "heartbeat-current.spec.ts",
+          "line": 274,
+          "column": 68
+        },
+        {
+          "title": "Rail keeps malformed honest without changing the synthetic source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1754,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:37.169Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-5201cd32dbba2bdf2378",
+          "file": "heartbeat-current.spec.ts",
+          "line": 274,
+          "column": 68
+        },
+        {
+          "title": "Rail keeps empty honest without changing the synthetic source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1563,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:38.937Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-4f7f41dd67b0cffe6fbd",
+          "file": "heartbeat-current.spec.ts",
+          "line": 274,
+          "column": 68
+        },
+        {
+          "title": "Native scroll bookmark survives back, reentry and layout switches at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3333,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:40.514Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-cdd20cc1ac125f32b386",
+          "file": "heartbeat-current.spec.ts",
+          "line": 305,
+          "column": 33
+        },
+        {
+          "title": "Native scroll bookmark survives back, reentry and layout switches at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3913,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:43.862Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-4283cb0704d0ebfaa453",
+          "file": "heartbeat-current.spec.ts",
+          "line": 305,
+          "column": 33
+        },
+        {
+          "title": "Seven different same-tone foregrounds keep distinct document colors across turns and resize",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3282,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:47.792Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "same-tone-document-palette",
+                      "contentType": "application/json",
+                      "body": "eyJzdXBwbGllZCI6W3siZm9yZWdyb3VuZCI6IkVhZ2VyIGNhbG0iLCJ0b25lIjoid2FybSJ9LHsiZm9yZWdyb3VuZCI6IkZvbmQgbG9uZ2luZyIsInRvbmUiOiJ3YXJtIn0seyJmb3JlZ3JvdW5kIjoiUmVuZXdlZCBjdXJpb3NpdHkiLCJ0b25lIjoid2FybSJ9LHsiZm9yZWdyb3VuZCI6IkRpc2FwcG9pbnRtZW50IiwidG9uZSI6Indhcm0ifSx7ImZvcmVncm91bmQiOiJUZW1wZXJlZCBlYWdlcm5lc3MiLCJ0b25lIjoid2FybSJ9LHsiZm9yZWdyb3VuZCI6IkZydXN0cmF0aW9uIiwidG9uZSI6Indhcm0ifSx7ImZvcmVncm91bmQiOiJRdWlldCByZXdhcmQiLCJ0b25lIjoid2FybSJ9XSwicmFpbCI6W3sia2V5IjoiZmVlbGluZzplYWdlciBjYWxtIiwiY29sb3IiOiJyZ2IoMTg0LCAxMTcsIDgpIn0seyJrZXkiOiJmZWVsaW5nOmZvbmQgbG9uZ2luZyIsImNvbG9yIjoicmdiKDEwOSwgMTM0LCAzMykifSx7ImtleSI6ImZlZWxpbmc6cmVuZXdlZCBjdXJpb3NpdHkiLCJjb2xvciI6InJnYigxODMsIDEwNywgNTcpIn0seyJrZXkiOiJmZWVsaW5nOmRpc2FwcG9pbnRtZW50IiwiY29sb3IiOiJyZ2IoMzUsIDE0MSwgMTcxKSJ9LHsia2V5IjoiZmVlbGluZzp0ZW1wZXJlZCBlYWdlcm5lc3MiLCJjb2xvciI6InJnYig0MCwgMTE2LCAxNzkpIn0seyJrZXkiOiJmZWVsaW5nOmZydXN0cmF0aW9uIiwiY29sb3IiOiJyZ2IoMTg5LCA2NSwgNTMpIn0seyJrZXkiOiJmZWVsaW5nOnF1aWV0IHJld2FyZCIsImNvbG9yIjoicmdiKDE3MSwgNzUsIDEyNykifV0sImZ1bGxLZXkiOlt7ImtleSI6ImZlZWxpbmc6ZWFnZXIgY2FsbSIsImNvbG9yIjoicmdiKDE4NCwgMTE3LCA4KSJ9LHsia2V5IjoiZmVlbGluZzpmb25kIGxvbmdpbmciLCJjb2xvciI6InJnYigxMDksIDEzNCwgMzMpIn0seyJrZXkiOiJmZWVsaW5nOnJlbmV3ZWQgY3VyaW9zaXR5IiwiY29sb3IiOiJyZ2IoMTgzLCAxMDcsIDU3KSJ9LHsia2V5IjoiZmVlbGluZzpkaXNhcHBvaW50bWVudCIsImNvbG9yIjoicmdiKDM1LCAxNDEsIDE3MSkifSx7ImtleSI6ImZlZWxpbmc6dGVtcGVyZWQgZWFnZXJuZXNzIiwiY29sb3IiOiJyZ2IoNDAsIDExNiwgMTc5KSJ9LHsia2V5IjoiZmVlbGluZzpmcnVzdHJhdGlvbiIsImNvbG9yIjoicmdiKDE4OSwgNjUsIDUzKSJ9LHsia2V5IjoiZmVlbGluZzpxdWlldCByZXdhcmQiLCJjb2xvciI6InJnYigxNzEsIDc1LCAxMjcpIn1dfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-8f43afcb29cbb125da1c",
+          "file": "heartbeat-current.spec.ts",
+          "line": 330,
+          "column": 1
+        },
+        {
+          "title": "A 320px mixed reading shows both exact current feelings at 14px without hiding either behind overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2539,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:51.091Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "narrow-two-feeling-key",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzIwLCJ2aXNpYmxlIjpbIlJlbmV3ZWQgY3VyaW9zaXR5IiwiRGlzYXBwb2ludG1lbnQiXSwia2V5cyI6W3sia2V5IjoiZmVlbGluZzpyZW5ld2VkIGN1cmlvc2l0eSIsImxhYmVsIjoiUmVuZXdlZCBjdXJpb3NpdHkiLCJhY2Nlc3NpYmxlIjoiUmVuZXdlZCBjdXJpb3NpdHkuIFNob3cgaW50ZXJwcmV0YXRpb24uIiwiZm9udCI6MTQsInNhbXBsZSI6InJnYigxOSwgMTM0LCAxMTkpIiwicmFpbCI6InJnYigxOSwgMTM0LCAxMTkpIiwidG9rZW4iOiJ3b25kZXIiLCJyYWlsVG9rZW4iOiJ3b25kZXIiLCJjbGlwcGVkIjpmYWxzZSwiaW5zaWRlIjp0cnVlfSx7ImtleSI6ImZlZWxpbmc6ZGlzYXBwb2ludG1lbnQiLCJsYWJlbCI6IkRpc2FwcG9pbnRtZW50IiwiYWNjZXNzaWJsZSI6IkRpc2FwcG9pbnRtZW50LiBTaG93IGludGVycHJldGF0aW9uLiIsImZvbnQiOjE0LCJzYW1wbGUiOiJyZ2IoMTE4LCA5OCwgMTYzKSIsInJhaWwiOiJyZ2IoMTE4LCA5OCwgMTYzKSIsInRva2VuIjoic29tYmVyIiwicmFpbFRva2VuIjoic29tYmVyIiwiY2xpcHBlZCI6ZmFsc2UsImluc2lkZSI6dHJ1ZX1dfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-8c9617550bbfad733454",
+          "file": "heartbeat-current.spec.ts",
+          "line": 368,
+          "column": 1
+        },
+        {
+          "title": "Narrow long-label overflow gives an honest count and complete source-matched full key",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2547,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:53.653Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "narrow-long-label-overflow",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzIwLCJ2aXNpYmxlIjpbIlVuYWNrbm93bGVkZ2VkIHByaXZhdGUgeWVhcm5pbmciLCJVbnJlc29sdmVkIHF1aWV0IGFwcHJlaGVuc2lvbiIsIlBhdGllbnQgcmVuZXdlZCBhbnRpY2lwYXRpb24iLCJRdWlldCByZXdhcmQiXSwiaW5saW5lIjpbeyJrZXkiOiJmZWVsaW5nOnF1aWV0IHJld2FyZCIsImxhYmVsIjoiUXVpZXQgcmV3YXJkIiwiYWNjZXNzaWJsZSI6IlF1aWV0IHJld2FyZC4gU2hvdyBpbnRlcnByZXRhdGlvbi4iLCJmb250IjoxNCwic2FtcGxlIjoicmdiKDQwLCAxMTYsIDE3OSkiLCJyYWlsIjoicmdiKDQwLCAxMTYsIDE3OSkiLCJ0b2tlbiI6ImNvb2wiLCJyYWlsVG9rZW4iOiJjb29sIiwiY2xpcHBlZCI6ZmFsc2UsImluc2lkZSI6dHJ1ZX1dLCJoaWRkZW4iOjMsImZ1bGwiOlt7ImtleSI6ImZlZWxpbmc6b3BlbmluZyByZWZsZWN0aW9uIiwibGFiZWwiOiJPcGVuaW5nIHJlZmxlY3Rpb24iLCJhY2Nlc3NpYmxlIjoiT3BlbmluZyByZWZsZWN0aW9uLiBTaG93IGludGVycHJldGF0aW9uLiIsImZvbnQiOjE0LCJzYW1wbGUiOiJyZ2IoMTg0LCAxMTcsIDgpIiwicmFpbCI6InJnYigxODQsIDExNywgOCkiLCJ0b2tlbiI6Indhcm0iLCJyYWlsVG9rZW4iOiJ3YXJtIiwiY2xpcHBlZCI6ZmFsc2UsImluc2lkZSI6dHJ1ZX0seyJrZXkiOiJmZWVsaW5nOnVuYWNrbm93bGVkZ2VkIHByaXZhdGUgeWVhcm5pbmciLCJsYWJlbCI6IlVuYWNrbm93bGVkZ2VkIHByaXZhdGUgeWVhcm5pbmciLCJhY2Nlc3NpYmxlIjoiVW5hY2tub3dsZWRnZWQgcHJpdmF0ZSB5ZWFybmluZy4gU2hvdyBpbnRlcnByZXRhdGlvbi4iLCJmb250IjoxNCwic2FtcGxlIjoicmdiKDEwOSwgMTM0LCAzMykiLCJyYWlsIjoicmdiKDEwOSwgMTM0LCAzMykiLCJ0b2tlbiI6Im9saXZlIiwicmFpbFRva2VuIjoib2xpdmUiLCJjbGlwcGVkIjpmYWxzZSwiaW5zaWRlIjp0cnVlfSx7ImtleSI6ImZlZWxpbmc6dW5yZXNvbHZlZCBxdWlldCBhcHByZWhlbnNpb24iLCJsYWJlbCI6IlVucmVzb2x2ZWQgcXVpZXQgYXBwcmVoZW5zaW9uIiwiYWNjZXNzaWJsZSI6IlVucmVzb2x2ZWQgcXVpZXQgYXBwcmVoZW5zaW9uLiBTaG93IGludGVycHJldGF0aW9uLiIsImZvbnQiOjE0LCJzYW1wbGUiOiJyZ2IoMTgzLCAxMDcsIDU3KSIsInJhaWwiOiJyZ2IoMTgzLCAxMDcsIDU3KSIsInRva2VuIjoiY29wcGVyIiwicmFpbFRva2VuIjoiY29wcGVyIiwiY2xpcHBlZCI6ZmFsc2UsImluc2lkZSI6dHJ1ZX0seyJrZXkiOiJmZWVsaW5nOnBhdGllbnQgcmVuZXdlZCBhbnRpY2lwYXRpb24iLCJsYWJlbCI6IlBhdGllbnQgcmVuZXdlZCBhbnRpY2lwYXRpb24iLCJhY2Nlc3NpYmxlIjoiUGF0aWVudCByZW5ld2VkIGFudGljaXBhdGlvbi4gU2hvdyBpbnRlcnByZXRhdGlvbi4iLCJmb250IjoxNCwic2FtcGxlIjoicmdiKDM1LCAxNDEsIDE3MSkiLCJyYWlsIjoicmdiKDM1LCAxNDEsIDE3MSkiLCJ0b2tlbiI6ImN5YW4iLCJyYWlsVG9rZW4iOiJjeWFuIiwiY2xpcHBlZCI6ZmFsc2UsImluc2lkZSI6dHJ1ZX0seyJrZXkiOiJmZWVsaW5nOnF1aWV0IHJld2FyZCIsImxhYmVsIjoiUXVpZXQgcmV3YXJkIiwiYWNjZXNzaWJsZSI6IlF1aWV0IHJld2FyZC4gU2hvdyBpbnRlcnByZXRhdGlvbi4iLCJmb250IjoxNCwic2FtcGxlIjoicmdiKDQwLCAxMTYsIDE3OSkiLCJyYWlsIjoicmdiKDQwLCAxMTYsIDE3OSkiLCJ0b2tlbiI6ImNvb2wiLCJyYWlsVG9rZW4iOiJjb29sIiwiY2xpcHBlZCI6ZmFsc2UsImluc2lkZSI6dHJ1ZX1dfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-7bd08ea083513b372a46",
+          "file": "heartbeat-current.spec.ts",
+          "line": 385,
+          "column": 1
+        },
+        {
+          "title": "A facing spread keeps known document feelings separate from unanalysed next writing without extra fetches",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2888,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:56.225Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "facing-source-isolation",
+                      "contentType": "application/json",
+                      "body": "eyJmaXJzdERvY3VtZW50SWQiOiJlNTQ2OGJlZC0zZThmLTRhY2UtYjUwYi0xZDlmNmE1NmU3MmYiLCJ1bmFuYWx5c2VkRG9jdW1lbnRJZCI6IjI4NzYxMWZkLWNmNWQtNGU2Ny1iNDkxLTc2OGI0YjA0OTZlNCIsInJlcXVlc3RlZCI6WyJlNTQ2OGJlZC0zZThmLTRhY2UtYjUwYi0xZDlmNmE1NmU3MmYiXSwicGFnZSI6IjAiLCJwYXRocyI6W3siZG9jdW1lbnRJZCI6ImU1NDY4YmVkLTNlOGYtNGFjZS1iNTBiLTFkOWY2YTU2ZTcyZiIsImNvdmVyYWdlIjoiY29udGludW91cyIsInN0YXJ0IjoiMCIsImVuZCI6IjIzMSIsInRva2VuIjoid2FybSIsInN0cm9rZSI6InJnYigxODQsIDExNywgOCkiLCJwYXR0ZXJuIjoibm9uZSJ9LHsiZG9jdW1lbnRJZCI6IjI4NzYxMWZkLWNmNWQtNGU2Ny1iNDkxLTc2OGI0YjA0OTZlNCIsImNvdmVyYWdlIjoidW5hbmFseXNlZCIsInN0YXJ0IjoiMCIsImVuZCI6IjI3MSIsInRva2VuIjoidW5hbmFseXNlZCIsInN0cm9rZSI6InJnYigxMjYsIDEzMSwgMTI2KSIsInBhdHRlcm4iOiIxcHgsIDRweCJ9XX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-034c5aa95a331f4877eb",
+          "file": "heartbeat-current.spec.ts",
+          "line": 416,
+          "column": 1
+        },
+        {
+          "title": "Forced colors retain readable labels and distinct Rest and unanalysed current patterns",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3277,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:50:59.132Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "forced-colors-paint-and-patterns",
+                      "contentType": "application/json",
+                      "body": "W3sic3RhdGUiOiJ3cml0ZXItcmVzdC1mb2N1c2VkIiwiZm9yY2VkIjp0cnVlLCJjYW52YXMiOiJyZ2IoMjU1LCAyNTUsIDI1NSkiLCJjYW52YXNUZXh0IjoicmdiKDAsIDAsIDApIiwibGFiZWwiOiJSZXN0IiwibGFiZWxDb250cmFzdCI6MjEsImxhYmVsUmVjdCI6eyJ3aWR0aCI6NTQuMDYyNSwiaGVpZ2h0IjozMH0sInNhbXBsZSI6eyJzdHJva2UiOiJyZ2IoMCwgMCwgMCkiLCJjb250cmFzdCI6MjEsInBhdHRlcm4iOiI3cHgsIDRweCJ9LCJwYXRocyI6W3sidG9rZW4iOiJyZXN0Iiwic3Ryb2tlIjoicmdiKDAsIDAsIDApIiwib3BhY2l0eSI6MSwicGF0dGVybiI6IjdweCwgNHB4IiwiY29udHJhc3QiOjIxLCJsZW5ndGgiOjE3NDUuMTQwNjI1fV19LHsic3RhdGUiOiJyZWFkZXItcmVzdCIsImZvcmNlZCI6dHJ1ZSwiY2FudmFzIjoicmdiKDI1NSwgMjU1LCAyNTUpIiwiY2FudmFzVGV4dCI6InJnYigwLCAwLCAwKSIsImxhYmVsIjoiUmVzdCIsImxhYmVsQ29udHJhc3QiOjIxLCJsYWJlbFJlY3QiOnsid2lkdGgiOjI4LjA2MjUsImhlaWdodCI6MjZ9LCJzYW1wbGUiOnsic3Ryb2tlIjoicmdiKDAsIDAsIDApIiwiY29udHJhc3QiOjIxLCJwYXR0ZXJuIjoiN3B4LCA0cHgifSwicGF0aHMiOlt7InRva2VuIjoicmVzdCIsInN0cm9rZSI6InJnYigwLCAwLCAwKSIsIm9wYWNpdHkiOjEsInBhdHRlcm4iOiI3cHgsIDRweCIsImNvbnRyYXN0IjoyMSwibGVuZ3RoIjo2NDd9LHsidG9rZW4iOiJyZXN0Iiwic3Ryb2tlIjoicmdiKDAsIDAsIDApIiwib3BhY2l0eSI6MSwicGF0dGVybiI6IjdweCwgNHB4IiwiY29udHJhc3QiOjIxLCJsZW5ndGgiOjY5OH0seyJ0b2tlbiI6InJlc3QiLCJzdHJva2UiOiJyZ2IoMCwgMCwgMCkiLCJvcGFjaXR5IjoxLCJwYXR0ZXJuIjoiN3B4LCA0cHgiLCJjb250cmFzdCI6MjEsImxlbmd0aCI6NTE0fV19LHsic3RhdGUiOiJ3cml0ZXItdW5hbmFseXNlZCIsImZvcmNlZCI6dHJ1ZSwiY2FudmFzIjoicmdiKDI1NSwgMjU1LCAyNTUpIiwiY2FudmFzVGV4dCI6InJnYigwLCAwLCAwKSIsImxhYmVsIjoiVW5hbmFseXNlZCIsImxhYmVsQ29udHJhc3QiOjIxLCJsYWJlbFJlY3QiOnsid2lkdGgiOjk3LjQwNjI1LCJoZWlnaHQiOjMwfSwic2FtcGxlIjp7InN0cm9rZSI6InJnYigwLCAwLCAwKSIsImNvbnRyYXN0IjoyMSwicGF0dGVybiI6IjFweCwgNHB4In0sInBhdGhzIjpbeyJ0b2tlbiI6InVuYW5hbHlzZWQiLCJzdHJva2UiOiJyZ2IoMCwgMCwgMCkiLCJvcGFjaXR5IjoxLCJwYXR0ZXJuIjoiMXB4LCA0cHgiLCJjb250cmFzdCI6MjEsImxlbmd0aCI6MTc0NS4xNDA2MjV9XX0seyJzdGF0ZSI6InJlYWRlci11bmFuYWx5c2VkIiwiZm9yY2VkIjp0cnVlLCJjYW52YXMiOiJyZ2IoMjU1LCAyNTUsIDI1NSkiLCJjYW52YXNUZXh0IjoicmdiKDAsIDAsIDApIiwibGFiZWwiOiJVbmFuYWx5c2VkIiwibGFiZWxDb250cmFzdCI6MjEsImxhYmVsUmVjdCI6eyJ3aWR0aCI6MzU0LCJoZWlnaHQiOjI2fSwic2FtcGxlIjp7InN0cm9rZSI6InJnYigwLCAwLCAwKSIsImNvbnRyYXN0IjoyMSwicGF0dGVybiI6IjFweCwgNHB4In0sInBhdGhzIjpbeyJ0b2tlbiI6InVuYW5hbHlzZWQiLCJzdHJva2UiOiJyZ2IoMCwgMCwgMCkiLCJvcGFjaXR5IjoxLCJwYXR0ZXJuIjoiMXB4LCA0cHgiLCJjb250cmFzdCI6MjEsImxlbmd0aCI6NjQ3fSx7InRva2VuIjoidW5hbmFseXNlZCIsInN0cm9rZSI6InJnYigwLCAwLCAwKSIsIm9wYWNpdHkiOjEsInBhdHRlcm4iOiIxcHgsIDRweCIsImNvbnRyYXN0IjoyMSwibGVuZ3RoIjo2OTh9LHsidG9rZW4iOiJ1bmFuYWx5c2VkIiwic3Ryb2tlIjoicmdiKDAsIDAsIDApIiwib3BhY2l0eSI6MSwicGF0dGVybiI6IjFweCwgNHB4IiwiY29udHJhc3QiOjIxLCJsZW5ndGgiOjUxNH1dfV0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65b79725538fb64d73c9-1cb9219ada5c578249a9",
+          "file": "heartbeat-current.spec.ts",
+          "line": 477,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "heartbeat-layout.spec.ts",
+      "file": "heartbeat-layout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Compact prose and complete readable page key at 1366×768",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2065,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:02.459Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-e674ca865bd32b319349",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 21,
+          "column": 127
+        },
+        {
+          "title": "Compact prose and complete readable page key at 390×844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1954,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:04.539Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-a95b019d5f863235cca3",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 21,
+          "column": 127
+        },
+        {
+          "title": "Compact prose and complete readable page key at 320×568",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1978,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:06.510Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-5dd0a39ff29cc9f1e02f",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 21,
+          "column": 127
+        },
+        {
+          "title": "The actual rail covers exactly the explicit full source; no prose fills, wrapper marks or source edits",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2103,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:08.507Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-9444dd8840258c750d2f",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "Actual rail accents and unchanged prose retain contrast on paper and night",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2294,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:10.627Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-969065d5391198bf401b",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "Rail follows the measured source columns continuously and stays outside the prose",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2042,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:12.937Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "measured-source-rail-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJzdGFnZUhlaWdodCI6NTkzLCJwYXRocyI6W3siY29sdW1uIjowLCJzdGFydCI6MCwiZW5kIjoyNTcsInRvcCI6NTEsImJvdHRvbSI6MjQwLCJtZXRhZGF0YVRvcCI6NTEsIm1ldGFkYXRhQm90dG9tIjoyNDAsIngiOi0xMiwid2lkdGgiOjIuMywiZXhhY3RTb3VyY2UiOnRydWUsInJlY3RzIjpbeyJjb2x1bW4iOjAsImxlZnQiOjAsInRvcCI6NTEsImJvdHRvbSI6ODF9LHsiY29sdW1uIjowLCJsZWZ0IjowLCJ0b3AiOjg4LCJib3R0b20iOjExOH0seyJjb2x1bW4iOjAsImxlZnQiOjAsInRvcCI6MTI1LCJib3R0b20iOjE1NX0seyJjb2x1bW4iOjAsImxlZnQiOjAsInRvcCI6MTYyLCJib3R0b20iOjE5Mn0seyJjb2x1bW4iOjAsImxlZnQiOjAsInRvcCI6MTk5LCJib3R0b20iOjIyOX1dfSx7ImNvbHVtbiI6MCwic3RhcnQiOjI1NywiZW5kIjo2NzksInRvcCI6MjQwLCJib3R0b20iOjU5MywibWV0YWRhdGFUb3AiOjI0MCwibWV0YWRhdGFCb3R0b20iOjU5MywieCI6LTEyLCJ3aWR0aCI6Mi4zLCJleGFjdFNvdXJjZSI6dHJ1ZSwicmVjdHMiOlt7ImNvbHVtbiI6MCwibGVmdCI6MCwidG9wIjoyNTEsImJvdHRvbSI6MjgxfSx7ImNvbHVtbiI6MCwibGVmdCI6MCwidG9wIjoyODgsImJvdHRvbSI6MzE4fSx7ImNvbHVtbiI6MCwibGVmdCI6MCwidG9wIjozMjUsImJvdHRvbSI6MzU1fSx7ImNvbHVtbiI6MCwibGVmdCI6MCwidG9wIjozNjIsImJvdHRvbSI6MzkyfSx7ImNvbHVtbiI6MCwibGVmdCI6MCwidG9wIjozOTksImJvdHRvbSI6NDI5fSx7ImNvbHVtbiI6MCwibGVmdCI6MCwidG9wIjo0MzYsImJvdHRvbSI6NDY2fSx7ImNvbHVtbiI6MCwibGVmdCI6MCwidG9wIjo0NzMsImJvdHRvbSI6NTAzfSx7ImNvbHVtbiI6MCwibGVmdCI6MCwidG9wIjo1MTAsImJvdHRvbSI6NTQwfV19LHsiY29sdW1uIjoxLCJzdGFydCI6Njc5LCJlbmQiOjk0OCwidG9wIjowLCJib3R0b20iOjE2NiwibWV0YWRhdGFUb3AiOjAsIm1ldGFkYXRhQm90dG9tIjoxNjYsIngiOjU5Nywid2lkdGgiOjIuMywiZXhhY3RTb3VyY2UiOnRydWUsInJlY3RzIjpbeyJjb2x1bW4iOjEsImxlZnQiOjYwOSwidG9wIjozLCJib3R0b20iOjMzfSx7ImNvbHVtbiI6MSwibGVmdCI6NjA5LCJ0b3AiOjQwLCJib3R0b20iOjcwfSx7ImNvbHVtbiI6MSwibGVmdCI6NjA5LCJ0b3AiOjc3LCJib3R0b20iOjEwN30seyJjb2x1bW4iOjEsImxlZnQiOjYwOSwidG9wIjoxMTQsImJvdHRvbSI6MTQ0fSx7ImNvbHVtbiI6MSwibGVmdCI6NjA5LCJ0b3AiOjE1MSwiYm90dG9tIjoxODF9XX0seyJjb2x1bW4iOjEsInN0YXJ0Ijo5NDgsImVuZCI6MTE0NCwidG9wIjoxNjYsImJvdHRvbSI6MzQwLCJtZXRhZGF0YVRvcCI6MTY2LCJtZXRhZGF0YUJvdHRvbSI6MzQwLCJ4Ijo1OTcsIndpZHRoIjoxLjksImV4YWN0U291cmNlIjp0cnVlLCJyZWN0cyI6W3siY29sdW1uIjoxLCJsZWZ0IjoxMDU2LjI2NTYyNSwidG9wIjoxNTEsImJvdHRvbSI6MTgxfSx7ImNvbHVtbiI6MSwibGVmdCI6NjA5LCJ0b3AiOjE4OCwiYm90dG9tIjoyMTh9LHsiY29sdW1uIjoxLCJsZWZ0Ijo2MDksInRvcCI6MjI1LCJib3R0b20iOjI1NX0seyJjb2x1bW4iOjEsImxlZnQiOjYwOSwidG9wIjoyNjIsImJvdHRvbSI6MjkyfSx7ImNvbHVtbiI6MSwibGVmdCI6NjA5LCJ0b3AiOjI5OSwiYm90dG9tIjozMjl9XX0seyJjb2x1bW4iOjEsInN0YXJ0IjoxMTQ0LCJlbmQiOjEzNjQsInRvcCI6MzQwLCJib3R0b20iOjUxNCwibWV0YWRhdGFUb3AiOjM0MCwibWV0YWRhdGFCb3R0b20iOjUxNCwieCI6NTk3LCJ3aWR0aCI6Mi4zLCJleGFjdFNvdXJjZSI6dHJ1ZSwicmVjdHMiOlt7ImNvbHVtbiI6MSwibGVmdCI6NjA5LCJ0b3AiOjM1MSwiYm90dG9tIjozODF9LHsiY29sdW1uIjoxLCJsZWZ0Ijo2MDksInRvcCI6Mzg4LCJib3R0b20iOjQxOH0seyJjb2x1bW4iOjEsImxlZnQiOjYwOSwidG9wIjo0MjUsImJvdHRvbSI6NDU1fSx7ImNvbHVtbiI6MSwibGVmdCI6NjA5LCJ0b3AiOjQ2MiwiYm90dG9tIjo0OTJ9LHsiY29sdW1uIjoxLCJsZWZ0Ijo2MDksInRvcCI6NDk5LCJib3R0b20iOjUyOX1dfSx7ImNvbHVtbiI6MSwic3RhcnQiOjEzNjQsImVuZCI6MTQ4NSwidG9wIjo1MTQsImJvdHRvbSI6NTkzLCJtZXRhZGF0YVRvcCI6NTE0LCJtZXRhZGF0YUJvdHRvbSI6NTkzLCJ4Ijo1OTcsIndpZHRoIjoxLjksImV4YWN0U291cmNlIjp0cnVlLCJyZWN0cyI6W3siY29sdW1uIjoxLCJsZWZ0Ijo2OTcuMzkwNjI1LCJ0b3AiOjQ5OSwiYm90dG9tIjo1Mjl9LHsiY29sdW1uIjoxLCJsZWZ0Ijo2MDksInRvcCI6NTM2LCJib3R0b20iOjU2Nn1dfSx7ImNvbHVtbiI6Miwic3RhcnQiOjEzNjQsImVuZCI6MTQ4NSwidG9wIjowLCJib3R0b20iOjE4LCJtZXRhZGF0YVRvcCI6MCwibWV0YWRhdGFCb3R0b20iOjE4LCJ4IjoxMjA2LCJ3aWR0aCI6MS45LCJleGFjdFNvdXJjZSI6dHJ1ZSwicmVjdHMiOlt7ImNvbHVtbiI6MiwibGVmdCI6MTIxOCwidG9wIjozLCJib3R0b20iOjMzfV19LHsiY29sdW1uIjoyLCJzdGFydCI6MTQ4NSwiZW5kIjoxNjE3LCJ0b3AiOjE4LCJib3R0b20iOjEwNywibWV0YWRhdGFUb3AiOjE4LCJtZXRhZGF0YUJvdHRvbSI6MTA3LCJ4IjoxMjA2LCJ3aWR0aCI6MS45LCJleGFjdFNvdXJjZSI6dHJ1ZSwicmVjdHMiOlt7ImNvbHVtbiI6MiwibGVmdCI6MTQzMy44NTkzNzUsInRvcCI6MywiYm90dG9tIjozM30seyJjb2x1bW4iOjIsImxlZnQiOjEyMTgsInRvcCI6NDAsImJvdHRvbSI6NzB9LHsiY29sdW1uIjoyLCJsZWZ0IjoxMjE4LCJ0b3AiOjc3LCJib3R0b20iOjEwN31dfV19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-cf673a4bba7ed3d30585",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 70,
+          "column": 1
+        },
+        {
+          "title": "The page key includes only feelings with actual visible glyphs at paragraph boundaries",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2502,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:14.994Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-0d49fe82e4b9b5d460e6",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 112,
+          "column": 1
+        },
+        {
+          "title": "Every source character appears once across reader turns at 1366px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1847,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:17.511Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-e6ef3ec84e8446a710a5",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 149,
+          "column": 34
+        },
+        {
+          "title": "Every source character appears once across reader turns at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2196,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:19.372Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-e8e8c86687e067777b9d",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 149,
+          "column": 34
+        },
+        {
+          "title": "Bounded page-turn projections preserve real rail geometry and clean off, resize and exit at 1366px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3304,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:21.580Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "active-curl-probe",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTM2NiwiaW5pdGlhbENvdW50IjozLCJhY3RpdmVDdXJsU2FtcGxlcyI6MSwiYWN0aXZlIjp0cnVlLCJjb3VudCI6MywiZGlzcGxheWVkIjoyLCJkZWNvcmF0ZWQiOjMsInBhaW50ZWQiOjIsInByb2plY3RlZFBhdGhzIjoyNCwiaW52YWxpZEluaXRpYWxQYXRocyI6W10sImludmFsaWRNb3ZpbmdQYXRocyI6W10sImV4YWN0SW5lcnRHZW9tZXRyeSI6dHJ1ZSwib2ZmV2hpbGVBY3RpdmUiOnRydWV9"
+                    },
+                    {
+                      "name": "motion-png-state",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTM2NiwiYWN0aXZlQmVmb3JlIjp0cnVlLCJyb3RhdGVkQmVmb3JlIjp0cnVlLCJhY3RpdmVBZnRlciI6InRydWUifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-4472ae76c5e3f3274c46",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 176,
+          "column": 39
+        },
+        {
+          "title": "Bounded page-turn projections preserve real rail geometry and clean off, resize and exit at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2938,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:24.897Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "active-curl-probe",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzkwLCJpbml0aWFsQ291bnQiOjIsImFjdGl2ZUN1cmxTYW1wbGVzIjoxLCJhY3RpdmUiOnRydWUsImNvdW50IjozLCJkaXNwbGF5ZWQiOjIsImRlY29yYXRlZCI6MywicGFpbnRlZCI6MiwicHJvamVjdGVkUGF0aHMiOjI0LCJpbnZhbGlkSW5pdGlhbFBhdGhzIjpbXSwiaW52YWxpZE1vdmluZ1BhdGhzIjpbXSwiZXhhY3RJbmVydEdlb21ldHJ5Ijp0cnVlLCJvZmZXaGlsZUFjdGl2ZSI6dHJ1ZX0="
+                    },
+                    {
+                      "name": "motion-png-state",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzkwLCJhY3RpdmVCZWZvcmUiOnRydWUsInJvdGF0ZWRCZWZvcmUiOnRydWUsImFjdGl2ZUFmdGVyIjoidHJ1ZSJ9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-7be682f4a2ba5d581041",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 176,
+          "column": 39
+        },
+        {
+          "title": "Bounded page-turn projections preserve real rail geometry and clean off, resize and exit at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3429,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:27.852Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "active-curl-probe",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzIwLCJpbml0aWFsQ291bnQiOjIsImFjdGl2ZUN1cmxTYW1wbGVzIjoxLCJhY3RpdmUiOnRydWUsImNvdW50IjozLCJkaXNwbGF5ZWQiOjIsImRlY29yYXRlZCI6MywicGFpbnRlZCI6MiwicHJvamVjdGVkUGF0aHMiOjMwLCJpbnZhbGlkSW5pdGlhbFBhdGhzIjpbXSwiaW52YWxpZE1vdmluZ1BhdGhzIjpbXSwiZXhhY3RJbmVydEdlb21ldHJ5Ijp0cnVlLCJvZmZXaGlsZUFjdGl2ZSI6dHJ1ZX0="
+                    },
+                    {
+                      "name": "motion-png-state",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzIwLCJhY3RpdmVCZWZvcmUiOnRydWUsInJvdGF0ZWRCZWZvcmUiOnRydWUsImFjdGl2ZUFmdGVyIjoidHJ1ZSJ9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-2bd4b52406463882ee8d",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 176,
+          "column": 39
+        }
+      ]
+    },
+    {
+      "title": "heartbeat-visual.spec.ts",
+      "file": "heartbeat-visual.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Heartbeat visual evidence 1366",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2184,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:31.313Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-d08256f8813d78fdf51d",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 38,
+          "column": 70
+        },
+        {
+          "title": "Heartbeat visual evidence 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2736,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:33.513Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-7a78068e722bc5af6c8f",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 38,
+          "column": 70
+        },
+        {
+          "title": "Heartbeat visual evidence 320",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2416,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:36.267Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-fc0ab2c10bc69ed4fca8",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 38,
+          "column": 70
+        },
+        {
+          "title": "Off by default; explicit reasoning and source navigation never change writing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2377,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:38.697Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-76cc975ccf47121f4a90",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 50,
+          "column": 1
+        },
+        {
+          "title": "A local draft edit immediately rejects annotations despite an unchanged source quote",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2473,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:41.096Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-73639189ecc7ad48ab90",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 63,
+          "column": 1
+        },
+        {
+          "title": "Read toggles retain exact text and passage anchor at 1366px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2548,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:43.585Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-4a76135c8a18cf88fd31",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 72,
+          "column": 70
+        },
+        {
+          "title": "Read toggles retain exact text and passage anchor at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2553,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:46.151Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-93b3a909c0fcd706208b",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 72,
+          "column": 70
+        },
+        {
+          "title": "Read toggles retain exact text and passage anchor at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2318,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:48.723Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-28d9d8539daf3a74342b",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 72,
+          "column": 70
+        },
+        {
+          "title": "A title change invalidates the frozen reader source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2341,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:51.058Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-27d3de38a9ec4f8c35ad",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 88,
+          "column": 51
+        },
+        {
+          "title": "A order change invalidates the frozen reader source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2715,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:53.418Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-e752e4c452c506ff90cb",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 88,
+          "column": 51
+        },
+        {
+          "title": "Heartbeat rest stays honest and bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1853,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:56.154Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-51eae4d9102c96e92929",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 94,
+          "column": 77
+        },
+        {
+          "title": "Heartbeat sparse stays honest and bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1843,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:58.025Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-9eeddc2692c80bb71472",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 94,
+          "column": 77
+        },
+        {
+          "title": "Heartbeat error stays honest and bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2121,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:51:59.884Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-879fa3b5e11d0baad9e3",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 94,
+          "column": 77
+        },
+        {
+          "title": "Heartbeat invalid stays honest and bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1780,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:02.021Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-43af2b28369b99596834",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 94,
+          "column": 77
+        },
+        {
+          "title": "Heartbeat long stays honest and bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2025,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:03.823Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-eb5979c904edbc386f8e",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 94,
+          "column": 77
+        },
+        {
+          "title": "Native Highlight API absence retains the actual rail, accessible labels and editable text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2279,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:05.864Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-c073c097898a6959184f",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 116,
+          "column": 1
+        },
+        {
+          "title": "Writer scrolling updates its visible legend without another annotation request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2069,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:08.160Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-85c64f0f497eceb0c510",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 125,
+          "column": 1
+        },
+        {
+          "title": "Heartbeat accessibility across writing, details, paper and night at 1366px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10934,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:10.248Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "dialog-contrast-writer-reasoning",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTM2Niwic3RhdGUiOiJ3cml0ZXIgcmVhc29uaW5nIiwicGFpcnMiOlt7InRleHQiOiJFYWdlciBjYWxtVW5kZXJ0b25lOiBBbnRpY2lwYXRpb24iLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6Ny45NzIwOTY1NTIwNzA2MDJ9LHsidGV4dCI6IlVuZGVydG9uZTogQW50aWNpcGF0aW9uIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjUuMDExMDE1NDExMzIwMzA3fSx7InRleHQiOiJUaGUgYXBwcm9hY2hpbmcgZXZlbmluZyBpcyBlYWdlcmx5IGF3YWl0ZWQgd2hpbGUgdCIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3Ljk3MjA5NjU1MjA3MDYwMn0seyJ0ZXh0IjoiTGF0ZSBhZnRlcm5vb24gbGlnaHQgcmVzdGVkIG9uIHRoZSB0cmFtIHdpbmRvd3MuIEwiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6Ny45NzIwOTY1NTIwNzA2MDJ9LHsidGV4dCI6IkZpbmQgdGhpcyBwYXNzYWdlIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjYuMzA5Mzg3NDgyMzg3ODI1fSx7InRleHQiOiJidWlsZCDCtyB3ZWlnaHQgMyBvZiA1IiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjUuMzUxODU4MzMyODgwOTk0fSx7InRleHQiOiJDb250ZXh0OiBJbnZlbnRlZCBmb3VyLXBhcmFncmFwaCBjb3VudGVycGFydCBmb3IgciIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo1LjM1MTg1ODMzMjg4MDk5NH0seyJ0ZXh0IjoiVW52ZXJpZmllZCBBSSBpbmZlcmVuY2UsIG5vdCBtZWFzdXJlZCBlbW90aW9uIG9yIGEiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6NS4zNTE4NTgzMzI4ODA5OTR9LHsidGV4dCI6IkV4YWN0IHNvdXJjZSByZXZpc2lvbiIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3Ljk3MjA5NjU1MjA3MDYwMn0seyJ0ZXh0IjoiY29udGludWl0eS1yZXZpc2lvbjk3YWZhNDdlZTE3ZDBhMjg4Mzk0ZjkyZjM1NWQxNjYiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6NS4zNTE4NTgzMzI4ODA5OTR9LHsidGV4dCI6IkZlZWxpbmcgc2FtcGxlIGdyYXBoaWMiLCJyZXF1aXJlZCI6MywicmF0aW8iOjMuNjc3ODI0MjU5MzU0MjA5fSx7InRleHQiOiJJbnRlcmFjdGl2ZSBTVkc6IENsb3NlIGEgcG9zc2libGUgcmVhZGluZyIsInJlcXVpcmVkIjozLCJwYWludCI6InJnYig4NiwgMTAxLCA3MykiLCJvcGFjaXR5IjoxLCJiYWNrZ3JvdW5kIjoicmdiKDI1MiwgMjUzLCAyNDgpIiwicmF0aW8iOjYuMTI2NTc4MTgzOTY2MzQxfSx7InRleHQiOiJJbnRlcmFjdGl2ZSBTVkc6IENsb3NlIGEgcG9zc2libGUgcmVhZGluZyIsInJlcXVpcmVkIjozLCJwYWludCI6InJnYig4NiwgMTAxLCA3MykiLCJvcGFjaXR5IjoxLCJiYWNrZ3JvdW5kIjoicmdiKDI1MiwgMjUzLCAyNDgpIiwicmF0aW8iOjYuMTI2NTc4MTgzOTY2MzQxfV0sImludGVyYWN0aXZlR3JhcGhpY3MiOlt7InRleHQiOiJJbnRlcmFjdGl2ZSBTVkc6IENsb3NlIGEgcG9zc2libGUgcmVhZGluZyIsInJlcXVpcmVkIjozLCJwYWludCI6InJnYig4NiwgMTAxLCA3MykiLCJvcGFjaXR5IjoxLCJiYWNrZ3JvdW5kIjoicmdiKDI1MiwgMjUzLCAyNDgpIiwicmF0aW8iOjYuMTI2NTc4MTgzOTY2MzQxfSx7InRleHQiOiJJbnRlcmFjdGl2ZSBTVkc6IENsb3NlIGEgcG9zc2libGUgcmVhZGluZyIsInJlcXVpcmVkIjozLCJwYWludCI6InJnYig4NiwgMTAxLCA3MykiLCJvcGFjaXR5IjoxLCJiYWNrZ3JvdW5kIjoicmdiKDI1MiwgMjUzLCAyNDgpIiwicmF0aW8iOjYuMTI2NTc4MTgzOTY2MzQxfV0sImZvY3VzT3V0bGluZXMiOltdLCJiYWNrZ3JvdW5kIjoicmdiKDI1MiwgMjUzLCAyNDgpIiwiYmFja2dyb3VuZEx1bWluYW5jZSI6MC45NzcyMzMxNzE5MzE2MDc0LCJuaWdodCI6ZmFsc2UsInJlYWRlclBhcGVyTHVtaW5hbmNlIjpudWxsfQ=="
+                    },
+                    {
+                      "name": "dialog-contrast-paper-reasoning",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTM2Niwic3RhdGUiOiJwYXBlciByZWFzb25pbmciLCJwYWlycyI6W3sidGV4dCI6IkVhZ2VyIGNhbG1VbmRlcnRvbmU6IEFudGljaXBhdGlvbiIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3Ljk3MjA5NjU1MjA3MDYwMn0seyJ0ZXh0IjoiVW5kZXJ0b25lOiBBbnRpY2lwYXRpb24iLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6NS4wMTEwMTU0MTEzMjAzMDd9LHsidGV4dCI6IlRoZSBhcHByb2FjaGluZyBldmVuaW5nIGlzIGVhZ2VybHkgYXdhaXRlZCB3aGlsZSB0IiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuOTcyMDk2NTUyMDcwNjAyfSx7InRleHQiOiJMYXRlIGFmdGVybm9vbiBsaWdodCByZXN0ZWQgb24gdGhlIHRyYW0gd2luZG93cy4gTCIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3Ljk3MjA5NjU1MjA3MDYwMn0seyJ0ZXh0IjoiRmluZCB0aGlzIHBhc3NhZ2UiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6Ny45NzIwOTY1NTIwNzA2MDJ9LHsidGV4dCI6ImJ1aWxkIMK3IHdlaWdodCAzIG9mIDUiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6NS4zNTE4NTgzMzI4ODA5OTR9LHsidGV4dCI6IkNvbnRleHQ6IEludmVudGVkIGZvdXItcGFyYWdyYXBoIGNvdW50ZXJwYXJ0IGZvciByIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjUuMzUxODU4MzMyODgwOTk0fSx7InRleHQiOiJVbnZlcmlmaWVkIEFJIGluZmVyZW5jZSwgbm90IG1lYXN1cmVkIGVtb3Rpb24gb3IgYSIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo1LjM1MTg1ODMzMjg4MDk5NH0seyJ0ZXh0IjoiRXhhY3Qgc291cmNlIHJldmlzaW9uIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuOTcyMDk2NTUyMDcwNjAyfSx7InRleHQiOiJjb250aW51aXR5LXJldmlzaW9uOTdhZmE0N2VlMTdkMGEyODgzOTRmOTJmMzU1ZDE2NiIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo1LjM1MTg1ODMzMjg4MDk5NH0seyJ0ZXh0IjoiRmVlbGluZyBzYW1wbGUgZ3JhcGhpYyIsInJlcXVpcmVkIjozLCJyYXRpbyI6My42Nzc4MjQyNTkzNTQyMDl9LHsidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDg2LCAxMDEsIDczKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJyYXRpbyI6Ni4xMjY1NzgxODM5NjYzNDF9LHsidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDg2LCAxMDEsIDczKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJyYXRpbyI6Ni4xMjY1NzgxODM5NjYzNDF9XSwiaW50ZXJhY3RpdmVHcmFwaGljcyI6W3sidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDg2LCAxMDEsIDczKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJyYXRpbyI6Ni4xMjY1NzgxODM5NjYzNDF9LHsidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDg2LCAxMDEsIDczKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJyYXRpbyI6Ni4xMjY1NzgxODM5NjYzNDF9XSwiZm9jdXNPdXRsaW5lcyI6W10sImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJiYWNrZ3JvdW5kTHVtaW5hbmNlIjowLjk3NzIzMzE3MTkzMTYwNzQsIm5pZ2h0IjpmYWxzZSwicmVhZGVyUGFwZXJMdW1pbmFuY2UiOjAuOTYzNDM2MjgzMjU2MDQ0Nn0="
+                    },
+                    {
+                      "name": "dialog-contrast-night-reasoning",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTM2Niwic3RhdGUiOiJuaWdodCByZWFzb25pbmciLCJwYWlycyI6W3sidGV4dCI6IkVhZ2VyIGNhbG1VbmRlcnRvbmU6IEFudGljaXBhdGlvbiIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjoxMS4xMTY4NjY2NTkwNTI2MX0seyJ0ZXh0IjoiVW5kZXJ0b25lOiBBbnRpY2lwYXRpb24iLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6Ny4xOTIxMjg5Mjc4Mjk2NDR9LHsidGV4dCI6IlRoZSBhcHByb2FjaGluZyBldmVuaW5nIGlzIGVhZ2VybHkgYXdhaXRlZCB3aGlsZSB0IiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjExLjExNjg2NjY1OTA1MjYxfSx7InRleHQiOiJMYXRlIGFmdGVybm9vbiBsaWdodCByZXN0ZWQgb24gdGhlIHRyYW0gd2luZG93cy4gTCIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjoxMS4xMTY4NjY2NTkwNTI2MX0seyJ0ZXh0IjoiRmluZCB0aGlzIHBhc3NhZ2UiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6MTEuMTE2ODY2NjU5MDUyNjF9LHsidGV4dCI6ImJ1aWxkIMK3IHdlaWdodCAzIG9mIDUiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6Ny4xOTIxMjg5Mjc4Mjk2NDR9LHsidGV4dCI6IkNvbnRleHQ6IEludmVudGVkIGZvdXItcGFyYWdyYXBoIGNvdW50ZXJwYXJ0IGZvciByIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuMTkyMTI4OTI3ODI5NjQ0fSx7InRleHQiOiJVbnZlcmlmaWVkIEFJIGluZmVyZW5jZSwgbm90IG1lYXN1cmVkIGVtb3Rpb24gb3IgYSIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3LjE5MjEyODkyNzgyOTY0NH0seyJ0ZXh0IjoiRXhhY3Qgc291cmNlIHJldmlzaW9uIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjExLjExNjg2NjY1OTA1MjYxfSx7InRleHQiOiJjb250aW51aXR5LXJldmlzaW9uOTdhZmE0N2VlMTdkMGEyODgzOTRmOTJmMzU1ZDE2NiIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3LjE5MjEyODkyNzgyOTY0NH0seyJ0ZXh0IjoiRmVlbGluZyBzYW1wbGUgZ3JhcGhpYyIsInJlcXVpcmVkIjozLCJyYXRpbyI6Ny4xMTg2NDg3Mzg0OTE5MzR9LHsidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDIyNCwgMjI3LCAyMTMpIiwib3BhY2l0eSI6MSwiYmFja2dyb3VuZCI6InJnYigzNiwgNDMsIDM5KSIsInJhdGlvIjoxMS4xMTY4NjY2NTkwNTI2MX0seyJ0ZXh0IjoiSW50ZXJhY3RpdmUgU1ZHOiBDbG9zZSBhIHBvc3NpYmxlIHJlYWRpbmciLCJyZXF1aXJlZCI6MywicGFpbnQiOiJyZ2IoMjI0LCAyMjcsIDIxMykiLCJvcGFjaXR5IjoxLCJiYWNrZ3JvdW5kIjoicmdiKDM2LCA0MywgMzkpIiwicmF0aW8iOjExLjExNjg2NjY1OTA1MjYxfV0sImludGVyYWN0aXZlR3JhcGhpY3MiOlt7InRleHQiOiJJbnRlcmFjdGl2ZSBTVkc6IENsb3NlIGEgcG9zc2libGUgcmVhZGluZyIsInJlcXVpcmVkIjozLCJwYWludCI6InJnYigyMjQsIDIyNywgMjEzKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMzYsIDQzLCAzOSkiLCJyYXRpbyI6MTEuMTE2ODY2NjU5MDUyNjF9LHsidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDIyNCwgMjI3LCAyMTMpIiwib3BhY2l0eSI6MSwiYmFja2dyb3VuZCI6InJnYigzNiwgNDMsIDM5KSIsInJhdGlvIjoxMS4xMTY4NjY2NTkwNTI2MX1dLCJmb2N1c091dGxpbmVzIjpbXSwiYmFja2dyb3VuZCI6InJnYigzNiwgNDMsIDM5KSIsImJhY2tncm91bmRMdW1pbmFuY2UiOjAuMDIyNDkzMDUyNTA0MDkxMzYsIm5pZ2h0Ijp0cnVlLCJyZWFkZXJQYXBlckx1bWluYW5jZSI6MC4wMjI0OTMwNTI1MDQwOTEzNn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-6d15c3c16ddcaefcd504",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 133,
+          "column": 39
+        },
+        {
+          "title": "Heartbeat accessibility across writing, details, paper and night at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9049,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:21.203Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "dialog-contrast-writer-reasoning",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzkwLCJzdGF0ZSI6IndyaXRlciByZWFzb25pbmciLCJwYWlycyI6W3sidGV4dCI6IkVhZ2VyIGNhbG1VbmRlcnRvbmU6IEFudGljaXBhdGlvbiIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3Ljk3MjA5NjU1MjA3MDYwMn0seyJ0ZXh0IjoiVW5kZXJ0b25lOiBBbnRpY2lwYXRpb24iLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6NS4wMTEwMTU0MTEzMjAzMDd9LHsidGV4dCI6IlRoZSBhcHByb2FjaGluZyBldmVuaW5nIGlzIGVhZ2VybHkgYXdhaXRlZCB3aGlsZSB0IiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuOTcyMDk2NTUyMDcwNjAyfSx7InRleHQiOiJMYXRlIGFmdGVybm9vbiBsaWdodCByZXN0ZWQgb24gdGhlIHRyYW0gd2luZG93cy4gTCIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3Ljk3MjA5NjU1MjA3MDYwMn0seyJ0ZXh0IjoiRmluZCB0aGlzIHBhc3NhZ2UiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6Ni4zMDkzODc0ODIzODc4MjV9LHsidGV4dCI6ImJ1aWxkIMK3IHdlaWdodCAzIG9mIDUiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6NS4zNTE4NTgzMzI4ODA5OTR9LHsidGV4dCI6IkNvbnRleHQ6IEludmVudGVkIGZvdXItcGFyYWdyYXBoIGNvdW50ZXJwYXJ0IGZvciByIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjUuMzUxODU4MzMyODgwOTk0fSx7InRleHQiOiJVbnZlcmlmaWVkIEFJIGluZmVyZW5jZSwgbm90IG1lYXN1cmVkIGVtb3Rpb24gb3IgYSIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo1LjM1MTg1ODMzMjg4MDk5NH0seyJ0ZXh0IjoiRXhhY3Qgc291cmNlIHJldmlzaW9uIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuOTcyMDk2NTUyMDcwNjAyfSx7InRleHQiOiJjb250aW51aXR5LXJldmlzaW9uOTdhZmE0N2VlMTdkMGEyODgzOTRmOTJmMzU1ZDE2NiIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo1LjM1MTg1ODMzMjg4MDk5NH0seyJ0ZXh0IjoiRmVlbGluZyBzYW1wbGUgZ3JhcGhpYyIsInJlcXVpcmVkIjozLCJyYXRpbyI6My42Nzc4MjQyNTkzNTQyMDl9LHsidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDg2LCAxMDEsIDczKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJyYXRpbyI6Ni4xMjY1NzgxODM5NjYzNDF9LHsidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDg2LCAxMDEsIDczKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJyYXRpbyI6Ni4xMjY1NzgxODM5NjYzNDF9XSwiaW50ZXJhY3RpdmVHcmFwaGljcyI6W3sidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDg2LCAxMDEsIDczKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJyYXRpbyI6Ni4xMjY1NzgxODM5NjYzNDF9LHsidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDg2LCAxMDEsIDczKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJyYXRpbyI6Ni4xMjY1NzgxODM5NjYzNDF9XSwiZm9jdXNPdXRsaW5lcyI6W10sImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJiYWNrZ3JvdW5kTHVtaW5hbmNlIjowLjk3NzIzMzE3MTkzMTYwNzQsIm5pZ2h0IjpmYWxzZSwicmVhZGVyUGFwZXJMdW1pbmFuY2UiOm51bGx9"
+                    },
+                    {
+                      "name": "dialog-contrast-paper-reasoning",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzkwLCJzdGF0ZSI6InBhcGVyIHJlYXNvbmluZyIsInBhaXJzIjpbeyJ0ZXh0IjoiRWFnZXIgY2FsbVVuZGVydG9uZTogQW50aWNpcGF0aW9uIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuOTcyMDk2NTUyMDcwNjAyfSx7InRleHQiOiJVbmRlcnRvbmU6IEFudGljaXBhdGlvbiIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo1LjAxMTAxNTQxMTMyMDMwN30seyJ0ZXh0IjoiVGhlIGFwcHJvYWNoaW5nIGV2ZW5pbmcgaXMgZWFnZXJseSBhd2FpdGVkIHdoaWxlIHQiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6Ny45NzIwOTY1NTIwNzA2MDJ9LHsidGV4dCI6IkxhdGUgYWZ0ZXJub29uIGxpZ2h0IHJlc3RlZCBvbiB0aGUgdHJhbSB3aW5kb3dzLiBMIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuOTcyMDk2NTUyMDcwNjAyfSx7InRleHQiOiJGaW5kIHRoaXMgcGFzc2FnZSIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3Ljk3MjA5NjU1MjA3MDYwMn0seyJ0ZXh0IjoiYnVpbGQgwrcgd2VpZ2h0IDMgb2YgNSIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo1LjM1MTg1ODMzMjg4MDk5NH0seyJ0ZXh0IjoiQ29udGV4dDogSW52ZW50ZWQgZm91ci1wYXJhZ3JhcGggY291bnRlcnBhcnQgZm9yIHIiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6NS4zNTE4NTgzMzI4ODA5OTR9LHsidGV4dCI6IlVudmVyaWZpZWQgQUkgaW5mZXJlbmNlLCBub3QgbWVhc3VyZWQgZW1vdGlvbiBvciBhIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjUuMzUxODU4MzMyODgwOTk0fSx7InRleHQiOiJFeGFjdCBzb3VyY2UgcmV2aXNpb24iLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6Ny45NzIwOTY1NTIwNzA2MDJ9LHsidGV4dCI6ImNvbnRpbnVpdHktcmV2aXNpb245N2FmYTQ3ZWUxN2QwYTI4ODM5NGY5MmYzNTVkMTY2IiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjUuMzUxODU4MzMyODgwOTk0fSx7InRleHQiOiJGZWVsaW5nIHNhbXBsZSBncmFwaGljIiwicmVxdWlyZWQiOjMsInJhdGlvIjozLjY3NzgyNDI1OTM1NDIwOX0seyJ0ZXh0IjoiSW50ZXJhY3RpdmUgU1ZHOiBDbG9zZSBhIHBvc3NpYmxlIHJlYWRpbmciLCJyZXF1aXJlZCI6MywicGFpbnQiOiJyZ2IoODYsIDEwMSwgNzMpIiwib3BhY2l0eSI6MSwiYmFja2dyb3VuZCI6InJnYigyNTIsIDI1MywgMjQ4KSIsInJhdGlvIjo2LjEyNjU3ODE4Mzk2NjM0MX0seyJ0ZXh0IjoiSW50ZXJhY3RpdmUgU1ZHOiBDbG9zZSBhIHBvc3NpYmxlIHJlYWRpbmciLCJyZXF1aXJlZCI6MywicGFpbnQiOiJyZ2IoODYsIDEwMSwgNzMpIiwib3BhY2l0eSI6MSwiYmFja2dyb3VuZCI6InJnYigyNTIsIDI1MywgMjQ4KSIsInJhdGlvIjo2LjEyNjU3ODE4Mzk2NjM0MX1dLCJpbnRlcmFjdGl2ZUdyYXBoaWNzIjpbeyJ0ZXh0IjoiSW50ZXJhY3RpdmUgU1ZHOiBDbG9zZSBhIHBvc3NpYmxlIHJlYWRpbmciLCJyZXF1aXJlZCI6MywicGFpbnQiOiJyZ2IoODYsIDEwMSwgNzMpIiwib3BhY2l0eSI6MSwiYmFja2dyb3VuZCI6InJnYigyNTIsIDI1MywgMjQ4KSIsInJhdGlvIjo2LjEyNjU3ODE4Mzk2NjM0MX0seyJ0ZXh0IjoiSW50ZXJhY3RpdmUgU1ZHOiBDbG9zZSBhIHBvc3NpYmxlIHJlYWRpbmciLCJyZXF1aXJlZCI6MywicGFpbnQiOiJyZ2IoODYsIDEwMSwgNzMpIiwib3BhY2l0eSI6MSwiYmFja2dyb3VuZCI6InJnYigyNTIsIDI1MywgMjQ4KSIsInJhdGlvIjo2LjEyNjU3ODE4Mzk2NjM0MX1dLCJmb2N1c091dGxpbmVzIjpbXSwiYmFja2dyb3VuZCI6InJnYigyNTIsIDI1MywgMjQ4KSIsImJhY2tncm91bmRMdW1pbmFuY2UiOjAuOTc3MjMzMTcxOTMxNjA3NCwibmlnaHQiOmZhbHNlLCJyZWFkZXJQYXBlckx1bWluYW5jZSI6MC45NjM0MzYyODMyNTYwNDQ2fQ=="
+                    },
+                    {
+                      "name": "dialog-contrast-night-reasoning",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzkwLCJzdGF0ZSI6Im5pZ2h0IHJlYXNvbmluZyIsInBhaXJzIjpbeyJ0ZXh0IjoiRWFnZXIgY2FsbVVuZGVydG9uZTogQW50aWNpcGF0aW9uIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjExLjExNjg2NjY1OTA1MjYxfSx7InRleHQiOiJVbmRlcnRvbmU6IEFudGljaXBhdGlvbiIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3LjE5MjEyODkyNzgyOTY0NH0seyJ0ZXh0IjoiVGhlIGFwcHJvYWNoaW5nIGV2ZW5pbmcgaXMgZWFnZXJseSBhd2FpdGVkIHdoaWxlIHQiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6MTEuMTE2ODY2NjU5MDUyNjF9LHsidGV4dCI6IkxhdGUgYWZ0ZXJub29uIGxpZ2h0IHJlc3RlZCBvbiB0aGUgdHJhbSB3aW5kb3dzLiBMIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjExLjExNjg2NjY1OTA1MjYxfSx7InRleHQiOiJGaW5kIHRoaXMgcGFzc2FnZSIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjoxMS4xMTY4NjY2NTkwNTI2MX0seyJ0ZXh0IjoiYnVpbGQgwrcgd2VpZ2h0IDMgb2YgNSIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3LjE5MjEyODkyNzgyOTY0NH0seyJ0ZXh0IjoiQ29udGV4dDogSW52ZW50ZWQgZm91ci1wYXJhZ3JhcGggY291bnRlcnBhcnQgZm9yIHIiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6Ny4xOTIxMjg5Mjc4Mjk2NDR9LHsidGV4dCI6IlVudmVyaWZpZWQgQUkgaW5mZXJlbmNlLCBub3QgbWVhc3VyZWQgZW1vdGlvbiBvciBhIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuMTkyMTI4OTI3ODI5NjQ0fSx7InRleHQiOiJFeGFjdCBzb3VyY2UgcmV2aXNpb24iLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6MTEuMTE2ODY2NjU5MDUyNjF9LHsidGV4dCI6ImNvbnRpbnVpdHktcmV2aXNpb245N2FmYTQ3ZWUxN2QwYTI4ODM5NGY5MmYzNTVkMTY2IiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuMTkyMTI4OTI3ODI5NjQ0fSx7InRleHQiOiJGZWVsaW5nIHNhbXBsZSBncmFwaGljIiwicmVxdWlyZWQiOjMsInJhdGlvIjo3LjExODY0ODczODQ5MTkzNH0seyJ0ZXh0IjoiSW50ZXJhY3RpdmUgU1ZHOiBDbG9zZSBhIHBvc3NpYmxlIHJlYWRpbmciLCJyZXF1aXJlZCI6MywicGFpbnQiOiJyZ2IoMjI0LCAyMjcsIDIxMykiLCJvcGFjaXR5IjoxLCJiYWNrZ3JvdW5kIjoicmdiKDM2LCA0MywgMzkpIiwicmF0aW8iOjExLjExNjg2NjY1OTA1MjYxfSx7InRleHQiOiJJbnRlcmFjdGl2ZSBTVkc6IENsb3NlIGEgcG9zc2libGUgcmVhZGluZyIsInJlcXVpcmVkIjozLCJwYWludCI6InJnYigyMjQsIDIyNywgMjEzKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMzYsIDQzLCAzOSkiLCJyYXRpbyI6MTEuMTE2ODY2NjU5MDUyNjF9XSwiaW50ZXJhY3RpdmVHcmFwaGljcyI6W3sidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDIyNCwgMjI3LCAyMTMpIiwib3BhY2l0eSI6MSwiYmFja2dyb3VuZCI6InJnYigzNiwgNDMsIDM5KSIsInJhdGlvIjoxMS4xMTY4NjY2NTkwNTI2MX0seyJ0ZXh0IjoiSW50ZXJhY3RpdmUgU1ZHOiBDbG9zZSBhIHBvc3NpYmxlIHJlYWRpbmciLCJyZXF1aXJlZCI6MywicGFpbnQiOiJyZ2IoMjI0LCAyMjcsIDIxMykiLCJvcGFjaXR5IjoxLCJiYWNrZ3JvdW5kIjoicmdiKDM2LCA0MywgMzkpIiwicmF0aW8iOjExLjExNjg2NjY1OTA1MjYxfV0sImZvY3VzT3V0bGluZXMiOltdLCJiYWNrZ3JvdW5kIjoicmdiKDM2LCA0MywgMzkpIiwiYmFja2dyb3VuZEx1bWluYW5jZSI6MC4wMjI0OTMwNTI1MDQwOTEzNiwibmlnaHQiOnRydWUsInJlYWRlclBhcGVyTHVtaW5hbmNlIjowLjAyMjQ5MzA1MjUwNDA5MTM2fQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-726f00a19f40806931b0",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 133,
+          "column": 39
+        },
+        {
+          "title": "Heartbeat accessibility across writing, details, paper and night at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8035,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:30.273Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "dialog-contrast-writer-reasoning",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzIwLCJzdGF0ZSI6IndyaXRlciByZWFzb25pbmciLCJwYWlycyI6W3sidGV4dCI6IkVhZ2VyIGNhbG1VbmRlcnRvbmU6IEFudGljaXBhdGlvbiIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3Ljk3MjA5NjU1MjA3MDYwMn0seyJ0ZXh0IjoiVW5kZXJ0b25lOiBBbnRpY2lwYXRpb24iLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6NS4wMTEwMTU0MTEzMjAzMDd9LHsidGV4dCI6IlRoZSBhcHByb2FjaGluZyBldmVuaW5nIGlzIGVhZ2VybHkgYXdhaXRlZCB3aGlsZSB0IiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuOTcyMDk2NTUyMDcwNjAyfSx7InRleHQiOiJMYXRlIGFmdGVybm9vbiBsaWdodCByZXN0ZWQgb24gdGhlIHRyYW0gd2luZG93cy4gTCIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3Ljk3MjA5NjU1MjA3MDYwMn0seyJ0ZXh0IjoiRmluZCB0aGlzIHBhc3NhZ2UiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6Ni4zMDkzODc0ODIzODc4MjV9LHsidGV4dCI6ImJ1aWxkIMK3IHdlaWdodCAzIG9mIDUiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6NS4zNTE4NTgzMzI4ODA5OTR9LHsidGV4dCI6IkNvbnRleHQ6IEludmVudGVkIGZvdXItcGFyYWdyYXBoIGNvdW50ZXJwYXJ0IGZvciByIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjUuMzUxODU4MzMyODgwOTk0fSx7InRleHQiOiJVbnZlcmlmaWVkIEFJIGluZmVyZW5jZSwgbm90IG1lYXN1cmVkIGVtb3Rpb24gb3IgYSIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo1LjM1MTg1ODMzMjg4MDk5NH0seyJ0ZXh0IjoiRXhhY3Qgc291cmNlIHJldmlzaW9uIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuOTcyMDk2NTUyMDcwNjAyfSx7InRleHQiOiJjb250aW51aXR5LXJldmlzaW9uOTdhZmE0N2VlMTdkMGEyODgzOTRmOTJmMzU1ZDE2NiIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo1LjM1MTg1ODMzMjg4MDk5NH0seyJ0ZXh0IjoiRmVlbGluZyBzYW1wbGUgZ3JhcGhpYyIsInJlcXVpcmVkIjozLCJyYXRpbyI6My42Nzc4MjQyNTkzNTQyMDl9LHsidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDg2LCAxMDEsIDczKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJyYXRpbyI6Ni4xMjY1NzgxODM5NjYzNDF9LHsidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDg2LCAxMDEsIDczKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJyYXRpbyI6Ni4xMjY1NzgxODM5NjYzNDF9XSwiaW50ZXJhY3RpdmVHcmFwaGljcyI6W3sidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDg2LCAxMDEsIDczKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJyYXRpbyI6Ni4xMjY1NzgxODM5NjYzNDF9LHsidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDg2LCAxMDEsIDczKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJyYXRpbyI6Ni4xMjY1NzgxODM5NjYzNDF9XSwiZm9jdXNPdXRsaW5lcyI6W10sImJhY2tncm91bmQiOiJyZ2IoMjUyLCAyNTMsIDI0OCkiLCJiYWNrZ3JvdW5kTHVtaW5hbmNlIjowLjk3NzIzMzE3MTkzMTYwNzQsIm5pZ2h0IjpmYWxzZSwicmVhZGVyUGFwZXJMdW1pbmFuY2UiOm51bGx9"
+                    },
+                    {
+                      "name": "dialog-contrast-paper-reasoning",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzIwLCJzdGF0ZSI6InBhcGVyIHJlYXNvbmluZyIsInBhaXJzIjpbeyJ0ZXh0IjoiRWFnZXIgY2FsbVVuZGVydG9uZTogQW50aWNpcGF0aW9uIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuOTcyMDk2NTUyMDcwNjAyfSx7InRleHQiOiJVbmRlcnRvbmU6IEFudGljaXBhdGlvbiIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo1LjAxMTAxNTQxMTMyMDMwN30seyJ0ZXh0IjoiVGhlIGFwcHJvYWNoaW5nIGV2ZW5pbmcgaXMgZWFnZXJseSBhd2FpdGVkIHdoaWxlIHQiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6Ny45NzIwOTY1NTIwNzA2MDJ9LHsidGV4dCI6IkxhdGUgYWZ0ZXJub29uIGxpZ2h0IHJlc3RlZCBvbiB0aGUgdHJhbSB3aW5kb3dzLiBMIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuOTcyMDk2NTUyMDcwNjAyfSx7InRleHQiOiJGaW5kIHRoaXMgcGFzc2FnZSIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3Ljk3MjA5NjU1MjA3MDYwMn0seyJ0ZXh0IjoiYnVpbGQgwrcgd2VpZ2h0IDMgb2YgNSIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo1LjM1MTg1ODMzMjg4MDk5NH0seyJ0ZXh0IjoiQ29udGV4dDogSW52ZW50ZWQgZm91ci1wYXJhZ3JhcGggY291bnRlcnBhcnQgZm9yIHIiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6NS4zNTE4NTgzMzI4ODA5OTR9LHsidGV4dCI6IlVudmVyaWZpZWQgQUkgaW5mZXJlbmNlLCBub3QgbWVhc3VyZWQgZW1vdGlvbiBvciBhIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjUuMzUxODU4MzMyODgwOTk0fSx7InRleHQiOiJFeGFjdCBzb3VyY2UgcmV2aXNpb24iLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6Ny45NzIwOTY1NTIwNzA2MDJ9LHsidGV4dCI6ImNvbnRpbnVpdHktcmV2aXNpb245N2FmYTQ3ZWUxN2QwYTI4ODM5NGY5MmYzNTVkMTY2IiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjUuMzUxODU4MzMyODgwOTk0fSx7InRleHQiOiJGZWVsaW5nIHNhbXBsZSBncmFwaGljIiwicmVxdWlyZWQiOjMsInJhdGlvIjozLjY3NzgyNDI1OTM1NDIwOX0seyJ0ZXh0IjoiSW50ZXJhY3RpdmUgU1ZHOiBDbG9zZSBhIHBvc3NpYmxlIHJlYWRpbmciLCJyZXF1aXJlZCI6MywicGFpbnQiOiJyZ2IoODYsIDEwMSwgNzMpIiwib3BhY2l0eSI6MSwiYmFja2dyb3VuZCI6InJnYigyNTIsIDI1MywgMjQ4KSIsInJhdGlvIjo2LjEyNjU3ODE4Mzk2NjM0MX0seyJ0ZXh0IjoiSW50ZXJhY3RpdmUgU1ZHOiBDbG9zZSBhIHBvc3NpYmxlIHJlYWRpbmciLCJyZXF1aXJlZCI6MywicGFpbnQiOiJyZ2IoODYsIDEwMSwgNzMpIiwib3BhY2l0eSI6MSwiYmFja2dyb3VuZCI6InJnYigyNTIsIDI1MywgMjQ4KSIsInJhdGlvIjo2LjEyNjU3ODE4Mzk2NjM0MX1dLCJpbnRlcmFjdGl2ZUdyYXBoaWNzIjpbeyJ0ZXh0IjoiSW50ZXJhY3RpdmUgU1ZHOiBDbG9zZSBhIHBvc3NpYmxlIHJlYWRpbmciLCJyZXF1aXJlZCI6MywicGFpbnQiOiJyZ2IoODYsIDEwMSwgNzMpIiwib3BhY2l0eSI6MSwiYmFja2dyb3VuZCI6InJnYigyNTIsIDI1MywgMjQ4KSIsInJhdGlvIjo2LjEyNjU3ODE4Mzk2NjM0MX0seyJ0ZXh0IjoiSW50ZXJhY3RpdmUgU1ZHOiBDbG9zZSBhIHBvc3NpYmxlIHJlYWRpbmciLCJyZXF1aXJlZCI6MywicGFpbnQiOiJyZ2IoODYsIDEwMSwgNzMpIiwib3BhY2l0eSI6MSwiYmFja2dyb3VuZCI6InJnYigyNTIsIDI1MywgMjQ4KSIsInJhdGlvIjo2LjEyNjU3ODE4Mzk2NjM0MX1dLCJmb2N1c091dGxpbmVzIjpbXSwiYmFja2dyb3VuZCI6InJnYigyNTIsIDI1MywgMjQ4KSIsImJhY2tncm91bmRMdW1pbmFuY2UiOjAuOTc3MjMzMTcxOTMxNjA3NCwibmlnaHQiOmZhbHNlLCJyZWFkZXJQYXBlckx1bWluYW5jZSI6MC45NjM0MzYyODMyNTYwNDQ2fQ=="
+                    },
+                    {
+                      "name": "dialog-contrast-night-reasoning",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzIwLCJzdGF0ZSI6Im5pZ2h0IHJlYXNvbmluZyIsInBhaXJzIjpbeyJ0ZXh0IjoiRWFnZXIgY2FsbVVuZGVydG9uZTogQW50aWNpcGF0aW9uIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjExLjExNjg2NjY1OTA1MjYxfSx7InRleHQiOiJVbmRlcnRvbmU6IEFudGljaXBhdGlvbiIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3LjE5MjEyODkyNzgyOTY0NH0seyJ0ZXh0IjoiVGhlIGFwcHJvYWNoaW5nIGV2ZW5pbmcgaXMgZWFnZXJseSBhd2FpdGVkIHdoaWxlIHQiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6MTEuMTE2ODY2NjU5MDUyNjF9LHsidGV4dCI6IkxhdGUgYWZ0ZXJub29uIGxpZ2h0IHJlc3RlZCBvbiB0aGUgdHJhbSB3aW5kb3dzLiBMIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjExLjExNjg2NjY1OTA1MjYxfSx7InRleHQiOiJGaW5kIHRoaXMgcGFzc2FnZSIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjoxMS4xMTY4NjY2NTkwNTI2MX0seyJ0ZXh0IjoiYnVpbGQgwrcgd2VpZ2h0IDMgb2YgNSIsInJlcXVpcmVkIjo0LjUsInJhdGlvIjo3LjE5MjEyODkyNzgyOTY0NH0seyJ0ZXh0IjoiQ29udGV4dDogSW52ZW50ZWQgZm91ci1wYXJhZ3JhcGggY291bnRlcnBhcnQgZm9yIHIiLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6Ny4xOTIxMjg5Mjc4Mjk2NDR9LHsidGV4dCI6IlVudmVyaWZpZWQgQUkgaW5mZXJlbmNlLCBub3QgbWVhc3VyZWQgZW1vdGlvbiBvciBhIiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuMTkyMTI4OTI3ODI5NjQ0fSx7InRleHQiOiJFeGFjdCBzb3VyY2UgcmV2aXNpb24iLCJyZXF1aXJlZCI6NC41LCJyYXRpbyI6MTEuMTE2ODY2NjU5MDUyNjF9LHsidGV4dCI6ImNvbnRpbnVpdHktcmV2aXNpb245N2FmYTQ3ZWUxN2QwYTI4ODM5NGY5MmYzNTVkMTY2IiwicmVxdWlyZWQiOjQuNSwicmF0aW8iOjcuMTkyMTI4OTI3ODI5NjQ0fSx7InRleHQiOiJGZWVsaW5nIHNhbXBsZSBncmFwaGljIiwicmVxdWlyZWQiOjMsInJhdGlvIjo3LjExODY0ODczODQ5MTkzNH0seyJ0ZXh0IjoiSW50ZXJhY3RpdmUgU1ZHOiBDbG9zZSBhIHBvc3NpYmxlIHJlYWRpbmciLCJyZXF1aXJlZCI6MywicGFpbnQiOiJyZ2IoMjI0LCAyMjcsIDIxMykiLCJvcGFjaXR5IjoxLCJiYWNrZ3JvdW5kIjoicmdiKDM2LCA0MywgMzkpIiwicmF0aW8iOjExLjExNjg2NjY1OTA1MjYxfSx7InRleHQiOiJJbnRlcmFjdGl2ZSBTVkc6IENsb3NlIGEgcG9zc2libGUgcmVhZGluZyIsInJlcXVpcmVkIjozLCJwYWludCI6InJnYigyMjQsIDIyNywgMjEzKSIsIm9wYWNpdHkiOjEsImJhY2tncm91bmQiOiJyZ2IoMzYsIDQzLCAzOSkiLCJyYXRpbyI6MTEuMTE2ODY2NjU5MDUyNjF9XSwiaW50ZXJhY3RpdmVHcmFwaGljcyI6W3sidGV4dCI6IkludGVyYWN0aXZlIFNWRzogQ2xvc2UgYSBwb3NzaWJsZSByZWFkaW5nIiwicmVxdWlyZWQiOjMsInBhaW50IjoicmdiKDIyNCwgMjI3LCAyMTMpIiwib3BhY2l0eSI6MSwiYmFja2dyb3VuZCI6InJnYigzNiwgNDMsIDM5KSIsInJhdGlvIjoxMS4xMTY4NjY2NTkwNTI2MX0seyJ0ZXh0IjoiSW50ZXJhY3RpdmUgU1ZHOiBDbG9zZSBhIHBvc3NpYmxlIHJlYWRpbmciLCJyZXF1aXJlZCI6MywicGFpbnQiOiJyZ2IoMjI0LCAyMjcsIDIxMykiLCJvcGFjaXR5IjoxLCJiYWNrZ3JvdW5kIjoicmdiKDM2LCA0MywgMzkpIiwicmF0aW8iOjExLjExNjg2NjY1OTA1MjYxfV0sImZvY3VzT3V0bGluZXMiOltdLCJiYWNrZ3JvdW5kIjoicmdiKDM2LCA0MywgMzkpIiwiYmFja2dyb3VuZEx1bWluYW5jZSI6MC4wMjI0OTMwNTI1MDQwOTEzNiwibmlnaHQiOnRydWUsInJlYWRlclBhcGVyTHVtaW5hbmNlIjowLjAyMjQ5MzA1MjUwNDA5MTM2fQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-01ed3b63da85b0f32f0a",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 133,
+          "column": 39
+        }
+      ]
+    },
+    {
+      "title": "library-reader.spec.ts",
+      "file": "library-reader.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Library has searchable pages, same-ID rename and collection reading",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2808,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:38.353Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-57030ade5372cb26ddac",
+          "file": "library-reader.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "Reader turns, appearance and resume remain local and preserve source/revisions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3649,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:41.178Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-bfc7602a96aef57f6a4d",
+          "file": "library-reader.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "Mobile Read replaces Export, reduced motion and reader accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2786,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:44.844Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-976c22e07b214da3b56a",
+          "file": "library-reader.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "Read resumes the last collection by identity, with contents context and a true editing return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3018,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:47.646Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-38384179bc4d53b537d3",
+          "file": "library-reader.spec.ts",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "Changed source restarts deliberately and appearance panel traps keyboard focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2846,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:50.681Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-575466c7d6f4e51a630e",
+          "file": "library-reader.spec.ts",
+          "line": 80,
+          "column": 1
+        },
+        {
+          "title": "Library navigation makes a local recovery copy without a writing revision",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2814,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:53.546Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-dfd977ced8858a133c51",
+          "file": "library-reader.spec.ts",
+          "line": 106,
+          "column": 1
+        },
+        {
+          "title": "New thought follows collection detail; all Library and Inbox create uncollected writing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2442,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:56.379Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-a012a24fb6ef5417a94b",
+          "file": "library-reader.spec.ts",
+          "line": 118,
+          "column": 1
+        },
+        {
+          "title": "Keyboard follows offscreen links and opens available linked writing; unavailable links explain",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3076,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:52:58.839Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-4928c15311dc244b3b72",
+          "file": "library-reader.spec.ts",
+          "line": 130,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "library-release.spec.ts",
+      "file": "library-release.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "150-page library retrieves offline body matches without a sidebar inventory",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10212,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:53:01.949Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "940f3ca989eca2c8e282-4d9037b8e1540a4fd7d1",
+          "file": "library-release.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "reader retains exact rich text and reaches every fragmented character at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2672,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:53:12.175Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "940f3ca989eca2c8e282-710916f60ce1d909d600",
+          "file": "library-release.spec.ts",
+          "line": 43,
+          "column": 39
+        },
+        {
+          "title": "reader retains exact rich text and reaches every fragmented character at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3020,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:53:14.862Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "940f3ca989eca2c8e282-e570b4989cfe1c152f28",
+          "file": "library-release.spec.ts",
+          "line": 43,
+          "column": 39
+        },
+        {
+          "title": "reader retains exact rich text and reaches every fragmented character at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3222,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:53:17.898Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "940f3ca989eca2c8e282-74237f19600e5ea83ec6",
+          "file": "library-release.spec.ts",
+          "line": 43,
+          "column": 39
+        }
+      ]
+    },
+    {
+      "title": "page-links.spec.ts",
+      "file": "page-links.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "canonical click, refresh and back/forward resolve across universes and preserve an unsaved draft",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4306,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:53:21.160Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a729aa3f69c94c525b26-68d3b79c911a2a25b668",
+          "file": "page-links.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "renaming and moving canonicalize old links; legacy queries remain usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5024,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:53:25.485Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a729aa3f69c94c525b26-7cda520e32cbab08579f",
+          "file": "page-links.spec.ts",
+          "line": 40,
+          "column": 1
+        },
+        {
+          "title": "missing, trashed, malformed and mismatched paths never display a different scene",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5255,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:53:30.526Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a729aa3f69c94c525b26-7cb8df457e4104790dc2",
+          "file": "page-links.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "copy in writing and Reader at 1440px; private URL, accessible feedback, clipboard fallback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2539,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:53:35.798Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a729aa3f69c94c525b26-93285a3e29f04f6b33ec",
+          "file": "page-links.spec.ts",
+          "line": 65,
+          "column": 39
+        },
+        {
+          "title": "copy in writing and Reader at 390px; private URL, accessible feedback, clipboard fallback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2289,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:53:38.353Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a729aa3f69c94c525b26-e91b5776e3d56e11da22",
+          "file": "page-links.spec.ts",
+          "line": 65,
+          "column": 39
+        },
+        {
+          "title": "copy in writing and Reader at 320px; private URL, accessible feedback, clipboard fallback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2443,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:53:40.658Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a729aa3f69c94c525b26-2e1335370e392edf9de6",
+          "file": "page-links.spec.ts",
+          "line": 65,
+          "column": 39
+        },
+        {
+          "title": "production deep links keep the normal signed-out gate and do not expose prose",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1930,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:53:43.119Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a729aa3f69c94c525b26-c62820ad7eb9e839ee46",
+          "file": "page-links.spec.ts",
+          "line": 81,
+          "column": 1
+        },
+        {
+          "title": "collection Reader copies the current page and back resolves writing; collection rename refreshes canonical slugs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2743,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:53:45.070Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a729aa3f69c94c525b26-607084bd1120d7b7b11a",
+          "file": "page-links.spec.ts",
+          "line": 88,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "page-turn-lifecycle.spec.ts",
+      "file": "page-turn-lifecycle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Actual content curl is bounded and releases resources after 20 turns at 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19874,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:53:47.858Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "82acc23d216d4d27650d-0ea638d37459e8abc448",
+          "file": "page-turn-lifecycle.spec.ts",
+          "line": 34,
+          "column": 34
+        },
+        {
+          "title": "Actual content curl is bounded and releases resources after 20 turns at 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12238,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:54:07.748Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "82acc23d216d4d27650d-b89a5b46e9b1418f5c59",
+          "file": "page-turn-lifecycle.spec.ts",
+          "line": 34,
+          "column": 34
+        },
+        {
+          "title": "Rapid replacement, 20 reader exits, resize and reduced motion cancel all leaf work",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26059,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:54:20.007Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "82acc23d216d4d27650d-9437391dbb9809ad4739",
+          "file": "page-turn-lifecycle.spec.ts",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "Large books animate only the canonical track and cancel slide work on every exit path",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19917,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:54:46.086Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "82acc23d216d4d27650d-6974aabebe2f6114c4c8",
+          "file": "page-turn-lifecycle.spec.ts",
+          "line": 81,
+          "column": 1
+        },
+        {
+          "title": "DOM-rich small writing uses the node budget independently of character count",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2709,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:06.027Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "82acc23d216d4d27650d-4348da707cc08b8f3755",
+          "file": "page-turn-lifecycle.spec.ts",
+          "line": 114,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "plugin-legacy-cache.spec.ts",
+      "file": "plugin-legacy-cache.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Previous deployed offline worker cannot swallow plugin connection navigation at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1759,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:08.772Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d824ce8f022511b5ceb2-2584406d2c79f0b9f446",
+          "file": "plugin-legacy-cache.spec.ts",
+          "line": 8,
+          "column": 34
+        },
+        {
+          "title": "Previous deployed offline worker cannot swallow plugin connection navigation at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1612,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:10.547Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d824ce8f022511b5ceb2-efcc4a15899ca0453ee5",
+          "file": "plugin-legacy-cache.spec.ts",
+          "line": 8,
+          "column": 34
+        }
+      ]
+    },
+    {
+      "title": "plugin-ui.spec.ts",
+      "file": "plugin-ui.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Plugin cycle 1: consent scope and returned proposal baseline",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5080,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:12.189Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-1068d31f21697cc0a0f1",
+          "file": "plugin-ui.spec.ts",
+          "line": 55,
+          "column": 1
+        },
+        {
+          "title": "Plugin cycle 2: scope choice, denial and long returned source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6195,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:17.286Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-95590834218dae0e38e8",
+          "file": "plugin-ui.spec.ts",
+          "line": 70,
+          "column": 1
+        },
+        {
+          "title": "Plugin cycle 3: author decisions, revoke and collaboration archive",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2077,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:23.499Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-548d788251c9ea337c6f",
+          "file": "plugin-ui.spec.ts",
+          "line": 89,
+          "column": 1
+        },
+        {
+          "title": "Plugin cycle 4: empty, expired, pending and offline recoveries",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10445,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:25.594Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-d4d3957dfa4866045992",
+          "file": "plugin-ui.spec.ts",
+          "line": 102,
+          "column": 1
+        },
+        {
+          "title": "Consent narrows large catalogues to ten universes and supports read only requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2133,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:36.055Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-22824ee003ca7b89b676",
+          "file": "plugin-ui.spec.ts",
+          "line": 125,
+          "column": 1
+        },
+        {
+          "title": "Plugin cycle 5: pagination, accessibility and 320px author journey",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6477,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:38.203Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-a60191e121de0c4fd3ce",
+          "file": "plugin-ui.spec.ts",
+          "line": 137,
+          "column": 1
+        },
+        {
+          "title": "Current source navigation resolves a real page and preserves writing across universes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4831,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:44.698Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-8f4f0acd0452a736b935",
+          "file": "plugin-ui.spec.ts",
+          "line": 152,
+          "column": 1
+        },
+        {
+          "title": "Production consent ignores device preview and does not request private data before sign-in",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1583,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:49.544Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-a7c106bd228ebef1afdd",
+          "file": "plugin-ui.spec.ts",
+          "line": 172,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "populated-journeys.spec.ts",
+      "file": "populated-journeys.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Three coherent worlds retain exact originals and never claim approval",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2326,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:51.169Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-78fdc3d78535081aa244",
+          "file": "populated-journeys.spec.ts",
+          "line": 55,
+          "column": 1
+        },
+        {
+          "title": "Library layouts retrieve varied pages and collections at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5711,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:53.511Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-7e31c7697c494d2f0423",
+          "file": "populated-journeys.spec.ts",
+          "line": 78,
+          "column": 39
+        },
+        {
+          "title": "Library layouts retrieve varied pages and collections at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6249,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:55:59.240Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-f5ef2fffa44af5e81791",
+          "file": "populated-journeys.spec.ts",
+          "line": 78,
+          "column": 39
+        },
+        {
+          "title": "Library layouts retrieve varied pages and collections at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5908,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:05.505Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-6acdcd7c253cd5f89608",
+          "file": "populated-journeys.spec.ts",
+          "line": 78,
+          "column": 39
+        },
+        {
+          "title": "Mobile backward curl actually transforms its leaf and returns visible first-page content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3303,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:11.432Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-d02e07337d21db44cdae",
+          "file": "populated-journeys.spec.ts",
+          "line": 120,
+          "column": 1
+        },
+        {
+          "title": "Collection detail, universe switching and shortcuts keep an unambiguous scope",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3867,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:14.752Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-382ee2803bfe5d4ea0cb",
+          "file": "populated-journeys.spec.ts",
+          "line": 146,
+          "column": 1
+        },
+        {
+          "title": "One capture action follows a collection; move, rename and creating a world preserve writing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3923,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:18.637Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-1d7f56214e07ffe8431e",
+          "file": "populated-journeys.spec.ts",
+          "line": 186,
+          "column": 1
+        },
+        {
+          "title": "Atlas follows explicit links and backlinks without dropping into the editor at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3041,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:22.577Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-5dbf9a14902d07915302",
+          "file": "populated-journeys.spec.ts",
+          "line": 223,
+          "column": 39
+        },
+        {
+          "title": "Atlas follows explicit links and backlinks without dropping into the editor at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2803,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:25.634Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-8bd75aca2cacf2a8a495",
+          "file": "populated-journeys.spec.ts",
+          "line": 223,
+          "column": 39
+        },
+        {
+          "title": "Atlas follows explicit links and backlinks without dropping into the editor at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3084,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:28.457Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-72b080b84a8071b175cc",
+          "file": "populated-journeys.spec.ts",
+          "line": 223,
+          "column": 39
+        },
+        {
+          "title": "Library reading returns to its exact browse context and edits only on request at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4333,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:31.562Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-cc1784bb9342521d4f4d",
+          "file": "populated-journeys.spec.ts",
+          "line": 264,
+          "column": 34
+        },
+        {
+          "title": "Library reading returns to its exact browse context and edits only on request at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4354,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:35.914Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-7ff72b4e7304d351de38",
+          "file": "populated-journeys.spec.ts",
+          "line": 264,
+          "column": 34
+        },
+        {
+          "title": "Leaving writing makes a recovery copy before idle; reload retains exact draft and originals",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4316,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:40.285Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-03a73fce5be205dc846c",
+          "file": "populated-journeys.spec.ts",
+          "line": 325,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "production.spec.ts",
+      "file": "production.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "production shell cold reloads offline and development notebook access is absent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1352,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:44.644Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed69554c53210704c98c-a7e9823f0d6613a19552",
+          "file": "production.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "writing.spec.ts",
+      "file": "writing.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "A01/A08 immediate capture, Unicode, caret and undo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3188,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:46.035Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-7d81cc02b8e2531ee4be",
+          "file": "writing.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "A08 formatted archive restores into an isolated browser and HTML retains formatting",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3352,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:49.239Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-0b3220069facf7c99d80",
+          "file": "writing.spec.ts",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "A03 failed storage leaves open text exportable and never says saved",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1913,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:52.610Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-273600ee488f670df204",
+          "file": "writing.spec.ts",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "A22/A23 short mobile writing, keyboard navigation and 200 percent text remain usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3332,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:54.539Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-712a301c229dfa6db18c",
+          "file": "writing.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "A02 offline editing survives a new tab and preserves acknowledged revisions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3343,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:56:57.888Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-1abace622e1efbf2951a",
+          "file": "writing.spec.ts",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "A06 revision restoration retains the intervening version",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3013,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:57:01.250Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-daa2d2882ce88f9f090d",
+          "file": "writing.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "A07/A09 archive from browser preserves sources and independent saved-text oracle",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3605,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:57:04.284Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-d16b30b3af5d99ea9bbf",
+          "file": "writing.spec.ts",
+          "line": 106,
+          "column": 1
+        },
+        {
+          "title": "A11 search stays in the selected universe",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2279,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:57:07.907Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-534bd0f7038a7c99498b",
+          "file": "writing.spec.ts",
+          "line": 140,
+          "column": 1
+        },
+        {
+          "title": "A06 stable links, backlinks and non-drag organization survive title changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3105,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:57:10.205Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-ff17d2d46a8682174d9a",
+          "file": "writing.spec.ts",
+          "line": 155,
+          "column": 1
+        },
+        {
+          "title": "paragraph indentation and themed collection movement at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4346,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:57:13.331Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-e18ef2a9e9f7bc315ec9",
+          "file": "writing.spec.ts",
+          "line": 173,
+          "column": 39
+        },
+        {
+          "title": "paragraph indentation and themed collection movement at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2827,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:57:17.701Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-60501fef3e2800f60278",
+          "file": "writing.spec.ts",
+          "line": 173,
+          "column": 39
+        },
+        {
+          "title": "paragraph indentation and themed collection movement at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2897,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:57:20.548Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-c44ddf91948600060591",
+          "file": "writing.spec.ts",
+          "line": 173,
+          "column": 39
+        },
+        {
+          "title": "A22/A23 writing layout and accessibility at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3306,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:57:23.462Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-795b725adf24afd1ed3a",
+          "file": "writing.spec.ts",
+          "line": 225,
+          "column": 44
+        },
+        {
+          "title": "A22/A23 writing layout and accessibility at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3884,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:57:26.789Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-9966ea16a73a78fae35b",
+          "file": "writing.spec.ts",
+          "line": 225,
+          "column": 44
+        },
+        {
+          "title": "A22/A23 writing layout and accessibility at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4024,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:57:30.692Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-4b4fc4cb0e751581a803",
+          "file": "writing.spec.ts",
+          "line": 225,
+          "column": 44
+        },
+        {
+          "title": "A22/A23 writing layout and accessibility at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4816,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:57:34.738Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-53379b2faa53d123abcd",
+          "file": "writing.spec.ts",
+          "line": 225,
+          "column": 44
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-03T13:49:18.241Z",
+    "duration": 504146.58499999996,
+    "expected": 123,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

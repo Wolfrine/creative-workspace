@@ -67,3 +67,9 @@
 .save-status.icon-button{width:36px;height:36px;padding:8px;flex:0 0 36px;color:var(--muted);border:0;background:transparent}.save-status.status-error,.save-status.status-conflict{color:#9d472e}.save-status.status-waiting{opacity:.65}.save-status svg{animation:none}
 
 .sync-details{padding:24px;display:grid;gap:16px;font-size:14px;line-height:1.75}.sync-details p{margin:0}.sync-detail-state{color:var(--green);font-weight:600}.sync-details>.secondary-button{justify-self:start}@media(max-width:650px){.save-status.icon-button{width:44px;height:44px;flex-basis:44px;padding:13px}.sync-details{padding:20px;font-size:13px;gap:14px}}
+
+/* Page links stay with existing page actions, outside the prose. */
+.page-link-field{display:grid;gap:8px;font-size:12px;margin:18px 0}.page-link-field input{width:100%;min-width:0;box-sizing:border-box;padding:12px;border:1px solid var(--line,#d6dfcc);border-radius:4px;background:var(--paper,#fafbf5);color:inherit;font:12px ui-monospace,monospace}.document-location{min-width:0}.document-actions{flex-shrink:0}
+@media(max-width:360px){.document-location .collection-native{max-width:100%;width:90px}.document-location{gap:5px}.document-actions{gap:0}}
+
+.page-link-dialog{padding:0 22px 22px;line-height:1.7}.page-link-dialog p{font-size:13px}

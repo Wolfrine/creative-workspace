@@ -34,6 +34,13 @@ async function synced(page: Page) {
 const resetOptions = (requestId: string) => ({ db, auth, binding: { projectId: 'demo-noveliaa', authorEmail: email }, request: { requestId, action: 'reset-entire-workspace', ownerEmail: email, approved: true, commitMarker: '[workspace-reset:' + requestId + ']' }, verifiedProject: 'demo-noveliaa', expectedRequestId: requestId });
 async function expectCurrentWorkspace(page: Page, workspaceId: string) {
   await expect.poll(() => page.evaluate(async () => (await indexedDB.databases()).map(item => item.name))).toContain('noveliaa-writing-v1-' + author + ':' + workspaceId);
+  // The retired document URL must never select a replacement page after reset.
+  await expect(page.getByText('This page link is unavailable.', { exact: false })).toBeVisible();
+  await expect(canvas(page)).toHaveCount(0);
+  const menu = page.getByRole('button', { name: 'Open navigation', exact: true });
+  if (await menu.isVisible()) await menu.click();
+  await page.getByRole('button', { name: 'Continue writing', exact: true }).click();
+  await page.keyboard.press('Escape');
   await expect(page.getByRole('button', { name: 'Begin writing', exact: true })).toBeVisible();
   await expect(canvas(page)).toHaveCount(0);
   expect(await page.evaluate(async () => {

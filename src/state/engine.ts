@@ -47,7 +47,7 @@ export class WritingEngine {
   private refreshPromise?: Promise<void>;
   private cloudReadFailed = false;
   constructor(readonly accountId: string, readonly cloud: CloudAdapter | null) {
-    this.state = { ...blank(accountId), ready: false, localOnly: !cloud, activeUniverseId: '', activeDocumentId: null, saveState: 'local', error: null, pendingCount: 0, conflictedDocumentIds: [], collectionConflicts: [], online: typeof navigator === 'undefined' || navigator.onLine !== false };
+    this.state = { ...blank(accountId), ready: false, cloudHydrated: !cloud, localOnly: !cloud, activeUniverseId: '', activeDocumentId: null, saveState: 'local', error: null, pendingCount: 0, conflictedDocumentIds: [], collectionConflicts: [], online: typeof navigator === 'undefined' || navigator.onLine !== false };
   }
   getSnapshot = (): WorkspaceState => this.state;
   subscribe = (callback: () => void): (() => void) => { this.listeners.add(callback); return () => this.listeners.delete(callback); };
@@ -102,7 +102,7 @@ export class WritingEngine {
       if (this.disposed) return;
       const activeUniverseId = disk.universes.some(x => x.id === preferences?.universeId) ? preferences!.universeId : disk.universes[0].id;
       const activeDocumentId = disk.documents.some(x => x.id === preferences?.documentId && x.universeId === activeUniverseId && !x.trashed) ? preferences!.documentId : disk.documents.filter(x => x.universeId === activeUniverseId && !x.trashed).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0]?.id ?? null;
-      this.publish({ ...disk, ready: true, activeUniverseId, activeDocumentId });
+      this.publish({ ...disk, ready: true, cloudHydrated: !this.cloud || this.hasPulledCloud, activeUniverseId, activeDocumentId });
       if (typeof BroadcastChannel !== 'undefined') {
         this.channel = new BroadcastChannel('noveliaa:' + this.accountId + ':' + (this.cloud?.workspaceId ?? this.accountId));
         this.channel.onmessage = () => { void this.refreshDisk().catch(error => this.fail(error)); };
@@ -338,7 +338,7 @@ export class WritingEngine {
     for (const doc of this.state.documents) if (!documents.some(x => x.id === doc.id) && (this.dirty.has(doc.id) || this.draftPending.has(doc.id) || this.pending.some(x => x.revision.documentId === doc.id))) documents.push(doc);
     const active = documents.find(document => document.id === this.state.activeDocumentId && !document.trashed);
     const nextActive = active?.id ?? documents.filter(document => document.universeId === this.state.activeUniverseId && !document.trashed).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0]?.id ?? null;
-    this.publish({ ...disk, ...this.retainedRecords(disk), documents, activeDocumentId: nextActive, ...(this.cloudReadFailed ? { error: null } : {}) }); this.cloudReadFailed = false;
+    this.publish({ ...disk, ...this.retainedRecords(disk), documents, cloudHydrated: true, activeDocumentId: nextActive, ...(this.cloudReadFailed ? { error: null } : {}) }); this.cloudReadFailed = false;
   }
   sync = (refresh = true): Promise<void> => {
     if (this.disposed || !this.cloud || !this.db || !this.state.online) return Promise.resolve();
@@ -449,7 +449,7 @@ export class WritingEngine {
     // History requests can overlap fresh typing. Export a matching checkpoint,
     // and keep device archives available when the cloud cannot be read.
     await this.checkpoint();
-    const { ready: _, localOnly: __, activeUniverseId: ___, activeDocumentId: ____, saveState: _____, error: ______, pendingCount: _______, online: ________, conflictedDocumentIds: _________, collectionConflicts: __________, ...snapshot } = this.state;
+    const { cloudHydrated: _cloudHydrated, ready: _, localOnly: __, activeUniverseId: ___, activeDocumentId: ____, saveState: _____, error: ______, pendingCount: _______, online: ________, conflictedDocumentIds: _________, collectionConflicts: __________, ...snapshot } = this.state;
     return encodeArchive(clone(snapshot));
   }
   async importArchive(file: File): Promise<void> {

@@ -1,6 +1,7 @@
 import { gunzipSync } from 'node:zlib';
 import { FieldPath } from 'firebase-admin/firestore';
 import { digest, stable, validId } from './integration-store.mjs';
+import { pageUrl } from './page-url.mjs';
 import { validateRevision } from './service.mjs';
 const MAX = 32 * 1024 * 1024, CHUNK = 192 * 1024;
 const fail = message => { throw new Error(message); };
@@ -21,10 +22,10 @@ export class WritingAccess {
     if (decoded.length !== manifest.size || digest(decoded) !== hash) fail('Source byte integrity failed.');
     return decoded;
   }
-  async page(grant, documentId, revisionId) {
+  async page(grant, documentId, revisionId, expectedUniverseId) {
     if (!validId(documentId) || revisionId !== undefined && !validId(revisionId)) fail('Invalid writing reference.');
     const root = this.root(grant), head = (await root.collection('documents').doc(documentId).get()).data();
-    if (!head || !grant.universeIds.includes(head.universeId)) fail('Writing is unavailable within this connection.');
+    if (!head || !grant.universeIds.includes(head.universeId) || expectedUniverseId !== undefined && expectedUniverseId !== head.universeId) fail('Writing is unavailable within this connection.');
     const load = async key => {
       const metadata = (await root.collection('revisions').doc(key).get()).data();
       if (!metadata || metadata.id !== key || metadata.documentId !== documentId || metadata.universeId !== head.universeId) fail('Revision is unavailable within this connection.');
@@ -36,7 +37,7 @@ export class WritingAccess {
     const current = await load(head.headRevisionId);
     if (current.snapshot.trashed) fail('Trashed writing is not shared with this connection.');
     const revision = !revisionId || revisionId === current.id ? current : await load(revisionId);
-    return { revision, currentRevisionId: current.id };
+    return { revision, currentRevisionId: current.id, currentSnapshot: current.snapshot };
   }
   async pages(grant, { cursor, limit = 10, query = '' } = {}) {
     if (cursor && !validId(cursor)) fail('Invalid page cursor.');
@@ -48,7 +49,7 @@ export class WritingAccess {
       try {
         const { revision } = await this.page(grant, head.id), s = revision.snapshot;
         const needle = query.toLocaleLowerCase(), index = (s.title + '\n' + s.plainText).toLocaleLowerCase().indexOf(needle);
-        if (!needle || index >= 0) pages.push({ documentId: s.id, universeId: s.universeId, title: s.title || 'Untitled', revisionId: revision.id,
+        if (!needle || index >= 0) pages.push({ documentId: s.id, universeId: s.universeId, title: s.title || 'Untitled', pageUrl: pageUrl(s), revisionId: revision.id,
           contentHash: revision.contentHash, origin: s.origin, sourceOriginalIds: s.sourceOriginalIds, collectionId: s.collectionId,
           ...(needle ? { excerpt: (s.title + '\n' + s.plainText).slice(Math.max(0, index - 100), index + 500) } : {}) });
       } catch (error) {

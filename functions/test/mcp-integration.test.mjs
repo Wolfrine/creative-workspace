@@ -136,6 +136,40 @@ test('private plugin OAuth, scoped HTTP tools, immutable writeback and owner rev
       const links = await access.links({ workspaceId, universeIds: ['granted'] }, { type: 'doc', content: [{ type: 'text', marks: [{ type: 'link', attrs: { href: 'noveliaa://document/scene' } }, { type: 'link', attrs: { href: 'noveliaa://document/secret-scene' } }] }] });
       assert.deepEqual(links.linkedDocumentIds, ['scene']);
     });
+    await t.test('page URLs use the same exact revision, grants and integrity checks without additional reads', async () => {
+      const url = 'https://noveliaa.web.app/u/granted/old-collection/old-title/scene';
+      const read = args => rpc('tools/call', { name: 'fetch_page', arguments: args }, tokens.access_token);
+      const byId = await read({ documentId: 'scene', revisionId: 'r1' });
+      const traceReads = async args => {
+        const prototype = Object.getPrototypeOf(root), get = prototype.get, getAll = db.getAll, trace = [];
+        prototype.get = function (...args) { trace.push(['get', this.path]); return get.apply(this, args); };
+        db.getAll = function (...refs) { trace.push(['getAll', ...refs.map(ref => ref.path)]); return getAll.apply(this, refs); };
+        try { await read(args); return trace; } finally { prototype.get = get; db.getAll = getAll; }
+      };
+      const idTrace = await traceReads({ documentId: 'scene', revisionId: 'r1' });
+      assert(idTrace.length > 0);
+      assert.deepEqual(await traceReads({ pageUrl: url, revisionId: 'r1' }), idTrace, 'URL and ID must have identical Firestore SDK read traces');
+      for (const pageUrl of [url, 'https://noveliaa.web.app/?page=scene']) {
+        const result = await read({ pageUrl, revisionId: 'r1' });
+        assert.deepEqual(result.body.result.structuredContent, byId.body.result.structuredContent);
+        assert.equal(result.body.result.structuredContent.integrity, 'sha256-verified');
+        assert.equal(result.body.result.structuredContent.pageUrl, 'https://noveliaa.web.app/u/granted/inbox/synthetic-scene/scene');
+      }
+      assert.deepEqual((await read({ documentId: url, revisionId: 'r1' })).body.result.structuredContent, byId.body.result.structuredContent);
+      for (const args of [{}, { documentId: 'secret-scene', pageUrl: url }, { pageUrl: url.replace('/granted/', '/private/') }, { pageUrl: url.replace('/scene', '/secret-scene') }, { pageUrl: url.replace('/scene', '/trashed-scene') }, { pageUrl: url.replace('noveliaa.web.app', 'evil.invalid') }, { pageUrl: url + '?page=secret-scene' }, { pageUrl: url, revisionId: 'secret-r1' }]) {
+        const result = await read(args); assert(result.body.result?.isError || result.body.error);
+        assert(!JSON.stringify(result.body).includes(original.snapshot.plainText));
+      }
+      const listing = await rpc('tools/call', { name: 'list_pages', arguments: {} }, tokens.access_token);
+      assert.equal(listing.body.result.structuredContent.pages[0].pageUrl, byId.body.result.structuredContent.pageUrl);
+      const grantRef = (await db.collection('_noveliaaMcp/grants/oauthItems').get()).docs.find(row => !row.data().revoked);
+      const grant = grantRef.data();
+      for (const patch of [{ revoked: true }, { universeIds: ['private'] }]) {
+        await grantRef.ref.set({ ...grant, ...patch });
+        const denied = await read({ pageUrl: url }); assert(denied.status === 401 || denied.body.result?.isError);
+        await grantRef.ref.set(grant);
+      }
+    });
     const input = { documentId: 'scene', revisionId: 'r1', contentHash: original.contentHash, idempotencyKey: 'synthetic-idempotency-0001', kind: 'proposal', title: 'Synthetic proposal — unverified', body: '<script>never execute</script>\nA possible alternative.\nहिन्दी 👩🏽‍💻' };
     let recordId;
     await t.test('append is one write, idempotent, unverified, no writing mutation', async () => {

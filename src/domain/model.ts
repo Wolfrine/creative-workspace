@@ -44,6 +44,7 @@ export interface CloudAdapter {
 }
 export type SaveState = 'waiting' | 'local' | 'syncing' | 'synced' | 'conflict' | 'error';
 export interface WorkspaceState extends WorkspaceSnapshot {
+  cloudHydrated?: boolean;
   ready: boolean; localOnly: boolean; activeUniverseId: string; activeDocumentId: string | null;
   saveState: SaveState; error: string | null; pendingCount: number; online: boolean;
   conflictedDocumentIds: string[];
