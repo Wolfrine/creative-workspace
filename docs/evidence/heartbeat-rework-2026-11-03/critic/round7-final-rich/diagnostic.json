@@ -1,0 +1,32 @@
+[
+  {
+    "width": 1440,
+    "height": 1000,
+    "count": 0,
+    "failures": []
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "count": 0,
+    "failures": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "count": 0,
+    "failures": []
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "count": 0,
+    "failures": []
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "count": 0,
+    "failures": []
+  }
+]

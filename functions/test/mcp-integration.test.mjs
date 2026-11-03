@@ -11,7 +11,7 @@ import { NoveliaaOAuthProvider, READ, PROPOSE } from '../src/integration-oauth.m
 import { WritingAccess } from '../src/integration-writing.mjs';
 import { integrationApp } from '../src/integration-http.mjs';
 import { cleanupExpiredOAuth } from '../src/integration-cleanup.mjs';
-import { readHeartbeat, submitHeartbeat } from '../src/integration-heartbeat.mjs';
+import { heartbeatCoverage, readHeartbeat, submitHeartbeat } from '../src/integration-heartbeat.mjs';
 
 test('private plugin OAuth, scoped HTTP tools, immutable writeback and owner review', { skip: !process.env.FIRESTORE_EMULATOR_HOST, timeout: 90000 }, async t => {
   assert.match(process.env.FIRESTORE_EMULATOR_HOST, /^(127\.0\.0\.1|localhost):\d+$/);
@@ -85,6 +85,10 @@ test('private plugin OAuth, scoped HTTP tools, immutable writeback and owner rev
       assert.deepEqual(result.body.result.tools.map(tool => tool.name).sort(), ['fetch_page', 'get_profile', 'list_pages', 'list_universes', 'search_writing', 'submit_heartbeat', 'submit_record']);
       for (const tool of result.body.result.tools) assert.equal(tool._meta.securitySchemes[0].type, 'oauth2');
       const profile = result.body.result.tools.find(t => t.name === 'get_profile'); assert.equal(profile._meta['openai/profile'], true); assert.deepEqual(profile.outputSchema.required, ['id', 'name']);
+      const heartbeatTool = result.body.result.tools.find(tool => tool.name === 'submit_heartbeat');
+      assert.deepEqual(Object.keys(heartbeatTool.inputSchema.properties).sort(), ['beats', 'contentHash', 'contextNote', 'documentId', 'idempotencyKey', 'model', 'provider', 'revisionId']);
+      assert.equal(heartbeatTool.inputSchema.additionalProperties, false);
+      assert.deepEqual(Object.keys(heartbeatTool.inputSchema.properties.beats.items.properties).sort(), ['end', 'foreground', 'quote', 'reasoning', 'start', 'tone', 'trajectory', 'undertone', 'weight']);
       const denied = await rpc('tools/call', { name: 'list_universes', arguments: {} });
       assert(denied.body.result.isError); assert(denied.body.result._meta['mcp/www_authenticate']);
       assert.equal((await rpc('tools/list', {}, 'invalid')).status, 401);
@@ -159,6 +163,8 @@ test('private plugin OAuth, scoped HTTP tools, immutable writeback and owner rev
       const readUrl = '/api/integrations/heartbeat?' + new URLSearchParams({ documentId: 'scene', revisionId: 'r1', contentHash: original.contentHash });
       const read = async (token = ownerToken) => request(readUrl, { headers: token ? { Authorization: 'Bearer ' + token } : {} });
       const first = await call(heartbeat); assert.equal(first.body.result.structuredContent.verification, 'unverified'); assert.equal(first.body.result.structuredContent.replayed, false);
+      assert.deepEqual(first.body.result.structuredContent.coverage, heartbeatCoverage(original.snapshot.plainText, heartbeat.beats));
+      assert.equal(first.body.result.structuredContent.coverage.status, 'sparse');
       const replay = await call(heartbeat); assert.deepEqual(replay.body.result.structuredContent, { ...first.body.result.structuredContent, replayed: true });
       assert((await call({ ...heartbeat, contextNote: 'Different content.' })).body.result.isError);
       assert((await call({ ...heartbeat, approved: true })).body.result.isError);
@@ -169,6 +175,8 @@ test('private plugin OAuth, scoped HTTP tools, immutable writeback and owner rev
       const response = await read(); assert.equal(response.status, 200); assert.match(response.headers.get('cache-control'), /no-store/);
       const shown = await response.json(); assert.equal(shown.sourceIsCurrent, true); assert.equal(shown.annotations.length, 1); assert.deepEqual(shown.annotations[0].beats, heartbeat.beats);
       assert.deepEqual(shown.annotations[0].attribution, { provider: heartbeat.provider, model: heartbeat.model }); assert.equal(shown.annotations[0].origin, 'ai'); assert.equal(shown.annotations[0].grantId, undefined);
+      assert.deepEqual(shown.annotations[0].coverage, first.body.result.structuredContent.coverage);
+      assert.deepEqual((await annotationPath.doc(first.body.result.structuredContent.id).get()).data().coverage, shown.annotations[0].coverage);
       assert.equal((await read(null)).status, 403); assert.equal((await read(await login('other-author'))).status, 403);
       const stale = await request(readUrl.replace(original.contentHash, '0'.repeat(64)), { headers: { Authorization: 'Bearer ' + ownerToken } });
       assert.deepEqual((await stale.json()).annotations, []);
@@ -212,8 +220,34 @@ test('private plugin OAuth, scoped HTTP tools, immutable writeback and owner rev
         const conflicts = await Promise.allSettled([submitHeartbeat({ access, store }, grant, { ...heartbeat, idempotencyKey: 'heartbeat-concurrent-conflict', contextNote: 'First interpretation.' }), submitHeartbeat({ access, store }, grant, { ...heartbeat, idempotencyKey: 'heartbeat-concurrent-conflict', contextNote: 'Second interpretation.' })]);
         assert.deepEqual(conflicts.map(result => result.status).sort(), ['fulfilled', 'rejected']);
       });
-      await t.test('quiet empty beats are valid; source changes hide historical annotations and reject stale retry', async () => {
+      await t.test('continuous explicit rest is computed, and legacy receipts/records retain their original stored content', async () => {
+        const continuous = { ...heartbeat, idempotencyKey: 'heartbeat-continuous-rest', beats: [{ ...beat, start: 0, end: original.snapshot.plainText.length, quote: original.snapshot.plainText, foreground: 'Rest', tone: 'neutral', trajectory: 'quiet' }] };
+        const result = await call(continuous), receipt = result.body.result.structuredContent;
+        assert.equal(receipt.coverage.status, 'continuous'); assert.equal(receipt.coverage.uncoveredMeaningfulCharacters, 0);
+        const saved = (await annotationPath.doc(receipt.id).get()).data();
+        assert.deepEqual(saved.coverage, heartbeatCoverage(original.snapshot.plainText, continuous.beats));
+        assert.deepEqual(saved.beats, continuous.beats);
+        // Seed only synthetic historical integration metadata, never source writing.
+        const legacyInput = { ...heartbeat, idempotencyKey: 'heartbeat-pre-continuity' }, legacyId = digest(grant.id + ':' + legacyInput.idempotencyKey);
+        const { coverage: _coverage, ...legacy } = (await annotationPath.doc(first.body.result.structuredContent.id).get()).data();
+        const createdAt = '2099-01-01T00:00:00.000Z';
+        const legacyRecord = { ...legacy, id: legacyId, createdAt };
+        const legacyReceipt = { id: legacyId, schema: 'noveliaa-heartbeat-1', verification: 'unverified', sourceIsCurrent: true, createdAt };
+        const receiptRef = root.collection('heartbeatReceipts').doc(legacyId);
+        await annotationPath.doc(legacyId).create(legacyRecord);
+        await receiptRef.create({ fingerprint: digest(stable(legacyInput)), receipt: legacyReceipt, annotationPath: annotationPath.doc(legacyId).path });
+        try {
+          assert.deepEqual((await call(legacyInput)).body.result.structuredContent, { ...legacyReceipt, replayed: true });
+          const legacyRead = await (await read()).json();
+          assert.equal(legacyRead.annotations[0].id, legacyId); assert.equal(legacyRead.annotations[0].coverage.status, 'sparse');
+          assert.deepEqual((await annotationPath.doc(legacyId).get()).data(), legacyRecord);
+          assert.deepEqual((await receiptRef.get()).data().receipt, legacyReceipt);
+          assert((await call({ ...legacyInput, contextNote: 'Changed historical content.' })).body.result.isError);
+        } finally { await annotationPath.doc(legacyId).delete(); await receiptRef.delete(); }
+      });
+      await t.test('legacy empty beats remain accepted as sparse; source changes hide history and reject stale retry', async () => {
         const quiet = await call({ ...heartbeat, idempotencyKey: 'heartbeat-quiet-0001', beats: [] }); assert.equal(quiet.body.result.structuredContent.replayed, false);
+        assert.equal(quiet.body.result.structuredContent.coverage.status, 'sparse');
         assert.equal((await (await read()).json()).annotations.length, 1);
         const newer = await stage('scene', 'granted', 'heartbeat-r2', 'Changed synthetic source.');
         assert.deepEqual(await (await read()).json(), { schema: 'noveliaa-heartbeat-1', annotations: [], sourceIsCurrent: false });

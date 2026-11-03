@@ -135,12 +135,13 @@ export default function App({ workspace, session }: { workspace: WorkspaceContro
   useEffect(() => { setPendingChoices(previous => { const remaining = previous.filter(id => conflictIds.includes(id)); return remaining.length === previous.length ? previous : remaining; }); }, [state.conflictedDocumentIds]);
   useEffect(() => {
     const input = titleRef.current; if (!input?.parentElement) return;
-    let width = 0; let alive = true;
+    let width = 0; let alive = true; let frame = 0;
     const fit = () => { if (alive) { input.style.height = 'auto'; input.style.height = `${input.scrollHeight}px`; } };
-    const observer = new ResizeObserver(entries => { const next = entries[0]?.contentRect.width || 0; if (Math.abs(next - width) > 1) { width = next; fit(); } });
+    const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(fit); };
+    const observer = new ResizeObserver(entries => { const next = entries[0]?.contentRect.width || 0; if (Math.abs(next - width) > 1) { width = next; schedule(); } });
     observer.observe(input.parentElement);
-    void document.fonts.ready.then(fit);
-    return () => { alive = false; observer.disconnect(); };
+    void document.fonts.ready.then(schedule);
+    return () => { alive = false; observer.disconnect(); cancelAnimationFrame(frame); };
   }, [active?.id, view]);
 
   const inform = (message: string, error = false) => { setNotice(message); setNoticeError(error); };

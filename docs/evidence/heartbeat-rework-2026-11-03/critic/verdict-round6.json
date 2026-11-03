@@ -1,0 +1,64 @@
+{
+    "schema":  "noveliaa-heartbeat-rework-critic-1",
+    "candidate":  "round6",
+    "critic":  "heartbeat_rework_critic",
+    "criticVerdict":  "pass",
+    "releaseVerdict":  "hold-parent-richtext-clipping",
+    "scores":  {
+                   "narrative":  8.2,
+                   "accessibility":  8,
+                   "ergonomics":  8,
+                   "overall":  8,
+                   "mobile":  8,
+                   "craft":  8
+               },
+    "viewports":  [
+                      [
+                          1366,
+                          768
+                      ],
+                      [
+                          390,
+                          844
+                      ],
+                      [
+                          320,
+                          568
+                      ]
+                  ],
+    "implementationRounds":  [
+                                 2,
+                                 3,
+                                 4,
+                                 5,
+                                 6
+                             ],
+    "sourceStable":  {
+                         "static":  true,
+                         "currentMatch":  true,
+                         "fallback":  true,
+                         "motion":  true,
+                         "slide":  true
+                     },
+    "sourceHashes":  {
+                         "src/App.tsx":  "0479c5432c85507b8df5ba043ff7320a58b064ff164addfb7891401bc20a60fe",
+                         "src/components/Writer.tsx":  "7887afbd3b7f35bb429abf39a2d4c5bc5c79002e5e7ca40c71a588881190f5c9",
+                         "src/components/Reader.tsx":  "3b84f9f6a9745d8c7d76a4a4a8ec7f079baec3baa082fbe145bfac1b95e3b1c0",
+                         "src/reader/page-turn.ts":  "44d47bfe04a04510faeaa059a6e1e5d8fc7dc2661dea76496c4a1f2e8a7ce2ea",
+                         "src/library-reader.css":  "80e5a6fefca603e9982e143aaec8b271c9eeedd3bebe6ef22877971aab3d7fb5",
+                         "src/heartbeat/presentation.ts":  "f6ab97995b9bb2cd720f1d5d4d273898bcdfa8062d7a86cec1693c30e35fd232",
+                         "src/heartbeat/Heartbeat.tsx":  "0732482453eeed0b7a55ef8e01a3284627dc4010d5c49c0e280ac1e5eb9a3fd3",
+                         "src/heartbeat/heartbeat.css":  "6b51d4af496e14515ddae26d23cce4dc53e577a4f70e63058eb263a582431e22",
+                         "src/heartbeat/decorations.ts":  "bf9768b2f4a7aaff0789763c39c8ef6b67d099ec08563f695f76ecc3dc0aea60",
+                         "src/heartbeat/model.ts":  "150a56b55c146d2daca2325c674600d05657ea1a0a513f34e553db235d51b34e",
+                         "src/styles.css":  "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294",
+                         "tests/helpers/heartbeat-continuity-fixture.ts":  "99713c94fe596b9e5c8a58c6df34792877170e37d0e2e24b45aa9b0896835c83"
+                     },
+    "realVersusSynthetic":  "All visual/interaction fixtures synthetic; no production or real prose read",
+    "remaining":  [
+                      "Parent full QA fragmented rich-text clipping at1440/320",
+                      "Owner comfort and acceptance",
+                      "Prior mood image unavailable, comparison unverified"
+                  ],
+    "report":  "review.md"
+}

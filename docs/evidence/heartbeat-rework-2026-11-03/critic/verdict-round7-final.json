@@ -1,0 +1,199 @@
+{
+  "schema": "noveliaa-heartbeat-rework-critic-1",
+  "candidate": "round7-final after EOF-only CSS trim",
+  "critic": "heartbeat_rework_critic",
+  "criticVerdict": "pass",
+  "releaseVerdict": "parent-owned; owner acceptance unverified",
+  "scores": {
+    "narrative": 8.2,
+    "craft": 8,
+    "ergonomics": 8,
+    "mobile": 8,
+    "accessibility": 8,
+    "overall": 8
+  },
+  "staticFolder": "round7-final",
+  "implementationRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "sourceStable": true,
+  "currentMismatches": [],
+  "sourceHashes": {
+    "src/App.tsx": "0479c5432c85507b8df5ba043ff7320a58b064ff164addfb7891401bc20a60fe",
+    "src/components/Writer.tsx": "7887afbd3b7f35bb429abf39a2d4c5bc5c79002e5e7ca40c71a588881190f5c9",
+    "src/components/Reader.tsx": "94b97320eb83cc1f70f7f83acdfc60b55e1869eec466b992cd140c2c72a2b31b",
+    "src/reader/page-turn.ts": "44d47bfe04a04510faeaa059a6e1e5d8fc7dc2661dea76496c4a1f2e8a7ce2ea",
+    "src/library-reader.css": "b7e6b8e3914fe91180c18016e9464ad8ca4a1c98665fd15072d8189f886bf5b5",
+    "src/heartbeat/presentation.ts": "f6ab97995b9bb2cd720f1d5d4d273898bcdfa8062d7a86cec1693c30e35fd232",
+    "src/heartbeat/Heartbeat.tsx": "0732482453eeed0b7a55ef8e01a3284627dc4010d5c49c0e280ac1e5eb9a3fd3",
+    "src/heartbeat/heartbeat.css": "6b51d4af496e14515ddae26d23cce4dc53e577a4f70e63058eb263a582431e22",
+    "src/heartbeat/decorations.ts": "bf9768b2f4a7aaff0789763c39c8ef6b67d099ec08563f695f76ecc3dc0aea60",
+    "src/heartbeat/model.ts": "150a56b55c146d2daca2325c674600d05657ea1a0a513f34e553db235d51b34e",
+    "src/styles.css": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294",
+    "tests/helpers/heartbeat-continuity-fixture.ts": "99713c94fe596b9e5c8a58c6df34792877170e37d0e2e24b45aa9b0896835c83"
+  },
+  "cosmeticCssOnlyTrim": true,
+  "primaryStaticIdenticalToPretrim": [
+    {
+      "viewport": "1366x768",
+      "identical": true
+    },
+    {
+      "viewport": "390x844",
+      "identical": true
+    },
+    {
+      "viewport": "320x568",
+      "identical": true
+    }
+  ],
+  "supportingLanes": {
+    "round7-final-motion": {
+      "sourceStableWithinRun": true,
+      "currentMismatch": [
+        "src/library-reader.css"
+      ],
+      "cosmeticCssEquivalent": true
+    },
+    "round7-final-slide": {
+      "sourceStableWithinRun": true,
+      "currentMismatch": [
+        "src/library-reader.css"
+      ],
+      "cosmeticCssEquivalent": true
+    },
+    "round7-final-fallback": {
+      "sourceStableWithinRun": true,
+      "currentMismatch": [],
+      "cosmeticCssEquivalent": true
+    }
+  },
+  "richTextCharacterClips": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "count": 0
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "count": 0
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "count": 0
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "count": 0
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "count": 0
+    }
+  ],
+  "collectionExactIdentity": [
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "exactIdentity": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "exactIdentity": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "exactIdentity": true
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "exactIdentity": true
+    }
+  ],
+  "projectionZeroFrames": [
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "uncoloredActiveFrames": 0
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "uncoloredActiveFrames": 0
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "uncoloredActiveFrames": 0
+    }
+  ],
+  "metrics": [
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "visibleParagraphLines": 28,
+      "visibleTextAreaPercent": 39.1,
+      "bookHeight": 625,
+      "titleTopClipped": false,
+      "screenshot": "reader-on-1366x768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "visibleParagraphLines": 15,
+      "visibleTextAreaPercent": 42.4,
+      "bookHeight": 701,
+      "titleTopClipped": false,
+      "screenshot": "reader-on-390x844.png"
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "visibleParagraphLines": 8,
+      "visibleTextAreaPercent": 32.8,
+      "bookHeight": 425,
+      "titleTopClipped": false,
+      "screenshot": "reader-on-320x568.png"
+    }
+  ],
+  "remainingVisualBlockers": [],
+  "remainingGates": [
+    "Parent release/deployment and exact build evidence",
+    "Owner and physical-device comfort/acceptance",
+    "Unavailable prior mood image comparison remains unverified"
+  ],
+  "dataBoundary": "All fixtures synthetic, no private manuscript or production access",
+  "report": "review.md"
+}

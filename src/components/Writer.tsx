@@ -9,6 +9,7 @@ import { ParagraphIndent, paragraphSource } from './ParagraphIndent';
 import Heartbeat, { HeartbeatToggle } from '../heartbeat/Heartbeat';
 import { useHeartbeat } from '../heartbeat/useHeartbeat';
 import { clearHeartbeatHighlights, heartbeatRanges, useHeartbeatHighlights } from '../heartbeat/decorations';
+import type { HeartbeatBeat } from '../heartbeat/model';
 
 export interface WriterProps {
   document: WritingDocument;
@@ -33,6 +34,8 @@ export default function Writer({ document: writing, documents, onChange, onNavig
   const [popupBelow, setPopupBelow] = useState(false);
   const [toolbarVersion, setToolbarVersion] = useState(0);
   const toolbarRef = useRef<HTMLDivElement>(null);
+  const heartbeatFooter = useRef<HTMLDivElement>(null);
+  const [visibleBeats, setVisibleBeats] = useState<HeartbeatBeat[]>([]);
   const onChangeRef = useRef(onChange);
   const onNavigateRef = useRef(onNavigate);
   onChangeRef.current = onChange;
@@ -63,6 +66,24 @@ export default function Writer({ document: writing, documents, onChange, onNavig
     },
   }, [writing.id]);
   useHeartbeatHighlights(editor?.view.dom || null, writing.body, heartbeat.annotation, 'writer');
+  useLayoutEffect(() => {
+    const source = editor?.view.dom;
+    const scroll = source?.closest('.manuscript-scroll');
+    if (!source || !scroll || !heartbeat.annotation || heartbeat.coverage?.status !== 'continuous') { setVisibleBeats([]); return; }
+    let frame = 0; let alive = true;
+    const measure = () => {
+      if (!alive) return;
+      const bounds = scroll.getBoundingClientRect(); const footer = heartbeatFooter.current?.getBoundingClientRect();
+      const bottom = footer?.height && footer.top < bounds.bottom ? footer.top : bounds.bottom;
+      const next = heartbeatRanges(source, writing.body, heartbeat.annotation!).filter(({ range }) => [...range.getClientRects()].some(rect => rect.right > bounds.left && rect.left < bounds.right && rect.bottom > bounds.top && rect.top < bottom)).map(item => item.beat);
+      setVisibleBeats(previous => previous.length === next.length && previous.every((beat, index) => beat === next[index]) ? previous : next);
+    };
+    const schedule = () => { if (!alive) return; cancelAnimationFrame(frame); frame = requestAnimationFrame(measure); };
+    schedule(); void document.fonts.ready.then(schedule);
+    // Local display geometry only: scrolling does not fetch annotations or touch writing.
+    scroll.addEventListener('scroll', schedule, { passive: true }); window.addEventListener('resize', schedule, { passive: true });
+    return () => { alive = false; cancelAnimationFrame(frame); scroll.removeEventListener('scroll', schedule); window.removeEventListener('resize', schedule); };
+  }, [editor, writing.body, heartbeat.annotation, heartbeat.coverage?.status]);
 
   useEffect(() => { if (editor && focusOnMount) { editor.commands.focus('end'); onAutoFocused?.(); } }, [editor, focusOnMount, onAutoFocused]);
   useEffect(() => { if (!editor?.isFocused) return; const frame = requestAnimationFrame(() => editor.commands.scrollIntoView()); return () => cancelAnimationFrame(frame); }, [editor, focusMode]);
@@ -123,8 +144,8 @@ export default function Writer({ document: writing, documents, onChange, onNavig
       </div>
       <HeartbeatToggle enabled={heartbeatEnabled} onToggle={onHeartbeatToggle} />
     </div>
-    <Heartbeat state={heartbeat} onFind={beat => { if (!editor || !heartbeat.annotation) return; const range = heartbeatRanges(editor.view.dom, writing.body, heartbeat.annotation).find(item => item.beat === beat)?.range; const scroll = editor.view.dom.closest('.manuscript-scroll'); if (range && scroll) scroll.scrollTop += range.getBoundingClientRect().top - scroll.getBoundingClientRect().top - 80; }} />
     <EditorContent editor={editor} className="editor-body" />
+    <div ref={heartbeatFooter} className="writer-heartbeat"><Heartbeat state={heartbeat} beats={visibleBeats} limit={2} onFind={beat => { if (!editor || !heartbeat.annotation) return; const range = heartbeatRanges(editor.view.dom, writing.body, heartbeat.annotation).find(item => item.beat === beat)?.range; const scroll = editor.view.dom.closest('.manuscript-scroll'); if (range && scroll) scroll.scrollTop += range.getBoundingClientRect().top - scroll.getBoundingClientRect().top - 80; }} /></div>
     {linkOpen && <Modal title="Link to your writing" onClose={() => setLinkOpen(false)}>
       <p className="dialog-intro">Connect this passage to a note or scene. Links keep working when titles change.</p>
       <label className="search-field"><Search size={17} /><input autoFocus placeholder="Find a note or scene…" aria-label="Find link target" value={query} onChange={event => setQuery(event.target.value)} /></label>

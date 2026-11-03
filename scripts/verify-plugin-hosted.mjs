@@ -25,6 +25,8 @@ const tools = discovery.body.result.tools;
 assert.deepEqual(tools.map(t => t.name).sort(), ['fetch_page', 'get_profile', 'list_pages', 'list_universes', 'search_writing', 'submit_heartbeat', 'submit_record']);
 assert(tools.every(t => t._meta.securitySchemes?.[0].type === 'oauth2'));
 const heartbeat = tools.find(t => t.name === 'submit_heartbeat');
+assert(heartbeat.description.includes('Partition the whole passage into natural feeling regions'));
+assert(heartbeat.description.includes('every non-whitespace UTF-16 source unit'));
 assert.equal(heartbeat.annotations.readOnlyHint, false);
 assert.equal(heartbeat.annotations.destructiveHint, false);
 assert(heartbeat._meta.securitySchemes[0].scopes.includes('noveliaa:propose'));

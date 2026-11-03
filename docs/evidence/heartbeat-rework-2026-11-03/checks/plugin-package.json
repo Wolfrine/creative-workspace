@@ -1,0 +1,45 @@
+{
+  "archive": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\plugin-package\\noveliaa-0.1.2.zip",
+  "sha256": "27f946666de36a86850a28459277d4c3827400fdb0e1624d1177689c626a52ca",
+  "skills": [
+    "collaborate-on-writing",
+    "explore-writing",
+    "story-research"
+  ],
+  "connection": {
+    "kind": "registered-app",
+    "appId": "asdk_app_6adf3ada84a88191af04f9f933b42804"
+  },
+  "files": [
+    {
+      "path": ".app.json",
+      "sha256": "b770a862f7eab6d9a68922a79b941b8cfc46bf0d747a423348696c577c373f51"
+    },
+    {
+      "path": "assets/noveliaa.svg",
+      "sha256": "5ef276685dd0a12eb853fa8fcca0aa9d3c075a3d6f027ce120e04b35748e2a64"
+    },
+    {
+      "path": "plugin.json",
+      "sha256": "0b1b425eb8a930b351d0f477888ac662c783eec6e38a904c7da420d786015356"
+    },
+    {
+      "path": "skills/collaborate-on-writing/references/heartbeat-continuity.md",
+      "sha256": "966c7e8c152c17468a1132b72de390f0002c6eb10c097552a6efcc98a873f569"
+    },
+    {
+      "path": "skills/collaborate-on-writing/SKILL.md",
+      "sha256": "288258e47c836a9fd18063294f552fb1c7aee5d5f9597829ed1c06c380dd461c"
+    },
+    {
+      "path": "skills/explore-writing/SKILL.md",
+      "sha256": "27e09c0ee12f627723565960b2474171e25124f0c78c0810d4a6c24190e05bfb"
+    },
+    {
+      "path": "skills/story-research/SKILL.md",
+      "sha256": "90c3c95cf627baa08b66f678bab3c363c61f743346b4dd0ae53e6687b8b1db4a"
+    }
+  ],
+  "validation": "Agent Plugins 1.0 manifest schema; existing App or portable MCP binding; three YAML skills; packaged byte equality and ZIP integrity passed",
+  "schemaLimit": "Registered App identity matches the verified existing binding; legacy portable OAuth extensions are checked separately when present."
+}

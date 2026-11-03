@@ -1,0 +1,179 @@
+{
+  "before": {
+    "src/components/Reader.tsx": "5478f6619fe3edd66f5da17bfb183794b0de88a90b6044dcf24e62064d1deff6",
+    "src/library-reader.css": "80e5a6fefca603e9982e143aaec8b271c9eeedd3bebe6ef22877971aab3d7fb5",
+    "src/heartbeat/Heartbeat.tsx": "91d17bfb2b18703b924ba75c3d6c56573ac7983012c89dc363dcb77f0b65824a",
+    "src/heartbeat/heartbeat.css": "902c255c442b441be10d2aa46ae807b60caa3a345d15957e5e39aff7109ac1f2",
+    "src/heartbeat/decorations.ts": "1bab0c12acc79d82463f4b39a873b706df0ac0ae39dc3ab2a0d7df8156b9c20b",
+    "src/heartbeat/useHeartbeat.ts": "e899eb05bf882ef3c007161c8521b21227b3503384cc65bfe0dcb434e2cc7a21",
+    "src/heartbeat/model.ts": "150a56b55c146d2daca2325c674600d05657ea1a0a513f34e553db235d51b34e",
+    "src/styles.css": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294"
+  },
+  "after": {
+    "src/components/Reader.tsx": "5478f6619fe3edd66f5da17bfb183794b0de88a90b6044dcf24e62064d1deff6",
+    "src/library-reader.css": "80e5a6fefca603e9982e143aaec8b271c9eeedd3bebe6ef22877971aab3d7fb5",
+    "src/heartbeat/Heartbeat.tsx": "91d17bfb2b18703b924ba75c3d6c56573ac7983012c89dc363dcb77f0b65824a",
+    "src/heartbeat/heartbeat.css": "902c255c442b441be10d2aa46ae807b60caa3a345d15957e5e39aff7109ac1f2",
+    "src/heartbeat/decorations.ts": "1bab0c12acc79d82463f4b39a873b706df0ac0ae39dc3ab2a0d7df8156b9c20b",
+    "src/heartbeat/useHeartbeat.ts": "e899eb05bf882ef3c007161c8521b21227b3503384cc65bfe0dcb434e2cc7a21",
+    "src/heartbeat/model.ts": "150a56b55c146d2daca2325c674600d05657ea1a0a513f34e553db235d51b34e",
+    "src/styles.css": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294"
+  },
+  "sourceStable": true,
+  "dataset": "Synthetic only",
+  "results": [
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "checks": [
+        {
+          "name": "keyboard-detail-opens",
+          "value": true
+        },
+        {
+          "name": "dialog-geometry",
+          "value": {
+            "rect": {
+              "x": 413,
+              "y": 64.671875,
+              "width": 540,
+              "height": 638.640625,
+              "top": 64.671875,
+              "right": 953,
+              "bottom": 703.3125,
+              "left": 413
+            },
+            "scrollHeight": 637,
+            "clientHeight": 637,
+            "scrollWidth": 538,
+            "clientWidth": 538
+          }
+        },
+        {
+          "name": "escape-restores-trigger-focus",
+          "value": true
+        },
+        {
+          "name": "source-unchanged-after-reading",
+          "value": true
+        },
+        {
+          "name": "annotation-calls",
+          "value": 2
+        }
+      ],
+      "screens": [
+        "reasoning-1366x768.png",
+        "writer-compact-1366x768.png"
+      ],
+      "errors": []
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "checks": [
+        {
+          "name": "keyboard-detail-opens",
+          "value": true
+        },
+        {
+          "name": "dialog-geometry",
+          "value": {
+            "rect": {
+              "x": 14,
+              "y": 57.828125,
+              "width": 362,
+              "height": 728.328125,
+              "top": 57.828125,
+              "right": 376,
+              "bottom": 786.15625,
+              "left": 14
+            },
+            "scrollHeight": 726,
+            "clientHeight": 726,
+            "scrollWidth": 360,
+            "clientWidth": 360
+          }
+        },
+        {
+          "name": "escape-restores-trigger-focus",
+          "value": true
+        },
+        {
+          "name": "full-key-entries",
+          "value": [
+            "♡Fond longing",
+            "✧Renewed curiosity",
+            "◒Disappointment"
+          ]
+        },
+        {
+          "name": "source-unchanged-after-reading",
+          "value": true
+        },
+        {
+          "name": "annotation-calls",
+          "value": 2
+        }
+      ],
+      "screens": [
+        "reasoning-390x844.png",
+        "full-key-390x844.png",
+        "writer-compact-390x844.png"
+      ],
+      "errors": []
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "checks": [
+        {
+          "name": "keyboard-detail-opens",
+          "value": true
+        },
+        {
+          "name": "dialog-geometry",
+          "value": {
+            "rect": {
+              "x": 14,
+              "y": 17.5,
+              "width": 292,
+              "height": 533,
+              "top": 17.5,
+              "right": 306,
+              "bottom": 550.5,
+              "left": 14
+            },
+            "scrollHeight": 838,
+            "clientHeight": 531,
+            "scrollWidth": 290,
+            "clientWidth": 290
+          }
+        },
+        {
+          "name": "escape-restores-trigger-focus",
+          "value": true
+        },
+        {
+          "name": "source-unchanged-after-reading",
+          "value": true
+        },
+        {
+          "name": "annotation-calls",
+          "value": 2
+        }
+      ],
+      "screens": [
+        "reasoning-320x568.png",
+        "writer-compact-320x568.png"
+      ],
+      "errors": []
+    }
+  ]
+}

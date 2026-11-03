@@ -1,0 +1,3565 @@
+{
+  "config": {
+    "argv": [
+      "F:\\Workspace\\Support\\tools\\node-24\\node.exe",
+      "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\playwright.config.ts",
+    "rootDir": "F:/Workspace/Programs/Independent-Products/Noveliaa/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "F:/Workspace/Programs/Independent-Products/Noveliaa/.local/browser-test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "F:/Workspace/Programs/Independent-Products/Noveliaa/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser",
+        "snapshotDir": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5817",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".local/heartbeat-rework/checks/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "autosave.spec.ts",
+      "file": "autosave.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "quiet sync icon, exact idle timer, recovery and details at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3867,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:49:43.938Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef2e57cca4928d3dc33e-146b6a00430097ff41ff",
+          "file": "autosave.spec.ts",
+          "line": 4,
+          "column": 39
+        },
+        {
+          "title": "quiet sync icon, exact idle timer, recovery and details at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3167,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:49:47.938Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef2e57cca4928d3dc33e-e55ace7e106c62516594",
+          "file": "autosave.spec.ts",
+          "line": 4,
+          "column": 39
+        },
+        {
+          "title": "quiet sync icon, exact idle timer, recovery and details at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2978,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:49:51.126Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef2e57cca4928d3dc33e-33e2b1390646a9593c4e",
+          "file": "autosave.spec.ts",
+          "line": 4,
+          "column": 39
+        }
+      ]
+    },
+    {
+      "title": "conflict.spec.ts",
+      "file": "conflict.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "page-specific conflict review and blank current-version choice at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6615,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:49:54.219Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "85d4cfac8cba6550f57c-a238672c3d9c09280260",
+          "file": "conflict.spec.ts",
+          "line": 6,
+          "column": 39
+        },
+        {
+          "title": "page-specific conflict review and blank current-version choice at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5461,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:00.852Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "85d4cfac8cba6550f57c-48868d6638072df14113",
+          "file": "conflict.spec.ts",
+          "line": 6,
+          "column": 39
+        },
+        {
+          "title": "page-specific conflict review and blank current-version choice at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5758,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:06.344Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "85d4cfac8cba6550f57c-797351361fc83de3eb5b",
+          "file": "conflict.spec.ts",
+          "line": 6,
+          "column": 39
+        }
+      ]
+    },
+    {
+      "title": "heartbeat-layout.spec.ts",
+      "file": "heartbeat-layout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Compact prose and complete readable page key at 1366×768",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1819,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:12.150Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-e674ca865bd32b319349",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 17,
+          "column": 127
+        },
+        {
+          "title": "Compact prose and complete readable page key at 390×844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2012,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:13.986Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-a95b019d5f863235cca3",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 17,
+          "column": 127
+        },
+        {
+          "title": "Compact prose and complete readable page key at 320×568",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1613,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:16.013Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-5dd0a39ff29cc9f1e02f",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 17,
+          "column": 127
+        },
+        {
+          "title": "Native field covers exactly the explicit full source; no wrapper marks or source edits",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1933,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:17.641Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-6c88e9e403cf33519360",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "Native field ink retains readable contrast in every paper and night color family",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1997,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:19.589Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-8c63c54477f58e4e2c24",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "Every source character appears once across reader turns at 1366px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2010,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:21.599Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-e6ef3ec84e8446a710a5",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 56,
+          "column": 34
+        },
+        {
+          "title": "Every source character appears once across reader turns at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2732,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:23.622Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-e8e8c86687e067777b9d",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 56,
+          "column": 34
+        },
+        {
+          "title": "Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3034,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:26.368Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-3ca2a4fc691271a660b8",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 83,
+          "column": 39
+        },
+        {
+          "title": "Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3102,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:29.419Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-59e35ab4d2d36898a9d9",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 83,
+          "column": 39
+        },
+        {
+          "title": "Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3279,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:32.541Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2329c5ca65ba624732f5-572df65688a2ebf64c3e",
+          "file": "heartbeat-layout.spec.ts",
+          "line": 83,
+          "column": 39
+        }
+      ]
+    },
+    {
+      "title": "heartbeat-visual.spec.ts",
+      "file": "heartbeat-visual.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Heartbeat visual evidence 1366",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2810,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:35.860Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-d08256f8813d78fdf51d",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 33,
+          "column": 70
+        },
+        {
+          "title": "Heartbeat visual evidence 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2530,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:38.687Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-7a78068e722bc5af6c8f",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 33,
+          "column": 70
+        },
+        {
+          "title": "Heartbeat visual evidence 320",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2302,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:41.238Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-fc0ab2c10bc69ed4fca8",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 33,
+          "column": 70
+        },
+        {
+          "title": "Off by default; explicit reasoning and source navigation never change writing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2572,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:43.558Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-76cc975ccf47121f4a90",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "A local draft edit immediately rejects annotations despite an unchanged source quote",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2067,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:46.157Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-73639189ecc7ad48ab90",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 58,
+          "column": 1
+        },
+        {
+          "title": "Read toggles retain exact text and passage anchor at 1366px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2237,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:48.240Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-4a76135c8a18cf88fd31",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 65,
+          "column": 70
+        },
+        {
+          "title": "Read toggles retain exact text and passage anchor at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2336,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:50.494Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-93b3a909c0fcd706208b",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 65,
+          "column": 70
+        },
+        {
+          "title": "Read toggles retain exact text and passage anchor at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2119,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:52.847Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-28d9d8539daf3a74342b",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 65,
+          "column": 70
+        },
+        {
+          "title": "A title change invalidates the frozen reader source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2034,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:54.983Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-27d3de38a9ec4f8c35ad",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 81,
+          "column": 51
+        },
+        {
+          "title": "A order change invalidates the frozen reader source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2390,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:57.034Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-e752e4c452c506ff90cb",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 81,
+          "column": 51
+        },
+        {
+          "title": "Heartbeat rest stays honest and bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1911,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:50:59.441Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-51eae4d9102c96e92929",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 87,
+          "column": 77
+        },
+        {
+          "title": "Heartbeat sparse stays honest and bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1595,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:01.367Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-9eeddc2692c80bb71472",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 87,
+          "column": 77
+        },
+        {
+          "title": "Heartbeat error stays honest and bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1915,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:02.979Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-879fa3b5e11d0baad9e3",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 87,
+          "column": 77
+        },
+        {
+          "title": "Heartbeat invalid stays honest and bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2043,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:04.915Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-43af2b28369b99596834",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 87,
+          "column": 77
+        },
+        {
+          "title": "Heartbeat long stays honest and bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1841,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:06.977Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-eb5979c904edbc386f8e",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 87,
+          "column": 77
+        },
+        {
+          "title": "Highlight API absence retains exact accessible labels and editable text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2157,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:08.837Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-bb17460d7817fa979060",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 97,
+          "column": 1
+        },
+        {
+          "title": "Writer scrolling updates its visible legend without another annotation request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1939,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:11.009Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-85c64f0f497eceb0c510",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 104,
+          "column": 1
+        },
+        {
+          "title": "Heartbeat accessibility across writing, details, paper and night at 1366px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11163,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:12.971Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-6d15c3c16ddcaefcd504",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 112,
+          "column": 39
+        },
+        {
+          "title": "Heartbeat accessibility across writing, details, paper and night at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7645,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:24.151Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-726f00a19f40806931b0",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 112,
+          "column": 39
+        },
+        {
+          "title": "Heartbeat accessibility across writing, details, paper and night at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7671,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:31.811Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "89713a787a0e71959037-01ed3b63da85b0f32f0a",
+          "file": "heartbeat-visual.spec.ts",
+          "line": 112,
+          "column": 39
+        }
+      ]
+    },
+    {
+      "title": "library-reader.spec.ts",
+      "file": "library-reader.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Library has searchable pages, same-ID rename and collection reading",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2859,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:39.549Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-57030ade5372cb26ddac",
+          "file": "library-reader.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "Reader turns, appearance and resume remain local and preserve source/revisions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3522,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:42.427Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-bfc7602a96aef57f6a4d",
+          "file": "library-reader.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "Mobile Read replaces Export, reduced motion and reader accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2845,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:45.967Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-976c22e07b214da3b56a",
+          "file": "library-reader.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "Read resumes the last collection by identity, with contents context and a true editing return",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7777,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.reader-book-title')\nExpected substring: \u001b[32m\"The \u001b[7mtide notebooks\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"The \u001b[7mroom above the sea\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('.reader-book-title') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reader-book-title')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"reader-book-title\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"The room above the sea\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.reader-book-title')\nExpected substring: \u001b[32m\"The \u001b[7mtide notebooks\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"The \u001b[7mroom above the sea\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('.reader-book-title') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reader-book-title')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"reader-book-title\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"The room above the sea\"\u001b[22m\n\n    at F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-reader.spec.ts:72:52",
+                    "location": {
+                      "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-reader.spec.ts",
+                      "column": 52,
+                      "line": 72
+                    },
+                    "snippet": "  70 |   await page.evaluate(async collectionId => { const engine = (window as any).__NOVELIAA_TEST__; await engine.createDocument({ title: 'A newly added ending', collectionId }); }, fixture.collectionId);\n  71 |   await page.getByRole('navigation', { name: 'Quick navigation' }).getByRole('button', { name: 'Read', exact: true }).click();\n> 72 |   await expect(page.locator('.reader-book-title')).toContainText('The tide notebooks');\n     |                                                    ^\n  73 |   await expect.poll(async () => Number(await page.locator('.reader-stage').getAttribute('data-page'))).toBe(before);\n  74 |   await page.getByRole('button', { name: 'Reading contents' }).click(); await expect(page.getByRole('dialog', { name: 'Reading contents panel' })).toContainText('A newly added ending');\n  75 |   await page.keyboard.press('Escape'); await page.getByRole('button', { name: 'Back to writing', exact: true }).click();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-reader.spec.ts",
+                        "column": 52,
+                        "line": 72
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.reader-book-title')\nExpected substring: \u001b[32m\"The \u001b[7mtide notebooks\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"The \u001b[7mroom above the sea\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('.reader-book-title') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reader-book-title')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"reader-book-title\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"The room above the sea\"\u001b[22m\n\n\n  70 |   await page.evaluate(async collectionId => { const engine = (window as any).__NOVELIAA_TEST__; await engine.createDocument({ title: 'A newly added ending', collectionId }); }, fixture.collectionId);\n  71 |   await page.getByRole('navigation', { name: 'Quick navigation' }).getByRole('button', { name: 'Read', exact: true }).click();\n> 72 |   await expect(page.locator('.reader-book-title')).toContainText('The tide notebooks');\n     |                                                    ^\n  73 |   await expect.poll(async () => Number(await page.locator('.reader-stage').getAttribute('data-page'))).toBe(before);\n  74 |   await page.getByRole('button', { name: 'Reading contents' }).click(); await expect(page.getByRole('dialog', { name: 'Reading contents panel' })).toContainText('A newly added ending');\n  75 |   await page.keyboard.press('Escape'); await page.getByRole('button', { name: 'Back to writing', exact: true }).click();\n    at F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-reader.spec.ts:72:52"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:48.830Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\library-reader-Read-resume-8338b-t-and-a-true-editing-return\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\library-reader-Read-resume-8338b-t-and-a-true-editing-return\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\library-reader-Read-resume-8338b-t-and-a-true-editing-return\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-reader.spec.ts",
+                    "column": 52,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-38384179bc4d53b537d3",
+          "file": "library-reader.spec.ts",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "Changed source restarts deliberately and appearance panel traps keyboard focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3057,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:51:58.106Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-575466c7d6f4e51a630e",
+          "file": "library-reader.spec.ts",
+          "line": 80,
+          "column": 1
+        },
+        {
+          "title": "Library navigation makes a local recovery copy without a writing revision",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3007,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:52:01.312Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-dfd977ced8858a133c51",
+          "file": "library-reader.spec.ts",
+          "line": 106,
+          "column": 1
+        },
+        {
+          "title": "New thought follows collection detail; all Library and Inbox create uncollected writing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2769,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:52:04.350Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-a012a24fb6ef5417a94b",
+          "file": "library-reader.spec.ts",
+          "line": 118,
+          "column": 1
+        },
+        {
+          "title": "Keyboard follows offscreen links and opens available linked writing; unavailable links explain",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3687,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:52:07.144Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db5be54ef2085ce9453e-4928c15311dc244b3b72",
+          "file": "library-reader.spec.ts",
+          "line": 130,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "library-release.spec.ts",
+      "file": "library-release.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "150-page library retrieves offline body matches without a sidebar inventory",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13057,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:52:10.897Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "940f3ca989eca2c8e282-4d9037b8e1540a4fd7d1",
+          "file": "library-release.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "reader retains exact rich text and reaches every fragmented character at 1440px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2318,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 14\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 14\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-release.spec.ts:114:29",
+                    "location": {
+                      "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-release.spec.ts",
+                      "column": 29,
+                      "line": 114
+                    },
+                    "snippet": "  112 |   expect(coverage.checked).toBeGreaterThan(5000);\n  113 |   expect(coverage.pages).toBeGreaterThan(1);\n> 114 |   expect(coverage.failures).toEqual([]);\n      |                             ^\n  115 |   const stage = page.locator('.reader-stage');\n  116 |   let turns = 0;\n  117 |   while (await page.getByRole('button', { name: 'Next reader page', exact: true }).isEnabled()) {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-release.spec.ts",
+                        "column": 29,
+                        "line": 114
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 14\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  112 |   expect(coverage.checked).toBeGreaterThan(5000);\n  113 |   expect(coverage.pages).toBeGreaterThan(1);\n> 114 |   expect(coverage.failures).toEqual([]);\n      |                             ^\n  115 |   const stage = page.locator('.reader-stage');\n  116 |   let turns = 0;\n  117 |   while (await page.getByRole('button', { name: 'Next reader page', exact: true }).isEnabled()) {\n    at F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-release.spec.ts:114:29"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:52:23.977Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\library-release-reader-ret-78b63-gmented-character-at-1440px\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\library-release-reader-ret-78b63-gmented-character-at-1440px\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\library-release-reader-ret-78b63-gmented-character-at-1440px\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-release.spec.ts",
+                    "column": 29,
+                    "line": 114
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "940f3ca989eca2c8e282-710916f60ce1d909d600",
+          "file": "library-release.spec.ts",
+          "line": 43,
+          "column": 39
+        },
+        {
+          "title": "reader retains exact rich text and reaches every fragmented character at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3600,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:52:27.300Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "940f3ca989eca2c8e282-e570b4989cfe1c152f28",
+          "file": "library-release.spec.ts",
+          "line": 43,
+          "column": 39
+        },
+        {
+          "title": "reader retains exact rich text and reaches every fragmented character at 320px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2206,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 14\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 14\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-release.spec.ts:114:29",
+                    "location": {
+                      "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-release.spec.ts",
+                      "column": 29,
+                      "line": 114
+                    },
+                    "snippet": "  112 |   expect(coverage.checked).toBeGreaterThan(5000);\n  113 |   expect(coverage.pages).toBeGreaterThan(1);\n> 114 |   expect(coverage.failures).toEqual([]);\n      |                             ^\n  115 |   const stage = page.locator('.reader-stage');\n  116 |   let turns = 0;\n  117 |   while (await page.getByRole('button', { name: 'Next reader page', exact: true }).isEnabled()) {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-release.spec.ts",
+                        "column": 29,
+                        "line": 114
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 14\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+   \"Clipped character on leaf 0\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  112 |   expect(coverage.checked).toBeGreaterThan(5000);\n  113 |   expect(coverage.pages).toBeGreaterThan(1);\n> 114 |   expect(coverage.failures).toEqual([]);\n      |                             ^\n  115 |   const stage = page.locator('.reader-stage');\n  116 |   let turns = 0;\n  117 |   while (await page.getByRole('button', { name: 'Next reader page', exact: true }).isEnabled()) {\n    at F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-release.spec.ts:114:29"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:52:31.100Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\library-release-reader-ret-a30c3-agmented-character-at-320px\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\library-release-reader-ret-a30c3-agmented-character-at-320px\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\library-release-reader-ret-a30c3-agmented-character-at-320px\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\library-release.spec.ts",
+                    "column": 29,
+                    "line": 114
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "940f3ca989eca2c8e282-74237f19600e5ea83ec6",
+          "file": "library-release.spec.ts",
+          "line": 43,
+          "column": 39
+        }
+      ]
+    },
+    {
+      "title": "page-turn-lifecycle.spec.ts",
+      "file": "page-turn-lifecycle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Actual content curl is bounded and releases resources after 20 turns at 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20215,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:52:34.328Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "82acc23d216d4d27650d-0ea638d37459e8abc448",
+          "file": "page-turn-lifecycle.spec.ts",
+          "line": 34,
+          "column": 34
+        },
+        {
+          "title": "Actual content curl is bounded and releases resources after 20 turns at 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11018,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:52:54.707Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "82acc23d216d4d27650d-b89a5b46e9b1418f5c59",
+          "file": "page-turn-lifecycle.spec.ts",
+          "line": 34,
+          "column": 34
+        },
+        {
+          "title": "Rapid replacement, 20 reader exits, resize and reduced motion cancel all leaf work",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17098,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:53:05.739Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "82acc23d216d4d27650d-9437391dbb9809ad4739",
+          "file": "page-turn-lifecycle.spec.ts",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "Large books animate only the canonical track and cancel slide work on every exit path",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15348,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:53:22.852Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "82acc23d216d4d27650d-6974aabebe2f6114c4c8",
+          "file": "page-turn-lifecycle.spec.ts",
+          "line": 81,
+          "column": 1
+        },
+        {
+          "title": "DOM-rich small writing uses the node budget independently of character count",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2107,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:53:38.215Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "82acc23d216d4d27650d-4348da707cc08b8f3755",
+          "file": "page-turn-lifecycle.spec.ts",
+          "line": 114,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "plugin-legacy-cache.spec.ts",
+      "file": "plugin-legacy-cache.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Previous deployed offline worker cannot swallow plugin connection navigation at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1926,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:53:40.377Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d824ce8f022511b5ceb2-2584406d2c79f0b9f446",
+          "file": "plugin-legacy-cache.spec.ts",
+          "line": 8,
+          "column": 34
+        },
+        {
+          "title": "Previous deployed offline worker cannot swallow plugin connection navigation at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1362,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:53:42.317Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d824ce8f022511b5ceb2-efcc4a15899ca0453ee5",
+          "file": "plugin-legacy-cache.spec.ts",
+          "line": 8,
+          "column": 34
+        }
+      ]
+    },
+    {
+      "title": "plugin-ui.spec.ts",
+      "file": "plugin-ui.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Plugin cycle 1: consent scope and returned proposal baseline",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4748,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:53:43.891Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-1068d31f21697cc0a0f1",
+          "file": "plugin-ui.spec.ts",
+          "line": 55,
+          "column": 1
+        },
+        {
+          "title": "Plugin cycle 2: scope choice, denial and long returned source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4856,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:53:48.652Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-95590834218dae0e38e8",
+          "file": "plugin-ui.spec.ts",
+          "line": 70,
+          "column": 1
+        },
+        {
+          "title": "Plugin cycle 3: author decisions, revoke and collaboration archive",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1677,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:53:53.527Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-548d788251c9ea337c6f",
+          "file": "plugin-ui.spec.ts",
+          "line": 89,
+          "column": 1
+        },
+        {
+          "title": "Plugin cycle 4: empty, expired, pending and offline recoveries",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9387,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:53:55.226Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-d4d3957dfa4866045992",
+          "file": "plugin-ui.spec.ts",
+          "line": 102,
+          "column": 1
+        },
+        {
+          "title": "Consent narrows large catalogues to ten universes and supports read only requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2007,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:04.626Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-22824ee003ca7b89b676",
+          "file": "plugin-ui.spec.ts",
+          "line": 125,
+          "column": 1
+        },
+        {
+          "title": "Plugin cycle 5: pagination, accessibility and 320px author journey",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5718,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:06.649Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-a60191e121de0c4fd3ce",
+          "file": "plugin-ui.spec.ts",
+          "line": 137,
+          "column": 1
+        },
+        {
+          "title": "Current source navigation resolves a real page and preserves writing across universes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4197,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:12.386Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-8f4f0acd0452a736b935",
+          "file": "plugin-ui.spec.ts",
+          "line": 152,
+          "column": 1
+        },
+        {
+          "title": "Production consent ignores device preview and does not request private data before sign-in",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1358,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:16.597Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f05ffec10b94e432c99d-a7c106bd228ebef1afdd",
+          "file": "plugin-ui.spec.ts",
+          "line": 172,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "populated-journeys.spec.ts",
+      "file": "populated-journeys.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Three coherent worlds retain exact originals and never claim approval",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1895,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:18.026Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-78fdc3d78535081aa244",
+          "file": "populated-journeys.spec.ts",
+          "line": 55,
+          "column": 1
+        },
+        {
+          "title": "Library layouts retrieve varied pages and collections at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5360,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:19.937Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-7e31c7697c494d2f0423",
+          "file": "populated-journeys.spec.ts",
+          "line": 78,
+          "column": 39
+        },
+        {
+          "title": "Library layouts retrieve varied pages and collections at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5565,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:25.315Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-f5ef2fffa44af5e81791",
+          "file": "populated-journeys.spec.ts",
+          "line": 78,
+          "column": 39
+        },
+        {
+          "title": "Library layouts retrieve varied pages and collections at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5116,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:30.898Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-6acdcd7c253cd5f89608",
+          "file": "populated-journeys.spec.ts",
+          "line": 78,
+          "column": 39
+        },
+        {
+          "title": "Mobile backward curl actually transforms its leaf and returns visible first-page content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2892,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:36.030Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-d02e07337d21db44cdae",
+          "file": "populated-journeys.spec.ts",
+          "line": 120,
+          "column": 1
+        },
+        {
+          "title": "Collection detail, universe switching and shortcuts keep an unambiguous scope",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3664,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:38.938Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-382ee2803bfe5d4ea0cb",
+          "file": "populated-journeys.spec.ts",
+          "line": 146,
+          "column": 1
+        },
+        {
+          "title": "One capture action follows a collection; move, rename and creating a world preserve writing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3720,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:42.622Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-1d7f56214e07ffe8431e",
+          "file": "populated-journeys.spec.ts",
+          "line": 186,
+          "column": 1
+        },
+        {
+          "title": "Atlas follows explicit links and backlinks without dropping into the editor at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2675,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:46.360Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-5dbf9a14902d07915302",
+          "file": "populated-journeys.spec.ts",
+          "line": 223,
+          "column": 39
+        },
+        {
+          "title": "Atlas follows explicit links and backlinks without dropping into the editor at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2667,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:49.052Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-8bd75aca2cacf2a8a495",
+          "file": "populated-journeys.spec.ts",
+          "line": 223,
+          "column": 39
+        },
+        {
+          "title": "Atlas follows explicit links and backlinks without dropping into the editor at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3064,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:51.737Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-72b080b84a8071b175cc",
+          "file": "populated-journeys.spec.ts",
+          "line": 223,
+          "column": 39
+        },
+        {
+          "title": "Library reading returns to its exact browse context and edits only on request at 1440px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8507,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.reader-book-title')\nExpected: \u001b[32m\"Draft chapters\"\u001b[39m\nReceived: \u001b[31m\"When the steps returned\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.reader-book-title') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reader-book-title')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"reader-book-title\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"When the steps returned\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.reader-book-title')\nExpected: \u001b[32m\"Draft chapters\"\u001b[39m\nReceived: \u001b[31m\"When the steps returned\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.reader-book-title') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reader-book-title')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"reader-book-title\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"When the steps returned\"\u001b[22m\n\n    at F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\populated-journeys.spec.ts:308:52",
+                    "location": {
+                      "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\populated-journeys.spec.ts",
+                      "column": 52,
+                      "line": 308
+                    },
+                    "snippet": "  306 |   await expect(page.getByRole('textbox', { name: 'Writing canvas', exact: true })).toHaveCount(0);\n  307 |   await page.getByRole('button', { name: 'Read collection', exact: true }).click();\n> 308 |   await expect(page.locator('.reader-book-title')).toHaveText('Draft chapters');\n      |                                                    ^\n  309 |   await expect.poll(() => page.locator('.reader-stage').getAttribute('data-page')).toBe(position);\n  310 |   await page.getByRole('button', { name: 'Reading contents', exact: true }).click();\n  311 |   await page.getByRole('dialog', { name: 'Reading contents panel' }).getByRole('button', { name: /The third glass/ }).click();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\populated-journeys.spec.ts",
+                        "column": 52,
+                        "line": 308
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.reader-book-title')\nExpected: \u001b[32m\"Draft chapters\"\u001b[39m\nReceived: \u001b[31m\"When the steps returned\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.reader-book-title') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reader-book-title')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"reader-book-title\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"When the steps returned\"\u001b[22m\n\n\n  306 |   await expect(page.getByRole('textbox', { name: 'Writing canvas', exact: true })).toHaveCount(0);\n  307 |   await page.getByRole('button', { name: 'Read collection', exact: true }).click();\n> 308 |   await expect(page.locator('.reader-book-title')).toHaveText('Draft chapters');\n      |                                                    ^\n  309 |   await expect.poll(() => page.locator('.reader-stage').getAttribute('data-page')).toBe(position);\n  310 |   await page.getByRole('button', { name: 'Reading contents', exact: true }).click();\n  311 |   await page.getByRole('dialog', { name: 'Reading contents panel' }).getByRole('button', { name: /The third glass/ }).click();\n    at F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\populated-journeys.spec.ts:308:52"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:54:54.818Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\populated-journeys-Library-6c1b8-s-only-on-request-at-1440px\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\populated-journeys-Library-6c1b8-s-only-on-request-at-1440px\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\populated-journeys-Library-6c1b8-s-only-on-request-at-1440px\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\populated-journeys.spec.ts",
+                    "column": 52,
+                    "line": 308
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-cc1784bb9342521d4f4d",
+          "file": "populated-journeys.spec.ts",
+          "line": 264,
+          "column": 34
+        },
+        {
+          "title": "Library reading returns to its exact browse context and edits only on request at 390px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8608,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.reader-book-title')\nExpected: \u001b[32m\"Draft chapters\"\u001b[39m\nReceived: \u001b[31m\"When the steps returned\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.reader-book-title') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reader-book-title')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"reader-book-title\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"When the steps returned\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.reader-book-title')\nExpected: \u001b[32m\"Draft chapters\"\u001b[39m\nReceived: \u001b[31m\"When the steps returned\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.reader-book-title') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reader-book-title')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"reader-book-title\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"When the steps returned\"\u001b[22m\n\n    at F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\populated-journeys.spec.ts:308:52",
+                    "location": {
+                      "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\populated-journeys.spec.ts",
+                      "column": 52,
+                      "line": 308
+                    },
+                    "snippet": "  306 |   await expect(page.getByRole('textbox', { name: 'Writing canvas', exact: true })).toHaveCount(0);\n  307 |   await page.getByRole('button', { name: 'Read collection', exact: true }).click();\n> 308 |   await expect(page.locator('.reader-book-title')).toHaveText('Draft chapters');\n      |                                                    ^\n  309 |   await expect.poll(() => page.locator('.reader-stage').getAttribute('data-page')).toBe(position);\n  310 |   await page.getByRole('button', { name: 'Reading contents', exact: true }).click();\n  311 |   await page.getByRole('dialog', { name: 'Reading contents panel' }).getByRole('button', { name: /The third glass/ }).click();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\populated-journeys.spec.ts",
+                        "column": 52,
+                        "line": 308
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.reader-book-title')\nExpected: \u001b[32m\"Draft chapters\"\u001b[39m\nReceived: \u001b[31m\"When the steps returned\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.reader-book-title') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reader-book-title')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"reader-book-title\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"When the steps returned\"\u001b[22m\n\n\n  306 |   await expect(page.getByRole('textbox', { name: 'Writing canvas', exact: true })).toHaveCount(0);\n  307 |   await page.getByRole('button', { name: 'Read collection', exact: true }).click();\n> 308 |   await expect(page.locator('.reader-book-title')).toHaveText('Draft chapters');\n      |                                                    ^\n  309 |   await expect.poll(() => page.locator('.reader-stage').getAttribute('data-page')).toBe(position);\n  310 |   await page.getByRole('button', { name: 'Reading contents', exact: true }).click();\n  311 |   await page.getByRole('dialog', { name: 'Reading contents panel' }).getByRole('button', { name: /The third glass/ }).click();\n    at F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\populated-journeys.spec.ts:308:52"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:04.821Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\populated-journeys-Library-7486f-ts-only-on-request-at-390px\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\populated-journeys-Library-7486f-ts-only-on-request-at-390px\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\.local\\browser-test-results\\populated-journeys-Library-7486f-ts-only-on-request-at-390px\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\browser\\populated-journeys.spec.ts",
+                    "column": 52,
+                    "line": 308
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-7ff72b4e7304d351de38",
+          "file": "populated-journeys.spec.ts",
+          "line": 264,
+          "column": 34
+        },
+        {
+          "title": "Leaving writing makes a recovery copy before idle; reload retains exact draft and originals",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4089,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:14.403Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "766ed312ff74688160ae-03a73fce5be205dc846c",
+          "file": "populated-journeys.spec.ts",
+          "line": 323,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "production.spec.ts",
+      "file": "production.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "production shell cold reloads offline and development notebook access is absent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1347,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:18.667Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed69554c53210704c98c-a7e9823f0d6613a19552",
+          "file": "production.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "writing.spec.ts",
+      "file": "writing.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "A01/A08 immediate capture, Unicode, caret and undo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2968,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:20.236Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-7d81cc02b8e2531ee4be",
+          "file": "writing.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "A08 formatted archive restores into an isolated browser and HTML retains formatting",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3042,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:23.221Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-0b3220069facf7c99d80",
+          "file": "writing.spec.ts",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "A03 failed storage leaves open text exportable and never says saved",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1834,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:26.283Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-273600ee488f670df204",
+          "file": "writing.spec.ts",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "A22/A23 short mobile writing, keyboard navigation and 200 percent text remain usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2522,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:28.134Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-712a301c229dfa6db18c",
+          "file": "writing.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "A02 offline editing survives a new tab and preserves acknowledged revisions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2672,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:30.675Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-1abace622e1efbf2951a",
+          "file": "writing.spec.ts",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "A06 revision restoration retains the intervening version",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2384,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:33.364Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-daa2d2882ce88f9f090d",
+          "file": "writing.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "A07/A09 archive from browser preserves sources and independent saved-text oracle",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3224,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:35.765Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-d16b30b3af5d99ea9bbf",
+          "file": "writing.spec.ts",
+          "line": 106,
+          "column": 1
+        },
+        {
+          "title": "A11 search stays in the selected universe",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1597,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:39.010Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-534bd0f7038a7c99498b",
+          "file": "writing.spec.ts",
+          "line": 140,
+          "column": 1
+        },
+        {
+          "title": "A06 stable links, backlinks and non-drag organization survive title changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2579,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:40.623Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-ff17d2d46a8682174d9a",
+          "file": "writing.spec.ts",
+          "line": 155,
+          "column": 1
+        },
+        {
+          "title": "paragraph indentation and themed collection movement at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3632,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:43.218Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-e18ef2a9e9f7bc315ec9",
+          "file": "writing.spec.ts",
+          "line": 173,
+          "column": 39
+        },
+        {
+          "title": "paragraph indentation and themed collection movement at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2535,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:46.865Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-60501fef3e2800f60278",
+          "file": "writing.spec.ts",
+          "line": 173,
+          "column": 39
+        },
+        {
+          "title": "paragraph indentation and themed collection movement at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2743,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:49.418Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-c44ddf91948600060591",
+          "file": "writing.spec.ts",
+          "line": 173,
+          "column": 39
+        },
+        {
+          "title": "A22/A23 writing layout and accessibility at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3136,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:52.179Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-795b725adf24afd1ed3a",
+          "file": "writing.spec.ts",
+          "line": 225,
+          "column": 44
+        },
+        {
+          "title": "A22/A23 writing layout and accessibility at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2809,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:55.335Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-9966ea16a73a78fae35b",
+          "file": "writing.spec.ts",
+          "line": 225,
+          "column": 44
+        },
+        {
+          "title": "A22/A23 writing layout and accessibility at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2722,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:55:58.165Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-4b4fc4cb0e751581a803",
+          "file": "writing.spec.ts",
+          "line": 225,
+          "column": 44
+        },
+        {
+          "title": "A22/A23 writing layout and accessibility at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2974,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T08:56:00.904Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64364233ac88cbb4898b-53379b2faa53d123abcd",
+          "file": "writing.spec.ts",
+          "line": 225,
+          "column": 44
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-03T08:49:40.276Z",
+    "duration": 384497.963,
+    "expected": 88,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}

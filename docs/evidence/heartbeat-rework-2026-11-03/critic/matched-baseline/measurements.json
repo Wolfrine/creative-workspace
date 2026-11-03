@@ -1,0 +1,637 @@
+{
+  "baseline": "73b8455337f0c4223fa8973fe072755bd622f23c UI source; continuity helper updated",
+  "dataset": "Four-paragraph synthetic counterpart, no real manuscript",
+  "viewports": [
+    {
+      "width": 1366,
+      "height": 768,
+      "states": [
+        {
+          "state": "off",
+          "screenshot": "baseline/reader-off-1366x768.png",
+          "geometry": {
+            "viewport": [
+              1366,
+              768
+            ],
+            "devicePixelRatio": 1,
+            "zoom": 1,
+            "documentOverflow": 0,
+            "book": {
+              "x": 73,
+              "y": 122,
+              "width": 1220,
+              "height": 554,
+              "top": 122,
+              "right": 1293,
+              "bottom": 676,
+              "left": 73
+            },
+            "stage": {
+              "x": 74,
+              "y": 161,
+              "width": 1218,
+              "height": 484,
+              "top": 161,
+              "right": 1292,
+              "bottom": 645,
+              "left": 74
+            },
+            "heading": {
+              "x": 122,
+              "y": 161,
+              "width": 513,
+              "height": 119.890625,
+              "top": 161,
+              "right": 635,
+              "bottom": 280.890625,
+              "left": 122
+            },
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 1366,
+              "height": 70,
+              "top": 0,
+              "right": 1366,
+              "bottom": 70,
+              "left": 0
+            },
+            "footer": {
+              "x": 73,
+              "y": 676,
+              "width": 1220,
+              "height": 92,
+              "top": 676,
+              "right": 1293,
+              "bottom": 768,
+              "left": 73
+            },
+            "visibleProseLines": 20,
+            "visibleTextRectArea": 291012,
+            "visibleTextRectAreaPercent": 27.7,
+            "pages": "3",
+            "page": "0"
+          }
+        },
+        {
+          "state": "on",
+          "screenshot": "baseline/reader-on-1366x768.png",
+          "geometry": {
+            "viewport": [
+              1366,
+              768
+            ],
+            "devicePixelRatio": 1,
+            "zoom": 1,
+            "documentOverflow": 0,
+            "book": {
+              "x": 73,
+              "y": 122,
+              "width": 1220,
+              "height": 554,
+              "top": 122,
+              "right": 1293,
+              "bottom": 676,
+              "left": 73
+            },
+            "stage": {
+              "x": 74,
+              "y": 161,
+              "width": 1218,
+              "height": 484,
+              "top": 161,
+              "right": 1292,
+              "bottom": 645,
+              "left": 74
+            },
+            "heading": {
+              "x": 122,
+              "y": 161,
+              "width": 513,
+              "height": 119.890625,
+              "top": 161,
+              "right": 635,
+              "bottom": 280.890625,
+              "left": 122
+            },
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 1366,
+              "height": 70,
+              "top": 0,
+              "right": 1366,
+              "bottom": 70,
+              "left": 0
+            },
+            "footer": {
+              "x": 73,
+              "y": 676,
+              "width": 1220,
+              "height": 92,
+              "top": 676,
+              "right": 1293,
+              "bottom": 768,
+              "left": 73
+            },
+            "visibleProseLines": 20,
+            "visibleTextRectArea": 291012,
+            "visibleTextRectAreaPercent": 27.7,
+            "pages": "3",
+            "page": "0"
+          }
+        },
+        {
+          "state": "next",
+          "screenshot": "baseline/reader-next-1366x768.png",
+          "geometry": {
+            "viewport": [
+              1366,
+              768
+            ],
+            "devicePixelRatio": 1,
+            "zoom": 1,
+            "documentOverflow": 0,
+            "book": {
+              "x": 73,
+              "y": 122,
+              "width": 1220,
+              "height": 554,
+              "top": 122,
+              "right": 1293,
+              "bottom": 676,
+              "left": 73
+            },
+            "stage": {
+              "x": 74,
+              "y": 161,
+              "width": 1218,
+              "height": 484,
+              "top": 161,
+              "right": 1292,
+              "bottom": 645,
+              "left": 74
+            },
+            "heading": {
+              "x": -1096,
+              "y": 161,
+              "width": 513,
+              "height": 119.890625,
+              "top": 161,
+              "right": -583,
+              "bottom": 280.890625,
+              "left": -1096
+            },
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 1366,
+              "height": 70,
+              "top": 0,
+              "right": 1366,
+              "bottom": 70,
+              "left": 0
+            },
+            "footer": {
+              "x": 73,
+              "y": 676,
+              "width": 1220,
+              "height": 92,
+              "top": 676,
+              "right": 1293,
+              "bottom": 768,
+              "left": 73
+            },
+            "visibleProseLines": 12,
+            "visibleTextRectArea": 161325,
+            "visibleTextRectAreaPercent": 15.4,
+            "pages": "3",
+            "page": "2"
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "states": [
+        {
+          "state": "off",
+          "screenshot": "baseline/reader-off-390x844.png",
+          "geometry": {
+            "viewport": [
+              390,
+              844
+            ],
+            "devicePixelRatio": 1,
+            "zoom": 1,
+            "documentOverflow": 0,
+            "book": {
+              "x": 0,
+              "y": 102,
+              "width": 390,
+              "height": 659,
+              "top": 102,
+              "right": 390,
+              "bottom": 761,
+              "left": 0
+            },
+            "stage": {
+              "x": 0,
+              "y": 127,
+              "width": 390,
+              "height": 613,
+              "top": 127,
+              "right": 390,
+              "bottom": 740,
+              "left": 0
+            },
+            "heading": {
+              "x": 22,
+              "y": 127,
+              "width": 346,
+              "height": 155.296875,
+              "top": 127,
+              "right": 368,
+              "bottom": 282.296875,
+              "left": 22
+            },
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 60,
+              "top": 0,
+              "right": 390,
+              "bottom": 60,
+              "left": 0
+            },
+            "footer": {
+              "x": 0,
+              "y": 761,
+              "width": 390,
+              "height": 83,
+              "top": 761,
+              "right": 390,
+              "bottom": 844,
+              "left": 0
+            },
+            "visibleProseLines": 10,
+            "visibleTextRectArea": 89205,
+            "visibleTextRectAreaPercent": 27.1,
+            "pages": "4",
+            "page": "0"
+          }
+        },
+        {
+          "state": "on",
+          "screenshot": "baseline/reader-on-390x844.png",
+          "geometry": {
+            "viewport": [
+              390,
+              844
+            ],
+            "devicePixelRatio": 1,
+            "zoom": 1,
+            "documentOverflow": 0,
+            "book": {
+              "x": 0,
+              "y": 102,
+              "width": 390,
+              "height": 659,
+              "top": 102,
+              "right": 390,
+              "bottom": 761,
+              "left": 0
+            },
+            "stage": {
+              "x": 0,
+              "y": 127,
+              "width": 390,
+              "height": 613,
+              "top": 127,
+              "right": 390,
+              "bottom": 740,
+              "left": 0
+            },
+            "heading": {
+              "x": 22,
+              "y": 127,
+              "width": 346,
+              "height": 155.296875,
+              "top": 127,
+              "right": 368,
+              "bottom": 282.296875,
+              "left": 22
+            },
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 60,
+              "top": 0,
+              "right": 390,
+              "bottom": 60,
+              "left": 0
+            },
+            "footer": {
+              "x": 0,
+              "y": 761,
+              "width": 390,
+              "height": 83,
+              "top": 761,
+              "right": 390,
+              "bottom": 844,
+              "left": 0
+            },
+            "visibleProseLines": 10,
+            "visibleTextRectArea": 89205,
+            "visibleTextRectAreaPercent": 27.1,
+            "pages": "4",
+            "page": "0"
+          }
+        },
+        {
+          "state": "next",
+          "screenshot": "baseline/reader-next-390x844.png",
+          "geometry": {
+            "viewport": [
+              390,
+              844
+            ],
+            "devicePixelRatio": 1,
+            "zoom": 1,
+            "documentOverflow": 0,
+            "book": {
+              "x": 0,
+              "y": 102,
+              "width": 390,
+              "height": 659,
+              "top": 102,
+              "right": 390,
+              "bottom": 761,
+              "left": 0
+            },
+            "stage": {
+              "x": 0,
+              "y": 127,
+              "width": 390,
+              "height": 613,
+              "top": 127,
+              "right": 390,
+              "bottom": 740,
+              "left": 0
+            },
+            "heading": {
+              "x": -368,
+              "y": 127,
+              "width": 346,
+              "height": 155.296875,
+              "top": 127,
+              "right": -22,
+              "bottom": 282.296875,
+              "left": -368
+            },
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 60,
+              "top": 0,
+              "right": 390,
+              "bottom": 60,
+              "left": 0
+            },
+            "footer": {
+              "x": 0,
+              "y": 761,
+              "width": 390,
+              "height": 83,
+              "top": 761,
+              "right": 390,
+              "bottom": 844,
+              "left": 0
+            },
+            "visibleProseLines": 16,
+            "visibleTextRectArea": 145359,
+            "visibleTextRectAreaPercent": 44.2,
+            "pages": "4",
+            "page": "1"
+          }
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "states": [
+        {
+          "state": "off",
+          "screenshot": "baseline/reader-off-320x568.png",
+          "geometry": {
+            "viewport": [
+              320,
+              568
+            ],
+            "devicePixelRatio": 1,
+            "zoom": 1,
+            "documentOverflow": 0,
+            "book": {
+              "x": 0,
+              "y": 102,
+              "width": 320,
+              "height": 383,
+              "top": 102,
+              "right": 320,
+              "bottom": 485,
+              "left": 0
+            },
+            "stage": {
+              "x": 0,
+              "y": 127,
+              "width": 320,
+              "height": 337,
+              "top": 127,
+              "right": 320,
+              "bottom": 464,
+              "left": 0
+            },
+            "heading": {
+              "x": 22,
+              "y": 127,
+              "width": 276,
+              "height": 155.296875,
+              "top": 127,
+              "right": 298,
+              "bottom": 282.296875,
+              "left": 22
+            },
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 320,
+              "height": 60,
+              "top": 0,
+              "right": 320,
+              "bottom": 60,
+              "left": 0
+            },
+            "footer": {
+              "x": 0,
+              "y": 485,
+              "width": 320,
+              "height": 83,
+              "top": 485,
+              "right": 320,
+              "bottom": 568,
+              "left": 0
+            },
+            "visibleProseLines": 4,
+            "visibleTextRectArea": 30528,
+            "visibleTextRectAreaPercent": 16.8,
+            "pages": "8",
+            "page": "0"
+          }
+        },
+        {
+          "state": "on",
+          "screenshot": "baseline/reader-on-320x568.png",
+          "geometry": {
+            "viewport": [
+              320,
+              568
+            ],
+            "devicePixelRatio": 1,
+            "zoom": 1,
+            "documentOverflow": 0,
+            "book": {
+              "x": 0,
+              "y": 102,
+              "width": 320,
+              "height": 383,
+              "top": 102,
+              "right": 320,
+              "bottom": 485,
+              "left": 0
+            },
+            "stage": {
+              "x": 0,
+              "y": 127,
+              "width": 320,
+              "height": 337,
+              "top": 127,
+              "right": 320,
+              "bottom": 464,
+              "left": 0
+            },
+            "heading": {
+              "x": 22,
+              "y": 127,
+              "width": 276,
+              "height": 155.296875,
+              "top": 127,
+              "right": 298,
+              "bottom": 282.296875,
+              "left": 22
+            },
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 320,
+              "height": 60,
+              "top": 0,
+              "right": 320,
+              "bottom": 60,
+              "left": 0
+            },
+            "footer": {
+              "x": 0,
+              "y": 485,
+              "width": 320,
+              "height": 83,
+              "top": 485,
+              "right": 320,
+              "bottom": 568,
+              "left": 0
+            },
+            "visibleProseLines": 4,
+            "visibleTextRectArea": 30528,
+            "visibleTextRectAreaPercent": 16.8,
+            "pages": "8",
+            "page": "0"
+          }
+        },
+        {
+          "state": "next",
+          "screenshot": "baseline/reader-next-320x568.png",
+          "geometry": {
+            "viewport": [
+              320,
+              568
+            ],
+            "devicePixelRatio": 1,
+            "zoom": 1,
+            "documentOverflow": 0,
+            "book": {
+              "x": 0,
+              "y": 102,
+              "width": 320,
+              "height": 383,
+              "top": 102,
+              "right": 320,
+              "bottom": 485,
+              "left": 0
+            },
+            "stage": {
+              "x": 0,
+              "y": 127,
+              "width": 320,
+              "height": 337,
+              "top": 127,
+              "right": 320,
+              "bottom": 464,
+              "left": 0
+            },
+            "heading": {
+              "x": -298,
+              "y": 127,
+              "width": 276,
+              "height": 155.296875,
+              "top": 127,
+              "right": -22,
+              "bottom": 282.296875,
+              "left": -298
+            },
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 320,
+              "height": 60,
+              "top": 0,
+              "right": 320,
+              "bottom": 60,
+              "left": 0
+            },
+            "footer": {
+              "x": 0,
+              "y": 485,
+              "width": 320,
+              "height": 83,
+              "top": 485,
+              "right": 320,
+              "bottom": 568,
+              "left": 0
+            },
+            "visibleProseLines": 8,
+            "visibleTextRectArea": 55639,
+            "visibleTextRectAreaPercent": 30.6,
+            "pages": "8",
+            "page": "1"
+          }
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

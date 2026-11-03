@@ -1,0 +1,101 @@
+[WebServer] (node:38748) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:38892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:41488) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\browser\library-reader.spec.ts:59:1 › Read resumes the last collection by identity, with contents context and a true editing return (4.4s)
+  ok 2 tests\browser\library-release.spec.ts:43:39 › reader retains exact rich text and reaches every fragmented character at 1440px (2.0s)
+  ok 3 tests\browser\library-release.spec.ts:43:39 › reader retains exact rich text and reaches every fragmented character at 390px (2.5s)
+  ok 4 tests\browser\library-release.spec.ts:43:39 › reader retains exact rich text and reaches every fragmented character at 320px (2.7s)
+  x  5 tests\browser\populated-journeys.spec.ts:264:34 › Library reading returns to its exact browse context and edits only on request at 1440px (8.2s)
+(node:26732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  6 tests\browser\populated-journeys.spec.ts:264:34 › Library reading returns to its exact browse context and edits only on request at 390px (8.6s)
+
+
+  1) tests\browser\populated-journeys.spec.ts:264:34 › Library reading returns to its exact browse context and edits only on request at 1440px 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  locator('.reader-book-title')
+    Expected: "Draft chapters"
+    Received: "Draft chaptersWhen the steps returned"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" locator('.reader-book-title') with timeout 5000ms
+      - waiting for locator('.reader-book-title')
+        14 × locator resolved to <div class="reader-book-title">…</div>
+           - unexpected value "Draft chaptersWhen the steps returned"
+
+
+      306 |   await expect(page.getByRole('textbox', { name: 'Writing canvas', exact: true })).toHaveCount(0);
+      307 |   await page.getByRole('button', { name: 'Read collection', exact: true }).click();
+    > 308 |   await expect(page.locator('.reader-book-title')).toHaveText('Draft chapters');
+          |                                                    ^
+      309 |   await expect.poll(() => page.locator('.reader-stage').getAttribute('data-page')).toBe(position);
+      310 |   await page.getByRole('button', { name: 'Reading contents', exact: true }).click();
+      311 |   await page.getByRole('dialog', { name: 'Reading contents panel' }).getByRole('button', { name: /The third glass/ }).click();
+        at F:\Workspace\Programs\Independent-Products\Noveliaa\tests\browser\populated-journeys.spec.ts:308:52
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    .local\heartbeat-rework\rich-regression-results\populated-journeys-Library-6c1b8-s-only-on-request-at-1440px\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .local\heartbeat-rework\rich-regression-results\populated-journeys-Library-6c1b8-s-only-on-request-at-1440px\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    .local\heartbeat-rework\rich-regression-results\populated-journeys-Library-6c1b8-s-only-on-request-at-1440px\trace.zip
+    Usage:
+
+        npx playwright show-trace .local\heartbeat-rework\rich-regression-results\populated-journeys-Library-6c1b8-s-only-on-request-at-1440px\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\browser\populated-journeys.spec.ts:264:34 › Library reading returns to its exact browse context and edits only on request at 390px 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  locator('.reader-book-title')
+    Expected: "Draft chapters"
+    Received: "Draft chaptersWhen the steps returned"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" locator('.reader-book-title') with timeout 5000ms
+      - waiting for locator('.reader-book-title')
+        13 × locator resolved to <div class="reader-book-title">…</div>
+           - unexpected value "Draft chaptersWhen the steps returned"
+
+
+      306 |   await expect(page.getByRole('textbox', { name: 'Writing canvas', exact: true })).toHaveCount(0);
+      307 |   await page.getByRole('button', { name: 'Read collection', exact: true }).click();
+    > 308 |   await expect(page.locator('.reader-book-title')).toHaveText('Draft chapters');
+          |                                                    ^
+      309 |   await expect.poll(() => page.locator('.reader-stage').getAttribute('data-page')).toBe(position);
+      310 |   await page.getByRole('button', { name: 'Reading contents', exact: true }).click();
+      311 |   await page.getByRole('dialog', { name: 'Reading contents panel' }).getByRole('button', { name: /The third glass/ }).click();
+        at F:\Workspace\Programs\Independent-Products\Noveliaa\tests\browser\populated-journeys.spec.ts:308:52
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    .local\heartbeat-rework\rich-regression-results\populated-journeys-Library-7486f-ts-only-on-request-at-390px\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: .local\heartbeat-rework\rich-regression-results\populated-journeys-Library-7486f-ts-only-on-request-at-390px\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    .local\heartbeat-rework\rich-regression-results\populated-journeys-Library-7486f-ts-only-on-request-at-390px\trace.zip
+    Usage:
+
+        npx playwright show-trace .local\heartbeat-rework\rich-regression-results\populated-journeys-Library-7486f-ts-only-on-request-at-390px\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    tests\browser\populated-journeys.spec.ts:264:34 › Library reading returns to its exact browse context and edits only on request at 1440px 
+    tests\browser\populated-journeys.spec.ts:264:34 › Library reading returns to its exact browse context and edits only on request at 390px 
+  4 passed (37.7s)

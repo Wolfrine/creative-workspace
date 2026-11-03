@@ -1,0 +1,41 @@
+[WebServer] (node:10556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:31992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 30 tests using 1 worker
+
+(node:43936) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\browser\heartbeat-layout.spec.ts:17:127 › Compact prose and complete readable page key at 1366×768 (2.3s)
+  ok  2 tests\browser\heartbeat-layout.spec.ts:17:127 › Compact prose and complete readable page key at 390×844 (1.9s)
+  ok  3 tests\browser\heartbeat-layout.spec.ts:17:127 › Compact prose and complete readable page key at 320×568 (2.1s)
+  ok  4 tests\browser\heartbeat-layout.spec.ts:34:1 › Native field covers exactly the explicit full source; no wrapper marks or source edits (1.9s)
+  ok  5 tests\browser\heartbeat-layout.spec.ts:43:1 › Native field ink retains readable contrast in every paper and night color family (2.2s)
+  ok  6 tests\browser\heartbeat-layout.spec.ts:56:34 › Every source character appears once across reader turns at 1366px (2.0s)
+  ok  7 tests\browser\heartbeat-layout.spec.ts:56:34 › Every source character appears once across reader turns at 320px (2.7s)
+  ok  8 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 1366px (3.2s)
+  ok  9 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 390px (2.8s)
+  ok 10 tests\browser\heartbeat-layout.spec.ts:83:39 › Bounded page-turn projections preserve native range text and clean off, resize and exit at 320px (2.8s)
+  ok 11 tests\browser\heartbeat-visual.spec.ts:33:70 › Heartbeat visual evidence 1366 (2.4s)
+  ok 12 tests\browser\heartbeat-visual.spec.ts:33:70 › Heartbeat visual evidence 390 (2.3s)
+  ok 13 tests\browser\heartbeat-visual.spec.ts:33:70 › Heartbeat visual evidence 320 (2.0s)
+  ok 14 tests\browser\heartbeat-visual.spec.ts:45:1 › Off by default; explicit reasoning and source navigation never change writing (2.2s)
+  ok 15 tests\browser\heartbeat-visual.spec.ts:58:1 › A local draft edit immediately rejects annotations despite an unchanged source quote (1.8s)
+  ok 16 tests\browser\heartbeat-visual.spec.ts:65:70 › Read toggles retain exact text and passage anchor at 1366px (2.7s)
+  ok 17 tests\browser\heartbeat-visual.spec.ts:65:70 › Read toggles retain exact text and passage anchor at 390px (2.2s)
+  ok 18 tests\browser\heartbeat-visual.spec.ts:65:70 › Read toggles retain exact text and passage anchor at 320px (2.1s)
+  ok 19 tests\browser\heartbeat-visual.spec.ts:81:51 › A title change invalidates the frozen reader source (2.0s)
+  ok 20 tests\browser\heartbeat-visual.spec.ts:81:51 › A order change invalidates the frozen reader source (1.9s)
+  ok 21 tests\browser\heartbeat-visual.spec.ts:87:77 › Heartbeat rest stays honest and bounded (1.4s)
+  ok 22 tests\browser\heartbeat-visual.spec.ts:87:77 › Heartbeat sparse stays honest and bounded (1.6s)
+  ok 23 tests\browser\heartbeat-visual.spec.ts:87:77 › Heartbeat error stays honest and bounded (1.3s)
+  ok 24 tests\browser\heartbeat-visual.spec.ts:87:77 › Heartbeat invalid stays honest and bounded (1.4s)
+  ok 25 tests\browser\heartbeat-visual.spec.ts:87:77 › Heartbeat long stays honest and bounded (1.4s)
+  ok 26 tests\browser\heartbeat-visual.spec.ts:97:1 › Highlight API absence retains exact accessible labels and editable text (1.6s)
+  ok 27 tests\browser\heartbeat-visual.spec.ts:104:1 › Writer scrolling updates its visible legend without another annotation request (1.5s)
+  ok 28 tests\browser\heartbeat-visual.spec.ts:112:39 › Heartbeat accessibility across writing, details, paper and night at 1366px (7.9s)
+  ok 29 tests\browser\heartbeat-visual.spec.ts:112:39 › Heartbeat accessibility across writing, details, paper and night at 390px (7.0s)
+  ok 30 tests\browser\heartbeat-visual.spec.ts:112:39 › Heartbeat accessibility across writing, details, paper and night at 320px (6.6s)
+
+  30 passed (1.4m)

@@ -22,6 +22,12 @@ changed writing or revoked grants hide the old analysis. Provider/model claims
 are self-reported, and AI interpretation is distinct from reader responses.
 See [contract and evaluation](../docs/design/EMOTIONAL_HEARTBEAT.md).
 
+Continuous interpretations explicitly cover all meaningful source text. Quiet
+exposition can hold an established feeling; missing spans are not neutral.
+Sparse older analyses prompt regeneration and supply no continuous colors.
+The generation skill includes an arc-first method, exact coverage checks and a
+synthetic example. Structural completeness does not prove emotional accuracy.
+
 MCP reads cloud-confirmed revisions. Local recovery drafts are not exposed. Wait
 for the normal sixty-second cloud save or use explicit Sync in writing before
 asking ChatGPT to read a very recent change. Closing the writing page saves a

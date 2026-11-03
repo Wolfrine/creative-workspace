@@ -18,7 +18,7 @@ output.mkdir(parents=True, exist_ok=True)
 files = sorted(p for p in source.rglob('*') if p.is_file())
 assert all(not p.is_symlink() for p in source.rglob('*'))
 assert all(p.suffix in ('.json', '.md', '.yaml', '.svg') for p in files)
-for filename in ('plugin.json', 'mcp.json'):
+for filename in ('plugin.json', *(('mcp.json',) if (source / 'mcp.json').exists() else ())):
     value = json.loads((source / filename).read_text(encoding='utf-8'))
     schema_url = value['$schema']
     assert schema_url == 'https://agent-plugins.org/schemas/1.0.0/' + ('plugin' if filename == 'plugin.json' else 'mcp') + '.schema.json'
@@ -39,14 +39,23 @@ interface = manifest['extensions']['com.openai']['interface']
 assert 0 < len(interface['shortDescription']) <= 30
 assert interface['category'] == 'Productivity'
 assert (source / interface['logo']).is_file()
-mcp = json.loads((source / 'mcp.json').read_text(encoding='utf-8'))
-assert set(mcp['mcpServers']) == {'noveliaa'}
-server = mcp['mcpServers']['noveliaa']
-assert server['url'] == 'https://noveliaa.web.app/mcp'
-assert server['extensions']['com.openai']['auth']['client'] == {'mode': 'dcr'}
-auth = server['extensions']['com.openai']['auth']
-assert auth['type'] == 'oauth' and auth['baseScopes'] == ['noveliaa:read']
-assert auth['defaultScopes'] == ['noveliaa:read', 'noveliaa:propose']
+if (source / 'mcp.json').exists():
+    mcp = json.loads((source / 'mcp.json').read_text(encoding='utf-8'))
+    assert set(mcp['mcpServers']) == {'noveliaa'}
+    server = mcp['mcpServers']['noveliaa']
+    assert server['url'] == 'https://noveliaa.web.app/mcp'
+    assert server['extensions']['com.openai']['auth']['client'] == {'mode': 'dcr'}
+    auth = server['extensions']['com.openai']['auth']
+    assert auth['type'] == 'oauth' and auth['baseScopes'] == ['noveliaa:read']
+    assert auth['defaultScopes'] == ['noveliaa:read', 'noveliaa:propose']
+    connection = {'kind': 'portable-mcp', 'server': server['url']}
+else:
+    # Retain the shipped web/mobile App dependency, never restore the obsolete
+    # Desktop-only MCP declaration as a side effect of packaging skills.
+    assert manifest['extensions']['com.openai']['apps'] == './.app.json'
+    app = json.loads((source / '.app.json').read_text(encoding='utf-8'))
+    assert app == {'apps': {'noveliaa': {'id': 'asdk_app_6adf3ada84a88191af04f9f933b42804', 'required': True}}}
+    connection = {'kind': 'registered-app', 'appId': app['apps']['noveliaa']['id']}
 skills = []
 for path in source.glob('skills/*/SKILL.md'):
     raw = path.read_text(encoding='utf-8')
@@ -70,9 +79,9 @@ with zipfile.ZipFile(archive) as package:
     for path in files:
         assert package.read('noveliaa/' + path.relative_to(source).as_posix()) == path.read_bytes()
 report = {'archive': str(archive), 'sha256': hashlib.sha256(archive.read_bytes()).hexdigest(),
-          'skills': sorted(skills), 'server': server['url'],
+          'skills': sorted(skills), 'connection': connection,
           'files': [{'path': p.relative_to(source).as_posix(), 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in files],
-          'validation': 'Agent Plugins 1.0 manifest and portable MCP transport JSON schemas; OpenAI OAuth extension semantic checks; YAML skill triggers; packaged byte equality and ZIP integrity passed',
-          'schemaLimit': 'Published canonical MCP schema omits extensions; OpenAI OAuth extensions are validated separately against current plugin packaging requirements.'}
+          'validation': 'Agent Plugins 1.0 manifest schema; existing App or portable MCP binding; three YAML skills; packaged byte equality and ZIP integrity passed',
+          'schemaLimit': 'Registered App identity matches the verified existing binding; legacy portable OAuth extensions are checked separately when present.'}
 (output / 'validation.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
 print(json.dumps(report, indent=2))

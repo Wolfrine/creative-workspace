@@ -1,0 +1,3608 @@
+{
+  "schema": "noveliaa-heartbeat-rework-evidence-1",
+  "recordedAt": "2026-11-03T09:12:56.163Z",
+  "baseCommit": "73b8455337f0c4223fa8973fe072755bd622f23c",
+  "priorOwnerVerdict": "rejected",
+  "ownerAcceptance": "not inferred",
+  "verdict": "agent-reviewed",
+  "dataset": "synthetic public renders; private source not published",
+  "central": {
+    "version": "0.2.3",
+    "baseRevision": "d097786cf3d6c5a2859439112afdd39538316567",
+    "method": "rejected redesign; three structural alternatives; retained implementation review rounds"
+  },
+  "topology": "Same native parent; independent backend, designer, visual critic and two raw-prose-only blind reading children. All children explicitly gpt-6.1-sol/xhigh; spawn settings accepted. Parent integrates, checks and delivers.",
+  "sources": [
+    {
+      "path": ".firebaserc",
+      "bytes": 44,
+      "sha256": "2f5d0059de2560b628e93ffe5e54936b2f85530a459de61225b51b3e4746b8e3"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 322,
+      "sha256": "76df76b4106045bda47e0b65bce783eea6ae147640b6a9ad2c142ab7d2844110"
+    },
+    {
+      "path": ".github/workflows/firebase-cli-check.yml",
+      "bytes": 1781,
+      "sha256": "44f357b78eeca75f8375b72625ee127e2ec0b35a9378935f665e3ad16faef154"
+    },
+    {
+      "path": ".github/workflows/firebase-deploy.yml",
+      "bytes": 4582,
+      "sha256": "b6bb1bfceec620c6f04c0893b1ed7d5510598e5eaffd330f194e6b1c90f18984"
+    },
+    {
+      "path": ".github/workflows/firebase-preflight.yml",
+      "bytes": 876,
+      "sha256": "95298d5236b29f02aa909d2db4826ad568c4eee21463b65a223dc05d7d26790d"
+    },
+    {
+      "path": ".github/workflows/firestore-usage.yml",
+      "bytes": 2030,
+      "sha256": "8b32a341c5e19fbe9449b973f8de4985f06bd4a70d914e39b3e8b94cfe32c7cf"
+    },
+    {
+      "path": ".github/workflows/phase1-ci.yml",
+      "bytes": 1767,
+      "sha256": "265d55bb5331eff364835d2789df30485fdbf86e325b23412e871ec5206ded5d"
+    },
+    {
+      "path": ".github/workflows/plugin-bootstrap.yml",
+      "bytes": 1303,
+      "sha256": "b8218adea62a2a228d691f0d1e13c927e0eb313359ddd528ffb557d8a2415359"
+    },
+    {
+      "path": ".github/workflows/plugin-cost-controls.yml",
+      "bytes": 1407,
+      "sha256": "4205065ec6e8175b429cfaf4fbc02ffe74b84920fcc5be4a9b1b43acad527513"
+    },
+    {
+      "path": ".harness/dev-environment.ps1",
+      "bytes": 1281,
+      "sha256": "2b9bcb11253782851e37758e721ead92d51239a64d372e9bd3048c3225ce489f"
+    },
+    {
+      "path": ".harness/objective.md",
+      "bytes": 3247,
+      "sha256": "6ca7dc240f8836c9ba8a0cca00bbbafe2814b0c9b2e63969081d62528a72f403"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 5358,
+      "sha256": "c0793ae03249f3d0c7186428741abe39c80e938f394c9129a191b138cc1d40e6"
+    },
+    {
+      "path": "INTENT.md",
+      "bytes": 6878,
+      "sha256": "2fe34dc210e4d094504497935979ddecd35b64dc5bd02a0f6e2b0307da91b6cf"
+    },
+    {
+      "path": "deployment/cost-policy.json",
+      "bytes": 604,
+      "sha256": "c6ba3b9a523924270665a1d0dedfb6c1f19a6a12d578569ebf628ff1e89458ff"
+    },
+    {
+      "path": "deployment/firebase-binding.json",
+      "bytes": 385,
+      "sha256": "644de45a09bb339a4a2610d76c95a7e5cc815c62877e7a690e8b0375b15a5477"
+    },
+    {
+      "path": "deployment/workspace-reset-request.json",
+      "bytes": 592,
+      "sha256": "cd7954fb39aca449719c934e98894a1941cf9347bd543ae5399b87a54bb47433"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 14177,
+      "sha256": "f44fb0ae98e5593efb0f8281536158d99f67a90434589911dd79d092b2d142f6"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "bytes": 21533,
+      "sha256": "75c2af0c4de54f58849d52867559605e9b95c023b89179d1f72ce798281aa401"
+    },
+    {
+      "path": "docs/SYNC.md",
+      "bytes": 5509,
+      "sha256": "781ff2cb4b1d0c391193f1e1d2717bc5e50be93440679d93685799c817db980e"
+    },
+    {
+      "path": "docs/design/EMOTIONAL_HEARTBEAT.md",
+      "bytes": 7845,
+      "sha256": "4a1ece0aaa84090e2ac46ae32dd7049c493bb2b4cedf38a61866d27ef19b9656"
+    },
+    {
+      "path": "docs/design/LIBRARY_READER.md",
+      "bytes": 3848,
+      "sha256": "13052e1688f7551fa7ca9fa02d4f6eb548fba5e8acfa3f88b3224625ff0e6af5"
+    },
+    {
+      "path": "docs/design/PLUGIN_CONNECTION.md",
+      "bytes": 7057,
+      "sha256": "f6999098cabd8c21aef4e331a1ddc735f03a6b4c7d3d64ee51d5fd43baacf7ba"
+    },
+    {
+      "path": "docs/design/READER_LIBRARY_UX.md",
+      "bytes": 3857,
+      "sha256": "2136153f3fbf3a031ee1ae4d246856b89977c32614b4ce386d30623c514884c2"
+    },
+    {
+      "path": "docs/design/library-reader-critic.md",
+      "bytes": 19097,
+      "sha256": "dc48947d66f4cf5a00e3ec878358d82564d96d9fa476cd597fc1d7795931141d"
+    },
+    {
+      "path": "docs/design/library-reader-qa.md",
+      "bytes": 8285,
+      "sha256": "5b2d180da82b4a0e81cdb6ded6e1fc711a27d1d9966951b2d2f543fc759aec2d"
+    },
+    {
+      "path": "docs/design/populated-navigation-audit.md",
+      "bytes": 16421,
+      "sha256": "dea715dce73eec45feacb2f257a536e203ff8ac6c5b0685c9ca4470d535168b6"
+    },
+    {
+      "path": "docs/design/reader-library-ux-critic.md",
+      "bytes": 22793,
+      "sha256": "5abbd54b4528d669b17c77fa22b06f1fa3a3e47f27acae17c4023805141b7995"
+    },
+    {
+      "path": "docs/design/reader-library-ux-qa.md",
+      "bytes": 7036,
+      "sha256": "1b83db6156550cdf39a04567c7de5aac06e4ce8a7a0803270d8577004ffa5beb"
+    },
+    {
+      "path": "docs/operations/firestore-usage.md",
+      "bytes": 4491,
+      "sha256": "923af78b0eafc5ea7646870212aa7fc3b5cf2f529ee051f1952478fa16826066"
+    },
+    {
+      "path": "docs/research/reader-motion-2026-10-25.md",
+      "bytes": 5708,
+      "sha256": "a9607afa58567b16072189a3bbb0f4821af0f6911c69226f73d173804aa4dd81"
+    },
+    {
+      "path": "firebase.json",
+      "bytes": 2920,
+      "sha256": "806f451b448886899bbafb925fc7851aa299b26507ff56b7d1d652e334c96edc"
+    },
+    {
+      "path": "firebase.spark-test.json",
+      "bytes": 243,
+      "sha256": "93b45344f564c34cbfc710559bda4bf0c1da9974764f247a51392e95c017de5c"
+    },
+    {
+      "path": "firestore.rules",
+      "bytes": 9457,
+      "sha256": "124b44b93e83e832105ee7da5ea62b4e9acef691e74a66581f6e3ff25e466d30"
+    },
+    {
+      "path": "functions/package-lock.json",
+      "bytes": 118029,
+      "sha256": "7bd00d6567a33f06658d96f13d1006922e75874fa2296cfea4a8b4a763e7b73f"
+    },
+    {
+      "path": "functions/package.json",
+      "bytes": 535,
+      "sha256": "68d7aa5940efe2b3786cc81aa8b095e69cc637c43d0955c196c778d88ae14e1b"
+    },
+    {
+      "path": "functions/scripts/bootstrap-plugin.mjs",
+      "bytes": 3469,
+      "sha256": "dde73a0ac05dc7325ce6f28e237637dc12c59b4f8e7d793c8d23c4ba43f5484b"
+    },
+    {
+      "path": "functions/scripts/cleanup-oauth.mjs",
+      "bytes": 785,
+      "sha256": "789c79bfb914c32f2d759fe2dac2c45cfe997680260d968cd5dbaa90cc0c1ed4"
+    },
+    {
+      "path": "functions/scripts/configure-cost-controls.mjs",
+      "bytes": 8843,
+      "sha256": "802549374e1317aec14af7f4262d981138f05138489aacd90ec6ed86f3be0d6d"
+    },
+    {
+      "path": "functions/scripts/deploy-spark-rules.mjs",
+      "bytes": 2437,
+      "sha256": "d338bce20e247ff1e7ad65e93db8a7803bf789c2d3a9ebbe57809b55829392cc"
+    },
+    {
+      "path": "functions/scripts/firestore-usage.mjs",
+      "bytes": 3608,
+      "sha256": "50b18bb55f294a4212effadbd21716ca7de0bcc97fc71e514804f2d298e3f658"
+    },
+    {
+      "path": "functions/scripts/inspect-firebase.mjs",
+      "bytes": 5208,
+      "sha256": "2aa23b08e7156f940fcfc56aefd00b384e45714aa9435087807bbb32a8fbbcf4"
+    },
+    {
+      "path": "functions/scripts/prepare-release.mjs",
+      "bytes": 7774,
+      "sha256": "d1e42f22f65b5df42664bc17f303af5724bfee6a33793ed65b024e2ac5eacb7c"
+    },
+    {
+      "path": "functions/scripts/prepare-spark-release.mjs",
+      "bytes": 4464,
+      "sha256": "9f2fb34d628455ac47f612f5f39abe0ab20fd8ab3720817678e0c2f7c67b5b5d"
+    },
+    {
+      "path": "functions/scripts/publish-plugin.mjs",
+      "bytes": 2141,
+      "sha256": "4b294181e89309ff19d93b4d23ba3c2a913623ca7b8b2bbc1ca5ae84df38f216"
+    },
+    {
+      "path": "functions/scripts/reset-workspace.mjs",
+      "bytes": 6980,
+      "sha256": "be60cb64e88cc2aad6137d3acde7428620afddeb19d54a72ebd2e62a55575072"
+    },
+    {
+      "path": "functions/scripts/restore-backup.mjs",
+      "bytes": 2753,
+      "sha256": "4ddc6318ee3ce6d415012a33e1ab0a3b66cff20d697c0b81adcefecb89447f75"
+    },
+    {
+      "path": "functions/src/backup.mjs",
+      "bytes": 5083,
+      "sha256": "16329332bcd789476e28aa36f7fc041de0f33c4bb4b60d48b4866a35f670436d"
+    },
+    {
+      "path": "functions/src/firebase-store.mjs",
+      "bytes": 3049,
+      "sha256": "2ae08ebd7dadebeca707c503462015975021705d465c82de35a8b83e31ccceae"
+    },
+    {
+      "path": "functions/src/index.mjs",
+      "bytes": 4752,
+      "sha256": "bcf1ab40acaad476f423954357112a22396aa693e28cb5a1a2762973e59c62ef"
+    },
+    {
+      "path": "functions/src/integration-cleanup.mjs",
+      "bytes": 1122,
+      "sha256": "7f4406f17af229d7be0ede5b09a96b75720fb44ebfa7d3b146c3bf2703b35ceb"
+    },
+    {
+      "path": "functions/src/integration-heartbeat.mjs",
+      "bytes": 11579,
+      "sha256": "0bbf666dcdbdc3fd3ec6bef9162d29448211876d71d4fcfa600d8b3fb99c62cf"
+    },
+    {
+      "path": "functions/src/integration-http.mjs",
+      "bytes": 9730,
+      "sha256": "64a496a624b22e46abd16555e44979168e67282fe5dc8f101cdbed1efbdc6b20"
+    },
+    {
+      "path": "functions/src/integration-oauth.mjs",
+      "bytes": 9985,
+      "sha256": "bab8edbda96dcb6a4e0ed92c5070bbb131c2916c8ee520edcfeada7d8dc85169"
+    },
+    {
+      "path": "functions/src/integration-store.mjs",
+      "bytes": 2073,
+      "sha256": "874000b18f4d2f5448370ecaf5e2dfc40abc3efe1ff97d66dd3227fbf9e1836c"
+    },
+    {
+      "path": "functions/src/integration-tools.mjs",
+      "bytes": 7013,
+      "sha256": "3ad8b013183b74ac149f70789e84a764406d8957d795b960f95cf6c050fabe4e"
+    },
+    {
+      "path": "functions/src/integration-writing.mjs",
+      "bytes": 8247,
+      "sha256": "d49b2940c6f212ddbf98c7068c92377ee2a938d7962083790c4bfb13f4706e74"
+    },
+    {
+      "path": "functions/src/mcp-entry.mjs",
+      "bytes": 1552,
+      "sha256": "3cac3c06bff28dc65908d2d9fbed63a08cc744c74803a4adb0e6dd30b17d4ae6"
+    },
+    {
+      "path": "functions/src/service.mjs",
+      "bytes": 16984,
+      "sha256": "c1f51e584a8546e05ed674b2f794580d1e7b00d7bebb013e11f5ce696390128f"
+    },
+    {
+      "path": "functions/test/callable-emulator.mjs",
+      "bytes": 6364,
+      "sha256": "41cb3acdc5df8bbbf832b07c34ce8ce4263fda0c8dc20a7bcc868f1e2ab3bfe0"
+    },
+    {
+      "path": "functions/test/cost-controls.test.mjs",
+      "bytes": 6844,
+      "sha256": "9f2dcf6f9ca3882075b2764b555517befcdfa3225642bb5b436798194f8057e0"
+    },
+    {
+      "path": "functions/test/firebase-emulator.mjs",
+      "bytes": 7322,
+      "sha256": "1810dd44ad94795299c0c542296ef3a64a912579d6776efe4176d308737f7dc6"
+    },
+    {
+      "path": "functions/test/heartbeat.test.mjs",
+      "bytes": 7108,
+      "sha256": "4410a58e4bd8efdca418fed4857ce7464abdb4759aadc7cdd76f9ba561507cde"
+    },
+    {
+      "path": "functions/test/mcp-integration.test.mjs",
+      "bytes": 33247,
+      "sha256": "b6408ad5831080631fa284ec5f90511d389b9e064fdbfdb4a31fec3e79401122"
+    },
+    {
+      "path": "functions/test/mcp-oauth-races.test.mjs",
+      "bytes": 4017,
+      "sha256": "03b90f89a8e5788710fe597926805818712df7e667f20229a9a8757080278b1d"
+    },
+    {
+      "path": "functions/test/service.test.mjs",
+      "bytes": 15036,
+      "sha256": "2334fd43b506cbaadac8de3147d4f2da8e4474b8383d63087691032745a64554"
+    },
+    {
+      "path": "index.html",
+      "bytes": 597,
+      "sha256": "27b11d42147071dd9b96e326bfca31de9c52d003d9f95b5fdaa526620939d020"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 382502,
+      "sha256": "67c57cc87a9fd3713e4c84ecc2464e55bd61061b028e266bc685feb29d687704"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1887,
+      "sha256": "67a5fd939693f62325771f0a0a34a43456436a912c7b9f37c65d6e6ac88fe3d7"
+    },
+    {
+      "path": "playwright.config.ts",
+      "bytes": 759,
+      "sha256": "da8099a74c290964169344d9d485d38aeac2308524d06cdc3d8fbb0edd0bd6d0"
+    },
+    {
+      "path": "playwright.spark.config.ts",
+      "bytes": 776,
+      "sha256": "4421d60921895bac6d98b2804ce70ae47e62db4283a3e476353bd97007d1a446"
+    },
+    {
+      "path": "plugin/README.md",
+      "bytes": 2832,
+      "sha256": "2af0b470e473be94a1456fa6b7cca99cab0a0d6c6b2767f9e7460c74d36ab14c"
+    },
+    {
+      "path": "plugin/noveliaa/.app.json",
+      "bytes": 124,
+      "sha256": "b770a862f7eab6d9a68922a79b941b8cfc46bf0d747a423348696c577c373f51"
+    },
+    {
+      "path": "plugin/noveliaa/assets/noveliaa.svg",
+      "bytes": 302,
+      "sha256": "5ef276685dd0a12eb853fa8fcca0aa9d3c075a3d6f027ce120e04b35748e2a64"
+    },
+    {
+      "path": "plugin/noveliaa/plugin.json",
+      "bytes": 1525,
+      "sha256": "0b1b425eb8a930b351d0f477888ac662c783eec6e38a904c7da420d786015356"
+    },
+    {
+      "path": "plugin/noveliaa/skills/collaborate-on-writing/SKILL.md",
+      "bytes": 5400,
+      "sha256": "288258e47c836a9fd18063294f552fb1c7aee5d5f9597829ed1c06c380dd461c"
+    },
+    {
+      "path": "plugin/noveliaa/skills/collaborate-on-writing/references/heartbeat-continuity.md",
+      "bytes": 4323,
+      "sha256": "966c7e8c152c17468a1132b72de390f0002c6eb10c097552a6efcc98a873f569"
+    },
+    {
+      "path": "plugin/noveliaa/skills/explore-writing/SKILL.md",
+      "bytes": 2110,
+      "sha256": "27e09c0ee12f627723565960b2474171e25124f0c78c0810d4a6c24190e05bfb"
+    },
+    {
+      "path": "plugin/noveliaa/skills/story-research/SKILL.md",
+      "bytes": 1758,
+      "sha256": "90c3c95cf627baa08b66f678bab3c363c61f743346b4dd0ae53e6687b8b1db4a"
+    },
+    {
+      "path": "public/favicon.svg",
+      "bytes": 302,
+      "sha256": "5ef276685dd0a12eb853fa8fcca0aa9d3c075a3d6f027ce120e04b35748e2a64"
+    },
+    {
+      "path": "public/manifest.webmanifest",
+      "bytes": 321,
+      "sha256": "ea41bb72a70c94f8e7e78bcdc9701c2465e1eb84d4dd2e9a8dcb3b55e44d09c8"
+    },
+    {
+      "path": "public/sw.js",
+      "bytes": 1588,
+      "sha256": "87d3ee67ec4932437fff479bb16470dae143279c60440129acb4cce0fca22643"
+    },
+    {
+      "path": "scripts/build-pageflip.mjs",
+      "bytes": 6380,
+      "sha256": "ef9bd42af7447f67a727aea29120baf69aaafa391b5d971a9b03405d565c102a"
+    },
+    {
+      "path": "scripts/capture-library-reader.mjs",
+      "bytes": 9028,
+      "sha256": "67620ae5541f1b119a0ea2b37f5baa894793ac6afe45560ac073a6481e87a1ca"
+    },
+    {
+      "path": "scripts/capture-populated-reader-motion.mjs",
+      "bytes": 6338,
+      "sha256": "9f133aad65ba93f18dbaebb8eeede2aacbfa6ab00805b57336df1c5a65879d35"
+    },
+    {
+      "path": "scripts/capture-populated-ux.mjs",
+      "bytes": 6376,
+      "sha256": "1e3bf1e80ebda713a64db1cb039847717b53e0f36c2e4775e3ad8e670dad60a8"
+    },
+    {
+      "path": "scripts/capture-reader-motion.mjs",
+      "bytes": 3686,
+      "sha256": "efdbc9f13a2f41169c205b92a1744c04ea42c261218a040170b31c807934ac7e"
+    },
+    {
+      "path": "scripts/capture.mjs",
+      "bytes": 10590,
+      "sha256": "e004176faad480b808f4f0544101007b52c8b0744af64a6317462dc83e110a1d"
+    },
+    {
+      "path": "scripts/check-populated-navigation.mjs",
+      "bytes": 6948,
+      "sha256": "f23fba61f1d5628d415c20e9241d2a8f745b3ebdd7d6dc9907b67a2cc4ff2410"
+    },
+    {
+      "path": "scripts/crash-recovery.mjs",
+      "bytes": 3477,
+      "sha256": "325255b459cb97f81bc910f2a3926e48ea0759ce331a924c5ec9e740c5032acb"
+    },
+    {
+      "path": "scripts/firestore-usage.test.mjs",
+      "bytes": 1940,
+      "sha256": "62ea33256ce26772a83b8d6d5b5012d91417137d8547476beb8bb8563a8eec0f"
+    },
+    {
+      "path": "scripts/measure-reader-volume.mjs",
+      "bytes": 19685,
+      "sha256": "cb0066b7869386ed68e8b7152d4af36e56d11464d4852c1a034e462cc1f35cb2"
+    },
+    {
+      "path": "scripts/package-plugin.py",
+      "bytes": 4977,
+      "sha256": "9c1c9e2a0a6c5ae0de234cd22004917c4b4e567b22986efe127a2ce9bd4863ec"
+    },
+    {
+      "path": "scripts/profile-writing.mjs",
+      "bytes": 3822,
+      "sha256": "48d30c40ed37e3a1f4a9916eacd09d4d4b810039106e0f958a05cebb0dfa7bd2"
+    },
+    {
+      "path": "scripts/project-evidence.mjs",
+      "bytes": 2648,
+      "sha256": "73008467aef13ce3529996f2f0a370051d14dede4eef8f602474bc558b34c4c0"
+    },
+    {
+      "path": "scripts/record-heartbeat-candidate.mjs",
+      "bytes": 6073,
+      "sha256": "92d44d85cb5c35ba109238c5d099a03095a31b4ccffce634329fc3e2ab97481b"
+    },
+    {
+      "path": "scripts/record-heartbeat-rework-candidate.mjs",
+      "bytes": 9042,
+      "sha256": "cd9e916786c0ff756035bdd71673467a072990261863ce9f9ddcae7914423494"
+    },
+    {
+      "path": "scripts/record-library-reader-candidate.mjs",
+      "bytes": 5175,
+      "sha256": "cf0c90cbc483091743475d74944509b3ee56690d31518136f3b57e644e64a56c"
+    },
+    {
+      "path": "scripts/record-plugin-candidate.mjs",
+      "bytes": 5036,
+      "sha256": "92946930f67dc3f1de72fd1348d8a9c261a9c0cf805d0a24b044dffba3f4df4a"
+    },
+    {
+      "path": "scripts/record-reader-ux-candidate.mjs",
+      "bytes": 6362,
+      "sha256": "46bbd74eb0d73e6f292672bff42a136b42eed2c6c832585c95f152559bdfdca8"
+    },
+    {
+      "path": "scripts/record-refinement-candidate.mjs",
+      "bytes": 3913,
+      "sha256": "e4effb978dd27f986c8f10b4c762342a0345ef6ff252281078085090ddab74dd"
+    },
+    {
+      "path": "scripts/record-spark-candidate.mjs",
+      "bytes": 3451,
+      "sha256": "d39c2303af274348acaf227c63028703b58ade94dc80d29f700509eb863565dd"
+    },
+    {
+      "path": "scripts/record-sync-candidate.mjs",
+      "bytes": 4055,
+      "sha256": "27093a0bd9f6f6b68a4658830da2c3082ef21c4b3878ac6d1d36fa6c75fc03dd"
+    },
+    {
+      "path": "scripts/record-usage-candidate.mjs",
+      "bytes": 2352,
+      "sha256": "4d296a3089c446465720cf132bf61b6b06ce2727b152815e847410bf274417ac"
+    },
+    {
+      "path": "scripts/record-workspace-reset-candidate.mjs",
+      "bytes": 3737,
+      "sha256": "13b6e635eec2375cd752df45605b09f02814f3a23cabde47fbc31fe71cac6a8c"
+    },
+    {
+      "path": "scripts/summarize-firestore-usage.mjs",
+      "bytes": 4230,
+      "sha256": "7d69fcbfd75e67e6d2f7b5eb4bd0b310caa9b5a6560d6e6c9ff1a210f46c9512"
+    },
+    {
+      "path": "scripts/verify-candidate.mjs",
+      "bytes": 2815,
+      "sha256": "5ea0bc12597ef0055136371cf7b0508abfe8d4f250778aad3e3d782ba7c43b61"
+    },
+    {
+      "path": "scripts/verify-deployment-candidate.mjs",
+      "bytes": 2923,
+      "sha256": "f9550364c1a4437fcfaf637044997695ab9103d8e6b4bb45c30166d6847b0447"
+    },
+    {
+      "path": "scripts/verify-heartbeat-candidate.mjs",
+      "bytes": 3168,
+      "sha256": "a93e29a637799929730a9e9bf18435408eca58b290240f3831b00199c66a55b2"
+    },
+    {
+      "path": "scripts/verify-heartbeat-rework-candidate.mjs",
+      "bytes": 4448,
+      "sha256": "ff1050038eed37b02b6a3f01a84ddaa882e3597c167d431d0fe37ccc919d1671"
+    },
+    {
+      "path": "scripts/verify-hosted.mjs",
+      "bytes": 2251,
+      "sha256": "9744a655bb978110984cbc471cfc851a6a0ffe35bb7c2c9e4025dea3adeedd4c"
+    },
+    {
+      "path": "scripts/verify-plugin-hosted.mjs",
+      "bytes": 5230,
+      "sha256": "8978affe1f21a8df69db3fcf9a9aedaf8b90b61b801fceb943a8081323784343"
+    },
+    {
+      "path": "src/App.tsx",
+      "bytes": 66349,
+      "sha256": "0479c5432c85507b8df5ba043ff7320a58b064ff164addfb7891401bc20a60fe"
+    },
+    {
+      "path": "src/AppHost.tsx",
+      "bytes": 5292,
+      "sha256": "ce43936760e2f7d539002fc35a9e6cbe6b3e323db68edbd1a2ab2b1c9ba01719"
+    },
+    {
+      "path": "src/cloud/firebase-access.test.ts",
+      "bytes": 4863,
+      "sha256": "902c86f944fa566a9405f9022381333ab0b45d11a920a1ab49ee40f74e3bbb91"
+    },
+    {
+      "path": "src/cloud/firebase.test.ts",
+      "bytes": 2114,
+      "sha256": "d3cd5e98b0761bfe573f4b677b2d7ac2341d38b4dba7c723b8e4aeaf94ff3601"
+    },
+    {
+      "path": "src/cloud/firebase.ts",
+      "bytes": 9244,
+      "sha256": "61e6dfe8cf0ae732d34a80b95c5e66f2730aca25f596b83c8eb5e2435f51e2ad"
+    },
+    {
+      "path": "src/cloud/integrations.ts",
+      "bytes": 3709,
+      "sha256": "771dc3ca8484dba9d01c9989c56a6f06f502cfa5f62e362f185555d916757375"
+    },
+    {
+      "path": "src/cloud/spark-listener.test.ts",
+      "bytes": 6714,
+      "sha256": "1868d8971d193f71f0b509b551331ea9bcd0b561e91893c7d9ade86d6447086c"
+    },
+    {
+      "path": "src/cloud/spark.emulator.test.ts",
+      "bytes": 19870,
+      "sha256": "12672df8c1f146e9c6e140d545353e08ecf56fa804d3a5edbce48e037e05942e"
+    },
+    {
+      "path": "src/cloud/spark.ts",
+      "bytes": 27937,
+      "sha256": "abb7b693f16eff907b3421c7ecbe83331de0254e88e86764481d9c99cd569013"
+    },
+    {
+      "path": "src/components/DocumentShelfRow.tsx",
+      "bytes": 1252,
+      "sha256": "df6b820bce505dfa5a10737795a31153d69cef9000d58937ab105d00ba833f24"
+    },
+    {
+      "path": "src/components/Integrations.tsx",
+      "bytes": 18063,
+      "sha256": "7058938437bfbcaa94e90fe5fa0b13c7a4d12352fee19d4257256614d5473909"
+    },
+    {
+      "path": "src/components/Library.tsx",
+      "bytes": 10988,
+      "sha256": "c443d154178f9959e4f8b9ba2d771ecd389f3c5ee3a1be150e34a0e092c7a9b5"
+    },
+    {
+      "path": "src/components/Modal.tsx",
+      "bytes": 1180,
+      "sha256": "b5d290d7073a27442d178b528c0447990de6042a6b1aee8c2e3a3300f11e73ce"
+    },
+    {
+      "path": "src/components/ParagraphIndent.ts",
+      "bytes": 2954,
+      "sha256": "687a0eae5fbe04f96e2921efb4ddbd5dc2b01169c4a8e8ac981713321d6d2fd7"
+    },
+    {
+      "path": "src/components/Reader.tsx",
+      "bytes": 24455,
+      "sha256": "94b97320eb83cc1f70f7f83acdfc60b55e1869eec466b992cd140c2c72a2b31b"
+    },
+    {
+      "path": "src/components/RevisionComparison.tsx",
+      "bytes": 3558,
+      "sha256": "2c5b5313bb91b0d6be008e8fd1516ce289da856fa14c6668f78914b3797cad94"
+    },
+    {
+      "path": "src/components/Writer.tsx",
+      "bytes": 13558,
+      "sha256": "7887afbd3b7f35bb429abf39a2d4c5bc5c79002e5e7ca40c71a588881190f5c9"
+    },
+    {
+      "path": "src/components/integrations.css",
+      "bytes": 14691,
+      "sha256": "7ccfdd94b59273204080530185d6fc236952f825f2e94717d87817998bbc8bc0"
+    },
+    {
+      "path": "src/domain/codec.ts",
+      "bytes": 14833,
+      "sha256": "fbe53e9aa60a72e85be7b8ff6e2d62b89fbf0742ad8626d2fefb95c62685525a"
+    },
+    {
+      "path": "src/domain/model.ts",
+      "bytes": 5737,
+      "sha256": "9bd450032340a32e4ca4abba854bcdd30c60c4be5b648d58c98a0e888465c900"
+    },
+    {
+      "path": "src/domain/paragraph-formatting.test.ts",
+      "bytes": 6791,
+      "sha256": "5ee2537bb58b7f4449b5a2cfb9e19b2cb2f0c8fd84f71fe32f0aa96a33545e8a"
+    },
+    {
+      "path": "src/domain/render.ts",
+      "bytes": 3603,
+      "sha256": "e74ad5040ece35e22f1c13941add23f2c5515d37744fc5fea0f75dff8c3ea517"
+    },
+    {
+      "path": "src/heartbeat/Heartbeat.tsx",
+      "bytes": 6056,
+      "sha256": "0732482453eeed0b7a55ef8e01a3284627dc4010d5c49c0e280ac1e5eb9a3fd3"
+    },
+    {
+      "path": "src/heartbeat/decorations.ts",
+      "bytes": 5043,
+      "sha256": "bf9768b2f4a7aaff0789763c39c8ef6b67d099ec08563f695f76ecc3dc0aea60"
+    },
+    {
+      "path": "src/heartbeat/heartbeat.css",
+      "bytes": 8662,
+      "sha256": "6b51d4af496e14515ddae26d23cce4dc53e577a4f70e63058eb263a582431e22"
+    },
+    {
+      "path": "src/heartbeat/model.test.ts",
+      "bytes": 8891,
+      "sha256": "9177cbdad4eeab2d56171247f6ae6b944993b1bbd2aadd4f9666987b8e345573"
+    },
+    {
+      "path": "src/heartbeat/model.ts",
+      "bytes": 7436,
+      "sha256": "150a56b55c146d2daca2325c674600d05657ea1a0a513f34e553db235d51b34e"
+    },
+    {
+      "path": "src/heartbeat/presentation.ts",
+      "bytes": 850,
+      "sha256": "f6ab97995b9bb2cd720f1d5d4d273898bcdfa8062d7a86cec1693c30e35fd232"
+    },
+    {
+      "path": "src/heartbeat/useHeartbeat.ts",
+      "bytes": 4575,
+      "sha256": "e899eb05bf882ef3c007161c8521b21227b3503384cc65bfe0dcb434e2cc7a21"
+    },
+    {
+      "path": "src/library-reader.css",
+      "bytes": 31954,
+      "sha256": "b7e6b8e3914fe91180c18016e9464ad8ca4a1c98665fd15072d8189f886bf5b5"
+    },
+    {
+      "path": "src/main.tsx",
+      "bytes": 380,
+      "sha256": "060f787e8eb7a2b1f7c0c16cc33b1d054663f5ee076c41f5e8495b60286bcf6d"
+    },
+    {
+      "path": "src/reader/page-turn.ts",
+      "bytes": 6087,
+      "sha256": "44d47bfe04a04510faeaa059a6e1e5d8fc7dc2661dea76496c4a1f2e8a7ce2ea"
+    },
+    {
+      "path": "src/reader/reading.test.ts",
+      "bytes": 4450,
+      "sha256": "43d10faf5db6ee9e4bf62161f66fa61e2ae18c64b02455129a2953143c9968e8"
+    },
+    {
+      "path": "src/reader/reading.ts",
+      "bytes": 4275,
+      "sha256": "613777b5137f3c52455fdb5d744e03e4e9a86a12fc0a878c52080080a64a69d3"
+    },
+    {
+      "path": "src/state/autosave.test.ts",
+      "bytes": 10190,
+      "sha256": "759514e6b5b40b73156869daa413bda50adc881a71b0f04a15f90746a14dcd19"
+    },
+    {
+      "path": "src/state/cloud-integration.test.ts",
+      "bytes": 37126,
+      "sha256": "2f19396df1315e61f8ebed97ae2f98023137b39fb277e4f8a66e0f7718eecd53"
+    },
+    {
+      "path": "src/state/collection-rename.test.ts",
+      "bytes": 15306,
+      "sha256": "5c191c8f2c32db3eea6b70e7feb91e7858957de6b04c387d77d7bc6da7b661ae"
+    },
+    {
+      "path": "src/state/engine.test.ts",
+      "bytes": 10783,
+      "sha256": "6ffa03ca8178fad5ac972704ce7ca9e951487cf7044a0c5863c8ec128c25aee0"
+    },
+    {
+      "path": "src/state/engine.ts",
+      "bytes": 39873,
+      "sha256": "02946bd71c5ce3b6fb87eeb861fb8e81baf1f3505bd0e2a214b7bd9c8d330e0f"
+    },
+    {
+      "path": "src/state/useWorkspace.ts",
+      "bytes": 1942,
+      "sha256": "372c47449e45873b1b5f3a711e9f80ffadf23fc2528dd3dedb88d9458aec8484"
+    },
+    {
+      "path": "src/storage/archive.ts",
+      "bytes": 1873,
+      "sha256": "3e146877962af16e9ef5a0f49514ada68df31dc1ccfa5d401a782c5cc1de6875"
+    },
+    {
+      "path": "src/storage/database.ts",
+      "bytes": 20531,
+      "sha256": "3f3064eab1a4868b0105e12fa8aee903caa94c41f216662b3ca76e9a1ca458d8"
+    },
+    {
+      "path": "src/storage/draft-migration.test.ts",
+      "bytes": 2131,
+      "sha256": "46ee52b87a6375532d6cb7c7c0fb29de6135ffd613c9e09399686517e9db8f38"
+    },
+    {
+      "path": "src/storage/workspace-reset.test.ts",
+      "bytes": 3314,
+      "sha256": "5718191258a3bd0cf9dae2cc040f65b81f1af86466092ae5f05928cac24b0f25"
+    },
+    {
+      "path": "src/styles.css",
+      "bytes": 69094,
+      "sha256": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294"
+    },
+    {
+      "path": "src/vendor/pageflip/LICENSE",
+      "bytes": 1063,
+      "sha256": "88d7b609a3be5efa2abe8648ddc35d5489579db5e06299545760df45c2c32d66"
+    },
+    {
+      "path": "src/vendor/pageflip/page-flip.css",
+      "bytes": 861,
+      "sha256": "d51eb210784f4539d70bc2a4a9ae96768e271d7aae6730cc9ddba03ebebcbab1"
+    },
+    {
+      "path": "src/vendor/pageflip/page-flip.d.ts",
+      "bytes": 730,
+      "sha256": "d45d561ca29bd8cd771f65b458d0e7067bf61bfa3de6c2779be6ba152fe59b1b"
+    },
+    {
+      "path": "src/vendor/pageflip/page-flip.js",
+      "bytes": 89567,
+      "sha256": "6e13029cb2242e7860bcdfa68a8745ccf12c4fae8f1589b7bfb28c5691288fda"
+    },
+    {
+      "path": "src/vendor/pageflip/provenance.json",
+      "bytes": 3438,
+      "sha256": "badb5b095e78b5c7470786311a15c77e7a53ac2ad01adfc5dc4b23c1128bbcfb"
+    },
+    {
+      "path": "tests/browser/autosave.spec.ts",
+      "bytes": 2766,
+      "sha256": "1d005eaf15eece17dc9ed273c6d018b950e054c0b2450394d832708e27ab790f"
+    },
+    {
+      "path": "tests/browser/conflict.spec.ts",
+      "bytes": 4376,
+      "sha256": "3523cbdf5518963d75b37332f7d9dacb6d1b34b98eb9140a8aad1dbc25b6527d"
+    },
+    {
+      "path": "tests/browser/heartbeat-layout.spec.ts",
+      "bytes": 11955,
+      "sha256": "cf53e28b58fd3c7417e3230392a0c40f17f0e2060915606a23f8c9ef34aa866a"
+    },
+    {
+      "path": "tests/browser/heartbeat-visual.spec.ts",
+      "bytes": 13769,
+      "sha256": "5864f4f79a48ef0dec1f6a27461fb22a8ea95717f7998e64c18f729e08568984"
+    },
+    {
+      "path": "tests/browser/library-reader.spec.ts",
+      "bytes": 15364,
+      "sha256": "f7bb71fda99f3a03736bf84abac502b6d4eb1fe5972a480036ae99324e8039c3"
+    },
+    {
+      "path": "tests/browser/library-release.spec.ts",
+      "bytes": 9378,
+      "sha256": "712395a55a5376356b0dd5859b78674542fc97689060c7010ac9e8244c87a134"
+    },
+    {
+      "path": "tests/browser/page-turn-lifecycle.spec.ts",
+      "bytes": 10481,
+      "sha256": "0dc7c962d0fb212adf713db268fa8848a1d9fadb5fc160cf10b8e1ca71e7b482"
+    },
+    {
+      "path": "tests/browser/plugin-legacy-cache.spec.ts",
+      "bytes": 3777,
+      "sha256": "52fe641c09048a0a5512fe27f550b83df6230569e7ae9c2d6769d5fa933a3b21"
+    },
+    {
+      "path": "tests/browser/plugin-ui.spec.ts",
+      "bytes": 20425,
+      "sha256": "6758b0f5529797f62e90939df9268626728fd082d3475f803c829bc536e56993"
+    },
+    {
+      "path": "tests/browser/populated-journeys.spec.ts",
+      "bytes": 27213,
+      "sha256": "f5ba7e27a673b2b8189b03bf33a7e468e59fe5c4972862d56749674e241928a9"
+    },
+    {
+      "path": "tests/browser/production.spec.ts",
+      "bytes": 1413,
+      "sha256": "d103bb48aa541eee84d939ecc456629343df308802162f58542e6eb5c85c630a"
+    },
+    {
+      "path": "tests/browser/writing.spec.ts",
+      "bytes": 19373,
+      "sha256": "5f4d192149b4cf3b9e8ef237178f0d60df90906b5a4e1b2c91064c482f15123d"
+    },
+    {
+      "path": "tests/helpers/emulator-auth.ts",
+      "bytes": 747,
+      "sha256": "4e32d5e9ddeb705acd4bff121e59583b4dee0a02381db076beb38447bcff2bcc"
+    },
+    {
+      "path": "tests/helpers/heartbeat-continuity-fixture.ts",
+      "bytes": 7593,
+      "sha256": "99713c94fe596b9e5c8a58c6df34792877170e37d0e2e24b45aa9b0896835c83"
+    },
+    {
+      "path": "tests/helpers/legacy-writing-worker.js",
+      "bytes": 1461,
+      "sha256": "3b07b5bb98a085f5d46fb399f98e1ef2684a07b291986956c1b616573acf4bbe"
+    },
+    {
+      "path": "tests/helpers/legacy-writing-worker.json",
+      "bytes": 299,
+      "sha256": "f75f1e1db4d3e938c99857b3543217e7346c001beb629d71460fe4d3d31e54de"
+    },
+    {
+      "path": "tests/helpers/populated-workspace.ts",
+      "bytes": 24715,
+      "sha256": "e4d71c1ddf3e5241b31f32af9c1007dbb44d6955c3d8a2a4f8012100fc7deeae"
+    },
+    {
+      "path": "tests/rules.test.mjs",
+      "bytes": 7107,
+      "sha256": "e3cd2bdbc959deaa03ad1ade93cfc43d05526a58a29c49eb27634c14bc30a82b"
+    },
+    {
+      "path": "tests/spark-browser/collection-reader.spec.ts",
+      "bytes": 12297,
+      "sha256": "f768cd6cd742d6db3ba8f51a94a19f6d6e67aa909f0a921b4df47a9924584ef1"
+    },
+    {
+      "path": "tests/spark-browser/heartbeat.spec.ts",
+      "bytes": 8302,
+      "sha256": "87eb905ea1f792d230af0f3ce826d616e25bacf9e966c6de0991440dcf27c915"
+    },
+    {
+      "path": "tests/spark-browser/reset.spec.ts",
+      "bytes": 9425,
+      "sha256": "9936d7080e03b2e7919e663a559400dc24355bb3000f9de174bdb2d6629cd1bf"
+    },
+    {
+      "path": "tests/spark-browser/writing.spec.ts",
+      "bytes": 12264,
+      "sha256": "bb5a2ba1313b3cc8795a53221937b224110bc406b0a5ddfa39f25517e3c0a23b"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 359,
+      "sha256": "a4ee61877cb9d7a988ac90cf54622fabfb40220a5bc39e42f043c408d7ff62c2"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 923,
+      "sha256": "3c86a0dd08ac3ebe3073e41285bb5febcfbdb16a43be5fe3fef19da324382a80"
+    },
+    {
+      "path": "vitest.config.ts",
+      "bytes": 161,
+      "sha256": "effcddf543e8d041dcd79f28af05a164309221de1cec9e61f62aafd1ceadb638"
+    }
+  ],
+  "sourceDigest": "242dcd5edc6cf5bc7aff189580e934a0c650ad5d1beaac4e4a6ff252809c6073",
+  "artifacts": [
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/UI-HANDOFF.md",
+      "bytes": 8907,
+      "sha256": "fba3eae37f2fbbd57e8bb4b25a8a4bfcc57417ed99397e5aa2264fcdd13f2510"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/backend/HANDOFF.md",
+      "bytes": 5080,
+      "sha256": "0e5e326e7fad8a3d227d81a27ed9075837ca336371a98ceeb4c83bf77c36abae"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/backend/backend-unit-tests.txt",
+      "bytes": 1888,
+      "sha256": "8e52971204c34b139f7f8cae6b94f388e0f752145ddaedc9413c8a9140cdb4f8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/backend/emulator-attempt-1.txt",
+      "bytes": 1092,
+      "sha256": "5b30206241e2c9a75f4485eac903a0f5846b8ea748e1f8990c341a868d05883b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/backend/emulator-attempt-2.txt",
+      "bytes": 3572,
+      "sha256": "95dc1707f8c46a8b7dce840847b3e0cd589259b72fd2e35b8324a224abb42907"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/backend/emulator-tests.txt",
+      "bytes": 5568,
+      "sha256": "942638bd2571e0cd4e21395c1e314350cfd8efe7d035098ba773ff696aa889e7"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/backend/frontend-tests.txt",
+      "bytes": 444,
+      "sha256": "161690d272cf8ccf53a463c13342a4f07563851a8e8a0751148f92cd67a50a41"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/backend/functions-tests.txt",
+      "bytes": 7138,
+      "sha256": "a8a18fed4eff77d62c6e7e37359e30a3d1bff65c577e85a157164b261c4f6d09"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/backend/typecheck.txt",
+      "bytes": 23,
+      "sha256": "924d4bda0404a5f286a8706f76badf72422e80eba15d5a5dde37582d9bd5db04"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/baseline/measurements.json",
+      "bytes": 16191,
+      "sha256": "55b604e2b75b5c33f54072b62541d453516e4d9951ca1bffd4d4195a000ff54c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/baseline/reader-next-1366x768.png",
+      "bytes": 130705,
+      "sha256": "dcdf5236cdcbc1a4ae4b09eba925c53f741f651581495057014e223b7da23c9d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/baseline/reader-next-320x568.png",
+      "bytes": 43929,
+      "sha256": "449715c2dbb4d7705f4e5d35549aa77c7c5a62ca299153fa154dd80baa35060c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/baseline/reader-next-390x844.png",
+      "bytes": 94009,
+      "sha256": "385a83c1b892870a2b4097665ae4e8c7807121c7c5c575d4d5f18afae67f7be8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/baseline/reader-off-1366x768.png",
+      "bytes": 189863,
+      "sha256": "0a69aafa618df630dca2ef35def248f7babe9b26d7397c2e6103609c2b9b28ed"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/baseline/reader-off-320x568.png",
+      "bytes": 36197,
+      "sha256": "bae1763066abd804ee28ca4961743c5ecf2575bcc07a8038e2296493cd40dada"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/baseline/reader-off-390x844.png",
+      "bytes": 67149,
+      "sha256": "7d2aa49188eaa759e6257bc6140f6203ab6984514c4fbd5976671c01d571b8cd"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/baseline/reader-on-1366x768.png",
+      "bytes": 207701,
+      "sha256": "6e36e37166fd77433584c6dd60df6d8f20d0fe545a51fa7e9843116c724a0be5"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/baseline/reader-on-320x568.png",
+      "bytes": 41468,
+      "sha256": "dbd45c32156d13f36d5dae1dda8a6f92bec71d2030f9004cb7953b28a78f5ebd"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/baseline/reader-on-390x844.png",
+      "bytes": 74595,
+      "sha256": "5e1a2be3cccd5d9c3ac2a5af2a3c46e20c8f21c5f551034817bad69221a597f2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/browse-regression.log",
+      "bytes": 913,
+      "sha256": "3403638dd6afb796594a88949ddc5ff8ededacd95fa43b44296f787d57355f3d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/browser-attempt-1.json",
+      "bytes": 133539,
+      "sha256": "57e0e7cdc46661a73176921f91c0743add53e74d1ef24a287e8f8cd3dbdc8f0e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/browser-attempt-1.log",
+      "bytes": 53402,
+      "sha256": "6e5661e06cddd259b84f7f11c1b89db6ca1ca98220e39381c2034f0f5b5f06cc"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/browser-results.json",
+      "bytes": 103330,
+      "sha256": "96001c0bf90c7c7cefb9ef740e66770be5d02125ef9d5c699c193b30ae98d14c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/browser.log",
+      "bytes": 26766,
+      "sha256": "7cbbbd84a7cf47b852ae77e4838f7de97d2b5ce4a45e36ec02a9fbbeecfe1520"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/build.log",
+      "bytes": 5446,
+      "sha256": "964f9ce873474140aec4da49f624748ffa4fd8961575265cbdc4606663dd62fd"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/client.log",
+      "bytes": 562,
+      "sha256": "c496e37ad96437c5c736bbee79c315af2d7903efb80e01881138c0feb2a1d1e2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/cloud-results.json",
+      "bytes": 102264,
+      "sha256": "6b71caf317d2c7a25efce2068e4049a6600125a0f89571529b9ee7f371379738"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/cloud.log",
+      "bytes": 14102,
+      "sha256": "722f394a4757c5d3ef657066e91aec99e7ad12607f646683f2879f7cfba20899"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-blank-history-1440.png",
+      "bytes": 185365,
+      "sha256": "8e3f531f4ef0ce19cbde6cf3c0c7e878f8cdc9e7aea3deab88067978a1a9f802"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-blank-history-320.png",
+      "bytes": 42053,
+      "sha256": "d8fd47ea7fc2ecd8caeef4324d750aa24d715ebd3ee7c042b96e2a0c986dce5d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-blank-history-390.png",
+      "bytes": 43278,
+      "sha256": "f0f9bb3f808c046186030cbc596972cf3e17648377cbb2d8f9cc538111cf45ff"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-pages-1440.png",
+      "bytes": 181017,
+      "sha256": "ae9a12253bf8ec94c4b992aa663030a66fb2286c32220d78c49e4a39fdb40cf8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-pages-320.png",
+      "bytes": 64973,
+      "sha256": "4250ba1d7e36078292be5bcdbd74a08225a72fd7061ef8c00fa276bc653992b9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-pages-390.png",
+      "bytes": 68218,
+      "sha256": "87ec09ee4e0e0391d7997c459f6e3acebdddada80e6558cca1b632c00171ddf9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-resolved-page-1440.png",
+      "bytes": 154759,
+      "sha256": "44a0cdb9155c13f5314daa39264bfe0fc373df128401686a30967f57348371ff"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-resolved-page-320.png",
+      "bytes": 28105,
+      "sha256": "65848d6e8626b8b91d9c82f97b577c15824e69ef973da2711343699c221fb5b4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/conflict-resolved-page-390.png",
+      "bytes": 29631,
+      "sha256": "00ac89ee4e02b46e51dc2721e3fd793bd9ba1d9b25c9f1fd0c5d4f1decefdd7e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/desktop-collection-open.png",
+      "bytes": 174939,
+      "sha256": "d5db156adcd4d09a0225b2fbf9dc705e496aa9cc822698707941e687e993f459"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/evidence.log",
+      "bytes": 7790,
+      "sha256": "e7dfef1edd548e991db87671e314d1c5ee659737ef49fda95b361b977589f82e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/functions-check.log",
+      "bytes": 96,
+      "sha256": "fc43a0c040d4583c5165488d2f1f5aa91f034d55a56c502e7b09b4dadd01f816"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/functions.log",
+      "bytes": 7138,
+      "sha256": "82462e9221b5627b5fa034cd15b5da6d9f893d2214b89bd27e29618ca71755db"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/indentation-1440.png",
+      "bytes": 167942,
+      "sha256": "2e63fa16e1b48e97ac69da8ed6d13ed9194616556e5f73e5c922fdb360b7e031"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/indentation-320.png",
+      "bytes": 37571,
+      "sha256": "2e3cd38e0dca8a2db07ae6e09067b7a91620d77de5cc5bc0b59a45550453b18d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/indentation-390.png",
+      "bytes": 42054,
+      "sha256": "050ab1993fc8631728ec6227337c2276251ba924180b92df8109769bddfb740f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/plugin-package.json",
+      "bytes": 1776,
+      "sha256": "d08950e282138e6b132d5160b60a5b067d871ae0993694dd78dfdcc391ff9822"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/plugin-package.log",
+      "bytes": 3554,
+      "sha256": "fef93954d7e41581dcd99df6c29b26af8ec76c292c4832e2118cc4a990e30d39"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/quiet-writing-1440.png",
+      "bytes": 157275,
+      "sha256": "2f523a4f7e8a3929658baf4e7ba7f51f82f9ef9c843a5c5cd514800b803dd10b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/quiet-writing-320.png",
+      "bytes": 30059,
+      "sha256": "a9cb469f3c1a8c9d96cba7de51e2dfa5ccee63f55f0b4d7647c2d24a70b6b5ec"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/quiet-writing-390.png",
+      "bytes": 31567,
+      "sha256": "7745353b775b9ff7683b76f123323cece1de7dc60b30b7188db34f98d8db85d9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/rules.log",
+      "bytes": 2848,
+      "sha256": "3ece52b0bfa52420ed6b9111a9f0971fa8c104d1cc7a00b820e2d1b9bd2c0e6f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/structural/after-archive.json",
+      "bytes": 6300,
+      "sha256": "1ea39822080f85e0b47ebd834a3801d09a70b150fbd3a4b884c4da67c4c6702d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/structural/before-archive.json",
+      "bytes": 5691,
+      "sha256": "f6069fd3ff7a293220e18929634c8483d2526e7f27a49d42e912708702f4b115"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/structural/oracle.json",
+      "bytes": 409,
+      "sha256": "7d977dab64924f3674467ab5e0b44e09416bb04237502c084fa8a2f4eb0d7354"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/sync-details-1440.png",
+      "bytes": 192486,
+      "sha256": "656cb4ae8f54ce93d5bcd6e0a784e8a4a21de8c653b3cc306857e86a51174a6c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/sync-details-320.png",
+      "bytes": 71573,
+      "sha256": "5a9e19f811d8be6fcbfd15454f6e9807aedde348b7ec99f3240705290a5d1e84"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/sync-details-390.png",
+      "bytes": 76409,
+      "sha256": "e995651f39527dc659fa095a0ea0a6cbb4fb2b0f4fcc9a57731568c997c87a83"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/checks/typecheck.log",
+      "bytes": 86,
+      "sha256": "96fb526310e5a666090b361c5dc343d0a2db6f25ee09f1b09a4014355b93ab68"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/matched-baseline/measurements.json",
+      "bytes": 16191,
+      "sha256": "55b604e2b75b5c33f54072b62541d453516e4d9951ca1bffd4d4195a000ff54c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/matched-baseline/reader-next-1366x768.png",
+      "bytes": 130705,
+      "sha256": "dcdf5236cdcbc1a4ae4b09eba925c53f741f651581495057014e223b7da23c9d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/matched-baseline/reader-next-320x568.png",
+      "bytes": 43929,
+      "sha256": "449715c2dbb4d7705f4e5d35549aa77c7c5a62ca299153fa154dd80baa35060c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/matched-baseline/reader-next-390x844.png",
+      "bytes": 94009,
+      "sha256": "385a83c1b892870a2b4097665ae4e8c7807121c7c5c575d4d5f18afae67f7be8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/matched-baseline/reader-off-1366x768.png",
+      "bytes": 189863,
+      "sha256": "0a69aafa618df630dca2ef35def248f7babe9b26d7397c2e6103609c2b9b28ed"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/matched-baseline/reader-off-320x568.png",
+      "bytes": 36197,
+      "sha256": "bae1763066abd804ee28ca4961743c5ecf2575bcc07a8038e2296493cd40dada"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/matched-baseline/reader-off-390x844.png",
+      "bytes": 67149,
+      "sha256": "7d2aa49188eaa759e6257bc6140f6203ab6984514c4fbd5976671c01d571b8cd"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/matched-baseline/reader-on-1366x768.png",
+      "bytes": 207701,
+      "sha256": "6e36e37166fd77433584c6dd60df6d8f20d0fe545a51fa7e9843116c724a0be5"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/matched-baseline/reader-on-320x568.png",
+      "bytes": 41468,
+      "sha256": "dbd45c32156d13f36d5dae1dda8a6f92bec71d2030f9004cb7953b28a78f5ebd"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/matched-baseline/reader-on-390x844.png",
+      "bytes": 74595,
+      "sha256": "5e1a2be3cccd5d9c3ac2a5af2a3c46e20c8f21c5f551034817bad69221a597f2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/review.md",
+      "bytes": 33591,
+      "sha256": "d32618ba3c6372155f5860899fa635193db11dafc65add6525e835a3b53c3612"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/compact-1366x768.html",
+      "bytes": 12895,
+      "sha256": "0a2f522d6cf4078f3c77212320b938c9514fa6cc0ddc4e99eb0a26bd4f6e36b2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/compact-1366x768.png",
+      "bytes": 232131,
+      "sha256": "4b2d514c3711b7d81a8e3d3d1da2f89ff17b3cf488638fe09c273e7402349110"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/compact-320x568.html",
+      "bytes": 12895,
+      "sha256": "ba6ff51acdbb9c1efb07c1ce0774518bb6aaca1c1b02717043ca8abdae5f43f4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/compact-320x568.png",
+      "bytes": 43101,
+      "sha256": "9db1156b7ad466fca091643149b8a3a0293a4babf244199614fb1dd49d52ed78"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/compact-390x844.html",
+      "bytes": 12895,
+      "sha256": "ec8c686a45c2475739221c9a945d09f1cd3a3e78eab5ddd661fc7626c04efbc2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/compact-390x844.png",
+      "bytes": 80089,
+      "sha256": "f8f83b58afcf8bb43f7e125975e66904f48290e3a404b799267653a3f04cebd4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/flow-1366x768.html",
+      "bytes": 12886,
+      "sha256": "9006b595cd0083b0007ab95257a00f97f53d2eb0941d9d5174467d93876a329e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/flow-1366x768.png",
+      "bytes": 133057,
+      "sha256": "20c31b11a20c991333c3d15efcd44ed1cbc952d8b514784b0a79bc95c10e8300"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/flow-320x568.html",
+      "bytes": 12886,
+      "sha256": "e4ba0a4e7da7c0db2025eab89562af4ef726f03ab06e608acecfb0bc785dc90e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/flow-320x568.png",
+      "bytes": 44547,
+      "sha256": "62ea32bd1bc75fb91d6673774c442178d9eae9ef23615d4502af7c83e310c4fc"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/flow-390x844.html",
+      "bytes": 12886,
+      "sha256": "c409d050773c1f85df9394fe16f887e8c2209ebeedc5f4c31b4f4a79e0209918"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/flow-390x844.png",
+      "bytes": 79361,
+      "sha256": "67d5e7b4cbf201ec7b9d50f1f53209709c302f6bd1ec70c8374c0570470d951a"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/margin-1366x768.html",
+      "bytes": 12890,
+      "sha256": "3de3a083eb441ba7e5c125c0986149235f1738fe2f708092c7278374bd02300a"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/margin-1366x768.png",
+      "bytes": 136630,
+      "sha256": "51c85cc8f55290f17df2ff6713c0f593fa1714641840a6e6434e4b6f9933b090"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/margin-320x568.html",
+      "bytes": 12890,
+      "sha256": "8ca025edf20d677b6fa74faa7716aff89b02a83932dc8c207835b6453d13a269"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/margin-320x568.png",
+      "bytes": 40341,
+      "sha256": "8b0207cd9e08625a02cf21c653828c376cd6c557dfd4b6e68fdc55dbc554ddc4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/margin-390x844.html",
+      "bytes": 12890,
+      "sha256": "8ce6fd638ec1d121076797af79b37d4d3c4ebf9aa290c1056fdd92df61937362"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/margin-390x844.png",
+      "bytes": 72884,
+      "sha256": "6c69de34e4997c217eb538e05841a4596310771037521f9228957cc60667aa2c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round1-alternatives/measurements.json",
+      "bytes": 33276,
+      "sha256": "61a1d57cb741f6370164ebabd3ed1d7baba7ecab2657d6e6364cc2ff40cc3e2c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/evidence.json",
+      "bytes": 126161,
+      "sha256": "9477d29041398b2b1c1e27d4a4ec58238f15099dd626b908e4965112ebbada7e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-next-1366x768.html",
+      "bytes": 171535,
+      "sha256": "fa315f826718070005369e58d36e0b322b630583c83c66fe8dd93c6138b7bf50"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-next-1366x768.png",
+      "bytes": 54032,
+      "sha256": "ff1d35b9559f1655f990e52a10fd876bb9d58b58d80b6ce31666360f2e515a79"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-next-320x568.html",
+      "bytes": 166694,
+      "sha256": "881e1b6271fd6d2e2ac734932cf750db80c4846259b8fec058029711792c0d82"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-next-320x568.png",
+      "bytes": 49978,
+      "sha256": "68a891e2d0f7a100088c00cf6ce02b8aef5b40587347e1c36d8fe1f1a1b8f2dd"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-next-390x844.html",
+      "bytes": 166761,
+      "sha256": "defee620085252e3bc69061c5ba499dcc62ac39cdfcaae35eff0cf95ce369ee2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-next-390x844.png",
+      "bytes": 99148,
+      "sha256": "00090a106b7b2f157e406387d5b5bef3cc97a36b80b94fbabdf9a5d6021da4c7"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-night-1366x768.html",
+      "bytes": 171535,
+      "sha256": "037d06fd17ee0b9f127a154fe35701dc1700c66a11cf77845287e4f48813da14"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-night-1366x768.png",
+      "bytes": 56162,
+      "sha256": "2b7ce06a1c48eb1933ced273c353c67410fee394f835e74562c54cee76ec3048"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-night-320x568.html",
+      "bytes": 166694,
+      "sha256": "ff1227fd959cedf540f6a8b1f6521798fc4a22965885583f0e1b2c9643cfbabb"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-night-320x568.png",
+      "bytes": 50394,
+      "sha256": "9ad1dd13548e338e28f4b35493a89e1fecc22c5c5562f7583dd82a8c08b73cf8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-night-390x844.html",
+      "bytes": 166761,
+      "sha256": "c728f2eeaeb4cd3a52a3e770aa237a5fa3e6fec0b16fe7078e3e1cde9effa6c9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-night-390x844.png",
+      "bytes": 99159,
+      "sha256": "45aa70890a20c269efbc46c1b6b560b6a03e4ed1d4fa71bab60d5b6b916a65b5"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-off-1366x768.html",
+      "bytes": 170314,
+      "sha256": "104efdc1a4cf274b7c7854ef3aca3df657ed92caaab509d90760a5e4874f2367"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-off-1366x768.png",
+      "bytes": 228982,
+      "sha256": "8b401b32a18063d63327932aa39cde6939a2a73ac9f8cf06c37558b89f9266c2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-off-320x568.html",
+      "bytes": 165480,
+      "sha256": "c25558fd9a84f3deda3a51646a4a4010c392119d6399a1ffaa26f2636fa20176"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-off-320x568.png",
+      "bytes": 50381,
+      "sha256": "79a107c5f9023f3b69de287837651b743344d9c9271b4ea3fb9919d9e14ed98d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-off-390x844.html",
+      "bytes": 165480,
+      "sha256": "33a8073ca98940b735aaee28d54ceaee9b30c8483438db74c9a4baddf30a584d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-off-390x844.png",
+      "bytes": 95177,
+      "sha256": "e3a741b42a72669d0929ec72ffdf53a750765aa247d25c57800feb21cb462a34"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-on-1366x768.html",
+      "bytes": 172366,
+      "sha256": "1bc529a2efd3d4f7f49c4c317cdfa47badbf6dcefed584c2adac0aff6ff42ed2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-on-1366x768.png",
+      "bytes": 256291,
+      "sha256": "45db4eeeda4e0c7766ebd768ee55efd8b8e2503cf22e2407a5c27d3b06c2b794"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-on-320x568.html",
+      "bytes": 166501,
+      "sha256": "25dffcbd4baae16766459370ea3253acbae348f9f298381150651e24cc3cb468"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-on-320x568.png",
+      "bytes": 48966,
+      "sha256": "6d04ed53130bda5a886184e3562fbbd199f3a70adc04f652c66c6e619ebcc2fb"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-on-390x844.html",
+      "bytes": 166703,
+      "sha256": "8f972e3721b62a58787e59250fb074052cf38b2fa54b96ce0e3659802df6269f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/reader-on-390x844.png",
+      "bytes": 91184,
+      "sha256": "ed983fd4410906cd4f5c33ea7d2d09accf353d064f76fa2732fbee3368bf0bd5"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/writer-off-1366x768.html",
+      "bytes": 163758,
+      "sha256": "13e30217e4eb97673554875042fecaef83baefc089699a9dcf3507d5a12bdd47"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/writer-off-1366x768.png",
+      "bytes": 190590,
+      "sha256": "8040cbdbec2f7b79439887428821a8d38ec55e68366d05c69c7546102eb0cf53"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/writer-off-320x568.html",
+      "bytes": 158995,
+      "sha256": "36c40b4d8ac2a26a11de6bd4f03fdc798b3fb903fcd8a4534cf8fb1b87b03fdd"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/writer-off-320x568.png",
+      "bytes": 40227,
+      "sha256": "7fbd0981dd80db193aa11c46a764140001bedeed0f3bb96b45dacfec9be6c815"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/writer-off-390x844.html",
+      "bytes": 158995,
+      "sha256": "94a7b750b55383d7fad65f0b7c82084ec394ab5bc1d2f1bb9bc688536a7c8c17"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/writer-off-390x844.png",
+      "bytes": 75967,
+      "sha256": "e27be339931d0f2f09c13da9aec93c110da808ed49e0b05a64429a398f69d9d4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/writer-on-1366x768.html",
+      "bytes": 165185,
+      "sha256": "6dfdb09bbe30edff650f16b01ec0604222bea1e7e97275bf7583dd4bed1ac544"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/writer-on-1366x768.png",
+      "bytes": 196161,
+      "sha256": "72b178400f8e6b95e79384b00930489360e13e7a97172897bff8977ed47af8e0"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/writer-on-320x568.html",
+      "bytes": 160422,
+      "sha256": "be2613ef3b55a6df73214f18ecf56a98fb101f35523d5fc808d5d4c45a02eb1c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/writer-on-320x568.png",
+      "bytes": 42066,
+      "sha256": "79f406b4217b130a64750bb33eadf80a4692df1f7bf6888a28b20280d68409f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/writer-on-390x844.html",
+      "bytes": 160422,
+      "sha256": "5d53e0f668f6a395c77c1faa3cc56ece66ff427cf885f025d3096d3733e2b08e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/writer-on-390x844.png",
+      "bytes": 78441,
+      "sha256": "485b8e82b3a496a11f6128a1deb3389c10e6deee09761c83c99dd30520f1141b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3-details/evidence.json",
+      "bytes": 5117,
+      "sha256": "826f393b579751f58bf629d99126a96edfa097f48f86fd2b7568720eae8d0bd9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3-details/full-key-390x844.png",
+      "bytes": 117605,
+      "sha256": "8e582c710b24596b4b3cfa3b775f89bd3ab7b220d5802d5d2b0068970a0690a2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3-details/reasoning-1366x768.png",
+      "bytes": 334391,
+      "sha256": "5ecf60f39dff3cb3c137daf45488433e1bf97858517516005b3edb65039df0a3"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3-details/reasoning-320x568.png",
+      "bytes": 48537,
+      "sha256": "db0d7d4dd8a13fee799de94b29d91f10b7f35b18c9316849019ef41e981232a2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3-details/reasoning-390x844.png",
+      "bytes": 91719,
+      "sha256": "9a688c79c73996b6196778e423cd71e21dcfecf0d46434067c248bed2a6fde90"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3-details/writer-compact-1366x768.png",
+      "bytes": 193361,
+      "sha256": "bcb0814b84a13fbb5658e84191419493e592e4cb43b4c643acc31b2f28393738"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3-details/writer-compact-320x568.png",
+      "bytes": 44354,
+      "sha256": "78afbb1acf6c55b067129a9130730e575ba7d9b64e57a4467a27b78726a7bbf3"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3-details/writer-compact-390x844.png",
+      "bytes": 77673,
+      "sha256": "2db651f6ebf6e803c9f762deb07e7138b5765e5f1f5537c9236c2b78d3658eb9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/evidence.json",
+      "bytes": 122841,
+      "sha256": "008ce2d58dff87f85553e7feb0810599879f19008bce99f9730c910474c13584"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-next-1366x768.html",
+      "bytes": 171800,
+      "sha256": "2f8f72dcbef225654fd93bdfa6195afa23f5120367501564d5df0d9af64a8b1e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-next-1366x768.png",
+      "bytes": 54032,
+      "sha256": "ff1d35b9559f1655f990e52a10fd876bb9d58b58d80b6ce31666360f2e515a79"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-next-320x568.html",
+      "bytes": 166959,
+      "sha256": "664ab4c9dccfec75a4fa1fe912b867069a7f6abe7af9f162d60520f15a2d13e8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-next-320x568.png",
+      "bytes": 49978,
+      "sha256": "68a891e2d0f7a100088c00cf6ce02b8aef5b40587347e1c36d8fe1f1a1b8f2dd"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-next-390x844.html",
+      "bytes": 167025,
+      "sha256": "3b555cba3a8c1ef66ca1f6f6f3ee4176eea7202aa708e9038f9d1577e8cc435b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-next-390x844.png",
+      "bytes": 99042,
+      "sha256": "f95b2b1d27fc6d63f5eb9e7ef79943fc0b54e79945e1c3bae1c13742c0aaeade"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-night-1366x768.html",
+      "bytes": 171800,
+      "sha256": "86a64096b03c41794d05903bc00d815df204da2b2ab42d7f87af8f4e8ece7394"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-night-1366x768.png",
+      "bytes": 56162,
+      "sha256": "2b7ce06a1c48eb1933ced273c353c67410fee394f835e74562c54cee76ec3048"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-night-320x568.html",
+      "bytes": 166959,
+      "sha256": "359cdc86bf3bfdc4733dda0d28a66e693e82e40f76025007b68eac551684ada4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-night-320x568.png",
+      "bytes": 50394,
+      "sha256": "9ad1dd13548e338e28f4b35493a89e1fecc22c5c5562f7583dd82a8c08b73cf8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-night-390x844.html",
+      "bytes": 167025,
+      "sha256": "7e9c9b6cf9a68c2a9a62de3d61ba714c115cb46758e2e702a975e53ca8fa109d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-night-390x844.png",
+      "bytes": 99063,
+      "sha256": "f6278e34aa3e543b62d1c3209b8b16513dbea2ad40234a71a9de3f66e3247489"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-off-1366x768.html",
+      "bytes": 170579,
+      "sha256": "c0e19bdf0ac228fbda6755274eb3a1073d2b522a06938749716f5fd9775af599"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-off-1366x768.png",
+      "bytes": 228982,
+      "sha256": "8b401b32a18063d63327932aa39cde6939a2a73ac9f8cf06c37558b89f9266c2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-off-320x568.html",
+      "bytes": 165745,
+      "sha256": "4ecccadbc6b0d2991c9ccec6720257d6022ec1b29c2a75990b6bad13d8f4ddd5"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-off-320x568.png",
+      "bytes": 50381,
+      "sha256": "79a107c5f9023f3b69de287837651b743344d9c9271b4ea3fb9919d9e14ed98d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-off-390x844.html",
+      "bytes": 165745,
+      "sha256": "8746877ef00c75633ead3d77245b804a50dcebc054a923b8b684cf343e5a26b8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-off-390x844.png",
+      "bytes": 95177,
+      "sha256": "e3a741b42a72669d0929ec72ffdf53a750765aa247d25c57800feb21cb462a34"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-on-1366x768.html",
+      "bytes": 172631,
+      "sha256": "24093076db4ed9481f81da1f3730d2b5171389cdeb36fb3c2b6534b6e9d50788"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-on-1366x768.png",
+      "bytes": 256291,
+      "sha256": "45db4eeeda4e0c7766ebd768ee55efd8b8e2503cf22e2407a5c27d3b06c2b794"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-on-320x568.html",
+      "bytes": 166766,
+      "sha256": "ac932b53e37f15fc37d32f966a11354eff7e7fa0c9e88a1c36d4652ea06db66f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-on-320x568.png",
+      "bytes": 48965,
+      "sha256": "a33fdff69b55a308dc37381e2a9a0d36a343f9a37c83392afe75c95442091a0a"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-on-390x844.html",
+      "bytes": 166968,
+      "sha256": "f2b4aa74adc48f98fe4463e48c8ffcd448f8f54c401e0f2b7bb8e8e06336411c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/reader-on-390x844.png",
+      "bytes": 91184,
+      "sha256": "ed983fd4410906cd4f5c33ea7d2d09accf353d064f76fa2732fbee3368bf0bd5"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/writer-off-1366x768.html",
+      "bytes": 164023,
+      "sha256": "345698f04714ee7a8efb08adf7b342a296f0ad042875c23032b65a81626f0ff6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/writer-off-1366x768.png",
+      "bytes": 190590,
+      "sha256": "8040cbdbec2f7b79439887428821a8d38ec55e68366d05c69c7546102eb0cf53"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/writer-off-320x568.html",
+      "bytes": 159260,
+      "sha256": "6cae1fe49571010c6e4e485f4fed4d6e221d9de43f44856e88d8b8887069c274"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/writer-off-320x568.png",
+      "bytes": 42789,
+      "sha256": "fee9769c100421ed4496c5608317be5715097f3dff86dc607de8f2652da95f68"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/writer-off-390x844.html",
+      "bytes": 159260,
+      "sha256": "ac339414b28eb61ee3cf61634cc6a842e44b2da9d3a20f2da53ee29776facbba"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/writer-off-390x844.png",
+      "bytes": 75967,
+      "sha256": "e27be339931d0f2f09c13da9aec93c110da808ed49e0b05a64429a398f69d9d4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/writer-on-1366x768.html",
+      "bytes": 165187,
+      "sha256": "457d2c6c3fb665566b76ffb9143eb16a0409ab2067ef0869e7919c4ad1c01eb4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/writer-on-1366x768.png",
+      "bytes": 193361,
+      "sha256": "bcb0814b84a13fbb5658e84191419493e592e4cb43b4c643acc31b2f28393738"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/writer-on-320x568.html",
+      "bytes": 160222,
+      "sha256": "4fc2ca8b12c399c89fbded12cab3214ac47a5b64e19ab814a667283a610f251a"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/writer-on-320x568.png",
+      "bytes": 44354,
+      "sha256": "78afbb1acf6c55b067129a9130730e575ba7d9b64e57a4467a27b78726a7bbf3"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/writer-on-390x844.html",
+      "bytes": 160424,
+      "sha256": "9316d63295f570c82b6de9cbe3ea7f9fbe36c0d8ce4743d37954eea6891a5522"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/writer-on-390x844.png",
+      "bytes": 77673,
+      "sha256": "2db651f6ebf6e803c9f762deb07e7138b5765e5f1f5537c9236c2b78d3658eb9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-details/evidence.json",
+      "bytes": 5116,
+      "sha256": "a0055e6f96c81ce2e28c9d0bfe61d8b4018e77565343cfc0b250862b046f36a5"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-details/full-key-390x844.png",
+      "bytes": 116011,
+      "sha256": "038129cdb7e4dbc3a827fa81faae4c480b94d8ab8cc0a4b5f7dceab69465682c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-details/reasoning-1366x768.png",
+      "bytes": 329175,
+      "sha256": "5588a12c16fe2082d3a949b4211244fcdf2f74b57c75ab9f51f3182ec3a0010d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-details/reasoning-320x568.png",
+      "bytes": 47439,
+      "sha256": "fe8171e8e74cb6958a996ec72b0b276532f3d7f06e562b1c76216fbbeabbc7f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-details/reasoning-390x844.png",
+      "bytes": 86486,
+      "sha256": "70e9e45685f0d0fe948eff3dfb7fb82f242ca3c062f68e4a0e7fc2748684506d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-details/writer-compact-1366x768.png",
+      "bytes": 193122,
+      "sha256": "ae549a3dbd18bf072001b0826c23ec73ecc76f539518e48f475cf1e4b60acf2e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-details/writer-compact-320x568.png",
+      "bytes": 44009,
+      "sha256": "5715bc69d2a86a65f6ad17970b197db792a5999d700f1a38f61be44aa2132ec2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-details/writer-compact-390x844.png",
+      "bytes": 77398,
+      "sha256": "5e83c884e85953bd56f60c0793b18d479db18a48441091cfe0313009c4b7ae5f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/absent-1366x768.png",
+      "bytes": 226959,
+      "sha256": "4c98b5afb8740ab35e5cdab25059ebe56a9f4ad3daa282de832ab625717d7de2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/absent-320x568.png",
+      "bytes": 50105,
+      "sha256": "512b7daae9bca400e5b3d1409eecec996ce97b172d4cce0c1e255dd35d3c9c3d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/absent-390x844.png",
+      "bytes": 90733,
+      "sha256": "15a70e9d968badd4453cbf9b0c0a39e21672b884c7159f5049857fb9234951ed"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/evidence.json",
+      "bytes": 4970,
+      "sha256": "2860244b586f90c943b661784faad2f7c5908da9540eb7f7ff94ddfd6841da84"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/neutral-rest-1366x768.png",
+      "bytes": 226455,
+      "sha256": "204b222db70fc60470e5edd0be98e600c2f7c8276605697a922247a164de2a0e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/neutral-rest-320x568.png",
+      "bytes": 48196,
+      "sha256": "1e614296ad91aa68a57400e756276d515a052f9adeb759ee02b820e53f875f7f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/neutral-rest-390x844.png",
+      "bytes": 89610,
+      "sha256": "0937662cf3a9544f0e476eec2f5d9753af5cd023ab0f35dbe41e325f0a37f882"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/sparse-1366x768.png",
+      "bytes": 227390,
+      "sha256": "0803ee090d95eedcffe87f67b3db816badba9bb0086cbc270e7d14f93e978a1a"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/sparse-320x568.png",
+      "bytes": 50883,
+      "sha256": "e4b7cc1d47f435d42764f54ad7e6205890b0017e0989a1267e1523ae8670acbf"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/sparse-390x844.png",
+      "bytes": 91415,
+      "sha256": "ec6bce3f23884c535159165a34bb17028cf0b0b8716341d44d98765f3f25124d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/writer-compact-1366x768.png",
+      "bytes": 193122,
+      "sha256": "ae549a3dbd18bf072001b0826c23ec73ecc76f539518e48f475cf1e4b60acf2e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/writer-compact-320x568.png",
+      "bytes": 44009,
+      "sha256": "5715bc69d2a86a65f6ad17970b197db792a5999d700f1a38f61be44aa2132ec2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/writer-compact-390x844.png",
+      "bytes": 77398,
+      "sha256": "5e83c884e85953bd56f60c0793b18d479db18a48441091cfe0313009c4b7ae5f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/writer-stale-1366x768.png",
+      "bytes": 190865,
+      "sha256": "cd6bf6d2e261bb9f19a21c10b9aef7c28fbc4212a55b4f394bb60959681abebd"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/writer-stale-320x568.png",
+      "bytes": 44715,
+      "sha256": "6595a347d7eb984dede8cffb1060b164e24a252944a7809a0f0f3b34a99be7b2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-semantics/writer-stale-390x844.png",
+      "bytes": 79472,
+      "sha256": "cb59bb060be01d605b1579fd7f635b0598b452d9ad8d40428cc3bd735af715c5"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-1366x768-at-2040.png",
+      "bytes": 231970,
+      "sha256": "23e1d54aa35d0bc8725dd12fdc1dbefaf88495d8da0abcddf737cc64a5a32483"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-1366x768-at-2317.png",
+      "bytes": 80264,
+      "sha256": "09ee1c1c0ca7dceac99fe74b29283b9fca749f19cb499c63bd85c33e888a0a9a"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-1366x768-at-2656.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-1366x768-rest-night.png",
+      "bytes": 51947,
+      "sha256": "ba7f7d14705ccf2163c206abad157bbb2be39b6caa2ec96a3d7f492286846895"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-1366x768-selection.png",
+      "bytes": 257593,
+      "sha256": "ce98a322ab79788431c208d1bb310990087867f79eb6c3bccdced545f4c7e9ce"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-320x568-at-1030.png",
+      "bytes": 75812,
+      "sha256": "b42b0dd5f54a78c7bb79ee96aa7125fe99eeb40c7b1da6b55f5118395bc4f5f3"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-320x568-at-1193.png",
+      "bytes": 48748,
+      "sha256": "c7a758c0d75ff88df52247712259f240b2849f70045d7784de660acea20356b6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-320x568-at-1370.png",
+      "bytes": 48748,
+      "sha256": "c7a758c0d75ff88df52247712259f240b2849f70045d7784de660acea20356b6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-320x568-rest-night.png",
+      "bytes": 48362,
+      "sha256": "4e9a32acc393d49801ee276238e39400bd487da08b8639f07655b78d7d41a1a0"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-320x568-selection.png",
+      "bytes": 49101,
+      "sha256": "f799aa82b0764c9d7218994f6ff62b0f6a0caa1b2f3e2388b9dff64a30b57703"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-390x844-at-1045.png",
+      "bytes": 146531,
+      "sha256": "8c540c2e540f6a2ad06823d5694250cc3bcfc0647a1c0b74d5c08cfbd9e6fb5c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-390x844-at-1255.png",
+      "bytes": 105292,
+      "sha256": "2f73704540089d426668108660928c167728e959f0ddecb12f1bdd3f8659549e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-390x844-at-1474.png",
+      "bytes": 98324,
+      "sha256": "fb60f6a9d54a3635e0a9019dbfe31e746403c5ea9ad754d11fc1dbdb6e229164"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-390x844-rest-night.png",
+      "bytes": 96423,
+      "sha256": "29342300753803fa114660f3491451d6ce369db592aa5f94b32324f475c99403"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/curl-390x844-selection.png",
+      "bytes": 91430,
+      "sha256": "927911ed9d4dd2e21b00bac0c4fdf43d2be715c5ce00c4b3c596504b7e233437"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/evidence.json",
+      "bytes": 114118,
+      "sha256": "d662b6e28657d0afe316b8458fab033003510b62be013869c68bb7cbd2abc91e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-1366x768-at-1260.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-1366x768-at-1439.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-1366x768-at-1643.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-1366x768-rest-night.png",
+      "bytes": 51947,
+      "sha256": "ba7f7d14705ccf2163c206abad157bbb2be39b6caa2ec96a3d7f492286846895"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-1366x768-selection.png",
+      "bytes": 257593,
+      "sha256": "802c1c5e44896dfb703e81b5233e5403588a26b8f5ce5d7895c493c6b43231b4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-320x568-at-1064.png",
+      "bytes": 48749,
+      "sha256": "6b5b43eb3d78dac1dd90b4a2fb258558297c4cb8d455bc11a21fd233a7238f63"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-320x568-at-1228.png",
+      "bytes": 48749,
+      "sha256": "6b5b43eb3d78dac1dd90b4a2fb258558297c4cb8d455bc11a21fd233a7238f63"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-320x568-at-1405.png",
+      "bytes": 48749,
+      "sha256": "6b5b43eb3d78dac1dd90b4a2fb258558297c4cb8d455bc11a21fd233a7238f63"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-320x568-rest-night.png",
+      "bytes": 48362,
+      "sha256": "4e9a32acc393d49801ee276238e39400bd487da08b8639f07655b78d7d41a1a0"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-320x568-selection.png",
+      "bytes": 49104,
+      "sha256": "609e671a0c3e37db931875647f2be014a7b4e0fff8a5492a544c48399c9072ce"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-390x844-at-1042.png",
+      "bytes": 98326,
+      "sha256": "689ecd79dcec17f3b7ae959a3950f2391d71aa4578422cd0e86291a669e69468"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-390x844-at-1206.png",
+      "bytes": 98326,
+      "sha256": "689ecd79dcec17f3b7ae959a3950f2391d71aa4578422cd0e86291a669e69468"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-390x844-at-1407.png",
+      "bytes": 98326,
+      "sha256": "689ecd79dcec17f3b7ae959a3950f2391d71aa4578422cd0e86291a669e69468"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-390x844-rest-night.png",
+      "bytes": 96423,
+      "sha256": "29342300753803fa114660f3491451d6ce369db592aa5f94b32324f475c99403"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/reduced-390x844-selection.png",
+      "bytes": 91430,
+      "sha256": "cb3620ec74b8b6244322efe20a18fdc904b5a6e478355e3c6902652f1085f1a2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/video/page@0b6e501c276f4ea0fc67279a10bbb58a.webm",
+      "bytes": 332384,
+      "sha256": "680a346eb6a004c9ca22c941204cdaede71bf9a3e58f5a34eadaa0e8cdbb7cfa"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/video/page@2f8b2defd7970dd8d7c0ac2ac9b902b2.webm",
+      "bytes": 547867,
+      "sha256": "8d8adc6aa4f52fa2a7b8f28487e992a7b5515436addfafb0474dad549f365371"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/video/page@32cfd6a7f010b43fbba9235841aa5457.webm",
+      "bytes": 348602,
+      "sha256": "8fe0dbf13492ff1587f12edd3e4f7a390b3d4df4a960df484f9fe35d177c1945"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/video/page@4481a919dfb97d72caf240f6ebbd285a.webm",
+      "bytes": 794506,
+      "sha256": "9d6d3da4ee98f9a034c35c7562c8012844158397f3c7c447ccbf009e11fbdaa0"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/video/page@70051adb42b0865e5e73afb1c06f745f.webm",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/video/page@77e22a2b5ae121bcf943152822574027.webm",
+      "bytes": 1188936,
+      "sha256": "bb7060cc7054c005d8224ed2e5175d48a7c8f81cfeeab7a1f59af9137134398d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-motion/video/page@9963476b651236a09e50f24a439115b7.webm",
+      "bytes": 441736,
+      "sha256": "8e52971325c2002b39abfe871a9c89d222eccf83242fd7a72b800b0cd43ee7c0"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-slide/evidence.json",
+      "bytes": 43545,
+      "sha256": "785842872f23ec4baed689d675f30e339fac7772f682989616b6b0e97d179d0c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-slide/slide-1366x768-at-2434.png",
+      "bytes": 243727,
+      "sha256": "b24d1737f1009c73742b2f893bc538c1d215f518e551b6a763496d6187f2d9a3"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-slide/slide-1366x768-at-2696.png",
+      "bytes": 208124,
+      "sha256": "16ebb30e2977a85c94e581ad4456d5dfa4c658c833e443b47cf1d47b720b17ac"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-slide/slide-1366x768-at-2915.png",
+      "bytes": 208124,
+      "sha256": "16ebb30e2977a85c94e581ad4456d5dfa4c658c833e443b47cf1d47b720b17ac"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-slide/slide-1366x768-rest-night.png",
+      "bytes": 206323,
+      "sha256": "bb98484966940e78f0c09d263ab4fa09d441f0068e7c13f39e0bd7d6b7256289"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-slide/slide-1366x768-selection.png",
+      "bytes": 228550,
+      "sha256": "a5ef1f80686857e15fa968d82f1e92f101d90b04210cb83d2ab395e98e78bb60"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-slide/slide-320x568-at-1205.png",
+      "bytes": 52541,
+      "sha256": "9e6c77ad8d2a8f924e7b5f54a4c0062dfc6b3f6688757f7055e107af14af8708"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-slide/slide-320x568-at-1366.png",
+      "bytes": 49014,
+      "sha256": "be6b7969237a12e135fbef1717a603e70b821d1dde228777441b8b7d620c55e8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-slide/slide-320x568-at-1557.png",
+      "bytes": 49014,
+      "sha256": "be6b7969237a12e135fbef1717a603e70b821d1dde228777441b8b7d620c55e8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-slide/slide-320x568-rest-night.png",
+      "bytes": 48529,
+      "sha256": "ff46ee2f0a918596a86769a146fc5617a9d8ccb645ad378f8b9555ce2567874b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-slide/slide-320x568-selection.png",
+      "bytes": 49652,
+      "sha256": "9aad8f79b04427cb2bbc5cb06704d3c5b09fa8d1233837ab8e4433d7a0935bc6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-slide/video/page@690febdd5841295dc896cd814c7fc183.webm",
+      "bytes": 2516606,
+      "sha256": "17eec2bfe34cb594ebddb87baf302445fb3bd1ceb238159b5ea877add4e527c6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5-slide/video/page@6cf31190b9efb85ace8ff9712d02fff2.webm",
+      "bytes": 443946,
+      "sha256": "27deb1a10ebf2265f44e17f76c8c7f94f796b06ecb588cf0299f7833c460c082"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/evidence.json",
+      "bytes": 123535,
+      "sha256": "9c65616e5d8eea2379450a7b57e5c6517db4404fcedb2c0c7947396e3f0126a6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-next-1366x768.html",
+      "bytes": 172762,
+      "sha256": "39255b92ebae9598eaaefae75776ff9971d06ba989fa45ca6fd22c765720ef03"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-next-1366x768.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-next-320x568.html",
+      "bytes": 167769,
+      "sha256": "cad680439624449b438282ed1c5ba57a89ca080aceb69ceb4d1ebdfaacea12d5"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-next-320x568.png",
+      "bytes": 48749,
+      "sha256": "6b5b43eb3d78dac1dd90b4a2fb258558297c4cb8d455bc11a21fd233a7238f63"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-next-390x844.html",
+      "bytes": 167987,
+      "sha256": "ad0f7859a7ec61673e7455d48b41bf2704771200c325306548272930fa3c92bf"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-next-390x844.png",
+      "bytes": 98326,
+      "sha256": "689ecd79dcec17f3b7ae959a3950f2391d71aa4578422cd0e86291a669e69468"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-night-1366x768.html",
+      "bytes": 172762,
+      "sha256": "9e3d0fd249281b7e8eafa56816d8434a38079b2b54f85bfc48db60a8e4e1cc33"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-night-1366x768.png",
+      "bytes": 55957,
+      "sha256": "6503130c0c0097a883a7c546feb4e45fbebe2fbc5f28f55fc445ee63bf0eb6d9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-night-320x568.html",
+      "bytes": 167769,
+      "sha256": "e7025a9d836de7a2bd571b84137b0fdd5ac3f5e3878f2f0fce340c8298dbe27a"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-night-320x568.png",
+      "bytes": 49078,
+      "sha256": "cb5b9c0d51d71041c264a1b5d7233406ff14e32e17f66a0c8167d60ab51ccc2b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-night-390x844.html",
+      "bytes": 167987,
+      "sha256": "3f2b2c62b6a9ce972528f20935933b9defac88797eb62178df98d793265709d9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-night-390x844.png",
+      "bytes": 98288,
+      "sha256": "14e150b2cd3b74feed49f5f518f385cf1606fb9f845b49443b75305f617b456e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-off-1366x768.html",
+      "bytes": 171522,
+      "sha256": "aa8e17300311d51a4d32825d4be0c3e37260d3dbfd55226bc31a0d3b05d5cadb"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-off-1366x768.png",
+      "bytes": 229019,
+      "sha256": "d210777c36186b0d89ab502318e20414e80f4339453d7d15b690a45e937230e9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-off-320x568.html",
+      "bytes": 166688,
+      "sha256": "094d04d787a31fb65d215c10e448d6a6529c0c87834cdd68810f6756d3f82827"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-off-320x568.png",
+      "bytes": 50381,
+      "sha256": "79a107c5f9023f3b69de287837651b743344d9c9271b4ea3fb9919d9e14ed98d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-off-390x844.html",
+      "bytes": 166688,
+      "sha256": "003d654237f8025450b803de127abc30fa278bdc99099b60d099864becb68a62"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-off-390x844.png",
+      "bytes": 95177,
+      "sha256": "e3a741b42a72669d0929ec72ffdf53a750765aa247d25c57800feb21cb462a34"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-on-1366x768.html",
+      "bytes": 173593,
+      "sha256": "12a397d7707eef6dd9e5b52c70c6bdecae4dfc1c74b8e307f504c7de90dd166d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-on-1366x768.png",
+      "bytes": 256489,
+      "sha256": "8d94fa7eef163b1786f8bb3c540903b50b0892e5d91e4b0c04bd7337746e2c9e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-on-320x568.html",
+      "bytes": 167728,
+      "sha256": "0ad54d4fe59061f7d49aee1b52acca5b5f59a4fdf0e8638917a5337ddd0cdef7"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-on-320x568.png",
+      "bytes": 48565,
+      "sha256": "0d97ea6a3b0bc266668a28b6c556cd8e0e8e58093d5657fab31ab6b076b91619"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-on-390x844.html",
+      "bytes": 167930,
+      "sha256": "7809f92fbdfff4594f089a18200f2fcca19709ca3821c3c06ecfeccc29040ede"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/reader-on-390x844.png",
+      "bytes": 90757,
+      "sha256": "c3f18aa8cccac21182e3f845a236c6c5682866886f5e2f5f10fbda50a37c037f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/writer-off-1366x768.html",
+      "bytes": 164965,
+      "sha256": "551d449cc73d81ba10a79f6b6558a4a77a2937cf0b5964f0e593aa59c0c2eb9d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/writer-off-1366x768.png",
+      "bytes": 190641,
+      "sha256": "be7fa423cf9a9715490f6eb17ad0046a224767f8b02a79fdcc1598a22ad6065f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/writer-off-320x568.html",
+      "bytes": 160202,
+      "sha256": "b39a824e05de757daa84694c2a8a9471c3810306431a1ad8d58509c8ddfc91b5"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/writer-off-320x568.png",
+      "bytes": 42789,
+      "sha256": "fee9769c100421ed4496c5608317be5715097f3dff86dc607de8f2652da95f68"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/writer-off-390x844.html",
+      "bytes": 160202,
+      "sha256": "fa28b0ecf651e832d0306e64c596e7e8a18a7e4f03ec1744b67a3472b6e2478c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/writer-off-390x844.png",
+      "bytes": 75967,
+      "sha256": "e27be339931d0f2f09c13da9aec93c110da808ed49e0b05a64429a398f69d9d4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/writer-on-1366x768.html",
+      "bytes": 166129,
+      "sha256": "a0dd82fb8dd8f6a08eba483aa528882d73872e3a2c5af11a0875a7971c96a8d7"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/writer-on-1366x768.png",
+      "bytes": 193122,
+      "sha256": "ae549a3dbd18bf072001b0826c23ec73ecc76f539518e48f475cf1e4b60acf2e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/writer-on-320x568.html",
+      "bytes": 161164,
+      "sha256": "0caf9bf8b47b1dffaa4c0fbaeb87b8837b64d6bc6af69bfb0242600b8d975cec"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/writer-on-320x568.png",
+      "bytes": 44009,
+      "sha256": "5715bc69d2a86a65f6ad17970b197db792a5999d700f1a38f61be44aa2132ec2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/writer-on-390x844.html",
+      "bytes": 161366,
+      "sha256": "c0f99d4867d14518da224b61953cce45115308e6b637fcb8b261499c5a5efc36"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/writer-on-390x844.png",
+      "bytes": 77398,
+      "sha256": "5e83c884e85953bd56f60c0793b18d479db18a48441091cfe0313009c4b7ae5f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-fallback/evidence.json",
+      "bytes": 2163,
+      "sha256": "fdf6815f4008ce35a15ec4e71d73cb89bec9a238193bdf9f775f746d95a67771"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-fallback/fallback-1366x768.png",
+      "bytes": 232147,
+      "sha256": "1a123469e66c7b3215b97b104511c869e6ed70226b8f39af813190e72ddd2a8c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-fallback/fallback-320x568.png",
+      "bytes": 48531,
+      "sha256": "5a7e66924a8bfcea511153f9f5f9b67a07021f9609f5abb1159b71b5eb4b7958"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-fallback/fallback-390x844.png",
+      "bytes": 90243,
+      "sha256": "af0afcd8e87c309af645be9b67f602d1991c2129c1eb8efeee239aa70de2733f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-fallback/fallback-details-1366x768.png",
+      "bytes": 319201,
+      "sha256": "813cea29cdbe859b762005b37ce7e0b21839ae6e6ae1034bbac738277902c2d9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-fallback/fallback-details-320x568.png",
+      "bytes": 47149,
+      "sha256": "8e630199a5d6c0cd5ed7a560733134d71f1ef438120cbeeb9f03743812994bfe"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-fallback/fallback-details-390x844.png",
+      "bytes": 85975,
+      "sha256": "c7ce77257c68c2732a7c18ff555662aff69e512b0bca83df6ad5e7f6f2a3bc0e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-1366x768-at-3136.png",
+      "bytes": 192653,
+      "sha256": "20b87074d4d579a99ff6b163cf469162579308e25da3270cb812385255231371"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-1366x768-at-3464.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-1366x768-at-3927.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-1366x768-rest-night.png",
+      "bytes": 51947,
+      "sha256": "ba7f7d14705ccf2163c206abad157bbb2be39b6caa2ec96a3d7f492286846895"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-1366x768-selection.png",
+      "bytes": 257593,
+      "sha256": "802c1c5e44896dfb703e81b5233e5403588a26b8f5ce5d7895c493c6b43231b4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-320x568-at-1316.png",
+      "bytes": 86156,
+      "sha256": "0c54e30bda9b3f627e34e5a506bd929f9c7ab773a3a3e6d57cdbac6e22de9abe"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-320x568-at-1500.png",
+      "bytes": 48748,
+      "sha256": "c7a758c0d75ff88df52247712259f240b2849f70045d7784de660acea20356b6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-320x568-at-1695.png",
+      "bytes": 48748,
+      "sha256": "c7a758c0d75ff88df52247712259f240b2849f70045d7784de660acea20356b6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-320x568-rest-night.png",
+      "bytes": 48362,
+      "sha256": "4e9a32acc393d49801ee276238e39400bd487da08b8639f07655b78d7d41a1a0"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-320x568-selection.png",
+      "bytes": 49101,
+      "sha256": "a4a263d3754dd76a70f881e167abad7ac40f45a72482c36bd248157d3d14994c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-390x844-at-1405.png",
+      "bytes": 169900,
+      "sha256": "9f9b8f405d619042cac8cc4a201872ccab9934d1918e58bde401a9083172b039"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-390x844-at-1626.png",
+      "bytes": 98324,
+      "sha256": "fb60f6a9d54a3635e0a9019dbfe31e746403c5ea9ad754d11fc1dbdb6e229164"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-390x844-at-1829.png",
+      "bytes": 98324,
+      "sha256": "fb60f6a9d54a3635e0a9019dbfe31e746403c5ea9ad754d11fc1dbdb6e229164"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-390x844-rest-night.png",
+      "bytes": 96423,
+      "sha256": "29342300753803fa114660f3491451d6ce369db592aa5f94b32324f475c99403"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/curl-390x844-selection.png",
+      "bytes": 91434,
+      "sha256": "479ab2ea0be40478018fc686aa70bb55d9068b8a26775f8f4ae026b58bb7cca2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/evidence.json",
+      "bytes": 131383,
+      "sha256": "2292e7c7db471b19e0a8a24e255c0c4b44a087055be865d388945af5cdf36998"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-1366x768-at-1609.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-1366x768-at-1832.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-1366x768-at-2065.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-1366x768-rest-night.png",
+      "bytes": 51947,
+      "sha256": "ba7f7d14705ccf2163c206abad157bbb2be39b6caa2ec96a3d7f492286846895"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-1366x768-selection.png",
+      "bytes": 257593,
+      "sha256": "802c1c5e44896dfb703e81b5233e5403588a26b8f5ce5d7895c493c6b43231b4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-320x568-at-1519.png",
+      "bytes": 48749,
+      "sha256": "6b5b43eb3d78dac1dd90b4a2fb258558297c4cb8d455bc11a21fd233a7238f63"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-320x568-at-1688.png",
+      "bytes": 48749,
+      "sha256": "6b5b43eb3d78dac1dd90b4a2fb258558297c4cb8d455bc11a21fd233a7238f63"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-320x568-at-1862.png",
+      "bytes": 48749,
+      "sha256": "6b5b43eb3d78dac1dd90b4a2fb258558297c4cb8d455bc11a21fd233a7238f63"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-320x568-rest-night.png",
+      "bytes": 48362,
+      "sha256": "4e9a32acc393d49801ee276238e39400bd487da08b8639f07655b78d7d41a1a0"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-320x568-selection.png",
+      "bytes": 49104,
+      "sha256": "609e671a0c3e37db931875647f2be014a7b4e0fff8a5492a544c48399c9072ce"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-390x844-at-1625.png",
+      "bytes": 98324,
+      "sha256": "fb60f6a9d54a3635e0a9019dbfe31e746403c5ea9ad754d11fc1dbdb6e229164"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-390x844-at-1816.png",
+      "bytes": 98324,
+      "sha256": "fb60f6a9d54a3635e0a9019dbfe31e746403c5ea9ad754d11fc1dbdb6e229164"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-390x844-at-1999.png",
+      "bytes": 98324,
+      "sha256": "fb60f6a9d54a3635e0a9019dbfe31e746403c5ea9ad754d11fc1dbdb6e229164"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-390x844-rest-night.png",
+      "bytes": 96423,
+      "sha256": "29342300753803fa114660f3491451d6ce369db592aa5f94b32324f475c99403"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/reduced-390x844-selection.png",
+      "bytes": 91430,
+      "sha256": "cb3620ec74b8b6244322efe20a18fdc904b5a6e478355e3c6902652f1085f1a2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/video/page@8acd3ecd84d06ca078d7cdcc1022d28e.webm",
+      "bytes": 890562,
+      "sha256": "8b62e0f1e0cecb2df195c0c4bc31cb2262f5558da3fee8730a0c6fd00cfb5d3b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/video/page@9f4f848012965102b7aabde24b5a2197.webm",
+      "bytes": 304258,
+      "sha256": "3f026bbb895ff365aa4500cdd3af812807d6b67c0371e4ccf7fa6d90bb7cd70e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/video/page@b38e64acac99738c5f4641665804cfab.webm",
+      "bytes": 1174437,
+      "sha256": "fb3fae78a0aecf7dc75261a78caf0c6986c096f2b9d6d43772094b39a6f00e00"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/video/page@e03f71a840e55d3b3149757b49830395.webm",
+      "bytes": 382703,
+      "sha256": "790638720b08a8f9edf381978c8d960711f354ce2e876629e150dc46671d4ec6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/video/page@ec62365f7479db50ce4e6e5189a7aa1d.webm",
+      "bytes": 610501,
+      "sha256": "f9971401af577cacaf67b88d85e92f2247afa7b8e1ac055de7fda639cc113ca6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-motion/video/page@fb9977690a380884351b02940e17caae.webm",
+      "bytes": 637112,
+      "sha256": "a0f63734b19ff64bf76ac1843e8753bbf5279b17240a51c6185c12d75562c7c2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-slide/evidence.json",
+      "bytes": 48093,
+      "sha256": "cbebeb19d45d58461f893f53ac0cb9127190e452b131b8ed5cb1aa9467e15522"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-slide/slide-1366x768-at-3393.png",
+      "bytes": 230083,
+      "sha256": "0d2ad98988442001554c2289fe90c908725a2bf1617ced13629c919447a23a1f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-slide/slide-1366x768-at-3691.png",
+      "bytes": 208124,
+      "sha256": "16ebb30e2977a85c94e581ad4456d5dfa4c658c833e443b47cf1d47b720b17ac"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-slide/slide-1366x768-at-3936.png",
+      "bytes": 208124,
+      "sha256": "16ebb30e2977a85c94e581ad4456d5dfa4c658c833e443b47cf1d47b720b17ac"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-slide/slide-1366x768-rest-night.png",
+      "bytes": 206323,
+      "sha256": "bb98484966940e78f0c09d263ab4fa09d441f0068e7c13f39e0bd7d6b7256289"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-slide/slide-1366x768-selection.png",
+      "bytes": 228549,
+      "sha256": "ab8dd04b2b8a46bdb8e837557e841c3189d063f4883beda501e1e24fcc22e181"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-slide/slide-320x568-at-1589.png",
+      "bytes": 53196,
+      "sha256": "1b1e6d6415f5c4b73830317da39e41ce576b63de07d51f06297f67a1a5d39370"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-slide/slide-320x568-at-1769.png",
+      "bytes": 49019,
+      "sha256": "464ce81de595b0cba56093acb4c6c90ea998e7881c07db0c1635992ccbff8b39"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-slide/slide-320x568-at-1955.png",
+      "bytes": 49019,
+      "sha256": "464ce81de595b0cba56093acb4c6c90ea998e7881c07db0c1635992ccbff8b39"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-slide/slide-320x568-rest-night.png",
+      "bytes": 48529,
+      "sha256": "ff46ee2f0a918596a86769a146fc5617a9d8ccb645ad378f8b9555ce2567874b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-slide/slide-320x568-selection.png",
+      "bytes": 49652,
+      "sha256": "a3aa4f8df0c2bc395d4322991cd142196a7dea36f09115264193b726a39f2430"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-slide/video/page@5c2df8ad4cf1754a2ae61f3054e05859.webm",
+      "bytes": 2756829,
+      "sha256": "fc2c16f46bae7149afcfec74c4420727bc5f0ec3fdccfd6bdb5b283de0cba29c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6-slide/video/page@b2e5d14800b13a3a33d5d45eca98190d.webm",
+      "bytes": 497905,
+      "sha256": "e0a9b2fb521bba1a57565379f20dbd5957a964f381b6116fd1a0693768b02f25"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/evidence.json",
+      "bytes": 123535,
+      "sha256": "6377e4974439ddccee09a4e48ce0df18b375ff842e3843937f2a7075de065fda"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-next-1366x768.html",
+      "bytes": 172857,
+      "sha256": "209858daf8c6217cbda8777c555218a95f51374a82ad968564cda9dcabdee92b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-next-1366x768.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-next-320x568.html",
+      "bytes": 167864,
+      "sha256": "77d34419e934f671599cab03a1f7baaa7d1b5d1f75e8a450e3fec8770089218a"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-next-320x568.png",
+      "bytes": 48749,
+      "sha256": "6b5b43eb3d78dac1dd90b4a2fb258558297c4cb8d455bc11a21fd233a7238f63"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-next-390x844.html",
+      "bytes": 168082,
+      "sha256": "381f5cf14c7f1a9d94d0a8431072d73e24b1a5d008ca2d4bb800e13f102aca1a"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-next-390x844.png",
+      "bytes": 98326,
+      "sha256": "689ecd79dcec17f3b7ae959a3950f2391d71aa4578422cd0e86291a669e69468"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-night-1366x768.html",
+      "bytes": 172857,
+      "sha256": "db2bdbe38da1261276c5da678dd7ad1829794cbb6ed83415b5f69499dcbc92b7"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-night-1366x768.png",
+      "bytes": 55957,
+      "sha256": "6503130c0c0097a883a7c546feb4e45fbebe2fbc5f28f55fc445ee63bf0eb6d9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-night-320x568.html",
+      "bytes": 167864,
+      "sha256": "5289fa5f6acd1fa2b3f72eab12de460c89c5836c6df0c12b55d39b24ce7d4f87"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-night-320x568.png",
+      "bytes": 49078,
+      "sha256": "cb5b9c0d51d71041c264a1b5d7233406ff14e32e17f66a0c8167d60ab51ccc2b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-night-390x844.html",
+      "bytes": 168082,
+      "sha256": "f191f052177281f91846fd148c17d981ab378a76761fa85b506c142b761ef28f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-night-390x844.png",
+      "bytes": 98288,
+      "sha256": "14e150b2cd3b74feed49f5f518f385cf1606fb9f845b49443b75305f617b456e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-off-1366x768.html",
+      "bytes": 171522,
+      "sha256": "aa8e17300311d51a4d32825d4be0c3e37260d3dbfd55226bc31a0d3b05d5cadb"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-off-1366x768.png",
+      "bytes": 229019,
+      "sha256": "d210777c36186b0d89ab502318e20414e80f4339453d7d15b690a45e937230e9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-off-320x568.html",
+      "bytes": 166688,
+      "sha256": "094d04d787a31fb65d215c10e448d6a6529c0c87834cdd68810f6756d3f82827"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-off-320x568.png",
+      "bytes": 50381,
+      "sha256": "79a107c5f9023f3b69de287837651b743344d9c9271b4ea3fb9919d9e14ed98d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-off-390x844.html",
+      "bytes": 166688,
+      "sha256": "003d654237f8025450b803de127abc30fa278bdc99099b60d099864becb68a62"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-off-390x844.png",
+      "bytes": 95177,
+      "sha256": "e3a741b42a72669d0929ec72ffdf53a750765aa247d25c57800feb21cb462a34"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-on-1366x768.html",
+      "bytes": 173688,
+      "sha256": "cce4056b4ea585c7fad4b30437b8850a5c4f35c7e61178d16cfcd55072ed0dc9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-on-1366x768.png",
+      "bytes": 256489,
+      "sha256": "8d94fa7eef163b1786f8bb3c540903b50b0892e5d91e4b0c04bd7337746e2c9e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-on-320x568.html",
+      "bytes": 167823,
+      "sha256": "b621ce2f9c2f9b954ebd027db00e2278b96621eec299037c548b8ed61686d4c6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-on-320x568.png",
+      "bytes": 48565,
+      "sha256": "0d97ea6a3b0bc266668a28b6c556cd8e0e8e58093d5657fab31ab6b076b91619"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-on-390x844.html",
+      "bytes": 168025,
+      "sha256": "7e2e3ba86ec1e428357b555a920582208497d2174672e87a1b2ab50e558e7d78"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/reader-on-390x844.png",
+      "bytes": 90757,
+      "sha256": "c3f18aa8cccac21182e3f845a236c6c5682866886f5e2f5f10fbda50a37c037f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/writer-off-1366x768.html",
+      "bytes": 164965,
+      "sha256": "551d449cc73d81ba10a79f6b6558a4a77a2937cf0b5964f0e593aa59c0c2eb9d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/writer-off-1366x768.png",
+      "bytes": 190641,
+      "sha256": "be7fa423cf9a9715490f6eb17ad0046a224767f8b02a79fdcc1598a22ad6065f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/writer-off-320x568.html",
+      "bytes": 160202,
+      "sha256": "b39a824e05de757daa84694c2a8a9471c3810306431a1ad8d58509c8ddfc91b5"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/writer-off-320x568.png",
+      "bytes": 42789,
+      "sha256": "fee9769c100421ed4496c5608317be5715097f3dff86dc607de8f2652da95f68"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/writer-off-390x844.html",
+      "bytes": 160202,
+      "sha256": "fa28b0ecf651e832d0306e64c596e7e8a18a7e4f03ec1744b67a3472b6e2478c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/writer-off-390x844.png",
+      "bytes": 75967,
+      "sha256": "e27be339931d0f2f09c13da9aec93c110da808ed49e0b05a64429a398f69d9d4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/writer-on-1366x768.html",
+      "bytes": 166224,
+      "sha256": "0835a058fa7e0837cf331cc094861f573540dc25dbad3a06bde84bc3eb0b79df"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/writer-on-1366x768.png",
+      "bytes": 193122,
+      "sha256": "ae549a3dbd18bf072001b0826c23ec73ecc76f539518e48f475cf1e4b60acf2e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/writer-on-320x568.html",
+      "bytes": 161259,
+      "sha256": "cd6f5470becc72a8baecde616bf3c49474ae74a173dd0d0c1a9c297caeaadecb"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/writer-on-320x568.png",
+      "bytes": 44009,
+      "sha256": "5715bc69d2a86a65f6ad17970b197db792a5999d700f1a38f61be44aa2132ec2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/writer-on-390x844.html",
+      "bytes": 161461,
+      "sha256": "cb5431445d9a9efe2465f8f7bc253f36173f7041955cd9ada99a4c3bbafa7b92"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/writer-on-390x844.png",
+      "bytes": 77398,
+      "sha256": "5e83c884e85953bd56f60c0793b18d479db18a48441091cfe0313009c4b7ae5f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-fallback/evidence.json",
+      "bytes": 2163,
+      "sha256": "7c139896c37f4f9eed3d727475ef2dd5a757f25e49154d9f0b4f21924cf8af69"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-fallback/fallback-1366x768.png",
+      "bytes": 238144,
+      "sha256": "2d66fbebc5f23a1cff2136886bd9d80fb8543f83509ebeb85928600258f191a1"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-fallback/fallback-320x568.png",
+      "bytes": 48514,
+      "sha256": "9ce2c7d25e964b344f1f35aa333827702653c3070209e04b7054e30de52b2781"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-fallback/fallback-390x844.png",
+      "bytes": 90240,
+      "sha256": "bedf1dc49af2eff8caac2cddc082323a6d1c796d6396311a1d7d7106cc88664d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-fallback/fallback-details-1366x768.png",
+      "bytes": 320965,
+      "sha256": "fe31ff987f97685ac1e9c517503d68fbaff30bb67691903aaeaaa6fcb0c126aa"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-fallback/fallback-details-320x568.png",
+      "bytes": 47159,
+      "sha256": "ae0babecb0f4684426e39dfb61b781430b05d69f4cca3c588d8a2f9930e14d84"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-fallback/fallback-details-390x844.png",
+      "bytes": 85968,
+      "sha256": "952536d9b755e03aa7bb1df13ca8da6df9ad6ffbb0e2b0300ee67df4fc15984f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-1366x768-at-2914.png",
+      "bytes": 193334,
+      "sha256": "b6995925148f54956397f2a429c6ef66eb93dea7e775b0973f1f17a247dbd8e2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-1366x768-at-3243.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-1366x768-at-3464.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-1366x768-rest-night.png",
+      "bytes": 51947,
+      "sha256": "ba7f7d14705ccf2163c206abad157bbb2be39b6caa2ec96a3d7f492286846895"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-1366x768-selection.png",
+      "bytes": 264520,
+      "sha256": "aa65dd3611edd6017769cda87138ff6c45950504dcfd6579ae8d5434b8182947"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-320x568-at-1417.png",
+      "bytes": 78601,
+      "sha256": "ddbe8689df0b6a71bb3dbe7bdef8aacb49aa00c71a1e458c199c480ccb7c4f3a"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-320x568-at-1602.png",
+      "bytes": 48748,
+      "sha256": "c7a758c0d75ff88df52247712259f240b2849f70045d7784de660acea20356b6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-320x568-at-1778.png",
+      "bytes": 48748,
+      "sha256": "c7a758c0d75ff88df52247712259f240b2849f70045d7784de660acea20356b6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-320x568-rest-night.png",
+      "bytes": 48362,
+      "sha256": "4e9a32acc393d49801ee276238e39400bd487da08b8639f07655b78d7d41a1a0"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-320x568-selection.png",
+      "bytes": 49090,
+      "sha256": "e4213787c05a56e7be23fe4d40b9c1385594585b953e3ff9b77fc27d23c22b09"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-390x844-at-2243.png",
+      "bytes": 159218,
+      "sha256": "5a864ee6f7c9b2d9093838d17be2f3928c79a1125bb3fb6f8ccd5942912e3500"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-390x844-at-2467.png",
+      "bytes": 98324,
+      "sha256": "fb60f6a9d54a3635e0a9019dbfe31e746403c5ea9ad754d11fc1dbdb6e229164"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-390x844-at-2698.png",
+      "bytes": 98324,
+      "sha256": "fb60f6a9d54a3635e0a9019dbfe31e746403c5ea9ad754d11fc1dbdb6e229164"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-390x844-rest-night.png",
+      "bytes": 96423,
+      "sha256": "29342300753803fa114660f3491451d6ce369db592aa5f94b32324f475c99403"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/curl-390x844-selection.png",
+      "bytes": 91426,
+      "sha256": "086d42fda11c46fbadddef13ba8f090cdfedd6b553c2f5363d3cfc1db25fa3a8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/evidence.json",
+      "bytes": 134381,
+      "sha256": "0947c27c02ead0ec407c5a75fa8ad75e48958ca437fc434cf763f9232a328efb"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-1366x768-at-1530.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-1366x768-at-1734.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-1366x768-at-2016.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-1366x768-rest-night.png",
+      "bytes": 51947,
+      "sha256": "ba7f7d14705ccf2163c206abad157bbb2be39b6caa2ec96a3d7f492286846895"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-1366x768-selection.png",
+      "bytes": 264520,
+      "sha256": "aa65dd3611edd6017769cda87138ff6c45950504dcfd6579ae8d5434b8182947"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-320x568-at-1256.png",
+      "bytes": 48749,
+      "sha256": "6b5b43eb3d78dac1dd90b4a2fb258558297c4cb8d455bc11a21fd233a7238f63"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-320x568-at-1411.png",
+      "bytes": 48749,
+      "sha256": "6b5b43eb3d78dac1dd90b4a2fb258558297c4cb8d455bc11a21fd233a7238f63"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-320x568-at-1596.png",
+      "bytes": 48749,
+      "sha256": "6b5b43eb3d78dac1dd90b4a2fb258558297c4cb8d455bc11a21fd233a7238f63"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-320x568-rest-night.png",
+      "bytes": 48362,
+      "sha256": "4e9a32acc393d49801ee276238e39400bd487da08b8639f07655b78d7d41a1a0"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-320x568-selection.png",
+      "bytes": 49088,
+      "sha256": "108a2e1afe77c6df44602fdd230fd7750236fb4832fedcd3c15489d25ff78f80"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-390x844-at-1444.png",
+      "bytes": 98326,
+      "sha256": "689ecd79dcec17f3b7ae959a3950f2391d71aa4578422cd0e86291a669e69468"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-390x844-at-1626.png",
+      "bytes": 98326,
+      "sha256": "689ecd79dcec17f3b7ae959a3950f2391d71aa4578422cd0e86291a669e69468"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-390x844-at-1822.png",
+      "bytes": 98326,
+      "sha256": "689ecd79dcec17f3b7ae959a3950f2391d71aa4578422cd0e86291a669e69468"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-390x844-rest-night.png",
+      "bytes": 96423,
+      "sha256": "29342300753803fa114660f3491451d6ce369db592aa5f94b32324f475c99403"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/reduced-390x844-selection.png",
+      "bytes": 91426,
+      "sha256": "c7c68f73d602c00ee449b9f815d4d62891e2fdcefcbe04f5b607c9c52746bb88"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/video/page@535dca7ebc3d9a4c59fb9b48f29c033d.webm",
+      "bytes": 339274,
+      "sha256": "469ba452dc93bfaeac7548072c55269df406346dd223f3440450911850bb5559"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/video/page@96f6934838f119d1c62c2069837d1b9c.webm",
+      "bytes": 1183697,
+      "sha256": "142303d2030735296f2a422420703c21dd73e0663fd77d8cf755af91cf835eca"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/video/page@a279e3c68cb99328bf0cf8e4b8e556bf.webm",
+      "bytes": 546425,
+      "sha256": "c8e85deba89590937e4a103579228c361550f7bb06fcc021ed56bf4173f9dc47"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/video/page@a42dae571b00b605566f2faeb49d5265.webm",
+      "bytes": 813267,
+      "sha256": "9d68d24608789d7d17e9a2e9e34f53d2478af122ad2d8ad9ab778390f4c7dae3"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/video/page@d5416d5eec225b30667b6c34c3ae1571.webm",
+      "bytes": 342593,
+      "sha256": "a9f7b3fa4406d0c1abf34086f993f65a19c23caee3478e1c80279832b9c6e11f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-motion/video/page@da1ca49d51f6f229a188409874c6b7d2.webm",
+      "bytes": 902502,
+      "sha256": "fd5cc62f2bee029bce2b2b595b88e3d7e1de87779edffb2e9eb15df9785b67de"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-rich/diagnostic.json",
+      "bytes": 410,
+      "sha256": "0538a4aef13c4de3be8ccaf98c439c54f60e9f70e40274e19ecbc7d7be3dc011"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-rich/rich-1366x768.png",
+      "bytes": 258568,
+      "sha256": "6e840b8e5ca20822ce2fc0b7c4ea707c71f3d6918eefa85ab95c6e1f685a2dbf"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-rich/rich-1440x1000.png",
+      "bytes": 269098,
+      "sha256": "1e353b37ef237dc2f5c7811d86a755852286078e855442ffa1a5c297519754a5"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-rich/rich-320x568.png",
+      "bytes": 51947,
+      "sha256": "cc45038002d7d710fa8b0b29043dbd380f8fc38c075d653d6d906f0ae27362ce"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-rich/rich-320x844.png",
+      "bytes": 88492,
+      "sha256": "c0d30cfc71db2bdf59b6dcda7f25a8d31ab4e10674d3d21ecb24232a238d8433"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-rich/rich-390x844.png",
+      "bytes": 102736,
+      "sha256": "5722a547eabbd71a558d3d826c8528dc19af6fefd8cc687ce3cda975a4aaeba3"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-rich/source-after.json",
+      "bytes": 867,
+      "sha256": "e39b95b80ee10cf958e5e6b019bb8d503d2e312f92a8308a8600145e69a991be"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-rich/source-before.json",
+      "bytes": 867,
+      "sha256": "e39b95b80ee10cf958e5e6b019bb8d503d2e312f92a8308a8600145e69a991be"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-slide/evidence.json",
+      "bytes": 50035,
+      "sha256": "7effd0c0228ec30d435973bbb7e823fca0584c52a9bcff5709227993ee7af0b2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-slide/slide-1366x768-at-2930.png",
+      "bytes": 230083,
+      "sha256": "0d2ad98988442001554c2289fe90c908725a2bf1617ced13629c919447a23a1f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-slide/slide-1366x768-at-3261.png",
+      "bytes": 208124,
+      "sha256": "16ebb30e2977a85c94e581ad4456d5dfa4c658c833e443b47cf1d47b720b17ac"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-slide/slide-1366x768-at-3541.png",
+      "bytes": 208124,
+      "sha256": "16ebb30e2977a85c94e581ad4456d5dfa4c658c833e443b47cf1d47b720b17ac"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-slide/slide-1366x768-rest-night.png",
+      "bytes": 206323,
+      "sha256": "bb98484966940e78f0c09d263ab4fa09d441f0068e7c13f39e0bd7d6b7256289"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-slide/slide-1366x768-selection.png",
+      "bytes": 237053,
+      "sha256": "f37818be2bb78291847ecaf3ff571d1bbfa1ae3dc18abb3b82c7e6a0dd184a77"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-slide/slide-320x568-at-2115.png",
+      "bytes": 53760,
+      "sha256": "70c52b1e136d7fa31d3d4ba2fd85ca7627943e8c5856ef09a699e6a9fb4f4fb7"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-slide/slide-320x568-at-2338.png",
+      "bytes": 49014,
+      "sha256": "be6b7969237a12e135fbef1717a603e70b821d1dde228777441b8b7d620c55e8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-slide/slide-320x568-at-2537.png",
+      "bytes": 49014,
+      "sha256": "be6b7969237a12e135fbef1717a603e70b821d1dde228777441b8b7d620c55e8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-slide/slide-320x568-rest-night.png",
+      "bytes": 48529,
+      "sha256": "ff46ee2f0a918596a86769a146fc5617a9d8ccb645ad378f8b9555ce2567874b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-slide/slide-320x568-selection.png",
+      "bytes": 49637,
+      "sha256": "21c9432ba361cf646ce8c915b22cdcc70610957282130e044dc8c25e9b6fa40b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-slide/video/page@340adbfd374cf5b2733fc02d6e11e6db.webm",
+      "bytes": 516865,
+      "sha256": "6ff0c1dbfde98738530118febece0360d47226996b9b96d8fd2c310ddbc36cd4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final-slide/video/page@b8fcd6f2d9e816955884e3e0ff49d96b.webm",
+      "bytes": 2986423,
+      "sha256": "080ca9dbaeccd1c54a5b0ccd2c5d4bfba100916d2bd23ffad4be11e2c10ddc92"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/evidence.json",
+      "bytes": 127614,
+      "sha256": "5b5fae3544a843f06c70c94d309912b362a2990fba6bf66e74ba7cf85cae872d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-next-1366x768.html",
+      "bytes": 172857,
+      "sha256": "201734cbf669e20a00e20b65f16859a4d958ede3a6f8f86262f7288bae0cd766"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-next-1366x768.png",
+      "bytes": 53815,
+      "sha256": "84a713ac568fb45805c3af85c94edfa964fbae386734aa4f8fa25675712714f6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-next-320x568.html",
+      "bytes": 167864,
+      "sha256": "e3727a78452d18ad546446c363c596dffdd027c0194351354f710b28839385e8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-next-320x568.png",
+      "bytes": 48749,
+      "sha256": "6b5b43eb3d78dac1dd90b4a2fb258558297c4cb8d455bc11a21fd233a7238f63"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-next-390x844.html",
+      "bytes": 168082,
+      "sha256": "3c882c8369946539a62143784d25aed7b1f54aea170668b2abf5043a7d7cff1b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-next-390x844.png",
+      "bytes": 98326,
+      "sha256": "689ecd79dcec17f3b7ae959a3950f2391d71aa4578422cd0e86291a669e69468"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-night-1366x768.html",
+      "bytes": 172857,
+      "sha256": "2e912e1e33eb5476ae8715bd3a59cf5d3064bc9653eb4fa800571ae77b3983f9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-night-1366x768.png",
+      "bytes": 55957,
+      "sha256": "6503130c0c0097a883a7c546feb4e45fbebe2fbc5f28f55fc445ee63bf0eb6d9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-night-320x568.html",
+      "bytes": 167864,
+      "sha256": "31aab2ef99b2d52a111dbbbdc81b3caaf22dc4212a9e311c5cc0cf397a079c31"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-night-320x568.png",
+      "bytes": 49078,
+      "sha256": "cb5b9c0d51d71041c264a1b5d7233406ff14e32e17f66a0c8167d60ab51ccc2b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-night-390x844.html",
+      "bytes": 168082,
+      "sha256": "f78a97ba4ddac44ea457d1871413a92dc11eb2549b3f7658037c22061af2ce8d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-night-390x844.png",
+      "bytes": 98288,
+      "sha256": "14e150b2cd3b74feed49f5f518f385cf1606fb9f845b49443b75305f617b456e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-off-1366x768.html",
+      "bytes": 171522,
+      "sha256": "fb68002a9070cd7e168009dd9baae9c0ba41dd8f2f13981e8bc074828cabf809"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-off-1366x768.png",
+      "bytes": 235017,
+      "sha256": "56341a9a2e2281ef905f26af28d2686ba8e50b8c3486ea1fff1a5853e2f45780"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-off-320x568.html",
+      "bytes": 166688,
+      "sha256": "af07c08bb734d5dc55a19a0f88868e7e87f58452170d47eab6370fac13c3bd85"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-off-320x568.png",
+      "bytes": 50366,
+      "sha256": "ae7f70343369e399ed3b62b62ce26f9b779b9404e2d86e6c084513a9502ef57d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-off-390x844.html",
+      "bytes": 166688,
+      "sha256": "b8d7324fccb2474e7d204717c68b6e87b142363d10368088ed718c3650d1f694"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-off-390x844.png",
+      "bytes": 95173,
+      "sha256": "657ea335e6a50dad61e954e6b697d25408b0ade565d8a1293d24bb494d62e542"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-1366x768.html",
+      "bytes": 173688,
+      "sha256": "079a2f49e846ad296d2836c70f2a5cad9ccea03891dfebe36de3ae9695a24621"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-1366x768.png",
+      "bytes": 263623,
+      "sha256": "42d6d9ec3eb28bf47d813a416f085ebe6fe40a616b46e4e0ee7c8499d1d1f590"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-320x568.html",
+      "bytes": 167823,
+      "sha256": "47d76f74edff2d04c96b3f8673785fd01e8e741ee6b4be4fe7ad0a06f08d4445"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-320x568.png",
+      "bytes": 48551,
+      "sha256": "659f466e3ebf2e2e7cbbb759f5f48740ebbe549dbd57bec8341184e8bfd74a7d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-390x844.html",
+      "bytes": 168025,
+      "sha256": "4fbebad378d48144829c2bd113d3fba16f8a161ba8e317d239dcfeae6aa44bee"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-390x844.png",
+      "bytes": 90755,
+      "sha256": "4dd5a9c9147698da965e8e89876761405c154b6a2bd2c25622bc499537354ba7"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/writer-off-1366x768.html",
+      "bytes": 164965,
+      "sha256": "19aa88a06b53060125c6f426eb9fbc8025c9b3145549fd9b9f16e01aba0470b1"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/writer-off-1366x768.png",
+      "bytes": 190641,
+      "sha256": "be7fa423cf9a9715490f6eb17ad0046a224767f8b02a79fdcc1598a22ad6065f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/writer-off-320x568.html",
+      "bytes": 160202,
+      "sha256": "d4c685ab5904671a454324958f9437374636d2a7f7bf85cda2a8cc0d8f76ff27"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/writer-off-320x568.png",
+      "bytes": 42789,
+      "sha256": "fee9769c100421ed4496c5608317be5715097f3dff86dc607de8f2652da95f68"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/writer-off-390x844.html",
+      "bytes": 160202,
+      "sha256": "c9ba25c0ba56301b2d7bdfdce7e98b424da061801d7ee8122eeec25cc1957126"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/writer-off-390x844.png",
+      "bytes": 75967,
+      "sha256": "e27be339931d0f2f09c13da9aec93c110da808ed49e0b05a64429a398f69d9d4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/writer-on-1366x768.html",
+      "bytes": 166224,
+      "sha256": "2b99924a5f84a2051b764d5ded2e40c9351f319f41c5e745694a67cfdbe9b31c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/writer-on-1366x768.png",
+      "bytes": 193122,
+      "sha256": "ae549a3dbd18bf072001b0826c23ec73ecc76f539518e48f475cf1e4b60acf2e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/writer-on-320x568.html",
+      "bytes": 161259,
+      "sha256": "22560fc425cf385e40d0f7e5ea766f7037f738af526813b7518d0b7a10754c74"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/writer-on-320x568.png",
+      "bytes": 44009,
+      "sha256": "5715bc69d2a86a65f6ad17970b197db792a5999d700f1a38f61be44aa2132ec2"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/writer-on-390x844.html",
+      "bytes": 161461,
+      "sha256": "95c3748219e3419be18e0c69908fcd7c37a65396786853e2e261cbc9d17e7263"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/writer-on-390x844.png",
+      "bytes": 77398,
+      "sha256": "5e83c884e85953bd56f60c0793b18d479db18a48441091cfe0313009c4b7ae5f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/verdict-round6.json",
+      "bytes": 3307,
+      "sha256": "35200abec53e305604cad218e1ed14127b2ad28a759921d934d111a98cb3b66f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/verdict-round7-final.json",
+      "bytes": 4794,
+      "sha256": "13372e106d633b12ce596af083c3dace5a5f2f9349c2dcff71ed4d36601eac96"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/final-review.json",
+      "bytes": 388,
+      "sha256": "fa3c71d73c2b02cdc943af665310c42e36083bc2a1ab5db387ea9194fba337c4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/parent-qa.md",
+      "bytes": 8083,
+      "sha256": "5094d0c81da77bcfbd8dff03eb7c9265cd1609a2f4fc6e5fbd80ad35e7fb1de4"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/proposal-quality.json",
+      "bytes": 1676,
+      "sha256": "43fffeafa082d277838dd05d91dd82bc5310bb525c9d08aa609f92f67a32cf08"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/real-browser/reader.png",
+      "bytes": 47663,
+      "sha256": "8c44f89e9afc9435ae62179dc29d1cd9c2be5cef2de23a5bbd685d64e8c248f1"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/real-browser/result.json",
+      "bytes": 187,
+      "sha256": "bdf230b6149b13f636578e58cf1b4e54596f855c17458fc932d053de7b7a1285"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/real-browser/writer.png",
+      "bytes": 145858,
+      "sha256": "a6635c0193f414ad41f91da915c31d0752cd9df5221523c5a81cb7cf1ce17f8c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/rich-regression.log",
+      "bytes": 8149,
+      "sha256": "564c63260691b6081db00704d4365372fc4a17b5fafaf3f7744b37d1eb4ab51e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/round-3-sources.json",
+      "bytes": 1674,
+      "sha256": "8aca0e2561cb87fedc392a176d61186113637bee2c360a05b23aea5924a1d241"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/round-5-sources.json",
+      "bytes": 1867,
+      "sha256": "0ff23329bf9d7eea69031a7bd30c1aace76dc78fd8e46da3a1654b1edfb5d234"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/round-6-sources.json",
+      "bytes": 2309,
+      "sha256": "118d2d4881efda07bec4adbed642c8a35afb01d647b25c22dcee18dd0f78bddf"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/round-7-sources.json",
+      "bytes": 2309,
+      "sha256": "e2b7de424a1fe10724c35884b9fd48ce7d89a6e189bcae5c78d65e8d39c7f6e9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/typecheck-final.log",
+      "bytes": 42,
+      "sha256": "dddc554232e4be85645fb8a4e6122b04acdc2737344529565f23e1fa336cd37b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/ui-browser-final.log",
+      "bytes": 4435,
+      "sha256": "58d449da1bb59398172289a997d627e8bd486c8580870dd6c7a3ffd6f04fc19e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/usable-height/leading-1.85-1366x590.png",
+      "bytes": 173873,
+      "sha256": "c9d2695ce9fca177fd0f18d3775af385497756cca6d8d56e14a38c7f0a75fb61"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/usable-height/measurements.json",
+      "bytes": 498,
+      "sha256": "09ed5e7a97de2f02b8659e83930c9ef2368c185de3826fc10c16290ad9a0bf30"
+    }
+  ],
+  "checks": {
+    "client": {
+      "passes": 98,
+      "skipped": 16,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/checks/client.log",
+      "status": "pass",
+      "failures": 0
+    },
+    "functions": {
+      "passes": 37,
+      "skipped": 1,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/checks/functions.log",
+      "status": "pass",
+      "failures": 0
+    },
+    "rules": {
+      "passes": 16,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/checks/rules.log",
+      "status": "pass",
+      "failures": 0
+    },
+    "mcpIntegration": {
+      "passes": 18,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/backend/emulator-tests.txt",
+      "status": "pass",
+      "failures": 0
+    },
+    "browser": {
+      "passes": 93,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/checks/browser-results.json",
+      "status": "pass",
+      "failures": 0
+    },
+    "cloud": {
+      "passes": 11,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/checks/cloud-results.json",
+      "status": "pass",
+      "failures": 0
+    },
+    "evidence": {
+      "passes": 26,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/checks/evidence.log",
+      "status": "pass",
+      "failures": 0
+    },
+    "typecheck": {
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/checks/typecheck.log",
+      "status": "pass",
+      "failures": 0
+    },
+    "build": {
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/checks/build.log",
+      "status": "pass",
+      "failures": 0
+    },
+    "functionsCheck": {
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/checks/functions-check.log",
+      "status": "pass",
+      "failures": 0
+    },
+    "packaging": {
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/checks/plugin-package.json",
+      "status": "pass",
+      "failures": 0
+    }
+  },
+  "rounds": [
+    {
+      "round": 2,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/critic/round2/evidence.json"
+    },
+    {
+      "round": 3,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/critic/round3/evidence.json"
+    },
+    {
+      "round": 4,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/critic/round4-details/evidence.json"
+    },
+    {
+      "round": 5,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/critic/round5/evidence.json"
+    },
+    {
+      "round": 6,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/critic/round6/evidence.json"
+    },
+    {
+      "round": 7,
+      "evidence": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/evidence.json"
+    }
+  ],
+  "comparison": {
+    "1366x768": {
+      "before": {
+        "lines": 20,
+        "areaPercent": 27.7,
+        "bookHeight": 554,
+        "headerHeight": 70,
+        "footerHeight": 92,
+        "screenshot": "docs/evidence/heartbeat-rework-2026-11-03/baseline/reader-on-1366x768.png"
+      },
+      "after": {
+        "lines": 28,
+        "areaPercent": 39.1,
+        "bookHeight": 625,
+        "headerHeight": 54,
+        "footerHeight": 76,
+        "overflow": 0,
+        "screenshot": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-1366x768.png"
+      }
+    },
+    "390x844": {
+      "before": {
+        "lines": 10,
+        "areaPercent": 27.1,
+        "bookHeight": 659,
+        "headerHeight": 60,
+        "footerHeight": 83,
+        "screenshot": "docs/evidence/heartbeat-rework-2026-11-03/baseline/reader-on-390x844.png"
+      },
+      "after": {
+        "lines": 15,
+        "areaPercent": 42.4,
+        "bookHeight": 701,
+        "headerHeight": 46,
+        "footerHeight": 97,
+        "overflow": 0,
+        "screenshot": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-390x844.png"
+      }
+    },
+    "320x568": {
+      "before": {
+        "lines": 4,
+        "areaPercent": 16.8,
+        "bookHeight": 383,
+        "headerHeight": 60,
+        "footerHeight": 83,
+        "screenshot": "docs/evidence/heartbeat-rework-2026-11-03/baseline/reader-on-320x568.png"
+      },
+      "after": {
+        "lines": 8,
+        "areaPercent": 32.8,
+        "bookHeight": 425,
+        "headerHeight": 46,
+        "footerHeight": 97,
+        "overflow": 0,
+        "screenshot": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-320x568.png"
+      }
+    }
+  },
+  "visual": {
+    "finalRound": 7,
+    "finalCapture": "round7-final",
+    "critic": {
+      "narrative": 8.2,
+      "craft": 8,
+      "ergonomics": 8,
+      "mobile": 8,
+      "access": 8,
+      "overall": 8
+    },
+    "parent": {
+      "narrative": 8.3,
+      "craft": 8.2,
+      "ergonomics": 8.3,
+      "mobile": 8.2,
+      "access": 8.1,
+      "overall": 8.2
+    },
+    "unresolvedBlockers": 0,
+    "ownerAcceptance": "not inferred"
+  },
+  "continuity": {
+    "uncoveredMeaningfulCharacters": 0,
+    "blindReadings": 2,
+    "qualityEvidence": "docs/evidence/heartbeat-rework-2026-11-03/proposal-quality.json",
+    "scope": "Structural completeness is checked separately from literary judgment; AI inference is not measured reader emotion."
+  },
+  "limits": [
+    "Public captures use a synthetic four-paragraph counterpart, not the private original.",
+    "Agent visual review does not establish owner comfort or physical-device acceptance.",
+    "1366x768 is CSS viewport size at DPR1/zoom1; a separate 1366x590 usable-height diagnostic is retained.",
+    "Browsers without Custom Highlight retain labels and details with an explicit colors-unavailable notice.",
+    "Legacy sparse annotations remain append-only evidence and require regeneration; no gap emotions are inferred.",
+    "Existing quote/beat/size bounds remain; over-limit full readings cannot claim coverage.",
+    "No polling or Firestore listener additions; only local DOM viewport/scroll observation."
+  ]
+}

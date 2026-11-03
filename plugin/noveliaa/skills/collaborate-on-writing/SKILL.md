@@ -43,14 +43,20 @@ check `allowProposals` and fetch the current exact revision. Read the available
 preceding and following narrative context, following `nextOffset` where needed;
 record any missing context in `contextNote`. Do not claim access to unread pages.
 
-Choose meaningful emotional beats, including connected paragraphs where useful.
-Do not tag every sentence or optimize toward stronger feeling. Quiet, uncertain
-and mixed passages are valid. Leave unneeded spans untagged; `beats: []` is a
-valid quiet interpretation. Use crisp one-to-three-word `foreground` and optional
-`undertone` labels. `weight` (1–5) describes perceived emotional weight, not model
-confidence. `trajectory` is `build`, `hold`, `shift`, `release` or `quiet`;
-`tone` is `warm`, `cool`, `tense`, `tender`, `somber`, `wonder` or `neutral`.
-Give each beat a concise `reasoning` explanation; the UI reveals it on demand.
+Read [the continuity method and worked example](references/heartbeat-continuity.md)
+before producing annotations. First understand the narrative arc, then choose
+natural state regions. An established feeling can persist across factual or
+quiet exposition. Distinguish a meaningful shift, a held baseline and explicit
+neutral/rest; do not manufacture a positive feeling to cover an explanatory line.
+Do not tag each sentence or optimize toward stronger feeling.
+
+For a continuous heartbeat, explicitly cover the whole fetched text with exact,
+ordered spans. Never leave meaningful gaps and assume the UI will invent their
+emotion. `beats: []` remains wire-compatible but does **not** mean a nonempty page
+was analyzed as quiet. Represent an analyzed rest with a real source span,
+`tone:'neutral'` and `trajectory:'quiet'`, and explain the contextual evidence.
+Use one-to-three-word foreground and optional undertone labels. Weight1–5 is
+emotional weight, not confidence. Reasoning appears only on demand.
 
 Spans use zero-based UTF-16 `start` (inclusive) and `end` (exclusive) offsets in
 the exact full `fetch_page` plain text. Include the matching exact `quote`.
@@ -66,6 +72,9 @@ the key; changed content requires a new key. If writing changed, reread and
 reassess before submitting a new analysis. A receipt confirms a separate
 AI-origin, unverified interpretation, never a manuscript edit. Old or revoked
 interpretations are hidden; no quote-based automatic reattachment is allowed.
+New receipts report server-derived coverage. Require `coverage.status` to be
+`continuous` for a continuous interpretation. Sparse legacy excerpts are not
+upgraded by inference; reassess the full source before appending a new analysis.
 The author enables Heartbeat in writing or private Read. AI perception is not
 author intent and does not measure actual readers' emotions.
 

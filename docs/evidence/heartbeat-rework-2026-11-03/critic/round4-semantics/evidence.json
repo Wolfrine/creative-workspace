@@ -1,0 +1,161 @@
+{
+  "before": {
+    "src/components/Reader.tsx": "5478f6619fe3edd66f5da17bfb183794b0de88a90b6044dcf24e62064d1deff6",
+    "src/library-reader.css": "80e5a6fefca603e9982e143aaec8b271c9eeedd3bebe6ef22877971aab3d7fb5",
+    "src/heartbeat/Heartbeat.tsx": "91d17bfb2b18703b924ba75c3d6c56573ac7983012c89dc363dcb77f0b65824a",
+    "src/heartbeat/heartbeat.css": "902c255c442b441be10d2aa46ae807b60caa3a345d15957e5e39aff7109ac1f2",
+    "src/heartbeat/decorations.ts": "1bab0c12acc79d82463f4b39a873b706df0ac0ae39dc3ab2a0d7df8156b9c20b",
+    "src/heartbeat/useHeartbeat.ts": "e899eb05bf882ef3c007161c8521b21227b3503384cc65bfe0dcb434e2cc7a21",
+    "src/heartbeat/model.ts": "150a56b55c146d2daca2325c674600d05657ea1a0a513f34e553db235d51b34e",
+    "src/styles.css": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294"
+  },
+  "after": {
+    "src/components/Reader.tsx": "5478f6619fe3edd66f5da17bfb183794b0de88a90b6044dcf24e62064d1deff6",
+    "src/library-reader.css": "80e5a6fefca603e9982e143aaec8b271c9eeedd3bebe6ef22877971aab3d7fb5",
+    "src/heartbeat/Heartbeat.tsx": "91d17bfb2b18703b924ba75c3d6c56573ac7983012c89dc363dcb77f0b65824a",
+    "src/heartbeat/heartbeat.css": "902c255c442b441be10d2aa46ae807b60caa3a345d15957e5e39aff7109ac1f2",
+    "src/heartbeat/decorations.ts": "1bab0c12acc79d82463f4b39a873b706df0ac0ae39dc3ab2a0d7df8156b9c20b",
+    "src/heartbeat/useHeartbeat.ts": "e899eb05bf882ef3c007161c8521b21227b3503384cc65bfe0dcb434e2cc7a21",
+    "src/heartbeat/model.ts": "150a56b55c146d2daca2325c674600d05657ea1a0a513f34e553db235d51b34e",
+    "src/styles.css": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294"
+  },
+  "sourceStable": true,
+  "dataset": "Synthetic only",
+  "results": [
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "checks": [
+        {
+          "name": "sparse-no-highlights",
+          "value": true
+        },
+        {
+          "name": "sparse-message",
+          "value": "Heartbeat\nAI · unverified\n\nIncomplete reading. Regenerate for the full revision; unanalysed text stays uncolored."
+        },
+        {
+          "name": "explicit-rest-highlight",
+          "value": {
+            "registry": [
+              "heartbeat-reader-neutral"
+            ],
+            "background": "rgb(226, 229, 218)"
+          }
+        },
+        {
+          "name": "source-unchanged-after-reading",
+          "value": true
+        },
+        {
+          "name": "stale-no-highlights",
+          "value": true
+        },
+        {
+          "name": "annotation-calls",
+          "value": 6
+        }
+      ],
+      "screens": [
+        "sparse-1366x768.png",
+        "absent-1366x768.png",
+        "neutral-rest-1366x768.png",
+        "writer-compact-1366x768.png",
+        "writer-stale-1366x768.png"
+      ],
+      "errors": []
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "checks": [
+        {
+          "name": "sparse-no-highlights",
+          "value": true
+        },
+        {
+          "name": "sparse-message",
+          "value": "Heartbeat\nAI · unverified\n\nIncomplete reading. Regenerate for the full revision; unanalysed text stays uncolored."
+        },
+        {
+          "name": "explicit-rest-highlight",
+          "value": {
+            "registry": [
+              "heartbeat-reader-neutral"
+            ],
+            "background": "rgb(226, 229, 218)"
+          }
+        },
+        {
+          "name": "source-unchanged-after-reading",
+          "value": true
+        },
+        {
+          "name": "stale-no-highlights",
+          "value": true
+        },
+        {
+          "name": "annotation-calls",
+          "value": 6
+        }
+      ],
+      "screens": [
+        "sparse-390x844.png",
+        "absent-390x844.png",
+        "neutral-rest-390x844.png",
+        "writer-compact-390x844.png",
+        "writer-stale-390x844.png"
+      ],
+      "errors": []
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "checks": [
+        {
+          "name": "sparse-no-highlights",
+          "value": true
+        },
+        {
+          "name": "sparse-message",
+          "value": "Heartbeat\nAI · unverified\n\nIncomplete reading. Regenerate for the full revision; unanalysed text stays uncolored."
+        },
+        {
+          "name": "explicit-rest-highlight",
+          "value": {
+            "registry": [
+              "heartbeat-reader-neutral"
+            ],
+            "background": "rgb(226, 229, 218)"
+          }
+        },
+        {
+          "name": "source-unchanged-after-reading",
+          "value": true
+        },
+        {
+          "name": "stale-no-highlights",
+          "value": true
+        },
+        {
+          "name": "annotation-calls",
+          "value": 6
+        }
+      ],
+      "screens": [
+        "sparse-320x568.png",
+        "absent-320x568.png",
+        "neutral-rest-320x568.png",
+        "writer-compact-320x568.png",
+        "writer-stale-320x568.png"
+      ],
+      "errors": []
+    }
+  ]
+}

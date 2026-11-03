@@ -1,5 +1,6 @@
 import { PageFlip } from '../vendor/pageflip/page-flip.js';
 import '../vendor/pageflip/page-flip.css';
+import { clearHeartbeatMotionHighlights, projectHeartbeatHighlights } from '../heartbeat/decorations';
 
 const activeTurns = new Set<object>();
 const activeSlides = new Set<object>();
@@ -40,6 +41,7 @@ function beginPageSlide({ source, from, to, stride }: TransitionArguments, onFin
  * At most four clipped copies exist, independent of the number of book pages.
  */
 export function beginPageTurn({ host, book, stage, source, from, to, pages, columns, stride, onFinish = () => {} }: TransitionArguments & { onFinish?: () => void }): () => void {
+  clearHeartbeatMotionHighlights();
   const token = {}; activeTurns.add(token);
   const element = document.createElement('div');
   element.className = 'reader-turn'; element.ariaHidden = 'true'; element.inert = true;
@@ -69,7 +71,7 @@ export function beginPageTurn({ host, book, stage, source, from, to, pages, colu
     if (timer) clearTimeout(timer); timer = null;
     if (firstFrame !== null) cancelAnimationFrame(firstFrame); firstFrame = null;
     flip?.destroy(); flip = null;
-    element.replaceChildren(); element.remove(); activeTurns.delete(token); onFinish();
+    clearHeartbeatMotionHighlights(); element.replaceChildren(); element.remove(); activeTurns.delete(token); onFinish();
   };
   try {
     flip = new PageFlip(element, {
@@ -81,6 +83,9 @@ export function beginPageTurn({ host, book, stage, source, from, to, pages, colu
       useMouseEvents: false, showPageCorners: false, disableFlipByClick: false,
     });
     flip.loadFromHTML(leaves);
+    // PageFlip reparents the leaves during loading. Create live ranges only
+    // after those moves, otherwise DOM Range removal rules collapse them.
+    element.querySelectorAll<HTMLElement>('.reader-page-content').forEach(projection => projectHeartbeatHighlights(source, projection));
     flip.on('changeState', event => { if (event.data === 'read') stop(); });
     // Render.start initializes the library clock in its first frame. Starting
     // before that tick makes a newly mounted animation appear already expired.
@@ -88,6 +93,9 @@ export function beginPageTurn({ host, book, stage, source, from, to, pages, colu
       firstFrame = null;
       if (stopped || !flip) return;
       if (to > from) flip.flipNext('bottom'); else flip.flipPrev('bottom');
+      // Portrait turning creates one additional temporary leaf synchronously.
+      // Its cloned text also needs native display ranges, after its final move.
+      element.querySelectorAll<HTMLElement>('.reader-page-content').forEach(projection => projectHeartbeatHighlights(source, projection));
     });
     timer = setTimeout(stop, 750);
   } catch { stop(); /* Optional motion cannot prevent access to the next source passage. */ }

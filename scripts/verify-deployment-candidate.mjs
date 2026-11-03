@@ -5,9 +5,11 @@ import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const heartbeat = existsSync('docs/evidence/heartbeat-2026-11-03/manifest.json');
+const heartbeatRework = existsSync('docs/evidence/heartbeat-rework-2026-11-03/manifest.json');
 // A later feature binds the complete current source inventory. Do not rewrite
 // or mistake the original plugin source hashes for the newly reviewed source.
-if (heartbeat) await import('./verify-heartbeat-candidate.mjs');
+if (heartbeatRework) await import('./verify-heartbeat-rework-candidate.mjs');
+else if (heartbeat) await import('./verify-heartbeat-candidate.mjs');
 const manifest = JSON.parse(await readFile('docs/evidence/plugin-2026-10-25/manifest.json', 'utf8'));
 assert.equal(manifest.plan, 'Blaze');
 assert.equal(hash(Buffer.from(JSON.stringify(manifest.sources))), manifest.sourceDigest, 'Candidate source inventory digest differs.');

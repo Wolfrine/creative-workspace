@@ -1,0 +1,3876 @@
+{
+  "label": "round3",
+  "dataset": "Synthetic four-paragraph counterpart only",
+  "hashes": {
+    "src/components/Reader.tsx": "5478f6619fe3edd66f5da17bfb183794b0de88a90b6044dcf24e62064d1deff6",
+    "src/library-reader.css": "80e5a6fefca603e9982e143aaec8b271c9eeedd3bebe6ef22877971aab3d7fb5",
+    "src/heartbeat/Heartbeat.tsx": "a6c3770a7d1b5a7993a8d3f0cd435881ab03ecf21ded99f70609ec7ffc65ae37",
+    "src/heartbeat/heartbeat.css": "8ca6c78205b46f65949a72dd9b0fc30f8c49cc94c7e0d2780f02265af3a30e23",
+    "src/heartbeat/decorations.ts": "1bab0c12acc79d82463f4b39a873b706df0ac0ae39dc3ab2a0d7df8156b9c20b",
+    "src/heartbeat/model.ts": "150a56b55c146d2daca2325c674600d05657ea1a0a513f34e553db235d51b34e",
+    "src/styles.css": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294",
+    "tests/helpers/heartbeat-continuity-fixture.ts": "99713c94fe596b9e5c8a58c6df34792877170e37d0e2e24b45aa9b0896835c83"
+  },
+  "finalHashes": {
+    "src/components/Reader.tsx": "5478f6619fe3edd66f5da17bfb183794b0de88a90b6044dcf24e62064d1deff6",
+    "src/library-reader.css": "80e5a6fefca603e9982e143aaec8b271c9eeedd3bebe6ef22877971aab3d7fb5",
+    "src/heartbeat/Heartbeat.tsx": "a6c3770a7d1b5a7993a8d3f0cd435881ab03ecf21ded99f70609ec7ffc65ae37",
+    "src/heartbeat/heartbeat.css": "8ca6c78205b46f65949a72dd9b0fc30f8c49cc94c7e0d2780f02265af3a30e23",
+    "src/heartbeat/decorations.ts": "1bab0c12acc79d82463f4b39a873b706df0ac0ae39dc3ab2a0d7df8156b9c20b",
+    "src/heartbeat/model.ts": "150a56b55c146d2daca2325c674600d05657ea1a0a513f34e553db235d51b34e",
+    "src/styles.css": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294",
+    "tests/helpers/heartbeat-continuity-fixture.ts": "99713c94fe596b9e5c8a58c6df34792877170e37d0e2e24b45aa9b0896835c83"
+  },
+  "sourceStable": true,
+  "records": [
+    {
+      "state": "reader-off",
+      "geometry": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "book": {
+          "x": 73,
+          "y": 67,
+          "width": 1220,
+          "height": 655,
+          "top": 67,
+          "right": 1293,
+          "bottom": 722,
+          "left": 73
+        },
+        "stage": {
+          "x": 74,
+          "y": 90,
+          "width": 1218,
+          "height": 613,
+          "top": 90,
+          "right": 1292,
+          "bottom": 703,
+          "left": 74
+        },
+        "heading": {
+          "x": 112,
+          "y": 90,
+          "width": 533,
+          "height": 59.296875,
+          "top": 90,
+          "right": 645,
+          "bottom": 149.296875,
+          "left": 112
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 54,
+          "top": 0,
+          "right": 1366,
+          "bottom": 54,
+          "left": 0
+        },
+        "footer": {
+          "x": 73,
+          "y": 722,
+          "width": 1220,
+          "height": 46,
+          "top": 722,
+          "right": 1293,
+          "bottom": 768,
+          "left": 73
+        },
+        "page": "0",
+        "pages": "3",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif",
+        "visibleParagraphLines": 29,
+        "visibleTextAreaPercent": 40.6,
+        "keys": [],
+        "highlights": []
+      },
+      "errors": [],
+      "screenshot": "reader-off-1366x768.png",
+      "domSha256": "c0e19bdf0ac228fbda6755274eb3a1073d2b522a06938749716f5fd9775af599"
+    },
+    {
+      "state": "reader-on",
+      "geometry": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "book": {
+          "x": 73,
+          "y": 67,
+          "width": 1220,
+          "height": 625,
+          "top": 67,
+          "right": 1293,
+          "bottom": 692,
+          "left": 73
+        },
+        "stage": {
+          "x": 74,
+          "y": 90,
+          "width": 1218,
+          "height": 583,
+          "top": 90,
+          "right": 1292,
+          "bottom": 673,
+          "left": 74
+        },
+        "heading": {
+          "x": 112,
+          "y": 90,
+          "width": 533,
+          "height": 59.296875,
+          "top": 90,
+          "right": 645,
+          "bottom": 149.296875,
+          "left": 112
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 54,
+          "top": 0,
+          "right": 1366,
+          "bottom": 54,
+          "left": 0
+        },
+        "footer": {
+          "x": 73,
+          "y": 692,
+          "width": 1220,
+          "height": 76,
+          "top": 692,
+          "right": 1293,
+          "bottom": 768,
+          "left": 73
+        },
+        "heartbeat": {
+          "x": 73,
+          "y": 695,
+          "width": 1220,
+          "height": 30,
+          "top": 695,
+          "right": 1293,
+          "bottom": 725,
+          "left": 73
+        },
+        "page": "0",
+        "pages": "3",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif",
+        "visibleParagraphLines": 28,
+        "visibleTextAreaPercent": 39.1,
+        "keys": [
+          {
+            "text": "",
+            "aria": "Refresh Heartbeat",
+            "font": "14px",
+            "rect": {
+              "x": 257.421875,
+              "y": 698,
+              "width": 28,
+              "height": 24,
+              "top": 698,
+              "right": 285.421875,
+              "bottom": 722,
+              "left": 257.421875
+            },
+            "scrollWidth": 28,
+            "clientWidth": 28
+          },
+          {
+            "text": "☀Eager calm",
+            "aria": "Eager calm. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 303.421875,
+              "y": 695,
+              "width": 85.984375,
+              "height": 30,
+              "top": 695,
+              "right": 389.40625,
+              "bottom": 725,
+              "left": 303.421875
+            },
+            "scrollWidth": 86,
+            "clientWidth": 86
+          },
+          {
+            "text": "♡Fond longing",
+            "aria": "Fond longing. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 404.40625,
+              "y": 695,
+              "width": 95.734375,
+              "height": 30,
+              "top": 695,
+              "right": 500.140625,
+              "bottom": 725,
+              "left": 404.40625
+            },
+            "scrollWidth": 96,
+            "clientWidth": 96
+          },
+          {
+            "text": "✧Renewed curiosity",
+            "aria": "Renewed curiosity. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 515.140625,
+              "y": 695,
+              "width": 126.96875,
+              "height": 30,
+              "top": 695,
+              "right": 642.109375,
+              "bottom": 725,
+              "left": 515.140625
+            },
+            "scrollWidth": 127,
+            "clientWidth": 127
+          },
+          {
+            "text": "◒Disappointment",
+            "aria": "Disappointment. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 657.109375,
+              "y": 695,
+              "width": 114.40625,
+              "height": 30,
+              "top": 695,
+              "right": 771.515625,
+              "bottom": 725,
+              "left": 657.109375
+            },
+            "scrollWidth": 114,
+            "clientWidth": 114
+          },
+          {
+            "text": "≈Tempered eagerness",
+            "aria": "Tempered eagerness. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 786.515625,
+              "y": 695,
+              "width": 141.046875,
+              "height": 30,
+              "top": 695,
+              "right": 927.5625,
+              "bottom": 725,
+              "left": 786.515625
+            },
+            "scrollWidth": 141,
+            "clientWidth": 141
+          },
+          {
+            "text": "⌁Frustration",
+            "aria": "Frustration. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 942.5625,
+              "y": 695,
+              "width": 85.59375,
+              "height": 30,
+              "top": 695,
+              "right": 1028.15625,
+              "bottom": 725,
+              "left": 942.5625
+            },
+            "scrollWidth": 86,
+            "clientWidth": 86
+          }
+        ],
+        "highlights": [
+          {
+            "name": "heartbeat-reader-warm",
+            "size": 2,
+            "ranges": [
+              {
+                "text": "Late afternoon light rested on the tram windows. Leena watched the river turn silver as the concert hall drew nearer. She had waited months for this evening, yet the easy journey let her enjoy the waiting. For once, excitement did not require her to hurry.",
+                "rects": [
+                  {
+                    "x": 112,
+                    "y": 168.296875,
+                    "width": 525.609375,
+                    "height": 30,
+                    "top": 168.296875,
+                    "right": 637.609375,
+                    "bottom": 198.296875,
+                    "left": 112
+                  },
+                  {
+                    "x": 112,
+                    "y": 205.296875,
+                    "width": 499.96875,
+                    "height": 30,
+                    "top": 205.296875,
+                    "right": 611.96875,
+                    "bottom": 235.296875,
+                    "left": 112
+                  },
+                  {
+                    "x": 112,
+                    "y": 242.296875,
+                    "width": 522.625,
+                    "height": 30,
+                    "top": 242.296875,
+                    "right": 634.625,
+                    "bottom": 272.296875,
+                    "left": 112
+                  },
+                  {
+                    "x": 112,
+                    "y": 279.296875,
+                    "width": 452.328125,
+                    "height": 30,
+                    "top": 279.296875,
+                    "right": 564.328125,
+                    "bottom": 309.296875,
+                    "left": 112
+                  },
+                  {
+                    "x": 112,
+                    "y": 316.296875,
+                    "width": 376.96875,
+                    "height": 30,
+                    "top": 316.296875,
+                    "right": 488.96875,
+                    "bottom": 346.296875,
+                    "left": 112
+                  }
+                ]
+              },
+              {
+                "text": "At last the remaining recording arrived in its plain paper sleeve. It was a small thing to carry home, but she carried it carefully.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-cool",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Now she was making lists again. She did not want every conversation with Ren to become another request, so she cut a long catalogue down to five recordings and then to three. They spoke of other things while he checked. ",
+                "rects": [
+                  {
+                    "x": 1013.953125,
+                    "y": 389,
+                    "width": 0,
+                    "height": 30,
+                    "top": 389,
+                    "right": 1013.953125,
+                    "bottom": 419,
+                    "left": 1013.953125
+                  },
+                  {
+                    "x": 721,
+                    "y": 441,
+                    "width": 524.6875,
+                    "height": 30,
+                    "top": 441,
+                    "right": 1245.6875,
+                    "bottom": 471,
+                    "left": 721
+                  },
+                  {
+                    "x": 721,
+                    "y": 478,
+                    "width": 500.828125,
+                    "height": 30,
+                    "top": 478,
+                    "right": 1221.828125,
+                    "bottom": 508,
+                    "left": 721
+                  },
+                  {
+                    "x": 721,
+                    "y": 515,
+                    "width": 488.78125,
+                    "height": 30,
+                    "top": 515,
+                    "right": 1209.78125,
+                    "bottom": 545,
+                    "left": 721
+                  },
+                  {
+                    "x": 721,
+                    "y": 552,
+                    "width": 468.6875,
+                    "height": 30,
+                    "top": 552,
+                    "right": 1189.6875,
+                    "bottom": 582,
+                    "left": 721
+                  },
+                  {
+                    "x": 721,
+                    "y": 589,
+                    "width": 88.40625,
+                    "height": 30,
+                    "top": 589,
+                    "right": 809.40625,
+                    "bottom": 619,
+                    "left": 721
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tense",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Two weeks passed before he learned that two titles could not be found. The news narrowed her plans without erasing them. ",
+                "rects": [
+                  {
+                    "x": 809.390625,
+                    "y": 589,
+                    "width": 426.53125,
+                    "height": 30,
+                    "top": 589,
+                    "right": 1235.921875,
+                    "bottom": 619,
+                    "left": 809.390625
+                  },
+                  {
+                    "x": 721,
+                    "y": 626,
+                    "width": 517.59375,
+                    "height": 30,
+                    "top": 626,
+                    "right": 1238.59375,
+                    "bottom": 656,
+                    "left": 721
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tender",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "As a child she had wanted to conduct an orchestra after hearing a recording called The Glass Garden. She remembered finding a borrowed copy and playing it again and again through one short winter. The dates, the shelf and the small player were ordinary details, but they still held the scale of that early wanting. She had not followed much music before it. Afterwards, she could recall the opening almost without trying.",
+                "rects": [
+                  {
+                    "x": 488.953125,
+                    "y": 316.296875,
+                    "width": 0,
+                    "height": 30,
+                    "top": 316.296875,
+                    "right": 488.953125,
+                    "bottom": 346.296875,
+                    "left": 488.953125
+                  },
+                  {
+                    "x": 112,
+                    "y": 368.296875,
+                    "width": 518.671875,
+                    "height": 30,
+                    "top": 368.296875,
+                    "right": 630.671875,
+                    "bottom": 398.296875,
+                    "left": 112
+                  },
+                  {
+                    "x": 112,
+                    "y": 405.296875,
+                    "width": 461.1875,
+                    "height": 30,
+                    "top": 405.296875,
+                    "right": 573.1875,
+                    "bottom": 435.296875,
+                    "left": 112
+                  },
+                  {
+                    "x": 112,
+                    "y": 442.296875,
+                    "width": 489,
+                    "height": 30,
+                    "top": 442.296875,
+                    "right": 601,
+                    "bottom": 472.296875,
+                    "left": 112
+                  },
+                  {
+                    "x": 112,
+                    "y": 479.296875,
+                    "width": 498.375,
+                    "height": 30,
+                    "top": 479.296875,
+                    "right": 610.375,
+                    "bottom": 509.296875,
+                    "left": 112
+                  },
+                  {
+                    "x": 112,
+                    "y": 516.296875,
+                    "width": 526.34375,
+                    "height": 30,
+                    "top": 516.296875,
+                    "right": 638.34375,
+                    "bottom": 546.296875,
+                    "left": 112
+                  },
+                  {
+                    "x": 112,
+                    "y": 553.296875,
+                    "width": 503.875,
+                    "height": 30,
+                    "top": 553.296875,
+                    "right": 615.875,
+                    "bottom": 583.296875,
+                    "left": 112
+                  },
+                  {
+                    "x": 112,
+                    "y": 590.296875,
+                    "width": 483.78125,
+                    "height": 30,
+                    "top": 590.296875,
+                    "right": 595.78125,
+                    "bottom": 620.296875,
+                    "left": 112
+                  },
+                  {
+                    "x": 112,
+                    "y": 627.296875,
+                    "width": 448.03125,
+                    "height": 30,
+                    "top": 627.296875,
+                    "right": 560.03125,
+                    "bottom": 657.296875,
+                    "left": 112
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-somber",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Her nearby shop had carried little beyond familiar local songs. The performances she hoped to hear were always missing. Eventually she had stopped asking, although the wish had not entirely gone.",
+                "rects": [
+                  {
+                    "x": 1168.265625,
+                    "y": 241,
+                    "width": 36.234375,
+                    "height": 30,
+                    "top": 241,
+                    "right": 1204.5,
+                    "bottom": 271,
+                    "left": 1168.265625
+                  },
+                  {
+                    "x": 721,
+                    "y": 278,
+                    "width": 484.453125,
+                    "height": 30,
+                    "top": 278,
+                    "right": 1205.453125,
+                    "bottom": 308,
+                    "left": 721
+                  },
+                  {
+                    "x": 721,
+                    "y": 315,
+                    "width": 525.546875,
+                    "height": 30,
+                    "top": 315,
+                    "right": 1246.546875,
+                    "bottom": 345,
+                    "left": 721
+                  },
+                  {
+                    "x": 721,
+                    "y": 352,
+                    "width": 508.109375,
+                    "height": 30,
+                    "top": 352,
+                    "right": 1229.109375,
+                    "bottom": 382,
+                    "left": 721
+                  },
+                  {
+                    "x": 721,
+                    "y": 389,
+                    "width": 292.96875,
+                    "height": 30,
+                    "top": 389,
+                    "right": 1013.96875,
+                    "bottom": 419,
+                    "left": 721
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-wonder",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "She met Ren at an evening class. They had used the same library for years without speaking, and only the shared lessons brought them together. They became friends. Later she learned that his aunt kept a lending room for old recordings, and possibilities began to open. ",
+                "rects": [
+                  {
+                    "x": 560.015625,
+                    "y": 627.296875,
+                    "width": 0,
+                    "height": 30,
+                    "top": 627.296875,
+                    "right": 560.015625,
+                    "bottom": 657.296875,
+                    "left": 560.015625
+                  },
+                  {
+                    "x": 721,
+                    "y": 93,
+                    "width": 531.234375,
+                    "height": 30,
+                    "top": 93,
+                    "right": 1252.234375,
+                    "bottom": 123,
+                    "left": 721
+                  },
+                  {
+                    "x": 721,
+                    "y": 130,
+                    "width": 519.828125,
+                    "height": 30,
+                    "top": 130,
+                    "right": 1240.828125,
+                    "bottom": 160,
+                    "left": 721
+                  },
+                  {
+                    "x": 721,
+                    "y": 167,
+                    "width": 500.953125,
+                    "height": 30,
+                    "top": 167,
+                    "right": 1221.953125,
+                    "bottom": 197,
+                    "left": 721
+                  },
+                  {
+                    "x": 721,
+                    "y": 204,
+                    "width": 514.203125,
+                    "height": 30,
+                    "top": 204,
+                    "right": 1235.203125,
+                    "bottom": 234,
+                    "left": 721
+                  },
+                  {
+                    "x": 721,
+                    "y": 241,
+                    "width": 447.28125,
+                    "height": 30,
+                    "top": 241,
+                    "right": 1168.28125,
+                    "bottom": 271,
+                    "left": 721
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "screenshot": "reader-on-1366x768.png",
+      "domSha256": "24093076db4ed9481f81da1f3730d2b5171389cdeb36fb3c2b6534b6e9d50788"
+    },
+    {
+      "state": "reader-next",
+      "geometry": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "book": {
+          "x": 73,
+          "y": 67,
+          "width": 1220,
+          "height": 625,
+          "top": 67,
+          "right": 1293,
+          "bottom": 692,
+          "left": 73
+        },
+        "stage": {
+          "x": 74,
+          "y": 90,
+          "width": 1218,
+          "height": 583,
+          "top": 90,
+          "right": 1292,
+          "bottom": 673,
+          "left": 74
+        },
+        "heading": {
+          "x": -1106,
+          "y": 90,
+          "width": 533,
+          "height": 59.296875,
+          "top": 90,
+          "right": -573,
+          "bottom": 149.296875,
+          "left": -1106
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 54,
+          "top": 0,
+          "right": 1366,
+          "bottom": 54,
+          "left": 0
+        },
+        "footer": {
+          "x": 73,
+          "y": 692,
+          "width": 1220,
+          "height": 76,
+          "top": 692,
+          "right": 1293,
+          "bottom": 768,
+          "left": 73
+        },
+        "heartbeat": {
+          "x": 73,
+          "y": 695,
+          "width": 1220,
+          "height": 30,
+          "top": 695,
+          "right": 1293,
+          "bottom": 725,
+          "left": 73
+        },
+        "page": "2",
+        "pages": "3",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif",
+        "visibleParagraphLines": 3,
+        "visibleTextAreaPercent": 4,
+        "keys": [
+          {
+            "text": "",
+            "aria": "Refresh Heartbeat",
+            "font": "14px",
+            "rect": {
+              "x": 257.421875,
+              "y": 698,
+              "width": 28,
+              "height": 24,
+              "top": 698,
+              "right": 285.421875,
+              "bottom": 722,
+              "left": 257.421875
+            },
+            "scrollWidth": 28,
+            "clientWidth": 28
+          },
+          {
+            "text": "⌁Frustration",
+            "aria": "Frustration. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 303.421875,
+              "y": 695,
+              "width": 85.59375,
+              "height": 30,
+              "top": 695,
+              "right": 389.015625,
+              "bottom": 725,
+              "left": 303.421875
+            },
+            "scrollWidth": 86,
+            "clientWidth": 86
+          },
+          {
+            "text": "☀Quiet reward",
+            "aria": "Quiet reward. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 404.015625,
+              "y": 695,
+              "width": 96.546875,
+              "height": 30,
+              "top": 695,
+              "right": 500.5625,
+              "bottom": 725,
+              "left": 404.015625
+            },
+            "scrollWidth": 97,
+            "clientWidth": 97
+          }
+        ],
+        "highlights": [
+          {
+            "name": "heartbeat-reader-warm",
+            "size": 2,
+            "ranges": [
+              {
+                "text": "Late afternoon light rested on the tram windows. Leena watched the river turn silver as the concert hall drew nearer. She had waited months for this evening, yet the easy journey let her enjoy the waiting. For once, excitement did not require her to hurry.",
+                "rects": []
+              },
+              {
+                "text": "At last the remaining recording arrived in its plain paper sleeve. It was a small thing to carry home, but she carried it carefully.",
+                "rects": [
+                  {
+                    "x": 327.859375,
+                    "y": 93,
+                    "width": 297.671875,
+                    "height": 30,
+                    "top": 93,
+                    "right": 625.53125,
+                    "bottom": 123,
+                    "left": 327.859375
+                  },
+                  {
+                    "x": 112,
+                    "y": 130,
+                    "width": 512.390625,
+                    "height": 30,
+                    "top": 130,
+                    "right": 624.390625,
+                    "bottom": 160,
+                    "left": 112
+                  },
+                  {
+                    "x": 112,
+                    "y": 167,
+                    "width": 372.953125,
+                    "height": 30,
+                    "top": 167,
+                    "right": 484.953125,
+                    "bottom": 197,
+                    "left": 112
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-cool",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Now she was making lists again. She did not want every conversation with Ren to become another request, so she cut a long catalogue down to five recordings and then to three. They spoke of other things while he checked. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tense",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Two weeks passed before he learned that two titles could not be found. The news narrowed her plans without erasing them. ",
+                "rects": [
+                  {
+                    "x": 112,
+                    "y": 93,
+                    "width": 215.875,
+                    "height": 30,
+                    "top": 93,
+                    "right": 327.875,
+                    "bottom": 123,
+                    "left": 112
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tender",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "As a child she had wanted to conduct an orchestra after hearing a recording called The Glass Garden. She remembered finding a borrowed copy and playing it again and again through one short winter. The dates, the shelf and the small player were ordinary details, but they still held the scale of that early wanting. She had not followed much music before it. Afterwards, she could recall the opening almost without trying.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-somber",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Her nearby shop had carried little beyond familiar local songs. The performances she hoped to hear were always missing. Eventually she had stopped asking, although the wish had not entirely gone.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-wonder",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "She met Ren at an evening class. They had used the same library for years without speaking, and only the shared lessons brought them together. They became friends. Later she learned that his aunt kept a lending room for old recordings, and possibilities began to open. ",
+                "rects": []
+              }
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "screenshot": "reader-next-1366x768.png",
+      "domSha256": "2f8f72dcbef225654fd93bdfa6195afa23f5120367501564d5df0d9af64a8b1e"
+    },
+    {
+      "state": "reader-night",
+      "geometry": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "book": {
+          "x": 73,
+          "y": 67,
+          "width": 1220,
+          "height": 625,
+          "top": 67,
+          "right": 1293,
+          "bottom": 692,
+          "left": 73
+        },
+        "stage": {
+          "x": 74,
+          "y": 90,
+          "width": 1218,
+          "height": 583,
+          "top": 90,
+          "right": 1292,
+          "bottom": 673,
+          "left": 74
+        },
+        "heading": {
+          "x": -1106,
+          "y": 90,
+          "width": 533,
+          "height": 59.296875,
+          "top": 90,
+          "right": -573,
+          "bottom": 149.296875,
+          "left": -1106
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 54,
+          "top": 0,
+          "right": 1366,
+          "bottom": 54,
+          "left": 0
+        },
+        "footer": {
+          "x": 73,
+          "y": 692,
+          "width": 1220,
+          "height": 76,
+          "top": 692,
+          "right": 1293,
+          "bottom": 768,
+          "left": 73
+        },
+        "heartbeat": {
+          "x": 73,
+          "y": 695,
+          "width": 1220,
+          "height": 30,
+          "top": 695,
+          "right": 1293,
+          "bottom": 725,
+          "left": 73
+        },
+        "page": "2",
+        "pages": "3",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif",
+        "visibleParagraphLines": 3,
+        "visibleTextAreaPercent": 4,
+        "keys": [
+          {
+            "text": "",
+            "aria": "Refresh Heartbeat",
+            "font": "14px",
+            "rect": {
+              "x": 257.421875,
+              "y": 698,
+              "width": 28,
+              "height": 24,
+              "top": 698,
+              "right": 285.421875,
+              "bottom": 722,
+              "left": 257.421875
+            },
+            "scrollWidth": 28,
+            "clientWidth": 28
+          },
+          {
+            "text": "⌁Frustration",
+            "aria": "Frustration. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 303.421875,
+              "y": 695,
+              "width": 85.59375,
+              "height": 30,
+              "top": 695,
+              "right": 389.015625,
+              "bottom": 725,
+              "left": 303.421875
+            },
+            "scrollWidth": 86,
+            "clientWidth": 86
+          },
+          {
+            "text": "☀Quiet reward",
+            "aria": "Quiet reward. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 404.015625,
+              "y": 695,
+              "width": 96.546875,
+              "height": 30,
+              "top": 695,
+              "right": 500.5625,
+              "bottom": 725,
+              "left": 404.015625
+            },
+            "scrollWidth": 97,
+            "clientWidth": 97
+          }
+        ],
+        "highlights": [
+          {
+            "name": "heartbeat-reader-warm",
+            "size": 2,
+            "ranges": [
+              {
+                "text": "Late afternoon light rested on the tram windows. Leena watched the river turn silver as the concert hall drew nearer. She had waited months for this evening, yet the easy journey let her enjoy the waiting. For once, excitement did not require her to hurry.",
+                "rects": []
+              },
+              {
+                "text": "At last the remaining recording arrived in its plain paper sleeve. It was a small thing to carry home, but she carried it carefully.",
+                "rects": [
+                  {
+                    "x": 327.859375,
+                    "y": 93,
+                    "width": 297.671875,
+                    "height": 30,
+                    "top": 93,
+                    "right": 625.53125,
+                    "bottom": 123,
+                    "left": 327.859375
+                  },
+                  {
+                    "x": 112,
+                    "y": 130,
+                    "width": 512.390625,
+                    "height": 30,
+                    "top": 130,
+                    "right": 624.390625,
+                    "bottom": 160,
+                    "left": 112
+                  },
+                  {
+                    "x": 112,
+                    "y": 167,
+                    "width": 372.953125,
+                    "height": 30,
+                    "top": 167,
+                    "right": 484.953125,
+                    "bottom": 197,
+                    "left": 112
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-cool",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Now she was making lists again. She did not want every conversation with Ren to become another request, so she cut a long catalogue down to five recordings and then to three. They spoke of other things while he checked. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tense",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Two weeks passed before he learned that two titles could not be found. The news narrowed her plans without erasing them. ",
+                "rects": [
+                  {
+                    "x": 112,
+                    "y": 93,
+                    "width": 215.875,
+                    "height": 30,
+                    "top": 93,
+                    "right": 327.875,
+                    "bottom": 123,
+                    "left": 112
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tender",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "As a child she had wanted to conduct an orchestra after hearing a recording called The Glass Garden. She remembered finding a borrowed copy and playing it again and again through one short winter. The dates, the shelf and the small player were ordinary details, but they still held the scale of that early wanting. She had not followed much music before it. Afterwards, she could recall the opening almost without trying.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-somber",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Her nearby shop had carried little beyond familiar local songs. The performances she hoped to hear were always missing. Eventually she had stopped asking, although the wish had not entirely gone.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-wonder",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "She met Ren at an evening class. They had used the same library for years without speaking, and only the shared lessons brought them together. They became friends. Later she learned that his aunt kept a lending room for old recordings, and possibilities began to open. ",
+                "rects": []
+              }
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "screenshot": "reader-night-1366x768.png",
+      "domSha256": "86a64096b03c41794d05903bc00d815df204da2b2ab42d7f87af8f4e8ece7394"
+    },
+    {
+      "state": "writer-on",
+      "geometry": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "heartbeat": {
+          "x": 330,
+          "y": 690,
+          "width": 664,
+          "height": 30,
+          "top": 690,
+          "right": 994,
+          "bottom": 720,
+          "left": 330
+        },
+        "proseFont": "",
+        "visibleParagraphLines": null,
+        "visibleTextAreaPercent": 0,
+        "keys": [
+          {
+            "text": "",
+            "aria": "Refresh Heartbeat",
+            "font": "14px",
+            "rect": {
+              "x": 515.421875,
+              "y": 693,
+              "width": 28,
+              "height": 24,
+              "top": 693,
+              "right": 543.421875,
+              "bottom": 717,
+              "left": 515.421875
+            },
+            "scrollWidth": 28,
+            "clientWidth": 28
+          },
+          {
+            "text": "☀Eager calm",
+            "aria": "Eager calm. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 558.421875,
+              "y": 690,
+              "width": 85.984375,
+              "height": 30,
+              "top": 690,
+              "right": 644.40625,
+              "bottom": 720,
+              "left": 558.421875
+            },
+            "scrollWidth": 86,
+            "clientWidth": 86
+          },
+          {
+            "text": "♡Fond longing",
+            "aria": "Fond longing. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 658.40625,
+              "y": 690,
+              "width": 95.734375,
+              "height": 30,
+              "top": 690,
+              "right": 754.140625,
+              "bottom": 720,
+              "left": 658.40625
+            },
+            "scrollWidth": 96,
+            "clientWidth": 96
+          }
+        ],
+        "highlights": [
+          {
+            "name": "heartbeat-writer-warm",
+            "size": 2,
+            "ranges": [
+              {
+                "text": "Late afternoon light rested on the tram windows. Leena watched the river turn silver as the concert hall drew nearer. She had waited months for this evening, yet the easy journey let her enjoy the waiting. For once, excitement did not require her to hurry.",
+                "rects": []
+              },
+              {
+                "text": "At last the remaining recording arrived in its plain paper sleeve. It was a small thing to carry home, but she carried it carefully.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-cool",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Now she was making lists again. She did not want every conversation with Ren to become another request, so she cut a long catalogue down to five recordings and then to three. They spoke of other things while he checked. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-tense",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Two weeks passed before he learned that two titles could not be found. The news narrowed her plans without erasing them. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-tender",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "As a child she had wanted to conduct an orchestra after hearing a recording called The Glass Garden. She remembered finding a borrowed copy and playing it again and again through one short winter. The dates, the shelf and the small player were ordinary details, but they still held the scale of that early wanting. She had not followed much music before it. Afterwards, she could recall the opening almost without trying.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-somber",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Her nearby shop had carried little beyond familiar local songs. The performances she hoped to hear were always missing. Eventually she had stopped asking, although the wish had not entirely gone.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-wonder",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "She met Ren at an evening class. They had used the same library for years without speaking, and only the shared lessons brought them together. They became friends. Later she learned that his aunt kept a lending room for old recordings, and possibilities began to open. ",
+                "rects": []
+              }
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "screenshot": "writer-on-1366x768.png",
+      "domSha256": "457d2c6c3fb665566b76ffb9143eb16a0409ab2067ef0869e7919c4ad1c01eb4"
+    },
+    {
+      "state": "writer-off",
+      "geometry": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "proseFont": "",
+        "visibleParagraphLines": null,
+        "visibleTextAreaPercent": 0,
+        "keys": [],
+        "highlights": []
+      },
+      "errors": [],
+      "screenshot": "writer-off-1366x768.png",
+      "domSha256": "345698f04714ee7a8efb08adf7b342a296f0ad042875c23032b65a81626f0ff6"
+    },
+    {
+      "state": "reader-off",
+      "geometry": {
+        "viewport": [
+          390,
+          844
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 390,
+          "height": 754,
+          "top": 46,
+          "right": 390,
+          "bottom": 800,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 63,
+          "width": 390,
+          "height": 724,
+          "top": 63,
+          "right": 390,
+          "bottom": 787,
+          "left": 0
+        },
+        "heading": {
+          "x": 20,
+          "y": 63,
+          "width": 350,
+          "height": 54.6875,
+          "top": 63,
+          "right": 370,
+          "bottom": 117.6875,
+          "left": 20
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 46,
+          "top": 0,
+          "right": 390,
+          "bottom": 46,
+          "left": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 800,
+          "width": 390,
+          "height": 44,
+          "top": 800,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "page": "0",
+        "pages": "3",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif",
+        "visibleParagraphLines": 17,
+        "visibleTextAreaPercent": 48.4,
+        "keys": [],
+        "highlights": []
+      },
+      "errors": [],
+      "screenshot": "reader-off-390x844.png",
+      "domSha256": "8746877ef00c75633ead3d77245b804a50dcebc054a923b8b684cf343e5a26b8"
+    },
+    {
+      "state": "reader-on",
+      "geometry": {
+        "viewport": [
+          390,
+          844
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 390,
+          "height": 703,
+          "top": 46,
+          "right": 390,
+          "bottom": 749,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 63,
+          "width": 390,
+          "height": 673,
+          "top": 63,
+          "right": 390,
+          "bottom": 736,
+          "left": 0
+        },
+        "heading": {
+          "x": 20,
+          "y": 63,
+          "width": 350,
+          "height": 54.6875,
+          "top": 63,
+          "right": 370,
+          "bottom": 117.6875,
+          "left": 20
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 46,
+          "top": 0,
+          "right": 390,
+          "bottom": 46,
+          "left": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 749,
+          "width": 390,
+          "height": 95,
+          "top": 749,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "heartbeat": {
+          "x": 18,
+          "y": 753,
+          "width": 354,
+          "height": 52,
+          "top": 753,
+          "right": 372,
+          "bottom": 805,
+          "left": 18
+        },
+        "page": "0",
+        "pages": "3",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif",
+        "visibleParagraphLines": 15,
+        "visibleTextAreaPercent": 42.4,
+        "keys": [
+          {
+            "text": "",
+            "aria": "Refresh Heartbeat",
+            "font": "14px",
+            "rect": {
+              "x": 344,
+              "y": 753,
+              "width": 28,
+              "height": 22,
+              "top": 753,
+              "right": 372,
+              "bottom": 775,
+              "left": 344
+            },
+            "scrollWidth": 28,
+            "clientWidth": 28
+          },
+          {
+            "text": "☀Eager calm",
+            "aria": "Eager calm. Show interpretation.",
+            "font": "11px",
+            "rect": {
+              "x": 18,
+              "y": 775,
+              "width": 80.90625,
+              "height": 30,
+              "top": 775,
+              "right": 98.90625,
+              "bottom": 805,
+              "left": 18
+            },
+            "scrollWidth": 81,
+            "clientWidth": 81
+          },
+          {
+            "text": "♡Fond longing",
+            "aria": "Fond longing. Show interpretation.",
+            "font": "11px",
+            "rect": {
+              "x": 111.90625,
+              "y": 775,
+              "width": 89.84375,
+              "height": 30,
+              "top": 775,
+              "right": 201.75,
+              "bottom": 805,
+              "left": 111.90625
+            },
+            "scrollWidth": 90,
+            "clientWidth": 90
+          }
+        ],
+        "highlights": [
+          {
+            "name": "heartbeat-reader-warm",
+            "size": 2,
+            "ranges": [
+              {
+                "text": "Late afternoon light rested on the tram windows. Leena watched the river turn silver as the concert hall drew nearer. She had waited months for this evening, yet the easy journey let her enjoy the waiting. For once, excitement did not require her to hurry.",
+                "rects": [
+                  {
+                    "x": 20,
+                    "y": 135.6875,
+                    "width": 316,
+                    "height": 30,
+                    "top": 135.6875,
+                    "right": 336,
+                    "bottom": 165.6875,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 172.6875,
+                    "width": 325.8125,
+                    "height": 30,
+                    "top": 172.6875,
+                    "right": 345.8125,
+                    "bottom": 202.6875,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 209.6875,
+                    "width": 327.03125,
+                    "height": 30,
+                    "top": 209.6875,
+                    "right": 347.03125,
+                    "bottom": 239.6875,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 246.6875,
+                    "width": 346.828125,
+                    "height": 30,
+                    "top": 246.6875,
+                    "right": 366.828125,
+                    "bottom": 276.6875,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 283.6875,
+                    "width": 348.46875,
+                    "height": 30,
+                    "top": 283.6875,
+                    "right": 368.46875,
+                    "bottom": 313.6875,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 320.6875,
+                    "width": 328.40625,
+                    "height": 30,
+                    "top": 320.6875,
+                    "right": 348.40625,
+                    "bottom": 350.6875,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 357.6875,
+                    "width": 312.28125,
+                    "height": 30,
+                    "top": 357.6875,
+                    "right": 332.28125,
+                    "bottom": 387.6875,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 394.6875,
+                    "width": 60.6875,
+                    "height": 30,
+                    "top": 394.6875,
+                    "right": 80.6875,
+                    "bottom": 424.6875,
+                    "left": 20
+                  }
+                ]
+              },
+              {
+                "text": "At last the remaining recording arrived in its plain paper sleeve. It was a small thing to carry home, but she carried it carefully.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-cool",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Now she was making lists again. She did not want every conversation with Ren to become another request, so she cut a long catalogue down to five recordings and then to three. They spoke of other things while he checked. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tense",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Two weeks passed before he learned that two titles could not be found. The news narrowed her plans without erasing them. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tender",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "As a child she had wanted to conduct an orchestra after hearing a recording called The Glass Garden. She remembered finding a borrowed copy and playing it again and again through one short winter. The dates, the shelf and the small player were ordinary details, but they still held the scale of that early wanting. She had not followed much music before it. Afterwards, she could recall the opening almost without trying.",
+                "rects": [
+                  {
+                    "x": 80.671875,
+                    "y": 394.6875,
+                    "width": 0,
+                    "height": 30,
+                    "top": 394.6875,
+                    "right": 80.671875,
+                    "bottom": 424.6875,
+                    "left": 80.671875
+                  },
+                  {
+                    "x": 20,
+                    "y": 446.6875,
+                    "width": 347.171875,
+                    "height": 30,
+                    "top": 446.6875,
+                    "right": 367.171875,
+                    "bottom": 476.6875,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 483.6875,
+                    "width": 260.84375,
+                    "height": 30,
+                    "top": 483.6875,
+                    "right": 280.84375,
+                    "bottom": 513.6875,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 520.6875,
+                    "width": 328.40625,
+                    "height": 30,
+                    "top": 520.6875,
+                    "right": 348.40625,
+                    "bottom": 550.6875,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 557.6875,
+                    "width": 346.484375,
+                    "height": 30,
+                    "top": 557.6875,
+                    "right": 366.484375,
+                    "bottom": 587.6875,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 594.6875,
+                    "width": 330.6875,
+                    "height": 30,
+                    "top": 594.6875,
+                    "right": 350.6875,
+                    "bottom": 624.6875,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 631.6875,
+                    "width": 345.640625,
+                    "height": 30,
+                    "top": 631.6875,
+                    "right": 365.640625,
+                    "bottom": 661.6875,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 668.6875,
+                    "width": 327.984375,
+                    "height": 30,
+                    "top": 668.6875,
+                    "right": 347.984375,
+                    "bottom": 698.6875,
+                    "left": 20
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-somber",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Her nearby shop had carried little beyond familiar local songs. The performances she hoped to hear were always missing. Eventually she had stopped asking, although the wish had not entirely gone.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-wonder",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "She met Ren at an evening class. They had used the same library for years without speaking, and only the shared lessons brought them together. They became friends. Later she learned that his aunt kept a lending room for old recordings, and possibilities began to open. ",
+                "rects": []
+              }
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "screenshot": "reader-on-390x844.png",
+      "domSha256": "f2b4aa74adc48f98fe4463e48c8ffcd448f8f54c401e0f2b7bb8e8e06336411c"
+    },
+    {
+      "state": "reader-next",
+      "geometry": {
+        "viewport": [
+          390,
+          844
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 390,
+          "height": 703,
+          "top": 46,
+          "right": 390,
+          "bottom": 749,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 63,
+          "width": 390,
+          "height": 673,
+          "top": 63,
+          "right": 390,
+          "bottom": 736,
+          "left": 0
+        },
+        "heading": {
+          "x": -370,
+          "y": 63,
+          "width": 350,
+          "height": 54.6875,
+          "top": 63,
+          "right": -20,
+          "bottom": 117.6875,
+          "left": -370
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 46,
+          "top": 0,
+          "right": 390,
+          "bottom": 46,
+          "left": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 749,
+          "width": 390,
+          "height": 95,
+          "top": 749,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "heartbeat": {
+          "x": 18,
+          "y": 753,
+          "width": 354,
+          "height": 52,
+          "top": 753,
+          "right": 372,
+          "bottom": 805,
+          "left": 18
+        },
+        "page": "1",
+        "pages": "3",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif",
+        "visibleParagraphLines": 17,
+        "visibleTextAreaPercent": 49.2,
+        "keys": [
+          {
+            "text": "",
+            "aria": "Refresh Heartbeat",
+            "font": "14px",
+            "rect": {
+              "x": 344,
+              "y": 753,
+              "width": 28,
+              "height": 22,
+              "top": 753,
+              "right": 372,
+              "bottom": 775,
+              "left": 344
+            },
+            "scrollWidth": 28,
+            "clientWidth": 28
+          },
+          {
+            "text": "♡Fond longing",
+            "aria": "Fond longing. Show interpretation.",
+            "font": "11px",
+            "rect": {
+              "x": 18,
+              "y": 775,
+              "width": 89.84375,
+              "height": 30,
+              "top": 775,
+              "right": 107.84375,
+              "bottom": 805,
+              "left": 18
+            },
+            "scrollWidth": 90,
+            "clientWidth": 90
+          },
+          {
+            "text": "✧Renewed curiosity",
+            "aria": "Renewed curiosity. Show interpretation.",
+            "font": "11px",
+            "rect": {
+              "x": 120.84375,
+              "y": 775,
+              "width": 118.46875,
+              "height": 30,
+              "top": 775,
+              "right": 239.3125,
+              "bottom": 805,
+              "left": 120.84375
+            },
+            "scrollWidth": 118,
+            "clientWidth": 118
+          },
+          {
+            "text": "+1 feeling",
+            "aria": null,
+            "font": "11px",
+            "rect": {
+              "x": 252.3125,
+              "y": 775,
+              "width": 58,
+              "height": 30,
+              "top": 775,
+              "right": 310.3125,
+              "bottom": 805,
+              "left": 252.3125
+            },
+            "scrollWidth": 58,
+            "clientWidth": 58
+          }
+        ],
+        "highlights": [
+          {
+            "name": "heartbeat-reader-warm",
+            "size": 2,
+            "ranges": [
+              {
+                "text": "Late afternoon light rested on the tram windows. Leena watched the river turn silver as the concert hall drew nearer. She had waited months for this evening, yet the easy journey let her enjoy the waiting. For once, excitement did not require her to hurry.",
+                "rects": []
+              },
+              {
+                "text": "At last the remaining recording arrived in its plain paper sleeve. It was a small thing to carry home, but she carried it carefully.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-cool",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Now she was making lists again. She did not want every conversation with Ren to become another request, so she cut a long catalogue down to five recordings and then to three. They spoke of other things while he checked. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tense",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Two weeks passed before he learned that two titles could not be found. The news narrowed her plans without erasing them. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tender",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "As a child she had wanted to conduct an orchestra after hearing a recording called The Glass Garden. She remembered finding a borrowed copy and playing it again and again through one short winter. The dates, the shelf and the small player were ordinary details, but they still held the scale of that early wanting. She had not followed much music before it. Afterwards, she could recall the opening almost without trying.",
+                "rects": [
+                  {
+                    "x": 20,
+                    "y": 66,
+                    "width": 327.984375,
+                    "height": 30,
+                    "top": 66,
+                    "right": 347.984375,
+                    "bottom": 96,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 103,
+                    "width": 330.125,
+                    "height": 30,
+                    "top": 103,
+                    "right": 350.125,
+                    "bottom": 133,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 140,
+                    "width": 344.90625,
+                    "height": 30,
+                    "top": 140,
+                    "right": 364.90625,
+                    "bottom": 170,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 177,
+                    "width": 325.265625,
+                    "height": 30,
+                    "top": 177,
+                    "right": 345.265625,
+                    "bottom": 207,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 214,
+                    "width": 297.765625,
+                    "height": 30,
+                    "top": 214,
+                    "right": 317.765625,
+                    "bottom": 244,
+                    "left": 20
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-somber",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Her nearby shop had carried little beyond familiar local songs. The performances she hoped to hear were always missing. Eventually she had stopped asking, although the wish had not entirely gone.",
+                "rects": [
+                  {
+                    "x": 280.390625,
+                    "y": 525,
+                    "width": 36.234375,
+                    "height": 30,
+                    "top": 525,
+                    "right": 316.625,
+                    "bottom": 555,
+                    "left": 280.390625
+                  },
+                  {
+                    "x": 20,
+                    "y": 562,
+                    "width": 279.125,
+                    "height": 30,
+                    "top": 562,
+                    "right": 299.125,
+                    "bottom": 592,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 599,
+                    "width": 304.484375,
+                    "height": 30,
+                    "top": 599,
+                    "right": 324.484375,
+                    "bottom": 629,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 636,
+                    "width": 303.84375,
+                    "height": 30,
+                    "top": 636,
+                    "right": 323.84375,
+                    "bottom": 666,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 673,
+                    "width": 342.8125,
+                    "height": 30,
+                    "top": 673,
+                    "right": 362.8125,
+                    "bottom": 703,
+                    "left": 20
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-wonder",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "She met Ren at an evening class. They had used the same library for years without speaking, and only the shared lessons brought them together. They became friends. Later she learned that his aunt kept a lending room for old recordings, and possibilities began to open. ",
+                "rects": [
+                  {
+                    "x": 317.75,
+                    "y": 214,
+                    "width": 0,
+                    "height": 30,
+                    "top": 214,
+                    "right": 317.75,
+                    "bottom": 244,
+                    "left": 317.75
+                  },
+                  {
+                    "x": 20,
+                    "y": 266,
+                    "width": 303.875,
+                    "height": 30,
+                    "top": 266,
+                    "right": 323.875,
+                    "bottom": 296,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 303,
+                    "width": 325.765625,
+                    "height": 30,
+                    "top": 303,
+                    "right": 345.765625,
+                    "bottom": 333,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 340,
+                    "width": 348.703125,
+                    "height": 30,
+                    "top": 340,
+                    "right": 368.703125,
+                    "bottom": 370,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 377,
+                    "width": 272.828125,
+                    "height": 30,
+                    "top": 377,
+                    "right": 292.828125,
+                    "bottom": 407,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 414,
+                    "width": 347.34375,
+                    "height": 30,
+                    "top": 414,
+                    "right": 367.34375,
+                    "bottom": 444,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 451,
+                    "width": 294.265625,
+                    "height": 30,
+                    "top": 451,
+                    "right": 314.265625,
+                    "bottom": 481,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 488,
+                    "width": 348.328125,
+                    "height": 30,
+                    "top": 488,
+                    "right": 368.328125,
+                    "bottom": 518,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 525,
+                    "width": 260.40625,
+                    "height": 30,
+                    "top": 525,
+                    "right": 280.40625,
+                    "bottom": 555,
+                    "left": 20
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "screenshot": "reader-next-390x844.png",
+      "domSha256": "3b555cba3a8c1ef66ca1f6f6f3ee4176eea7202aa708e9038f9d1577e8cc435b"
+    },
+    {
+      "state": "reader-night",
+      "geometry": {
+        "viewport": [
+          390,
+          844
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 390,
+          "height": 703,
+          "top": 46,
+          "right": 390,
+          "bottom": 749,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 63,
+          "width": 390,
+          "height": 673,
+          "top": 63,
+          "right": 390,
+          "bottom": 736,
+          "left": 0
+        },
+        "heading": {
+          "x": -370,
+          "y": 63,
+          "width": 350,
+          "height": 54.6875,
+          "top": 63,
+          "right": -20,
+          "bottom": 117.6875,
+          "left": -370
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 46,
+          "top": 0,
+          "right": 390,
+          "bottom": 46,
+          "left": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 749,
+          "width": 390,
+          "height": 95,
+          "top": 749,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "heartbeat": {
+          "x": 18,
+          "y": 753,
+          "width": 354,
+          "height": 52,
+          "top": 753,
+          "right": 372,
+          "bottom": 805,
+          "left": 18
+        },
+        "page": "1",
+        "pages": "3",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif",
+        "visibleParagraphLines": 17,
+        "visibleTextAreaPercent": 49.2,
+        "keys": [
+          {
+            "text": "",
+            "aria": "Refresh Heartbeat",
+            "font": "14px",
+            "rect": {
+              "x": 344,
+              "y": 753,
+              "width": 28,
+              "height": 22,
+              "top": 753,
+              "right": 372,
+              "bottom": 775,
+              "left": 344
+            },
+            "scrollWidth": 28,
+            "clientWidth": 28
+          },
+          {
+            "text": "♡Fond longing",
+            "aria": "Fond longing. Show interpretation.",
+            "font": "11px",
+            "rect": {
+              "x": 18,
+              "y": 775,
+              "width": 89.84375,
+              "height": 30,
+              "top": 775,
+              "right": 107.84375,
+              "bottom": 805,
+              "left": 18
+            },
+            "scrollWidth": 90,
+            "clientWidth": 90
+          },
+          {
+            "text": "✧Renewed curiosity",
+            "aria": "Renewed curiosity. Show interpretation.",
+            "font": "11px",
+            "rect": {
+              "x": 120.84375,
+              "y": 775,
+              "width": 118.46875,
+              "height": 30,
+              "top": 775,
+              "right": 239.3125,
+              "bottom": 805,
+              "left": 120.84375
+            },
+            "scrollWidth": 118,
+            "clientWidth": 118
+          },
+          {
+            "text": "+1 feeling",
+            "aria": null,
+            "font": "11px",
+            "rect": {
+              "x": 252.3125,
+              "y": 775,
+              "width": 58,
+              "height": 30,
+              "top": 775,
+              "right": 310.3125,
+              "bottom": 805,
+              "left": 252.3125
+            },
+            "scrollWidth": 58,
+            "clientWidth": 58
+          }
+        ],
+        "highlights": [
+          {
+            "name": "heartbeat-reader-warm",
+            "size": 2,
+            "ranges": [
+              {
+                "text": "Late afternoon light rested on the tram windows. Leena watched the river turn silver as the concert hall drew nearer. She had waited months for this evening, yet the easy journey let her enjoy the waiting. For once, excitement did not require her to hurry.",
+                "rects": []
+              },
+              {
+                "text": "At last the remaining recording arrived in its plain paper sleeve. It was a small thing to carry home, but she carried it carefully.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-cool",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Now she was making lists again. She did not want every conversation with Ren to become another request, so she cut a long catalogue down to five recordings and then to three. They spoke of other things while he checked. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tense",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Two weeks passed before he learned that two titles could not be found. The news narrowed her plans without erasing them. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tender",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "As a child she had wanted to conduct an orchestra after hearing a recording called The Glass Garden. She remembered finding a borrowed copy and playing it again and again through one short winter. The dates, the shelf and the small player were ordinary details, but they still held the scale of that early wanting. She had not followed much music before it. Afterwards, she could recall the opening almost without trying.",
+                "rects": [
+                  {
+                    "x": 20,
+                    "y": 66,
+                    "width": 327.984375,
+                    "height": 30,
+                    "top": 66,
+                    "right": 347.984375,
+                    "bottom": 96,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 103,
+                    "width": 330.125,
+                    "height": 30,
+                    "top": 103,
+                    "right": 350.125,
+                    "bottom": 133,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 140,
+                    "width": 344.90625,
+                    "height": 30,
+                    "top": 140,
+                    "right": 364.90625,
+                    "bottom": 170,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 177,
+                    "width": 325.265625,
+                    "height": 30,
+                    "top": 177,
+                    "right": 345.265625,
+                    "bottom": 207,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 214,
+                    "width": 297.765625,
+                    "height": 30,
+                    "top": 214,
+                    "right": 317.765625,
+                    "bottom": 244,
+                    "left": 20
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-somber",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Her nearby shop had carried little beyond familiar local songs. The performances she hoped to hear were always missing. Eventually she had stopped asking, although the wish had not entirely gone.",
+                "rects": [
+                  {
+                    "x": 280.390625,
+                    "y": 525,
+                    "width": 36.234375,
+                    "height": 30,
+                    "top": 525,
+                    "right": 316.625,
+                    "bottom": 555,
+                    "left": 280.390625
+                  },
+                  {
+                    "x": 20,
+                    "y": 562,
+                    "width": 279.125,
+                    "height": 30,
+                    "top": 562,
+                    "right": 299.125,
+                    "bottom": 592,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 599,
+                    "width": 304.484375,
+                    "height": 30,
+                    "top": 599,
+                    "right": 324.484375,
+                    "bottom": 629,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 636,
+                    "width": 303.84375,
+                    "height": 30,
+                    "top": 636,
+                    "right": 323.84375,
+                    "bottom": 666,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 673,
+                    "width": 342.8125,
+                    "height": 30,
+                    "top": 673,
+                    "right": 362.8125,
+                    "bottom": 703,
+                    "left": 20
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-wonder",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "She met Ren at an evening class. They had used the same library for years without speaking, and only the shared lessons brought them together. They became friends. Later she learned that his aunt kept a lending room for old recordings, and possibilities began to open. ",
+                "rects": [
+                  {
+                    "x": 317.75,
+                    "y": 214,
+                    "width": 0,
+                    "height": 30,
+                    "top": 214,
+                    "right": 317.75,
+                    "bottom": 244,
+                    "left": 317.75
+                  },
+                  {
+                    "x": 20,
+                    "y": 266,
+                    "width": 303.875,
+                    "height": 30,
+                    "top": 266,
+                    "right": 323.875,
+                    "bottom": 296,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 303,
+                    "width": 325.765625,
+                    "height": 30,
+                    "top": 303,
+                    "right": 345.765625,
+                    "bottom": 333,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 340,
+                    "width": 348.703125,
+                    "height": 30,
+                    "top": 340,
+                    "right": 368.703125,
+                    "bottom": 370,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 377,
+                    "width": 272.828125,
+                    "height": 30,
+                    "top": 377,
+                    "right": 292.828125,
+                    "bottom": 407,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 414,
+                    "width": 347.34375,
+                    "height": 30,
+                    "top": 414,
+                    "right": 367.34375,
+                    "bottom": 444,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 451,
+                    "width": 294.265625,
+                    "height": 30,
+                    "top": 451,
+                    "right": 314.265625,
+                    "bottom": 481,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 488,
+                    "width": 348.328125,
+                    "height": 30,
+                    "top": 488,
+                    "right": 368.328125,
+                    "bottom": 518,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 525,
+                    "width": 260.40625,
+                    "height": 30,
+                    "top": 525,
+                    "right": 280.40625,
+                    "bottom": 555,
+                    "left": 20
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "screenshot": "reader-night-390x844.png",
+      "domSha256": "7e9c9b6cf9a68c2a9a62de3d61ba714c115cb46758e2e702a975e53ca8fa109d"
+    },
+    {
+      "state": "writer-on",
+      "geometry": {
+        "viewport": [
+          390,
+          844
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "heartbeat": {
+          "x": 25,
+          "y": 746,
+          "width": 340,
+          "height": 54,
+          "top": 746,
+          "right": 365,
+          "bottom": 800,
+          "left": 25
+        },
+        "proseFont": "",
+        "visibleParagraphLines": null,
+        "visibleTextAreaPercent": 0,
+        "keys": [
+          {
+            "text": "",
+            "aria": "Refresh Heartbeat",
+            "font": "14px",
+            "rect": {
+              "x": 337,
+              "y": 746,
+              "width": 28,
+              "height": 24,
+              "top": 746,
+              "right": 365,
+              "bottom": 770,
+              "left": 337
+            },
+            "scrollWidth": 28,
+            "clientWidth": 28
+          },
+          {
+            "text": "☀Eager calm",
+            "aria": "Eager calm. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 25,
+              "y": 770,
+              "width": 85.984375,
+              "height": 30,
+              "top": 770,
+              "right": 110.984375,
+              "bottom": 800,
+              "left": 25
+            },
+            "scrollWidth": 86,
+            "clientWidth": 86
+          },
+          {
+            "text": "♡Fond longing",
+            "aria": "Fond longing. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 124.984375,
+              "y": 770,
+              "width": 95.734375,
+              "height": 30,
+              "top": 770,
+              "right": 220.71875,
+              "bottom": 800,
+              "left": 124.984375
+            },
+            "scrollWidth": 96,
+            "clientWidth": 96
+          }
+        ],
+        "highlights": [
+          {
+            "name": "heartbeat-writer-warm",
+            "size": 2,
+            "ranges": [
+              {
+                "text": "Late afternoon light rested on the tram windows. Leena watched the river turn silver as the concert hall drew nearer. She had waited months for this evening, yet the easy journey let her enjoy the waiting. For once, excitement did not require her to hurry.",
+                "rects": []
+              },
+              {
+                "text": "At last the remaining recording arrived in its plain paper sleeve. It was a small thing to carry home, but she carried it carefully.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-cool",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Now she was making lists again. She did not want every conversation with Ren to become another request, so she cut a long catalogue down to five recordings and then to three. They spoke of other things while he checked. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-tense",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Two weeks passed before he learned that two titles could not be found. The news narrowed her plans without erasing them. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-tender",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "As a child she had wanted to conduct an orchestra after hearing a recording called The Glass Garden. She remembered finding a borrowed copy and playing it again and again through one short winter. The dates, the shelf and the small player were ordinary details, but they still held the scale of that early wanting. She had not followed much music before it. Afterwards, she could recall the opening almost without trying.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-somber",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Her nearby shop had carried little beyond familiar local songs. The performances she hoped to hear were always missing. Eventually she had stopped asking, although the wish had not entirely gone.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-wonder",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "She met Ren at an evening class. They had used the same library for years without speaking, and only the shared lessons brought them together. They became friends. Later she learned that his aunt kept a lending room for old recordings, and possibilities began to open. ",
+                "rects": []
+              }
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "screenshot": "writer-on-390x844.png",
+      "domSha256": "9316d63295f570c82b6de9cbe3ea7f9fbe36c0d8ce4743d37954eea6891a5522"
+    },
+    {
+      "state": "writer-off",
+      "geometry": {
+        "viewport": [
+          390,
+          844
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "proseFont": "",
+        "visibleParagraphLines": null,
+        "visibleTextAreaPercent": 0,
+        "keys": [],
+        "highlights": []
+      },
+      "errors": [],
+      "screenshot": "writer-off-390x844.png",
+      "domSha256": "ac339414b28eb61ee3cf61634cc6a842e44b2da9d3a20f2da53ee29776facbba"
+    },
+    {
+      "state": "reader-off",
+      "geometry": {
+        "viewport": [
+          320,
+          568
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 320,
+          "height": 478,
+          "top": 46,
+          "right": 320,
+          "bottom": 524,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 60,
+          "width": 320,
+          "height": 451,
+          "top": 60,
+          "right": 320,
+          "bottom": 511,
+          "left": 0
+        },
+        "heading": {
+          "x": 20,
+          "y": 60,
+          "width": 280,
+          "height": 52.09375,
+          "top": 60,
+          "right": 300,
+          "bottom": 112.09375,
+          "left": 20
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 46,
+          "top": 0,
+          "right": 320,
+          "bottom": 46,
+          "left": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 524,
+          "width": 320,
+          "height": 44,
+          "top": 524,
+          "right": 320,
+          "bottom": 568,
+          "left": 0
+        },
+        "page": "0",
+        "pages": "6",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif",
+        "visibleParagraphLines": 10,
+        "visibleTextAreaPercent": 38.9,
+        "keys": [],
+        "highlights": []
+      },
+      "errors": [],
+      "screenshot": "reader-off-320x568.png",
+      "domSha256": "4ecccadbc6b0d2991c9ccec6720257d6022ec1b29c2a75990b6bad13d8f4ddd5"
+    },
+    {
+      "state": "reader-on",
+      "geometry": {
+        "viewport": [
+          320,
+          568
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 320,
+          "height": 427,
+          "top": 46,
+          "right": 320,
+          "bottom": 473,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 60,
+          "width": 320,
+          "height": 400,
+          "top": 60,
+          "right": 320,
+          "bottom": 460,
+          "left": 0
+        },
+        "heading": {
+          "x": 20,
+          "y": 60,
+          "width": 280,
+          "height": 52.09375,
+          "top": 60,
+          "right": 300,
+          "bottom": 112.09375,
+          "left": 20
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 46,
+          "top": 0,
+          "right": 320,
+          "bottom": 46,
+          "left": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 473,
+          "width": 320,
+          "height": 95,
+          "top": 473,
+          "right": 320,
+          "bottom": 568,
+          "left": 0
+        },
+        "heartbeat": {
+          "x": 18,
+          "y": 477,
+          "width": 284,
+          "height": 52,
+          "top": 477,
+          "right": 302,
+          "bottom": 529,
+          "left": 18
+        },
+        "page": "0",
+        "pages": "7",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif",
+        "visibleParagraphLines": 8,
+        "visibleTextAreaPercent": 32.8,
+        "keys": [
+          {
+            "text": "",
+            "aria": "Refresh Heartbeat",
+            "font": "14px",
+            "rect": {
+              "x": 274,
+              "y": 477,
+              "width": 28,
+              "height": 22,
+              "top": 477,
+              "right": 302,
+              "bottom": 499,
+              "left": 274
+            },
+            "scrollWidth": 28,
+            "clientWidth": 28
+          },
+          {
+            "text": "☀Eager calm",
+            "aria": "Eager calm. Show interpretation.",
+            "font": "11px",
+            "rect": {
+              "x": 18,
+              "y": 499,
+              "width": 80.90625,
+              "height": 30,
+              "top": 499,
+              "right": 98.90625,
+              "bottom": 529,
+              "left": 18
+            },
+            "scrollWidth": 81,
+            "clientWidth": 81
+          }
+        ],
+        "highlights": [
+          {
+            "name": "heartbeat-reader-warm",
+            "size": 2,
+            "ranges": [
+              {
+                "text": "Late afternoon light rested on the tram windows. Leena watched the river turn silver as the concert hall drew nearer. She had waited months for this evening, yet the easy journey let her enjoy the waiting. For once, excitement did not require her to hurry.",
+                "rects": [
+                  {
+                    "x": 20,
+                    "y": 128.09375,
+                    "width": 251.734375,
+                    "height": 30,
+                    "top": 128.09375,
+                    "right": 271.734375,
+                    "bottom": 158.09375,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 165.09375,
+                    "width": 269.890625,
+                    "height": 30,
+                    "top": 165.09375,
+                    "right": 289.890625,
+                    "bottom": 195.09375,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 202.09375,
+                    "width": 270.59375,
+                    "height": 30,
+                    "top": 202.09375,
+                    "right": 290.59375,
+                    "bottom": 232.09375,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 239.09375,
+                    "width": 225.390625,
+                    "height": 30,
+                    "top": 239.09375,
+                    "right": 245.390625,
+                    "bottom": 269.09375,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 276.09375,
+                    "width": 216.5625,
+                    "height": 30,
+                    "top": 276.09375,
+                    "right": 236.5625,
+                    "bottom": 306.09375,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 313.09375,
+                    "width": 266.53125,
+                    "height": 30,
+                    "top": 313.09375,
+                    "right": 286.53125,
+                    "bottom": 343.09375,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 350.09375,
+                    "width": 277.046875,
+                    "height": 30,
+                    "top": 350.09375,
+                    "right": 297.046875,
+                    "bottom": 380.09375,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 387.09375,
+                    "width": 206.828125,
+                    "height": 30,
+                    "top": 387.09375,
+                    "right": 226.828125,
+                    "bottom": 417.09375,
+                    "left": 20
+                  }
+                ]
+              },
+              {
+                "text": "At last the remaining recording arrived in its plain paper sleeve. It was a small thing to carry home, but she carried it carefully.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-cool",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Now she was making lists again. She did not want every conversation with Ren to become another request, so she cut a long catalogue down to five recordings and then to three. They spoke of other things while he checked. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tense",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Two weeks passed before he learned that two titles could not be found. The news narrowed her plans without erasing them. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tender",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "As a child she had wanted to conduct an orchestra after hearing a recording called The Glass Garden. She remembered finding a borrowed copy and playing it again and again through one short winter. The dates, the shelf and the small player were ordinary details, but they still held the scale of that early wanting. She had not followed much music before it. Afterwards, she could recall the opening almost without trying.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-somber",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Her nearby shop had carried little beyond familiar local songs. The performances she hoped to hear were always missing. Eventually she had stopped asking, although the wish had not entirely gone.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-wonder",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "She met Ren at an evening class. They had used the same library for years without speaking, and only the shared lessons brought them together. They became friends. Later she learned that his aunt kept a lending room for old recordings, and possibilities began to open. ",
+                "rects": []
+              }
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "screenshot": "reader-on-320x568.png",
+      "domSha256": "ac932b53e37f15fc37d32f966a11354eff7e7fa0c9e88a1c36d4652ea06db66f"
+    },
+    {
+      "state": "reader-next",
+      "geometry": {
+        "viewport": [
+          320,
+          568
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 320,
+          "height": 427,
+          "top": 46,
+          "right": 320,
+          "bottom": 473,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 60,
+          "width": 320,
+          "height": 400,
+          "top": 60,
+          "right": 320,
+          "bottom": 460,
+          "left": 0
+        },
+        "heading": {
+          "x": -300,
+          "y": 60,
+          "width": 280,
+          "height": 52.09375,
+          "top": 60,
+          "right": -20,
+          "bottom": 112.09375,
+          "left": -300
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 46,
+          "top": 0,
+          "right": 320,
+          "bottom": 46,
+          "left": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 473,
+          "width": 320,
+          "height": 95,
+          "top": 473,
+          "right": 320,
+          "bottom": 568,
+          "left": 0
+        },
+        "heartbeat": {
+          "x": 18,
+          "y": 477,
+          "width": 284,
+          "height": 52,
+          "top": 477,
+          "right": 302,
+          "bottom": 529,
+          "left": 18
+        },
+        "page": "1",
+        "pages": "7",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif",
+        "visibleParagraphLines": 10,
+        "visibleTextAreaPercent": 38.9,
+        "keys": [
+          {
+            "text": "",
+            "aria": "Refresh Heartbeat",
+            "font": "14px",
+            "rect": {
+              "x": 274,
+              "y": 477,
+              "width": 28,
+              "height": 22,
+              "top": 477,
+              "right": 302,
+              "bottom": 499,
+              "left": 274
+            },
+            "scrollWidth": 28,
+            "clientWidth": 28
+          },
+          {
+            "text": "☀Eager calm",
+            "aria": "Eager calm. Show interpretation.",
+            "font": "11px",
+            "rect": {
+              "x": 18,
+              "y": 499,
+              "width": 80.90625,
+              "height": 30,
+              "top": 499,
+              "right": 98.90625,
+              "bottom": 529,
+              "left": 18
+            },
+            "scrollWidth": 81,
+            "clientWidth": 81
+          },
+          {
+            "text": "♡Fond longing",
+            "aria": "Fond longing. Show interpretation.",
+            "font": "11px",
+            "rect": {
+              "x": 111.90625,
+              "y": 499,
+              "width": 89.84375,
+              "height": 30,
+              "top": 499,
+              "right": 201.75,
+              "bottom": 529,
+              "left": 111.90625
+            },
+            "scrollWidth": 90,
+            "clientWidth": 90
+          }
+        ],
+        "highlights": [
+          {
+            "name": "heartbeat-reader-warm",
+            "size": 2,
+            "ranges": [
+              {
+                "text": "Late afternoon light rested on the tram windows. Leena watched the river turn silver as the concert hall drew nearer. She had waited months for this evening, yet the easy journey let her enjoy the waiting. For once, excitement did not require her to hurry.",
+                "rects": [
+                  {
+                    "x": 20,
+                    "y": 63,
+                    "width": 251.875,
+                    "height": 30,
+                    "top": 63,
+                    "right": 271.875,
+                    "bottom": 93,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 100,
+                    "width": 121.109375,
+                    "height": 30,
+                    "top": 100,
+                    "right": 141.109375,
+                    "bottom": 130,
+                    "left": 20
+                  }
+                ]
+              },
+              {
+                "text": "At last the remaining recording arrived in its plain paper sleeve. It was a small thing to carry home, but she carried it carefully.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-cool",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Now she was making lists again. She did not want every conversation with Ren to become another request, so she cut a long catalogue down to five recordings and then to three. They spoke of other things while he checked. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tense",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Two weeks passed before he learned that two titles could not be found. The news narrowed her plans without erasing them. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tender",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "As a child she had wanted to conduct an orchestra after hearing a recording called The Glass Garden. She remembered finding a borrowed copy and playing it again and again through one short winter. The dates, the shelf and the small player were ordinary details, but they still held the scale of that early wanting. She had not followed much music before it. Afterwards, she could recall the opening almost without trying.",
+                "rects": [
+                  {
+                    "x": 141.09375,
+                    "y": 100,
+                    "width": 0,
+                    "height": 30,
+                    "top": 100,
+                    "right": 141.09375,
+                    "bottom": 130,
+                    "left": 141.09375
+                  },
+                  {
+                    "x": 20,
+                    "y": 152,
+                    "width": 266,
+                    "height": 30,
+                    "top": 152,
+                    "right": 286,
+                    "bottom": 182,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 189,
+                    "width": 248.671875,
+                    "height": 30,
+                    "top": 189,
+                    "right": 268.671875,
+                    "bottom": 219,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 226,
+                    "width": 247.5,
+                    "height": 30,
+                    "top": 226,
+                    "right": 267.5,
+                    "bottom": 256,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 263,
+                    "width": 209.6875,
+                    "height": 30,
+                    "top": 263,
+                    "right": 229.6875,
+                    "bottom": 293,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 300,
+                    "width": 209.671875,
+                    "height": 30,
+                    "top": 300,
+                    "right": 229.671875,
+                    "bottom": 330,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 337,
+                    "width": 275.34375,
+                    "height": 30,
+                    "top": 337,
+                    "right": 295.34375,
+                    "bottom": 367,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 374,
+                    "width": 270.546875,
+                    "height": 30,
+                    "top": 374,
+                    "right": 290.546875,
+                    "bottom": 404,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 411,
+                    "width": 259.375,
+                    "height": 30,
+                    "top": 411,
+                    "right": 279.375,
+                    "bottom": 441,
+                    "left": 20
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-somber",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Her nearby shop had carried little beyond familiar local songs. The performances she hoped to hear were always missing. Eventually she had stopped asking, although the wish had not entirely gone.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-wonder",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "She met Ren at an evening class. They had used the same library for years without speaking, and only the shared lessons brought them together. They became friends. Later she learned that his aunt kept a lending room for old recordings, and possibilities began to open. ",
+                "rects": []
+              }
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "screenshot": "reader-next-320x568.png",
+      "domSha256": "664ab4c9dccfec75a4fa1fe912b867069a7f6abe7af9f162d60520f15a2d13e8"
+    },
+    {
+      "state": "reader-night",
+      "geometry": {
+        "viewport": [
+          320,
+          568
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 320,
+          "height": 427,
+          "top": 46,
+          "right": 320,
+          "bottom": 473,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 60,
+          "width": 320,
+          "height": 400,
+          "top": 60,
+          "right": 320,
+          "bottom": 460,
+          "left": 0
+        },
+        "heading": {
+          "x": -300,
+          "y": 60,
+          "width": 280,
+          "height": 52.09375,
+          "top": 60,
+          "right": -20,
+          "bottom": 112.09375,
+          "left": -300
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 46,
+          "top": 0,
+          "right": 320,
+          "bottom": 46,
+          "left": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 473,
+          "width": 320,
+          "height": 95,
+          "top": 473,
+          "right": 320,
+          "bottom": 568,
+          "left": 0
+        },
+        "heartbeat": {
+          "x": 18,
+          "y": 477,
+          "width": 284,
+          "height": 52,
+          "top": 477,
+          "right": 302,
+          "bottom": 529,
+          "left": 18
+        },
+        "page": "1",
+        "pages": "7",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif",
+        "visibleParagraphLines": 10,
+        "visibleTextAreaPercent": 38.9,
+        "keys": [
+          {
+            "text": "",
+            "aria": "Refresh Heartbeat",
+            "font": "14px",
+            "rect": {
+              "x": 274,
+              "y": 477,
+              "width": 28,
+              "height": 22,
+              "top": 477,
+              "right": 302,
+              "bottom": 499,
+              "left": 274
+            },
+            "scrollWidth": 28,
+            "clientWidth": 28
+          },
+          {
+            "text": "☀Eager calm",
+            "aria": "Eager calm. Show interpretation.",
+            "font": "11px",
+            "rect": {
+              "x": 18,
+              "y": 499,
+              "width": 80.90625,
+              "height": 30,
+              "top": 499,
+              "right": 98.90625,
+              "bottom": 529,
+              "left": 18
+            },
+            "scrollWidth": 81,
+            "clientWidth": 81
+          },
+          {
+            "text": "♡Fond longing",
+            "aria": "Fond longing. Show interpretation.",
+            "font": "11px",
+            "rect": {
+              "x": 111.90625,
+              "y": 499,
+              "width": 89.84375,
+              "height": 30,
+              "top": 499,
+              "right": 201.75,
+              "bottom": 529,
+              "left": 111.90625
+            },
+            "scrollWidth": 90,
+            "clientWidth": 90
+          }
+        ],
+        "highlights": [
+          {
+            "name": "heartbeat-reader-warm",
+            "size": 2,
+            "ranges": [
+              {
+                "text": "Late afternoon light rested on the tram windows. Leena watched the river turn silver as the concert hall drew nearer. She had waited months for this evening, yet the easy journey let her enjoy the waiting. For once, excitement did not require her to hurry.",
+                "rects": [
+                  {
+                    "x": 20,
+                    "y": 63,
+                    "width": 251.875,
+                    "height": 30,
+                    "top": 63,
+                    "right": 271.875,
+                    "bottom": 93,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 100,
+                    "width": 121.109375,
+                    "height": 30,
+                    "top": 100,
+                    "right": 141.109375,
+                    "bottom": 130,
+                    "left": 20
+                  }
+                ]
+              },
+              {
+                "text": "At last the remaining recording arrived in its plain paper sleeve. It was a small thing to carry home, but she carried it carefully.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-cool",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Now she was making lists again. She did not want every conversation with Ren to become another request, so she cut a long catalogue down to five recordings and then to three. They spoke of other things while he checked. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tense",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Two weeks passed before he learned that two titles could not be found. The news narrowed her plans without erasing them. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-tender",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "As a child she had wanted to conduct an orchestra after hearing a recording called The Glass Garden. She remembered finding a borrowed copy and playing it again and again through one short winter. The dates, the shelf and the small player were ordinary details, but they still held the scale of that early wanting. She had not followed much music before it. Afterwards, she could recall the opening almost without trying.",
+                "rects": [
+                  {
+                    "x": 141.09375,
+                    "y": 100,
+                    "width": 0,
+                    "height": 30,
+                    "top": 100,
+                    "right": 141.09375,
+                    "bottom": 130,
+                    "left": 141.09375
+                  },
+                  {
+                    "x": 20,
+                    "y": 152,
+                    "width": 266,
+                    "height": 30,
+                    "top": 152,
+                    "right": 286,
+                    "bottom": 182,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 189,
+                    "width": 248.671875,
+                    "height": 30,
+                    "top": 189,
+                    "right": 268.671875,
+                    "bottom": 219,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 226,
+                    "width": 247.5,
+                    "height": 30,
+                    "top": 226,
+                    "right": 267.5,
+                    "bottom": 256,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 263,
+                    "width": 209.6875,
+                    "height": 30,
+                    "top": 263,
+                    "right": 229.6875,
+                    "bottom": 293,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 300,
+                    "width": 209.671875,
+                    "height": 30,
+                    "top": 300,
+                    "right": 229.671875,
+                    "bottom": 330,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 337,
+                    "width": 275.34375,
+                    "height": 30,
+                    "top": 337,
+                    "right": 295.34375,
+                    "bottom": 367,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 374,
+                    "width": 270.546875,
+                    "height": 30,
+                    "top": 374,
+                    "right": 290.546875,
+                    "bottom": 404,
+                    "left": 20
+                  },
+                  {
+                    "x": 20,
+                    "y": 411,
+                    "width": 259.375,
+                    "height": 30,
+                    "top": 411,
+                    "right": 279.375,
+                    "bottom": 441,
+                    "left": 20
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-somber",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Her nearby shop had carried little beyond familiar local songs. The performances she hoped to hear were always missing. Eventually she had stopped asking, although the wish had not entirely gone.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-reader-wonder",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "She met Ren at an evening class. They had used the same library for years without speaking, and only the shared lessons brought them together. They became friends. Later she learned that his aunt kept a lending room for old recordings, and possibilities began to open. ",
+                "rects": []
+              }
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "screenshot": "reader-night-320x568.png",
+      "domSha256": "359cdc86bf3bfdc4733dda0d28a66e693e82e40f76025007b68eac551684ada4"
+    },
+    {
+      "state": "writer-on",
+      "geometry": {
+        "viewport": [
+          320,
+          568
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "heartbeat": {
+          "x": 21,
+          "y": 509,
+          "width": 278,
+          "height": 54,
+          "top": 509,
+          "right": 299,
+          "bottom": 563,
+          "left": 21
+        },
+        "proseFont": "",
+        "visibleParagraphLines": null,
+        "visibleTextAreaPercent": 0,
+        "keys": [
+          {
+            "text": "",
+            "aria": "Refresh Heartbeat",
+            "font": "14px",
+            "rect": {
+              "x": 271,
+              "y": 509,
+              "width": 28,
+              "height": 24,
+              "top": 509,
+              "right": 299,
+              "bottom": 533,
+              "left": 271
+            },
+            "scrollWidth": 28,
+            "clientWidth": 28
+          },
+          {
+            "text": "☀Eager calm",
+            "aria": "Eager calm. Show interpretation.",
+            "font": "12px",
+            "rect": {
+              "x": 21,
+              "y": 533,
+              "width": 85.984375,
+              "height": 30,
+              "top": 533,
+              "right": 106.984375,
+              "bottom": 563,
+              "left": 21
+            },
+            "scrollWidth": 86,
+            "clientWidth": 86
+          }
+        ],
+        "highlights": [
+          {
+            "name": "heartbeat-writer-warm",
+            "size": 2,
+            "ranges": [
+              {
+                "text": "Late afternoon light rested on the tram windows. Leena watched the river turn silver as the concert hall drew nearer. She had waited months for this evening, yet the easy journey let her enjoy the waiting. For once, excitement did not require her to hurry.",
+                "rects": []
+              },
+              {
+                "text": "At last the remaining recording arrived in its plain paper sleeve. It was a small thing to carry home, but she carried it carefully.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-cool",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Now she was making lists again. She did not want every conversation with Ren to become another request, so she cut a long catalogue down to five recordings and then to three. They spoke of other things while he checked. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-tense",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Two weeks passed before he learned that two titles could not be found. The news narrowed her plans without erasing them. ",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-tender",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "As a child she had wanted to conduct an orchestra after hearing a recording called The Glass Garden. She remembered finding a borrowed copy and playing it again and again through one short winter. The dates, the shelf and the small player were ordinary details, but they still held the scale of that early wanting. She had not followed much music before it. Afterwards, she could recall the opening almost without trying.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-somber",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "Her nearby shop had carried little beyond familiar local songs. The performances she hoped to hear were always missing. Eventually she had stopped asking, although the wish had not entirely gone.",
+                "rects": []
+              }
+            ]
+          },
+          {
+            "name": "heartbeat-writer-wonder",
+            "size": 1,
+            "ranges": [
+              {
+                "text": "She met Ren at an evening class. They had used the same library for years without speaking, and only the shared lessons brought them together. They became friends. Later she learned that his aunt kept a lending room for old recordings, and possibilities began to open. ",
+                "rects": []
+              }
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "screenshot": "writer-on-320x568.png",
+      "domSha256": "4fc2ca8b12c399c89fbded12cab3214ac47a5b64e19ab814a667283a610f251a"
+    },
+    {
+      "state": "writer-off",
+      "geometry": {
+        "viewport": [
+          320,
+          568
+        ],
+        "dpr": 1,
+        "zoom": 1,
+        "rootOverflow": 0,
+        "proseFont": "",
+        "visibleParagraphLines": null,
+        "visibleTextAreaPercent": 0,
+        "keys": [],
+        "highlights": []
+      },
+      "errors": [],
+      "screenshot": "writer-off-320x568.png",
+      "domSha256": "6cae1fe49571010c6e4e485f4fed4d6e221d9de43f44856e88d8b8887069c274"
+    }
+  ]
+}

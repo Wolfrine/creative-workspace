@@ -30,6 +30,7 @@ test.beforeAll(async () => {
 test.afterAll(async () => { await deleteApp(admin); });
 
 test('real MCP annotation reaches authenticated writer and private Read without source mutations; revocation hides it', async ({ page }) => {
+  await page.setViewportSize({ width: 1366, height: 768 });
   await db.doc('noveliaaConfig/access').set({ ownerUid: owner });
   const server = createServer(); server.listen(0, '127.0.0.1'); await once(server, 'listening');
   const origin = `http://127.0.0.1:${(server.address() as { port: number }).port}`;
@@ -72,22 +73,24 @@ test('real MCP annotation reaches authenticated writer and private Read without 
     const namespaces = ['documents', 'revisions', 'originals', 'operations', 'chunks', 'blobs', 'documentIdentities'];
     const inventory = async () => stable(await Promise.all(namespaces.map(async name => ({ name, rows: (await root.collection(name).get()).docs.map((item: any) => ({ id: item.id, ...item.data() })) }))));
     const before = await inventory();
-    const response = await fetch(origin + '/mcp', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream', Authorization: 'Bearer ' + bearer }, body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'submit_heartbeat', arguments: { documentId: head.id, revisionId: revision.id, contentHash: revision.contentHash, idempotencyKey: 'real-browser-heartbeat-0001', provider: 'Synthetic test provider', model: 'Synthetic test model', contextNote: 'This invented scene only; no real reader response.', beats: [{ start: 0, end: 27, quote: revision.snapshot.plainText.slice(0, 27), foreground: 'Quiet anticipation', undertone: 'Unease', weight: 2, trajectory: 'build', tone: 'cool', reasoning: 'The harbour personification suggests suspended expectation; this is a synthetic inference.' }] } } }) });
-    expect(response.status).toBe(200); expect((await response.json()).result.isError).not.toBe(true);
+    const response = await fetch(origin + '/mcp', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream', Authorization: 'Bearer ' + bearer }, body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'submit_heartbeat', arguments: { documentId: head.id, revisionId: revision.id, contentHash: revision.contentHash, idempotencyKey: 'real-browser-heartbeat-0001', provider: 'Synthetic test provider', model: 'Synthetic test model', contextNote: 'This invented scene only; no real reader response.', beats: [{ start: 0, end: revision.snapshot.plainText.length, quote: revision.snapshot.plainText, foreground: 'Quiet anticipation', undertone: 'Unease', weight: 2, trajectory: 'hold', tone: 'cool', reasoning: 'The harbour personification and unopened letter sustain suspended expectation through both sentences; this is a synthetic inference.' }] } } }) });
+    expect(response.status).toBe(200); const receipt = (await response.json()).result; expect(receipt.isError).not.toBe(true);
+    expect(receipt.structuredContent.coverage.status).toBe('continuous');
+    expect(receipt.structuredContent.coverage.uncoveredMeaningfulCharacters).toBe(0);
     expect(privateReads).toBe(0);
     await page.getByRole('button', { name: 'Emotional Heartbeat', exact: true }).click();
-    await expect(page.getByRole('button', { name: /Quiet anticipation.*undertone: Unease/ })).toBeVisible();
-    const evidence = '.local/heartbeat/real-browser'; await mkdir(evidence, { recursive: true });
+    await expect(page.getByRole('button', { name: 'Quiet anticipation. Show interpretation.', exact: true })).toBeVisible();
+    const evidence = '.local/heartbeat-rework/real-browser'; await mkdir(evidence, { recursive: true });
     await page.screenshot({ path: evidence + '/writer.png' });
     await page.getByRole('button', { name: 'Read this page', exact: true }).click();
     await expect(page.getByRole('region', { name: 'Private reading mode' })).toBeVisible();
-    await expect(page.getByRole('button', { name: /Quiet anticipation.*undertone: Unease/ })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Quiet anticipation. Show interpretation.', exact: true })).toBeVisible();
     await page.screenshot({ path: evidence + '/reader.png' });
     expect(await inventory()).toBe(before);
     await store.put('grants', grant.id, { ...grant, revoked: true });
     await page.getByRole('button', { name: 'Refresh Heartbeat', exact: true }).click();
-    await expect(page.getByText('No Heartbeat for this revision. Use your connected AI to return an interpretation.', { exact: true })).toBeVisible();
-    await expect(page.getByRole('button', { name: /Quiet anticipation.*undertone: Unease/ })).toHaveCount(0);
+    await expect(page.getByText('No Heartbeat for this revision. Ask your connected AI for a full reading.', { exact: true })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Quiet anticipation. Show interpretation.', exact: true })).toHaveCount(0);
     expect(await inventory()).toBe(before);
     await writeFile(evidence + '/result.json', JSON.stringify({ syntheticOnly: true, actualMcpHttp: true, actualFirebaseAuthor: true, actualServerScopedReads: privateReads, sourceCollectionsUnchanged: true, grantRevocationHidden: true }, null, 2));
   } finally {

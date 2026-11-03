@@ -2,15 +2,15 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { Revision, WritingDocument } from '../domain/model';
 import { sha256 } from '../domain/codec';
 import { firebaseAuth } from '../cloud/firebase';
-import { eligibleHeartbeat, heartbeatRevision, heartbeatSource, type HeartbeatAnnotation, type HeartbeatResponse } from './model';
+import { eligibleHeartbeat, heartbeatCoverage, heartbeatRegions, heartbeatRevision, heartbeatSource, type HeartbeatAnnotation, type HeartbeatCoverage, type HeartbeatRegion, type HeartbeatResponse } from './model';
 
-export interface HeartbeatState { status: 'off' | 'loading' | 'ready' | 'empty' | 'stale' | 'error'; annotation?: HeartbeatAnnotation; message?: string; refresh(): void }
+export interface HeartbeatState { status: 'off' | 'loading' | 'ready' | 'empty' | 'stale' | 'error'; annotation?: HeartbeatAnnotation; coverage?: HeartbeatCoverage; regions?: HeartbeatRegion[]; message?: string; refresh(): void }
 export function useHeartbeat(document: WritingDocument, revisions: Revision[], enabled: boolean, localPreview: boolean): HeartbeatState {
   // Off means no manuscript digest, API request or decoration work while typing.
   const source = useMemo(() => enabled ? heartbeatSource(document) : '', [enabled, document]);
   const revision = useMemo(() => enabled ? heartbeatRevision(document, revisions, source) : undefined, [enabled, document.id, document.headRevisionId, revisions, source]);
   const key = `${document.id}:${document.headRevisionId}:${source}`;
-  const [result, setResult] = useState<{ key: string; status: HeartbeatState['status']; annotation?: HeartbeatAnnotation; message?: string }>({ key: '', status: 'off' });
+  const [result, setResult] = useState<Omit<HeartbeatState, 'refresh'> & { key: string }>({ key: '', status: 'off' });
   const [refreshCount, setRefreshCount] = useState(0);
   const refresh = useCallback(() => setRefreshCount(value => value + 1), []);
   useEffect(() => { if (!enabled) return; const focus = () => refresh(); window.addEventListener('focus', focus); return () => window.removeEventListener('focus', focus); }, [enabled, refresh]);
@@ -37,7 +37,11 @@ export function useHeartbeat(document: WritingDocument, revisions: Revision[], e
         if (data?.schema !== 'noveliaa-heartbeat-1' || !Array.isArray(data.annotations)) throw new Error('These annotations could not be verified.');
         if (!data.sourceIsCurrent) { setResult({ key, status: 'stale' }); return; }
         const annotation = data.annotations.filter(item => eligibleHeartbeat(item, document, revision, hash)).sort((a, b) => b.createdAt.localeCompare(a.createdAt))[0];
-        setResult({ key, status: annotation ? 'ready' : 'empty', annotation });
+        // Derive from exact local text even for legacy records or supplied metadata.
+        // Sparse annotations remain evidence, but supply no paintable regions.
+        const coverage = annotation ? heartbeatCoverage(document.plainText, annotation.beats) : undefined;
+        const regions = annotation ? heartbeatRegions(document.plainText, annotation.beats) : undefined;
+        setResult({ key, status: annotation ? 'ready' : 'empty', annotation, coverage, regions });
       } catch (error) { if (alive) setResult({ key, status: 'error', message: error instanceof Error ? error.message : 'Heartbeat is unavailable. Your writing is safe.' }); }
     })();
     return () => { alive = false; controller.abort(); };

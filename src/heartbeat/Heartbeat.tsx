@@ -1,25 +1,44 @@
 import { useEffect, useState } from 'react';
-import { Activity, ChevronDown, RefreshCw } from 'lucide-react';
+import { Activity, RefreshCw } from 'lucide-react';
 import Modal from '../components/Modal';
 import type { HeartbeatBeat } from './model';
 import type { HeartbeatState } from './useHeartbeat';
+import { heartbeatLegend, heartbeatSymbols } from './presentation';
 import './heartbeat.css';
 
 export function HeartbeatToggle({ enabled, onToggle }: { enabled: boolean; onToggle(): void }) {
   return <button type="button" className={`heartbeat-toggle ${enabled ? 'is-on' : ''}`} aria-label="Emotional Heartbeat" aria-pressed={enabled} title="Emotional Heartbeat" onMouseDown={event => event.preventDefault()} onClick={onToggle}><Activity size={15} /><span>Heartbeat</span><span className="heartbeat-switch" aria-hidden="true" /></button>;
 }
-export default function Heartbeat({ state, beats, onFind }: { state: HeartbeatState; beats?: HeartbeatBeat[]; onFind?(beat: HeartbeatBeat): void }) {
-  const [details, setDetails] = useState<number | null>(null);
-  const annotation = state.annotation; const visible = beats || annotation?.beats || [];
-  useEffect(() => setDetails(null), [annotation?.id, state.status]);
+
+export default function Heartbeat({ state, beats, onFind, limit = 3 }: { state: HeartbeatState; beats?: HeartbeatBeat[]; onFind?(beat: HeartbeatBeat): void; limit?: number }) {
+  const [details, setDetails] = useState<HeartbeatBeat | null>(null);
+  const [keyOpen, setKeyOpen] = useState(false);
+  const annotation = state.annotation;
+  const continuous = state.coverage?.status === 'continuous';
+  const colorsAvailable = typeof (window as unknown as { Highlight?: unknown }).Highlight === 'function' && !!(CSS as unknown as { highlights?: unknown }).highlights;
+  const visible = continuous ? (beats || annotation?.beats || []) : [];
+  const entries = heartbeatLegend(visible);
+  const selectedEntry = details ? entries.find(entry => entry.beats.includes(details)) : undefined;
+  useEffect(() => { setDetails(null); setKeyOpen(false); }, [annotation?.id, state.status]);
   if (state.status === 'off') return null;
-  const messages = { loading: 'Checking this exact revision…', stale: 'Writing changed. Heartbeat is hidden until this exact revision has a fresh annotation.', empty: 'No Heartbeat for this revision. Use your connected AI to return an interpretation.', error: state.message || 'Heartbeat could not be reached. Your writing is safe.' };
-  return <section className="heartbeat" aria-label="Emotional Heartbeat overlay">
-    <div className="heartbeat-caption"><span><Activity size={12} />AI interpretation <span className="heartbeat-unverified">· unverified</span></span><button aria-label="Refresh Heartbeat" title="Refresh Heartbeat" onClick={state.refresh}><RefreshCw size={12} /></button></div>
-    {state.status !== 'ready' ? <p className="heartbeat-state" role="status">{messages[state.status]}</p> : <>
-      {visible.length ? <div className="heartbeat-strip" aria-label="Passage heartbeat">{visible.map((beat, index) => <button className={`heartbeat-beat heartbeat-tone-${beat.tone}`} key={`${beat.start}-${beat.end}`} aria-description={`Weight ${beat.weight} of 5. Show reasoning.`} onClick={() => setDetails(annotation!.beats.indexOf(beat))}><span className="heartbeat-weight" aria-hidden="true">{[1, 2, 3, 4, 5].map(value => <i key={value} className={value <= beat.weight ? 'filled' : ''} />)}</span><span className="heartbeat-emotions"><strong>{beat.foreground}</strong>{beat.undertone && <>{' '}<small>undertone: {beat.undertone}</small></>}</span>{' '}<span className="heartbeat-trajectory">{beat.trajectory}</span><ChevronDown size={11} />{index < visible.length - 1 && <span className="heartbeat-next" aria-hidden="true">·</span>}</button>)}</div> : <p className="heartbeat-state">A quiet passage. No marked emotional turn.</p>}
-      <p className="heartbeat-attribution">{annotation?.attribution.provider} · {annotation?.attribution.model}<span>Self-reported model · not reader responses</span></p>
-    </>}
-    {details !== null && annotation?.beats[details] && <Modal title="A possible reading" onClose={() => setDetails(null)}><div className="heartbeat-detail"><p className="heartbeat-detail-label">{annotation.beats[details].foreground}{annotation.beats[details].undertone && <span> / {annotation.beats[details].undertone}</span>}</p><p className="heartbeat-detail-meta">{annotation.beats[details].trajectory} · weight {annotation.beats[details].weight} of 5</p><blockquote>{annotation.beats[details].quote}</blockquote>{onFind && <button className="text-button" onClick={() => { const beat = annotation.beats[details]; setDetails(null); requestAnimationFrame(() => requestAnimationFrame(() => onFind(beat))); }}>Find this passage</button>}<p>{annotation.beats[details].reasoning}</p>{annotation.contextNote && <p className="heartbeat-context">Context: {annotation.contextNote}</p>}<p className="heartbeat-detail-meta">Unverified AI inference, not measured emotion or author intent. Provider and model are self-reported: {annotation.attribution.provider} · {annotation.attribution.model}.</p><p className="heartbeat-detail-meta">Exact revision {annotation.anchor.revisionId}<br />Hash {annotation.anchor.contentHash}</p></div></Modal>}
+  const messages = { loading: 'Checking this exact revision…', stale: 'Writing changed. Regenerate Heartbeat for this exact revision.', empty: 'No Heartbeat for this revision. Ask your connected AI for a full reading.', error: state.message || 'Heartbeat could not be reached. Your writing is safe.' };
+  const incomplete = state.status === 'ready' && !continuous && state.coverage?.status !== 'empty';
+  const choose = (beat: HeartbeatBeat) => { setKeyOpen(false); setDetails(beat); };
+  const keyButton = (entry: typeof entries[number]) => <button className={`heartbeat-legend-item heartbeat-tone-${entry.tone}`} key={`${entry.tone}-${entry.feeling}`} aria-label={`${entry.feeling}. Show interpretation.`} onClick={() => choose(entry.beats[0])}><span className="heartbeat-swatch" aria-hidden="true">{heartbeatSymbols[entry.tone]}</span><span>{entry.feeling}</span></button>;
+  return <section className="heartbeat" aria-label="Emotional Heartbeat overlay" aria-description="Unverified AI interpretation, not measured reader emotion or author intent.">
+    <div className="heartbeat-caption"><span>{state.status === 'ready' && continuous ? colorsAvailable ? 'Color → feeling' : 'Feeling key' : 'Heartbeat'}<span className="heartbeat-unverified">{state.status === 'ready' && continuous && !colorsAvailable ? 'Colors unavailable' : 'AI · unverified'}</span></span><button aria-label="Refresh Heartbeat" title="Refresh Heartbeat" onClick={state.refresh}><RefreshCw size={14} /></button></div>
+    {state.status !== 'ready' ? <p className="heartbeat-state" role="status">{messages[state.status]}</p> : incomplete ? <p className="heartbeat-state" role="status">Incomplete reading. Regenerate for the full revision; unanalysed text stays uncolored.</p> : visible.length ? <div className="heartbeat-legend" aria-label="Color to feeling legend">{entries.slice(0, limit).map(keyButton)}{entries.length > limit && <button className="heartbeat-more" onClick={() => setKeyOpen(true)}>+{entries.length - limit} {entries.length - limit === 1 ? 'feeling' : 'feelings'}</button>}</div> : <p className="heartbeat-state">{state.coverage?.status === 'empty' ? 'No text to analyse.' : 'No analysed text on this page.'}</p>}
+    {keyOpen && <Modal title="Color to feeling" onClose={() => setKeyOpen(false)}><div className="heartbeat-detail"><p className="heartbeat-detail-meta">Unverified AI interpretation. Select a feeling to inspect its exact passage.</p><div className="heartbeat-full-key">{entries.map(keyButton)}</div></div></Modal>}
+    {details && annotation && <Modal title="A possible reading" onClose={() => setDetails(null)}><div className="heartbeat-detail">
+      <p className={`heartbeat-detail-label heartbeat-tone-${details.tone}`}><span className="heartbeat-swatch" aria-hidden="true">{heartbeatSymbols[details.tone]}</span>{details.foreground}{details.undertone && <span className="heartbeat-detail-undertone">Undertone: {details.undertone}</span>}</p>
+      {selectedEntry && selectedEntry.beats.length > 1 && <label className="heartbeat-passage-choice">Passage<select aria-label="Passage for selected feeling" value={selectedEntry.beats.indexOf(details)} onChange={event => setDetails(selectedEntry.beats[Number(event.target.value)])}>{selectedEntry.beats.map((beat, index) => <option value={index} key={`${beat.start}-${beat.end}`}>{index + 1} of {selectedEntry.beats.length}</option>)}</select></label>}
+      <p>{details.reasoning}</p>
+      <blockquote>{details.quote}</blockquote>
+      {onFind && <button className="text-button" onClick={() => { const beat = details; setDetails(null); requestAnimationFrame(() => requestAnimationFrame(() => onFind(beat))); }}>Find this passage</button>}
+      <p className="heartbeat-detail-meta">{details.trajectory} · weight {details.weight} of 5</p>
+      {annotation.contextNote && <p className="heartbeat-context">Context: {annotation.contextNote}</p>}
+      <p className="heartbeat-detail-meta">Unverified AI inference, not measured emotion or author intent. Self-reported provider and model: {annotation.attribution.provider} · {annotation.attribution.model}.</p>
+      <details className="heartbeat-source"><summary>Exact source revision</summary><p className="heartbeat-detail-meta">{annotation.anchor.revisionId}<br />{annotation.anchor.contentHash}</p></details>
+    </div></Modal>}
   </section>;
 }

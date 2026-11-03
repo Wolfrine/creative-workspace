@@ -1,6 +1,9 @@
 # Emotional Heartbeat
 
 Implementation and live release were explicitly authorized on 3 November 2026.
+The owner **rejected the first delivered UI at `73b8455`** and authorized this
+rework on the same main checkout. Earlier agent scores do not establish current
+acceptance; retain that historical evidence and its defects.
 This extends the private author workspace and existing proposal permission; it
 does not approve shared editions, canon changes or manuscript transformation.
 [Feature intent](https://chatgpt.com/space/page_ad597e8d38848191a06a07e4e537838a).
@@ -22,24 +25,29 @@ does not approve shared editions, canon changes or manuscript transformation.
 
 Central visual-design-director **0.2.3**, base
 `d097786cf3d6c5a2859439112afdd39538316567`, was loaded from the installed plugin.
-This is bounded refinement of the accepted Living Atlas / Quiet Folio product.
+This is a rejected reader/heartbeat redesign inside the accepted Living Atlas /
+Quiet Folio identity. Cream paper, green and serif writing remain protected;
+the cramped reader structure and faint disconnected islands are rejected.
 The lead surface job is **Read**, alongside the existing writing task.
 
 - Retain paper, muted green, serif manuscript, existing navigation, typography
   controls, recoverable writing and quiet off state.
-- Refine emotional continuity inspection with a separate visual layer.
-- Replace no accepted product surface or writing behavior.
-- Explore restrained passage tint plus margin/strip labels, using matched
-  synthetic content and viewport sizes before/after.
+- Refine emotional continuity with a visible field over exact prose.
+- Replace oversized reader introductions, wasted compact-screen space, tiny
+  per-beat footer lists and ambiguous gaps.
+- Compare compact spread, flowing folio and margin-current structures at matched
+  content/type/viewport. Mood imagery is a reference hypothesis, not a literal
+  replacement for paper reading.
 
 Critical visual conditions declared before review:
 
 | Dimension | Observable condition |
 | --- | --- |
-| Manuscript primacy | Prose remains dominant and fully readable; tint is restrained and explanations open only on demand. |
-| Emotional nuance | Short foreground/undertone labels, weight and trajectory remain legible without relying on color; quiet passages need no tags. |
-| Identity and agency | Existing paper/green/serif identity survives; one explicit off-by-default control removes the entire layer. |
-| Responsive clarity | Writer and private Read work at desktop and phone sizes without clipped controls, horizontal overflow or lost source navigation. |
+| Narrative expression | Supported feelings persist through quieter exposition; shifts, holds and explicit rest differ from unanalysed text. |
+| Visual craft | Visible distinct semantic tints and concise color-to-feeling legend preserve paper/green/serif. |
+| Ergonomics | Prose-visible lines/area and useful book height improve at1366×768; title/chrome do not displace reading. |
+| Mobile |390×844 and320×568 retain readable prose, navigation, unclipped legend and passage position. |
+| Access | Text/symbols supplement color; keyboard, contrast, selection and highlight fallback work. |
 
 Designer, independent critic and parent QA are separate native agents. The
 requested child settings are `gpt-6.1-sol` / `xhigh`; those exact settings were
@@ -60,8 +68,36 @@ read and optional proposal grants. Writing remains immutable. An analysis has
 provider/model attribution (self-reported), available narrative context, and
 ordered nonoverlapping UTF-16 spans in the exact `fetch_page` plain text. Each
 span carries its exact quote, a one-to-three-word foreground and optional
-undertone, weight 1–5, trajectory, fixed tone and on-demand reasoning. Weight is
-not confidence. Empty beats are valid; absence of tags is not a defect.
+undertone, weight1–5, trajectory, tone and on-demand reasoning. Weight is not
+confidence. Natural states may span paragraphs; no sentence-by-sentence tagging.
+
+New records and receipts include server-derived coverage under
+`noveliaa-heartbeat-continuity-1`: continuous/sparse/empty, source and meaningful
+UTF-16 counts, and covered/uncovered meaningful counts. The client independently
+recomputes it, including for legacy data. Continuous requires explicit exact
+coverage of every non-whitespace unit. Adjoining equal tuples may merge for
+display. No model inference is added over omitted text.
+
+Sparse/invalid legacy data supplies no emotional colors and prompts a full
+reassessment. Empty beats over nonempty text are incomplete, not a quiet reading.
+Actual rest has an explicit source span with neutral+quiet, a visible neutral
+cue and a labeled legend. Reasoning, trajectory, weight, undertone and attribution
+are available on explicit interaction; the default reading chrome contains only
+a concise color-to-foreground-feeling key for the visible passage.
+
+The external-generation skill reads the whole narrative, identifies supported
+shifts/holds/rest and foreground/undertone before making offsets, then checks a
+complete partition and the receipt. See the
+[method and example](../../plugin/noveliaa/skills/collaborate-on-writing/references/heartbeat-continuity.md).
+Structural coverage checks cannot prove the emotional interpretation correct.
+
+The rejected layout was compared with three rendered structures: compact spread,
+flowing folio and margin current. The compact spread preserves the book identity
+and gives the most desktop prose space. A compact chapter heading replaces the
+oversized opener; navigation retains collection identity and reading position.
+The visible-page key has stable height so a feeling change cannot repaginate the
+writing. Opaque paper/night tint families, labeled symbols and explicit browser
+fallback replace faint alpha islands. No decorative image takes prose space.
 
 Every write checks current owner/workspace, universe, grant and immutable
 revision/hash. A receipt binds identical retries to one append-only annotation;
@@ -76,8 +112,17 @@ chat, model key, source replacement, approval or publication action.
 
 ## Acceptance limits
 
-Use synthetic emulator and local-only preview fixtures. Production checks must
-not seed, read or modify real manuscripts. Hosted public-shell/discovery checks
+Use synthetic emulator and local-only preview fixtures. For this rework the owner
+explicitly approved a scoped reading of the named real scene and one newer,
+quality-checked heartbeat through OAuth MCP if available. No admin bypass or
+author-draft edits. Raw text stays in ignored local evidence; repository renders
+use a clearly labeled four-paragraph synthetic counterpart. Hosted public-shell/discovery checks
 and emulator-authenticated UI checks are distinct. Physical-device/IME and a
 real author comparing model interpretations with intended feeling remain human
 acceptance, not inferred from passing tests or screenshots.
+
+The rework's retained alternatives, independent critique, before/after desktop
+and mobile measurements, test results and parent review are bound in the
+[acceptance evidence](../evidence/heartbeat-rework-2026-11-03/parent-qa.md).
+The earlier owner-rejected evidence remains historical and is not current
+acceptance.

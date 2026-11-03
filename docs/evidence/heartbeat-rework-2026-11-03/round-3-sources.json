@@ -1,0 +1,34 @@
+[
+    {
+        "sha256":  "5478F6619FE3EDD66F5DA17BFB183794B0DE88A90B6044DCF24E62064D1DEFF6",
+        "path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\components\\Reader.tsx"
+    },
+    {
+        "sha256":  "80E5A6FEFCA603E9982E143AAEC8B271C9EEEDD3BEBE6EF22877971AAB3D7FB5",
+        "path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\library-reader.css"
+    },
+    {
+        "sha256":  "FAE4DC12B1F8049EEE0F1E1F0851D328489D11C453815680B87EBD16684EA9E4",
+        "path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\components\\Writer.tsx"
+    },
+    {
+        "sha256":  "A6C3770A7D1B5A7993A8D3F0CD435881AB03ECF21DED99F70609EC7FFC65AE37",
+        "path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\Heartbeat.tsx"
+    },
+    {
+        "sha256":  "8CA6C78205B46F65949A72DD9B0FC30F8C49CC94C7E0D2780F02265AF3A30E23",
+        "path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\heartbeat.css"
+    },
+    {
+        "sha256":  "1BAB0C12ACC79D82463F4B39A873B706DF0AC0AE39DC3AB2A0D7DF8156B9C20B",
+        "path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\decorations.ts"
+    },
+    {
+        "sha256":  "D7FDFCDB0AD082D50B551DE38C3046DC3FE5B6B2C42A3217C6A0B772F51A6F13",
+        "path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\reader\\page-turn.ts"
+    },
+    {
+        "sha256":  "F6AB97995B9BB2CD720F1D5D4D273898BCDFA8062D7A86CEC1693C30E35FD232",
+        "path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\presentation.ts"
+    }
+]

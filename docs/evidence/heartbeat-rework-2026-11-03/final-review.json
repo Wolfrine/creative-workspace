@@ -1,0 +1,22 @@
+{
+  "finalRound": 7,
+  "finalCapture": "round7-final",
+  "critic": {
+    "narrative": 8.2,
+    "craft": 8,
+    "ergonomics": 8,
+    "mobile": 8,
+    "access": 8,
+    "overall": 8
+  },
+  "parent": {
+    "narrative": 8.3,
+    "craft": 8.2,
+    "ergonomics": 8.3,
+    "mobile": 8.2,
+    "access": 8.1,
+    "overall": 8.2
+  },
+  "unresolvedBlockers": 0,
+  "ownerAcceptance": "not inferred"
+}

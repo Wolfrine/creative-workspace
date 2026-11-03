@@ -1,0 +1,1487 @@
+[
+  {
+    "name": "compact",
+    "sourceSha256": "96f13cd03c077e719b57ea378d14fb16a0a1ff3e6b2d399907bc5026abf46bc6",
+    "renderedHtmlSha256": "0a2f522d6cf4078f3c77212320b938c9514fa6cc0ddc4e99eb0a26bd4f6e36b2",
+    "screenshot": "compact-1366x768.png",
+    "geometry": {
+      "viewport": [
+        1366,
+        768
+      ],
+      "zoom": 1,
+      "dpr": 1,
+      "rootOverflow": 0,
+      "book": {
+        "x": 73,
+        "y": 65,
+        "width": 1220,
+        "height": 622,
+        "top": 65,
+        "right": 1293,
+        "bottom": 687,
+        "left": 73
+      },
+      "stage": {
+        "x": 74,
+        "y": 88,
+        "width": 1218,
+        "height": 580,
+        "top": 88,
+        "right": 1292,
+        "bottom": 668,
+        "left": 74
+      },
+      "heading": {
+        "x": 112,
+        "y": 88,
+        "width": 534,
+        "height": 61.796875,
+        "top": 88,
+        "right": 646,
+        "bottom": 149.796875,
+        "left": 112
+      },
+      "visibleProseLines": 29,
+      "textAreaPercent": 39.1,
+      "legend": {
+        "clientWidth": 660,
+        "scrollWidth": 660,
+        "textFont": "11px",
+        "items": [
+          {
+            "label": "☀Eager calm",
+            "width": 77.90625,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "♡Fond longing",
+            "width": 86.84375,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "width": 115.46875,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "◒Disappointment",
+            "width": 103.953125,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "≈Tempered eagerness",
+            "width": 128.375,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "⌁Frustration",
+            "width": 77.546875,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "☀Quiet reward",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          }
+        ]
+      },
+      "proseFont": "20px / 37px Literata",
+      "buttons": [
+        {
+          "label": "← Back to writing",
+          "width": 105.5,
+          "height": 16
+        },
+        {
+          "label": "⌁ Heartbeat ●",
+          "width": 86.578125,
+          "height": 30
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☀Eager calm",
+          "width": 77.90625,
+          "height": 30
+        },
+        {
+          "label": "♡Fond longing",
+          "width": 86.84375,
+          "height": 30
+        },
+        {
+          "label": "✧Renewed curiosity",
+          "width": 115.46875,
+          "height": 30
+        },
+        {
+          "label": "◒Disappointment",
+          "width": 103.953125,
+          "height": 30
+        },
+        {
+          "label": "≈Tempered eagerness",
+          "width": 128.375,
+          "height": 30
+        },
+        {
+          "label": "⌁Frustration",
+          "width": 77.546875,
+          "height": 30
+        },
+        {
+          "label": "☀Quiet reward",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "‹ Previous",
+          "width": 66.109375,
+          "height": 40
+        },
+        {
+          "label": "Next ›",
+          "width": 46.421875,
+          "height": 40
+        }
+      ]
+    },
+    "errors": []
+  },
+  {
+    "name": "compact",
+    "sourceSha256": "96f13cd03c077e719b57ea378d14fb16a0a1ff3e6b2d399907bc5026abf46bc6",
+    "renderedHtmlSha256": "ec8c686a45c2475739221c9a945d09f1cd3a3e78eab5ddd661fc7626c04efbc2",
+    "screenshot": "compact-390x844.png",
+    "geometry": {
+      "viewport": [
+        390,
+        844
+      ],
+      "zoom": 1,
+      "dpr": 1,
+      "rootOverflow": 0,
+      "book": {
+        "x": 0,
+        "y": 46,
+        "width": 390,
+        "height": 699,
+        "top": 46,
+        "right": 390,
+        "bottom": 745,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 63,
+        "width": 390,
+        "height": 669,
+        "top": 63,
+        "right": 390,
+        "bottom": 732,
+        "left": 0
+      },
+      "heading": {
+        "x": 20,
+        "y": 63,
+        "width": 350,
+        "height": 53.890625,
+        "top": 63,
+        "right": 370,
+        "bottom": 116.890625,
+        "left": 20
+      },
+      "visibleProseLines": 15,
+      "textAreaPercent": 42.4,
+      "legend": {
+        "clientWidth": 354,
+        "scrollWidth": 354,
+        "textFont": "11px",
+        "items": [
+          {
+            "label": "☀Eager calm",
+            "width": 77.90625,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "♡Fond longing",
+            "width": 86.84375,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "◒Disappointment",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "≈Tempered eagerness",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "⌁Frustration",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "☀Quiet reward",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          }
+        ]
+      },
+      "proseFont": "20px / 37px Literata",
+      "buttons": [
+        {
+          "label": "← Back to writing",
+          "width": 105.5,
+          "height": 16
+        },
+        {
+          "label": "⌁ Heartbeat ●",
+          "width": 78.15625,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☀Eager calm",
+          "width": 77.90625,
+          "height": 30
+        },
+        {
+          "label": "♡Fond longing",
+          "width": 86.84375,
+          "height": 30
+        },
+        {
+          "label": "✧Renewed curiosity",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "◒Disappointment",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "≈Tempered eagerness",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "⌁Frustration",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "☀Quiet reward",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "‹ Previous",
+          "width": 44,
+          "height": 36
+        },
+        {
+          "label": "Next ›",
+          "width": 44,
+          "height": 36
+        }
+      ]
+    },
+    "errors": []
+  },
+  {
+    "name": "compact",
+    "sourceSha256": "96f13cd03c077e719b57ea378d14fb16a0a1ff3e6b2d399907bc5026abf46bc6",
+    "renderedHtmlSha256": "ba6ff51acdbb9c1efb07c1ce0774518bb6aaca1c1b02717043ca8abdae5f43f4",
+    "screenshot": "compact-320x568.png",
+    "geometry": {
+      "viewport": [
+        320,
+        568
+      ],
+      "zoom": 1,
+      "dpr": 1,
+      "rootOverflow": 0,
+      "book": {
+        "x": 0,
+        "y": 46,
+        "width": 320,
+        "height": 423,
+        "top": 46,
+        "right": 320,
+        "bottom": 469,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 60,
+        "width": 320,
+        "height": 396,
+        "top": 60,
+        "right": 320,
+        "bottom": 456,
+        "left": 0
+      },
+      "heading": {
+        "x": 20,
+        "y": 60,
+        "width": 280,
+        "height": 51.296875,
+        "top": 60,
+        "right": 300,
+        "bottom": 111.296875,
+        "left": 20
+      },
+      "visibleProseLines": 8,
+      "textAreaPercent": 32.8,
+      "legend": {
+        "clientWidth": 284,
+        "scrollWidth": 284,
+        "textFont": "11px",
+        "items": [
+          {
+            "label": "☀Eager calm",
+            "width": 77.90625,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "♡Fond longing",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "◒Disappointment",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "≈Tempered eagerness",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "⌁Frustration",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "☀Quiet reward",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          }
+        ]
+      },
+      "proseFont": "20px / 37px Literata",
+      "buttons": [
+        {
+          "label": "← Back to writing",
+          "width": 105.5,
+          "height": 16
+        },
+        {
+          "label": "⌁ Heartbeat ●",
+          "width": 78.15625,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☀Eager calm",
+          "width": 77.90625,
+          "height": 30
+        },
+        {
+          "label": "♡Fond longing",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "✧Renewed curiosity",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "◒Disappointment",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "≈Tempered eagerness",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "⌁Frustration",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "☀Quiet reward",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "‹ Previous",
+          "width": 44,
+          "height": 36
+        },
+        {
+          "label": "Next ›",
+          "width": 44,
+          "height": 36
+        }
+      ]
+    },
+    "errors": []
+  },
+  {
+    "name": "flow",
+    "sourceSha256": "e51576f42d19ae4be81bf30470c91354665e073841a147ae8f869cd821179b2f",
+    "renderedHtmlSha256": "9006b595cd0083b0007ab95257a00f97f53d2eb0941d9d5174467d93876a329e",
+    "screenshot": "flow-1366x768.png",
+    "geometry": {
+      "viewport": [
+        1366,
+        768
+      ],
+      "zoom": 1,
+      "dpr": 1,
+      "rootOverflow": 0,
+      "book": {
+        "x": 263,
+        "y": 52,
+        "width": 840,
+        "height": 635,
+        "top": 52,
+        "right": 1103,
+        "bottom": 687,
+        "left": 263
+      },
+      "stage": {
+        "x": 263,
+        "y": 76,
+        "width": 840,
+        "height": 598,
+        "top": 76,
+        "right": 1103,
+        "bottom": 674,
+        "left": 263
+      },
+      "heading": {
+        "x": 311,
+        "y": 76,
+        "width": 744,
+        "height": 65.6875,
+        "top": 76,
+        "right": 1055,
+        "bottom": 141.6875,
+        "left": 311
+      },
+      "visibleProseLines": 13,
+      "textAreaPercent": 24.1,
+      "legend": {
+        "clientWidth": 308,
+        "scrollWidth": 308,
+        "textFont": "11px",
+        "items": [
+          {
+            "label": "☀Eager calm",
+            "width": 77.90625,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "♡Fond longing",
+            "width": 86.84375,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "width": 115.46875,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "◒Disappointment",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "≈Tempered eagerness",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "⌁Frustration",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "☀Quiet reward",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          }
+        ]
+      },
+      "proseFont": "20px / 37px Literata",
+      "buttons": [
+        {
+          "label": "← Back to writing",
+          "width": 105.5,
+          "height": 16
+        },
+        {
+          "label": "⌁ Heartbeat ●",
+          "width": 86.578125,
+          "height": 30
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☀Eager calm",
+          "width": 77.90625,
+          "height": 30
+        },
+        {
+          "label": "♡Fond longing",
+          "width": 86.84375,
+          "height": 30
+        },
+        {
+          "label": "✧Renewed curiosity",
+          "width": 115.46875,
+          "height": 30
+        },
+        {
+          "label": "◒Disappointment",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "≈Tempered eagerness",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "⌁Frustration",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "☀Quiet reward",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "‹ Previous",
+          "width": 66.109375,
+          "height": 40
+        },
+        {
+          "label": "Next ›",
+          "width": 46.421875,
+          "height": 40
+        }
+      ]
+    },
+    "errors": []
+  },
+  {
+    "name": "flow",
+    "sourceSha256": "e51576f42d19ae4be81bf30470c91354665e073841a147ae8f869cd821179b2f",
+    "renderedHtmlSha256": "c409d050773c1f85df9394fe16f887e8c2209ebeedc5f4c31b4f4a79e0209918",
+    "screenshot": "flow-390x844.png",
+    "geometry": {
+      "viewport": [
+        390,
+        844
+      ],
+      "zoom": 1,
+      "dpr": 1,
+      "rootOverflow": 0,
+      "book": {
+        "x": 0,
+        "y": 46,
+        "width": 390,
+        "height": 699,
+        "top": 46,
+        "right": 390,
+        "bottom": 745,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 61,
+        "width": 390,
+        "height": 674,
+        "top": 61,
+        "right": 390,
+        "bottom": 735,
+        "left": 0
+      },
+      "heading": {
+        "x": 26,
+        "y": 61,
+        "width": 338,
+        "height": 55.1875,
+        "top": 61,
+        "right": 364,
+        "bottom": 116.1875,
+        "left": 26
+      },
+      "visibleProseLines": 15,
+      "textAreaPercent": 40.9,
+      "legend": {
+        "clientWidth": 338,
+        "scrollWidth": 338,
+        "textFont": "11px",
+        "items": [
+          {
+            "label": "☀Eager calm",
+            "width": 77.90625,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "♡Fond longing",
+            "width": 86.84375,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "◒Disappointment",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "≈Tempered eagerness",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "⌁Frustration",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "☀Quiet reward",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          }
+        ]
+      },
+      "proseFont": "20px / 37px Literata",
+      "buttons": [
+        {
+          "label": "← Back to writing",
+          "width": 105.5,
+          "height": 16
+        },
+        {
+          "label": "⌁ Heartbeat ●",
+          "width": 78.15625,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☀Eager calm",
+          "width": 77.90625,
+          "height": 30
+        },
+        {
+          "label": "♡Fond longing",
+          "width": 86.84375,
+          "height": 30
+        },
+        {
+          "label": "✧Renewed curiosity",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "◒Disappointment",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "≈Tempered eagerness",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "⌁Frustration",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "☀Quiet reward",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "‹ Previous",
+          "width": 44,
+          "height": 36
+        },
+        {
+          "label": "Next ›",
+          "width": 44,
+          "height": 36
+        }
+      ]
+    },
+    "errors": []
+  },
+  {
+    "name": "flow",
+    "sourceSha256": "e51576f42d19ae4be81bf30470c91354665e073841a147ae8f869cd821179b2f",
+    "renderedHtmlSha256": "e4ba0a4e7da7c0db2025eab89562af4ef726f03ab06e608acecfb0bc785dc90e",
+    "screenshot": "flow-320x568.png",
+    "geometry": {
+      "viewport": [
+        320,
+        568
+      ],
+      "zoom": 1,
+      "dpr": 1,
+      "rootOverflow": 0,
+      "book": {
+        "x": 0,
+        "y": 46,
+        "width": 320,
+        "height": 423,
+        "top": 46,
+        "right": 320,
+        "bottom": 469,
+        "left": 0
+      },
+      "stage": {
+        "x": 0,
+        "y": 61,
+        "width": 320,
+        "height": 398,
+        "top": 61,
+        "right": 320,
+        "bottom": 459,
+        "left": 0
+      },
+      "heading": {
+        "x": 22,
+        "y": 61,
+        "width": 276,
+        "height": 86.375,
+        "top": 61,
+        "right": 298,
+        "bottom": 147.375,
+        "left": 22
+      },
+      "visibleProseLines": 8,
+      "textAreaPercent": 32.8,
+      "legend": {
+        "clientWidth": 268,
+        "scrollWidth": 268,
+        "textFont": "11px",
+        "items": [
+          {
+            "label": "☀Eager calm",
+            "width": 77.90625,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "♡Fond longing",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "◒Disappointment",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "≈Tempered eagerness",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "⌁Frustration",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "☀Quiet reward",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          }
+        ]
+      },
+      "proseFont": "20px / 37px Literata",
+      "buttons": [
+        {
+          "label": "← Back to writing",
+          "width": 105.5,
+          "height": 16
+        },
+        {
+          "label": "⌁ Heartbeat ●",
+          "width": 78.15625,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☀Eager calm",
+          "width": 77.90625,
+          "height": 30
+        },
+        {
+          "label": "♡Fond longing",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "✧Renewed curiosity",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "◒Disappointment",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "≈Tempered eagerness",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "⌁Frustration",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "☀Quiet reward",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "‹ Previous",
+          "width": 44,
+          "height": 36
+        },
+        {
+          "label": "Next ›",
+          "width": 44,
+          "height": 36
+        }
+      ]
+    },
+    "errors": []
+  },
+  {
+    "name": "margin",
+    "sourceSha256": "a0373511e6d7a9135dca9b0a0c8474c5cd41a4d296ac0884f7617515c24198b1",
+    "renderedHtmlSha256": "3de3a083eb441ba7e5c125c0986149235f1738fe2f708092c7278374bd02300a",
+    "screenshot": "margin-1366x768.png",
+    "geometry": {
+      "viewport": [
+        1366,
+        768
+      ],
+      "zoom": 1,
+      "dpr": 1,
+      "rootOverflow": 0,
+      "book": {
+        "x": 133,
+        "y": 65,
+        "width": 1100,
+        "height": 622,
+        "top": 65,
+        "right": 1233,
+        "bottom": 687,
+        "left": 133
+      },
+      "stage": {
+        "x": 264,
+        "y": 88,
+        "width": 918,
+        "height": 580,
+        "top": 88,
+        "right": 1182,
+        "bottom": 668,
+        "left": 264
+      },
+      "heading": {
+        "x": 264,
+        "y": 88,
+        "width": 918,
+        "height": 60.5,
+        "top": 88,
+        "right": 1182,
+        "bottom": 148.5,
+        "left": 264
+      },
+      "visibleProseLines": 12,
+      "textAreaPercent": 25.8,
+      "legend": {
+        "clientWidth": 426,
+        "scrollWidth": 426,
+        "textFont": "11px",
+        "items": [
+          {
+            "label": "☀Eager calm",
+            "width": 77.90625,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "♡Fond longing",
+            "width": 86.84375,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "width": 115.46875,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "◒Disappointment",
+            "width": 103.953125,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "≈Tempered eagerness",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "⌁Frustration",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "☀Quiet reward",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          }
+        ]
+      },
+      "proseFont": "20px / 37px Literata",
+      "buttons": [
+        {
+          "label": "← Back to writing",
+          "width": 105.5,
+          "height": 16
+        },
+        {
+          "label": "⌁ Heartbeat ●",
+          "width": 86.578125,
+          "height": 30
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☀Eager calm",
+          "width": 77.90625,
+          "height": 30
+        },
+        {
+          "label": "♡Fond longing",
+          "width": 86.84375,
+          "height": 30
+        },
+        {
+          "label": "✧Renewed curiosity",
+          "width": 115.46875,
+          "height": 30
+        },
+        {
+          "label": "◒Disappointment",
+          "width": 103.953125,
+          "height": 30
+        },
+        {
+          "label": "≈Tempered eagerness",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "⌁Frustration",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "☀Quiet reward",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "‹ Previous",
+          "width": 66.109375,
+          "height": 40
+        },
+        {
+          "label": "Next ›",
+          "width": 46.421875,
+          "height": 40
+        }
+      ]
+    },
+    "errors": []
+  },
+  {
+    "name": "margin",
+    "sourceSha256": "a0373511e6d7a9135dca9b0a0c8474c5cd41a4d296ac0884f7617515c24198b1",
+    "renderedHtmlSha256": "8ce6fd638ec1d121076797af79b37d4d3c4ebf9aa290c1056fdd92df61937362",
+    "screenshot": "margin-390x844.png",
+    "geometry": {
+      "viewport": [
+        390,
+        844
+      ],
+      "zoom": 1,
+      "dpr": 1,
+      "rootOverflow": 0,
+      "book": {
+        "x": 0,
+        "y": 46,
+        "width": 390,
+        "height": 699,
+        "top": 46,
+        "right": 390,
+        "bottom": 745,
+        "left": 0
+      },
+      "stage": {
+        "x": 42,
+        "y": 63,
+        "width": 318,
+        "height": 671,
+        "top": 63,
+        "right": 360,
+        "bottom": 734,
+        "left": 42
+      },
+      "heading": {
+        "x": 42,
+        "y": 63,
+        "width": 318,
+        "height": 52.59375,
+        "top": 63,
+        "right": 360,
+        "bottom": 115.59375,
+        "left": 42
+      },
+      "visibleProseLines": 15,
+      "textAreaPercent": 36.2,
+      "legend": {
+        "clientWidth": 352,
+        "scrollWidth": 352,
+        "textFont": "11px",
+        "items": [
+          {
+            "label": "☀Eager calm",
+            "width": 77.90625,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "♡Fond longing",
+            "width": 86.84375,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "◒Disappointment",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "≈Tempered eagerness",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "⌁Frustration",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "☀Quiet reward",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          }
+        ]
+      },
+      "proseFont": "20px / 37px Literata",
+      "buttons": [
+        {
+          "label": "← Back to writing",
+          "width": 105.5,
+          "height": 16
+        },
+        {
+          "label": "⌁ Heartbeat ●",
+          "width": 78.15625,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☀Eager calm",
+          "width": 77.90625,
+          "height": 30
+        },
+        {
+          "label": "♡Fond longing",
+          "width": 86.84375,
+          "height": 30
+        },
+        {
+          "label": "✧Renewed curiosity",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "◒Disappointment",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "≈Tempered eagerness",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "⌁Frustration",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "☀Quiet reward",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "‹ Previous",
+          "width": 44,
+          "height": 36
+        },
+        {
+          "label": "Next ›",
+          "width": 44,
+          "height": 36
+        }
+      ]
+    },
+    "errors": []
+  },
+  {
+    "name": "margin",
+    "sourceSha256": "a0373511e6d7a9135dca9b0a0c8474c5cd41a4d296ac0884f7617515c24198b1",
+    "renderedHtmlSha256": "8ca025edf20d677b6fa74faa7716aff89b02a83932dc8c207835b6453d13a269",
+    "screenshot": "margin-320x568.png",
+    "geometry": {
+      "viewport": [
+        320,
+        568
+      ],
+      "zoom": 1,
+      "dpr": 1,
+      "rootOverflow": 0,
+      "book": {
+        "x": 0,
+        "y": 46,
+        "width": 320,
+        "height": 423,
+        "top": 46,
+        "right": 320,
+        "bottom": 469,
+        "left": 0
+      },
+      "stage": {
+        "x": 42,
+        "y": 63,
+        "width": 248,
+        "height": 395,
+        "top": 63,
+        "right": 290,
+        "bottom": 458,
+        "left": 42
+      },
+      "heading": {
+        "x": 42,
+        "y": 63,
+        "width": 248,
+        "height": 81.1875,
+        "top": 63,
+        "right": 290,
+        "bottom": 144.1875,
+        "left": 42
+      },
+      "visibleProseLines": 8,
+      "textAreaPercent": 29.3,
+      "legend": {
+        "clientWidth": 282,
+        "scrollWidth": 282,
+        "textFont": "11px",
+        "items": [
+          {
+            "label": "☀Eager calm",
+            "width": 77.90625,
+            "height": 30,
+            "fullyVisible": true
+          },
+          {
+            "label": "♡Fond longing",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "◒Disappointment",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "≈Tempered eagerness",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "⌁Frustration",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          },
+          {
+            "label": "☀Quiet reward",
+            "width": 0,
+            "height": 0,
+            "fullyVisible": false
+          }
+        ]
+      },
+      "proseFont": "20px / 37px Literata",
+      "buttons": [
+        {
+          "label": "← Back to writing",
+          "width": 105.5,
+          "height": 16
+        },
+        {
+          "label": "⌁ Heartbeat ●",
+          "width": 78.15625,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☷",
+          "width": 28.171875,
+          "height": 27
+        },
+        {
+          "label": "☀Eager calm",
+          "width": 77.90625,
+          "height": 30
+        },
+        {
+          "label": "♡Fond longing",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "✧Renewed curiosity",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "◒Disappointment",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "≈Tempered eagerness",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "⌁Frustration",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "☀Quiet reward",
+          "width": 0,
+          "height": 0
+        },
+        {
+          "label": "‹ Previous",
+          "width": 44,
+          "height": 36
+        },
+        {
+          "label": "Next ›",
+          "width": 44,
+          "height": 36
+        }
+      ]
+    },
+    "errors": []
+  }
+]

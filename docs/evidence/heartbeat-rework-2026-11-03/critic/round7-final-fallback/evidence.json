@@ -1,0 +1,60 @@
+{
+  "before": {
+    "src/heartbeat/Heartbeat.tsx": "0732482453eeed0b7a55ef8e01a3284627dc4010d5c49c0e280ac1e5eb9a3fd3",
+    "src/heartbeat/presentation.ts": "f6ab97995b9bb2cd720f1d5d4d273898bcdfa8062d7a86cec1693c30e35fd232",
+    "src/heartbeat/heartbeat.css": "6b51d4af496e14515ddae26d23cce4dc53e577a4f70e63058eb263a582431e22",
+    "src/components/Reader.tsx": "94b97320eb83cc1f70f7f83acdfc60b55e1869eec466b992cd140c2c72a2b31b",
+    "src/reader/page-turn.ts": "44d47bfe04a04510faeaa059a6e1e5d8fc7dc2661dea76496c4a1f2e8a7ce2ea",
+    "src/components/Writer.tsx": "7887afbd3b7f35bb429abf39a2d4c5bc5c79002e5e7ca40c71a588881190f5c9"
+  },
+  "after": {
+    "src/heartbeat/Heartbeat.tsx": "0732482453eeed0b7a55ef8e01a3284627dc4010d5c49c0e280ac1e5eb9a3fd3",
+    "src/heartbeat/presentation.ts": "f6ab97995b9bb2cd720f1d5d4d273898bcdfa8062d7a86cec1693c30e35fd232",
+    "src/heartbeat/heartbeat.css": "6b51d4af496e14515ddae26d23cce4dc53e577a4f70e63058eb263a582431e22",
+    "src/components/Reader.tsx": "94b97320eb83cc1f70f7f83acdfc60b55e1869eec466b992cd140c2c72a2b31b",
+    "src/reader/page-turn.ts": "44d47bfe04a04510faeaa059a6e1e5d8fc7dc2661dea76496c4a1f2e8a7ce2ea",
+    "src/components/Writer.tsx": "7887afbd3b7f35bb429abf39a2d4c5bc5c79002e5e7ca40c71a588881190f5c9"
+  },
+  "sourceStable": true,
+  "results": [
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "caption": "Feeling key\nColors unavailable",
+      "capability": {
+        "highlightRegistryAvailable": false,
+        "highlightConstructorAvailable": false
+      },
+      "unchanged": true,
+      "errors": []
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "caption": "Feeling key\nColors unavailable",
+      "capability": {
+        "highlightRegistryAvailable": false,
+        "highlightConstructorAvailable": false
+      },
+      "unchanged": true,
+      "errors": []
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "caption": "Feeling key\nColors unavailable",
+      "capability": {
+        "highlightRegistryAvailable": false,
+        "highlightConstructorAvailable": false
+      },
+      "unchanged": true,
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-11-03T08:27:10.228Z",
+  "privateSource": {
+    "title": "The Grand Opening",
+    "revisionId": "962bc67b-6f96-4ec6-91ed-b9106d1d26b5",
+    "contentHash": "6b3e788bbbd584dd640c34b6f074442ae726faaf394779c79bc0597791642cd8",
+    "textSha256": "da58a9337944433e54fe4a50c34f0dd30254051c0bfb52e54ef06ab52423e65b",
+    "characters": 1704,
+    "originalNotPublished": true
+  },
+  "actualCoverage": {
+    "contract": "noveliaa-heartbeat-continuity-1",
+    "status": "continuous",
+    "sourceCharacters": 1704,
+    "meaningfulCharacters": 1383,
+    "coveredMeaningfulCharacters": 1383,
+    "uncoveredMeaningfulCharacters": 0
+  },
+  "regions": 7,
+  "exactPartition": true,
+  "maximumQuoteCharacters": 437,
+  "heldExpositionChecks": 3,
+  "blindReadingAgents": [
+    "/root/blind_reading_one",
+    "/root/blind_reading_two"
+  ],
+  "blindInput": "Raw prose only; no previous labels or product goals, tools or outside context.",
+  "semanticJudgment": "Independent readings converge on anticipation/ease, remembered attachment, renewed possibility, restricted access, social restraint and modest payoff. This is unverified AI interpretation, not reader measurements or author intent.",
+  "publicFixture": {
+    "synthetic": true,
+    "characters": 1617,
+    "paragraphs": 4,
+    "regions": 7,
+    "coverage": {
+      "contract": "noveliaa-heartbeat-continuity-1",
+      "status": "continuous",
+      "sourceCharacters": 1617,
+      "meaningfulCharacters": 1339,
+      "coveredMeaningfulCharacters": 1339,
+      "uncoveredMeaningfulCharacters": 0
+    }
+  },
+  "writes": "No write performed; one OAuth writeback is deferred until deployment and a fresh revision check."
+}

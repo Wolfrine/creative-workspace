@@ -1,0 +1,17 @@
+{
+  "synthetic": true,
+  "method": "Intentional density study. Same20px size, same layout, exact full-coverage fixture; leading alone differs. No source default changed.",
+  "records": [
+    {
+      "leading": 1.85,
+      "width": 1366,
+      "height": 590,
+      "file": "leading-1.85-1366x590.png",
+      "book": 447,
+      "stage": 405,
+      "font": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif",
+      "lines": 18,
+      "area": 33
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { digest, now, stable } from './integration-store.mjs';
 import { READ, PROPOSE } from './integration-oauth.mjs';
 
 export const HEARTBEAT_SCHEMA = 'noveliaa-heartbeat-1';
+export const HEARTBEAT_CONTINUITY = 'noveliaa-heartbeat-continuity-1';
 export const HEARTBEAT_INFERENCE = 'AI interpretation; not measured emotion or author intent.';
 const identity = z.string().regex(/^[A-Za-z0-9_-]{1,150}$/);
 const hash = z.string().regex(/^[a-f0-9]{64}$/);
@@ -31,6 +32,27 @@ const parse = (schema, value) => {
   return result.data;
 };
 const isBoundary = (source, index) => index === 0 || index === source.length || !(source.charCodeAt(index - 1) >= 0xd800 && source.charCodeAt(index - 1) <= 0xdbff && source.charCodeAt(index) >= 0xdc00 && source.charCodeAt(index) <= 0xdfff);
+const meaningfulUnits = source => {
+  let count = 0;
+  for (const character of source) if (/\S/u.test(character)) count += character.length;
+  return count;
+};
+/** Structural coverage only: this does not validate the model's emotional reading.
+ * Offsets and counts are UTF-16 units. Gaps are never filled by inference. */
+export function heartbeatCoverage(plainText, beats) {
+  const meaningfulCharacters = meaningfulUnits(plainText);
+  let coveredMeaningfulCharacters = 0, previousEnd = 0, valid = heartbeatInputShape.beats.safeParse(beats).success;
+  if (valid) for (const beat of beats) {
+    if (!beat || !Number.isInteger(beat.start) || !Number.isInteger(beat.end) || beat.start < previousEnd || beat.end <= beat.start || beat.end > plainText.length || !isBoundary(plainText, beat.start) || !isBoundary(plainText, beat.end) || typeof beat.quote !== 'string' || plainText.slice(beat.start, beat.end) !== beat.quote) { valid = false; break; }
+    coveredMeaningfulCharacters += meaningfulUnits(beat.quote);
+    previousEnd = beat.end;
+  }
+  // Invalid ranges cannot supply partial evidence of coverage.
+  if (!valid) coveredMeaningfulCharacters = 0;
+  const uncoveredMeaningfulCharacters = meaningfulCharacters - coveredMeaningfulCharacters;
+  return { contract: HEARTBEAT_CONTINUITY, status: !valid ? 'invalid' : !plainText.length ? 'empty' : !beats.length || uncoveredMeaningfulCharacters ? 'sparse' : 'continuous',
+    sourceCharacters: plainText.length, meaningfulCharacters, coveredMeaningfulCharacters, uncoveredMeaningfulCharacters };
+}
 export function validateHeartbeat(value, plainText) {
   const input = parse(heartbeatInput, value);
   if (Buffer.byteLength(JSON.stringify(input), 'utf8') > 96 * 1024) fail('Heartbeat annotation exceeds the 96 KiB limit.');
@@ -71,10 +93,11 @@ export async function submitHeartbeat({ access, store }, grant, value) {
       id, schema: HEARTBEAT_SCHEMA, documentId: input.documentId, universeId: source.revision.universeId,
       anchor: { documentId: input.documentId, revisionId: input.revisionId, contentHash: input.contentHash, title: source.revision.snapshot.title || 'Untitled' },
       attribution: { provider: input.provider, model: input.model }, contextNote: input.contextNote, beats: input.beats,
+      coverage: heartbeatCoverage(source.revision.snapshot.plainText, input.beats),
       origin: 'ai', verification: 'unverified', inference: HEARTBEAT_INFERENCE, grantId: grant.id, clientName: fresh.data().clientName,
       createdAt: new Date().toISOString()
     };
-    const receipt = { id, schema: HEARTBEAT_SCHEMA, verification: 'unverified', sourceIsCurrent: true, createdAt: annotation.createdAt };
+    const receipt = { id, schema: HEARTBEAT_SCHEMA, verification: 'unverified', sourceIsCurrent: true, createdAt: annotation.createdAt, coverage: annotation.coverage };
     tx.create(annotationRef, annotation);
     tx.create(receiptRef, { fingerprint, receipt, annotationPath: annotationRef.path });
     return { ...receipt, replayed: false };
@@ -87,11 +110,12 @@ export async function readHeartbeat({ access, store }, owner, value) {
   // Verify the immutable bytes as well as metadata. In particular, a trashed
   // snapshot must never become visible solely because its head id still matches.
   const preflight = (await root.collection('documents').doc(input.documentId).get()).data();
-  let sourceAvailable = false;
+  let sourceAvailable = false, plainText = '';
   if (preflight?.headRevisionId === input.revisionId) {
     try {
       const source = await access.page({ ...owner, universeIds: [preflight.universeId] }, input.documentId, input.revisionId);
       sourceAvailable = source.currentRevisionId === input.revisionId && source.revision.contentHash === input.contentHash;
+      plainText = source.revision.snapshot.plainText;
     } catch (error) {
       if (error.message !== 'Trashed writing is not shared with this connection.') throw error;
     }
@@ -109,6 +133,8 @@ export async function readHeartbeat({ access, store }, owner, value) {
     const active = new Map(ids.map((id, index) => [id, grants[index].data()]));
     const latest = candidates.find(record => grantMatches(active.get(record.grantId), owner, current.universeId) && active.get(record.grantId).id === record.grantId);
     const { grantId, universeId, ...safe } = latest ?? {};
-    return { schema: HEARTBEAT_SCHEMA, annotations: latest ? [safe] : [], sourceIsCurrent: true };
+    // Recompute for historical annotations without mutating them or their receipts.
+    // WritingAccess already loaded these verified bytes; no extra Firestore read.
+    return { schema: HEARTBEAT_SCHEMA, annotations: latest ? [{ ...safe, coverage: heartbeatCoverage(plainText, safe.beats) }] : [], sourceIsCurrent: true };
   });
 }

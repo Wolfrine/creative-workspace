@@ -1,0 +1,13 @@
+[WebServer] (node:39268) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:38336) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:33196) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\browser\populated-journeys.spec.ts:264:34 › Library reading returns to its exact browse context and edits only on request at 1440px (4.1s)
+  ok 2 tests\browser\populated-journeys.spec.ts:264:34 › Library reading returns to its exact browse context and edits only on request at 390px (3.6s)
+
+  2 passed (10.9s)
