@@ -1,0 +1,2687 @@
+{
+  "synthetic": true,
+  "route": "http://127.0.0.1:5823/?local=1&notebook=<isolated>",
+  "serverStartedByCritic": true,
+  "states": [
+    {
+      "state": "writer-off",
+      "width": 1440,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle ",
+          "color": "rgb(82, 99, 74)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "14px"
+        }
+      ],
+      "beatAccessibility": null,
+      "violations": [],
+      "incompleteContrast": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<h2>Connections</h2>",
+              "target": [
+                "header > div > h2"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p class=\"context-intro\">A little context. Room to wander.</p>",
+              "target": [
+                ".context-intro"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span>When the steps returned</span>",
+              "target": [
+                ".map-center > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "6.8pt (9px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<small>THIS PAGE</small>",
+              "target": [
+                ".map-center > small"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<h3>LINKED FROM THIS PAGE</h3>",
+              "target": [
+                ".linked-section:nth-child(3) > .section-label > h3"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span>1</span>",
+              "target": [
+                ".linked-section:nth-child(3) > .section-label > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<h3>BACKLINKS</h3>",
+              "target": [
+                ".linked-section:nth-child(4) > .section-label > h3"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span>1</span>",
+              "target": [
+                ".linked-section:nth-child(4) > .section-label > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span>Mira — what she refuses to forget</span>",
+              "target": [
+                ".backlink-row > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button class=\"atlas-open\">",
+              "target": [
+                ".atlas-open"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "6.8pt (9px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"eyebrow\">THIS PAGE</span>",
+              "target": [
+                ".page-tools > .eyebrow"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button>",
+              "target": [
+                ".page-tools > div > button:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button>",
+              "target": [
+                ".page-tools > div > button:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button>",
+              "target": [
+                ".page-tools > div > button:nth-child(3)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span>Your words. Your world.</span>",
+              "target": [
+                ".context-panel > footer > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "writer-on",
+      "width": 1440,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle is-on",
+          "color": "rgb(54, 83, 59)",
+          "background": "rgb(231, 237, 223)",
+          "fontSize": "14px"
+        },
+        {
+          "text": "AI interpretation · unverified",
+          "className": "heartbeat-caption",
+          "color": "rgb(82, 99, 74)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "· unverified",
+          "className": "heartbeat-unverified",
+          "color": "rgb(104, 93, 67)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "Quiet anticipation",
+          "className": "",
+          "color": "rgb(69, 88, 61)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "11px"
+        },
+        {
+          "text": "undertone: Hidden grief",
+          "className": "",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "build",
+          "className": "heartbeat-trajectory",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Synthetic critic · Color review onlySelf-reported model · not reader responses",
+          "className": "heartbeat-attribution",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Self-reported model · not reader responses",
+          "className": "",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        }
+      ],
+      "beatAccessibility": {
+        "snapshot": "- 'button \"Quiet anticipation undertone: Hidden grief build\"':\n  - strong: Quiet anticipation\n  - text: \"undertone: Hidden grief build\"\n  - img",
+        "description": "Weight 3 of 5. Show reasoning."
+      },
+      "violations": [],
+      "incompleteContrast": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<h2>Connections</h2>",
+              "target": [
+                "header > div > h2"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p class=\"context-intro\">A little context. Room to wander.</p>",
+              "target": [
+                ".context-intro"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span>When the steps returned</span>",
+              "target": [
+                ".map-center > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "6.8pt (9px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<small>THIS PAGE</small>",
+              "target": [
+                ".map-center > small"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<h3>LINKED FROM THIS PAGE</h3>",
+              "target": [
+                ".linked-section:nth-child(3) > .section-label > h3"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span>1</span>",
+              "target": [
+                ".linked-section:nth-child(3) > .section-label > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<h3>BACKLINKS</h3>",
+              "target": [
+                ".linked-section:nth-child(4) > .section-label > h3"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span>1</span>",
+              "target": [
+                ".linked-section:nth-child(4) > .section-label > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span>Mira — what she refuses to forget</span>",
+              "target": [
+                ".backlink-row > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button class=\"atlas-open\">",
+              "target": [
+                ".atlas-open"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "6.8pt (9px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"eyebrow\">THIS PAGE</span>",
+              "target": [
+                ".page-tools > .eyebrow"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button>",
+              "target": [
+                ".page-tools > div > button:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button>",
+              "target": [
+                ".page-tools > div > button:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button>",
+              "target": [
+                ".page-tools > div > button:nth-child(3)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<aside class=\"context-panel\" aria-label=\"Writing context\">",
+                      "target": [
+                        ".context-panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span>Your words. Your world.</span>",
+              "target": [
+                ".context-panel > footer > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "details",
+      "width": 1440,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle is-on",
+          "color": "rgb(54, 83, 59)",
+          "background": "rgb(231, 237, 223)",
+          "fontSize": "14px"
+        },
+        {
+          "text": "AI interpretation · unverified",
+          "className": "heartbeat-caption",
+          "color": "rgb(82, 99, 74)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "· unverified",
+          "className": "heartbeat-unverified",
+          "color": "rgb(104, 93, 67)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "Quiet anticipation",
+          "className": "",
+          "color": "rgb(69, 88, 61)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "11px"
+        },
+        {
+          "text": "undertone: Hidden grief",
+          "className": "",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "build",
+          "className": "heartbeat-trajectory",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Synthetic critic · Color review onlySelf-reported model · not reader responses",
+          "className": "heartbeat-attribution",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Self-reported model · not reader responses",
+          "className": "",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Quiet anticipation / Hidden grief",
+          "className": "heartbeat-detail-label",
+          "color": "rgb(77, 92, 69)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "25px"
+        },
+        {
+          "text": " / Hidden grief",
+          "className": "",
+          "color": "rgb(101, 107, 88)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "25px"
+        },
+        {
+          "text": "build · weight 3 of 5",
+          "className": "heartbeat-detail-meta",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "Context: Synthetic context; no author intent or real response is inferred.",
+          "className": "heartbeat-context",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "11px"
+        },
+        {
+          "text": "Unverified AI inference, not measured emotion or author intent. Provider and model are self-reported: Synthetic critic · Color review only.",
+          "className": "heartbeat-detail-meta",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "Exact revision salt-tide-r1Hash 9340c6fe1a877516aa5d650f49b6d0ee47c998bfb428ab6231139eafa441b4ed",
+          "className": "heartbeat-detail-meta",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        }
+      ],
+      "beatAccessibility": {
+        "snapshot": "- 'button \"Quiet anticipation undertone: Hidden grief build\"':\n  - strong: Quiet anticipation\n  - text: \"undertone: Hidden grief build\"\n  - img",
+        "description": "Weight 3 of 5. Show reasoning."
+      },
+      "violations": [],
+      "incompleteContrast": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<blockquote>Mira reached the harbour before the baker unlocked his shutters.</blockquote>",
+              "target": [
+                "blockquote"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "10.5pt (14px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p>The early harbour offers one possible reading of expectation, with an undertone of remembered loss.</p>",
+              "target": [
+                ".heartbeat-detail > p:nth-child(5)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p class=\"heartbeat-context\">Context: Synthetic context; no author intent or real response is inferred.</p>",
+              "target": [
+                ".heartbeat-context"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p class=\"heartbeat-detail-meta\">Unverified AI inference, not measured emotion or author intent. Provider and model are self-reported: Synthetic critic · Color review only.</p>",
+              "target": [
+                ".heartbeat-detail-meta:nth-child(7)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p class=\"heartbeat-detail-meta\">Exact revision salt-tide-r1<br>Hash 9340c6fe1a877516aa5d650f49b6d0ee47c998bfb428ab6231139eafa441b4ed</p>",
+              "target": [
+                ".heartbeat-detail-meta:nth-child(8)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "reader-paper",
+      "width": 1440,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle is-on",
+          "color": "rgb(54, 83, 59)",
+          "background": "rgb(231, 237, 223)",
+          "fontSize": "14px"
+        },
+        {
+          "text": "AI interpretation · unverified",
+          "className": "heartbeat-caption",
+          "color": "rgb(82, 99, 74)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "· unverified",
+          "className": "heartbeat-unverified",
+          "color": "rgb(104, 93, 67)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Quiet anticipation",
+          "className": "",
+          "color": "rgb(76, 90, 68)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "11px"
+        },
+        {
+          "text": "undertone: Hidden grief",
+          "className": "",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "build",
+          "className": "heartbeat-trajectory",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Synthetic critic · Color review onlySelf-reported model · not reader responses",
+          "className": "heartbeat-attribution",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "7px"
+        },
+        {
+          "text": "Self-reported model · not reader responses",
+          "className": "",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "7px"
+        }
+      ],
+      "beatAccessibility": {
+        "snapshot": "- 'button \"Quiet anticipation undertone: Hidden grief build\"':\n  - strong: Quiet anticipation\n  - text: \"undertone: Hidden grief build\"\n  - img",
+        "description": "Weight 3 of 5. Show reasoning."
+      },
+      "violations": [],
+      "incompleteContrast": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "15.0pt (20px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p data-first-line-indent=\"true\">She put the ledger on a bollard and unfolded the page her father had left blank. In the margin, a thin line of salt traced the outline of a house. No street in the town ran at that angle.</p>",
+              "target": [
+                "div[data-passage=\"3\"] > p[data-first-line-indent=\"true\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "reader-night",
+      "width": 1440,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle is-on",
+          "color": "rgb(216, 225, 207)",
+          "background": "rgb(53, 67, 51)",
+          "fontSize": "14px"
+        },
+        {
+          "text": "AI interpretation · unverified",
+          "className": "heartbeat-caption",
+          "color": "rgb(183, 198, 170)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "· unverified",
+          "className": "heartbeat-unverified",
+          "color": "rgb(209, 196, 166)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Quiet anticipation",
+          "className": "",
+          "color": "rgb(183, 198, 170)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "11px"
+        },
+        {
+          "text": "undertone: Hidden grief",
+          "className": "",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "build",
+          "className": "heartbeat-trajectory",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Synthetic critic · Color review onlySelf-reported model · not reader responses",
+          "className": "heartbeat-attribution",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "7px"
+        },
+        {
+          "text": "Self-reported model · not reader responses",
+          "className": "",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "7px"
+        }
+      ],
+      "beatAccessibility": {
+        "snapshot": "- 'button \"Quiet anticipation undertone: Hidden grief build\"':\n  - strong: Quiet anticipation\n  - text: \"undertone: Hidden grief build\"\n  - img",
+        "description": "Weight 3 of 5. Show reasoning."
+      },
+      "violations": [],
+      "incompleteContrast": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "15.0pt (20px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p data-first-line-indent=\"true\">She put the ledger on a bollard and unfolded the page her father had left blank. In the margin, a thin line of salt traced the outline of a house. No street in the town ran at that angle.</p>",
+              "target": [
+                "div[data-passage=\"3\"] > p[data-first-line-indent=\"true\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "night-details",
+      "width": 1440,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle is-on",
+          "color": "rgb(216, 225, 207)",
+          "background": "rgb(53, 67, 51)",
+          "fontSize": "14px"
+        },
+        {
+          "text": "AI interpretation · unverified",
+          "className": "heartbeat-caption",
+          "color": "rgb(183, 198, 170)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "· unverified",
+          "className": "heartbeat-unverified",
+          "color": "rgb(209, 196, 166)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Quiet anticipation",
+          "className": "",
+          "color": "rgb(183, 198, 170)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "11px"
+        },
+        {
+          "text": "undertone: Hidden grief",
+          "className": "",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "build",
+          "className": "heartbeat-trajectory",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Synthetic critic · Color review onlySelf-reported model · not reader responses",
+          "className": "heartbeat-attribution",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "7px"
+        },
+        {
+          "text": "Self-reported model · not reader responses",
+          "className": "",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "7px"
+        },
+        {
+          "text": "Quiet anticipation / Hidden grief",
+          "className": "heartbeat-detail-label",
+          "color": "rgb(77, 92, 69)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "25px"
+        },
+        {
+          "text": " / Hidden grief",
+          "className": "",
+          "color": "rgb(101, 107, 88)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "25px"
+        },
+        {
+          "text": "build · weight 3 of 5",
+          "className": "heartbeat-detail-meta",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "Context: Synthetic context; no author intent or real response is inferred.",
+          "className": "heartbeat-context",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "11px"
+        },
+        {
+          "text": "Unverified AI inference, not measured emotion or author intent. Provider and model are self-reported: Synthetic critic · Color review only.",
+          "className": "heartbeat-detail-meta",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "Exact revision salt-tide-r1Hash 9340c6fe1a877516aa5d650f49b6d0ee47c998bfb428ab6231139eafa441b4ed",
+          "className": "heartbeat-detail-meta",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        }
+      ],
+      "beatAccessibility": {
+        "snapshot": "- 'button \"Quiet anticipation undertone: Hidden grief build\"':\n  - strong: Quiet anticipation\n  - text: \"undertone: Hidden grief build\"\n  - img",
+        "description": "Weight 3 of 5. Show reasoning."
+      },
+      "violations": [],
+      "incompleteContrast": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "18.8pt (25px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "3:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span> / Hidden grief</span>",
+              "target": [
+                ".heartbeat-detail-label > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<blockquote>Mira reached the harbour before the baker unlocked his shutters.</blockquote>",
+              "target": [
+                "blockquote"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "10.5pt (14px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p>The early harbour offers one possible reading of expectation, with an undertone of remembered loss.</p>",
+              "target": [
+                ".heartbeat-detail > p:nth-child(5)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p class=\"heartbeat-context\">Context: Synthetic context; no author intent or real response is inferred.</p>",
+              "target": [
+                ".heartbeat-context"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p class=\"heartbeat-detail-meta\">Unverified AI inference, not measured emotion or author intent. Provider and model are self-reported: Synthetic critic · Color review only.</p>",
+              "target": [
+                ".heartbeat-detail-meta:nth-child(7)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p class=\"heartbeat-detail-meta\">Exact revision salt-tide-r1<br>Hash 9340c6fe1a877516aa5d650f49b6d0ee47c998bfb428ab6231139eafa441b4ed</p>",
+              "target": [
+                ".heartbeat-detail-meta:nth-child(8)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "night-off-hover",
+      "width": 1440,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle ",
+          "color": "rgb(183, 198, 170)",
+          "background": "rgb(53, 67, 51)",
+          "fontSize": "14px"
+        }
+      ],
+      "beatAccessibility": null,
+      "violations": [],
+      "incompleteContrast": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "15.0pt (20px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p data-first-line-indent=\"true\">She put the ledger on a bollard and unfolded the page her father had left blank. In the margin, a thin line of salt traced the outline of a house. No street in the town ran at that angle.</p>",
+              "target": [
+                "div[data-passage=\"3\"] > p[data-first-line-indent=\"true\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "writer-off",
+      "width": 390,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle ",
+          "color": "rgb(82, 99, 74)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        }
+      ],
+      "beatAccessibility": null,
+      "violations": [],
+      "incompleteContrast": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgImage",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<select class=\"collection-native\" aria-label=\"Move writing to collection\">",
+                      "target": [
+                        ".collection-native"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background image"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<select class=\"collection-native\" aria-label=\"Move writing to collection\">",
+              "target": [
+                ".collection-native"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "writer-on",
+      "width": 390,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle is-on",
+          "color": "rgb(54, 83, 59)",
+          "background": "rgb(231, 237, 223)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "AI interpretation · unverified",
+          "className": "heartbeat-caption",
+          "color": "rgb(82, 99, 74)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "· unverified",
+          "className": "heartbeat-unverified",
+          "color": "rgb(104, 93, 67)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "Quiet anticipation",
+          "className": "",
+          "color": "rgb(69, 88, 61)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "12px"
+        },
+        {
+          "text": "undertone: Hidden grief",
+          "className": "",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "build",
+          "className": "heartbeat-trajectory",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Synthetic critic · Color review onlySelf-reported model · not reader responses",
+          "className": "heartbeat-attribution",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "Self-reported model · not reader responses",
+          "className": "",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        }
+      ],
+      "beatAccessibility": {
+        "snapshot": "- 'button \"Quiet anticipation undertone: Hidden grief build\"':\n  - strong: Quiet anticipation\n  - text: \"undertone: Hidden grief build\"\n  - img",
+        "description": "Weight 3 of 5. Show reasoning."
+      },
+      "violations": [],
+      "incompleteContrast": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgImage",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<select class=\"collection-native\" aria-label=\"Move writing to collection\">",
+                      "target": [
+                        ".collection-native"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background image"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<select class=\"collection-native\" aria-label=\"Move writing to collection\">",
+              "target": [
+                ".collection-native"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "details",
+      "width": 390,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle is-on",
+          "color": "rgb(54, 83, 59)",
+          "background": "rgb(231, 237, 223)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "AI interpretation · unverified",
+          "className": "heartbeat-caption",
+          "color": "rgb(82, 99, 74)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "· unverified",
+          "className": "heartbeat-unverified",
+          "color": "rgb(104, 93, 67)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "Quiet anticipation",
+          "className": "",
+          "color": "rgb(69, 88, 61)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "12px"
+        },
+        {
+          "text": "undertone: Hidden grief",
+          "className": "",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "build",
+          "className": "heartbeat-trajectory",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Synthetic critic · Color review onlySelf-reported model · not reader responses",
+          "className": "heartbeat-attribution",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "Self-reported model · not reader responses",
+          "className": "",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "Quiet anticipation / Hidden grief",
+          "className": "heartbeat-detail-label",
+          "color": "rgb(77, 92, 69)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "25px"
+        },
+        {
+          "text": " / Hidden grief",
+          "className": "",
+          "color": "rgb(101, 107, 88)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "25px"
+        },
+        {
+          "text": "build · weight 3 of 5",
+          "className": "heartbeat-detail-meta",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "Context: Synthetic context; no author intent or real response is inferred.",
+          "className": "heartbeat-context",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "11px"
+        },
+        {
+          "text": "Unverified AI inference, not measured emotion or author intent. Provider and model are self-reported: Synthetic critic · Color review only.",
+          "className": "heartbeat-detail-meta",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "Exact revision salt-tide-r1Hash 9340c6fe1a877516aa5d650f49b6d0ee47c998bfb428ab6231139eafa441b4ed",
+          "className": "heartbeat-detail-meta",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        }
+      ],
+      "beatAccessibility": {
+        "snapshot": "- 'button \"Quiet anticipation undertone: Hidden grief build\"':\n  - strong: Quiet anticipation\n  - text: \"undertone: Hidden grief build\"\n  - img",
+        "description": "Weight 3 of 5. Show reasoning."
+      },
+      "violations": [],
+      "incompleteContrast": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "18.8pt (25px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "3:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span> / Hidden grief</span>",
+              "target": [
+                ".heartbeat-detail-label > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<blockquote>Mira reached the harbour before the baker unlocked his shutters.</blockquote>",
+              "target": [
+                "blockquote"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "10.5pt (14px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p>The early harbour offers one possible reading of expectation, with an undertone of remembered loss.</p>",
+              "target": [
+                ".heartbeat-detail > p:nth-child(5)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "8.3pt (11px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p class=\"heartbeat-context\">Context: Synthetic context; no author intent or real response is inferred.</p>",
+              "target": [
+                ".heartbeat-context"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p class=\"heartbeat-detail-meta\">Unverified AI inference, not measured emotion or author intent. Provider and model are self-reported: Synthetic critic · Color review only.</p>",
+              "target": [
+                ".heartbeat-detail-meta:nth-child(7)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "7.5pt (10px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p class=\"heartbeat-detail-meta\">Exact revision salt-tide-r1<br>Hash 9340c6fe1a877516aa5d650f49b6d0ee47c998bfb428ab6231139eafa441b4ed</p>",
+              "target": [
+                ".heartbeat-detail-meta:nth-child(8)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "reader-paper",
+      "width": 390,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle is-on",
+          "color": "rgb(54, 83, 59)",
+          "background": "rgb(231, 237, 223)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "AI interpretation · unverified",
+          "className": "heartbeat-caption",
+          "color": "rgb(82, 99, 74)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "· unverified",
+          "className": "heartbeat-unverified",
+          "color": "rgb(104, 93, 67)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Quiet anticipation",
+          "className": "",
+          "color": "rgb(76, 90, 68)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "11px"
+        },
+        {
+          "text": "undertone: Hidden grief",
+          "className": "",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "build",
+          "className": "heartbeat-trajectory",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "Synthetic critic · Color review onlySelf-reported model · not reader responses",
+          "className": "heartbeat-attribution",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        }
+      ],
+      "beatAccessibility": {
+        "snapshot": "- 'button \"Quiet anticipation undertone: Hidden grief build\"':\n  - strong: Quiet anticipation\n  - text: \"undertone: Hidden grief build\"\n  - img",
+        "description": "Weight 3 of 5. Show reasoning."
+      },
+      "violations": [],
+      "incompleteContrast": []
+    },
+    {
+      "state": "reader-night",
+      "width": 390,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle is-on",
+          "color": "rgb(216, 225, 207)",
+          "background": "rgb(53, 67, 51)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "AI interpretation · unverified",
+          "className": "heartbeat-caption",
+          "color": "rgb(183, 198, 170)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "· unverified",
+          "className": "heartbeat-unverified",
+          "color": "rgb(209, 196, 166)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Quiet anticipation",
+          "className": "",
+          "color": "rgb(183, 198, 170)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "11px"
+        },
+        {
+          "text": "undertone: Hidden grief",
+          "className": "",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "build",
+          "className": "heartbeat-trajectory",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "Synthetic critic · Color review onlySelf-reported model · not reader responses",
+          "className": "heartbeat-attribution",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        }
+      ],
+      "beatAccessibility": {
+        "snapshot": "- 'button \"Quiet anticipation undertone: Hidden grief build\"':\n  - strong: Quiet anticipation\n  - text: \"undertone: Hidden grief build\"\n  - img",
+        "description": "Weight 3 of 5. Show reasoning."
+      },
+      "violations": [],
+      "incompleteContrast": []
+    },
+    {
+      "state": "night-details",
+      "width": 390,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle is-on",
+          "color": "rgb(216, 225, 207)",
+          "background": "rgb(53, 67, 51)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "AI interpretation · unverified",
+          "className": "heartbeat-caption",
+          "color": "rgb(183, 198, 170)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "· unverified",
+          "className": "heartbeat-unverified",
+          "color": "rgb(209, 196, 166)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Quiet anticipation",
+          "className": "",
+          "color": "rgb(183, 198, 170)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "11px"
+        },
+        {
+          "text": "undertone: Hidden grief",
+          "className": "",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "build",
+          "className": "heartbeat-trajectory",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "9px"
+        },
+        {
+          "text": "Synthetic critic · Color review onlySelf-reported model · not reader responses",
+          "className": "heartbeat-attribution",
+          "color": "rgb(185, 200, 173)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "8px"
+        },
+        {
+          "text": "Quiet anticipation / Hidden grief",
+          "className": "heartbeat-detail-label",
+          "color": "rgb(77, 92, 69)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "25px"
+        },
+        {
+          "text": " / Hidden grief",
+          "className": "",
+          "color": "rgb(101, 107, 88)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "25px"
+        },
+        {
+          "text": "build · weight 3 of 5",
+          "className": "heartbeat-detail-meta",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "Context: Synthetic context; no author intent or real response is inferred.",
+          "className": "heartbeat-context",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "11px"
+        },
+        {
+          "text": "Unverified AI inference, not measured emotion or author intent. Provider and model are self-reported: Synthetic critic · Color review only.",
+          "className": "heartbeat-detail-meta",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        },
+        {
+          "text": "Exact revision salt-tide-r1Hash 9340c6fe1a877516aa5d650f49b6d0ee47c998bfb428ab6231139eafa441b4ed",
+          "className": "heartbeat-detail-meta",
+          "color": "rgb(89, 99, 77)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fontSize": "10px"
+        }
+      ],
+      "beatAccessibility": {
+        "snapshot": "- 'button \"Quiet anticipation undertone: Hidden grief build\"':\n  - strong: Quiet anticipation\n  - text: \"undertone: Hidden grief build\"\n  - img",
+        "description": "Weight 3 of 5. Show reasoning."
+      },
+      "violations": [],
+      "incompleteContrast": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "18.8pt (25px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "3:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span> / Hidden grief</span>",
+              "target": [
+                ".heartbeat-detail-label > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<blockquote>Mira reached the harbour before the baker unlocked his shutters.</blockquote>",
+              "target": [
+                "blockquote"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "night-off-hover",
+      "width": 390,
+      "colors": [
+        {
+          "text": "Heartbeat",
+          "className": "heartbeat-toggle ",
+          "color": "rgb(183, 198, 170)",
+          "background": "rgb(53, 67, 51)",
+          "fontSize": "9px"
+        }
+      ],
+      "beatAccessibility": null,
+      "violations": [],
+      "incompleteContrast": []
+    }
+  ],
+  "errors": []
+}

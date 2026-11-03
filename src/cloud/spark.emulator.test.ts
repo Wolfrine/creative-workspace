@@ -95,7 +95,7 @@ describe.skipIf(!enabled)('Spark adapter through actual Firestore emulator and o
     await assertFails(setDoc(doc(db, 'noveliaaConfig/access'), { ownerUid: 'other' }));
     // Plugin records and OAuth state are server-only, even for the human owner.
     // The author UI uses a verified same-origin API; no generic Firestore CRUD.
-    for (const reference of ['_noveliaaMcp/access/oauthItems/token', path('collaboration', 'proposal'), path('collaborationReview', 'proposal'), path('collaborationDecisions', 'decision')]) {
+    for (const reference of ['_noveliaaMcp/access/oauthItems/token', path('collaboration', 'proposal'), path('collaborationReview', 'proposal'), path('collaborationDecisions', 'decision'), path('heartbeatReceipts', 'receipt'), path('heartbeatAnnotations', 'scene') + '/revisions/r1/entries/analysis']) {
       await assertFails(getDoc(doc(db, reference)));
       await assertFails(setDoc(doc(db, reference), { verification: 'verified', approved: true }));
     }
@@ -103,6 +103,20 @@ describe.skipIf(!enabled)('Spark adapter through actual Firestore emulator and o
     await assertFails(setDoc(doc(db, path('revisions', 'r1') + '/nested/leak'), { invented: true }));
     await environment.withSecurityRulesDisabled(context => deleteDoc(doc(context.firestore(), 'noveliaaConfig/access')));
     await assertFails(getDocs(collection(db, 'noveliaaWorkspaces/author/universes')));
+  });
+  it('keeps populated heartbeat annotations and receipts server-only for every browser identity', async () => {
+    const references = [path('heartbeatReceipts', 'receipt'), path('heartbeatAnnotations', 'scene') + '/revisions/r1/entries/analysis'];
+    await environment.withSecurityRulesDisabled(async context => {
+      for (const reference of references) await setDoc(doc(context.firestore(), reference), { origin: 'ai', verification: 'unverified', synthetic: true });
+    });
+    for (const context of [environment.authenticatedContext('author'), environment.authenticatedContext('other'), environment.unauthenticatedContext()]) {
+      for (const reference of references) {
+        const target = doc(context.firestore(), reference);
+        await assertFails(getDoc(target));
+        await assertFails(setDoc(target, { verification: 'verified' }, { merge: true }));
+        await assertFails(deleteDoc(target));
+      }
+    }
   });
   it('revokes every retired workspace path after rotation while preserving owner identity and new-root access', async () => {
     const retired = await ready(); await retired.commit(await operation('r1', 'Retired synthetic writing'));

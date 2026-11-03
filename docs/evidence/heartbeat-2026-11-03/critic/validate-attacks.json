@@ -1,0 +1,85 @@
+{
+  "synthetic": true,
+  "checks": [
+    {
+      "name": "valid UTF-16 emoji and mixed labels retain exact bytes",
+      "status": "PASS"
+    },
+    {
+      "name": "quiet empty beats accepted",
+      "status": "PASS"
+    },
+    {
+      "name": "CRLF and combining text retain exact quote",
+      "status": "PASS"
+    },
+    {
+      "name": "start inside surrogate rejected even with matching half quote",
+      "status": "PASS"
+    },
+    {
+      "name": "end inside surrogate rejected even with matching half quote",
+      "status": "PASS"
+    },
+    {
+      "name": "mismatched quote rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "overlap rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "reverse offsets rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "negative offsets rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "fractional offsets rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "out of bounds rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "forged approval top-level rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "forged source text top-level rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "forged nested approval rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "four-word label rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "blank label rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "weight beyond five rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "unknown trajectory rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "oversize quote rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "more than eighty beats rejected",
+      "status": "PASS"
+    }
+  ]
+}

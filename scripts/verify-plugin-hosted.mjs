@@ -22,9 +22,22 @@ const request = async (method, params, token) => {
 };
 const discovery = await request('tools/list', {}); assert.equal(discovery.response.status, 200);
 const tools = discovery.body.result.tools;
-assert.deepEqual(tools.map(t => t.name).sort(), ['fetch_page', 'get_profile', 'list_pages', 'list_universes', 'search_writing', 'submit_record']);
+assert.deepEqual(tools.map(t => t.name).sort(), ['fetch_page', 'get_profile', 'list_pages', 'list_universes', 'search_writing', 'submit_heartbeat', 'submit_record']);
 assert(tools.every(t => t._meta.securitySchemes?.[0].type === 'oauth2'));
+const heartbeat = tools.find(t => t.name === 'submit_heartbeat');
+assert.equal(heartbeat.annotations.readOnlyHint, false);
+assert.equal(heartbeat.annotations.destructiveHint, false);
+assert(heartbeat._meta.securitySchemes[0].scopes.includes('noveliaa:propose'));
+assert(heartbeat.inputSchema.properties.beats.maxItems <= 80);
+assert(heartbeat.inputSchema.required.includes('revisionId'));
+assert(heartbeat.inputSchema.required.includes('contentHash'));
 const challenge = await request('tools/call', { name: 'list_universes', arguments: {} }); assert.equal(challenge.body.result.isError, true); assert(challenge.body.result._meta['mcp/www_authenticate']);
+const heartbeatChallenge = await request('tools/call', { name: 'submit_heartbeat', arguments: { documentId: 'readiness-probe', revisionId: 'readiness-probe', contentHash: '0'.repeat(64), idempotencyKey: 'anonymous-probe-no-write', provider: 'Readiness probe', model: 'No model', contextNote: 'Anonymous access denial only; no writing accessed.', beats: [] } });
+assert.equal(heartbeatChallenge.body.result.isError, true);
+assert(heartbeatChallenge.body.result._meta['mcp/www_authenticate']);
+const privateHeartbeat = await fetch(origin + '/api/integrations/heartbeat?documentId=readiness-probe&revisionId=readiness-probe&contentHash=' + '0'.repeat(64), { cache: 'no-store', signal: AbortSignal.timeout(45000) });
+assert.equal(privateHeartbeat.status, 403);
+assert(privateHeartbeat.headers.get('cache-control')?.includes('no-store'));
 const denied = await request('tools/list', {}, 'invalid-probe-not-a-credential'); assert.equal(denied.response.status, 401); assert(denied.response.headers.get('www-authenticate').includes('resource_metadata='));
 const result = { checkedAt: new Date().toISOString(), origin, health, authorization, resource, tools,
   runtimeReadiness: 'Unknown-client Firestore lookup returned invalid_client; no grant or record created.',

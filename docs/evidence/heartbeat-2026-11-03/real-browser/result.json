@@ -1,0 +1,8 @@
+{
+  "syntheticOnly": true,
+  "actualMcpHttp": true,
+  "actualFirebaseAuthor": true,
+  "actualServerScopedReads": 3,
+  "sourceCollectionsUnchanged": true,
+  "grantRevocationHidden": true
+}

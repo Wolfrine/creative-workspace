@@ -11,6 +11,7 @@ import { NoveliaaOAuthProvider, READ, PROPOSE } from '../src/integration-oauth.m
 import { WritingAccess } from '../src/integration-writing.mjs';
 import { integrationApp } from '../src/integration-http.mjs';
 import { cleanupExpiredOAuth } from '../src/integration-cleanup.mjs';
+import { readHeartbeat, submitHeartbeat } from '../src/integration-heartbeat.mjs';
 
 test('private plugin OAuth, scoped HTTP tools, immutable writeback and owner review', { skip: !process.env.FIRESTORE_EMULATOR_HOST, timeout: 90000 }, async t => {
   assert.match(process.env.FIRESTORE_EMULATOR_HOST, /^(127\.0\.0\.1|localhost):\d+$/);
@@ -75,12 +76,13 @@ test('private plugin OAuth, scoped HTTP tools, immutable writeback and owner rev
     return { code, verifier, requestId, cookie, exchange: extra => form({ grant_type: 'authorization_code', client_id: client.client_id, code, code_verifier: verifier, redirect_uri: client.redirect_uris[0], resource: provider.resource, ...extra }) };
   };
   try {
-    await t.test('discovery advertises PKCE, resource and six tools; anonymous private calls challenge', async () => {
+    await t.test('discovery advertises PKCE, resource, original six tools and heartbeat; anonymous private calls challenge', async () => {
       const metadata = await (await request('/.well-known/oauth-authorization-server')).json();
       assert.deepEqual(metadata.code_challenge_methods_supported, ['S256']);
       assert.equal(metadata.authorization_endpoint, origin + '/api/oauth/authorize');
       const resource = await (await request('/.well-known/oauth-protected-resource/mcp')).json(); assert.equal(resource.resource, provider.resource);
-      const result = await rpc('tools/list', {}); assert.equal(result.body.result.tools.length, 6);
+      const result = await rpc('tools/list', {}); assert.equal(result.body.result.tools.length, 7);
+      assert.deepEqual(result.body.result.tools.map(tool => tool.name).sort(), ['fetch_page', 'get_profile', 'list_pages', 'list_universes', 'search_writing', 'submit_heartbeat', 'submit_record']);
       for (const tool of result.body.result.tools) assert.equal(tool._meta.securitySchemes[0].type, 'oauth2');
       const profile = result.body.result.tools.find(t => t.name === 'get_profile'); assert.equal(profile._meta['openai/profile'], true); assert.deepEqual(profile.outputSchema.required, ['id', 'name']);
       const denied = await rpc('tools/call', { name: 'list_universes', arguments: {} });
@@ -146,6 +148,93 @@ test('private plugin OAuth, scoped HTTP tools, immutable writeback and owner rev
       const exported = await (await request('/api/integrations/export', { headers: { Authorization: 'Bearer ' + ownerToken } })).json();
       const { sha256, ...archive } = exported; assert.equal(digest(stable(archive)), sha256); assert.equal(archive.records[0].body, input.body); assert.equal(archive.decisions[0].approvesCanon, false);
       assert.equal((await root.collection('collaboration').doc(recordId).get()).data().decision, undefined);
+    });
+    await t.test('heartbeat HTTP append/read, exact retry, independent storage and strict source boundaries', async t => {
+      const beat = { start: 0, end: 14, quote: original.snapshot.plainText.slice(0, 14), foreground: 'Quiet tension', undertone: 'Resolve', weight: 3, trajectory: 'hold', tone: 'cool', reasoning: 'A possible interpretation of the exact opening; no measured reader response.' };
+      const heartbeat = { documentId: 'scene', revisionId: 'r1', contentHash: original.contentHash, idempotencyKey: 'heartbeat-integration-0001', provider: 'Synthetic provider', model: 'Synthetic model', contextNote: 'Only this synthetic scene was considered.', beats: [beat] };
+      const sourceCollections = ['documents', 'revisions', 'chunks', 'blobs', 'operations', 'originals', 'documentIdentities'];
+      const sourceState = async () => stable(await Promise.all(sourceCollections.map(async name => (await root.collection(name).get()).docs.map(doc => ({ id: doc.id, ...doc.data() })))));
+      const before = await sourceState(), value = await provider.verifyAccessToken(tokens.access_token), grant = value.extra.grant;
+      const call = data => rpc('tools/call', { name: 'submit_heartbeat', arguments: data }, tokens.access_token);
+      const readUrl = '/api/integrations/heartbeat?' + new URLSearchParams({ documentId: 'scene', revisionId: 'r1', contentHash: original.contentHash });
+      const read = async (token = ownerToken) => request(readUrl, { headers: token ? { Authorization: 'Bearer ' + token } : {} });
+      const first = await call(heartbeat); assert.equal(first.body.result.structuredContent.verification, 'unverified'); assert.equal(first.body.result.structuredContent.replayed, false);
+      const replay = await call(heartbeat); assert.deepEqual(replay.body.result.structuredContent, { ...first.body.result.structuredContent, replayed: true });
+      assert((await call({ ...heartbeat, contextNote: 'Different content.' })).body.result.isError);
+      assert((await call({ ...heartbeat, approved: true })).body.result.isError);
+      assert((await call({ ...heartbeat, idempotencyKey: 'heartbeat-invalid-quote', beats: [{ ...beat, quote: 'wrong' }] })).body.result.isError);
+      assert.equal((await root.collection('heartbeatReceipts').get()).size, 1);
+      const annotationPath = root.collection('heartbeatAnnotations').doc('scene').collection('revisions').doc('r1').collection('entries');
+      assert.equal((await annotationPath.get()).size, 1);
+      const response = await read(); assert.equal(response.status, 200); assert.match(response.headers.get('cache-control'), /no-store/);
+      const shown = await response.json(); assert.equal(shown.sourceIsCurrent, true); assert.equal(shown.annotations.length, 1); assert.deepEqual(shown.annotations[0].beats, heartbeat.beats);
+      assert.deepEqual(shown.annotations[0].attribution, { provider: heartbeat.provider, model: heartbeat.model }); assert.equal(shown.annotations[0].origin, 'ai'); assert.equal(shown.annotations[0].grantId, undefined);
+      assert.equal((await read(null)).status, 403); assert.equal((await read(await login('other-author'))).status, 403);
+      const stale = await request(readUrl.replace(original.contentHash, '0'.repeat(64)), { headers: { Authorization: 'Bearer ' + ownerToken } });
+      assert.deepEqual((await stale.json()).annotations, []);
+      assert.equal((await request(readUrl + '&extra=invalid', { headers: { Authorization: 'Bearer ' + ownerToken } })).status, 400);
+      for (const change of [{ documentId: 'secret-scene', revisionId: 'secret-r1' }, { documentId: 'trashed-scene', revisionId: 'trash-r1' }, { contentHash: '0'.repeat(64) }]) assert((await call({ ...heartbeat, ...change })).body.result.isError);
+      const readonlyConnection = await connect(false), readonly = await (await readonlyConnection.exchange()).json();
+      assert((await rpc('tools/call', { name: 'submit_heartbeat', arguments: heartbeat }, readonly.access_token)).body.result.isError);
+      await t.test('read filters current grant revocation, write permission, narrowed universes and reset', async () => {
+        const config = (await db.doc('noveliaaConfig/access').get()).data();
+        for (const patch of [{ revoked: true }, { allowProposals: false }, { scopes: [READ] }, { universeIds: ['private'] }, { uid: 'other-author' }, { workspaceId: 'other-workspace' }, { expiresAt: now() - 1 }]) {
+          await store.put('grants', grant.id, { ...grant, ...patch });
+          assert.deepEqual((await (await read()).json()).annotations, []);
+        }
+        await store.put('grants', grant.id, grant);
+        assert.equal((await (await read()).json()).annotations.length, 1);
+        await db.doc('noveliaaConfig/access').set({ ...config, workspaceId: 'heartbeat-reset' });
+        assert.deepEqual((await (await read()).json()).annotations, []);
+        await assert.rejects(readHeartbeat({ access, store }, { uid, workspaceId }, { documentId: 'scene', revisionId: 'r1', contentHash: original.contentHash }), /workspace changed/);
+        await db.doc('noveliaaConfig/access').set(config);
+      });
+      await t.test('write transaction rechecks revocation, scope, owner reset and current source after preflight', async () => {
+        const config = (await db.doc('noveliaaConfig/access').get()).data(), head = (await root.collection('documents').doc('scene').get()).data();
+        const raced = mutate => ({ root: access.root.bind(access), page: async (...args) => { const result = await access.page(...args); await mutate(); return result; } });
+        const fresh = { ...heartbeat, idempotencyKey: 'heartbeat-raced-attempt' };
+        const attempts = [
+          () => store.put('grants', grant.id, { ...grant, revoked: true }),
+          () => store.put('grants', grant.id, { ...grant, universeIds: ['private'] }),
+          () => store.put('grants', grant.id, { ...grant, allowProposals: false }),
+          () => db.doc('noveliaaConfig/access').set({ ...config, workspaceId: 'heartbeat-reset' }),
+          () => root.collection('documents').doc('scene').set({ ...head, headRevisionId: 'changed-during-preflight' })
+        ];
+        for (const mutate of attempts) {
+          await assert.rejects(submitHeartbeat({ access: raced(mutate), store }, grant, fresh), /Connection changed|Writing changed/);
+          await store.put('grants', grant.id, grant); await db.doc('noveliaaConfig/access').set(config); await root.collection('documents').doc('scene').set(head);
+        }
+        assert.equal((await root.collection('heartbeatReceipts').get()).size, 1);
+        const concurrent = { ...heartbeat, idempotencyKey: 'heartbeat-concurrent-0001' };
+        const duplicates = await Promise.all([submitHeartbeat({ access, store }, grant, concurrent), submitHeartbeat({ access, store }, grant, concurrent)]);
+        assert.deepEqual(duplicates.map(receipt => receipt.replayed).sort(), [false, true]);
+        assert.equal((await annotationPath.get()).size, 2);
+        const conflicts = await Promise.allSettled([submitHeartbeat({ access, store }, grant, { ...heartbeat, idempotencyKey: 'heartbeat-concurrent-conflict', contextNote: 'First interpretation.' }), submitHeartbeat({ access, store }, grant, { ...heartbeat, idempotencyKey: 'heartbeat-concurrent-conflict', contextNote: 'Second interpretation.' })]);
+        assert.deepEqual(conflicts.map(result => result.status).sort(), ['fulfilled', 'rejected']);
+      });
+      await t.test('quiet empty beats are valid; source changes hide historical annotations and reject stale retry', async () => {
+        const quiet = await call({ ...heartbeat, idempotencyKey: 'heartbeat-quiet-0001', beats: [] }); assert.equal(quiet.body.result.structuredContent.replayed, false);
+        assert.equal((await (await read()).json()).annotations.length, 1);
+        const newer = await stage('scene', 'granted', 'heartbeat-r2', 'Changed synthetic source.');
+        assert.deepEqual(await (await read()).json(), { schema: 'noveliaa-heartbeat-1', annotations: [], sourceIsCurrent: false });
+        assert((await call(heartbeat)).body.result.isError);
+        const newUrl = '/api/integrations/heartbeat?' + new URLSearchParams({ documentId: 'scene', revisionId: newer.id, contentHash: newer.contentHash });
+        assert.deepEqual((await (await request(newUrl, { headers: { Authorization: 'Bearer ' + ownerToken } })).json()).annotations, []);
+        await root.collection('documents').doc('scene').set({ id: 'scene', universeId: 'granted', headRevisionId: 'r1' });
+        await root.collection('revisions').doc(newer.id).delete();
+        const meta = (await root.collection('revisions').doc('r1').get()).data();
+        const manifest = (await root.collection('blobs').doc(meta.blobHash).get()).data();
+        const chunkRef = root.collection('chunks').doc(manifest.chunks[0]), saved = (await chunkRef.get()).data();
+        await chunkRef.set({ ...saved, bytes: Buffer.from('corrupt') }); assert.equal((await read()).status, 400); await chunkRef.set(saved);
+        // Temporary source fixtures are removed only from this synthetic lane.
+        const allBlobs = await root.collection('blobs').get();
+        for (const blob of allBlobs.docs) if (blob.id !== meta.blobHash && !(await root.collection('revisions').where('blobHash', '==', blob.id).get()).size) {
+          for (const chunk of blob.data().chunks) await root.collection('chunks').doc(chunk).delete();
+          await blob.ref.delete();
+        }
+      });
+      assert.equal(await sourceState(), before);
+      assert.equal((await root.collection('collaboration').get()).size, 1);
     });
     await t.test('readonly grant cannot append; stale source is labelled and corrupt bytes fail', async () => {
       const readConnection = await connect(false), readTokens = await (await readConnection.exchange()).json();

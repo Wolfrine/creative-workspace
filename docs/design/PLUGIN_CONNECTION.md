@@ -78,6 +78,26 @@ reload. The retained legacy-worker browser check verifies this at desktop/mobile
 
 ## Evaluation
 
+### Emotional Heartbeat extension (3 November 2026)
+
+The author explicitly authorized implementation and live deployment of the
+optional writer/private-Read Emotional Heartbeat. The original six MCP tools
+remain compatible. `submit_heartbeat` uses the existing selected-universe read
+and optional proposal scopes to append a separate structured AI interpretation.
+It never changes writing or canon. Exact source revision/hash, ordered UTF-16
+span/quote, short foreground/undertone, weight/trajectory, reasoning, narrative
+context and self-reported provider/model attribution are retained. Identical
+retries receive the same receipt; changed replay, stale writing and revoked or
+out-of-scope grants fail closed.
+
+`GET /api/integrations/heartbeat?documentId=...&revisionId=...&contentHash=...`
+uses the existing Firebase-author bearer middleware and no-store response. It
+returns `{schema:'noveliaa-heartbeat-1',annotations:[],sourceIsCurrent:boolean}`,
+with at most one latest eligible annotation in `annotations`. All source and
+grant checks are server scoped. Direct Firestore browser access stays denied.
+The off-by-default UI also verifies the exact local snapshot and hides an old
+analysis immediately on edits. See [feature contract](EMOTIONAL_HEARTBEAT.md).
+
 Test OAuth wrong account, origin/CSRF, PKCE, code replay, resource binding,
 refresh rotation/replay, revoked/reset grants, narrowed scopes; MCP tools over
 actual HTTP; chunk/revision hash verification; out-of-scope and trashed writing;

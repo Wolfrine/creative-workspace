@@ -2,11 +2,16 @@
 import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+const heartbeat = existsSync('docs/evidence/heartbeat-2026-11-03/manifest.json');
+// A later feature binds the complete current source inventory. Do not rewrite
+// or mistake the original plugin source hashes for the newly reviewed source.
+if (heartbeat) await import('./verify-heartbeat-candidate.mjs');
 const manifest = JSON.parse(await readFile('docs/evidence/plugin-2026-10-25/manifest.json', 'utf8'));
 assert.equal(manifest.plan, 'Blaze');
 assert.equal(hash(Buffer.from(JSON.stringify(manifest.sources))), manifest.sourceDigest, 'Candidate source inventory digest differs.');
-for (const item of [...manifest.sources, ...manifest.renders, ...manifest.testEvidence, ...(manifest.operationsEvidence ?? [])]) {
+for (const item of [...(heartbeat ? [] : manifest.sources), ...manifest.renders, ...manifest.testEvidence, ...(manifest.operationsEvidence ?? [])]) {
   assert.equal(hash(await readFile(item.path)), item.sha256, 'Retained candidate changed: ' + item.path);
 }
 const firebase = JSON.parse(await readFile('firebase.json', 'utf8'));

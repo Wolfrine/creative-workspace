@@ -1,6 +1,6 @@
 ---
 name: collaborate-on-writing
-description: Use when the author asks for story critique, alternative wording, a discussion record or an AI proposal saved back into Noveliaa. Keep proposals separate from original writing with exact provenance.
+description: Use when the author asks for story critique, emotional heartbeat, alternative wording, a discussion record or an AI proposal saved back into Noveliaa. Keep interpretations and proposals separate from original writing with exact provenance.
 ---
 
 # Collaborate without taking ownership
@@ -34,6 +34,40 @@ When the author asks to save a discussion, research result, critique or proposal
 5. Link the returned reviewUrl. Say that a separate unverified record was saved.
    Original writing is untouched. Review/dismiss happens in Noveliaa; reviewed
    is not approved canon. Applying text is an explicit manual author action.
+
+## Emotional Heartbeat
+
+When the author asks to save an emotional interpretation, use `submit_heartbeat`
+instead of putting structured annotations inside a discussion record. First
+check `allowProposals` and fetch the current exact revision. Read the available
+preceding and following narrative context, following `nextOffset` where needed;
+record any missing context in `contextNote`. Do not claim access to unread pages.
+
+Choose meaningful emotional beats, including connected paragraphs where useful.
+Do not tag every sentence or optimize toward stronger feeling. Quiet, uncertain
+and mixed passages are valid. Leave unneeded spans untagged; `beats: []` is a
+valid quiet interpretation. Use crisp one-to-three-word `foreground` and optional
+`undertone` labels. `weight` (1–5) describes perceived emotional weight, not model
+confidence. `trajectory` is `build`, `hold`, `shift`, `release` or `quiet`;
+`tone` is `warm`, `cool`, `tense`, `tender`, `somber`, `wonder` or `neutral`.
+Give each beat a concise `reasoning` explanation; the UI reveals it on demand.
+
+Spans use zero-based UTF-16 `start` (inclusive) and `end` (exclusive) offsets in
+the exact full `fetch_page` plain text. Include the matching exact `quote`.
+Preserve whitespace and Unicode; never split a surrogate pair. Order spans and
+avoid overlaps (use an undertone for mixed emotion). Each quote is at most 2000
+UTF-16 units, each explanation 1200, and there are at most 80 beats. Keep the
+serialized input under 96 KiB. Include honest self-reported `provider`, `model`
+and `contextNote`; never invent a model identity.
+
+Submit the exact `documentId`, `revisionId`, `contentHash`, analysis fields and a
+new random `idempotencyKey` as described above. Identical network retries reuse
+the key; changed content requires a new key. If writing changed, reread and
+reassess before submitting a new analysis. A receipt confirms a separate
+AI-origin, unverified interpretation, never a manuscript edit. Old or revoked
+interpretations are hidden; no quote-based automatic reattachment is allowed.
+The author enables Heartbeat in writing or private Read. AI perception is not
+author intent and does not measure actual readers' emotions.
 
 No MCP tool can approve canon, overwrite a page, delete evidence, publish,
 reset a workspace or expose another universe. Do not invent such capabilities.

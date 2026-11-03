@@ -8,6 +8,7 @@ import RevisionComparison from './components/RevisionComparison';
 import DocumentShelfRow from './components/DocumentShelfRow';
 import Library, { CollectionActions, type LibraryTab } from './components/Library';
 import Reader from './components/Reader';
+import { heartbeatSource } from './heartbeat/model';
 import { readingSnapshot, validReadingScope, type ReadingScope, type ReadingSnapshot } from './reader/reading';
 import './styles.css';
 
@@ -40,6 +41,7 @@ export default function App({ workspace, session }: { workspace: WorkspaceContro
   const [name, setName] = useState('');
   const [renaming, setRenaming] = useState<string | null>(null);
   const [reading, setReading] = useState<ReadingSnapshot | null>(null);
+  const [heartbeatEnabled, setHeartbeatEnabled] = useState(false);
   const [readingFromLibrary, setReadingFromLibrary] = useState(false);
   const readingTrigger = useRef<HTMLElement | null>(null);
   const [pinned, setPinned] = useState<string[]>(() => { try { const value = JSON.parse(preference(`noveliaa.pins.${session.uid}.${session.workspaceId || 'local'}`, '[]')); return Array.isArray(value) ? value.filter(item => typeof item === 'string') : []; } catch { return []; } });
@@ -221,7 +223,7 @@ export default function App({ workspace, session }: { workspace: WorkspaceContro
   if (!state.ready) return <div className="loading-screen" role="status"><Leaf size={25} strokeWidth={1.3} /><p>Opening your writing space…</p></div>;
 
   return <>
-    {reading && <Reader snapshot={reading} returnToLibrary={readingFromLibrary} availableDocumentIds={liveDocuments.map(item => item.id)} onClose={() => leaveReader()} onEdit={id => leaveReader(id)} changed={reading.documents.some(item => { const current = state.documents.find(document => document.id === item.id); return !current || JSON.stringify(current.body) !== JSON.stringify(item.body) || current.title !== item.title; })} />}
+    {reading && <Reader heartbeatSourceChanged={heartbeatEnabled && reading.documents.some(item => { const current = state.documents.find(document => document.id === item.id); return !current || current.headRevisionId !== item.headRevisionId || heartbeatSource(current) !== heartbeatSource(item); })} heartbeatEnabled={heartbeatEnabled} onHeartbeatToggle={() => setHeartbeatEnabled(value => !value)} heartbeatLocalPreview={session.localOnly} revisions={state.revisions} snapshot={reading} returnToLibrary={readingFromLibrary} availableDocumentIds={liveDocuments.map(item => item.id)} onClose={() => leaveReader()} onEdit={id => leaveReader(id)} changed={reading.documents.some(item => { const current = state.documents.find(document => document.id === item.id); return !current || JSON.stringify(current.body) !== JSON.stringify(item.body) || current.title !== item.title; })} />}
     <div className={`app ${focused ? 'is-focused' : ''} ${mobileNav ? 'nav-is-open' : ''}`} style={{ ...css, ...(reading ? { display: 'none' } : {}) }} aria-hidden={reading ? true : undefined} inert={Boolean(reading)}>
     <a href="#writing-area" className="skip-link">Skip to writing</a>
     {mobileNav && <button className="nav-scrim" aria-label="Close navigation" onClick={() => setMobileNav(false)} />}
@@ -265,7 +267,7 @@ export default function App({ workspace, session }: { workspace: WorkspaceContro
             <div className="document-topline"><div className="document-location"><FileText size={14} /><CollectionPicker collections={collections} value={active.collectionId} onMove={collectionId => workspace.updateDocument(active.id, { collectionId })} /></div><div className="document-actions"><button className="icon-button" aria-label="Read this page" title="Read this page" onClick={() => read()}><BookOpen size={18} /></button><button className="icon-button" aria-label="Writing appearance" title="Writing appearance" onClick={() => setDialog('type')}><Settings2 size={17} /></button><button className="icon-button" aria-label="Revision history" title="Revision history" onClick={() => openHistory(active.id)}><History size={18} /></button><button className="icon-button" aria-label={contextOpen ? 'Hide connections' : 'Show connections'} title={contextOpen ? 'Hide connections' : 'Show connections'} onClick={() => setContextOpen(!contextOpen)}>{contextOpen ? <PanelRightClose size={18} /> : <PanelRightOpen size={18} />}</button></div></div>
             <div ref={scrollRef} className="manuscript-scroll" onScroll={event => scrollPositions.current.set(active.id, event.currentTarget.scrollTop)}>
               <div className="manuscript-page"><div className="page-kicker"><span>{collections.find(c => c.id === active.collectionId)?.name || 'A THOUGHT IN PROGRESS'}</span><span className="page-rule" /></div><textarea ref={titleRef} className="manuscript-title" rows={1} aria-label="Writing title" placeholder="Untitled" value={active.title} onChange={event => workspace.updateDocument(active.id, { title: event.target.value.replace(/\n/g, ' ') })} onKeyDown={event => { if (event.key === 'Enter') { event.preventDefault(); document.querySelector<HTMLElement>('.manuscript')?.focus(); } }} />
-                <Writer key={active.id} document={active} documents={liveDocuments} selections={selections.current} focusMode={focused} focusOnMount={focusNew === active.id} onAutoFocused={() => setFocusNew(null)} onChange={body => workspace.updateDocument(active.id, { body })} onNavigate={id => { if (liveDocuments.some(d => d.id === id)) void act(() => openDocument(id)); else inform('That linked page is in Trash or is unavailable in this universe.'); }} />
+                <Writer heartbeatEnabled={heartbeatEnabled && !reading} onHeartbeatToggle={() => setHeartbeatEnabled(value => !value)} heartbeatLocalPreview={session.localOnly} revisions={state.revisions} key={active.id} document={active} documents={liveDocuments} selections={selections.current} focusMode={focused} focusOnMount={focusNew === active.id} onAutoFocused={() => setFocusNew(null)} onChange={body => workspace.updateDocument(active.id, { body })} onNavigate={id => { if (liveDocuments.some(d => d.id === id)) void act(() => openDocument(id)); else inform('That linked page is in Trash or is unavailable in this universe.'); }} />
               </div>
             </div>
             <footer className="writing-footer"><span>{activeWordCount.toLocaleString()} {activeWordCount === 1 ? 'word' : 'words'}</span><button onClick={() => setDialog('source')} className="origin-button"><ShieldCheck size={13} />{originLabels[active.origin]}</button><span className="footer-right">{state.localOnly ? <><CloudOff size={13} />On this device</> : <><Cloud size={13} />Private workspace</>}</span></footer>

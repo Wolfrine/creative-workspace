@@ -1,0 +1,113 @@
+{
+  "method": "sRGB relative luminance from measured computed foregrounds and solid dialog background; no axe rule disabled",
+  "checks": [
+    {
+      "state": "details",
+      "width": 1440,
+      "foreground": "rgb(77, 92, 69)",
+      "background": "#fcfdf8",
+      "ratio": 7.006214110372916,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "state": "details",
+      "width": 1440,
+      "foreground": "rgb(89, 99, 77)",
+      "background": "#fcfdf8",
+      "ratio": 6.194364915200743,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "state": "details",
+      "width": 1440,
+      "foreground": "rgb(101, 107, 88)",
+      "background": "#fcfdf8",
+      "ratio": 5.410285482935306,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "state": "night-details",
+      "width": 1440,
+      "foreground": "rgb(77, 92, 69)",
+      "background": "#fcfdf8",
+      "ratio": 7.006214110372916,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "state": "night-details",
+      "width": 1440,
+      "foreground": "rgb(89, 99, 77)",
+      "background": "#fcfdf8",
+      "ratio": 6.194364915200743,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "state": "night-details",
+      "width": 1440,
+      "foreground": "rgb(101, 107, 88)",
+      "background": "#fcfdf8",
+      "ratio": 5.410285482935306,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "state": "details",
+      "width": 390,
+      "foreground": "rgb(77, 92, 69)",
+      "background": "#fcfdf8",
+      "ratio": 7.006214110372916,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "state": "details",
+      "width": 390,
+      "foreground": "rgb(89, 99, 77)",
+      "background": "#fcfdf8",
+      "ratio": 6.194364915200743,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "state": "details",
+      "width": 390,
+      "foreground": "rgb(101, 107, 88)",
+      "background": "#fcfdf8",
+      "ratio": 5.410285482935306,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "state": "night-details",
+      "width": 390,
+      "foreground": "rgb(77, 92, 69)",
+      "background": "#fcfdf8",
+      "ratio": 7.006214110372916,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "state": "night-details",
+      "width": 390,
+      "foreground": "rgb(89, 99, 77)",
+      "background": "#fcfdf8",
+      "ratio": 6.194364915200743,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "state": "night-details",
+      "width": 390,
+      "foreground": "rgb(101, 107, 88)",
+      "background": "#fcfdf8",
+      "ratio": 5.410285482935306,
+      "threshold": 4.5,
+      "result": "PASS"
+    }
+  ]
+}

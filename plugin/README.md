@@ -15,6 +15,13 @@ and content hash. Mark reviewed or dismissed in the author UI; neither action
 changes the original or makes it canon. Export collaboration separately from
 the writing archive. This release has no shared reader or publication tools.
 
+Emotional Heartbeat adds `submit_heartbeat` alongside the six existing MCP tools.
+It uses the existing optional proposal grant and stores structured, exact-span
+AI interpretations separately. The writer and private Read overlay is optional;
+changed writing or revoked grants hide the old analysis. Provider/model claims
+are self-reported, and AI interpretation is distinct from reader responses.
+See [contract and evaluation](../docs/design/EMOTIONAL_HEARTBEAT.md).
+
 MCP reads cloud-confirmed revisions. Local recovery drafts are not exposed. Wait
 for the normal sixty-second cloud save or use explicit Sync in writing before
 asking ChatGPT to read a very recent change. Closing the writing page saves a

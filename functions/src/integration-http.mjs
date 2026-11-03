@@ -6,6 +6,7 @@ import { FieldPath } from 'firebase-admin/firestore';
 import { createIntegrationServer } from './integration-tools.mjs';
 import { digest, secret, stable, validId } from './integration-store.mjs';
 import { READ, PROPOSE } from './integration-oauth.mjs';
+import { readHeartbeat } from './integration-heartbeat.mjs';
 export function integrationApp({ provider, store, access, verifyIdentity }) {
   const app = express(); app.disable('x-powered-by'); app.set('trust proxy', 1);
   app.use((_req, res, next) => { res.set({ 'Cache-Control': 'no-store, private', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer', 'X-Frame-Options': 'DENY' }); next(); });
@@ -34,6 +35,9 @@ export function integrationApp({ provider, store, access, verifyIdentity }) {
     const pending = await provider.pending(String(req.query.request || ''), csrf(req));
     const universes = await store.db.collection(`noveliaaWorkspaces/${req.author.workspaceId}/universes`).limit(100).get();
     res.json({ clientName: pending.clientName, requestedWrite: pending.scopes.includes(PROPOSE), universes: universes.docs.map(d => ({ id: d.id, name: d.data().name })) });
+  });
+  app.get('/api/integrations/heartbeat', async (req, res) => {
+    res.json(await readHeartbeat({ access, store }, req.author, req.query));
   });
   app.post('/api/integrations/consent', async (req, res) => {
     if (typeof req.body.requestId !== 'string') throw new Error('Missing connection request.');
@@ -109,7 +113,7 @@ export function integrationApp({ provider, store, access, verifyIdentity }) {
   app.use((_req, res) => res.status(404).json({ error: 'Unknown integration endpoint.' }));
   app.use((error, _req, res, _next) => {
     // Never log incoming tokens, request bodies or writing.
-    if (!res.headersSent) res.status(400).json({ error: error.message?.slice(0, 300) || 'Request could not complete. Reconnect and try again.' });
+    if (!res.headersSent) res.status([400, 403, 409, 413].includes(error.status) ? error.status : 400).json({ error: error.message?.slice(0, 300) || 'Request could not complete. Reconnect and try again.' });
   });
   return app;
 }

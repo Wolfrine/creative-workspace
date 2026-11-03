@@ -1,0 +1,26 @@
+[
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\functions\\src\\integration-heartbeat.mjs",
+        "Hash":  "407261C2C12973C69E9F66DC64DB1ADD8AAF775DD244F36D758937CB5B886D2E"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\functions\\src\\integration-tools.mjs",
+        "Hash":  "598B19EFD08BD73497D2DC5E58DC3405C264A7D564B171C02EB2DD671802237E"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\functions\\src\\integration-http.mjs",
+        "Hash":  "64A496A624B22E46ABD16555E44979168E67282FE5DC8F101CDBED1EFBDC6B20"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\model.ts",
+        "Hash":  "6D6287CBC2C9CDAE59F93E657AC9D65AC9D74B674B59DC159C460BA8420B71D7"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\useHeartbeat.ts",
+        "Hash":  "769DF99B483BA4C78212AC9075C666C52E17E421C9F2AC5BEE01270F37BF9C81"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\decorations.ts",
+        "Hash":  "12E52C83F0CA7C5BC50D7C3C5AC98DFD3D92478BE73E86BCB22107176C444B06"
+    }
+]

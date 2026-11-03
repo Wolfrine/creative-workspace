@@ -1,0 +1,516 @@
+{
+  "synthetic": true,
+  "source": "current working tree; independent critic browser",
+  "route": "http://127.0.0.1:5823/?local=1&notebook=<isolated>",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "offRequests": 0,
+      "screenshots": [
+        "writer-off-1440.png",
+        "writer-on-1440.png",
+        "reasoning-1440.png",
+        "reader-on-1440.png",
+        "reader-next-1440.png",
+        "reader-off-1440.png",
+        "writer-quiet-1440.png",
+        "writer-stale-1440.png"
+      ],
+      "geometry": {
+        "writer-on": {
+          "width": 1440,
+          "height": 1000,
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "highlighted": [
+            "heartbeat-writer-cool",
+            "heartbeat-writer-tender"
+          ],
+          "buttons": [
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 903.59375,
+                "y": 327,
+                "width": 127.40625,
+                "height": 32,
+                "top": 327,
+                "right": 1031,
+                "bottom": 359,
+                "left": 903.59375
+              }
+            }
+          ]
+        },
+        "reader-on": {
+          "width": 1440,
+          "height": 1000,
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "highlighted": [
+            "heartbeat-reader-cool",
+            "heartbeat-reader-tender"
+          ],
+          "buttons": [
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 1182.59375,
+                "y": 18.5,
+                "width": 127.40625,
+                "height": 32,
+                "top": 18.5,
+                "right": 1310,
+                "bottom": 50.5,
+                "left": 1182.59375
+              }
+            },
+            {
+              "label": "Previous reader page",
+              "box": {
+                "x": 110,
+                "y": 929.5,
+                "width": 85,
+                "height": 45,
+                "top": 929.5,
+                "right": 195,
+                "bottom": 974.5,
+                "left": 110
+              }
+            },
+            {
+              "label": "Next reader page",
+              "box": {
+                "x": 1245,
+                "y": 929.5,
+                "width": 85,
+                "height": 45,
+                "top": 929.5,
+                "right": 1330,
+                "bottom": 974.5,
+                "left": 1245
+              }
+            },
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ]
+        },
+        "reader-next": {
+          "width": 1440,
+          "height": 1000,
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "highlighted": [
+            "heartbeat-reader-cool",
+            "heartbeat-reader-tender"
+          ],
+          "buttons": [
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 1182.59375,
+                "y": 18.5,
+                "width": 127.40625,
+                "height": 32,
+                "top": 18.5,
+                "right": 1310,
+                "bottom": 50.5,
+                "left": 1182.59375
+              }
+            },
+            {
+              "label": "Previous reader page",
+              "box": {
+                "x": 110,
+                "y": 929.5,
+                "width": 85,
+                "height": 45,
+                "top": 929.5,
+                "right": 195,
+                "bottom": 974.5,
+                "left": 110
+              }
+            },
+            {
+              "label": "Next reader page",
+              "box": {
+                "x": 1245,
+                "y": 929.5,
+                "width": 85,
+                "height": 45,
+                "top": 929.5,
+                "right": 1330,
+                "bottom": 974.5,
+                "left": 1245
+              }
+            },
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ]
+        },
+        "reader-off": {
+          "width": 1440,
+          "height": 1000,
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "highlighted": [],
+          "buttons": [
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 1182.59375,
+                "y": 18.5,
+                "width": 127.40625,
+                "height": 32,
+                "top": 18.5,
+                "right": 1310,
+                "bottom": 50.5,
+                "left": 1182.59375
+              }
+            },
+            {
+              "label": "Previous reader page",
+              "box": {
+                "x": 110,
+                "y": 929.5,
+                "width": 85,
+                "height": 45,
+                "top": 929.5,
+                "right": 195,
+                "bottom": 974.5,
+                "left": 110
+              }
+            },
+            {
+              "label": "Next reader page",
+              "box": {
+                "x": 1245,
+                "y": 929.5,
+                "width": 85,
+                "height": 45,
+                "top": 929.5,
+                "right": 1330,
+                "bottom": 974.5,
+                "left": 1245
+              }
+            },
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ]
+        },
+        "writer-stale": {
+          "width": 1440,
+          "height": 1000,
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "highlighted": [],
+          "buttons": [
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 903.59375,
+                "y": 327,
+                "width": 127.40625,
+                "height": 32,
+                "top": 327,
+                "right": 1031,
+                "bottom": 359,
+                "left": 903.59375
+              }
+            }
+          ]
+        }
+      },
+      "sourceUnchangedThroughToggleAndRead": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "offRequests": 0,
+      "screenshots": [
+        "writer-off-390.png",
+        "writer-on-390.png",
+        "reasoning-390.png",
+        "reader-on-390.png",
+        "reader-next-390.png",
+        "reader-off-390.png",
+        "writer-quiet-390.png",
+        "writer-stale-390.png"
+      ],
+      "geometry": {
+        "writer-on": {
+          "width": 390,
+          "height": 844,
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "highlighted": [
+            "heartbeat-writer-cool",
+            "heartbeat-writer-tender"
+          ],
+          "buttons": [
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 331,
+                "y": 257,
+                "width": 34,
+                "height": 32,
+                "top": 257,
+                "right": 365,
+                "bottom": 289,
+                "left": 331
+              }
+            }
+          ]
+        },
+        "reader-on": {
+          "width": 390,
+          "height": 844,
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "highlighted": [
+            "heartbeat-reader-cool",
+            "heartbeat-reader-tender"
+          ],
+          "buttons": [
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 245,
+                "y": 13.5,
+                "width": 46,
+                "height": 32,
+                "top": 13.5,
+                "right": 291,
+                "bottom": 45.5,
+                "left": 245
+              }
+            },
+            {
+              "label": "Previous reader page",
+              "box": {
+                "x": 17,
+                "y": 780,
+                "width": 35,
+                "height": 43,
+                "top": 780,
+                "right": 52,
+                "bottom": 823,
+                "left": 17
+              }
+            },
+            {
+              "label": "Next reader page",
+              "box": {
+                "x": 338,
+                "y": 780,
+                "width": 35,
+                "height": 43,
+                "top": 780,
+                "right": 373,
+                "bottom": 823,
+                "left": 338
+              }
+            },
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ]
+        },
+        "reader-next": {
+          "width": 390,
+          "height": 844,
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "highlighted": [
+            "heartbeat-reader-cool",
+            "heartbeat-reader-tender"
+          ],
+          "buttons": [
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 245,
+                "y": 13.5,
+                "width": 46,
+                "height": 32,
+                "top": 13.5,
+                "right": 291,
+                "bottom": 45.5,
+                "left": 245
+              }
+            },
+            {
+              "label": "Previous reader page",
+              "box": {
+                "x": 17,
+                "y": 780,
+                "width": 35,
+                "height": 43,
+                "top": 780,
+                "right": 52,
+                "bottom": 823,
+                "left": 17
+              }
+            },
+            {
+              "label": "Next reader page",
+              "box": {
+                "x": 338,
+                "y": 780,
+                "width": 35,
+                "height": 43,
+                "top": 780,
+                "right": 373,
+                "bottom": 823,
+                "left": 338
+              }
+            },
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ]
+        },
+        "reader-off": {
+          "width": 390,
+          "height": 844,
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "highlighted": [],
+          "buttons": [
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 245,
+                "y": 13.5,
+                "width": 46,
+                "height": 32,
+                "top": 13.5,
+                "right": 291,
+                "bottom": 45.5,
+                "left": 245
+              }
+            },
+            {
+              "label": "Previous reader page",
+              "box": {
+                "x": 17,
+                "y": 780,
+                "width": 35,
+                "height": 43,
+                "top": 780,
+                "right": 52,
+                "bottom": 823,
+                "left": 17
+              }
+            },
+            {
+              "label": "Next reader page",
+              "box": {
+                "x": 338,
+                "y": 780,
+                "width": 35,
+                "height": 43,
+                "top": 780,
+                "right": 373,
+                "bottom": 823,
+                "left": 338
+              }
+            },
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ]
+        },
+        "writer-stale": {
+          "width": 390,
+          "height": 844,
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "highlighted": [],
+          "buttons": [
+            {
+              "label": "Emotional Heartbeat",
+              "box": {
+                "x": 331,
+                "y": 257,
+                "width": 34,
+                "height": 32,
+                "top": 257,
+                "right": 365,
+                "bottom": 289,
+                "left": 331
+              }
+            }
+          ]
+        }
+      },
+      "sourceUnchangedThroughToggleAndRead": true
+    }
+  ],
+  "errors": []
+}

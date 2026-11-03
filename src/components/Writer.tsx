@@ -3,9 +3,12 @@ import { EditorContent, useEditor, type Editor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
 import { Bold, Italic, Underline, List, ListOrdered, Link2, Undo2, Redo2, Quote, ArrowUpRight, Search, MoreHorizontal, IndentIncrease } from 'lucide-react';
-import type { RichNode, WritingDocument } from '../domain/model';
+import type { Revision, RichNode, WritingDocument } from '../domain/model';
 import Modal from './Modal';
 import { ParagraphIndent, paragraphSource } from './ParagraphIndent';
+import Heartbeat, { HeartbeatToggle } from '../heartbeat/Heartbeat';
+import { useHeartbeat } from '../heartbeat/useHeartbeat';
+import { clearHeartbeatHighlights, heartbeatRanges, useHeartbeatHighlights } from '../heartbeat/decorations';
 
 export interface WriterProps {
   document: WritingDocument;
@@ -16,9 +19,14 @@ export interface WriterProps {
   focusOnMount?: boolean;
   onAutoFocused?(): void;
   focusMode?: boolean;
+  heartbeatEnabled: boolean;
+  onHeartbeatToggle(): void;
+  heartbeatLocalPreview: boolean;
+  revisions: Revision[];
 }
 
-export default function Writer({ document: writing, documents, onChange, onNavigate, selections, focusOnMount, onAutoFocused, focusMode }: WriterProps) {
+export default function Writer({ document: writing, documents, onChange, onNavigate, selections, focusOnMount, onAutoFocused, focusMode, heartbeatEnabled, onHeartbeatToggle, heartbeatLocalPreview, revisions }: WriterProps) {
+  const heartbeat = useHeartbeat(writing, revisions, heartbeatEnabled, heartbeatLocalPreview);
   const [linkOpen, setLinkOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [moreFormatting, setMoreFormatting] = useState(false);
@@ -46,7 +54,7 @@ export default function Writer({ document: writing, documents, onChange, onNavig
         return false;
       },
     },
-    onUpdate: ({ editor: current }) => { const body = paragraphSource(current.getJSON() as RichNode); lastEmitted.current = JSON.stringify(body); onChangeRef.current(body); },
+    onUpdate: ({ editor: current }) => { clearHeartbeatHighlights('writer'); const body = paragraphSource(current.getJSON() as RichNode); lastEmitted.current = JSON.stringify(body); onChangeRef.current(body); },
     onSelectionUpdate: ({ editor: current }) => { selections.set(writing.id, { from: current.state.selection.from, to: current.state.selection.to }); setToolbarVersion(value => value + 1); },
     onTransaction: () => setToolbarVersion(value => value + 1),
     onCreate: ({ editor: current }) => {
@@ -54,6 +62,7 @@ export default function Writer({ document: writing, documents, onChange, onNavig
       if (previous) current.commands.setTextSelection({ from: Math.min(previous.from, current.state.doc.content.size), to: Math.min(previous.to, current.state.doc.content.size) });
     },
   }, [writing.id]);
+  useHeartbeatHighlights(editor?.view.dom || null, writing.body, heartbeat.annotation, 'writer');
 
   useEffect(() => { if (editor && focusOnMount) { editor.commands.focus('end'); onAutoFocused?.(); } }, [editor, focusOnMount, onAutoFocused]);
   useEffect(() => { if (!editor?.isFocused) return; const frame = requestAnimationFrame(() => editor.commands.scrollIntoView()); return () => cancelAnimationFrame(frame); }, [editor, focusMode]);
@@ -112,7 +121,9 @@ export default function Writer({ document: writing, documents, onChange, onNavig
         {toolbar('Undo', <Undo2 size={17} />, e => e.chain().focus().undo().run(), false, !editor?.can().undo())}
         {toolbar('Redo', <Redo2 size={17} />, e => e.chain().focus().redo().run(), false, !editor?.can().redo())}
       </div>
+      <HeartbeatToggle enabled={heartbeatEnabled} onToggle={onHeartbeatToggle} />
     </div>
+    <Heartbeat state={heartbeat} onFind={beat => { if (!editor || !heartbeat.annotation) return; const range = heartbeatRanges(editor.view.dom, writing.body, heartbeat.annotation).find(item => item.beat === beat)?.range; const scroll = editor.view.dom.closest('.manuscript-scroll'); if (range && scroll) scroll.scrollTop += range.getBoundingClientRect().top - scroll.getBoundingClientRect().top - 80; }} />
     <EditorContent editor={editor} className="editor-body" />
     {linkOpen && <Modal title="Link to your writing" onClose={() => setLinkOpen(false)}>
       <p className="dialog-intro">Connect this passage to a note or scene. Links keep working when titles change.</p>
