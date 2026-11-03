@@ -20,7 +20,7 @@ for (const name of ['plugin-2026-10-25', 'heartbeat-2026-11-03', 'heartbeat-rewo
   for (const item of previous.sources) assert(paths.has(item.path), 'Missing inherited source path: ' + item.path);
   for (const item of [...(previous.artifacts || []), ...(previous.renders || []), ...(previous.testEvidence || []), ...(previous.operationsEvidence || [])]) assert.equal(hash(await readFile(item.path)), item.sha256, 'Historical evidence changed: ' + item.path);
 }
-for (const [name, count] of Object.entries({ client: 148, functions: 37, rules: 16, mcp: 19, evidence: 26, browser: 123, cloud: 12, build: 0, typecheck: 0, 'functions-check': 0, package: 0 })) {
+for (const [name, count] of Object.entries({ client: 148, functions: 37, rules: 16, mcp: 19, evidence: 26, browser: 123, focusedBrowser: 16, cloud: 12, build: 0, typecheck: 0, 'functions-check': 0, package: 0 })) {
   assert.equal(manifest.checks[name].status, 'pass'); assert(manifest.checks[name].passes >= count);
   assert(manifest.artifacts.some(item => item.path === directory + '/' + manifest.checks[name].evidence));
 }

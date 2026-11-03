@@ -8,10 +8,10 @@ function currentRequest(): Request | null {
   catch { return { invalid: true }; }
 }
 /** Routes consume the existing hydrated workspace. No route performs cloud I/O. */
-export function usePageRoute(workspace: WorkspaceController, page: WritingDocument | undefined, onResolve: () => void, onRoot: () => void) {
+export function usePageRoute(workspace: WorkspaceController, page: WritingDocument | undefined, onResolve: () => void, onRoot: () => void, onNavigate: () => void) {
   const [request, setRequest] = useState<Request | null>(currentRequest);
   const requestRef = useRef(request); requestRef.current = request;
-  const callbacks = useRef({ onResolve, onRoot }); callbacks.current = { onResolve, onRoot };
+  const callbacks = useRef({ onResolve, onRoot, onNavigate }); callbacks.current = { onResolve, onRoot, onNavigate };
   const selecting = useRef<Request | null>(null);
   const lastId = useRef<string | null>(null);
   const { state } = workspace;
@@ -20,6 +20,7 @@ export function usePageRoute(workspace: WorkspaceController, page: WritingDocume
   const unavailable = request?.invalid || Boolean(hydrated && request && (!target || target.trashed || request.reference?.universeId && target.universeId !== request.reference.universeId));
   useEffect(() => {
     const pop = () => {
+      callbacks.current.onNavigate();
       const next = currentRequest(); requestRef.current = next; setRequest(next);
       if (!next) { lastId.current = null; callbacks.current.onRoot(); }
     };

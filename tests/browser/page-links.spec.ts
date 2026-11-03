@@ -31,7 +31,10 @@ test('canonical click, refresh and back/forward resolve across universes and pre
   await page.getByRole('textbox', { name: 'Writing canvas' }).fill('An unsaved exact draft.');
   await page.getByRole('combobox', { name: 'Story universe' }).selectOption(b.universeId);
   await expect(page).toHaveURL(new RegExp(b.id));
+  await page.getByRole('button', { name: 'Revision history', exact: true }).click();
+  await expect(page.getByRole('dialog')).toBeVisible();
   await page.goBack();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
   await expect(page).toHaveURL(new RegExp(a.id));
   await expect(page.getByRole('textbox', { name: 'Writing canvas' })).toHaveText('An unsaved exact draft.');
   await page.goForward();
@@ -53,6 +56,14 @@ test('renaming and moving canonicalize old links; legacy queries remain usable',
 test('missing, trashed, malformed and mismatched paths never display a different scene', async ({ page }) => {
   const { a, b } = await seed(page), query = new URL(page.url()).search;
   await page.evaluate(async (id) => { const e = (window as any).__NOVELIAA_TEST__; e.updateDocument(id, { trashed: true }); await e.flush(); }, a.id);
+  await page.getByRole('button', { name: 'Read this page', exact: true }).click();
+  await expect(page.locator('.reader')).toBeVisible();
+  await page.evaluate(path => { history.pushState(null, '', path); dispatchEvent(new PopStateEvent('popstate')); }, pagePath({ ...b, id: 'missing-page' }) + query);
+  await expect(page.getByText('This page link is unavailable.', { exact: false })).toBeVisible();
+  await expect(page.locator('.reader')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Open Library', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Your library.' })).toBeVisible();
+  await expect(page.locator('.reader')).toHaveCount(0);
   for (const path of [pagePath(a, 'Draft chapters'), pagePath({ ...b, id: 'missing-page' }), pagePath({ ...b, universeId: a.universeId }), '/u/bad/%2F/title/missing']) {
     await page.goto(path + query);
     await expect(page.getByText('This page link is unavailable.', { exact: false })).toBeVisible();

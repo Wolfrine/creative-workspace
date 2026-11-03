@@ -76,7 +76,7 @@ export default function App({ workspace, session }: { workspace: WorkspaceContro
   const visibleActive = selectedDocument && (view === 'inbox' ? selectedDocument.collectionId === null : view === 'writing' && collection ? selectedDocument.collectionId === collection : true) ? selectedDocument : undefined;
   const [readingDocumentId, setReadingDocumentId] = useState<string | null>(null);
   const routePage = reading ? state.documents.find(item => item.id === readingDocumentId && reading.documents.some(source => source.id === item.id) && !item.trashed) || state.documents.find(item => item.id === reading.documents[0]?.id && !item.trashed) : (view === 'writing' || view === 'inbox') ? visibleActive : undefined;
-  const pageRoute = usePageRoute(workspace, routePage, () => { setView('writing'); setCollection(null); setReading(null); setMobileNav(false); setSearching(false); setQuery(''); }, () => { setReading(null); setView('library'); setCollection(null); });
+  const pageRoute = usePageRoute(workspace, routePage, () => { setView('writing'); setCollection(null); setReading(null); setMobileNav(false); setSearching(false); setQuery(''); }, () => { setReading(null); setView('library'); setCollection(null); }, () => { setDialog(null); setReading(null); setMobileNav(false); });
   const active = pageRoute.blocked ? undefined : visibleActive;
   const conflictIds = state.conflictedDocumentIds ?? [];
   const activeConflicted = Boolean(active && conflictIds.includes(active.id));

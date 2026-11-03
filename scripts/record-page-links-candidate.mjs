@@ -20,6 +20,12 @@ for (const [name, source, minimum] of [['browser', '.local/browser-results.json'
   await copy(source, `${directory}/checks/${name}.json`);
   checks[name] = { status: 'pass', passes: result.stats.expected, evidence: `checks/${name}.json` };
 }
+const focused = JSON.parse(await readFile(`${local}/followup/browser-results.json`, 'utf8'));
+assert.equal(focused.stats.unexpected, 0); assert.equal(focused.stats.flaky, 0); assert.equal(focused.stats.skipped, 0); assert(focused.stats.expected >= 16);
+await copy(`${local}/followup/browser-results.json`, `${directory}/checks/route-context-followup.json`);
+checks.browser.scope = 'Full suite before transient route-context closure; final targeted suite verifies that refinement.';
+checks.browser.sourceCommit = '8dea872f3fbab66a04f0eb6db63ab54f20c9c34c';
+checks.focusedBrowser = { status: 'pass', passes: focused.stats.expected, evidence: 'checks/route-context-followup.json', scope: 'Final page-link and Library/Reader regression suite, including Back from history and invalid navigation from Reader.' };
 for (const phase of ['before', 'after']) for (const source of await list(`${local}/${phase}`)) await copy(source, directory + source.slice(local.length));
 await copy(`${local}/critic-review.md`, `${directory}/critic-review.md`);
 for (const name of ['browser-first.log', 'cloud-first.log']) await copy(`${local}/${name}`, `${directory}/checks/${name}`);

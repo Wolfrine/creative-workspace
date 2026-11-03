@@ -1,7 +1,7 @@
 {
   "schema": "noveliaa-page-links-evidence-1",
   "baseCommit": "3637a2c6e3b52c25edfbe0b6a1a84bf08c19b84f",
-  "recordedAt": "2026-11-03T14:02:56.919Z",
+  "recordedAt": "2026-11-03T14:17:44.173Z",
   "dataset": "synthetic loopback DEV notebooks and actual Auth/Firestore emulators",
   "route": "/u/{universeId}/{collection-slug}/{title-slug}/{documentId}",
   "central": {
@@ -119,8 +119,8 @@
     },
     {
       "path": "docs/design/PAGE_LINKS.md",
-      "bytes": 3546,
-      "sha256": "f61a010de6f8f77bd8b5a50228d4de26e1c0fa7374725af1e5d4a63c5183584d"
+      "bytes": 3652,
+      "sha256": "fb3c6af729de3f9dd55a60a85e179c8d153a84cf08885e4d725cc510cec561a7"
     },
     {
       "path": "docs/design/PLUGIN_CONNECTION.md",
@@ -519,8 +519,8 @@
     },
     {
       "path": "scripts/record-page-links-candidate.mjs",
-      "bytes": 4255,
-      "sha256": "5ac83f65a4dc61fecd715e18295a6d287e233562347e4c6bd6dc2f518679a79a"
+      "bytes": 5062,
+      "sha256": "3ea583d098a8d6f0e84c8da59ae615661dec73c80dd779720f786c54065489ce"
     },
     {
       "path": "scripts/record-plugin-candidate.mjs",
@@ -594,8 +594,8 @@
     },
     {
       "path": "scripts/verify-page-links-candidate.mjs",
-      "bytes": 3298,
-      "sha256": "7dd8cfe60f3f13835dc78cf334f7cdc4e7d25da8b4e76a949a4354f3d67f5210"
+      "bytes": 3318,
+      "sha256": "46cdb83735d11602edb658034a9d67475ea2800d35d3510e37a1a06c8d4f03a2"
     },
     {
       "path": "scripts/verify-plugin-hosted.mjs",
@@ -604,8 +604,8 @@
     },
     {
       "path": "src/App.tsx",
-      "bytes": 66861,
-      "sha256": "7388c698a1ae3b3b5367a13ddd219bc36ebbd9f63ce3cd76db4df230ef5ba5c2"
+      "bytes": 66928,
+      "sha256": "c59f713901824681943b36f240940a069e7771eba7eb85b8687f4fd7b8b5bdf8"
     },
     {
       "path": "src/AppHost.tsx",
@@ -839,8 +839,8 @@
     },
     {
       "path": "src/state/usePageRoute.ts",
-      "bytes": 3484,
-      "sha256": "30d82a7e00681a6acc11c65854ab4600b486afe9d6cf3a3a0501d70ff4b5be41"
+      "bytes": 3570,
+      "sha256": "b33d0487d9476e190bc97a9e6c2e6b91d215b30ff84b315e2d956174ac92e504"
     },
     {
       "path": "src/state/useWorkspace.ts",
@@ -934,8 +934,8 @@
     },
     {
       "path": "tests/browser/page-links.spec.ts",
-      "bytes": 8324,
-      "sha256": "f69045c50a645fc87df7951c59e2d178785f470dce39d8fb4918def30d024f4a"
+      "bytes": 9200,
+      "sha256": "63e722afca78827d9da237bb2e0b02431bf2ac72532a9116d058e41c8e30b59d"
     },
     {
       "path": "tests/browser/page-turn-lifecycle.spec.ts",
@@ -1038,12 +1038,12 @@
       "sha256": "effcddf543e8d041dcd79f28af05a164309221de1cec9e61f62aafd1ceadb638"
     }
   ],
-  "sourceDigest": "1e2b8821404d68fd605298f02dac43dfedeaffe99e3ab2326bf601558998d21b",
+  "sourceDigest": "ac8f65b1881cad7b083e8f093d4e89e9fd3df30c7316c7b50cc0abbff57ad6bc",
   "artifacts": [
     {
       "path": "docs/evidence/page-links-2026-11-03/after/1440-copy-fallback.png",
-      "bytes": 283206,
-      "sha256": "f5ca695659b98a3e804d46cfa41729ac3a3038fefc7c0078aaff22d2bc714fa8"
+      "bytes": 283355,
+      "sha256": "1921673c7dfe2e49e83ef4c5cc28d4f11ab86486885532c8531c87f8081587d1"
     },
     {
       "path": "docs/evidence/page-links-2026-11-03/after/1440-reader-link-copied.png",
@@ -1067,8 +1067,8 @@
     },
     {
       "path": "docs/evidence/page-links-2026-11-03/after/320-copy-fallback.png",
-      "bytes": 56738,
-      "sha256": "44a30c2edc5f3b52166f7811b858e4a7eae188986ed96cf6e7f679ccd11d70f8"
+      "bytes": 56581,
+      "sha256": "4b6215121583e6bfe663a1a3ab373fc9b722058d43eff27fe77dc8776e60bddc"
     },
     {
       "path": "docs/evidence/page-links-2026-11-03/after/320-reader-link-copied.png",
@@ -1092,8 +1092,8 @@
     },
     {
       "path": "docs/evidence/page-links-2026-11-03/after/390-copy-fallback.png",
-      "bytes": 103541,
-      "sha256": "263ca12160040c868fdbfd50f268a9b2a017771e5cccc1242ef4a11dcf3583de"
+      "bytes": 103503,
+      "sha256": "4e219d5cfadbf5eef3392783d148e490bb4f5dcb766c7348278ecc4624e3c0de"
     },
     {
       "path": "docs/evidence/page-links-2026-11-03/after/390-reader-link-copied.png",
@@ -1103,7 +1103,7 @@
     {
       "path": "docs/evidence/page-links-2026-11-03/after/390-reader.png",
       "bytes": 91270,
-      "sha256": "aa3973eadef7384a26c3b7062b51d27d4a142d9697a9c5e73f03f7bb88af04d6"
+      "sha256": "cc120effdf18cb170d49057adc7855e3eb5aef130f23dd366941305012f30abe"
     },
     {
       "path": "docs/evidence/page-links-2026-11-03/after/390-writing-link-focus.png",
@@ -1112,8 +1112,8 @@
     },
     {
       "path": "docs/evidence/page-links-2026-11-03/after/390-writing.png",
-      "bytes": 81160,
-      "sha256": "c6aaf4933248b430c0060aa9b68e674581432f319e4d68d89f535325d7805ac6"
+      "bytes": 81188,
+      "sha256": "d70192611d59d926629383c1c8a1d29ad7ec50012dd19d7ac10eab2fd2e2bdfb"
     },
     {
       "path": "docs/evidence/page-links-2026-11-03/after/measurements.json",
@@ -1167,8 +1167,8 @@
     },
     {
       "path": "docs/evidence/page-links-2026-11-03/checks/build.log",
-      "bytes": 5396,
-      "sha256": "dac6981cf3eec90d09d013491955986ab359dd623dbfbadf15b6f675a66a6824"
+      "bytes": 5394,
+      "sha256": "bc19504c92c8116c2271a5d8a76cc7a91c95cdcb635b48c72eddf41f3855b564"
     },
     {
       "path": "docs/evidence/page-links-2026-11-03/checks/client.log",
@@ -1209,6 +1209,11 @@
       "path": "docs/evidence/page-links-2026-11-03/checks/package.log",
       "bytes": 3554,
       "sha256": "f454ed6ce821d7e77f9bec93943d88d414068341852731b58c4b4983eaebbc9a"
+    },
+    {
+      "path": "docs/evidence/page-links-2026-11-03/checks/route-context-followup.json",
+      "bytes": 20410,
+      "sha256": "fd9784a56bd303da852ab718902c4201fb52cd2c765dde05b963ff42b4530a53"
     },
     {
       "path": "docs/evidence/page-links-2026-11-03/checks/rules.log",
@@ -1275,12 +1280,20 @@
     "browser": {
       "status": "pass",
       "passes": 123,
-      "evidence": "checks/browser.json"
+      "evidence": "checks/browser.json",
+      "scope": "Full suite before transient route-context closure; final targeted suite verifies that refinement.",
+      "sourceCommit": "8dea872f3fbab66a04f0eb6db63ab54f20c9c34c"
     },
     "cloud": {
       "status": "pass",
       "passes": 12,
       "evidence": "checks/cloud.json"
+    },
+    "focusedBrowser": {
+      "status": "pass",
+      "passes": 16,
+      "evidence": "checks/route-context-followup.json",
+      "scope": "Final page-link and Library/Reader regression suite, including Back from history and invalid navigation from Reader."
     }
   }
 }

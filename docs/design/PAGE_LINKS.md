@@ -15,7 +15,8 @@ records, route queries, new listener, polling or per-view cloud writes are used.
 Normal author authentication remains the gate. Route resolution waits for the
 existing cloud hydration, hides unrelated selected prose while pending, and
 never falls back to another page for invalid, missing or trashed references.
-Browser back/forward resolves the same way. Selecting pages uses the existing
+Browser back/forward resolves the same way and closes the prior page's transient
+history dialog or frozen Reader session before resolving the target. Selecting pages uses the existing
 local draft flush; autosave timing, revision retention and Heartbeat are retained.
 After an authorized workspace reset an old document URL is unavailable; going
 to the app root deliberately opens the new workspace.
