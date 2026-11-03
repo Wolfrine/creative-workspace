@@ -1,0 +1,303 @@
+{
+  "commit": "6044ccf324a9a2f0aab42e523b63384bedef75f8",
+  "ownerVerdict": "rejected",
+  "data": "synthetic counterpart; original manuscript not published",
+  "before": {
+    "src/components/Reader.tsx": "94b97320eb83cc1f70f7f83acdfc60b55e1869eec466b992cd140c2c72a2b31b",
+    "src/heartbeat/Heartbeat.tsx": "0732482453eeed0b7a55ef8e01a3284627dc4010d5c49c0e280ac1e5eb9a3fd3",
+    "src/heartbeat/decorations.ts": "bf9768b2f4a7aaff0789763c39c8ef6b67d099ec08563f695f76ecc3dc0aea60",
+    "src/heartbeat/presentation.ts": "f6ab97995b9bb2cd720f1d5d4d273898bcdfa8062d7a86cec1693c30e35fd232",
+    "src/heartbeat/heartbeat.css": "6b51d4af496e14515ddae26d23cce4dc53e577a4f70e63058eb263a582431e22",
+    "src/library-reader.css": "b7e6b8e3914fe91180c18016e9464ad8ca4a1c98665fd15072d8189f886bf5b5"
+  },
+  "after": {
+    "src/components/Reader.tsx": "94b97320eb83cc1f70f7f83acdfc60b55e1869eec466b992cd140c2c72a2b31b",
+    "src/heartbeat/Heartbeat.tsx": "0732482453eeed0b7a55ef8e01a3284627dc4010d5c49c0e280ac1e5eb9a3fd3",
+    "src/heartbeat/decorations.ts": "bf9768b2f4a7aaff0789763c39c8ef6b67d099ec08563f695f76ecc3dc0aea60",
+    "src/heartbeat/presentation.ts": "f6ab97995b9bb2cd720f1d5d4d273898bcdfa8062d7a86cec1693c30e35fd232",
+    "src/heartbeat/heartbeat.css": "6b51d4af496e14515ddae26d23cce4dc53e577a4f70e63058eb263a582431e22",
+    "src/library-reader.css": "b7e6b8e3914fe91180c18016e9464ad8ca4a1c98665fd15072d8189f886bf5b5"
+  },
+  "records": [
+    {
+      "screenshot": "reader-on-1366x590.png",
+      "geometry": {
+        "viewport": [
+          1366,
+          590
+        ],
+        "dpr": 1,
+        "overflow": 0,
+        "book": {
+          "x": 73,
+          "y": 67,
+          "width": 1220,
+          "height": 447,
+          "top": 67,
+          "right": 1293,
+          "bottom": 514,
+          "left": 73
+        },
+        "stage": {
+          "x": 74,
+          "y": 90,
+          "width": 1218,
+          "height": 405,
+          "top": 90,
+          "right": 1292,
+          "bottom": 495,
+          "left": 74
+        },
+        "footer": {
+          "x": 73,
+          "y": 514,
+          "width": 1220,
+          "height": 76,
+          "top": 514,
+          "right": 1293,
+          "bottom": 590,
+          "left": 73
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 54,
+          "top": 0,
+          "right": 1366,
+          "bottom": 54,
+          "left": 0
+        },
+        "lines": 18,
+        "areaPercent": 33,
+        "pages": "4",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif"
+      },
+      "errors": []
+    },
+    {
+      "screenshot": "reader-on-1366x768.png",
+      "geometry": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "dpr": 1,
+        "overflow": 0,
+        "book": {
+          "x": 73,
+          "y": 67,
+          "width": 1220,
+          "height": 625,
+          "top": 67,
+          "right": 1293,
+          "bottom": 692,
+          "left": 73
+        },
+        "stage": {
+          "x": 74,
+          "y": 90,
+          "width": 1218,
+          "height": 583,
+          "top": 90,
+          "right": 1292,
+          "bottom": 673,
+          "left": 74
+        },
+        "footer": {
+          "x": 73,
+          "y": 692,
+          "width": 1220,
+          "height": 76,
+          "top": 692,
+          "right": 1293,
+          "bottom": 768,
+          "left": 73
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 54,
+          "top": 0,
+          "right": 1366,
+          "bottom": 54,
+          "left": 0
+        },
+        "lines": 28,
+        "areaPercent": 39.1,
+        "pages": "3",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif"
+      },
+      "errors": []
+    },
+    {
+      "screenshot": "reader-on-390x700.png",
+      "geometry": {
+        "viewport": [
+          390,
+          700
+        ],
+        "dpr": 1,
+        "overflow": 0,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 390,
+          "height": 557,
+          "top": 46,
+          "right": 390,
+          "bottom": 603,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 63,
+          "width": 390,
+          "height": 527,
+          "top": 63,
+          "right": 390,
+          "bottom": 590,
+          "left": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 603,
+          "width": 390,
+          "height": 97,
+          "top": 603,
+          "right": 390,
+          "bottom": 700,
+          "left": 0
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 46,
+          "top": 0,
+          "right": 390,
+          "bottom": 46,
+          "left": 0
+        },
+        "lines": 11,
+        "areaPercent": 36.3,
+        "pages": "4",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif"
+      },
+      "errors": []
+    },
+    {
+      "screenshot": "reader-on-390x844.png",
+      "geometry": {
+        "viewport": [
+          390,
+          844
+        ],
+        "dpr": 1,
+        "overflow": 0,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 390,
+          "height": 701,
+          "top": 46,
+          "right": 390,
+          "bottom": 747,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 63,
+          "width": 390,
+          "height": 671,
+          "top": 63,
+          "right": 390,
+          "bottom": 734,
+          "left": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 747,
+          "width": 390,
+          "height": 97,
+          "top": 747,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 46,
+          "top": 0,
+          "right": 390,
+          "bottom": 46,
+          "left": 0
+        },
+        "lines": 15,
+        "areaPercent": 42.4,
+        "pages": "3",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif"
+      },
+      "errors": []
+    },
+    {
+      "screenshot": "reader-on-320x568.png",
+      "geometry": {
+        "viewport": [
+          320,
+          568
+        ],
+        "dpr": 1,
+        "overflow": 0,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 320,
+          "height": 425,
+          "top": 46,
+          "right": 320,
+          "bottom": 471,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 60,
+          "width": 320,
+          "height": 398,
+          "top": 60,
+          "right": 320,
+          "bottom": 458,
+          "left": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 471,
+          "width": 320,
+          "height": 97,
+          "top": 471,
+          "right": 320,
+          "bottom": 568,
+          "left": 0
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 46,
+          "top": 0,
+          "right": 320,
+          "bottom": 46,
+          "left": 0
+        },
+        "lines": 8,
+        "areaPercent": 32.8,
+        "pages": "7",
+        "proseFont": "20px / 37px \"Literata Variable\", \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif"
+      },
+      "errors": []
+    }
+  ]
+}

@@ -292,7 +292,9 @@ for (const width of [1440, 390]) test(`Library reading returns to its exact brow
   await expect(page.getByRole('button', { name: 'Edit current page', exact: true })).toHaveCount(1);
   await expect(libraryRegion(page)).not.toBeVisible();
   await expect(page.getByRole('textbox', { name: 'Search library', exact: true })).toHaveCount(0);
-  await expect(page.getByText('AI-origin · unverified', { exact: true }).first()).toBeVisible();
+    await page.locator('.reader-source-badge').first().click();
+    await expect(page.getByRole('dialog', { name: 'Source provenance', exact: true })).toContainText('AI-origin · unverified');
+    await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'Next reader page', exact: true }).click();
   const position = await page.locator('.reader-stage').getAttribute('data-page');
   await page.getByRole('button', { name: 'Back to Library', exact: true }).click();

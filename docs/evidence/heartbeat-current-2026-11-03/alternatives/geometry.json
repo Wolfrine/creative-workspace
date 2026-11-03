@@ -1,0 +1,3020 @@
+{
+  "sourceRevision": "6044ccf324a9a2f0aab42e523b63384bedef75f8",
+  "central": {
+    "version": "0.2.3",
+    "base": "d097786cf3d6c5a2859439112afdd39538316567"
+  },
+  "execution": {
+    "parentConfirmedSpawn": "gpt-6.1-sol",
+    "reasoning": "xhigh",
+    "topology": "Designer child; independent review and selection belong to parent"
+  },
+  "fixture": "tests/helpers/heartbeat-continuity-fixture.ts; synthetic AI fiction, unverified; no real manuscript",
+  "scope": "Local CSS/DOM-only presentation treatments on actual loopback DEV Reader, no runtime source edits",
+  "typography": "Existing Literata 20px / 1.85 unchanged at every viewport",
+  "treatmentCssSha256": "6ee1c1807646377ac11f20ac6a8630396d5b1167796df8e59e6a6039539d3fd3",
+  "screenshots": [
+    {
+      "candidate": "A",
+      "screenshot": "screens/A-1366x590.png",
+      "sha256": "d9b12a5170b125e8472906d4e50762a2cb61822c5530d21bf08c51a5e42f3299",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          1366,
+          590
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 73,
+          "y": 67,
+          "width": 1220,
+          "height": 459,
+          "top": 67,
+          "right": 1293,
+          "bottom": 526,
+          "left": 73
+        },
+        "stage": {
+          "x": 74,
+          "y": 90,
+          "width": 1218,
+          "height": 417,
+          "top": 90,
+          "right": 1292,
+          "bottom": 507,
+          "left": 74
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 54,
+          "top": 0,
+          "right": 1366,
+          "bottom": 54,
+          "left": 0
+        },
+        "heading": {
+          "x": 112,
+          "y": 90,
+          "width": 533,
+          "height": 64.5,
+          "top": 90,
+          "right": 645,
+          "bottom": 154.5,
+          "left": 112
+        },
+        "footer": {
+          "x": 73,
+          "y": 526,
+          "width": 1220,
+          "height": 64,
+          "top": 526,
+          "right": 1293,
+          "bottom": 590,
+          "left": 73
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 533,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 417,
+        "stageClientHeight": 417,
+        "layout": "paginated",
+        "pages": "4",
+        "page": "0",
+        "visibleProseLines": 18,
+        "visibleTextAreaPercent": 33,
+        "legend": [
+          {
+            "label": "☀Eager calm",
+            "font": "11px",
+            "width": 73.90625,
+            "scrollWidth": 74,
+            "clientWidth": 74
+          },
+          {
+            "label": "♡Fond longing",
+            "font": "11px",
+            "width": 82.84375,
+            "scrollWidth": 83,
+            "clientWidth": 83
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "font": "11px",
+            "width": 111.46875,
+            "scrollWidth": 111,
+            "clientWidth": 111
+          },
+          {
+            "label": "◒Disappointment",
+            "font": "11px",
+            "width": 99.953125,
+            "scrollWidth": 100,
+            "clientWidth": 100
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 99,
+              "y": 173.5,
+              "width": 2.9375,
+              "height": 200,
+              "top": 173.5,
+              "right": 101.9375,
+              "bottom": 373.5,
+              "left": 99
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 99,
+              "y": 373.5,
+              "width": 2.9375,
+              "height": 133.5,
+              "top": 373.5,
+              "right": 101.9375,
+              "bottom": 507,
+              "left": 99
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 708,
+              "y": 93,
+              "width": 2.9375,
+              "height": 200,
+              "top": 93,
+              "right": 710.9375,
+              "bottom": 293,
+              "left": 708
+            }
+          },
+          {
+            "feeling": "Renewed curiosity",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 708,
+              "y": 293,
+              "width": 2.9375,
+              "height": 148,
+              "top": 293,
+              "right": 710.9375,
+              "bottom": 441,
+              "left": 708
+            }
+          },
+          {
+            "feeling": "Disappointment",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 708,
+              "y": 441,
+              "width": 2.296875,
+              "height": 66,
+              "top": 441,
+              "right": 710.296875,
+              "bottom": 507,
+              "left": 708
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 83.5,
+            "bottom": 261.5,
+            "feeling": "Eager calm"
+          },
+          {
+            "index": 1,
+            "column": 0,
+            "top": 283.5,
+            "bottom": 387.5,
+            "feeling": "Fond longing"
+          },
+          {
+            "index": 1,
+            "column": 1,
+            "top": 3,
+            "bottom": 181,
+            "feeling": "Fond longing"
+          },
+          {
+            "index": 2,
+            "column": 1,
+            "top": 203,
+            "bottom": 381,
+            "feeling": "Renewed curiosity"
+          },
+          {
+            "index": 3,
+            "column": 1,
+            "top": 351,
+            "bottom": 381,
+            "feeling": "Disappointment"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "candidate": "A",
+      "screenshot": "screens/A-1366x768.png",
+      "sha256": "2cb688a0d5fbb14d1ba475a320eb505fc2f66740aad6f233079224f7be111236",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 73,
+          "y": 67,
+          "width": 1220,
+          "height": 637,
+          "top": 67,
+          "right": 1293,
+          "bottom": 704,
+          "left": 73
+        },
+        "stage": {
+          "x": 74,
+          "y": 90,
+          "width": 1218,
+          "height": 595,
+          "top": 90,
+          "right": 1292,
+          "bottom": 685,
+          "left": 74
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 54,
+          "top": 0,
+          "right": 1366,
+          "bottom": 54,
+          "left": 0
+        },
+        "heading": {
+          "x": 112,
+          "y": 90,
+          "width": 533,
+          "height": 64.5,
+          "top": 90,
+          "right": 645,
+          "bottom": 154.5,
+          "left": 112
+        },
+        "footer": {
+          "x": 73,
+          "y": 704,
+          "width": 1220,
+          "height": 64,
+          "top": 704,
+          "right": 1293,
+          "bottom": 768,
+          "left": 73
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 533,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 595,
+        "stageClientHeight": 595,
+        "layout": "paginated",
+        "pages": "3",
+        "page": "0",
+        "visibleProseLines": 28,
+        "visibleTextAreaPercent": 39.1,
+        "legend": [
+          {
+            "label": "☀Eager calm",
+            "font": "11px",
+            "width": 73.90625,
+            "scrollWidth": 74,
+            "clientWidth": 74
+          },
+          {
+            "label": "♡Fond longing",
+            "font": "11px",
+            "width": 82.84375,
+            "scrollWidth": 83,
+            "clientWidth": 83
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "font": "11px",
+            "width": 111.46875,
+            "scrollWidth": 111,
+            "clientWidth": 111
+          },
+          {
+            "label": "◒Disappointment",
+            "font": "11px",
+            "width": 99.953125,
+            "scrollWidth": 100,
+            "clientWidth": 100
+          },
+          {
+            "label": "≈Tempered eagerness",
+            "font": "11px",
+            "width": 124.375,
+            "scrollWidth": 124,
+            "clientWidth": 124
+          },
+          {
+            "label": "⌁Frustration",
+            "font": "11px",
+            "width": 73.546875,
+            "scrollWidth": 74,
+            "clientWidth": 74
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 99,
+              "y": 173.5,
+              "width": 2.9375,
+              "height": 200,
+              "top": 173.5,
+              "right": 101.9375,
+              "bottom": 373.5,
+              "left": 99
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 99,
+              "y": 373.5,
+              "width": 2.9375,
+              "height": 289,
+              "top": 373.5,
+              "right": 101.9375,
+              "bottom": 662.5,
+              "left": 99
+            }
+          },
+          {
+            "feeling": "Renewed curiosity",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 708,
+              "y": 93,
+              "width": 2.9375,
+              "height": 148,
+              "top": 93,
+              "right": 710.9375,
+              "bottom": 241,
+              "left": 708
+            }
+          },
+          {
+            "feeling": "Disappointment",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 708,
+              "y": 241,
+              "width": 2.296875,
+              "height": 200,
+              "top": 241,
+              "right": 710.296875,
+              "bottom": 441,
+              "left": 708
+            }
+          },
+          {
+            "feeling": "Tempered eagerness",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 708,
+              "y": 441,
+              "width": 2.9375,
+              "height": 148,
+              "top": 441,
+              "right": 710.9375,
+              "bottom": 589,
+              "left": 708
+            }
+          },
+          {
+            "feeling": "Frustration",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 708,
+              "y": 589,
+              "width": 2.296875,
+              "height": 96,
+              "top": 589,
+              "right": 710.296875,
+              "bottom": 685,
+              "left": 708
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 83.5,
+            "bottom": 261.5,
+            "feeling": "Eager calm"
+          },
+          {
+            "index": 1,
+            "column": 0,
+            "top": 283.5,
+            "bottom": 572.5,
+            "feeling": "Fond longing"
+          },
+          {
+            "index": 2,
+            "column": 1,
+            "top": 3,
+            "bottom": 181,
+            "feeling": "Renewed curiosity"
+          },
+          {
+            "index": 3,
+            "column": 1,
+            "top": 151,
+            "bottom": 329,
+            "feeling": "Disappointment"
+          },
+          {
+            "index": 4,
+            "column": 1,
+            "top": 351,
+            "bottom": 529,
+            "feeling": "Tempered eagerness"
+          },
+          {
+            "index": 5,
+            "column": 1,
+            "top": 499,
+            "bottom": 566,
+            "feeling": "Frustration"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "candidate": "A",
+      "screenshot": "screens/A-390x700.png",
+      "sha256": "c8d05d05cbaa732c61f2f7d7be63c686ff34ce9d7dc84d9c40a36dcaa3f1e4de",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          390,
+          700
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 390,
+          "height": 588,
+          "top": 46,
+          "right": 390,
+          "bottom": 634,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 63,
+          "width": 390,
+          "height": 558,
+          "top": 63,
+          "right": 390,
+          "bottom": 621,
+          "left": 0
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 46,
+          "top": 0,
+          "right": 390,
+          "bottom": 46,
+          "left": 0
+        },
+        "heading": {
+          "x": 20,
+          "y": 63,
+          "width": 350,
+          "height": 59.5,
+          "top": 63,
+          "right": 370,
+          "bottom": 122.5,
+          "left": 20
+        },
+        "footer": {
+          "x": 0,
+          "y": 634,
+          "width": 390,
+          "height": 66,
+          "top": 634,
+          "right": 390,
+          "bottom": 700,
+          "left": 0
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 350,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 558,
+        "stageClientHeight": 558,
+        "layout": "paginated",
+        "pages": "4",
+        "page": "0",
+        "visibleProseLines": 12,
+        "visibleTextAreaPercent": 40.1,
+        "legend": [
+          {
+            "label": "☀Eager calm",
+            "font": "11px",
+            "width": 72.90625,
+            "scrollWidth": 73,
+            "clientWidth": 73
+          },
+          {
+            "label": "♡Fond longing",
+            "font": "11px",
+            "width": 81.84375,
+            "scrollWidth": 82,
+            "clientWidth": 82
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 7,
+              "y": 140.5,
+              "width": 2.9375,
+              "height": 311,
+              "top": 140.5,
+              "right": 9.9375,
+              "bottom": 451.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 451.5,
+              "width": 2.9375,
+              "height": 169.5,
+              "top": 451.5,
+              "right": 9.9375,
+              "bottom": 621,
+              "left": 7
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 77.5,
+            "bottom": 366.5,
+            "feeling": "Eager calm"
+          },
+          {
+            "index": 1,
+            "column": 0,
+            "top": 388.5,
+            "bottom": 529.5,
+            "feeling": "Fond longing"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "candidate": "A",
+      "screenshot": "screens/A-390x844.png",
+      "sha256": "255152a7bb2772e0aa911b31acb6af0ee10734cfc7963be0779c6fbb64f9512e",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          390,
+          844
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 390,
+          "height": 732,
+          "top": 46,
+          "right": 390,
+          "bottom": 778,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 63,
+          "width": 390,
+          "height": 702,
+          "top": 63,
+          "right": 390,
+          "bottom": 765,
+          "left": 0
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 46,
+          "top": 0,
+          "right": 390,
+          "bottom": 46,
+          "left": 0
+        },
+        "heading": {
+          "x": 20,
+          "y": 63,
+          "width": 350,
+          "height": 59.5,
+          "top": 63,
+          "right": 370,
+          "bottom": 122.5,
+          "left": 20
+        },
+        "footer": {
+          "x": 0,
+          "y": 778,
+          "width": 390,
+          "height": 66,
+          "top": 778,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 350,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 702,
+        "stageClientHeight": 702,
+        "layout": "paginated",
+        "pages": "3",
+        "page": "0",
+        "visibleProseLines": 16,
+        "visibleTextAreaPercent": 45.4,
+        "legend": [
+          {
+            "label": "☀Eager calm",
+            "font": "11px",
+            "width": 72.90625,
+            "scrollWidth": 73,
+            "clientWidth": 73
+          },
+          {
+            "label": "♡Fond longing",
+            "font": "11px",
+            "width": 81.84375,
+            "scrollWidth": 82,
+            "clientWidth": 82
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 7,
+              "y": 140.5,
+              "width": 2.9375,
+              "height": 311,
+              "top": 140.5,
+              "right": 9.9375,
+              "bottom": 451.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 451.5,
+              "width": 2.9375,
+              "height": 313.5,
+              "top": 451.5,
+              "right": 9.9375,
+              "bottom": 765,
+              "left": 7
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 77.5,
+            "bottom": 366.5,
+            "feeling": "Eager calm"
+          },
+          {
+            "index": 1,
+            "column": 0,
+            "top": 388.5,
+            "bottom": 677.5,
+            "feeling": "Fond longing"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "candidate": "A",
+      "screenshot": "screens/A-320x568.png",
+      "sha256": "47d8a9c785ed77a5f0bbca4643005c262852e158a4c0e90f3a7b009f1d09e30d",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          320,
+          568
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 320,
+          "height": 456,
+          "top": 46,
+          "right": 320,
+          "bottom": 502,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 60,
+          "width": 320,
+          "height": 429,
+          "top": 60,
+          "right": 320,
+          "bottom": 489,
+          "left": 0
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 46,
+          "top": 0,
+          "right": 320,
+          "bottom": 46,
+          "left": 0
+        },
+        "heading": {
+          "x": 20,
+          "y": 60,
+          "width": 280,
+          "height": 56.5,
+          "top": 60,
+          "right": 300,
+          "bottom": 116.5,
+          "left": 20
+        },
+        "footer": {
+          "x": 0,
+          "y": 502,
+          "width": 320,
+          "height": 66,
+          "top": 502,
+          "right": 320,
+          "bottom": 568,
+          "left": 0
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 280,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 429,
+        "stageClientHeight": 429,
+        "layout": "paginated",
+        "pages": "6",
+        "page": "0",
+        "visibleProseLines": 8,
+        "visibleTextAreaPercent": 32.8,
+        "legend": [
+          {
+            "label": "☀Eager calm",
+            "font": "11px",
+            "width": 72.90625,
+            "scrollWidth": 73,
+            "clientWidth": 73
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 7,
+              "y": 132.5,
+              "width": 2.9375,
+              "height": 356.5,
+              "top": 132.5,
+              "right": 9.9375,
+              "bottom": 489,
+              "left": 7
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 72.5,
+            "bottom": 361.5,
+            "feeling": "Eager calm"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "candidate": "B",
+      "screenshot": "screens/B-1366x590.png",
+      "sha256": "a165d40a6d1be168b9d577720846edfa9241f3945393cd3edf9a81899af62a6b",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          1366,
+          590
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 73,
+          "y": 67,
+          "width": 1220,
+          "height": 459,
+          "top": 67,
+          "right": 1293,
+          "bottom": 526,
+          "left": 73
+        },
+        "stage": {
+          "x": 74,
+          "y": 90,
+          "width": 1218,
+          "height": 417,
+          "top": 90,
+          "right": 1292,
+          "bottom": 507,
+          "left": 74
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 54,
+          "top": 0,
+          "right": 1366,
+          "bottom": 54,
+          "left": 0
+        },
+        "heading": {
+          "x": 112,
+          "y": 90,
+          "width": 533,
+          "height": 64.5,
+          "top": 90,
+          "right": 645,
+          "bottom": 154.5,
+          "left": 112
+        },
+        "footer": {
+          "x": 73,
+          "y": 526,
+          "width": 1220,
+          "height": 64,
+          "top": 526,
+          "right": 1293,
+          "bottom": 590,
+          "left": 73
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 533,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 417,
+        "stageClientHeight": 417,
+        "layout": "paginated",
+        "pages": "4",
+        "page": "0",
+        "visibleProseLines": 18,
+        "visibleTextAreaPercent": 33,
+        "legend": [
+          {
+            "label": "☀Eager calm",
+            "font": "11px",
+            "width": 73.90625,
+            "scrollWidth": 74,
+            "clientWidth": 74
+          },
+          {
+            "label": "♡Fond longing",
+            "font": "11px",
+            "width": 82.84375,
+            "scrollWidth": 83,
+            "clientWidth": 83
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "font": "11px",
+            "width": 111.46875,
+            "scrollWidth": 111,
+            "clientWidth": 111
+          },
+          {
+            "label": "◒Disappointment",
+            "font": "11px",
+            "width": 99.953125,
+            "scrollWidth": 100,
+            "clientWidth": 100
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 82,
+              "y": 173.5,
+              "width": 6,
+              "height": 200,
+              "top": 173.5,
+              "right": 88,
+              "bottom": 373.5,
+              "left": 82
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 82,
+              "y": 373.5,
+              "width": 6,
+              "height": 133.5,
+              "top": 373.5,
+              "right": 88,
+              "bottom": 507,
+              "left": 82
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 1283,
+              "y": 93,
+              "width": 6,
+              "height": 200,
+              "top": 93,
+              "right": 1289,
+              "bottom": 293,
+              "left": 1283
+            }
+          },
+          {
+            "feeling": "Renewed curiosity",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 1283,
+              "y": 293,
+              "width": 6,
+              "height": 148,
+              "top": 293,
+              "right": 1289,
+              "bottom": 441,
+              "left": 1283
+            }
+          },
+          {
+            "feeling": "Disappointment",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 1283,
+              "y": 441,
+              "width": 5,
+              "height": 66,
+              "top": 441,
+              "right": 1288,
+              "bottom": 507,
+              "left": 1283
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 83.5,
+            "bottom": 261.5,
+            "feeling": "Eager calm"
+          },
+          {
+            "index": 1,
+            "column": 0,
+            "top": 283.5,
+            "bottom": 387.5,
+            "feeling": "Fond longing"
+          },
+          {
+            "index": 1,
+            "column": 1,
+            "top": 3,
+            "bottom": 181,
+            "feeling": "Fond longing"
+          },
+          {
+            "index": 2,
+            "column": 1,
+            "top": 203,
+            "bottom": 381,
+            "feeling": "Renewed curiosity"
+          },
+          {
+            "index": 3,
+            "column": 1,
+            "top": 351,
+            "bottom": 381,
+            "feeling": "Disappointment"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "candidate": "B",
+      "screenshot": "screens/B-1366x768.png",
+      "sha256": "af6c83ee3b9d222879c383738c16bb7a814509c48d55b2b17ad15f268fec8bb6",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 73,
+          "y": 67,
+          "width": 1220,
+          "height": 637,
+          "top": 67,
+          "right": 1293,
+          "bottom": 704,
+          "left": 73
+        },
+        "stage": {
+          "x": 74,
+          "y": 90,
+          "width": 1218,
+          "height": 595,
+          "top": 90,
+          "right": 1292,
+          "bottom": 685,
+          "left": 74
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 54,
+          "top": 0,
+          "right": 1366,
+          "bottom": 54,
+          "left": 0
+        },
+        "heading": {
+          "x": 112,
+          "y": 90,
+          "width": 533,
+          "height": 64.5,
+          "top": 90,
+          "right": 645,
+          "bottom": 154.5,
+          "left": 112
+        },
+        "footer": {
+          "x": 73,
+          "y": 704,
+          "width": 1220,
+          "height": 64,
+          "top": 704,
+          "right": 1293,
+          "bottom": 768,
+          "left": 73
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 533,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 595,
+        "stageClientHeight": 595,
+        "layout": "paginated",
+        "pages": "3",
+        "page": "0",
+        "visibleProseLines": 28,
+        "visibleTextAreaPercent": 39.1,
+        "legend": [
+          {
+            "label": "☀Eager calm",
+            "font": "11px",
+            "width": 73.90625,
+            "scrollWidth": 74,
+            "clientWidth": 74
+          },
+          {
+            "label": "♡Fond longing",
+            "font": "11px",
+            "width": 82.84375,
+            "scrollWidth": 83,
+            "clientWidth": 83
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "font": "11px",
+            "width": 111.46875,
+            "scrollWidth": 111,
+            "clientWidth": 111
+          },
+          {
+            "label": "◒Disappointment",
+            "font": "11px",
+            "width": 99.953125,
+            "scrollWidth": 100,
+            "clientWidth": 100
+          },
+          {
+            "label": "≈Tempered eagerness",
+            "font": "11px",
+            "width": 124.375,
+            "scrollWidth": 124,
+            "clientWidth": 124
+          },
+          {
+            "label": "⌁Frustration",
+            "font": "11px",
+            "width": 73.546875,
+            "scrollWidth": 74,
+            "clientWidth": 74
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 82,
+              "y": 173.5,
+              "width": 6,
+              "height": 200,
+              "top": 173.5,
+              "right": 88,
+              "bottom": 373.5,
+              "left": 82
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 82,
+              "y": 373.5,
+              "width": 6,
+              "height": 289,
+              "top": 373.5,
+              "right": 88,
+              "bottom": 662.5,
+              "left": 82
+            }
+          },
+          {
+            "feeling": "Renewed curiosity",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 1283,
+              "y": 93,
+              "width": 6,
+              "height": 148,
+              "top": 93,
+              "right": 1289,
+              "bottom": 241,
+              "left": 1283
+            }
+          },
+          {
+            "feeling": "Disappointment",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 1283,
+              "y": 241,
+              "width": 5,
+              "height": 200,
+              "top": 241,
+              "right": 1288,
+              "bottom": 441,
+              "left": 1283
+            }
+          },
+          {
+            "feeling": "Tempered eagerness",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 1283,
+              "y": 441,
+              "width": 6,
+              "height": 148,
+              "top": 441,
+              "right": 1289,
+              "bottom": 589,
+              "left": 1283
+            }
+          },
+          {
+            "feeling": "Frustration",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 1283,
+              "y": 589,
+              "width": 5,
+              "height": 96,
+              "top": 589,
+              "right": 1288,
+              "bottom": 685,
+              "left": 1283
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 83.5,
+            "bottom": 261.5,
+            "feeling": "Eager calm"
+          },
+          {
+            "index": 1,
+            "column": 0,
+            "top": 283.5,
+            "bottom": 572.5,
+            "feeling": "Fond longing"
+          },
+          {
+            "index": 2,
+            "column": 1,
+            "top": 3,
+            "bottom": 181,
+            "feeling": "Renewed curiosity"
+          },
+          {
+            "index": 3,
+            "column": 1,
+            "top": 151,
+            "bottom": 329,
+            "feeling": "Disappointment"
+          },
+          {
+            "index": 4,
+            "column": 1,
+            "top": 351,
+            "bottom": 529,
+            "feeling": "Tempered eagerness"
+          },
+          {
+            "index": 5,
+            "column": 1,
+            "top": 499,
+            "bottom": 566,
+            "feeling": "Frustration"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "candidate": "B",
+      "screenshot": "screens/B-390x700.png",
+      "sha256": "347dbe403749fc225d6bd4d63bdbbe075b783bfa0f440f55af29152e9d2e1013",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          390,
+          700
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 390,
+          "height": 588,
+          "top": 46,
+          "right": 390,
+          "bottom": 634,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 63,
+          "width": 390,
+          "height": 558,
+          "top": 63,
+          "right": 390,
+          "bottom": 621,
+          "left": 0
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 46,
+          "top": 0,
+          "right": 390,
+          "bottom": 46,
+          "left": 0
+        },
+        "heading": {
+          "x": 20,
+          "y": 63,
+          "width": 350,
+          "height": 59.5,
+          "top": 63,
+          "right": 370,
+          "bottom": 122.5,
+          "left": 20
+        },
+        "footer": {
+          "x": 0,
+          "y": 634,
+          "width": 390,
+          "height": 66,
+          "top": 634,
+          "right": 390,
+          "bottom": 700,
+          "left": 0
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 350,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 558,
+        "stageClientHeight": 558,
+        "layout": "paginated",
+        "pages": "4",
+        "page": "0",
+        "visibleProseLines": 12,
+        "visibleTextAreaPercent": 40.1,
+        "legend": [
+          {
+            "label": "☀Eager calm",
+            "font": "11px",
+            "width": 72.90625,
+            "scrollWidth": 73,
+            "clientWidth": 73
+          },
+          {
+            "label": "♡Fond longing",
+            "font": "11px",
+            "width": 81.84375,
+            "scrollWidth": 82,
+            "clientWidth": 82
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 8,
+              "y": 140.5,
+              "width": 6,
+              "height": 311,
+              "top": 140.5,
+              "right": 14,
+              "bottom": 451.5,
+              "left": 8
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 8,
+              "y": 451.5,
+              "width": 6,
+              "height": 169.5,
+              "top": 451.5,
+              "right": 14,
+              "bottom": 621,
+              "left": 8
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 77.5,
+            "bottom": 366.5,
+            "feeling": "Eager calm"
+          },
+          {
+            "index": 1,
+            "column": 0,
+            "top": 388.5,
+            "bottom": 529.5,
+            "feeling": "Fond longing"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "candidate": "B",
+      "screenshot": "screens/B-390x844.png",
+      "sha256": "c08ed2e888d6636667d2d7b7560c76afcd6d520b65f65478f01473ef224e77e4",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          390,
+          844
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 390,
+          "height": 732,
+          "top": 46,
+          "right": 390,
+          "bottom": 778,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 63,
+          "width": 390,
+          "height": 702,
+          "top": 63,
+          "right": 390,
+          "bottom": 765,
+          "left": 0
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 46,
+          "top": 0,
+          "right": 390,
+          "bottom": 46,
+          "left": 0
+        },
+        "heading": {
+          "x": 20,
+          "y": 63,
+          "width": 350,
+          "height": 59.5,
+          "top": 63,
+          "right": 370,
+          "bottom": 122.5,
+          "left": 20
+        },
+        "footer": {
+          "x": 0,
+          "y": 778,
+          "width": 390,
+          "height": 66,
+          "top": 778,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 350,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 702,
+        "stageClientHeight": 702,
+        "layout": "paginated",
+        "pages": "3",
+        "page": "0",
+        "visibleProseLines": 16,
+        "visibleTextAreaPercent": 45.4,
+        "legend": [
+          {
+            "label": "☀Eager calm",
+            "font": "11px",
+            "width": 72.90625,
+            "scrollWidth": 73,
+            "clientWidth": 73
+          },
+          {
+            "label": "♡Fond longing",
+            "font": "11px",
+            "width": 81.84375,
+            "scrollWidth": 82,
+            "clientWidth": 82
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 8,
+              "y": 140.5,
+              "width": 6,
+              "height": 311,
+              "top": 140.5,
+              "right": 14,
+              "bottom": 451.5,
+              "left": 8
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 8,
+              "y": 451.5,
+              "width": 6,
+              "height": 313.5,
+              "top": 451.5,
+              "right": 14,
+              "bottom": 765,
+              "left": 8
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 77.5,
+            "bottom": 366.5,
+            "feeling": "Eager calm"
+          },
+          {
+            "index": 1,
+            "column": 0,
+            "top": 388.5,
+            "bottom": 677.5,
+            "feeling": "Fond longing"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "candidate": "B",
+      "screenshot": "screens/B-320x568.png",
+      "sha256": "6f6ddf1501a383904a3f077eb0cfb75925301fec1ea07687c5eb45049d06d533",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          320,
+          568
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 320,
+          "height": 456,
+          "top": 46,
+          "right": 320,
+          "bottom": 502,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 60,
+          "width": 320,
+          "height": 429,
+          "top": 60,
+          "right": 320,
+          "bottom": 489,
+          "left": 0
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 46,
+          "top": 0,
+          "right": 320,
+          "bottom": 46,
+          "left": 0
+        },
+        "heading": {
+          "x": 20,
+          "y": 60,
+          "width": 280,
+          "height": 56.5,
+          "top": 60,
+          "right": 300,
+          "bottom": 116.5,
+          "left": 20
+        },
+        "footer": {
+          "x": 0,
+          "y": 502,
+          "width": 320,
+          "height": 66,
+          "top": 502,
+          "right": 320,
+          "bottom": 568,
+          "left": 0
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 280,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 429,
+        "stageClientHeight": 429,
+        "layout": "paginated",
+        "pages": "6",
+        "page": "0",
+        "visibleProseLines": 8,
+        "visibleTextAreaPercent": 32.8,
+        "legend": [
+          {
+            "label": "☀Eager calm",
+            "font": "11px",
+            "width": 72.90625,
+            "scrollWidth": 73,
+            "clientWidth": 73
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 8,
+              "y": 132.5,
+              "width": 6,
+              "height": 356.5,
+              "top": 132.5,
+              "right": 14,
+              "bottom": 489,
+              "left": 8
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 72.5,
+            "bottom": 361.5,
+            "feeling": "Eager calm"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "candidate": "C",
+      "screenshot": "screens/C-1366x590.png",
+      "sha256": "92f84eff1ae55b106cd41d4d8d197601612bd0cc5f3f7f969b68b754af8eeb73",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          1366,
+          590
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 73,
+          "y": 67,
+          "width": 1220,
+          "height": 459,
+          "top": 67,
+          "right": 1293,
+          "bottom": 526,
+          "left": 73
+        },
+        "stage": {
+          "x": 74,
+          "y": 90,
+          "width": 1218,
+          "height": 417,
+          "top": 90,
+          "right": 1292,
+          "bottom": 507,
+          "left": 74
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 54,
+          "top": 0,
+          "right": 1366,
+          "bottom": 54,
+          "left": 0
+        },
+        "heading": {
+          "x": 112,
+          "y": 90,
+          "width": 533,
+          "height": 64.5,
+          "top": 90,
+          "right": 645,
+          "bottom": 154.5,
+          "left": 112
+        },
+        "footer": {
+          "x": 73,
+          "y": 526,
+          "width": 1220,
+          "height": 64,
+          "top": 526,
+          "right": 1293,
+          "bottom": 590,
+          "left": 73
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 533,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 417,
+        "stageClientHeight": 417,
+        "layout": "paginated",
+        "pages": "4",
+        "page": "0",
+        "visibleProseLines": 18,
+        "visibleTextAreaPercent": 33,
+        "legend": [
+          {
+            "label": "☀Eager calm",
+            "font": "11px",
+            "width": 73.90625,
+            "scrollWidth": 74,
+            "clientWidth": 74
+          },
+          {
+            "label": "♡Fond longing",
+            "font": "11px",
+            "width": 82.84375,
+            "scrollWidth": 83,
+            "clientWidth": 83
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "font": "11px",
+            "width": 111.46875,
+            "scrollWidth": 111,
+            "clientWidth": 111
+          },
+          {
+            "label": "◒Disappointment",
+            "font": "11px",
+            "width": 99.953125,
+            "scrollWidth": 100,
+            "clientWidth": 100
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 99,
+              "y": 173.5,
+              "width": 1,
+              "height": 200,
+              "top": 173.5,
+              "right": 100,
+              "bottom": 373.5,
+              "left": 99
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 99,
+              "y": 373.5,
+              "width": 1,
+              "height": 133.5,
+              "top": 373.5,
+              "right": 100,
+              "bottom": 507,
+              "left": 99
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 708,
+              "y": 93,
+              "width": 1,
+              "height": 200,
+              "top": 93,
+              "right": 709,
+              "bottom": 293,
+              "left": 708
+            }
+          },
+          {
+            "feeling": "Renewed curiosity",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 708,
+              "y": 293,
+              "width": 1,
+              "height": 148,
+              "top": 293,
+              "right": 709,
+              "bottom": 441,
+              "left": 708
+            }
+          },
+          {
+            "feeling": "Disappointment",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 708,
+              "y": 441,
+              "width": 1,
+              "height": 66,
+              "top": 441,
+              "right": 709,
+              "bottom": 507,
+              "left": 708
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 83.5,
+            "bottom": 261.5,
+            "feeling": "Eager calm"
+          },
+          {
+            "index": 1,
+            "column": 0,
+            "top": 283.5,
+            "bottom": 387.5,
+            "feeling": "Fond longing"
+          },
+          {
+            "index": 1,
+            "column": 1,
+            "top": 3,
+            "bottom": 181,
+            "feeling": "Fond longing"
+          },
+          {
+            "index": 2,
+            "column": 1,
+            "top": 203,
+            "bottom": 381,
+            "feeling": "Renewed curiosity"
+          },
+          {
+            "index": 3,
+            "column": 1,
+            "top": 351,
+            "bottom": 381,
+            "feeling": "Disappointment"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "candidate": "C",
+      "screenshot": "screens/C-1366x768.png",
+      "sha256": "49700180b0c80ea0a84849becdd3b3261dd23e6e505beeccd0d731746b4e412e",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 73,
+          "y": 67,
+          "width": 1220,
+          "height": 637,
+          "top": 67,
+          "right": 1293,
+          "bottom": 704,
+          "left": 73
+        },
+        "stage": {
+          "x": 74,
+          "y": 90,
+          "width": 1218,
+          "height": 595,
+          "top": 90,
+          "right": 1292,
+          "bottom": 685,
+          "left": 74
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 54,
+          "top": 0,
+          "right": 1366,
+          "bottom": 54,
+          "left": 0
+        },
+        "heading": {
+          "x": 112,
+          "y": 90,
+          "width": 533,
+          "height": 64.5,
+          "top": 90,
+          "right": 645,
+          "bottom": 154.5,
+          "left": 112
+        },
+        "footer": {
+          "x": 73,
+          "y": 704,
+          "width": 1220,
+          "height": 64,
+          "top": 704,
+          "right": 1293,
+          "bottom": 768,
+          "left": 73
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 533,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 595,
+        "stageClientHeight": 595,
+        "layout": "paginated",
+        "pages": "3",
+        "page": "0",
+        "visibleProseLines": 28,
+        "visibleTextAreaPercent": 39.1,
+        "legend": [
+          {
+            "label": "☀Eager calm",
+            "font": "11px",
+            "width": 73.90625,
+            "scrollWidth": 74,
+            "clientWidth": 74
+          },
+          {
+            "label": "♡Fond longing",
+            "font": "11px",
+            "width": 82.84375,
+            "scrollWidth": 83,
+            "clientWidth": 83
+          },
+          {
+            "label": "✧Renewed curiosity",
+            "font": "11px",
+            "width": 111.46875,
+            "scrollWidth": 111,
+            "clientWidth": 111
+          },
+          {
+            "label": "◒Disappointment",
+            "font": "11px",
+            "width": 99.953125,
+            "scrollWidth": 100,
+            "clientWidth": 100
+          },
+          {
+            "label": "≈Tempered eagerness",
+            "font": "11px",
+            "width": 124.375,
+            "scrollWidth": 124,
+            "clientWidth": 124
+          },
+          {
+            "label": "⌁Frustration",
+            "font": "11px",
+            "width": 73.546875,
+            "scrollWidth": 74,
+            "clientWidth": 74
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 99,
+              "y": 173.5,
+              "width": 1,
+              "height": 200,
+              "top": 173.5,
+              "right": 100,
+              "bottom": 373.5,
+              "left": 99
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 99,
+              "y": 373.5,
+              "width": 1,
+              "height": 289,
+              "top": 373.5,
+              "right": 100,
+              "bottom": 662.5,
+              "left": 99
+            }
+          },
+          {
+            "feeling": "Renewed curiosity",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 708,
+              "y": 93,
+              "width": 1,
+              "height": 148,
+              "top": 93,
+              "right": 709,
+              "bottom": 241,
+              "left": 708
+            }
+          },
+          {
+            "feeling": "Disappointment",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 708,
+              "y": 241,
+              "width": 1,
+              "height": 200,
+              "top": 241,
+              "right": 709,
+              "bottom": 441,
+              "left": 708
+            }
+          },
+          {
+            "feeling": "Tempered eagerness",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 708,
+              "y": 441,
+              "width": 1,
+              "height": 148,
+              "top": 441,
+              "right": 709,
+              "bottom": 589,
+              "left": 708
+            }
+          },
+          {
+            "feeling": "Frustration",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 708,
+              "y": 589,
+              "width": 1,
+              "height": 96,
+              "top": 589,
+              "right": 709,
+              "bottom": 685,
+              "left": 708
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 83.5,
+            "bottom": 261.5,
+            "feeling": "Eager calm"
+          },
+          {
+            "index": 1,
+            "column": 0,
+            "top": 283.5,
+            "bottom": 572.5,
+            "feeling": "Fond longing"
+          },
+          {
+            "index": 2,
+            "column": 1,
+            "top": 3,
+            "bottom": 181,
+            "feeling": "Renewed curiosity"
+          },
+          {
+            "index": 3,
+            "column": 1,
+            "top": 151,
+            "bottom": 329,
+            "feeling": "Disappointment"
+          },
+          {
+            "index": 4,
+            "column": 1,
+            "top": 351,
+            "bottom": 529,
+            "feeling": "Tempered eagerness"
+          },
+          {
+            "index": 5,
+            "column": 1,
+            "top": 499,
+            "bottom": 566,
+            "feeling": "Frustration"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "candidate": "C",
+      "screenshot": "screens/C-390x700.png",
+      "sha256": "9f115a130eb8a01cf627ff8a5da9cfd5986607aae68002be96e35886a4e16b52",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          390,
+          700
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 390,
+          "height": 588,
+          "top": 46,
+          "right": 390,
+          "bottom": 634,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 63,
+          "width": 390,
+          "height": 558,
+          "top": 63,
+          "right": 390,
+          "bottom": 621,
+          "left": 0
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 46,
+          "top": 0,
+          "right": 390,
+          "bottom": 46,
+          "left": 0
+        },
+        "heading": {
+          "x": 20,
+          "y": 63,
+          "width": 350,
+          "height": 59.5,
+          "top": 63,
+          "right": 370,
+          "bottom": 122.5,
+          "left": 20
+        },
+        "footer": {
+          "x": 0,
+          "y": 634,
+          "width": 390,
+          "height": 66,
+          "top": 634,
+          "right": 390,
+          "bottom": 700,
+          "left": 0
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 350,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 1935,
+        "stageClientHeight": 558,
+        "layout": "native-scroll",
+        "pages": "1",
+        "page": "0",
+        "visibleProseLines": 12,
+        "visibleTextAreaPercent": 40.1,
+        "legend": [
+          {
+            "label": "Eager calm",
+            "font": "11px",
+            "width": 72.90625,
+            "scrollWidth": 73,
+            "clientWidth": 73
+          },
+          {
+            "label": "Fond longing",
+            "font": "11px",
+            "width": 81.84375,
+            "scrollWidth": 82,
+            "clientWidth": 82
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 7,
+              "y": 140.5,
+              "width": 1,
+              "height": 311,
+              "top": 140.5,
+              "right": 8,
+              "bottom": 451.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 451.5,
+              "width": 1,
+              "height": 459,
+              "top": 451.5,
+              "right": 8,
+              "bottom": 910.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Renewed curiosity",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 7,
+              "y": 910.5,
+              "width": 1,
+              "height": 259,
+              "top": 910.5,
+              "right": 8,
+              "bottom": 1169.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Disappointment",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 1169.5,
+              "width": 1,
+              "height": 274,
+              "top": 1169.5,
+              "right": 8,
+              "bottom": 1443.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Tempered eagerness",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 1443.5,
+              "width": 1,
+              "height": 222,
+              "top": 1443.5,
+              "right": 8,
+              "bottom": 1665.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Frustration",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 1665.5,
+              "width": 1,
+              "height": 111,
+              "top": 1665.5,
+              "right": 8,
+              "bottom": 1776.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Quiet reward",
+            "weight": "2",
+            "trajectory": "release",
+            "rect": {
+              "x": 7,
+              "y": 1776.5,
+              "width": 1,
+              "height": 178,
+              "top": 1776.5,
+              "right": 8,
+              "bottom": 1954.5,
+              "left": 7
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 77.5,
+            "bottom": 366.5,
+            "feeling": "Eager calm"
+          },
+          {
+            "index": 1,
+            "column": 0,
+            "top": 388.5,
+            "bottom": 825.5,
+            "feeling": "Fond longing"
+          },
+          {
+            "index": 2,
+            "column": 0,
+            "top": 847.5,
+            "bottom": 1136.5,
+            "feeling": "Renewed curiosity"
+          },
+          {
+            "index": 3,
+            "column": 0,
+            "top": 1106.5,
+            "bottom": 1358.5,
+            "feeling": "Disappointment"
+          },
+          {
+            "index": 4,
+            "column": 0,
+            "top": 1380.5,
+            "bottom": 1632.5,
+            "feeling": "Tempered eagerness"
+          },
+          {
+            "index": 5,
+            "column": 0,
+            "top": 1602.5,
+            "bottom": 1743.5,
+            "feeling": "Frustration"
+          },
+          {
+            "index": 6,
+            "column": 0,
+            "top": 1713.5,
+            "bottom": 1891.5,
+            "feeling": "Quiet reward"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true,
+        "nativeProbe": {
+          "scrollTop": 1161,
+          "scrollHeight": 1935,
+          "legend": "DisappointmentTempered eagerness+2 feelings",
+          "toggledBackToPages": true,
+          "pages": 4,
+          "pageProgress": "1 / 4"
+        }
+      }
+    },
+    {
+      "candidate": "C",
+      "screenshot": "screens/C-390x844.png",
+      "sha256": "026a53a92c7ba699c44a5999f3b912db2ed5d6fd2463a3f2de7dbe2448e6a542",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          390,
+          844
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 390,
+          "height": 732,
+          "top": 46,
+          "right": 390,
+          "bottom": 778,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 63,
+          "width": 390,
+          "height": 702,
+          "top": 63,
+          "right": 390,
+          "bottom": 765,
+          "left": 0
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 46,
+          "top": 0,
+          "right": 390,
+          "bottom": 46,
+          "left": 0
+        },
+        "heading": {
+          "x": 20,
+          "y": 63,
+          "width": 350,
+          "height": 59.5,
+          "top": 63,
+          "right": 370,
+          "bottom": 122.5,
+          "left": 20
+        },
+        "footer": {
+          "x": 0,
+          "y": 778,
+          "width": 390,
+          "height": 66,
+          "top": 778,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 350,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 1935,
+        "stageClientHeight": 702,
+        "layout": "native-scroll",
+        "pages": "1",
+        "page": "0",
+        "visibleProseLines": 16,
+        "visibleTextAreaPercent": 45.4,
+        "legend": [
+          {
+            "label": "Eager calm",
+            "font": "11px",
+            "width": 72.90625,
+            "scrollWidth": 73,
+            "clientWidth": 73
+          },
+          {
+            "label": "Fond longing",
+            "font": "11px",
+            "width": 81.84375,
+            "scrollWidth": 82,
+            "clientWidth": 82
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 7,
+              "y": 140.5,
+              "width": 1,
+              "height": 311,
+              "top": 140.5,
+              "right": 8,
+              "bottom": 451.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 451.5,
+              "width": 1,
+              "height": 459,
+              "top": 451.5,
+              "right": 8,
+              "bottom": 910.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Renewed curiosity",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 7,
+              "y": 910.5,
+              "width": 1,
+              "height": 259,
+              "top": 910.5,
+              "right": 8,
+              "bottom": 1169.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Disappointment",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 1169.5,
+              "width": 1,
+              "height": 274,
+              "top": 1169.5,
+              "right": 8,
+              "bottom": 1443.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Tempered eagerness",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 1443.5,
+              "width": 1,
+              "height": 222,
+              "top": 1443.5,
+              "right": 8,
+              "bottom": 1665.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Frustration",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 1665.5,
+              "width": 1,
+              "height": 111,
+              "top": 1665.5,
+              "right": 8,
+              "bottom": 1776.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Quiet reward",
+            "weight": "2",
+            "trajectory": "release",
+            "rect": {
+              "x": 7,
+              "y": 1776.5,
+              "width": 1,
+              "height": 178,
+              "top": 1776.5,
+              "right": 8,
+              "bottom": 1954.5,
+              "left": 7
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 77.5,
+            "bottom": 366.5,
+            "feeling": "Eager calm"
+          },
+          {
+            "index": 1,
+            "column": 0,
+            "top": 388.5,
+            "bottom": 825.5,
+            "feeling": "Fond longing"
+          },
+          {
+            "index": 2,
+            "column": 0,
+            "top": 847.5,
+            "bottom": 1136.5,
+            "feeling": "Renewed curiosity"
+          },
+          {
+            "index": 3,
+            "column": 0,
+            "top": 1106.5,
+            "bottom": 1358.5,
+            "feeling": "Disappointment"
+          },
+          {
+            "index": 4,
+            "column": 0,
+            "top": 1380.5,
+            "bottom": 1632.5,
+            "feeling": "Tempered eagerness"
+          },
+          {
+            "index": 5,
+            "column": 0,
+            "top": 1602.5,
+            "bottom": 1743.5,
+            "feeling": "Frustration"
+          },
+          {
+            "index": 6,
+            "column": 0,
+            "top": 1713.5,
+            "bottom": 1891.5,
+            "feeling": "Quiet reward"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true,
+        "nativeProbe": {
+          "scrollTop": 1161,
+          "scrollHeight": 1935,
+          "legend": "DisappointmentTempered eagerness+2 feelings",
+          "toggledBackToPages": true,
+          "pages": 3,
+          "pageProgress": "1 / 3"
+        }
+      }
+    },
+    {
+      "candidate": "C",
+      "screenshot": "screens/C-320x568.png",
+      "sha256": "d68df652b7d98c64d345261e0e85b0f87db8cc575433b548ece7bc0752184d21",
+      "requests": 1,
+      "geometry": {
+        "viewport": [
+          320,
+          568
+        ],
+        "zoom": 1,
+        "devicePixelRatio": 1,
+        "book": {
+          "x": 0,
+          "y": 46,
+          "width": 320,
+          "height": 456,
+          "top": 46,
+          "right": 320,
+          "bottom": 502,
+          "left": 0
+        },
+        "stage": {
+          "x": 0,
+          "y": 60,
+          "width": 320,
+          "height": 429,
+          "top": 60,
+          "right": 320,
+          "bottom": 489,
+          "left": 0
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 46,
+          "top": 0,
+          "right": 320,
+          "bottom": 46,
+          "left": 0
+        },
+        "heading": {
+          "x": 20,
+          "y": 60,
+          "width": 280,
+          "height": 56.5,
+          "top": 60,
+          "right": 300,
+          "bottom": 116.5,
+          "left": 20
+        },
+        "footer": {
+          "x": 0,
+          "y": 502,
+          "width": 320,
+          "height": 66,
+          "top": 502,
+          "right": 320,
+          "bottom": 568,
+          "left": 0
+        },
+        "proseFont": "20px",
+        "proseLeading": "37px",
+        "proseWidth": 280,
+        "bodyOverflow": 0,
+        "stageScrollHeight": 2411,
+        "stageClientHeight": 429,
+        "layout": "native-scroll",
+        "pages": "1",
+        "page": "0",
+        "visibleProseLines": 9,
+        "visibleTextAreaPercent": 36.9,
+        "legend": [
+          {
+            "label": "Eager calm",
+            "font": "11px",
+            "width": 72.90625,
+            "scrollWidth": 73,
+            "clientWidth": 73
+          }
+        ],
+        "rail": [
+          {
+            "feeling": "Eager calm",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 7,
+              "y": 132.5,
+              "width": 1,
+              "height": 385,
+              "top": 132.5,
+              "right": 8,
+              "bottom": 517.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Fond longing",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 517.5,
+              "width": 1,
+              "height": 607,
+              "top": 517.5,
+              "right": 8,
+              "bottom": 1124.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Renewed curiosity",
+            "weight": "3",
+            "trajectory": "build",
+            "rect": {
+              "x": 7,
+              "y": 1124.5,
+              "width": 1,
+              "height": 370,
+              "top": 1124.5,
+              "right": 8,
+              "bottom": 1494.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Disappointment",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 1494.5,
+              "width": 1,
+              "height": 274,
+              "top": 1494.5,
+              "right": 8,
+              "bottom": 1768.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Tempered eagerness",
+            "weight": "3",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 1768.5,
+              "width": 1,
+              "height": 296,
+              "top": 1768.5,
+              "right": 8,
+              "bottom": 2064.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Frustration",
+            "weight": "2",
+            "trajectory": "hold",
+            "rect": {
+              "x": 7,
+              "y": 2064.5,
+              "width": 1,
+              "height": 148,
+              "top": 2064.5,
+              "right": 8,
+              "bottom": 2212.5,
+              "left": 7
+            }
+          },
+          {
+            "feeling": "Quiet reward",
+            "weight": "2",
+            "trajectory": "release",
+            "rect": {
+              "x": 7,
+              "y": 2212.5,
+              "width": 1,
+              "height": 215,
+              "top": 2212.5,
+              "right": 8,
+              "bottom": 2427.5,
+              "left": 7
+            }
+          }
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "column": 0,
+            "top": 72.5,
+            "bottom": 435.5,
+            "feeling": "Eager calm"
+          },
+          {
+            "index": 1,
+            "column": 0,
+            "top": 457.5,
+            "bottom": 1042.5,
+            "feeling": "Fond longing"
+          },
+          {
+            "index": 2,
+            "column": 0,
+            "top": 1064.5,
+            "bottom": 1427.5,
+            "feeling": "Renewed curiosity"
+          },
+          {
+            "index": 3,
+            "column": 0,
+            "top": 1434.5,
+            "bottom": 1686.5,
+            "feeling": "Disappointment"
+          },
+          {
+            "index": 4,
+            "column": 0,
+            "top": 1708.5,
+            "bottom": 2034.5,
+            "feeling": "Tempered eagerness"
+          },
+          {
+            "index": 5,
+            "column": 0,
+            "top": 2004.5,
+            "bottom": 2182.5,
+            "feeling": "Frustration"
+          },
+          {
+            "index": 6,
+            "column": 0,
+            "top": 2152.5,
+            "bottom": 2367.5,
+            "feeling": "Quiet reward"
+          }
+        ],
+        "highlightNames": [],
+        "sourceUnchanged": true,
+        "nativeProbe": {
+          "scrollTop": 1447,
+          "scrollHeight": 2411,
+          "legend": "Disappointment+1 feeling",
+          "toggledBackToPages": true,
+          "pages": 6,
+          "pageProgress": "1 / 6"
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "sourceFiles": {
+    "src/components/Reader.tsx": "94b97320eb83cc1f70f7f83acdfc60b55e1869eec466b992cd140c2c72a2b31b",
+    "src/library-reader.css": "b7e6b8e3914fe91180c18016e9464ad8ca4a1c98665fd15072d8189f886bf5b5",
+    "src/heartbeat/Heartbeat.tsx": "0732482453eeed0b7a55ef8e01a3284627dc4010d5c49c0e280ac1e5eb9a3fd3",
+    "src/heartbeat/heartbeat.css": "6b51d4af496e14515ddae26d23cce4dc53e577a4f70e63058eb263a582431e22",
+    "src/heartbeat/presentation.ts": "1822be0e4ceaaecb318ccefb6cf75917fc015cff0ecc314e3eed943a65cadcbb",
+    "tests/helpers/heartbeat-continuity-fixture.ts": "99713c94fe596b9e5c8a58c6df34792877170e37d0e2e24b45aa9b0896835c83"
+  },
+  "fixtureSha256": "f345f7c44e6a53c9f2ef1df171324da75cba72477e6c317bc9f181935444fb1c"
+}

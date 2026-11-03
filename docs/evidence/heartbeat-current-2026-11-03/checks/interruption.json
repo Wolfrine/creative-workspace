@@ -1,0 +1,7 @@
+{
+  "kind": "local test infrastructure",
+  "partialRun": "Full browser run reused servers owned by focused suite; focused teardown closed them",
+  "action": "Cancelled only verified own Playwright PID21240 (creation identity and command matched), retained partial logs in ignored F scratch; reran full suite with its own servers",
+  "productVerdict": "Not a product result; final full115 run passes",
+  "otherFailedRun": "R5full111pass/2UIbadge-oraclefailures; exact diagnostic proves only hidden Source UI characters, all source/title glyph checks retained after separating six UI chars"
+}

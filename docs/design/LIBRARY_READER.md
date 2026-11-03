@@ -63,3 +63,23 @@ Central release used: 0.1.0, base
 reader_critic independent visual critic, root lead and QA. Five substantive
 state-specific review cycles and final build-bound evidence are required before
 agent-reviewed release. Only an explicit owner response grants owner acceptance.
+
+## Heartbeat margin-current iteration, 3 November 2026
+
+The owner rejected the `6044ccf` full-line color treatment. Read keeps its cream
+paper, sage chrome and 20px serif / 1.85 leading, with a narrow optional continuous
+margin rail outside manuscript text. A matching line-sample feeling key sits
+below the passage; details and exact provenance open explicitly. OFF removes
+every cue. See [Emotional Heartbeat](EMOTIONAL_HEARTBEAT.md).
+
+Automatic layout keeps spreads on desktop and taller phones, and uses native
+continuous scroll at widths <=350px or phone widths <=650px with height <=740px.
+Reading appearance retains explicit Pages/Scroll/Auto choices. Native keyboard
+scrolling and bookmarks preserve the exact visible passage across modes, fonts
+and resizes. Short/narrow phones no longer require turning after eight lines.
+Source provenance remains an accessible heading disclosure. Reading navigation
+and annotation display create no manuscript/revision writes or new listeners.
+
+Current source-bound renders and measured capacity are in the
+[iteration evidence](../evidence/heartbeat-current-2026-11-03/parent-qa.md).
+Static native-model reviews do not establish human or owner acceptance.

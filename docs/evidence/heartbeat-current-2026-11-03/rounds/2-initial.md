@@ -1,0 +1,5 @@
+# Initial runtime pass 2 — partial evidence
+
+The first implemented margin rail removed prose fills, introduced automatic native scroll on short/narrow phones and reduced the footer. The parent inspected five main and two additional actual renders. A subsequent recapture overwrote the short-desktop image while the critic was reviewing it; that image showed Checking rather than a ready annotation. This was a capture-process defect. Round 2 is partial, not an accepted steady-state capture; no score increase is claimed.
+
+The independent critic required complete visible-spread meanings, actual rail samples rather than tiny glyphs, clearer scroll/pages navigation, compact visual grammar and an explicitly distinguished keyboard-focused state. Raw scores and limitations remain in ../reviews.json. Source/readiness hashing and frozen captures were strengthened in round 3. This record was reconstructed by the parent from the returned agent review and inspected PNGs; no nonexistent designer record is implied.

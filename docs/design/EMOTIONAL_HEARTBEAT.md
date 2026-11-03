@@ -1,8 +1,10 @@
 # Emotional Heartbeat
 
 Implementation and live release were explicitly authorized on 3 November 2026.
-The owner **rejected the first delivered UI at `73b8455`** and authorized this
-rework on the same main checkout. Earlier agent scores do not establish current
+The owner **rejected the delivered UIs at `73b8455` and `6044ccf`** and authorized
+continued rework on the same main checkout. The latter's opaque full-line fills
+overwhelmed the fiction; its internal scores are superseded by owner feedback.
+Earlier agent scores do not establish current
 acceptance; retain that historical evidence and its defects.
 This extends the private author workspace and existing proposal permission; it
 does not approve shared editions, canon changes or manuscript transformation.
@@ -32,7 +34,8 @@ The lead surface job is **Read**, alongside the existing writing task.
 
 - Retain paper, muted green, serif manuscript, existing navigation, typography
   controls, recoverable writing and quiet off state.
-- Refine emotional continuity with a visible field over exact prose.
+- Express emotional continuity with a narrow continuous margin rail beside exact
+  prose. Keep manuscript ink uncolored; no default full-line highlighter.
 - Replace oversized reader introductions, wasted compact-screen space, tiny
   per-beat footer lists and ambiguous gaps.
 - Compare compact spread, flowing folio and margin-current structures at matched
@@ -44,10 +47,10 @@ Critical visual conditions declared before review:
 | Dimension | Observable condition |
 | --- | --- |
 | Narrative expression | Supported feelings persist through quieter exposition; shifts, holds and explicit rest differ from unanalysed text. |
-| Visual craft | Visible distinct semantic tints and concise color-to-feeling legend preserve paper/green/serif. |
+| Visual craft | Distinct margin currents and a matching line-sample key preserve paper/green/serif. |
 | Ergonomics | Prose-visible lines/area and useful book height improve at1366×768; title/chrome do not displace reading. |
 | Mobile |390×844 and320×568 retain readable prose, navigation, unclipped legend and passage position. |
-| Access | Text/symbols supplement color; keyboard, contrast, selection and highlight fallback work. |
+| Access | Text and solid/dashed/dotted samples supplement color; keyboard, contrast, selection and exact range projection work. |
 
 Designer, independent critic and parent QA are separate native agents. The
 requested child settings are `gpt-6.1-sol` / `xhigh`; those exact settings were
@@ -91,13 +94,38 @@ complete partition and the receipt. See the
 [method and example](../../plugin/noveliaa/skills/collaborate-on-writing/references/heartbeat-continuity.md).
 Structural coverage checks cannot prove the emotional interpretation correct.
 
-The rejected layout was compared with three rendered structures: compact spread,
-flowing folio and margin current. The compact spread preserves the book identity
-and gives the most desktop prose space. A compact chapter heading replaces the
-oversized opener; navigation retains collection identity and reading position.
-The visible-page key has stable height so a feeling change cannot repaginate the
-writing. Opaque paper/night tint families, labeled symbols and explicit browser
-fallback replace faint alpha islands. No decorative image takes prose space.
+The second rejected layout was compared with three actual-render treatments:
+continuous margin current, stitched page edge, and change-only faint emphasis.
+Two no-context native model readers preferred the margin current, while both
+found its initial small-screen key insufficient. Their criticism is retained.
+The desktop keeps the compact spread. Automatic layout uses native continuous
+scroll on narrow or short phones; Pages remains an explicit appearance choice.
+Body type remains 20px with 1.85 leading. Source provenance is an accessible
+chapter-heading disclosure. The compact key uses samples of the actual rail;
+reasoning, source/model metadata and the visual grammar open only on request.
+Reader names are 14px: samples sit beside desktop labels and above mobile
+labels. Mobile chrome stays 70px; desktop stays 66px. A bounded DOM measurement
+keeps exact labels untruncated. When three or more feelings exceed available
+space, the key previews the largest visible source fields and offers **All
+feelings** for the full document key. This is an explicitly partial preview,
+not a claim that every visible color is named in place. Palette identity stays
+document-scoped; preview priority cannot change supplied feelings or weights.
+
+Colors are allocated from all beats in the exact document revision, never from
+the current spread. A normalized foreground keeps one color across supplied
+tones; different foregrounds get distinct colors even when their tone matches.
+There are ten distinct feeling slots, an explicit dashed Rest bucket, and an
+honest Other feelings bucket for excess identities. Original labels remain in
+details. Unknown/incomplete writing uses a dotted Unanalysed rail, including an
+unfetched second document visible on a facing spread. It receives no inferred
+feeling and causes no extra fetch. Within verified complete coverage, adjacent
+states join across paragraph whitespace; same-line shifts share one boundary.
+
+Absolute, inert SVG rails live outside source/editable text. Standard DOM Ranges
+project exact offsets into columns or flow; CSS Custom Highlight support is not
+required. Page-turn copies carry the same SVG geometry. OFF removes canonical
+and projected cues; edits invalidate prior interpretation immediately. No
+decorative image, source mark or new Firestore listener/polling is involved.
 
 Every write checks current owner/workspace, universe, grant and immutable
 revision/hash. A receipt binds identical retries to one append-only annotation;
@@ -112,10 +140,10 @@ chat, model key, source replacement, approval or publication action.
 
 ## Acceptance limits
 
-Use synthetic emulator and local-only preview fixtures. For this rework the owner
-explicitly approved a scoped reading of the named real scene and one newer,
-quality-checked heartbeat through OAuth MCP if available. No admin bypass or
-author-draft edits. Raw text stays in ignored local evidence; repository renders
+Use synthetic emulator and local-only preview fixtures. The existing real
+seven-region annotation and plugin 0.1.2 are preserved in this second visual
+iteration; do not regenerate it or write production manuscripts. No admin bypass
+or author-draft edits. Raw text stays in ignored local evidence; repository renders
 use a clearly labeled four-paragraph synthetic counterpart. Hosted public-shell/discovery checks
 and emulator-authenticated UI checks are distinct. Physical-device/IME and a
 real author comparing model interpretations with intended feeling remain human
@@ -123,6 +151,6 @@ acceptance, not inferred from passing tests or screenshots.
 
 The rework's retained alternatives, independent critique, before/after desktop
 and mobile measurements, test results and parent review are bound in the
-[acceptance evidence](../evidence/heartbeat-rework-2026-11-03/parent-qa.md).
+[current evidence](../evidence/heartbeat-current-2026-11-03/parent-qa.md).
 The earlier owner-rejected evidence remains historical and is not current
 acceptance.

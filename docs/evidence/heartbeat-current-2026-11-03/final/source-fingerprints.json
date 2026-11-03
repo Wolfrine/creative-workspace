@@ -1,0 +1,192 @@
+{
+  "before": {
+    "src/App.tsx": "0479c5432c85507b8df5ba043ff7320a58b064ff164addfb7891401bc20a60fe",
+    "src/AppHost.tsx": "ce43936760e2f7d539002fc35a9e6cbe6b3e323db68edbd1a2ab2b1c9ba01719",
+    "src/cloud/firebase-access.test.ts": "902c86f944fa566a9405f9022381333ab0b45d11a920a1ab49ee40f74e3bbb91",
+    "src/cloud/firebase.test.ts": "d3cd5e98b0761bfe573f4b677b2d7ac2341d38b4dba7c723b8e4aeaf94ff3601",
+    "src/cloud/firebase.ts": "61e6dfe8cf0ae732d34a80b95c5e66f2730aca25f596b83c8eb5e2435f51e2ad",
+    "src/cloud/integrations.ts": "771dc3ca8484dba9d01c9989c56a6f06f502cfa5f62e362f185555d916757375",
+    "src/cloud/spark-listener.test.ts": "1868d8971d193f71f0b509b551331ea9bcd0b561e91893c7d9ade86d6447086c",
+    "src/cloud/spark.emulator.test.ts": "12672df8c1f146e9c6e140d545353e08ecf56fa804d3a5edbce48e037e05942e",
+    "src/cloud/spark.ts": "abb7b693f16eff907b3421c7ecbe83331de0254e88e86764481d9c99cd569013",
+    "src/components/DocumentShelfRow.tsx": "df6b820bce505dfa5a10737795a31153d69cef9000d58937ab105d00ba833f24",
+    "src/components/Integrations.tsx": "7058938437bfbcaa94e90fe5fa0b13c7a4d12352fee19d4257256614d5473909",
+    "src/components/Library.tsx": "c443d154178f9959e4f8b9ba2d771ecd389f3c5ee3a1be150e34a0e092c7a9b5",
+    "src/components/Modal.tsx": "b5d290d7073a27442d178b528c0447990de6042a6b1aee8c2e3a3300f11e73ce",
+    "src/components/ParagraphIndent.ts": "687a0eae5fbe04f96e2921efb4ddbd5dc2b01169c4a8e8ac981713321d6d2fd7",
+    "src/components/Reader.tsx": "4fcb26530dbbcc3ff24611b1554d005ae53f9227610a64972c32d695ae2b3c92",
+    "src/components/RevisionComparison.tsx": "2c5b5313bb91b0d6be008e8fd1516ce289da856fa14c6668f78914b3797cad94",
+    "src/components/Writer.tsx": "c7138130adec7b7590ecd5c5f944125248a37d067c9a26ed5ff92984b426f2b5",
+    "src/components/integrations.css": "7ccfdd94b59273204080530185d6fc236952f825f2e94717d87817998bbc8bc0",
+    "src/domain/codec.ts": "fbe53e9aa60a72e85be7b8ff6e2d62b89fbf0742ad8626d2fefb95c62685525a",
+    "src/domain/model.ts": "9bd450032340a32e4ca4abba854bcdd30c60c4be5b648d58c98a0e888465c900",
+    "src/domain/paragraph-formatting.test.ts": "5ee2537bb58b7f4449b5a2cfb9e19b2cb2f0c8fd84f71fe32f0aa96a33545e8a",
+    "src/domain/render.ts": "e74ad5040ece35e22f1c13941add23f2c5515d37744fc5fea0f75dff8c3ea517",
+    "src/heartbeat/Heartbeat.tsx": "b859ad9f489621f9ff9b6ddc0d4ea47f797464be6d0bbd229720ee786be2f9d7",
+    "src/heartbeat/decorations.ts": "c699d1799b0bf7ec81ba214b8a6797c7b9043e2842af2d78f0ca5879e483965a",
+    "src/heartbeat/heartbeat.css": "9264d3a3aabb2aebd4ebe04a7288ee8aebc805ae671a689211e0eddaff571586",
+    "src/heartbeat/model.test.ts": "9177cbdad4eeab2d56171247f6ae6b944993b1bbd2aadd4f9666987b8e345573",
+    "src/heartbeat/model.ts": "150a56b55c146d2daca2325c674600d05657ea1a0a513f34e553db235d51b34e",
+    "src/heartbeat/presentation.test.ts": "3df4b2dfa91531dad8b49113c87a95eba04cb8b2489f7d31d1663917e07d071e",
+    "src/heartbeat/presentation.ts": "1822be0e4ceaaecb318ccefb6cf75917fc015cff0ecc314e3eed943a65cadcbb",
+    "src/heartbeat/rail-geometry.test.ts": "507f08a94f530faa8b78759cb1083cea88237adcd01f242331b56a4a977ae896",
+    "src/heartbeat/rail-geometry.ts": "5457d77d3622ffcba043fe3f80cbd3b13b2084c1e628105c0ffec92a23d3fa7d",
+    "src/heartbeat/rail.css": "0caec97f8da0f5e66ca966ef0205619f871d3e61e3b41419ab454096479c0489",
+    "src/heartbeat/rails.ts": "3ac9146d6ee0d1443fde0508d8441cb35d2c7640f7d21f1d19c23f2b44d7e289",
+    "src/heartbeat/ranges.ts": "6e83454d7472e756e7857b31802bc6709e06c5c7c5041ab99a3b2a00bb7ba53e",
+    "src/heartbeat/useHeartbeat.ts": "e899eb05bf882ef3c007161c8521b21227b3503384cc65bfe0dcb434e2cc7a21",
+    "src/library-reader.css": "00574dd9e6006999e0b294e9c45747d1519c92da5fc64f9f10d8eb146a2264b1",
+    "src/main.tsx": "060f787e8eb7a2b1f7c0c16cc33b1d054663f5ee076c41f5e8495b60286bcf6d",
+    "src/reader/page-turn.ts": "11a2f9a35d50457fa95557ec4f095075aecb66effb289f408cdb05ad7a15f61c",
+    "src/reader/reading.test.ts": "43d10faf5db6ee9e4bf62161f66fa61e2ae18c64b02455129a2953143c9968e8",
+    "src/reader/reading.ts": "613777b5137f3c52455fdb5d744e03e4e9a86a12fc0a878c52080080a64a69d3",
+    "src/state/autosave.test.ts": "759514e6b5b40b73156869daa413bda50adc881a71b0f04a15f90746a14dcd19",
+    "src/state/cloud-integration.test.ts": "2f19396df1315e61f8ebed97ae2f98023137b39fb277e4f8a66e0f7718eecd53",
+    "src/state/collection-rename.test.ts": "5c191c8f2c32db3eea6b70e7feb91e7858957de6b04c387d77d7bc6da7b661ae",
+    "src/state/engine.test.ts": "6ffa03ca8178fad5ac972704ce7ca9e951487cf7044a0c5863c8ec128c25aee0",
+    "src/state/engine.ts": "02946bd71c5ce3b6fb87eeb861fb8e81baf1f3505bd0e2a214b7bd9c8d330e0f",
+    "src/state/useWorkspace.ts": "372c47449e45873b1b5f3a711e9f80ffadf23fc2528dd3dedb88d9458aec8484",
+    "src/storage/archive.ts": "3e146877962af16e9ef5a0f49514ada68df31dc1ccfa5d401a782c5cc1de6875",
+    "src/storage/database.ts": "3f3064eab1a4868b0105e12fa8aee903caa94c41f216662b3ca76e9a1ca458d8",
+    "src/storage/draft-migration.test.ts": "46ee52b87a6375532d6cb7c7c0fb29de6135ffd613c9e09399686517e9db8f38",
+    "src/storage/workspace-reset.test.ts": "5718191258a3bd0cf9dae2cc040f65b81f1af86466092ae5f05928cac24b0f25",
+    "src/styles.css": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294",
+    "src/vendor/pageflip/page-flip.css": "d51eb210784f4539d70bc2a4a9ae96768e271d7aae6730cc9ddba03ebebcbab1",
+    "src/vendor/pageflip/page-flip.d.ts": "d45d561ca29bd8cd771f65b458d0e7067bf61bfa3de6c2779be6ba152fe59b1b",
+    "tests/helpers/heartbeat-continuity-fixture.ts": "99713c94fe596b9e5c8a58c6df34792877170e37d0e2e24b45aa9b0896835c83"
+  },
+  "after": {
+    "src/App.tsx": "0479c5432c85507b8df5ba043ff7320a58b064ff164addfb7891401bc20a60fe",
+    "src/AppHost.tsx": "ce43936760e2f7d539002fc35a9e6cbe6b3e323db68edbd1a2ab2b1c9ba01719",
+    "src/cloud/firebase-access.test.ts": "902c86f944fa566a9405f9022381333ab0b45d11a920a1ab49ee40f74e3bbb91",
+    "src/cloud/firebase.test.ts": "d3cd5e98b0761bfe573f4b677b2d7ac2341d38b4dba7c723b8e4aeaf94ff3601",
+    "src/cloud/firebase.ts": "61e6dfe8cf0ae732d34a80b95c5e66f2730aca25f596b83c8eb5e2435f51e2ad",
+    "src/cloud/integrations.ts": "771dc3ca8484dba9d01c9989c56a6f06f502cfa5f62e362f185555d916757375",
+    "src/cloud/spark-listener.test.ts": "1868d8971d193f71f0b509b551331ea9bcd0b561e91893c7d9ade86d6447086c",
+    "src/cloud/spark.emulator.test.ts": "12672df8c1f146e9c6e140d545353e08ecf56fa804d3a5edbce48e037e05942e",
+    "src/cloud/spark.ts": "abb7b693f16eff907b3421c7ecbe83331de0254e88e86764481d9c99cd569013",
+    "src/components/DocumentShelfRow.tsx": "df6b820bce505dfa5a10737795a31153d69cef9000d58937ab105d00ba833f24",
+    "src/components/Integrations.tsx": "7058938437bfbcaa94e90fe5fa0b13c7a4d12352fee19d4257256614d5473909",
+    "src/components/Library.tsx": "c443d154178f9959e4f8b9ba2d771ecd389f3c5ee3a1be150e34a0e092c7a9b5",
+    "src/components/Modal.tsx": "b5d290d7073a27442d178b528c0447990de6042a6b1aee8c2e3a3300f11e73ce",
+    "src/components/ParagraphIndent.ts": "687a0eae5fbe04f96e2921efb4ddbd5dc2b01169c4a8e8ac981713321d6d2fd7",
+    "src/components/Reader.tsx": "4fcb26530dbbcc3ff24611b1554d005ae53f9227610a64972c32d695ae2b3c92",
+    "src/components/RevisionComparison.tsx": "2c5b5313bb91b0d6be008e8fd1516ce289da856fa14c6668f78914b3797cad94",
+    "src/components/Writer.tsx": "c7138130adec7b7590ecd5c5f944125248a37d067c9a26ed5ff92984b426f2b5",
+    "src/components/integrations.css": "7ccfdd94b59273204080530185d6fc236952f825f2e94717d87817998bbc8bc0",
+    "src/domain/codec.ts": "fbe53e9aa60a72e85be7b8ff6e2d62b89fbf0742ad8626d2fefb95c62685525a",
+    "src/domain/model.ts": "9bd450032340a32e4ca4abba854bcdd30c60c4be5b648d58c98a0e888465c900",
+    "src/domain/paragraph-formatting.test.ts": "5ee2537bb58b7f4449b5a2cfb9e19b2cb2f0c8fd84f71fe32f0aa96a33545e8a",
+    "src/domain/render.ts": "e74ad5040ece35e22f1c13941add23f2c5515d37744fc5fea0f75dff8c3ea517",
+    "src/heartbeat/Heartbeat.tsx": "b859ad9f489621f9ff9b6ddc0d4ea47f797464be6d0bbd229720ee786be2f9d7",
+    "src/heartbeat/decorations.ts": "c699d1799b0bf7ec81ba214b8a6797c7b9043e2842af2d78f0ca5879e483965a",
+    "src/heartbeat/heartbeat.css": "9264d3a3aabb2aebd4ebe04a7288ee8aebc805ae671a689211e0eddaff571586",
+    "src/heartbeat/model.test.ts": "9177cbdad4eeab2d56171247f6ae6b944993b1bbd2aadd4f9666987b8e345573",
+    "src/heartbeat/model.ts": "150a56b55c146d2daca2325c674600d05657ea1a0a513f34e553db235d51b34e",
+    "src/heartbeat/presentation.test.ts": "3df4b2dfa91531dad8b49113c87a95eba04cb8b2489f7d31d1663917e07d071e",
+    "src/heartbeat/presentation.ts": "1822be0e4ceaaecb318ccefb6cf75917fc015cff0ecc314e3eed943a65cadcbb",
+    "src/heartbeat/rail-geometry.test.ts": "507f08a94f530faa8b78759cb1083cea88237adcd01f242331b56a4a977ae896",
+    "src/heartbeat/rail-geometry.ts": "5457d77d3622ffcba043fe3f80cbd3b13b2084c1e628105c0ffec92a23d3fa7d",
+    "src/heartbeat/rail.css": "0caec97f8da0f5e66ca966ef0205619f871d3e61e3b41419ab454096479c0489",
+    "src/heartbeat/rails.ts": "3ac9146d6ee0d1443fde0508d8441cb35d2c7640f7d21f1d19c23f2b44d7e289",
+    "src/heartbeat/ranges.ts": "6e83454d7472e756e7857b31802bc6709e06c5c7c5041ab99a3b2a00bb7ba53e",
+    "src/heartbeat/useHeartbeat.ts": "e899eb05bf882ef3c007161c8521b21227b3503384cc65bfe0dcb434e2cc7a21",
+    "src/library-reader.css": "00574dd9e6006999e0b294e9c45747d1519c92da5fc64f9f10d8eb146a2264b1",
+    "src/main.tsx": "060f787e8eb7a2b1f7c0c16cc33b1d054663f5ee076c41f5e8495b60286bcf6d",
+    "src/reader/page-turn.ts": "11a2f9a35d50457fa95557ec4f095075aecb66effb289f408cdb05ad7a15f61c",
+    "src/reader/reading.test.ts": "43d10faf5db6ee9e4bf62161f66fa61e2ae18c64b02455129a2953143c9968e8",
+    "src/reader/reading.ts": "613777b5137f3c52455fdb5d744e03e4e9a86a12fc0a878c52080080a64a69d3",
+    "src/state/autosave.test.ts": "759514e6b5b40b73156869daa413bda50adc881a71b0f04a15f90746a14dcd19",
+    "src/state/cloud-integration.test.ts": "2f19396df1315e61f8ebed97ae2f98023137b39fb277e4f8a66e0f7718eecd53",
+    "src/state/collection-rename.test.ts": "5c191c8f2c32db3eea6b70e7feb91e7858957de6b04c387d77d7bc6da7b661ae",
+    "src/state/engine.test.ts": "6ffa03ca8178fad5ac972704ce7ca9e951487cf7044a0c5863c8ec128c25aee0",
+    "src/state/engine.ts": "02946bd71c5ce3b6fb87eeb861fb8e81baf1f3505bd0e2a214b7bd9c8d330e0f",
+    "src/state/useWorkspace.ts": "372c47449e45873b1b5f3a711e9f80ffadf23fc2528dd3dedb88d9458aec8484",
+    "src/storage/archive.ts": "3e146877962af16e9ef5a0f49514ada68df31dc1ccfa5d401a782c5cc1de6875",
+    "src/storage/database.ts": "3f3064eab1a4868b0105e12fa8aee903caa94c41f216662b3ca76e9a1ca458d8",
+    "src/storage/draft-migration.test.ts": "46ee52b87a6375532d6cb7c7c0fb29de6135ffd613c9e09399686517e9db8f38",
+    "src/storage/workspace-reset.test.ts": "5718191258a3bd0cf9dae2cc040f65b81f1af86466092ae5f05928cac24b0f25",
+    "src/styles.css": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294",
+    "src/vendor/pageflip/page-flip.css": "d51eb210784f4539d70bc2a4a9ae96768e271d7aae6730cc9ddba03ebebcbab1",
+    "src/vendor/pageflip/page-flip.d.ts": "d45d561ca29bd8cd771f65b458d0e7067bf61bfa3de6c2779be6ba152fe59b1b",
+    "tests/helpers/heartbeat-continuity-fixture.ts": "99713c94fe596b9e5c8a58c6df34792877170e37d0e2e24b45aa9b0896835c83"
+  },
+  "unchanged": true,
+  "screenshots": [
+    {
+      "name": "reader-on-1366x590",
+      "screenshot": "reader-on-1366x590.png",
+      "sha256": "0743edd938d8722536e369cc97d7675bc5da1b8cd67a9f18d2087c60cfec951f"
+    },
+    {
+      "name": "reader-on-1366x768",
+      "screenshot": "reader-on-1366x768.png",
+      "sha256": "2360763f7186ced785cca193bb285d90a9b5a25cdf457314201570468b1bf0eb"
+    },
+    {
+      "name": "reader-on-390x700",
+      "screenshot": "reader-on-390x700.png",
+      "sha256": "a66a9d90c8ae64e337ba8a6ad7ecb47ce19f1af25a9d48099e31cc8cfb3f2c3e"
+    },
+    {
+      "name": "reader-on-390x844",
+      "screenshot": "reader-on-390x844.png",
+      "sha256": "3aab5fe1d4be5c6f7ddeafa5c3f5ddee60154b6e7b493f4018deed83e0c5b88d"
+    },
+    {
+      "name": "reader-on-320x568",
+      "screenshot": "reader-on-320x568.png",
+      "sha256": "4fe6059cc3a18566d40ae316e4c978eb227155962ce85da3555df7d9cfaeb2d7"
+    },
+    {
+      "name": "night-detail-390x844",
+      "screenshot": "night-detail-390x844.png",
+      "sha256": "406c0c181fc4bff60a601e4f15b9509108d91073149b28229184efc78e6b2ebc"
+    },
+    {
+      "name": "rest-320x568",
+      "screenshot": "rest-320x568.png",
+      "sha256": "2e282215eae45ee1e3ee1ec461117a308be5c1d172171fba88110173b579d032"
+    },
+    {
+      "name": "sparse-320x568",
+      "screenshot": "sparse-320x568.png",
+      "sha256": "5030fa7048c6c0d0ae856081742bcac72aeb35603b1f3b33c368f168cb8ecaf0"
+    },
+    {
+      "name": "reader-mid-multicolor-320x568",
+      "screenshot": "reader-mid-multicolor-320x568.png",
+      "sha256": "9a3d96856733f14edf39b44c92ccf3570a0e560bae550b3f2e0e4c8d67d83097"
+    },
+    {
+      "name": "reader-end-multicolor-320x568",
+      "screenshot": "reader-end-multicolor-320x568.png",
+      "sha256": "4761729c6fb75e71038ae3eee9291967fbb702d8a8c8b697f379a20156952968"
+    },
+    {
+      "name": "reader-full-key-320x568",
+      "screenshot": "reader-full-key-320x568.png",
+      "sha256": "e570bf3f05c851c7916d15c5643c70dfdb038a3d5c1f75bffb737c18b8dff7ed"
+    },
+    {
+      "name": "writer-initial-off-320x568",
+      "screenshot": "writer-initial-off-320x568.png",
+      "sha256": "f6f1d20304ae3c9ce4083835f191a819aa8dea1aa0db389152c8fb58acb96ce8"
+    },
+    {
+      "name": "writer-initial-on-320x568",
+      "screenshot": "writer-initial-on-320x568.png",
+      "sha256": "e82a6327ec5a2655a433b8d7a5416b21a09197afb0fefa7c90cf2d3e60c8a59d"
+    },
+    {
+      "name": "writer-focused-on-320x568",
+      "screenshot": "writer-focused-on-320x568.png",
+      "sha256": "24dcf1e96362a267e9009eb6de77c6f125282b4c6cce746652d9751e19f591ab"
+    }
+  ],
+  "sourceSetSha256Before": "2afa0744de8f8a06aa59ab563c24369e49a38c779c765106fb7d8b03a9d5756e",
+  "sourceSetSha256After": "2afa0744de8f8a06aa59ab563c24369e49a38c779c765106fb7d8b03a9d5756e",
+  "sourceCount": 54,
+  "allPngBytesMatchManifest": true,
+  "releaseSourceSetSha256": "2afa0744de8f8a06aa59ab563c24369e49a38c779c765106fb7d8b03a9d5756e"
+}

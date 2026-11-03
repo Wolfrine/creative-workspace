@@ -80,17 +80,22 @@ test('real MCP annotation reaches authenticated writer and private Read without 
     expect(privateReads).toBe(0);
     await page.getByRole('button', { name: 'Emotional Heartbeat', exact: true }).click();
     await expect(page.getByRole('button', { name: 'Quiet anticipation. Show interpretation.', exact: true })).toBeVisible();
-    const evidence = '.local/heartbeat-rework/real-browser'; await mkdir(evidence, { recursive: true });
+    await expect(page.locator('.heartbeat-rail[data-coverage="continuous"]')).toHaveCount(1);
+    await expect(page.locator('.heartbeat-rail-segment').first()).toHaveAttribute('data-source-end', String(revision.snapshot.plainText.length));
+    const evidence = '.local/heartbeat-current/qa/real-browser'; await mkdir(evidence, { recursive: true });
     await page.screenshot({ path: evidence + '/writer.png' });
     await page.getByRole('button', { name: 'Read this page', exact: true }).click();
     await expect(page.getByRole('region', { name: 'Private reading mode' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Quiet anticipation. Show interpretation.', exact: true })).toBeVisible();
+    await expect(page.locator('.reader .heartbeat-rail[data-coverage="continuous"]')).toHaveCount(1);
     await page.screenshot({ path: evidence + '/reader.png' });
     expect(await inventory()).toBe(before);
     await store.put('grants', grant.id, { ...grant, revoked: true });
+    await page.getByRole('button', { name: 'About this AI interpretation', exact: true }).click();
     await page.getByRole('button', { name: 'Refresh Heartbeat', exact: true }).click();
-    await expect(page.getByText('No Heartbeat for this revision. Ask your connected AI for a full reading.', { exact: true })).toBeVisible();
+    await expect(page.getByText('No AI interpretation for this revision.', { exact: true })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Quiet anticipation. Show interpretation.', exact: true })).toHaveCount(0);
+    await expect(page.locator('.reader .heartbeat-rail-segment[data-coverage="continuous"]')).toHaveCount(0);
     expect(await inventory()).toBe(before);
     await writeFile(evidence + '/result.json', JSON.stringify({ syntheticOnly: true, actualMcpHttp: true, actualFirebaseAuthor: true, actualServerScopedReads: privateReads, sourceCollectionsUnchanged: true, grantRevocationHidden: true }, null, 2));
   } finally {

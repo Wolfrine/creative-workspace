@@ -1,0 +1,1371 @@
+{
+  "schema": "noveliaa-heartbeat-current-evidence-1",
+  "baseCommit": "6044ccf324a9a2f0aab42e523b63384bedef75f8",
+  "priorOwnerVerdict": "rejected",
+  "ownerAcceptance": "not inferred",
+  "dataset": "synthetic public renders; no production manuscript writes",
+  "central": {
+    "version": "0.2.3",
+    "base": "d097786cf3d6c5a2859439112afdd39538316567"
+  },
+  "sources": [
+    {
+      "path": ".firebaserc",
+      "sha256": "2f5d0059de2560b628e93ffe5e54936b2f85530a459de61225b51b3e4746b8e3"
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "76df76b4106045bda47e0b65bce783eea6ae147640b6a9ad2c142ab7d2844110"
+    },
+    {
+      "path": ".github/workflows/firebase-cli-check.yml",
+      "sha256": "44f357b78eeca75f8375b72625ee127e2ec0b35a9378935f665e3ad16faef154"
+    },
+    {
+      "path": ".github/workflows/firebase-deploy.yml",
+      "sha256": "b6bb1bfceec620c6f04c0893b1ed7d5510598e5eaffd330f194e6b1c90f18984"
+    },
+    {
+      "path": ".github/workflows/firebase-preflight.yml",
+      "sha256": "95298d5236b29f02aa909d2db4826ad568c4eee21463b65a223dc05d7d26790d"
+    },
+    {
+      "path": ".github/workflows/firestore-usage.yml",
+      "sha256": "8b32a341c5e19fbe9449b973f8de4985f06bd4a70d914e39b3e8b94cfe32c7cf"
+    },
+    {
+      "path": ".github/workflows/phase1-ci.yml",
+      "sha256": "265d55bb5331eff364835d2789df30485fdbf86e325b23412e871ec5206ded5d"
+    },
+    {
+      "path": ".github/workflows/plugin-bootstrap.yml",
+      "sha256": "b8218adea62a2a228d691f0d1e13c927e0eb313359ddd528ffb557d8a2415359"
+    },
+    {
+      "path": ".github/workflows/plugin-cost-controls.yml",
+      "sha256": "4205065ec6e8175b429cfaf4fbc02ffe74b84920fcc5be4a9b1b43acad527513"
+    },
+    {
+      "path": ".harness/dev-environment.ps1",
+      "sha256": "2b9bcb11253782851e37758e721ead92d51239a64d372e9bd3048c3225ce489f"
+    },
+    {
+      "path": ".harness/objective.md",
+      "sha256": "6ca7dc240f8836c9ba8a0cca00bbbafe2814b0c9b2e63969081d62528a72f403"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "c0793ae03249f3d0c7186428741abe39c80e938f394c9129a191b138cc1d40e6"
+    },
+    {
+      "path": "INTENT.md",
+      "sha256": "2fe34dc210e4d094504497935979ddecd35b64dc5bd02a0f6e2b0307da91b6cf"
+    },
+    {
+      "path": "deployment/cost-policy.json",
+      "sha256": "c6ba3b9a523924270665a1d0dedfb6c1f19a6a12d578569ebf628ff1e89458ff"
+    },
+    {
+      "path": "deployment/firebase-binding.json",
+      "sha256": "644de45a09bb339a4a2610d76c95a7e5cc815c62877e7a690e8b0375b15a5477"
+    },
+    {
+      "path": "deployment/workspace-reset-request.json",
+      "sha256": "cd7954fb39aca449719c934e98894a1941cf9347bd543ae5399b87a54bb47433"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "f44fb0ae98e5593efb0f8281536158d99f67a90434589911dd79d092b2d142f6"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "sha256": "75c2af0c4de54f58849d52867559605e9b95c023b89179d1f72ce798281aa401"
+    },
+    {
+      "path": "docs/SYNC.md",
+      "sha256": "781ff2cb4b1d0c391193f1e1d2717bc5e50be93440679d93685799c817db980e"
+    },
+    {
+      "path": "docs/design/EMOTIONAL_HEARTBEAT.md",
+      "sha256": "268cd327a37483d660ea96f2dc2b9657dfe14a4fbb640be6dd6b36dbf2b9d097"
+    },
+    {
+      "path": "docs/design/LIBRARY_READER.md",
+      "sha256": "61c04687e395f75f11ac9efd786361714ffdb5b38228be61bfcfd8eadd27804a"
+    },
+    {
+      "path": "docs/design/PLUGIN_CONNECTION.md",
+      "sha256": "f6999098cabd8c21aef4e331a1ddc735f03a6b4c7d3d64ee51d5fd43baacf7ba"
+    },
+    {
+      "path": "docs/design/READER_LIBRARY_UX.md",
+      "sha256": "2136153f3fbf3a031ee1ae4d246856b89977c32614b4ce386d30623c514884c2"
+    },
+    {
+      "path": "docs/design/library-reader-critic.md",
+      "sha256": "dc48947d66f4cf5a00e3ec878358d82564d96d9fa476cd597fc1d7795931141d"
+    },
+    {
+      "path": "docs/design/library-reader-qa.md",
+      "sha256": "5b2d180da82b4a0e81cdb6ded6e1fc711a27d1d9966951b2d2f543fc759aec2d"
+    },
+    {
+      "path": "docs/design/populated-navigation-audit.md",
+      "sha256": "dea715dce73eec45feacb2f257a536e203ff8ac6c5b0685c9ca4470d535168b6"
+    },
+    {
+      "path": "docs/design/reader-library-ux-critic.md",
+      "sha256": "5abbd54b4528d669b17c77fa22b06f1fa3a3e47f27acae17c4023805141b7995"
+    },
+    {
+      "path": "docs/design/reader-library-ux-qa.md",
+      "sha256": "1b83db6156550cdf39a04567c7de5aac06e4ce8a7a0803270d8577004ffa5beb"
+    },
+    {
+      "path": "docs/operations/firestore-usage.md",
+      "sha256": "923af78b0eafc5ea7646870212aa7fc3b5cf2f529ee051f1952478fa16826066"
+    },
+    {
+      "path": "docs/research/reader-motion-2026-10-25.md",
+      "sha256": "a9607afa58567b16072189a3bbb0f4821af0f6911c69226f73d173804aa4dd81"
+    },
+    {
+      "path": "firebase.json",
+      "sha256": "806f451b448886899bbafb925fc7851aa299b26507ff56b7d1d652e334c96edc"
+    },
+    {
+      "path": "firebase.spark-test.json",
+      "sha256": "93b45344f564c34cbfc710559bda4bf0c1da9974764f247a51392e95c017de5c"
+    },
+    {
+      "path": "firestore.rules",
+      "sha256": "124b44b93e83e832105ee7da5ea62b4e9acef691e74a66581f6e3ff25e466d30"
+    },
+    {
+      "path": "functions/package-lock.json",
+      "sha256": "7bd00d6567a33f06658d96f13d1006922e75874fa2296cfea4a8b4a763e7b73f"
+    },
+    {
+      "path": "functions/package.json",
+      "sha256": "68d7aa5940efe2b3786cc81aa8b095e69cc637c43d0955c196c778d88ae14e1b"
+    },
+    {
+      "path": "functions/scripts/bootstrap-plugin.mjs",
+      "sha256": "dde73a0ac05dc7325ce6f28e237637dc12c59b4f8e7d793c8d23c4ba43f5484b"
+    },
+    {
+      "path": "functions/scripts/cleanup-oauth.mjs",
+      "sha256": "789c79bfb914c32f2d759fe2dac2c45cfe997680260d968cd5dbaa90cc0c1ed4"
+    },
+    {
+      "path": "functions/scripts/configure-cost-controls.mjs",
+      "sha256": "802549374e1317aec14af7f4262d981138f05138489aacd90ec6ed86f3be0d6d"
+    },
+    {
+      "path": "functions/scripts/deploy-spark-rules.mjs",
+      "sha256": "d338bce20e247ff1e7ad65e93db8a7803bf789c2d3a9ebbe57809b55829392cc"
+    },
+    {
+      "path": "functions/scripts/firestore-usage.mjs",
+      "sha256": "50b18bb55f294a4212effadbd21716ca7de0bcc97fc71e514804f2d298e3f658"
+    },
+    {
+      "path": "functions/scripts/inspect-firebase.mjs",
+      "sha256": "2aa23b08e7156f940fcfc56aefd00b384e45714aa9435087807bbb32a8fbbcf4"
+    },
+    {
+      "path": "functions/scripts/prepare-release.mjs",
+      "sha256": "d1e42f22f65b5df42664bc17f303af5724bfee6a33793ed65b024e2ac5eacb7c"
+    },
+    {
+      "path": "functions/scripts/prepare-spark-release.mjs",
+      "sha256": "9f2fb34d628455ac47f612f5f39abe0ab20fd8ab3720817678e0c2f7c67b5b5d"
+    },
+    {
+      "path": "functions/scripts/publish-plugin.mjs",
+      "sha256": "4b294181e89309ff19d93b4d23ba3c2a913623ca7b8b2bbc1ca5ae84df38f216"
+    },
+    {
+      "path": "functions/scripts/reset-workspace.mjs",
+      "sha256": "be60cb64e88cc2aad6137d3acde7428620afddeb19d54a72ebd2e62a55575072"
+    },
+    {
+      "path": "functions/scripts/restore-backup.mjs",
+      "sha256": "4ddc6318ee3ce6d415012a33e1ab0a3b66cff20d697c0b81adcefecb89447f75"
+    },
+    {
+      "path": "functions/src/backup.mjs",
+      "sha256": "16329332bcd789476e28aa36f7fc041de0f33c4bb4b60d48b4866a35f670436d"
+    },
+    {
+      "path": "functions/src/firebase-store.mjs",
+      "sha256": "2ae08ebd7dadebeca707c503462015975021705d465c82de35a8b83e31ccceae"
+    },
+    {
+      "path": "functions/src/index.mjs",
+      "sha256": "bcf1ab40acaad476f423954357112a22396aa693e28cb5a1a2762973e59c62ef"
+    },
+    {
+      "path": "functions/src/integration-cleanup.mjs",
+      "sha256": "7f4406f17af229d7be0ede5b09a96b75720fb44ebfa7d3b146c3bf2703b35ceb"
+    },
+    {
+      "path": "functions/src/integration-heartbeat.mjs",
+      "sha256": "0bbf666dcdbdc3fd3ec6bef9162d29448211876d71d4fcfa600d8b3fb99c62cf"
+    },
+    {
+      "path": "functions/src/integration-http.mjs",
+      "sha256": "64a496a624b22e46abd16555e44979168e67282fe5dc8f101cdbed1efbdc6b20"
+    },
+    {
+      "path": "functions/src/integration-oauth.mjs",
+      "sha256": "bab8edbda96dcb6a4e0ed92c5070bbb131c2916c8ee520edcfeada7d8dc85169"
+    },
+    {
+      "path": "functions/src/integration-store.mjs",
+      "sha256": "874000b18f4d2f5448370ecaf5e2dfc40abc3efe1ff97d66dd3227fbf9e1836c"
+    },
+    {
+      "path": "functions/src/integration-tools.mjs",
+      "sha256": "3ad8b013183b74ac149f70789e84a764406d8957d795b960f95cf6c050fabe4e"
+    },
+    {
+      "path": "functions/src/integration-writing.mjs",
+      "sha256": "d49b2940c6f212ddbf98c7068c92377ee2a938d7962083790c4bfb13f4706e74"
+    },
+    {
+      "path": "functions/src/mcp-entry.mjs",
+      "sha256": "3cac3c06bff28dc65908d2d9fbed63a08cc744c74803a4adb0e6dd30b17d4ae6"
+    },
+    {
+      "path": "functions/src/service.mjs",
+      "sha256": "c1f51e584a8546e05ed674b2f794580d1e7b00d7bebb013e11f5ce696390128f"
+    },
+    {
+      "path": "functions/test/callable-emulator.mjs",
+      "sha256": "41cb3acdc5df8bbbf832b07c34ce8ce4263fda0c8dc20a7bcc868f1e2ab3bfe0"
+    },
+    {
+      "path": "functions/test/cost-controls.test.mjs",
+      "sha256": "9f2dcf6f9ca3882075b2764b555517befcdfa3225642bb5b436798194f8057e0"
+    },
+    {
+      "path": "functions/test/firebase-emulator.mjs",
+      "sha256": "1810dd44ad94795299c0c542296ef3a64a912579d6776efe4176d308737f7dc6"
+    },
+    {
+      "path": "functions/test/heartbeat.test.mjs",
+      "sha256": "4410a58e4bd8efdca418fed4857ce7464abdb4759aadc7cdd76f9ba561507cde"
+    },
+    {
+      "path": "functions/test/mcp-integration.test.mjs",
+      "sha256": "b6408ad5831080631fa284ec5f90511d389b9e064fdbfdb4a31fec3e79401122"
+    },
+    {
+      "path": "functions/test/mcp-oauth-races.test.mjs",
+      "sha256": "03b90f89a8e5788710fe597926805818712df7e667f20229a9a8757080278b1d"
+    },
+    {
+      "path": "functions/test/service.test.mjs",
+      "sha256": "2334fd43b506cbaadac8de3147d4f2da8e4474b8383d63087691032745a64554"
+    },
+    {
+      "path": "index.html",
+      "sha256": "27b11d42147071dd9b96e326bfca31de9c52d003d9f95b5fdaa526620939d020"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "67c57cc87a9fd3713e4c84ecc2464e55bd61061b028e266bc685feb29d687704"
+    },
+    {
+      "path": "package.json",
+      "sha256": "67a5fd939693f62325771f0a0a34a43456436a912c7b9f37c65d6e6ac88fe3d7"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "da8099a74c290964169344d9d485d38aeac2308524d06cdc3d8fbb0edd0bd6d0"
+    },
+    {
+      "path": "playwright.spark.config.ts",
+      "sha256": "4421d60921895bac6d98b2804ce70ae47e62db4283a3e476353bd97007d1a446"
+    },
+    {
+      "path": "plugin/README.md",
+      "sha256": "2af0b470e473be94a1456fa6b7cca99cab0a0d6c6b2767f9e7460c74d36ab14c"
+    },
+    {
+      "path": "plugin/noveliaa/.app.json",
+      "sha256": "b770a862f7eab6d9a68922a79b941b8cfc46bf0d747a423348696c577c373f51"
+    },
+    {
+      "path": "plugin/noveliaa/assets/noveliaa.svg",
+      "sha256": "5ef276685dd0a12eb853fa8fcca0aa9d3c075a3d6f027ce120e04b35748e2a64"
+    },
+    {
+      "path": "plugin/noveliaa/plugin.json",
+      "sha256": "0b1b425eb8a930b351d0f477888ac662c783eec6e38a904c7da420d786015356"
+    },
+    {
+      "path": "plugin/noveliaa/skills/collaborate-on-writing/SKILL.md",
+      "sha256": "288258e47c836a9fd18063294f552fb1c7aee5d5f9597829ed1c06c380dd461c"
+    },
+    {
+      "path": "plugin/noveliaa/skills/collaborate-on-writing/references/heartbeat-continuity.md",
+      "sha256": "966c7e8c152c17468a1132b72de390f0002c6eb10c097552a6efcc98a873f569"
+    },
+    {
+      "path": "plugin/noveliaa/skills/explore-writing/SKILL.md",
+      "sha256": "27e09c0ee12f627723565960b2474171e25124f0c78c0810d4a6c24190e05bfb"
+    },
+    {
+      "path": "plugin/noveliaa/skills/story-research/SKILL.md",
+      "sha256": "90c3c95cf627baa08b66f678bab3c363c61f743346b4dd0ae53e6687b8b1db4a"
+    },
+    {
+      "path": "public/favicon.svg",
+      "sha256": "5ef276685dd0a12eb853fa8fcca0aa9d3c075a3d6f027ce120e04b35748e2a64"
+    },
+    {
+      "path": "public/manifest.webmanifest",
+      "sha256": "ea41bb72a70c94f8e7e78bcdc9701c2465e1eb84d4dd2e9a8dcb3b55e44d09c8"
+    },
+    {
+      "path": "public/sw.js",
+      "sha256": "87d3ee67ec4932437fff479bb16470dae143279c60440129acb4cce0fca22643"
+    },
+    {
+      "path": "scripts/build-pageflip.mjs",
+      "sha256": "ef9bd42af7447f67a727aea29120baf69aaafa391b5d971a9b03405d565c102a"
+    },
+    {
+      "path": "scripts/capture-library-reader.mjs",
+      "sha256": "67620ae5541f1b119a0ea2b37f5baa894793ac6afe45560ac073a6481e87a1ca"
+    },
+    {
+      "path": "scripts/capture-populated-reader-motion.mjs",
+      "sha256": "9f133aad65ba93f18dbaebb8eeede2aacbfa6ab00805b57336df1c5a65879d35"
+    },
+    {
+      "path": "scripts/capture-populated-ux.mjs",
+      "sha256": "1e3bf1e80ebda713a64db1cb039847717b53e0f36c2e4775e3ad8e670dad60a8"
+    },
+    {
+      "path": "scripts/capture-reader-motion.mjs",
+      "sha256": "efdbc9f13a2f41169c205b92a1744c04ea42c261218a040170b31c807934ac7e"
+    },
+    {
+      "path": "scripts/capture.mjs",
+      "sha256": "e004176faad480b808f4f0544101007b52c8b0744af64a6317462dc83e110a1d"
+    },
+    {
+      "path": "scripts/check-populated-navigation.mjs",
+      "sha256": "f23fba61f1d5628d415c20e9241d2a8f745b3ebdd7d6dc9907b67a2cc4ff2410"
+    },
+    {
+      "path": "scripts/crash-recovery.mjs",
+      "sha256": "325255b459cb97f81bc910f2a3926e48ea0759ce331a924c5ec9e740c5032acb"
+    },
+    {
+      "path": "scripts/firestore-usage.test.mjs",
+      "sha256": "62ea33256ce26772a83b8d6d5b5012d91417137d8547476beb8bb8563a8eec0f"
+    },
+    {
+      "path": "scripts/measure-reader-volume.mjs",
+      "sha256": "cb0066b7869386ed68e8b7152d4af36e56d11464d4852c1a034e462cc1f35cb2"
+    },
+    {
+      "path": "scripts/package-plugin.py",
+      "sha256": "9c1c9e2a0a6c5ae0de234cd22004917c4b4e567b22986efe127a2ce9bd4863ec"
+    },
+    {
+      "path": "scripts/profile-writing.mjs",
+      "sha256": "48d30c40ed37e3a1f4a9916eacd09d4d4b810039106e0f958a05cebb0dfa7bd2"
+    },
+    {
+      "path": "scripts/project-evidence.mjs",
+      "sha256": "73008467aef13ce3529996f2f0a370051d14dede4eef8f602474bc558b34c4c0"
+    },
+    {
+      "path": "scripts/record-heartbeat-candidate.mjs",
+      "sha256": "92d44d85cb5c35ba109238c5d099a03095a31b4ccffce634329fc3e2ab97481b"
+    },
+    {
+      "path": "scripts/record-heartbeat-rework-candidate.mjs",
+      "sha256": "b6e20b7ce0eaf847fb81ea27802e0c5f96c48d2ffc5e11f044a185311c1b8211"
+    },
+    {
+      "path": "scripts/record-library-reader-candidate.mjs",
+      "sha256": "cf0c90cbc483091743475d74944509b3ee56690d31518136f3b57e644e64a56c"
+    },
+    {
+      "path": "scripts/record-plugin-candidate.mjs",
+      "sha256": "92946930f67dc3f1de72fd1348d8a9c261a9c0cf805d0a24b044dffba3f4df4a"
+    },
+    {
+      "path": "scripts/record-reader-ux-candidate.mjs",
+      "sha256": "46bbd74eb0d73e6f292672bff42a136b42eed2c6c832585c95f152559bdfdca8"
+    },
+    {
+      "path": "scripts/record-refinement-candidate.mjs",
+      "sha256": "e4effb978dd27f986c8f10b4c762342a0345ef6ff252281078085090ddab74dd"
+    },
+    {
+      "path": "scripts/record-spark-candidate.mjs",
+      "sha256": "d39c2303af274348acaf227c63028703b58ade94dc80d29f700509eb863565dd"
+    },
+    {
+      "path": "scripts/record-sync-candidate.mjs",
+      "sha256": "27093a0bd9f6f6b68a4658830da2c3082ef21c4b3878ac6d1d36fa6c75fc03dd"
+    },
+    {
+      "path": "scripts/record-usage-candidate.mjs",
+      "sha256": "4d296a3089c446465720cf132bf61b6b06ce2727b152815e847410bf274417ac"
+    },
+    {
+      "path": "scripts/record-workspace-reset-candidate.mjs",
+      "sha256": "13b6e635eec2375cd752df45605b09f02814f3a23cabde47fbc31fe71cac6a8c"
+    },
+    {
+      "path": "scripts/summarize-firestore-usage.mjs",
+      "sha256": "7d69fcbfd75e67e6d2f7b5eb4bd0b310caa9b5a6560d6e6c9ff1a210f46c9512"
+    },
+    {
+      "path": "scripts/verify-candidate.mjs",
+      "sha256": "5ea0bc12597ef0055136371cf7b0508abfe8d4f250778aad3e3d782ba7c43b61"
+    },
+    {
+      "path": "scripts/verify-deployment-candidate.mjs",
+      "sha256": "83af75ca9573d0078905b896729e0aa1e65589a712ba7080f2b0ecdb6b77d01d"
+    },
+    {
+      "path": "scripts/verify-heartbeat-candidate.mjs",
+      "sha256": "a93e29a637799929730a9e9bf18435408eca58b290240f3831b00199c66a55b2"
+    },
+    {
+      "path": "scripts/verify-heartbeat-current-candidate.mjs",
+      "sha256": "e049f96a9d33bb8fe928890bc6eb82925aa9a5cca0c852199ff9207e8e138c7f"
+    },
+    {
+      "path": "scripts/verify-heartbeat-rework-candidate.mjs",
+      "sha256": "db05f484d919e82ddad78dd66312e80b92e8a1eb10cce4dc07c05e7436fc8380"
+    },
+    {
+      "path": "scripts/verify-hosted.mjs",
+      "sha256": "9744a655bb978110984cbc471cfc851a6a0ffe35bb7c2c9e4025dea3adeedd4c"
+    },
+    {
+      "path": "scripts/verify-plugin-hosted.mjs",
+      "sha256": "8978affe1f21a8df69db3fcf9a9aedaf8b90b61b801fceb943a8081323784343"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "0479c5432c85507b8df5ba043ff7320a58b064ff164addfb7891401bc20a60fe"
+    },
+    {
+      "path": "src/AppHost.tsx",
+      "sha256": "ce43936760e2f7d539002fc35a9e6cbe6b3e323db68edbd1a2ab2b1c9ba01719"
+    },
+    {
+      "path": "src/cloud/firebase-access.test.ts",
+      "sha256": "902c86f944fa566a9405f9022381333ab0b45d11a920a1ab49ee40f74e3bbb91"
+    },
+    {
+      "path": "src/cloud/firebase.test.ts",
+      "sha256": "d3cd5e98b0761bfe573f4b677b2d7ac2341d38b4dba7c723b8e4aeaf94ff3601"
+    },
+    {
+      "path": "src/cloud/firebase.ts",
+      "sha256": "61e6dfe8cf0ae732d34a80b95c5e66f2730aca25f596b83c8eb5e2435f51e2ad"
+    },
+    {
+      "path": "src/cloud/integrations.ts",
+      "sha256": "771dc3ca8484dba9d01c9989c56a6f06f502cfa5f62e362f185555d916757375"
+    },
+    {
+      "path": "src/cloud/spark-listener.test.ts",
+      "sha256": "1868d8971d193f71f0b509b551331ea9bcd0b561e91893c7d9ade86d6447086c"
+    },
+    {
+      "path": "src/cloud/spark.emulator.test.ts",
+      "sha256": "12672df8c1f146e9c6e140d545353e08ecf56fa804d3a5edbce48e037e05942e"
+    },
+    {
+      "path": "src/cloud/spark.ts",
+      "sha256": "abb7b693f16eff907b3421c7ecbe83331de0254e88e86764481d9c99cd569013"
+    },
+    {
+      "path": "src/components/DocumentShelfRow.tsx",
+      "sha256": "df6b820bce505dfa5a10737795a31153d69cef9000d58937ab105d00ba833f24"
+    },
+    {
+      "path": "src/components/Integrations.tsx",
+      "sha256": "7058938437bfbcaa94e90fe5fa0b13c7a4d12352fee19d4257256614d5473909"
+    },
+    {
+      "path": "src/components/Library.tsx",
+      "sha256": "c443d154178f9959e4f8b9ba2d771ecd389f3c5ee3a1be150e34a0e092c7a9b5"
+    },
+    {
+      "path": "src/components/Modal.tsx",
+      "sha256": "b5d290d7073a27442d178b528c0447990de6042a6b1aee8c2e3a3300f11e73ce"
+    },
+    {
+      "path": "src/components/ParagraphIndent.ts",
+      "sha256": "687a0eae5fbe04f96e2921efb4ddbd5dc2b01169c4a8e8ac981713321d6d2fd7"
+    },
+    {
+      "path": "src/components/Reader.tsx",
+      "sha256": "4fcb26530dbbcc3ff24611b1554d005ae53f9227610a64972c32d695ae2b3c92"
+    },
+    {
+      "path": "src/components/RevisionComparison.tsx",
+      "sha256": "2c5b5313bb91b0d6be008e8fd1516ce289da856fa14c6668f78914b3797cad94"
+    },
+    {
+      "path": "src/components/Writer.tsx",
+      "sha256": "c7138130adec7b7590ecd5c5f944125248a37d067c9a26ed5ff92984b426f2b5"
+    },
+    {
+      "path": "src/components/integrations.css",
+      "sha256": "7ccfdd94b59273204080530185d6fc236952f825f2e94717d87817998bbc8bc0"
+    },
+    {
+      "path": "src/domain/codec.ts",
+      "sha256": "fbe53e9aa60a72e85be7b8ff6e2d62b89fbf0742ad8626d2fefb95c62685525a"
+    },
+    {
+      "path": "src/domain/model.ts",
+      "sha256": "9bd450032340a32e4ca4abba854bcdd30c60c4be5b648d58c98a0e888465c900"
+    },
+    {
+      "path": "src/domain/paragraph-formatting.test.ts",
+      "sha256": "5ee2537bb58b7f4449b5a2cfb9e19b2cb2f0c8fd84f71fe32f0aa96a33545e8a"
+    },
+    {
+      "path": "src/domain/render.ts",
+      "sha256": "e74ad5040ece35e22f1c13941add23f2c5515d37744fc5fea0f75dff8c3ea517"
+    },
+    {
+      "path": "src/heartbeat/Heartbeat.tsx",
+      "sha256": "b859ad9f489621f9ff9b6ddc0d4ea47f797464be6d0bbd229720ee786be2f9d7"
+    },
+    {
+      "path": "src/heartbeat/decorations.ts",
+      "sha256": "c699d1799b0bf7ec81ba214b8a6797c7b9043e2842af2d78f0ca5879e483965a"
+    },
+    {
+      "path": "src/heartbeat/heartbeat.css",
+      "sha256": "9264d3a3aabb2aebd4ebe04a7288ee8aebc805ae671a689211e0eddaff571586"
+    },
+    {
+      "path": "src/heartbeat/model.test.ts",
+      "sha256": "9177cbdad4eeab2d56171247f6ae6b944993b1bbd2aadd4f9666987b8e345573"
+    },
+    {
+      "path": "src/heartbeat/model.ts",
+      "sha256": "150a56b55c146d2daca2325c674600d05657ea1a0a513f34e553db235d51b34e"
+    },
+    {
+      "path": "src/heartbeat/presentation.test.ts",
+      "sha256": "3df4b2dfa91531dad8b49113c87a95eba04cb8b2489f7d31d1663917e07d071e"
+    },
+    {
+      "path": "src/heartbeat/presentation.ts",
+      "sha256": "1822be0e4ceaaecb318ccefb6cf75917fc015cff0ecc314e3eed943a65cadcbb"
+    },
+    {
+      "path": "src/heartbeat/rail-geometry.test.ts",
+      "sha256": "507f08a94f530faa8b78759cb1083cea88237adcd01f242331b56a4a977ae896"
+    },
+    {
+      "path": "src/heartbeat/rail-geometry.ts",
+      "sha256": "5457d77d3622ffcba043fe3f80cbd3b13b2084c1e628105c0ffec92a23d3fa7d"
+    },
+    {
+      "path": "src/heartbeat/rail.css",
+      "sha256": "0caec97f8da0f5e66ca966ef0205619f871d3e61e3b41419ab454096479c0489"
+    },
+    {
+      "path": "src/heartbeat/rails.ts",
+      "sha256": "3ac9146d6ee0d1443fde0508d8441cb35d2c7640f7d21f1d19c23f2b44d7e289"
+    },
+    {
+      "path": "src/heartbeat/ranges.ts",
+      "sha256": "6e83454d7472e756e7857b31802bc6709e06c5c7c5041ab99a3b2a00bb7ba53e"
+    },
+    {
+      "path": "src/heartbeat/useHeartbeat.ts",
+      "sha256": "e899eb05bf882ef3c007161c8521b21227b3503384cc65bfe0dcb434e2cc7a21"
+    },
+    {
+      "path": "src/library-reader.css",
+      "sha256": "00574dd9e6006999e0b294e9c45747d1519c92da5fc64f9f10d8eb146a2264b1"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "060f787e8eb7a2b1f7c0c16cc33b1d054663f5ee076c41f5e8495b60286bcf6d"
+    },
+    {
+      "path": "src/reader/page-turn.ts",
+      "sha256": "11a2f9a35d50457fa95557ec4f095075aecb66effb289f408cdb05ad7a15f61c"
+    },
+    {
+      "path": "src/reader/reading.test.ts",
+      "sha256": "43d10faf5db6ee9e4bf62161f66fa61e2ae18c64b02455129a2953143c9968e8"
+    },
+    {
+      "path": "src/reader/reading.ts",
+      "sha256": "613777b5137f3c52455fdb5d744e03e4e9a86a12fc0a878c52080080a64a69d3"
+    },
+    {
+      "path": "src/state/autosave.test.ts",
+      "sha256": "759514e6b5b40b73156869daa413bda50adc881a71b0f04a15f90746a14dcd19"
+    },
+    {
+      "path": "src/state/cloud-integration.test.ts",
+      "sha256": "2f19396df1315e61f8ebed97ae2f98023137b39fb277e4f8a66e0f7718eecd53"
+    },
+    {
+      "path": "src/state/collection-rename.test.ts",
+      "sha256": "5c191c8f2c32db3eea6b70e7feb91e7858957de6b04c387d77d7bc6da7b661ae"
+    },
+    {
+      "path": "src/state/engine.test.ts",
+      "sha256": "6ffa03ca8178fad5ac972704ce7ca9e951487cf7044a0c5863c8ec128c25aee0"
+    },
+    {
+      "path": "src/state/engine.ts",
+      "sha256": "02946bd71c5ce3b6fb87eeb861fb8e81baf1f3505bd0e2a214b7bd9c8d330e0f"
+    },
+    {
+      "path": "src/state/useWorkspace.ts",
+      "sha256": "372c47449e45873b1b5f3a711e9f80ffadf23fc2528dd3dedb88d9458aec8484"
+    },
+    {
+      "path": "src/storage/archive.ts",
+      "sha256": "3e146877962af16e9ef5a0f49514ada68df31dc1ccfa5d401a782c5cc1de6875"
+    },
+    {
+      "path": "src/storage/database.ts",
+      "sha256": "3f3064eab1a4868b0105e12fa8aee903caa94c41f216662b3ca76e9a1ca458d8"
+    },
+    {
+      "path": "src/storage/draft-migration.test.ts",
+      "sha256": "46ee52b87a6375532d6cb7c7c0fb29de6135ffd613c9e09399686517e9db8f38"
+    },
+    {
+      "path": "src/storage/workspace-reset.test.ts",
+      "sha256": "5718191258a3bd0cf9dae2cc040f65b81f1af86466092ae5f05928cac24b0f25"
+    },
+    {
+      "path": "src/styles.css",
+      "sha256": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294"
+    },
+    {
+      "path": "src/vendor/pageflip/LICENSE",
+      "sha256": "88d7b609a3be5efa2abe8648ddc35d5489579db5e06299545760df45c2c32d66"
+    },
+    {
+      "path": "src/vendor/pageflip/page-flip.css",
+      "sha256": "d51eb210784f4539d70bc2a4a9ae96768e271d7aae6730cc9ddba03ebebcbab1"
+    },
+    {
+      "path": "src/vendor/pageflip/page-flip.d.ts",
+      "sha256": "d45d561ca29bd8cd771f65b458d0e7067bf61bfa3de6c2779be6ba152fe59b1b"
+    },
+    {
+      "path": "src/vendor/pageflip/page-flip.js",
+      "sha256": "6e13029cb2242e7860bcdfa68a8745ccf12c4fae8f1589b7bfb28c5691288fda"
+    },
+    {
+      "path": "src/vendor/pageflip/provenance.json",
+      "sha256": "badb5b095e78b5c7470786311a15c77e7a53ac2ad01adfc5dc4b23c1128bbcfb"
+    },
+    {
+      "path": "tests/browser/autosave.spec.ts",
+      "sha256": "1d005eaf15eece17dc9ed273c6d018b950e054c0b2450394d832708e27ab790f"
+    },
+    {
+      "path": "tests/browser/conflict.spec.ts",
+      "sha256": "3523cbdf5518963d75b37332f7d9dacb6d1b34b98eb9140a8aad1dbc25b6527d"
+    },
+    {
+      "path": "tests/browser/heartbeat-current.spec.ts",
+      "sha256": "ae3e95454954e311fb353ff56c068b0453d8bcb134b0efe684409138df6906b7"
+    },
+    {
+      "path": "tests/browser/heartbeat-layout.spec.ts",
+      "sha256": "e2b4fd7e49b1b29615e5df6600a12f8554e071abe339ef219459e64cddf81334"
+    },
+    {
+      "path": "tests/browser/heartbeat-visual.spec.ts",
+      "sha256": "ece17daef90cd56e8680f2b8ecebb1baf7b9515560bf85e92de400bc38a194e4"
+    },
+    {
+      "path": "tests/browser/library-reader.spec.ts",
+      "sha256": "f7bb71fda99f3a03736bf84abac502b6d4eb1fe5972a480036ae99324e8039c3"
+    },
+    {
+      "path": "tests/browser/library-release.spec.ts",
+      "sha256": "73cea9323dee59d301203768ad1d3a05896c5ed06320dfe29e9a1ec533dfdb95"
+    },
+    {
+      "path": "tests/browser/page-turn-lifecycle.spec.ts",
+      "sha256": "0dc7c962d0fb212adf713db268fa8848a1d9fadb5fc160cf10b8e1ca71e7b482"
+    },
+    {
+      "path": "tests/browser/plugin-legacy-cache.spec.ts",
+      "sha256": "52fe641c09048a0a5512fe27f550b83df6230569e7ae9c2d6769d5fa933a3b21"
+    },
+    {
+      "path": "tests/browser/plugin-ui.spec.ts",
+      "sha256": "6758b0f5529797f62e90939df9268626728fd082d3475f803c829bc536e56993"
+    },
+    {
+      "path": "tests/browser/populated-journeys.spec.ts",
+      "sha256": "865eb2eb79d94ea503e16f91144f8b0057d938e14b85420b9a0fda1f7019f458"
+    },
+    {
+      "path": "tests/browser/production.spec.ts",
+      "sha256": "d103bb48aa541eee84d939ecc456629343df308802162f58542e6eb5c85c630a"
+    },
+    {
+      "path": "tests/browser/writing.spec.ts",
+      "sha256": "5f4d192149b4cf3b9e8ef237178f0d60df90906b5a4e1b2c91064c482f15123d"
+    },
+    {
+      "path": "tests/helpers/emulator-auth.ts",
+      "sha256": "4e32d5e9ddeb705acd4bff121e59583b4dee0a02381db076beb38447bcff2bcc"
+    },
+    {
+      "path": "tests/helpers/heartbeat-continuity-fixture.ts",
+      "sha256": "99713c94fe596b9e5c8a58c6df34792877170e37d0e2e24b45aa9b0896835c83"
+    },
+    {
+      "path": "tests/helpers/legacy-writing-worker.js",
+      "sha256": "3b07b5bb98a085f5d46fb399f98e1ef2684a07b291986956c1b616573acf4bbe"
+    },
+    {
+      "path": "tests/helpers/legacy-writing-worker.json",
+      "sha256": "f75f1e1db4d3e938c99857b3543217e7346c001beb629d71460fe4d3d31e54de"
+    },
+    {
+      "path": "tests/helpers/populated-workspace.ts",
+      "sha256": "e4d71c1ddf3e5241b31f32af9c1007dbb44d6955c3d8a2a4f8012100fc7deeae"
+    },
+    {
+      "path": "tests/rules.test.mjs",
+      "sha256": "e3cd2bdbc959deaa03ad1ade93cfc43d05526a58a29c49eb27634c14bc30a82b"
+    },
+    {
+      "path": "tests/spark-browser/collection-reader.spec.ts",
+      "sha256": "f768cd6cd742d6db3ba8f51a94a19f6d6e67aa909f0a921b4df47a9924584ef1"
+    },
+    {
+      "path": "tests/spark-browser/heartbeat.spec.ts",
+      "sha256": "fd0aa0bd2ef766e0bb18fc87a763eace03c7aa080864fc4ff6311333202fb5ef"
+    },
+    {
+      "path": "tests/spark-browser/reset.spec.ts",
+      "sha256": "9936d7080e03b2e7919e663a559400dc24355bb3000f9de174bdb2d6629cd1bf"
+    },
+    {
+      "path": "tests/spark-browser/writing.spec.ts",
+      "sha256": "bb5a2ba1313b3cc8795a53221937b224110bc406b0a5ddfa39f25517e3c0a23b"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "a4ee61877cb9d7a988ac90cf54622fabfb40220a5bc39e42f043c408d7ff62c2"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "3c86a0dd08ac3ebe3073e41285bb5febcfbdb16a43be5fe3fef19da324382a80"
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha256": "effcddf543e8d041dcd79f28af05a164309221de1cec9e61f62aafd1ceadb638"
+    }
+  ],
+  "sourceDigest": "c15588e5041502fe1ed0f8c97e826281ef5d0f783bd5abd599ce9829f0eba1c8",
+  "artifacts": [
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/alternatives/A-1366x590.png",
+      "sha256": "d9b12a5170b125e8472906d4e50762a2cb61822c5530d21bf08c51a5e42f3299"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/alternatives/A-320x568.png",
+      "sha256": "47d8a9c785ed77a5f0bbca4643005c262852e158a4c0e90f3a7b009f1d09e30d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/alternatives/B-1366x590.png",
+      "sha256": "a165d40a6d1be168b9d577720846edfa9241f3945393cd3edf9a81899af62a6b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/alternatives/B-320x568.png",
+      "sha256": "6f6ddf1501a383904a3f077eb0cfb75925301fec1ea07687c5eb45049d06d533"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/alternatives/C-1366x590.png",
+      "sha256": "92f84eff1ae55b106cd41d4d8d197601612bd0cc5f3f7f969b68b754af8eeb73"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/alternatives/C-320x568.png",
+      "sha256": "d68df652b7d98c64d345261e0e85b0f87db8cc575433b548ece7bc0752184d21"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/alternatives/README.md",
+      "sha256": "d6c8e7f2dd0b57f38359c9d7a4552cbdda4294a9946ae90dee3bc1d5b1c2b02b"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/alternatives/geometry.json",
+      "sha256": "f1253e311b6777f1e79a055cd229d60af85eed76f463017f94c796f1662421f5"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/before/measurements.json",
+      "sha256": "25759b66b904c231c4af07c848df97a63abcc9e73de51779d74b25e6ea67154f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/before/reader-on-1366x590.png",
+      "sha256": "d02369b2aa6eadcfa3d75d89826d04f9295360e915cc47d5e45b6969174ca444"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/before/reader-on-390x700.png",
+      "sha256": "38559f13048f087e583fd85feee3d68ddc91343564904a5cdf178892462f1912"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/browser-summary.json",
+      "sha256": "5f585a8a779e21db86f910c6ffb3d0c4ed17101335124c6b0b38da838481c02c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/browser.log",
+      "sha256": "93be332b8f922c6adbb6f24ca51c22509ff3fcad78746915518f40f014c16de1"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/build-final.log",
+      "sha256": "faae82e3c59e1392b07797015b94d6d329487ff62ed8086429955774d10aa28e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/client.log",
+      "sha256": "0b172c84284983ac2db0b699a81352887abea2c9cd888024a6cd5f62f20380e6"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/cloud.log",
+      "sha256": "af14254961396593a57cd51f6ff4ddc354f34fa66ace5e8363a0b28d94012641"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/evidence.log",
+      "sha256": "906de937921a855aa44ead81a8c01ea84de84096e2f2b0d96042b6b49d125cc7"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/fidelity-diagnostic.log",
+      "sha256": "e69f77ff7810ef35bb74305555d26a722a54340375a2baf9fd1c8df3a69a6245"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/focused-browser.json",
+      "sha256": "5ab65a04ae0ed75d4269dac01c048d8bbc63c851e8aea0b06fd0805199825a69"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/focused-browser.log",
+      "sha256": "6c70f787679ba16d312c22bd042817605b325a7c67ad8f9cdce0535a2280842f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/formal-r3.json",
+      "sha256": "7700363ab17697c9116aaf810f9c103880275f66fd130ee8c93cc6bf1502e722"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/formal-r4.json",
+      "sha256": "368b944912d4117a5719b1f665538b7b4efd47cf73d35d6e13278eb47f5de25a"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/formal-r5.json",
+      "sha256": "62f14fb03aab098fd1b9227d8c784ec60f7d6c470efccb7e7d9baf3998cd0166"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/functions-check.log",
+      "sha256": "fc43a0c040d4583c5165488d2f1f5aa91f034d55a56c502e7b09b4dadd01f816"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/functions-test.log",
+      "sha256": "858bf477841c65f51c1ce3e77d876169f8c50dcc1647c31930e32b335c986971"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/interruption.json",
+      "sha256": "b0335dd4c70cfca1dc7bc9a230675a507d842058cc73b8776cb52a011370dcfa"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/mcp-integration.log",
+      "sha256": "fd7b54859fd47e9dd1409a4ecde2403c743a3a23dfcbd1c63075929c0d751064"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/r6-red.log",
+      "sha256": "3ba0a48274c6483fa9c54f1b9a02d61b9d022dd2bb66bd1130f22ce7ff38f2fd"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/results.json",
+      "sha256": "d279ba88afeda0dfb7dc28e4eb95619390daafa3a89ca3021858de866a72ae16"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/rules.log",
+      "sha256": "ee07b2e0b8810d45a11d3172233f79ceb1ab4249e2a500390bb8963d769e1b82"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/run/browser-exit.json",
+      "sha256": "e9ae6f59c5eddeb27c2ddedc8988f20832b63394974d63a61cadfd6f2bf73277"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/run/source-after.json",
+      "sha256": "9f59cb0bfbbadebf8929fd9ad754d3160f1c680476eda871dae5a9c27c435030"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/run/source-before.json",
+      "sha256": "9f59cb0bfbbadebf8929fd9ad754d3160f1c680476eda871dae5a9c27c435030"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/run/tests-after.json",
+      "sha256": "65da9b15a4d3ccaf83c16470ddf3d87136cd782dcd2bb243bcd120fe0b319909"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/run/tests-before.json",
+      "sha256": "65da9b15a4d3ccaf83c16470ddf3d87136cd782dcd2bb243bcd120fe0b319909"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/selected-states.json",
+      "sha256": "493d97bcbda588686fd875132ee709fd1e13bd2027062937d8f87c69a749a2f9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/facing-source-isolation-1366.png",
+      "sha256": "60f83e6287aaab97c6b8276927e82a4d7889cc67cd9ddfeefd1c76842e1f51e9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/forced-reader-rest.png",
+      "sha256": "456df2d140b870420e1eb689f5529f3d2e70c1f1ab0f2b154284195e8b8aa795"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/forced-reader-unanalysed.png",
+      "sha256": "aff869d39c1796a62baaa0464ddbc2d451c521868ab4c3d9711c40c754bbd61c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/long-feeling-focused-320.png",
+      "sha256": "19b7f475cf0002d152220e2863232f1d1338e6123e0dd91b595f2a5dd20c4330"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/long-label-full-key-320.png",
+      "sha256": "72b5288c8c9b8168cf59239877e0806c83ef05167588a327e9b547602caae985"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/motion-active-1366.png",
+      "sha256": "9e52e8cc11ed4727319f8401c8da0ac2f1f6566d887b6cd097e314d86fd6fddf"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/motion-active-390.png",
+      "sha256": "95ca37dd91f71964e899061781a3e2d0944d79d39a2ef7d2eab165f13fc717e0"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/same-tone-full-key-390.png",
+      "sha256": "19681cfca0c2771fc1e1b42fb814f86f51e8584f46df7ba5a6c4369833b210dd"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/writer-off-320.png",
+      "sha256": "cb12e9d7d5918b3242beaedb3e3c49c413b14d3fbc67b7c88778afd35e42f839"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/typecheck-final.log",
+      "sha256": "96fb526310e5a666090b361c5dc343d0a2db6f25ee09f1b09a4014355b93ab68"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final-review.json",
+      "sha256": "423eb7b41d76911c03e30b15c8d3a1f32c18208deabed34f67f83a34c4ab6daf"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/geometry.json",
+      "sha256": "1c7dc964b3c103b1a106da8983880b3c9d1f1c47790b32343295a6c73956c81f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/night-detail-390x844.png",
+      "sha256": "406c0c181fc4bff60a601e4f15b9509108d91073149b28229184efc78e6b2ebc"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/reader-end-multicolor-320x568.png",
+      "sha256": "4761729c6fb75e71038ae3eee9291967fbb702d8a8c8b697f379a20156952968"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/reader-full-key-320x568.png",
+      "sha256": "e570bf3f05c851c7916d15c5643c70dfdb038a3d5c1f75bffb737c18b8dff7ed"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/reader-mid-multicolor-320x568.png",
+      "sha256": "9a3d96856733f14edf39b44c92ccf3570a0e560bae550b3f2e0e4c8d67d83097"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/reader-on-1366x590.png",
+      "sha256": "0743edd938d8722536e369cc97d7675bc5da1b8cd67a9f18d2087c60cfec951f"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/reader-on-1366x768.png",
+      "sha256": "2360763f7186ced785cca193bb285d90a9b5a25cdf457314201570468b1bf0eb"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/reader-on-320x568.png",
+      "sha256": "4fe6059cc3a18566d40ae316e4c978eb227155962ce85da3555df7d9cfaeb2d7"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/reader-on-390x700.png",
+      "sha256": "a66a9d90c8ae64e337ba8a6ad7ecb47ce19f1af25a9d48099e31cc8cfb3f2c3e"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/reader-on-390x844.png",
+      "sha256": "3aab5fe1d4be5c6f7ddeafa5c3f5ddee60154b6e7b493f4018deed83e0c5b88d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/rest-320x568.png",
+      "sha256": "2e282215eae45ee1e3ee1ec461117a308be5c1d172171fba88110173b579d032"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/source-fingerprints.json",
+      "sha256": "770de8c6210b92dded1331046748c2c8234aa43b229d39d8781393fa03221aad"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/sparse-320x568.png",
+      "sha256": "5030fa7048c6c0d0ae856081742bcac72aeb35603b1f3b33c368f168cb8ecaf0"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/writer-focused-on-320x568.png",
+      "sha256": "24dcf1e96362a267e9009eb6de77c6f125282b4c6cce746652d9751e19f591ab"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/writer-initial-off-320x568.png",
+      "sha256": "f6f1d20304ae3c9ce4083835f191a819aa8dea1aa0db389152c8fb58acb96ce8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/final/writer-initial-on-320x568.png",
+      "sha256": "e82a6327ec5a2655a433b8d7a5416b21a09197afb0fefa7c90cf2d3e60c8a59d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/parent-qa.md",
+      "sha256": "de9c6a7fd54aee572c08169372484a70566bb19220fdf59f341957bb01290889"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/reviews.json",
+      "sha256": "95b761575869ed494bedab4e21711492dd25c52cbf2e55c9ef86ddfde056bca8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/rounds/1-structural.md",
+      "sha256": "e027a7d9dc971e0bff1cb094ccd6dba3e0b345e2f346b00ec8542a3f5099e1b8"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/rounds/2-initial.md",
+      "sha256": "cfd227191a07544b9f4dfa2f5aa5f599c70f737b4144c2799cacd33d75234254"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/rounds/3-navigation.md",
+      "sha256": "1608e67793f29454821035c96f12f64f5816249b7d043dd3999720aa0d635dc3"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/rounds/4-line-key.md",
+      "sha256": "c6241116cd39f58cbce83af6a1fe81c10986c462e059585e7cfef66fd681ce90"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/rounds/5-close-control-failure.json",
+      "sha256": "782dcd5024569d7b93c6694547e05eaafd86bb58e31b316fe52ededfdc17f167"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/rounds/5-night-before-control-fix.png",
+      "sha256": "097c4bbe342edceeba74ab04c8f2adf7d66ed4d384fcecf218374ae5a3962768"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/rounds/5-night-narrow.md",
+      "sha256": "6681c544c4c960344743b028d2879878457cd9fb98dd43e022e89288f5baca95"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/rounds/5-source-fingerprints.json",
+      "sha256": "1bcd6c57549733369afd96553a22089f38d38da51bb3d4c596c8a31bbefacf9d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/rounds/6-key-control.md",
+      "sha256": "3921f1fc61c80488f15db1bb9e54f4a0272a6a5dd00503ed266891193f39e43c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-1366x768.png",
+      "sha256": "42d6d9ec3eb28bf47d813a416f085ebe6fe40a616b46e4e0ee7c8499d1d1f590"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-320x568.png",
+      "sha256": "659f466e3ebf2e2e7cbbb759f5f48740ebbe549dbd57bec8341184e8bfd74a7d"
+    },
+    {
+      "path": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-390x844.png",
+      "sha256": "4dd5a9c9147698da965e8e89876761405c154b6a2bd2c25622bc499537354ba7"
+    }
+  ],
+  "checks": {
+    "client": {
+      "status": "pass",
+      "passes": 129,
+      "failures": 0,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/client.log"
+    },
+    "functions": {
+      "status": "pass",
+      "passes": 37,
+      "failures": 0,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/functions-test.log"
+    },
+    "rules": {
+      "status": "pass",
+      "passes": 16,
+      "failures": 0,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/rules.log"
+    },
+    "mcpIntegration": {
+      "status": "pass",
+      "passes": 18,
+      "failures": 0,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/mcp-integration.log"
+    },
+    "browser": {
+      "status": "pass",
+      "passes": 115,
+      "failures": 0,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/browser.log"
+    },
+    "cloud": {
+      "status": "pass",
+      "passes": 11,
+      "failures": 0,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/cloud.log"
+    },
+    "evidence": {
+      "status": "pass",
+      "passes": 26,
+      "failures": 0,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/evidence.log"
+    },
+    "focusedBrowser": {
+      "status": "pass",
+      "passes": 52,
+      "failures": 0,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/focused-browser.log"
+    },
+    "typecheck": {
+      "status": "pass",
+      "passes": 0,
+      "failures": 0,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/typecheck-final.log"
+    },
+    "build": {
+      "status": "pass",
+      "passes": 0,
+      "failures": 0,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/build-final.log"
+    },
+    "packaging": {
+      "status": "pass",
+      "passes": 0,
+      "failures": 0,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/build-final.log"
+    }
+  },
+  "comparison": {
+    "1366x590": {
+      "before": {
+        "lines": 18,
+        "bookHeight": 447,
+        "footerHeight": 76,
+        "screenshot": "docs/evidence/heartbeat-current-2026-11-03/before/reader-on-1366x590.png"
+      },
+      "after": {
+        "lines": 19,
+        "bookHeight": 457,
+        "footerHeight": 66,
+        "overflow": 0,
+        "fontSize": 20,
+        "lineHeight": 37,
+        "layout": "pages",
+        "screenshot": "docs/evidence/heartbeat-current-2026-11-03/final/reader-on-1366x590.png"
+      }
+    },
+    "1366x768": {
+      "before": {
+        "lines": 28,
+        "bookHeight": 625,
+        "footerHeight": 76,
+        "screenshot": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-1366x768.png"
+      },
+      "after": {
+        "lines": 28,
+        "bookHeight": 635,
+        "footerHeight": 66,
+        "overflow": 0,
+        "fontSize": 20,
+        "lineHeight": 37,
+        "layout": "pages",
+        "screenshot": "docs/evidence/heartbeat-current-2026-11-03/final/reader-on-1366x768.png"
+      }
+    },
+    "390x700": {
+      "before": {
+        "lines": 11,
+        "bookHeight": 557,
+        "footerHeight": 97,
+        "screenshot": "docs/evidence/heartbeat-current-2026-11-03/before/reader-on-390x700.png"
+      },
+      "after": {
+        "lines": 13,
+        "bookHeight": 584,
+        "footerHeight": 70,
+        "overflow": 0,
+        "fontSize": 20,
+        "lineHeight": 37,
+        "layout": "scroll",
+        "screenshot": "docs/evidence/heartbeat-current-2026-11-03/final/reader-on-390x700.png"
+      }
+    },
+    "390x844": {
+      "before": {
+        "lines": 15,
+        "bookHeight": 701,
+        "footerHeight": 97,
+        "screenshot": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-390x844.png"
+      },
+      "after": {
+        "lines": 17,
+        "bookHeight": 728,
+        "footerHeight": 70,
+        "overflow": 0,
+        "fontSize": 20,
+        "lineHeight": 37,
+        "layout": "pages",
+        "screenshot": "docs/evidence/heartbeat-current-2026-11-03/final/reader-on-390x844.png"
+      }
+    },
+    "320x568": {
+      "before": {
+        "lines": 8,
+        "bookHeight": 425,
+        "footerHeight": 97,
+        "screenshot": "docs/evidence/heartbeat-rework-2026-11-03/critic/round7-final/reader-on-320x568.png"
+      },
+      "after": {
+        "lines": 10,
+        "bookHeight": 452,
+        "footerHeight": 70,
+        "overflow": 0,
+        "fontSize": 20,
+        "lineHeight": 37,
+        "layout": "scroll",
+        "screenshot": "docs/evidence/heartbeat-current-2026-11-03/final/reader-on-320x568.png"
+      }
+    }
+  },
+  "rounds": [
+    {
+      "number": 1,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/rounds/1-structural.md"
+    },
+    {
+      "number": 2,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/rounds/2-initial.md"
+    },
+    {
+      "number": 3,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/rounds/3-navigation.md"
+    },
+    {
+      "number": 4,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/rounds/4-line-key.md"
+    },
+    {
+      "number": 5,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/rounds/5-night-narrow.md"
+    },
+    {
+      "number": 6,
+      "evidence": "docs/evidence/heartbeat-current-2026-11-03/rounds/6-key-control.md"
+    }
+  ],
+  "visual": {
+    "verdict": "Implemented and browser-tested; native perception judgments remain mixed, not owner accepted",
+    "blindReviewers": 2,
+    "blindAgents": [
+      "/root/blind_current_final_three",
+      "/root/blind_current_final_four"
+    ],
+    "independentCritic": "/root/current_visual_critic",
+    "parentFinalImagesInspected": 14,
+    "parentNumericSelfScores": false,
+    "rawReviews": "docs/evidence/heartbeat-current-2026-11-03/reviews.json",
+    "targetUnanimouslyReached": false,
+    "limitations": [
+      "Fresh blind scores are not unanimously >=8: cool-color distinction remains7 in several desktop judgments; one320opening legend judgment is6. Raw criticism is retained; internal critic scores do not override it.",
+      "Three or more visible feelings may require All feelings to name every color; the compact preview is explicitly partial.",
+      "The default320writer remains compact with inherited title/tool chrome; Heartbeat costs approximately one line versus OFF, and focused writing recovers it.",
+      "Chromium viewport/emulator evidence and native-model still-image judgments do not establish physical-device comfort, color-vision accessibility or human/owner acceptance. Hosted checks exercise the public shell/auth boundary, not a production Auth bypass."
+    ],
+    "humanParticipants": false,
+    "ownerAcceptance": "not inferred",
+    "creatorSelfApproval": false,
+    "sourceStable": true,
+    "renderedSources": {
+      "src/App.tsx": "0479c5432c85507b8df5ba043ff7320a58b064ff164addfb7891401bc20a60fe",
+      "src/AppHost.tsx": "ce43936760e2f7d539002fc35a9e6cbe6b3e323db68edbd1a2ab2b1c9ba01719",
+      "src/cloud/firebase-access.test.ts": "902c86f944fa566a9405f9022381333ab0b45d11a920a1ab49ee40f74e3bbb91",
+      "src/cloud/firebase.test.ts": "d3cd5e98b0761bfe573f4b677b2d7ac2341d38b4dba7c723b8e4aeaf94ff3601",
+      "src/cloud/firebase.ts": "61e6dfe8cf0ae732d34a80b95c5e66f2730aca25f596b83c8eb5e2435f51e2ad",
+      "src/cloud/integrations.ts": "771dc3ca8484dba9d01c9989c56a6f06f502cfa5f62e362f185555d916757375",
+      "src/cloud/spark-listener.test.ts": "1868d8971d193f71f0b509b551331ea9bcd0b561e91893c7d9ade86d6447086c",
+      "src/cloud/spark.emulator.test.ts": "12672df8c1f146e9c6e140d545353e08ecf56fa804d3a5edbce48e037e05942e",
+      "src/cloud/spark.ts": "abb7b693f16eff907b3421c7ecbe83331de0254e88e86764481d9c99cd569013",
+      "src/components/DocumentShelfRow.tsx": "df6b820bce505dfa5a10737795a31153d69cef9000d58937ab105d00ba833f24",
+      "src/components/Integrations.tsx": "7058938437bfbcaa94e90fe5fa0b13c7a4d12352fee19d4257256614d5473909",
+      "src/components/Library.tsx": "c443d154178f9959e4f8b9ba2d771ecd389f3c5ee3a1be150e34a0e092c7a9b5",
+      "src/components/Modal.tsx": "b5d290d7073a27442d178b528c0447990de6042a6b1aee8c2e3a3300f11e73ce",
+      "src/components/ParagraphIndent.ts": "687a0eae5fbe04f96e2921efb4ddbd5dc2b01169c4a8e8ac981713321d6d2fd7",
+      "src/components/Reader.tsx": "4fcb26530dbbcc3ff24611b1554d005ae53f9227610a64972c32d695ae2b3c92",
+      "src/components/RevisionComparison.tsx": "2c5b5313bb91b0d6be008e8fd1516ce289da856fa14c6668f78914b3797cad94",
+      "src/components/Writer.tsx": "c7138130adec7b7590ecd5c5f944125248a37d067c9a26ed5ff92984b426f2b5",
+      "src/components/integrations.css": "7ccfdd94b59273204080530185d6fc236952f825f2e94717d87817998bbc8bc0",
+      "src/domain/codec.ts": "fbe53e9aa60a72e85be7b8ff6e2d62b89fbf0742ad8626d2fefb95c62685525a",
+      "src/domain/model.ts": "9bd450032340a32e4ca4abba854bcdd30c60c4be5b648d58c98a0e888465c900",
+      "src/domain/paragraph-formatting.test.ts": "5ee2537bb58b7f4449b5a2cfb9e19b2cb2f0c8fd84f71fe32f0aa96a33545e8a",
+      "src/domain/render.ts": "e74ad5040ece35e22f1c13941add23f2c5515d37744fc5fea0f75dff8c3ea517",
+      "src/heartbeat/Heartbeat.tsx": "b859ad9f489621f9ff9b6ddc0d4ea47f797464be6d0bbd229720ee786be2f9d7",
+      "src/heartbeat/decorations.ts": "c699d1799b0bf7ec81ba214b8a6797c7b9043e2842af2d78f0ca5879e483965a",
+      "src/heartbeat/heartbeat.css": "9264d3a3aabb2aebd4ebe04a7288ee8aebc805ae671a689211e0eddaff571586",
+      "src/heartbeat/model.test.ts": "9177cbdad4eeab2d56171247f6ae6b944993b1bbd2aadd4f9666987b8e345573",
+      "src/heartbeat/model.ts": "150a56b55c146d2daca2325c674600d05657ea1a0a513f34e553db235d51b34e",
+      "src/heartbeat/presentation.test.ts": "3df4b2dfa91531dad8b49113c87a95eba04cb8b2489f7d31d1663917e07d071e",
+      "src/heartbeat/presentation.ts": "1822be0e4ceaaecb318ccefb6cf75917fc015cff0ecc314e3eed943a65cadcbb",
+      "src/heartbeat/rail-geometry.test.ts": "507f08a94f530faa8b78759cb1083cea88237adcd01f242331b56a4a977ae896",
+      "src/heartbeat/rail-geometry.ts": "5457d77d3622ffcba043fe3f80cbd3b13b2084c1e628105c0ffec92a23d3fa7d",
+      "src/heartbeat/rail.css": "0caec97f8da0f5e66ca966ef0205619f871d3e61e3b41419ab454096479c0489",
+      "src/heartbeat/rails.ts": "3ac9146d6ee0d1443fde0508d8441cb35d2c7640f7d21f1d19c23f2b44d7e289",
+      "src/heartbeat/ranges.ts": "6e83454d7472e756e7857b31802bc6709e06c5c7c5041ab99a3b2a00bb7ba53e",
+      "src/heartbeat/useHeartbeat.ts": "e899eb05bf882ef3c007161c8521b21227b3503384cc65bfe0dcb434e2cc7a21",
+      "src/library-reader.css": "00574dd9e6006999e0b294e9c45747d1519c92da5fc64f9f10d8eb146a2264b1",
+      "src/main.tsx": "060f787e8eb7a2b1f7c0c16cc33b1d054663f5ee076c41f5e8495b60286bcf6d",
+      "src/reader/page-turn.ts": "11a2f9a35d50457fa95557ec4f095075aecb66effb289f408cdb05ad7a15f61c",
+      "src/reader/reading.test.ts": "43d10faf5db6ee9e4bf62161f66fa61e2ae18c64b02455129a2953143c9968e8",
+      "src/reader/reading.ts": "613777b5137f3c52455fdb5d744e03e4e9a86a12fc0a878c52080080a64a69d3",
+      "src/state/autosave.test.ts": "759514e6b5b40b73156869daa413bda50adc881a71b0f04a15f90746a14dcd19",
+      "src/state/cloud-integration.test.ts": "2f19396df1315e61f8ebed97ae2f98023137b39fb277e4f8a66e0f7718eecd53",
+      "src/state/collection-rename.test.ts": "5c191c8f2c32db3eea6b70e7feb91e7858957de6b04c387d77d7bc6da7b661ae",
+      "src/state/engine.test.ts": "6ffa03ca8178fad5ac972704ce7ca9e951487cf7044a0c5863c8ec128c25aee0",
+      "src/state/engine.ts": "02946bd71c5ce3b6fb87eeb861fb8e81baf1f3505bd0e2a214b7bd9c8d330e0f",
+      "src/state/useWorkspace.ts": "372c47449e45873b1b5f3a711e9f80ffadf23fc2528dd3dedb88d9458aec8484",
+      "src/storage/archive.ts": "3e146877962af16e9ef5a0f49514ada68df31dc1ccfa5d401a782c5cc1de6875",
+      "src/storage/database.ts": "3f3064eab1a4868b0105e12fa8aee903caa94c41f216662b3ca76e9a1ca458d8",
+      "src/storage/draft-migration.test.ts": "46ee52b87a6375532d6cb7c7c0fb29de6135ffd613c9e09399686517e9db8f38",
+      "src/storage/workspace-reset.test.ts": "5718191258a3bd0cf9dae2cc040f65b81f1af86466092ae5f05928cac24b0f25",
+      "src/styles.css": "1bfab3e8bb7dbd49bc30769c13bc05f184134148b5bda93b24fbeced3e1b8294",
+      "src/vendor/pageflip/page-flip.css": "d51eb210784f4539d70bc2a4a9ae96768e271d7aae6730cc9ddba03ebebcbab1",
+      "src/vendor/pageflip/page-flip.d.ts": "d45d561ca29bd8cd771f65b458d0e7067bf61bfa3de6c2779be6ba152fe59b1b",
+      "tests/helpers/heartbeat-continuity-fixture.ts": "99713c94fe596b9e5c8a58c6df34792877170e37d0e2e24b45aa9b0896835c83"
+    }
+  },
+  "preservedBackend": {
+    "changed": false,
+    "productionWrites": 0,
+    "pluginVersion": "0.1.2",
+    "annotation": "Existing owner seven-region immutable annotation retained; no read/regenerate/submit in this iteration."
+  }
+}

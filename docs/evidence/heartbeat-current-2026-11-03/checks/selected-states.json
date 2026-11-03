@@ -1,0 +1,90 @@
+{
+  "schema": "noveliaa-heartbeat-r6-qa-evidence-1",
+  "fixture": "Synthetic local-only, no signed-in account or production manuscript access",
+  "verdict": "R6 local synthetic browser QA passed including interactive-icon contrast; parent owns full regression, CI, hosted and owner/device acceptance",
+  "command": "npx playwright test tests/browser/heartbeat-layout.spec.ts tests/browser/heartbeat-visual.spec.ts tests/browser/heartbeat-current.spec.ts --max-failures=6 --output=.local/heartbeat-current/qa/formal-r6/test-results",
+  "nativeExit": 0,
+  "tests": {
+    "startTime": "2026-11-03T12:28:37.537Z",
+    "duration": 145570.91,
+    "expected": 52,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "sourceHashes": {
+    "count": 54,
+    "changed": []
+  },
+  "ownedTestHashes": {
+    "count": 3,
+    "changed": []
+  },
+  "selectedPngs": [
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/forced-reader-rest.png",
+      "state": "Forced system palette: explicit Rest remains dashed 7/4",
+      "bytes": 77791,
+      "sha256": "456df2d140b870420e1eb689f5529f3d2e70c1f1ab0f2b154284195e8b8aa795"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/forced-reader-unanalysed.png",
+      "state": "Forced system palette: Unanalysed remains dotted 1/4",
+      "bytes": 78434,
+      "sha256": "aff869d39c1796a62baaa0464ddbc2d451c521868ab4c3d9711c40c754bbd61c"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/facing-source-isolation-1366.png",
+      "state": "Known A and dotted unanalysed B in one spread, with no B annotation request",
+      "bytes": 100559,
+      "sha256": "60f83e6287aaab97c6b8276927e82a4d7889cc67cd9ddfeefd1c76842e1f51e9"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/writer-off-320.png",
+      "state": "Default OFF: plain source without emotional paint or annotation request",
+      "bytes": 42644,
+      "sha256": "cb12e9d7d5918b3242beaedb3e3c49c413b14d3fbc67b7c88778afd35e42f839"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/motion-active-390.png",
+      "state": "Actual portrait page curl, rotation and active state before and after capture",
+      "bytes": 109798,
+      "sha256": "95ca37dd91f71964e899061781a3e2d0944d79d39a2ef7d2eab165f13fc717e0"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/motion-active-1366.png",
+      "state": "Actual desktop page curl, rotation and active state before and after capture",
+      "bytes": 65338,
+      "sha256": "9e52e8cc11ed4727319f8401c8da0ac2f1f6566d887b6cd097e314d86fd6fddf"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/same-tone-full-key-390.png",
+      "state": "Seven SAME supplied-tone foregrounds retain distinct document/key colors",
+      "bytes": 90480,
+      "sha256": "19681cfca0c2771fc1e1b42fb814f86f51e8584f46df7ba5a6c4369833b210dd"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/long-label-full-key-320.png",
+      "state": "All five dense long foreground labels remain complete, wrapped and source-color matched",
+      "bytes": 54549,
+      "sha256": "72b5288c8c9b8168cf59239877e0806c83ef05167588a327e9b547602caae985"
+    },
+    {
+      "path": "docs/evidence/heartbeat-current-2026-11-03/checks/states/long-feeling-focused-320.png",
+      "state": "Actual keyboard-focused long feeling control",
+      "bytes": 43073,
+      "sha256": "19b7f475cf0002d152220e2863232f1d1338e6123e0dd91b595f2a5dd20c4330"
+    }
+  ],
+  "selectedPngBytes": 662666,
+  "jsonEvidence": [
+    "docs/evidence/heartbeat-current-2026-11-03/checks/focused-browser.json",
+    "docs/evidence/heartbeat-current-2026-11-03/checks/run/browser-exit.json",
+    "docs/evidence/heartbeat-current-2026-11-03/checks/run/source-before.json",
+    "docs/evidence/heartbeat-current-2026-11-03/checks/run/source-after.json",
+    "docs/evidence/heartbeat-current-2026-11-03/checks/run/tests-before.json",
+    "docs/evidence/heartbeat-current-2026-11-03/checks/run/tests-after.json"
+  ],
+  "excludedFromLeanSelection": "Main desktop/mobile/normal/Night renders already retained by parent are omitted here. All prior failure traces and raw passing browser-report folders remain ignored scratch; no trace folder is required.",
+  "selectionNote": "Nine supplemental states; final main/mixed/night originals are separately bound in final/. No traces/videos committed."
+}

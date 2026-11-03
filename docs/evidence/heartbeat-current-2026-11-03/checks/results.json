@@ -1,0 +1,68 @@
+{
+  "client": {
+    "status": "pass",
+    "passes": 129,
+    "failures": 0,
+    "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/client.log"
+  },
+  "functions": {
+    "status": "pass",
+    "passes": 37,
+    "failures": 0,
+    "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/functions-test.log"
+  },
+  "rules": {
+    "status": "pass",
+    "passes": 16,
+    "failures": 0,
+    "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/rules.log"
+  },
+  "mcpIntegration": {
+    "status": "pass",
+    "passes": 18,
+    "failures": 0,
+    "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/mcp-integration.log"
+  },
+  "browser": {
+    "status": "pass",
+    "passes": 115,
+    "failures": 0,
+    "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/browser.log"
+  },
+  "cloud": {
+    "status": "pass",
+    "passes": 11,
+    "failures": 0,
+    "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/cloud.log"
+  },
+  "evidence": {
+    "status": "pass",
+    "passes": 26,
+    "failures": 0,
+    "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/evidence.log"
+  },
+  "focusedBrowser": {
+    "status": "pass",
+    "passes": 52,
+    "failures": 0,
+    "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/focused-browser.log"
+  },
+  "typecheck": {
+    "status": "pass",
+    "passes": 0,
+    "failures": 0,
+    "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/typecheck-final.log"
+  },
+  "build": {
+    "status": "pass",
+    "passes": 0,
+    "failures": 0,
+    "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/build-final.log"
+  },
+  "packaging": {
+    "status": "pass",
+    "passes": 0,
+    "failures": 0,
+    "evidence": "docs/evidence/heartbeat-current-2026-11-03/checks/build-final.log"
+  }
+}

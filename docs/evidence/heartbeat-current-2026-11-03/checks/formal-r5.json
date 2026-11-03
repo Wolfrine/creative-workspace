@@ -1,0 +1,1946 @@
+{
+  "nativeExit": 0,
+  "stats": {
+    "startTime": "2026-11-03T11:49:11.602Z",
+    "duration": 170996.103,
+    "expected": 50,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "sourceHashes": {
+    "count": 54,
+    "changed": []
+  },
+  "ownedTestHashes": {
+    "count": 3,
+    "changed": []
+  },
+  "failures": [],
+  "measurements": {
+    "prose-capacity": [
+      {
+        "test": "Auto layout keeps prose capacity and a compact rail key at 1366x590",
+        "evidence": {
+          "viewport": {
+            "width": 1366,
+            "height": 590,
+            "lines": 18,
+            "layout": "pages"
+          },
+          "geometry": {
+            "lines": 19,
+            "footer": 66,
+            "font": 20,
+            "leading": 1.85,
+            "overflow": 0,
+            "controls": [
+              {
+                "label": "Previous reader page",
+                "visible": true
+              },
+              {
+                "label": "Next reader page",
+                "visible": true
+              },
+              {
+                "label": "About this AI interpretation",
+                "visible": true
+              },
+              {
+                "label": "Eager calm. Show interpretation.",
+                "visible": true
+              },
+              {
+                "label": "Fond longing. Show interpretation.",
+                "visible": true
+              },
+              {
+                "label": "Renewed curiosity. Show interpretation.",
+                "visible": true
+              },
+              {
+                "label": "Disappointment. Show interpretation.",
+                "visible": true
+              }
+            ],
+            "keys": [
+              {
+                "label": "Eager calm",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              },
+              {
+                "label": "Fond longing",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              },
+              {
+                "label": "Renewed curiosity",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              },
+              {
+                "label": "Disappointment",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              }
+            ]
+          }
+        }
+      },
+      {
+        "test": "Auto layout keeps prose capacity and a compact rail key at 1366x768",
+        "evidence": {
+          "viewport": {
+            "width": 1366,
+            "height": 768,
+            "lines": 28,
+            "layout": "pages"
+          },
+          "geometry": {
+            "lines": 28,
+            "footer": 66,
+            "font": 20,
+            "leading": 1.85,
+            "overflow": 0,
+            "controls": [
+              {
+                "label": "Previous reader page",
+                "visible": true
+              },
+              {
+                "label": "Next reader page",
+                "visible": true
+              },
+              {
+                "label": "About this AI interpretation",
+                "visible": true
+              },
+              {
+                "label": "Eager calm. Show interpretation.",
+                "visible": true
+              },
+              {
+                "label": "Fond longing. Show interpretation.",
+                "visible": true
+              },
+              {
+                "label": "Renewed curiosity. Show interpretation.",
+                "visible": true
+              },
+              {
+                "label": "Disappointment. Show interpretation.",
+                "visible": true
+              },
+              {
+                "label": "Tempered eagerness. Show interpretation.",
+                "visible": true
+              },
+              {
+                "label": "Frustration. Show interpretation.",
+                "visible": true
+              }
+            ],
+            "keys": [
+              {
+                "label": "Eager calm",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              },
+              {
+                "label": "Fond longing",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              },
+              {
+                "label": "Renewed curiosity",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              },
+              {
+                "label": "Disappointment",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              },
+              {
+                "label": "Tempered eagerness",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              },
+              {
+                "label": "Frustration",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              }
+            ]
+          }
+        }
+      },
+      {
+        "test": "Auto layout keeps prose capacity and a compact rail key at 390x700",
+        "evidence": {
+          "viewport": {
+            "width": 390,
+            "height": 700,
+            "lines": 11,
+            "layout": "scroll"
+          },
+          "geometry": {
+            "lines": 13,
+            "footer": 70,
+            "font": 20,
+            "leading": 1.85,
+            "overflow": 0,
+            "controls": [
+              {
+                "label": "Switch to paginated reading",
+                "visible": true
+              },
+              {
+                "label": "About this AI interpretation",
+                "visible": true
+              },
+              {
+                "label": "Eager calm. Show interpretation.",
+                "visible": true
+              },
+              {
+                "label": "Fond longing. Show interpretation.",
+                "visible": true
+              }
+            ],
+            "keys": [
+              {
+                "label": "Eager calm",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              },
+              {
+                "label": "Fond longing",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              }
+            ]
+          }
+        }
+      },
+      {
+        "test": "Auto layout keeps prose capacity and a compact rail key at 390x844",
+        "evidence": {
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "lines": 15,
+            "layout": "pages"
+          },
+          "geometry": {
+            "lines": 17,
+            "footer": 68,
+            "font": 20,
+            "leading": 1.85,
+            "overflow": 0,
+            "controls": [
+              {
+                "label": "Previous reader page",
+                "visible": true
+              },
+              {
+                "label": "Next reader page",
+                "visible": true
+              },
+              {
+                "label": "About this AI interpretation",
+                "visible": true
+              },
+              {
+                "label": "Eager calm. Show interpretation.",
+                "visible": true
+              },
+              {
+                "label": "Fond longing. Show interpretation.",
+                "visible": true
+              }
+            ],
+            "keys": [
+              {
+                "label": "Eager calm",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              },
+              {
+                "label": "Fond longing",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              }
+            ]
+          }
+        }
+      },
+      {
+        "test": "Auto layout keeps prose capacity and a compact rail key at 320x568",
+        "evidence": {
+          "viewport": {
+            "width": 320,
+            "height": 568,
+            "lines": 8,
+            "layout": "scroll"
+          },
+          "geometry": {
+            "lines": 10,
+            "footer": 64,
+            "font": 20,
+            "leading": 1.85,
+            "overflow": 0,
+            "controls": [
+              {
+                "label": "Switch to paginated reading",
+                "visible": true
+              },
+              {
+                "label": "About this AI interpretation",
+                "visible": true
+              },
+              {
+                "label": "Eager calm. Show interpretation.",
+                "visible": true
+              }
+            ],
+            "keys": [
+              {
+                "label": "Eager calm",
+                "font": 13,
+                "visible": true,
+                "clipped": false
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "native-scroll-reachability": [
+      {
+        "test": "Auto layout exposes every rich-text character at 1366x590",
+        "evidence": {
+          "viewport": {
+            "width": 1366,
+            "height": 590,
+            "lines": 18,
+            "layout": "pages"
+          },
+          "sourceCharacters": 2906,
+          "reachedMeaningfulCharacters": 2407,
+          "trace": [
+            {
+              "top": 0,
+              "height": 439,
+              "total": 439,
+              "page": "0"
+            },
+            {
+              "top": 0,
+              "height": 439,
+              "total": 439,
+              "page": "2"
+            },
+            {
+              "top": 0,
+              "height": 439,
+              "total": 439,
+              "page": "4"
+            },
+            {
+              "top": 0,
+              "height": 439,
+              "total": 439,
+              "page": "6"
+            }
+          ],
+          "missing": []
+        }
+      },
+      {
+        "test": "Auto layout exposes every rich-text character at 1366x768",
+        "evidence": {
+          "viewport": {
+            "width": 1366,
+            "height": 768,
+            "lines": 28,
+            "layout": "pages"
+          },
+          "sourceCharacters": 2906,
+          "reachedMeaningfulCharacters": 2407,
+          "trace": [
+            {
+              "top": 0,
+              "height": 617,
+              "total": 617,
+              "page": "0"
+            },
+            {
+              "top": 0,
+              "height": 617,
+              "total": 617,
+              "page": "2"
+            },
+            {
+              "top": 0,
+              "height": 617,
+              "total": 617,
+              "page": "4"
+            }
+          ],
+          "missing": []
+        }
+      },
+      {
+        "test": "Auto layout exposes every rich-text character at 390x700",
+        "evidence": {
+          "viewport": {
+            "width": 390,
+            "height": 700,
+            "lines": 11,
+            "layout": "scroll"
+          },
+          "sourceCharacters": 2906,
+          "reachedMeaningfulCharacters": 2407,
+          "trace": [
+            {
+              "top": 0,
+              "height": 578,
+              "total": 4091,
+              "page": "0"
+            },
+            {
+              "top": 0,
+              "height": 578,
+              "total": 4091,
+              "page": "0"
+            },
+            {
+              "top": 498,
+              "height": 578,
+              "total": 4091,
+              "page": "0"
+            },
+            {
+              "top": 996,
+              "height": 578,
+              "total": 4091,
+              "page": "0"
+            },
+            {
+              "top": 1494,
+              "height": 578,
+              "total": 4091,
+              "page": "0"
+            },
+            {
+              "top": 1992,
+              "height": 578,
+              "total": 4091,
+              "page": "0"
+            },
+            {
+              "top": 2490,
+              "height": 578,
+              "total": 4091,
+              "page": "0"
+            },
+            {
+              "top": 2988,
+              "height": 578,
+              "total": 4091,
+              "page": "0"
+            },
+            {
+              "top": 3486,
+              "height": 578,
+              "total": 4091,
+              "page": "0"
+            },
+            {
+              "top": 3513,
+              "height": 578,
+              "total": 4091,
+              "page": "0"
+            }
+          ],
+          "missing": []
+        }
+      },
+      {
+        "test": "Auto layout exposes every rich-text character at 390x844",
+        "evidence": {
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "lines": 15,
+            "layout": "pages"
+          },
+          "sourceCharacters": 2906,
+          "reachedMeaningfulCharacters": 2407,
+          "trace": [
+            {
+              "top": 0,
+              "height": 724,
+              "total": 724,
+              "page": "0"
+            },
+            {
+              "top": 0,
+              "height": 724,
+              "total": 724,
+              "page": "1"
+            },
+            {
+              "top": 0,
+              "height": 724,
+              "total": 724,
+              "page": "2"
+            },
+            {
+              "top": 0,
+              "height": 724,
+              "total": 724,
+              "page": "3"
+            },
+            {
+              "top": 0,
+              "height": 724,
+              "total": 724,
+              "page": "4"
+            },
+            {
+              "top": 0,
+              "height": 724,
+              "total": 724,
+              "page": "5"
+            }
+          ],
+          "missing": []
+        }
+      },
+      {
+        "test": "Auto layout exposes every rich-text character at 320x568",
+        "evidence": {
+          "viewport": {
+            "width": 320,
+            "height": 568,
+            "lines": 8,
+            "layout": "scroll"
+          },
+          "sourceCharacters": 2906,
+          "reachedMeaningfulCharacters": 2407,
+          "trace": [
+            {
+              "top": 0,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            },
+            {
+              "top": 0,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            },
+            {
+              "top": 369,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            },
+            {
+              "top": 738,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            },
+            {
+              "top": 1107,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            },
+            {
+              "top": 1476,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            },
+            {
+              "top": 1845,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            },
+            {
+              "top": 2214,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            },
+            {
+              "top": 2583,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            },
+            {
+              "top": 2952,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            },
+            {
+              "top": 3321,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            },
+            {
+              "top": 3690,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            },
+            {
+              "top": 4059,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            },
+            {
+              "top": 4229,
+              "height": 449,
+              "total": 4678,
+              "page": "0"
+            }
+          ],
+          "missing": []
+        }
+      }
+    ],
+    "same-tone-document-palette": [
+      {
+        "test": "Seven different same-tone foregrounds keep distinct document colors across turns and resize",
+        "evidence": {
+          "supplied": [
+            {
+              "foreground": "Eager calm",
+              "tone": "warm"
+            },
+            {
+              "foreground": "Fond longing",
+              "tone": "warm"
+            },
+            {
+              "foreground": "Renewed curiosity",
+              "tone": "warm"
+            },
+            {
+              "foreground": "Disappointment",
+              "tone": "warm"
+            },
+            {
+              "foreground": "Tempered eagerness",
+              "tone": "warm"
+            },
+            {
+              "foreground": "Frustration",
+              "tone": "warm"
+            },
+            {
+              "foreground": "Quiet reward",
+              "tone": "warm"
+            }
+          ],
+          "rail": [
+            {
+              "key": "feeling:eager calm",
+              "color": "rgb(184, 117, 8)"
+            },
+            {
+              "key": "feeling:fond longing",
+              "color": "rgb(109, 134, 33)"
+            },
+            {
+              "key": "feeling:renewed curiosity",
+              "color": "rgb(183, 107, 57)"
+            },
+            {
+              "key": "feeling:disappointment",
+              "color": "rgb(35, 141, 171)"
+            },
+            {
+              "key": "feeling:tempered eagerness",
+              "color": "rgb(40, 116, 179)"
+            },
+            {
+              "key": "feeling:frustration",
+              "color": "rgb(189, 65, 53)"
+            },
+            {
+              "key": "feeling:quiet reward",
+              "color": "rgb(171, 75, 127)"
+            }
+          ],
+          "fullKey": [
+            {
+              "key": "feeling:eager calm",
+              "color": "rgb(184, 117, 8)"
+            },
+            {
+              "key": "feeling:fond longing",
+              "color": "rgb(109, 134, 33)"
+            },
+            {
+              "key": "feeling:renewed curiosity",
+              "color": "rgb(183, 107, 57)"
+            },
+            {
+              "key": "feeling:disappointment",
+              "color": "rgb(35, 141, 171)"
+            },
+            {
+              "key": "feeling:tempered eagerness",
+              "color": "rgb(40, 116, 179)"
+            },
+            {
+              "key": "feeling:frustration",
+              "color": "rgb(189, 65, 53)"
+            },
+            {
+              "key": "feeling:quiet reward",
+              "color": "rgb(171, 75, 127)"
+            }
+          ]
+        }
+      }
+    ],
+    "facing-source-isolation": [
+      {
+        "test": "A facing spread keeps known document feelings separate from unanalysed next writing without extra fetches",
+        "evidence": {
+          "firstDocumentId": "daa4a6de-e1cf-412e-9816-27db9beb58b1",
+          "unanalysedDocumentId": "0152855d-5e06-4df0-b639-966d92b1e24a",
+          "requested": [
+            "daa4a6de-e1cf-412e-9816-27db9beb58b1"
+          ],
+          "page": "0",
+          "paths": [
+            {
+              "documentId": "daa4a6de-e1cf-412e-9816-27db9beb58b1",
+              "coverage": "continuous",
+              "start": "0",
+              "end": "231",
+              "token": "warm",
+              "stroke": "rgb(184, 117, 8)",
+              "pattern": "none"
+            },
+            {
+              "documentId": "0152855d-5e06-4df0-b639-966d92b1e24a",
+              "coverage": "unanalysed",
+              "start": "0",
+              "end": "271",
+              "token": "unanalysed",
+              "stroke": "rgb(126, 131, 126)",
+              "pattern": "1px, 4px"
+            }
+          ]
+        }
+      }
+    ],
+    "forced-colors-paint-and-patterns": [
+      {
+        "test": "Forced colors retain readable labels and distinct Rest and unanalysed current patterns",
+        "evidence": [
+          {
+            "state": "writer-rest-focused",
+            "forced": true,
+            "canvas": "rgb(255, 255, 255)",
+            "canvasText": "rgb(0, 0, 0)",
+            "label": "Rest",
+            "labelContrast": 21,
+            "labelRect": {
+              "width": 54.0625,
+              "height": 30
+            },
+            "sample": {
+              "stroke": "rgb(0, 0, 0)",
+              "contrast": 21,
+              "pattern": "7px, 4px"
+            },
+            "paths": [
+              {
+                "token": "rest",
+                "stroke": "rgb(0, 0, 0)",
+                "opacity": 1,
+                "pattern": "7px, 4px",
+                "contrast": 21,
+                "length": 1745.140625
+              }
+            ]
+          },
+          {
+            "state": "reader-rest",
+            "forced": true,
+            "canvas": "rgb(255, 255, 255)",
+            "canvasText": "rgb(0, 0, 0)",
+            "label": "Rest",
+            "labelContrast": 21,
+            "labelRect": {
+              "width": 54.0625,
+              "height": 30
+            },
+            "sample": {
+              "stroke": "rgb(0, 0, 0)",
+              "contrast": 21,
+              "pattern": "7px, 4px"
+            },
+            "paths": [
+              {
+                "token": "rest",
+                "stroke": "rgb(0, 0, 0)",
+                "opacity": 1,
+                "pattern": "7px, 4px",
+                "contrast": 21,
+                "length": 649
+              },
+              {
+                "token": "rest",
+                "stroke": "rgb(0, 0, 0)",
+                "opacity": 1,
+                "pattern": "7px, 4px",
+                "contrast": 21,
+                "length": 700
+              },
+              {
+                "token": "rest",
+                "stroke": "rgb(0, 0, 0)",
+                "opacity": 1,
+                "pattern": "7px, 4px",
+                "contrast": 21,
+                "length": 514
+              }
+            ]
+          },
+          {
+            "state": "writer-unanalysed",
+            "forced": true,
+            "canvas": "rgb(255, 255, 255)",
+            "canvasText": "rgb(0, 0, 0)",
+            "label": "Unanalysed",
+            "labelContrast": 21,
+            "labelRect": {
+              "width": 97.40625,
+              "height": 30
+            },
+            "sample": {
+              "stroke": "rgb(0, 0, 0)",
+              "contrast": 21,
+              "pattern": "1px, 4px"
+            },
+            "paths": [
+              {
+                "token": "unanalysed",
+                "stroke": "rgb(0, 0, 0)",
+                "opacity": 1,
+                "pattern": "1px, 4px",
+                "contrast": 21,
+                "length": 1745.140625
+              }
+            ]
+          },
+          {
+            "state": "reader-unanalysed",
+            "forced": true,
+            "canvas": "rgb(255, 255, 255)",
+            "canvasText": "rgb(0, 0, 0)",
+            "label": "Unanalysed",
+            "labelContrast": 21,
+            "labelRect": {
+              "width": 97.40625,
+              "height": 30
+            },
+            "sample": {
+              "stroke": "rgb(0, 0, 0)",
+              "contrast": 21,
+              "pattern": "1px, 4px"
+            },
+            "paths": [
+              {
+                "token": "unanalysed",
+                "stroke": "rgb(0, 0, 0)",
+                "opacity": 1,
+                "pattern": "1px, 4px",
+                "contrast": 21,
+                "length": 649
+              },
+              {
+                "token": "unanalysed",
+                "stroke": "rgb(0, 0, 0)",
+                "opacity": 1,
+                "pattern": "1px, 4px",
+                "contrast": 21,
+                "length": 700
+              },
+              {
+                "token": "unanalysed",
+                "stroke": "rgb(0, 0, 0)",
+                "opacity": 1,
+                "pattern": "1px, 4px",
+                "contrast": 21,
+                "length": 514
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "measured-source-rail-geometry": [
+      {
+        "test": "Rail follows the measured source columns continuously and stays outside the prose",
+        "evidence": {
+          "stageHeight": 593,
+          "paths": [
+            {
+              "column": 0,
+              "start": 0,
+              "end": 257,
+              "top": 51,
+              "bottom": 240,
+              "metadataTop": 51,
+              "metadataBottom": 240,
+              "x": -12,
+              "width": 2.3,
+              "exactSource": true,
+              "rects": [
+                {
+                  "column": 0,
+                  "left": 0,
+                  "top": 51,
+                  "bottom": 81
+                },
+                {
+                  "column": 0,
+                  "left": 0,
+                  "top": 88,
+                  "bottom": 118
+                },
+                {
+                  "column": 0,
+                  "left": 0,
+                  "top": 125,
+                  "bottom": 155
+                },
+                {
+                  "column": 0,
+                  "left": 0,
+                  "top": 162,
+                  "bottom": 192
+                },
+                {
+                  "column": 0,
+                  "left": 0,
+                  "top": 199,
+                  "bottom": 229
+                }
+              ]
+            },
+            {
+              "column": 0,
+              "start": 257,
+              "end": 679,
+              "top": 240,
+              "bottom": 593,
+              "metadataTop": 240,
+              "metadataBottom": 593,
+              "x": -12,
+              "width": 2.3,
+              "exactSource": true,
+              "rects": [
+                {
+                  "column": 0,
+                  "left": 0,
+                  "top": 251,
+                  "bottom": 281
+                },
+                {
+                  "column": 0,
+                  "left": 0,
+                  "top": 288,
+                  "bottom": 318
+                },
+                {
+                  "column": 0,
+                  "left": 0,
+                  "top": 325,
+                  "bottom": 355
+                },
+                {
+                  "column": 0,
+                  "left": 0,
+                  "top": 362,
+                  "bottom": 392
+                },
+                {
+                  "column": 0,
+                  "left": 0,
+                  "top": 399,
+                  "bottom": 429
+                },
+                {
+                  "column": 0,
+                  "left": 0,
+                  "top": 436,
+                  "bottom": 466
+                },
+                {
+                  "column": 0,
+                  "left": 0,
+                  "top": 473,
+                  "bottom": 503
+                },
+                {
+                  "column": 0,
+                  "left": 0,
+                  "top": 510,
+                  "bottom": 540
+                }
+              ]
+            },
+            {
+              "column": 1,
+              "start": 679,
+              "end": 948,
+              "top": 0,
+              "bottom": 166,
+              "metadataTop": 0,
+              "metadataBottom": 166,
+              "x": 597,
+              "width": 2.3,
+              "exactSource": true,
+              "rects": [
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 3,
+                  "bottom": 33
+                },
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 40,
+                  "bottom": 70
+                },
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 77,
+                  "bottom": 107
+                },
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 114,
+                  "bottom": 144
+                },
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 151,
+                  "bottom": 181
+                }
+              ]
+            },
+            {
+              "column": 1,
+              "start": 948,
+              "end": 1144,
+              "top": 166,
+              "bottom": 340,
+              "metadataTop": 166,
+              "metadataBottom": 340,
+              "x": 597,
+              "width": 1.9,
+              "exactSource": true,
+              "rects": [
+                {
+                  "column": 1,
+                  "left": 1056.265625,
+                  "top": 151,
+                  "bottom": 181
+                },
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 188,
+                  "bottom": 218
+                },
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 225,
+                  "bottom": 255
+                },
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 262,
+                  "bottom": 292
+                },
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 299,
+                  "bottom": 329
+                }
+              ]
+            },
+            {
+              "column": 1,
+              "start": 1144,
+              "end": 1364,
+              "top": 340,
+              "bottom": 514,
+              "metadataTop": 340,
+              "metadataBottom": 514,
+              "x": 597,
+              "width": 2.3,
+              "exactSource": true,
+              "rects": [
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 351,
+                  "bottom": 381
+                },
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 388,
+                  "bottom": 418
+                },
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 425,
+                  "bottom": 455
+                },
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 462,
+                  "bottom": 492
+                },
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 499,
+                  "bottom": 529
+                }
+              ]
+            },
+            {
+              "column": 1,
+              "start": 1364,
+              "end": 1485,
+              "top": 514,
+              "bottom": 593,
+              "metadataTop": 514,
+              "metadataBottom": 593,
+              "x": 597,
+              "width": 1.9,
+              "exactSource": true,
+              "rects": [
+                {
+                  "column": 1,
+                  "left": 697.390625,
+                  "top": 499,
+                  "bottom": 529
+                },
+                {
+                  "column": 1,
+                  "left": 609,
+                  "top": 536,
+                  "bottom": 566
+                }
+              ]
+            },
+            {
+              "column": 2,
+              "start": 1364,
+              "end": 1485,
+              "top": 0,
+              "bottom": 18,
+              "metadataTop": 0,
+              "metadataBottom": 18,
+              "x": 1206,
+              "width": 1.9,
+              "exactSource": true,
+              "rects": [
+                {
+                  "column": 2,
+                  "left": 1218,
+                  "top": 3,
+                  "bottom": 33
+                }
+              ]
+            },
+            {
+              "column": 2,
+              "start": 1485,
+              "end": 1617,
+              "top": 18,
+              "bottom": 107,
+              "metadataTop": 18,
+              "metadataBottom": 107,
+              "x": 1206,
+              "width": 1.9,
+              "exactSource": true,
+              "rects": [
+                {
+                  "column": 2,
+                  "left": 1433.859375,
+                  "top": 3,
+                  "bottom": 33
+                },
+                {
+                  "column": 2,
+                  "left": 1218,
+                  "top": 40,
+                  "bottom": 70
+                },
+                {
+                  "column": 2,
+                  "left": 1218,
+                  "top": 77,
+                  "bottom": 107
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "active-curl-probe": [
+      {
+        "test": "Bounded page-turn projections preserve real rail geometry and clean off, resize and exit at 1366px",
+        "evidence": {
+          "width": 1366,
+          "initialCount": 3,
+          "activeCurlSamples": 1,
+          "active": true,
+          "count": 3,
+          "displayed": 2,
+          "decorated": 3,
+          "painted": 2,
+          "projectedPaths": 24,
+          "invalidInitialPaths": [],
+          "invalidMovingPaths": [],
+          "exactInertGeometry": true,
+          "offWhileActive": true
+        }
+      },
+      {
+        "test": "Bounded page-turn projections preserve real rail geometry and clean off, resize and exit at 390px",
+        "evidence": {
+          "width": 390,
+          "initialCount": 2,
+          "activeCurlSamples": 1,
+          "active": true,
+          "count": 3,
+          "displayed": 2,
+          "decorated": 3,
+          "painted": 2,
+          "projectedPaths": 24,
+          "invalidInitialPaths": [],
+          "invalidMovingPaths": [],
+          "exactInertGeometry": true,
+          "offWhileActive": true
+        }
+      },
+      {
+        "test": "Bounded page-turn projections preserve real rail geometry and clean off, resize and exit at 320px",
+        "evidence": {
+          "width": 320,
+          "initialCount": 2,
+          "activeCurlSamples": 1,
+          "active": true,
+          "count": 3,
+          "displayed": 2,
+          "decorated": 3,
+          "painted": 2,
+          "projectedPaths": 30,
+          "invalidInitialPaths": [],
+          "invalidMovingPaths": [],
+          "exactInertGeometry": true,
+          "offWhileActive": true
+        }
+      }
+    ],
+    "motion-png-state": [
+      {
+        "test": "Bounded page-turn projections preserve real rail geometry and clean off, resize and exit at 1366px",
+        "evidence": {
+          "width": 1366,
+          "activeBefore": true,
+          "rotatedBefore": true,
+          "activeAfter": "true"
+        }
+      },
+      {
+        "test": "Bounded page-turn projections preserve real rail geometry and clean off, resize and exit at 390px",
+        "evidence": {
+          "width": 390,
+          "activeBefore": true,
+          "rotatedBefore": true,
+          "activeAfter": "true"
+        }
+      },
+      {
+        "test": "Bounded page-turn projections preserve real rail geometry and clean off, resize and exit at 320px",
+        "evidence": {
+          "width": 320,
+          "activeBefore": true,
+          "rotatedBefore": true,
+          "activeAfter": "true"
+        }
+      }
+    ],
+    "dialog-contrast-writer-reasoning": [
+      {
+        "test": "Heartbeat accessibility across writing, details, paper and night at 1366px",
+        "evidence": {
+          "width": 1366,
+          "state": "writer reasoning",
+          "pairs": [
+            {
+              "text": "Eager calmUndertone: Anticipation",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Undertone: Anticipation",
+              "required": 4.5,
+              "ratio": 5.011015411320307
+            },
+            {
+              "text": "The approaching evening is eagerly awaited while t",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Late afternoon light rested on the tram windows. L",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Find this passage",
+              "required": 4.5,
+              "ratio": 6.309387482387825
+            },
+            {
+              "text": "build · weight 3 of 5",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Context: Invented four-paragraph counterpart for r",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Unverified AI inference, not measured emotion or a",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Exact source revision",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "continuity-revision97afa47ee17d0a288394f92f355d166",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Feeling sample graphic",
+              "required": 3,
+              "ratio": 3.677824259354209
+            }
+          ],
+          "background": "rgb(252, 253, 248)",
+          "backgroundLuminance": 0.9772331719316074,
+          "night": false,
+          "readerPaperLuminance": null
+        }
+      },
+      {
+        "test": "Heartbeat accessibility across writing, details, paper and night at 390px",
+        "evidence": {
+          "width": 390,
+          "state": "writer reasoning",
+          "pairs": [
+            {
+              "text": "Eager calmUndertone: Anticipation",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Undertone: Anticipation",
+              "required": 4.5,
+              "ratio": 5.011015411320307
+            },
+            {
+              "text": "The approaching evening is eagerly awaited while t",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Late afternoon light rested on the tram windows. L",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Find this passage",
+              "required": 4.5,
+              "ratio": 6.309387482387825
+            },
+            {
+              "text": "build · weight 3 of 5",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Context: Invented four-paragraph counterpart for r",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Unverified AI inference, not measured emotion or a",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Exact source revision",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "continuity-revision97afa47ee17d0a288394f92f355d166",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Feeling sample graphic",
+              "required": 3,
+              "ratio": 3.677824259354209
+            }
+          ],
+          "background": "rgb(252, 253, 248)",
+          "backgroundLuminance": 0.9772331719316074,
+          "night": false,
+          "readerPaperLuminance": null
+        }
+      },
+      {
+        "test": "Heartbeat accessibility across writing, details, paper and night at 320px",
+        "evidence": {
+          "width": 320,
+          "state": "writer reasoning",
+          "pairs": [
+            {
+              "text": "Eager calmUndertone: Anticipation",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Undertone: Anticipation",
+              "required": 4.5,
+              "ratio": 5.011015411320307
+            },
+            {
+              "text": "The approaching evening is eagerly awaited while t",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Late afternoon light rested on the tram windows. L",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Find this passage",
+              "required": 4.5,
+              "ratio": 6.309387482387825
+            },
+            {
+              "text": "build · weight 3 of 5",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Context: Invented four-paragraph counterpart for r",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Unverified AI inference, not measured emotion or a",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Exact source revision",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "continuity-revision97afa47ee17d0a288394f92f355d166",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Feeling sample graphic",
+              "required": 3,
+              "ratio": 3.677824259354209
+            }
+          ],
+          "background": "rgb(252, 253, 248)",
+          "backgroundLuminance": 0.9772331719316074,
+          "night": false,
+          "readerPaperLuminance": null
+        }
+      }
+    ],
+    "dialog-contrast-paper-reasoning": [
+      {
+        "test": "Heartbeat accessibility across writing, details, paper and night at 1366px",
+        "evidence": {
+          "width": 1366,
+          "state": "paper reasoning",
+          "pairs": [
+            {
+              "text": "Eager calmUndertone: Anticipation",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Undertone: Anticipation",
+              "required": 4.5,
+              "ratio": 5.011015411320307
+            },
+            {
+              "text": "The approaching evening is eagerly awaited while t",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Late afternoon light rested on the tram windows. L",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Find this passage",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "build · weight 3 of 5",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Context: Invented four-paragraph counterpart for r",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Unverified AI inference, not measured emotion or a",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Exact source revision",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "continuity-revision97afa47ee17d0a288394f92f355d166",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Feeling sample graphic",
+              "required": 3,
+              "ratio": 3.677824259354209
+            }
+          ],
+          "background": "rgb(252, 253, 248)",
+          "backgroundLuminance": 0.9772331719316074,
+          "night": false,
+          "readerPaperLuminance": 0.9634362832560446
+        }
+      },
+      {
+        "test": "Heartbeat accessibility across writing, details, paper and night at 390px",
+        "evidence": {
+          "width": 390,
+          "state": "paper reasoning",
+          "pairs": [
+            {
+              "text": "Eager calmUndertone: Anticipation",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Undertone: Anticipation",
+              "required": 4.5,
+              "ratio": 5.011015411320307
+            },
+            {
+              "text": "The approaching evening is eagerly awaited while t",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Late afternoon light rested on the tram windows. L",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Find this passage",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "build · weight 3 of 5",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Context: Invented four-paragraph counterpart for r",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Unverified AI inference, not measured emotion or a",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Exact source revision",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "continuity-revision97afa47ee17d0a288394f92f355d166",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Feeling sample graphic",
+              "required": 3,
+              "ratio": 3.677824259354209
+            }
+          ],
+          "background": "rgb(252, 253, 248)",
+          "backgroundLuminance": 0.9772331719316074,
+          "night": false,
+          "readerPaperLuminance": 0.9634362832560446
+        }
+      },
+      {
+        "test": "Heartbeat accessibility across writing, details, paper and night at 320px",
+        "evidence": {
+          "width": 320,
+          "state": "paper reasoning",
+          "pairs": [
+            {
+              "text": "Eager calmUndertone: Anticipation",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Undertone: Anticipation",
+              "required": 4.5,
+              "ratio": 5.011015411320307
+            },
+            {
+              "text": "The approaching evening is eagerly awaited while t",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Late afternoon light rested on the tram windows. L",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "Find this passage",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "build · weight 3 of 5",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Context: Invented four-paragraph counterpart for r",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Unverified AI inference, not measured emotion or a",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Exact source revision",
+              "required": 4.5,
+              "ratio": 7.972096552070602
+            },
+            {
+              "text": "continuity-revision97afa47ee17d0a288394f92f355d166",
+              "required": 4.5,
+              "ratio": 5.351858332880994
+            },
+            {
+              "text": "Feeling sample graphic",
+              "required": 3,
+              "ratio": 3.677824259354209
+            }
+          ],
+          "background": "rgb(252, 253, 248)",
+          "backgroundLuminance": 0.9772331719316074,
+          "night": false,
+          "readerPaperLuminance": 0.9634362832560446
+        }
+      }
+    ],
+    "dialog-contrast-night-reasoning": [
+      {
+        "test": "Heartbeat accessibility across writing, details, paper and night at 1366px",
+        "evidence": {
+          "width": 1366,
+          "state": "night reasoning",
+          "pairs": [
+            {
+              "text": "Eager calmUndertone: Anticipation",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "Undertone: Anticipation",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "The approaching evening is eagerly awaited while t",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "Late afternoon light rested on the tram windows. L",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "Find this passage",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "build · weight 3 of 5",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "Context: Invented four-paragraph counterpart for r",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "Unverified AI inference, not measured emotion or a",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "Exact source revision",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "continuity-revision97afa47ee17d0a288394f92f355d166",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "Feeling sample graphic",
+              "required": 3,
+              "ratio": 7.118648738491934
+            }
+          ],
+          "background": "rgb(36, 43, 39)",
+          "backgroundLuminance": 0.02249305250409136,
+          "night": true,
+          "readerPaperLuminance": 0.02249305250409136
+        }
+      },
+      {
+        "test": "Heartbeat accessibility across writing, details, paper and night at 390px",
+        "evidence": {
+          "width": 390,
+          "state": "night reasoning",
+          "pairs": [
+            {
+              "text": "Eager calmUndertone: Anticipation",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "Undertone: Anticipation",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "The approaching evening is eagerly awaited while t",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "Late afternoon light rested on the tram windows. L",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "Find this passage",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "build · weight 3 of 5",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "Context: Invented four-paragraph counterpart for r",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "Unverified AI inference, not measured emotion or a",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "Exact source revision",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "continuity-revision97afa47ee17d0a288394f92f355d166",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "Feeling sample graphic",
+              "required": 3,
+              "ratio": 7.118648738491934
+            }
+          ],
+          "background": "rgb(36, 43, 39)",
+          "backgroundLuminance": 0.02249305250409136,
+          "night": true,
+          "readerPaperLuminance": 0.02249305250409136
+        }
+      },
+      {
+        "test": "Heartbeat accessibility across writing, details, paper and night at 320px",
+        "evidence": {
+          "width": 320,
+          "state": "night reasoning",
+          "pairs": [
+            {
+              "text": "Eager calmUndertone: Anticipation",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "Undertone: Anticipation",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "The approaching evening is eagerly awaited while t",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "Late afternoon light rested on the tram windows. L",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "Find this passage",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "build · weight 3 of 5",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "Context: Invented four-paragraph counterpart for r",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "Unverified AI inference, not measured emotion or a",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "Exact source revision",
+              "required": 4.5,
+              "ratio": 11.11686665905261
+            },
+            {
+              "text": "continuity-revision97afa47ee17d0a288394f92f355d166",
+              "required": 4.5,
+              "ratio": 7.192128927829644
+            },
+            {
+              "text": "Feeling sample graphic",
+              "required": 3,
+              "ratio": 7.118648738491934
+            }
+          ],
+          "background": "rgb(36, 43, 39)",
+          "backgroundLuminance": 0.02249305250409136,
+          "night": true,
+          "readerPaperLuminance": 0.02249305250409136
+        }
+      }
+    ]
+  }
+}

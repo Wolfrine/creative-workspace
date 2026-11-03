@@ -8,7 +8,7 @@ import Modal from './Modal';
 import { ParagraphIndent, paragraphSource } from './ParagraphIndent';
 import Heartbeat, { HeartbeatToggle } from '../heartbeat/Heartbeat';
 import { useHeartbeat } from '../heartbeat/useHeartbeat';
-import { clearHeartbeatHighlights, heartbeatRanges, useHeartbeatHighlights } from '../heartbeat/decorations';
+import { clearHeartbeatRail, heartbeatRanges, useHeartbeatRail } from '../heartbeat/decorations';
 import type { HeartbeatBeat } from '../heartbeat/model';
 
 export interface WriterProps {
@@ -57,7 +57,7 @@ export default function Writer({ document: writing, documents, onChange, onNavig
         return false;
       },
     },
-    onUpdate: ({ editor: current }) => { clearHeartbeatHighlights('writer'); const body = paragraphSource(current.getJSON() as RichNode); lastEmitted.current = JSON.stringify(body); onChangeRef.current(body); },
+    onUpdate: ({ editor: current }) => { clearHeartbeatRail('writer'); const body = paragraphSource(current.getJSON() as RichNode); lastEmitted.current = JSON.stringify(body); onChangeRef.current(body); },
     onSelectionUpdate: ({ editor: current }) => { selections.set(writing.id, { from: current.state.selection.from, to: current.state.selection.to }); setToolbarVersion(value => value + 1); },
     onTransaction: () => setToolbarVersion(value => value + 1),
     onCreate: ({ editor: current }) => {
@@ -65,7 +65,7 @@ export default function Writer({ document: writing, documents, onChange, onNavig
       if (previous) current.commands.setTextSelection({ from: Math.min(previous.from, current.state.doc.content.size), to: Math.min(previous.to, current.state.doc.content.size) });
     },
   }, [writing.id]);
-  useHeartbeatHighlights(editor?.view.dom || null, writing.body, heartbeat.annotation, 'writer');
+  useHeartbeatRail(editor?.view.dom || null, writing.body, heartbeat.annotation, 'writer', { enabled: heartbeatEnabled, layoutKey: `${writing.id}:${focusMode}:${toolbarVersion}` });
   useLayoutEffect(() => {
     const source = editor?.view.dom;
     const scroll = source?.closest('.manuscript-scroll');
@@ -75,7 +75,7 @@ export default function Writer({ document: writing, documents, onChange, onNavig
       if (!alive) return;
       const bounds = scroll.getBoundingClientRect(); const footer = heartbeatFooter.current?.getBoundingClientRect();
       const bottom = footer?.height && footer.top < bounds.bottom ? footer.top : bounds.bottom;
-      const next = heartbeatRanges(source, writing.body, heartbeat.annotation!).filter(({ range }) => [...range.getClientRects()].some(rect => rect.right > bounds.left && rect.left < bounds.right && rect.bottom > bounds.top && rect.top < bottom)).map(item => item.beat);
+      const next = heartbeatRanges(source, writing.body, heartbeat.annotation!).filter(({ range }) => [...range.getClientRects()].some(rect => rect.width > .5 && rect.right > bounds.left && rect.left < bounds.right && Math.min(rect.bottom, bottom) - Math.max(rect.top, bounds.top) >= rect.height * .5)).map(item => item.beat);
       setVisibleBeats(previous => previous.length === next.length && previous.every((beat, index) => beat === next[index]) ? previous : next);
     };
     const schedule = () => { if (!alive) return; cancelAnimationFrame(frame); frame = requestAnimationFrame(measure); };

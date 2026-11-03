@@ -1,0 +1,8 @@
+/* Use existing margin space; the manuscript ink is untouched. */
+.editor-body{position:relative}
+.heartbeat-rail{position:absolute;pointer-events:none;user-select:none;overflow:visible;z-index:1}
+.heartbeat-rail-segment{fill:none;stroke:var(--hb-color);stroke-linecap:butt;opacity:1}
+.reader-night .heartbeat-rail-segment{stroke:var(--hb-night-color)}
+.heartbeat-rail-segment[data-pattern=dashed]{stroke-dasharray:7 4}
+.heartbeat-rail-segment[data-pattern=dotted]{stroke-dasharray:1 4;stroke-linecap:round}
+@media(forced-colors:active){.heartbeat-rail-segment{stroke:CanvasText}.heartbeat-rail-segment[data-token=rest]{stroke-dasharray:7 4}.heartbeat-rail-segment[data-token=unanalysed]{stroke-dasharray:1 4}.heartbeat-rail-segment[data-token=other]{stroke-dasharray:3 2 1 2}}

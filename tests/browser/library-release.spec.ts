@@ -66,8 +66,15 @@ for (const width of [1440, 390, 320]) test(`reader retains exact rich text and r
   });
   await page.getByRole('button', { name: 'Read this page', exact: true }).click();
   await expect(page.locator('.reader-stage')).toBeVisible();
+  // This existing oracle exercises paginated fidelity; automatic native-flow
+  // fidelity is checked independently at all five current viewports.
+  await page.getByRole('button', { name: 'Reading appearance', exact: true }).click();
+  await page.getByRole('combobox', { name: 'Reading layout', exact: true }).selectOption('pages');
+  await page.getByRole('button', { name: 'Close reading settings', exact: true }).click();
   await page.evaluate(() => document.fonts.ready);
-  await expect(page.getByText('AI-origin · unverified', { exact: true }).first()).toBeVisible();
+  await page.getByRole('button', { name: 'Source provenance for Reader integrity fixture', exact: true }).click();
+  await expect(page.getByRole('dialog', { name: 'Source provenance', exact: true })).toContainText('AI-origin · unverified');
+  await page.keyboard.press('Escape');
   const before = await page.evaluate(() => { const state = (window as any).__NOVELIAA_TEST__.getSnapshot(); return { documents: state.documents, revisions: state.revisions, originals: state.originals, receipts: state.receipts }; });
   const paragraphs = page.locator('[data-passage]');
   await expect(paragraphs).toHaveCount(original.body.content.length);
@@ -88,10 +95,17 @@ for (const width of [1440, 390, 320]) test(`reader retains exact rich text and r
     const column = parseFloat(style.columnWidth); const gap = parseFloat(style.columnGap);
     const stride = column + gap; const stage = document.querySelector<HTMLElement>('.reader-stage')!;
     const pageCount = Number(stage.dataset.pages); const failures: string[] = [];
-    const seen = new Set<number>(); let checked = 0;
+    const seen = new Set<number>(); let checked = 0, chromeCharactersSkipped = 0;
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     let node = walker.nextNode();
     while (node) {
+      // The accessible Source button replaces the former provenance byline.
+      // Its intentionally visually-hidden mobile label is UI, not manuscript.
+      // Keep every source/title glyph and all original clipping tolerances.
+      if (node.parentElement?.closest('.reader-source-badge')) {
+        chromeCharactersSkipped += node.textContent?.length || 0;
+        node = walker.nextNode(); continue;
+      }
       let offset = 0;
       for (const character of node.textContent || '') {
         if (!/\s/u.test(character)) {
@@ -100,15 +114,16 @@ for (const width of [1440, 390, 320]) test(`reader retains exact rich text and r
           if (!rect) failures.push('Missing character rectangle');
           else {
             const x = rect.left - base.left; const leaf = Math.max(0, Math.floor((x + 1) / stride)); seen.add(leaf);
-            if (leaf >= pageCount || rect.top < base.top - 2 || rect.bottom > base.bottom + 2 || x - leaf * stride < -2 || x - leaf * stride + rect.width > column + 2) failures.push(`Clipped character on leaf ${leaf}`);
+            if (leaf >= pageCount || rect.top < base.top - 2 || rect.bottom > base.bottom + 2 || x - leaf * stride < -2 || x - leaf * stride + rect.width > column + 2) failures.push(`Clipped character ${JSON.stringify(character)} on leaf ${leaf}; source=${!!node.parentElement?.closest('[data-passage]')}; badge=${!!node.parentElement?.closest('.reader-source-badge')}; x=${x - leaf * stride}; width=${rect.width}; column=${column}; y=${rect.top - base.top}..${rect.bottom - base.top}/${base.height}`);
           }
         }
         offset += character.length;
       }
       node = walker.nextNode();
     }
-    return { checked, pages: pageCount, leavesWithText: [...seen], failures: failures.slice(0, 12) };
+    return { checked, chromeCharactersSkipped, pages: pageCount, leavesWithText: [...seen], failures: failures.slice(0, 12) };
   });
+  expect(coverage.chromeCharactersSkipped).toBe('Source'.length);
   expect(coverage.checked).toBeGreaterThan(5000);
   expect(coverage.pages).toBeGreaterThan(1);
   expect(coverage.failures).toEqual([]);

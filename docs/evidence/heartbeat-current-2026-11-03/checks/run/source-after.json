@@ -1,0 +1,218 @@
+﻿[
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\App.tsx",
+        "Hash":  "0479C5432C85507B8DF5BA043FF7320A58B064FF164ADDFB7891401BC20A60FE"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\AppHost.tsx",
+        "Hash":  "CE43936760E2F7D539002FC35A9E6CBE6B3E323DB68EDBD1A2AB2B1C9BA01719"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\library-reader.css",
+        "Hash":  "00574DD9E6006999E0B294E9C45747D1519C92DA5FC64F9F10D8EB146A2264B1"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\main.tsx",
+        "Hash":  "060F787E8EB7A2B1F7C0C16CC33B1D054663F5EE076C41F5E8495B60286BCF6D"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\styles.css",
+        "Hash":  "1BFAB3E8BB7DBD49BC30769C13BC05F184134148B5BDA93B24FBECED3E1B8294"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\cloud\\firebase-access.test.ts",
+        "Hash":  "902C86F944FA566A9405F9022381333AB0B45D11A920A1AB49EE40F74E3BBB91"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\cloud\\firebase.test.ts",
+        "Hash":  "D3CD5E98B0761BFE573F4B677B2D7AC2341D38B4DBA7C723B8E4AEAF94FF3601"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\cloud\\firebase.ts",
+        "Hash":  "61E6DFE8CF0AE732D34A80B95C5E66F2730ACA25F596B83C8EB5E2435F51E2AD"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\cloud\\integrations.ts",
+        "Hash":  "771DC3CA8484DBA9D01C9989C56A6F06F502CFA5F62E362F185555D916757375"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\cloud\\spark-listener.test.ts",
+        "Hash":  "1868D8971D193F71F0B509B551331EA9BCD0B561E91893C7D9ADE86D6447086C"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\cloud\\spark.emulator.test.ts",
+        "Hash":  "12672DF8C1F146E9C6E140D545353E08ECF56FA804D3A5EDBCE48E037E05942E"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\cloud\\spark.ts",
+        "Hash":  "ABB7B693F16EFF907B3421C7ECBE83331DE0254E88E86764481D9C99CD569013"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\components\\DocumentShelfRow.tsx",
+        "Hash":  "DF6B820BCE505DFA5A10737795A31153D69CEF9000D58937AB105D00BA833F24"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\components\\integrations.css",
+        "Hash":  "7CCFDD94B59273204080530185D6FC236952F825F2E94717D87817998BBC8BC0"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\components\\Integrations.tsx",
+        "Hash":  "7058938437BFBCAA94E90FE5FA0B13C7A4D12352FEE19D4257256614D5473909"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\components\\Library.tsx",
+        "Hash":  "C443D154178F9959E4F8B9BA2D771ECD389F3C5EE3A1BE150E34A0E092C7A9B5"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\components\\Modal.tsx",
+        "Hash":  "B5D290D7073A27442D178B528C0447990DE6042A6B1AEE8C2E3A3300F11E73CE"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\components\\ParagraphIndent.ts",
+        "Hash":  "687A0EAE5FBE04F96E2921EFB4DDBD5DC2B01169C4A8E8AC981713321D6D2FD7"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\components\\Reader.tsx",
+        "Hash":  "4FCB26530DBBCC3FF24611B1554D005AE53F9227610A64972C32D695AE2B3C92"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\components\\RevisionComparison.tsx",
+        "Hash":  "2C5B5313BB91B0D6BE008E8FD1516CE289DA856FA14C6668F78914B3797CAD94"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\components\\Writer.tsx",
+        "Hash":  "C7138130ADEC7B7590ECD5C5F944125248A37D067C9A26ED5FF92984B426F2B5"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\domain\\codec.ts",
+        "Hash":  "FBE53E9AA60A72E85BE7B8FF6E2D62B89FBF0742AD8626D2FEFB95C62685525A"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\domain\\model.ts",
+        "Hash":  "9BD450032340A32E4CA4ABBA854BCDD30C60C4BE5B648D58C98A0E888465C900"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\domain\\paragraph-formatting.test.ts",
+        "Hash":  "5EE2537BB58B7F4449B5A2CFB9E19B2CB2F0C8FD84F71FE32F0AA96A33545E8A"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\domain\\render.ts",
+        "Hash":  "E74AD5040ECE35E22F1C13941ADD23F2C5515D37744FC5FEA0F75DFF8C3EA517"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\decorations.ts",
+        "Hash":  "C699D1799B0BF7EC81BA214B8A6797C7B9043E2842AF2D78F0CA5879E483965A"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\heartbeat.css",
+        "Hash":  "9264D3A3AABB2AEBD4EBE04A7288EE8AEBC805AE671A689211E0EDDAFF571586"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\Heartbeat.tsx",
+        "Hash":  "B859AD9F489621F9FF9B6DDC0D4EA47F797464BE6D0BBD229720EE786BE2F9D7"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\model.test.ts",
+        "Hash":  "9177CBDAD4EEAB2D56171247F6AE6B944993B1BBD2AADD4F9666987B8E345573"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\model.ts",
+        "Hash":  "150A56B55C146D2DACA2325C674600D05657EA1A0A513F34E553DB235D51B34E"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\presentation.test.ts",
+        "Hash":  "3DF4B2DFA91531DAD8B49113C87A95EBA04CB8B2489F7D31D1663917E07D071E"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\presentation.ts",
+        "Hash":  "1822BE0E4CEAAECB318CCEFB6CF75917FC015CFF0ECC314E3EED943A65CADCBB"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\rail-geometry.test.ts",
+        "Hash":  "507F08A94F530FAA8B78759CB1083CEA88237ADCD01F242331B56A4A977AE896"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\rail-geometry.ts",
+        "Hash":  "5457D77D3622FFCBA043FE3F80CBD3B13B2084C1E628105C0FFEC92A23D3FA7D"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\rail.css",
+        "Hash":  "0CAEC97F8DA0F5E66CA966EF0205619F871D3E61E3B41419AB454096479C0489"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\rails.ts",
+        "Hash":  "3AC9146D6EE0D1443FDE0508D8441CB35D2C7640F7D21F1D19C23F2B44D7E289"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\ranges.ts",
+        "Hash":  "6E83454D7472E756E7857B31802BC6709E06C5C7C5041AB99A3B2A00BB7BA53E"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\heartbeat\\useHeartbeat.ts",
+        "Hash":  "E899EB05BF882EF3C007161C8521B21227B3503384CC65BFE0DCB434E2CC7A21"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\reader\\page-turn.ts",
+        "Hash":  "11A2F9A35D50457FA95557EC4F095075AECB66EFFB289F408CDB05AD7A15F61C"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\reader\\reading.test.ts",
+        "Hash":  "43D10FAF5DB6EE9E4BF62161F66FA61E2AE18C64B02455129A2953143C9968E8"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\reader\\reading.ts",
+        "Hash":  "613777B5137F3C52455FDB5D744E03E4E9A86A12FC0A878C52080080A64A69D3"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\state\\autosave.test.ts",
+        "Hash":  "759514E6B5B40B73156869DAA413BDA50ADC881A71B0F04A15F90746A14DCD19"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\state\\cloud-integration.test.ts",
+        "Hash":  "2F19396DF1315E61F8EBED97AE2F98023137B39FB277E4F8A66E0F7718EECD53"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\state\\collection-rename.test.ts",
+        "Hash":  "5C191C8F2C32DB3EEA6B70E7FEB91E7858957DE6B04C387D77D7BC6DA7B661AE"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\state\\engine.test.ts",
+        "Hash":  "6FFA03CA8178FAD5AC972704CE7CA9E951487CF7044A0C5863C8EC128C25AEE0"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\state\\engine.ts",
+        "Hash":  "02946BD71C5CE3B6FB87EEB861FB8E81BAF1F3505BD0E2A214B7BD9C8D330E0F"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\state\\useWorkspace.ts",
+        "Hash":  "372C47449E45873B1B5F3A711E9F80FFADF23FC2528DD3DEDB88D9458AEC8484"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\storage\\archive.ts",
+        "Hash":  "3E146877962AF16E9EF5A0F49514ADA68DF31DC1CCFA5D401A782C5CC1DE6875"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\storage\\database.ts",
+        "Hash":  "3F3064EAB1A4868B0105E12FA8AEE903CAA94C41F216662B3CA76E9A1CA458D8"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\storage\\draft-migration.test.ts",
+        "Hash":  "46EE52B87A6375532D6CB7C7C0FB29DE6135FFD613C9E09399686517E9DB8F38"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\storage\\workspace-reset.test.ts",
+        "Hash":  "5718191258A3BD0CF9DAE2CC040F65B81F1AF86466092AE5F05928CAC24B0F25"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\vendor\\pageflip\\page-flip.css",
+        "Hash":  "D51EB210784F4539D70BC2A4A9AE96768E271D7AAE6730CC9DDBA03EBEBCBAB1"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\src\\vendor\\pageflip\\page-flip.d.ts",
+        "Hash":  "D45D561CA29BD8CD771F65B458D0E7067BF61BFA3DE6C2779BE6BA152FE59B1B"
+    },
+    {
+        "Path":  "F:\\Workspace\\Programs\\Independent-Products\\Noveliaa\\tests\\helpers\\heartbeat-continuity-fixture.ts",
+        "Hash":  "99713C94FE596B9E5C8A58C6DF34792877170E37D0E2E24B45AA9B0896835C83"
+    }
+]

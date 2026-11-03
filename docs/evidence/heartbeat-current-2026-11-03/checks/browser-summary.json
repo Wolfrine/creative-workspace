@@ -1,0 +1,11 @@
+{
+  "nativeExit": 0,
+  "stats": {
+    "startTime": "2026-11-03T12:31:54.972Z",
+    "duration": 439017.597,
+    "expected": 115,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

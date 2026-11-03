@@ -1,0 +1,6 @@
+﻿{
+    "NativeExitCode":  0,
+    "Time":  "2026-11-03T12:31:03.2769680Z",
+    "Command":  "npx playwright test tests/browser/heartbeat-layout.spec.ts tests/browser/heartbeat-visual.spec.ts tests/browser/heartbeat-current.spec.ts --max-failures=6 --output=.local/heartbeat-current/qa/formal-r6/test-results",
+    "Evidence":  ".local/heartbeat-current/qa/formal-r6"
+}
