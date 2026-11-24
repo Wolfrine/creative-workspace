@@ -10,12 +10,15 @@
 
 ## Development location
 
-The verified owning Windows checkout is
-`F:/Workspace/Programs/Independent-Products/Noveliaa`. All new development source,
-scripts, build/test output, reports and scratch must stay on F. The earlier
-C-drive chat checkout is a retained recovery copy and must not be extended.
-Dot-source `. ./.harness/dev-environment.ps1` before Windows commands to keep
-Node, browser/emulator caches, temporary profiles and Python bytecode on F.
+Keep source and Git in the canonical `main` checkout at
+`F:/Workspace/Programs/Independent-Products/Noveliaa`. Put local build output,
+reports, scratch, runtime installs and caches under `H:/Workspace`. The earlier
+C-drive chat checkout is a retained recovery copy. Dot-source
+`. ./.harness/dev-environment.ps1` for H-backed Windows caches and temp paths.
+Use H-backed build staging for output and dependencies. Keep existing runtime
+paths available until their consumers have been verified on H.
+Retire completed worktrees after verifying their useful changes in upstream
+`main`, checking for active consumers, and reviewing untracked and ignored files.
 Codex/Windows-managed application state and installed platform binaries remain
 in their required platform locations. Linux GitHub Actions runners retain the
 existing deployment workflow; deliver directly from `main`.
