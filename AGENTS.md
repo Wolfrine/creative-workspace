@@ -48,6 +48,8 @@ billing links, IAM, APIs, the 10s/60s trailing idle-save design or manuscript/hi
 retention. See `deployment/cost-policy.json` and the release evidence for whether
 each operational setting has actually been configured.
 
+Follow the [owner-wide cloud cost rule](https://github.com/Wolfrine/PTI/blob/main/docs/cloud-cost-rule.md) for remote and manual releases. Record any required forecast, approval and cost readback alongside the existing deployed-settings and image-retention evidence.
+
 ## Current assignment: implement and evaluate Phase 1
 
 1. Inspect the actual repository and relevant writing/story projects. Verify evidence and separate known facts from assumptions.
